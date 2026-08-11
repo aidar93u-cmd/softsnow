@@ -1,0 +1,83 @@
+:root {
+  /* Colors */
+  --color-black: #222222;
+  --color-white: #FFFFFF;
+  --color-sea: #1342F3;
+  --color-grey: rgba(34, 34, 34, 0.7);
+  --color-overlay: rgba(0, 0, 0, 0.2);
+  --color-dark-navy: #100943;
+  --color-blue-alt: #1F67F9;
+  --color-red: #ED143B;
+
+  /* Backgrounds */
+  --bg-light: #F5F4F5;
+  --bg-light-alt: #F5F5F5;
+  --bg-border: #E8E8E8;
+  --bg-placeholder: #D9D9D9;
+
+  /* Gradients */
+  --gradient-fade: linear-gradient(to bottom, rgba(245, 244, 245, 0.6), rgba(245, 244, 245, 0));
+  --gradient-overlay: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  --gradient-card-bottom: linear-gradient(to bottom, rgba(0, 0, 0, 0) 63%, rgba(0, 0, 0, 1) 100%);
+
+  /* Fonts */
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Type scale */
+  --fs-h1: 100px;
+  --fs-h2: 70px;
+  --fs-h3: 40px;
+  --fs-h4: 20px;
+  --fs-numbers: 75px;
+  --fs-body-30: 30px;
+  --fs-body-24: 24px;
+  --fs-body-20: 20px;
+  --fs-body-16: 16px;
+  --fs-body-14: 14px;
+  --fs-body-12: 12px;
+
+  /* Buttons */
+  --btn-16: 16px;
+  --btn-20: 20px;
+
+  /* Spacing */
+  --section-py: 120px;
+  --section-py-md: 80px;
+  --section-px: 40px;
+  --card-p: 30px 31px;
+  --card-p-lg: 60px;
+  --card-p-sm: 40px 0;
+  --gap-xs: 8px;
+  --gap-sm: 10px;
+  --gap-md: 16px;
+  --gap-lg: 20px;
+  --gap-xl: 30px;
+  --gap-2xl: 40px;
+  --gap-3xl: 50px;
+  --gap-4xl: 60px;
+  --gap-5xl: 68px;
+
+  /* Radius */
+  --radius-xs: 4px;
+  --radius-sm: 5px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+  --radius-xl: 50px;
+  --radius-2xl: 120px;
+  --radius-pill: 210px;
+  --radius-round: 240px;
+  --radius-full: 378px;
+
+  /* Borders */
+  --border-default: 1px solid #000000;
+  --border-accent: 2px solid #1342F3 inset;
+  --border-dark: 1.5px solid #222222;
+  --border-light: 1px solid #FFFFFF inset;
+
+  /* Opacity */
+  --opacity-10: 0.1;
+  --opacity-50: 0.5;
+  --opacity-60: 0.6;
+  --opacity-70: 0.7;
+}
