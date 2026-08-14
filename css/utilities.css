@@ -1,20 +1,31 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* global default: every property change animates at 0.4s.
+   individual component/section rules keep the same value; this
+   guarantees base elements (a, button, img, …) animate too.
+   reduced-motion (below) still restricts to safe properties. */
+*,
+*::before,
+*::after {
+	transition: all 0.4s;
 }
 
 html {
-  font-size: 16px;
+	font-size: 16px;
 }
 
 body {
-  font-family: var(--font-body);
-  font-size: var(--fs-body-16);
-  line-height: 1.4;
-  color: var(--color-black);
-  background: var(--bg-border);
-  -webkit-font-smoothing: antialiased;
+	font-family: var(--font-body);
+	font-size: var(--fs-body-16);
+	line-height: 1.4;
+	color: var(--color-black);
+	background: var(--bg-border);
+	-webkit-font-smoothing: antialiased;
+    letter-spacing: -0.03rem;
 }
 
 h1,
@@ -23,46 +34,99 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: -0.02em;
+	font-family: var(--font-heading);
+	font-weight: 500;
+	line-height: 1;
+	letter-spacing: -0.02em;
 }
 
 h1 {
-  font-size: var(--fs-h1);
-  letter-spacing: -0.03em;
+	font-size: var(--fs-h1);
+	letter-spacing: -0.07em;
 }
-h2 { font-size: var(--fs-h2); letter-spacing: -0.03em; }
-h3 { font-size: var(--fs-h3); letter-spacing: -0.01em; }
-h4 { font-size: var(--fs-h4); line-height: 1.2; letter-spacing: -0.02em; }
+h2 {
+	font-size: var(--fs-h2);
+	letter-spacing: -0.07em;
+}
+h3 {
+	font-size: var(--fs-h3);
+	letter-spacing: -0.05em;
+}
+h4 {
+	font-size: var(--fs-h4);
+	line-height: 1.2;
+	letter-spacing: -0.02em;
+}
 
 img {
-  max-width: 100%;
-  display: block;
+	max-width: 100%;
+	display: block;
+}
+
+p {
+	line-height: 1.4;
+    letter-spacing: -0.04rem;
+}
+
+svg {
+	display: block;
+}
+
+::selection {
+	background: var(--color-sea);
+	color: var(--color-white);
+}
+
+:focus-visible {
+	outline: 2px solid var(--color-sea);
+	outline-offset: 2px;
 }
 
 a {
-  color: var(--color-sea);
-  text-decoration: none;
+	color: var(--color-sea);
+	text-decoration: none;
 }
 
 ul,
 ol {
-  list-style: none;
+	list-style: none;
 }
 
 button {
-  font: inherit;
-  color: inherit;
-  background: none;
-  border: none;
-  cursor: pointer;
+	font: inherit;
+	color: inherit;
+	background: none;
+	border: none;
+	cursor: pointer;
 }
 
 input,
 textarea,
 select {
-  font: inherit;
-  color: inherit;
+	font: inherit;
+	color: inherit;
+}
+
+/* Global section clip — keeps each <section> from bleeding into siblings.
+   Revisit if a section needs visible overflow (e.g. sticky/fixed children). */
+section {
+	overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+	}
+	/* keep vestibular-safe cross-fades (opacity/color); drop motion
+	   transitions (transform/position/size) by restricting the property list.
+	   duration is left as authored so the safe fades stay smooth. */
+	*,
+	*::before,
+	*::after {
+		transition-property: opacity, color, background-color, border-color, box-shadow, outline-color, fill !important;
+	}
 }

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Медиацентр — SoftSnow</title>
+  <meta name="description" content="Вебинары, статьи и новости SoftSnow: разбираем кейсы цифровизации вузов, делимся опытом внедрения и анонсируем мероприятия.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="index.html" class="logo" aria-label="SoftSnow — на главную">
+          <span class="logo__mark">
+            <svg class="logo__icon" width="68" height="65" viewBox="0 0 68 65" fill="none" aria-hidden="true">
+              <g transform="translate(1 0)">
+                <path
+                  d="M27.3689 0.206694C27.8084 -0.0684043 28.3606 -0.0689289 28.8006 0.205311L53.3419 15.5012C54.209 16.0416 54.2298 17.3267 53.3805 17.8965L46.2228 22.6993C45.7767 22.9986 45.2024 23.0067 44.7484 22.7204L28.0818 12.2093L20.7914 16.7215L37.0809 27.9572L36.3126 29.1322L19.4886 17.5277L12.0533 22.1301L45.2052 42.3597L56.1676 36.0663L56.8397 37.3022L46.5743 43.1953L52.773 46.9779C53.665 47.5222 53.6736 48.8458 52.7888 49.4023L28.7895 64.4977C28.3637 64.7655 27.8304 64.7756 27.3952 64.5243L2.33188 50.051C1.45668 49.5455 1.38465 48.2789 2.19665 47.6722L8.55044 42.9251C8.98473 42.6006 9.56292 42.5648 10.0319 42.8335L27.2236 52.6834L34.4749 48.5203L17.5621 37.8178L18.2846 36.6124L35.8524 47.7292L43.8149 43.158L10.7138 22.9592L0.711135 29.1509L0 27.9386L9.36956 22.1387L2.71066 18.0755C1.81762 17.5305 1.81047 16.205 2.69754 15.6498L27.3689 0.206694ZM27.8957 53.9193C27.4784 54.1588 26.97 54.1591 26.5525 53.92L9.36081 44.0697L3.00702 48.8172L28.0703 63.2905L52.0693 48.1951L45.184 43.9937L27.8957 53.9193ZM3.41439 16.8587L10.7091 21.31L27.3706 10.997C27.8116 10.724 28.3639 10.7262 28.8027 11.0028L45.4692 21.5139L52.6274 16.7114L28.0858 1.4156L3.41439 16.8587Z"
+                  fill="#1342F3" />
+              </g>
+              <rect x="0" y="25.37" width="5.17" height="5.31" rx="4" fill="#1342F3" />
+              <rect x="14.55" y="33.06" width="5.17" height="5.31" rx="4" fill="#1342F3" />
+              <rect x="33.84" y="25.37" width="5.17" height="5.31" rx="4" fill="#1342F3" />
+              <rect x="56.83" y="32.44" width="5.17" height="5.31" rx="4" fill="#1342F3" />
+            </svg>
+            <span class="logo__tm">™</span>
+          </span>
+          <svg class="logo__word" width="140" height="21" viewBox="0 0 140 21" fill="none" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M114.305 6.26855L114.305 16.335L109.887 18.8945L105.562 21.375L101.239 18.8945L96.8213 16.334L96.8213 6.27051L99.2764 4.87695L99.2314 4.87695L101.225 3.72461L101.224 3.72363L105.563 1.22754L114.305 6.26855ZM102.985 6.45312L102.979 6.45605L100.315 7.98633L100.064 8.12988L100.064 14.457L100.315 14.6016L102.979 16.1309L105.298 17.4668L105.546 17.6104L105.796 17.4678L108.13 16.1309L108.132 16.1299L111.03 14.4561L111.03 8.13281L110.782 7.98828L105.634 4.97852L102.985 6.45312ZM21.2432 6.69727L19.6182 7.63184L19.3682 7.77637L19.3682 14.1182L19.6182 14.2627L22.0488 15.6631L24.5762 17.1279L24.8262 17.2725L25.0762 17.1289L30.0518 14.2627L30.3018 14.1182L30.3018 7.77734L28.4424 6.69824L28.4424 2.95996L29.1523 3.36328L33.5684 5.90625L33.5684 15.9717L24.8105 21.0283L16.0693 15.9717L16.0693 5.91211L16.9053 5.45215L16.9141 5.44727L20.5156 3.36523L21.2432 2.95508L21.2432 6.69727ZM6.23145 2.62402L6.24512 2.625L6.25879 2.62402C7.53952 2.59412 8.79833 2.93129 9.8916 3.59766C10.8269 4.1667 11.5905 4.97896 12.1113 5.9375L9.23926 7.61621C8.99933 7.17593 8.66159 6.78899 8.24902 6.49805C7.74301 6.13439 7.14502 5.92262 6.5293 5.88184L6.26465 5.875C5.74888 5.85259 5.2403 5.98116 4.79883 6.25586L4.78711 6.26367L4.77539 6.27246C4.56463 6.42123 4.40733 6.61607 4.30176 6.82715C4.19625 7.03816 4.134 7.29136 4.14551 7.5459C4.15741 7.84352 4.25268 8.12181 4.4082 8.36621L4.41406 8.375C4.56248 8.59763 4.76398 8.80467 5.02539 8.94727L5.03027 8.9502C5.81631 9.36824 6.65238 9.68629 7.52148 9.89746C8.19025 10.1061 8.75888 10.2829 9.16602 10.4326L9.51855 10.5742C10.061 10.8347 10.5813 11.1408 11.0713 11.4854L11.0791 11.4902C11.5551 11.8117 11.9462 12.2432 12.2275 12.7422L12.3408 12.96C12.6245 13.5566 12.7448 14.2072 12.6885 14.8564L12.6855 14.8887L12.6865 14.9209C12.7155 15.6087 12.5848 16.2946 12.2969 16.9209L12.2949 16.9258C12.0163 17.5472 11.5861 18.094 11.0518 18.5293C9.72972 19.4865 8.09519 20.046 6.46094 19.9561C4.97867 19.9912 3.52093 19.6152 2.23633 18.8662C1.23802 18.2424 0.45945 18.2061C0.448212 18.2273 0.437438 18.2485 0.427124 18.2697L0.425537 18.2717C0.3017 18.5308 0.226101 18.8102 0.202271 19.0962C0.172331 19.4105 0.172638 19.7272 0.203125 20.0415L0.20343 20.0444C0.264938 20.708 0.526064 21.3361 0.950195 21.8389L0.9496 21.8395L0.19751 22.8384L3.70837 25.2349L4.47009 24.2227L4.47082 24.2227C4.04728 23.7118 3.78245 23.0815 3.70703 22.415C3.67811 22.1581 3.67808 21.899 3.7063 21.6421C3.76398 21.0331 4.007 20.4599 4.39844 19.9951C4.76472 19.5618 5.23704 19.2498 5.76758 19.0879C6.21441 18.9519 6.68341 18.8983 7.14941 18.9297C8.57546 19.0161 9.86898 19.6322 10.792 20.6572C11.2824 21.2137 11.6321 21.8777 11.806 22.5957C11.9739 23.2859 12.0006 24.003 11.8833 24.7051C11.8402 24.9502 11.7831 25.1922 11.7123 25.4297C11.6399 25.6728 11.5546 25.9116 11.457 26.1445L11.5816 26.2837C11.5857 26.3318 11.5892 26.3799 11.5922 26.4282C11.5845 26.6681 11.5699 26.9077 11.5484 27.1465L11.5421 27.2171C11.421 28.4928 11.0601 29.733 10.4775 30.8662C10.3514 31.107 10.2175 31.3435 10.0762 31.5752C10.0299 31.6514 9.98881 31.7274 9.9502 31.8066C9.88303 31.9168 9.8269 32.0326 9.77197 32.1484L9.74039 32.2144L9.71594 32.2723L9.71172 32.2817L9.70505 32.2946L9.70405 32.2965C8.35483 35.0281 5.81956 37.0479 2.82812 37.8945C2.64249 37.9486 2.45849 37.9989 2.27612 38.0453L2.27618 38.0453L2.27629 38.0453C1.12268 38.3569 0 38.5078 0 38.5078V41.3872L0.110327 41.5147L6.58221 49.1528L7.52956 48.3845C7.20151 48.1034 6.94695 47.7511 6.78271 47.3525C6.55738 46.8037 6.45448 46.2073 6.4812 45.6113C6.51109 44.9552 6.70895 44.322 7.05273 43.7734C7.51247 43.0433 8.22539 42.5432 9.02832 42.3682C10.1934 42.1149 11.4006 42.4251 12.2695 43.1982C12.6381 43.5153 12.921 43.9148 13.0923 44.3594C13.2551 44.7814 13.3249 45.2358 13.2969 45.6885C13.2724 46.0928 13.1582 46.4808 12.9687 46.8281C12.7771 47.1794 12.5066 47.4811 12.1816 47.7109C12.7088 48.1025 13.1128 48.637 13.3477 49.2578C13.6771 50.146 13.6933 51.1466 13.3672 52.0312C13.0375 52.9255 12.4332 53.6954 11.6377 54.2305C10.4318 55.0751 8.90216 55.3766 7.46387 55.0186C6.61326 54.8042 5.83986 54.3504 5.24023 53.7334C5.24652 53.7483 5.25243 53.7623 5.25784 53.7761L5.25887 53.7783C5.25943 53.7797 5.2601 53.7811 5.26073 53.7825L5.26001 53.7829L5.25983 53.783L5.25947 53.7832C4.9338 54.6014 4.49279 55.3602 3.94904 56.0322C3.55328 56.5305 3.10179 56.9724 2.61621 57.333L5.45162 59.7161L6.48731 58.471C6.3979 58.4513 6.30999 58.4276 6.22314 58.4C6.90652 57.5106 7.80015 56.7907 8.82373 56.3027C10.0047 55.7372 11.3044 55.4492 12.6191 55.4648C13.1002 55.4717 13.5794 55.5123 14.0527 55.5859C14.7125 55.6883 15.3486 55.9065 15.9268 56.2305C15.0997 56.9852 14.4868 57.9304 14.1465 58.9785C13.8045 60.0322 13.739 61.1636 13.9551 62.248C14.0734 62.7939 14.2598 63.3226 14.5107 63.8242L14.2976 63.9792L17.4043 65.9761L17.8307 65.3385L17.8508 65.3524L18.0875 64.9087L17.8525 64.748L17.8336 64.7777L17.8002 64.8013L14.5415 62.7553C14.3336 62.3265 14.1905 61.8708 14.1162 61.4023C14.0003 60.691 14.0403 59.9657 14.2324 59.2705C14.4245 58.5753 14.7658 57.9276 15.2297 57.374C15.7102 56.8013 16.2867 56.3242 16.9316 55.9551C16.8501 55.8619 16.7709 55.7672 16.6944 55.6713L16.6945 55.6712L16.6939 55.6704C16.6214 55.5821 16.5515 55.4921 16.4843 55.4006C15.5275 54.1782 14.2239 53.2518 12.7317 52.7422C11.3818 52.2807 9.94461 52.1708 8.5459 52.4209C7.49584 52.6082 6.57802 53.2311 6.02637 54.0977C5.6252 54.7297 5.39132 55.4513 5.34668 56.1914C5.30964 56.7892 5.41224 57.3865 5.63818 57.9307C4.76026 58.1984 3.94163 58.6252 3.22852 59.1875C2.8818 59.4514 2.55774 59.743 2.25977 60.0605L3.2156 61.2679L0.258147 63.312L0 63.6976V66.2531L8.70716 72.6201L15.7921 66.7785L16.3436 67.5331L8.28711 74.1282L0 67.6626V66.2531ZM13.9134 48.5469C13.784 49.022 13.7832 49.5218 13.9111 49.9971C14.0082 50.3543 14.1746 50.6785 14.3967 50.9541C14.4114 50.9723 14.4263 50.9903 14.4413 51.008L14.8132 50.6775C14.7298 50.3696 14.6791 50.053 14.6621 49.7334C14.6245 49.0146 14.7955 48.3005 15.1504 47.6797C15.3454 47.333 15.5969 47.0197 15.895 46.7529C15.3024 46.611 14.7087 46.5049 14.1113 46.4346C13.9656 46.417 13.8195 46.4013 13.6731 46.3875C13.7093 46.7565 13.7187 47.1276 13.7012 47.4971C13.6814 47.8483 13.6287 48.1968 13.5449 48.5361C13.534 48.5399 13.5232 48.5434 13.5122 48.547L13.9134 48.5469ZM8.87061 50.1758C8.73636 50.282 8.60775 50.3951 8.48535 50.5146C8.59443 50.4219 8.70881 50.3352 8.82764 50.2552L8.87061 50.1758Z"
+              fill="#1342F3" />
+          </svg>
+        </a>
+
+        <nav class="header__nav" aria-label="Основная навигация">
+          <div class="header__dropdown">
+            <a href="index.html#industries" class="header__link">Отрасли<svg class="header__caret" width="14" height="8"
+                viewBox="0 0 14 8" fill="none" aria-hidden="true">
+                <path d="M0.441406 0.441956L6.94141 6.94196L13.4414 0.441956" stroke="currentColor" stroke-width="1.25" />
+              </svg></a>
+            <div class="header__dropdown-panel">
+              <a href="index.html#industries" class="header__dropdown-link">Госсектор</a>
+              <a href="index.html#industries" class="header__dropdown-link">Вузы</a>
+              <a href="index.html#industries" class="header__dropdown-link">Бизнес</a>
+            </div>
+          </div>
+          <a href="solutions.html" class="header__link">Решения</a>
+          <a href="projects.html" class="header__link">Проекты</a>
+          <a href="clients.html" class="header__link">Клиенты</a>
+          <a href="index.html#about" class="header__link">О нас</a>
+          <a href="events.html" class="header__link is-active">Мероприятия</a>
+          <a href="#" class="header__link">Блог</a>
+        </nav>
+
+        <div class="header__contacts">
+          <div class="header__phone">
+            <a href="tel:+78123201130" class="header__phone-label">Контакты</a>
+            <a href="tel:+78123201130" class="header__phone-num">+7 (812) 320-11-30</a>
+          </div>
+          <button class="btn btn--search" type="button" aria-label="Поиск">
+            <svg width="15.9" height="15.9" viewBox="0 0 15.9 15.9" fill="none" aria-hidden="true">
+              <path fill-rule="evenodd"
+                d="M6 0C9.31371 0 12 2.68629 12 6C12 7.2957 11.587 8.49384 10.8887 9.47461L15.8994 14.4854L14.4854 15.8994L9.47461 10.8887C8.49384 11.587 7.2957 12 6 12C2.68629 12 0 9.31371 0 6C0 2.68629 2.68629 0 6 0ZM6 2C3.79086 2 2 3.79086 2 6C2 8.20914 3.79086 10 6 10C8.20914 10 10 8.20914 10 6C10 3.79086 8.20914 2 6 2Z"
+                fill="#222222" />
+            </svg>
+          </button>
+          <button class="btn btn--primary" type="button">Оставить заявку</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero page-hero--media" aria-label="Медиацентр">
+      <div class="container">
+        <div class="hero-block-page-inner">
+          <nav class="breadcrumb" aria-label="Хлебные крошки">
+            <a href="index.html">Главная</a>
+            <span class="breadcrumb__sep">/</span>
+            <span class="breadcrumb__current" aria-current="page">Медиацентр</span>
+          </nav>
+          <h1 class="page-hero__title">Медиацентр</h1>
+          <p class="page-hero__sub">Вебинары, статьи и&nbsp;новости SoftSnow: разбираем кейсы цифровизации, делимся
+            опытом внедрения и&nbsp;анонсируем мероприятия.</p>
+          <div class="page-hero--media__actions">
+            <a class="btn btn--outline btn--md" href="#">Подписаться на&nbsp;рассылку</a>
+            <div class="hero-socials">
+              <a href="#" class="hero-socials__link" aria-label="Rutube">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                  <circle cx="20" cy="20" r="20" fill="#FFFFFF" />
+                  <path
+                    d="M11 11h11.5c3.6 0 6.5 2.9 6.5 6.5 0 3.6-2.9 6.5-6.5 6.5H16.5V29H11V11zm5.5 4.5v4h6c1.1 0 2-.9 2-2s-.9-2-2-2h-6z"
+                    fill="#ED143B" />
+                </svg>
+              </a>
+              <a href="#" class="hero-socials__link" aria-label="ВКонтакте">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                  <circle cx="20" cy="20" r="20" fill="#FFFFFF" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M2.8 2.8C2.38419e-07 5.62666 0 10.1467 0 19.2V20.8C0 29.84 2.38419e-07 34.36 2.8 37.2C5.62666 40 10.1467 40 19.2 40H20.8C29.84 40 34.36 40 37.2 37.2C40 34.3734 40 29.8534 40 20.8V19.2C40 10.16 40 5.64 37.2 2.8C34.3734 2.38419e-07 29.8534 0 20.8 0H19.2C10.16 0 5.64 2.38419e-07 2.8 2.8ZM6.74666 12.1733C6.96 22.5734 12.16 28.8134 21.28 28.8134H21.8134V22.8666C25.16 23.2 27.6934 25.6534 28.7066 28.8134H33.44C32.9546 27.0178 32.0938 25.3454 30.9148 23.9066C29.7358 22.468 28.2652 21.2956 26.6 20.4666C28.0922 19.558 29.381 18.3512 30.3858 16.922C31.3906 15.4928 32.09 13.8717 32.44 12.16H28.1466C27.2134 15.4667 24.44 18.4666 21.8134 18.7466V12.1733H17.5066V23.6934C14.84 23.0266 11.48 19.8 11.3333 12.1733H6.74666Z"
+                    fill="#1F67F9" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="events-featured" aria-label="Не пропустите ближайшие мероприятия">
+      <div class="container">
+        <h2 class="events-featured__title">Не&nbsp;пропустите ближайшие мероприятия</h2>
+        <div class="events-featured__grid">
+          <a class="events__card events__card--wide" href="event-detail.html">
+            <img class="events__bg" src="assets/img/webinar-1.png" alt="">
+            <div class="events__info">
+              <h3 class="events__title">Стратегический рывок: как настроить системную работу над&nbsp;будущим университета</h3>
+              <div class="events__meta"><span class="events__tag">Вебинар</span><span class="events__date">22 апреля 2026</span></div>
+              <svg class="events__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
+                <use href="#icon-arrow" />
+              </svg>
+            </div>
+          </a>
+          <a class="events__card events__card--wide" href="event-detail.html">
+            <img class="events__bg" src="assets/img/webinar-2.png" alt="">
+            <div class="events__info">
+              <h3 class="events__title">Цифровая среда вуза: как связать сервисы, процессы и&nbsp;данные</h3>
+              <div class="events__meta"><span class="events__tag">Вебинар</span><span class="events__date">29 апреля 2026</span></div>
+              <svg class="events__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
+                <use href="#icon-arrow" />
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="events-list" aria-label="Все материалы медиацентра">
+      <div class="container">
+        <div class="tabs" aria-label="Фильтр материалов">
+          <button class="tabs__btn is-active" type="button">Все</button>
+          <button class="tabs__btn" type="button">Мероприятия</button>
+          <button class="tabs__btn" type="button">Статьи</button>
+          <button class="tabs__btn" type="button">Новости</button>
+        </div>
+        <div class="events-list__grid">
+          <article class="events__card">
+            <img class="events__bg" src="assets/img/webinar-1.png" alt="">
+            <div class="events__info">
+              <h3 class="events__title">Совместная конференция Политеха и&nbsp;«СофтСноу»</h3>
+              <div class="events__meta"><span class="events__tag">Конференция</span><span class="events__date">25 сентября 2025</span></div>
+              <svg class="events__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
+                <use href="#icon-arrow" />
+              </svg>
+            </div>
+          </article>
+          <article class="events__card">
+            <img class="events__bg" src="assets/img/webinar-2.png" alt="">
+            <div class="events__info">
+              <h3 class="events__title">Заказчики «СофтСноу» представили проекты на&nbsp;Directum Awards 2026</h3>
+              <div class="events__meta"><span class="events__tag">Конференция</span><span class="events__date">25 сентября 2025</span></div>
+              <svg class="events__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
+                <use href="#icon-arrow" />
+              </svg>
+            </div>
+          </article>
+          <article class="events__card">
+            <img class="events__bg" src="assets/img/webinar-3.png" alt="">
+            <div class="events__info">
+              <h3 class="events__title">КЭДО в&nbsp;вузе: опыт внедрения и&nbsp;первые результаты</h3>
+              <div class="events__meta"><span class="events__tag">Статья</span><span class="events__date">25 сентября 2025</span></div>
+              <svg class="events__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
+                <use href="#icon-arrow" />
+              </svg>
+            </div>
+          </article>
+          <article class="events__card">
+            <img class="events__bg" src="assets/img/webinar-4.png" alt="">
+            <div class="events__info">
+              <h3 class="events__title">Как оцифровать кадровые процессы университета</h3>
+              <div class="events__meta"><span class="events__tag">Статья</span><span class="events__date">25 сентября 2025</span></div>
+              <svg class="events__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
+                <use href="#icon-arrow" />
+              </svg>
+            </div>
+          </article>
+          <article class="events__card">
+            <img class="events__bg" src="assets/img/webinar-1.png" alt="">
+            <div class="events__info">
+              <h3 class="events__title">Directum Awards 2026: итоги и&nbsp;победители</h3>
+              <div class="events__meta"><span class="events__tag">Новости</span><span class="events__date">25 сентября 2025</span></div>
+              <svg class="events__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
+                <use href="#icon-arrow" />
+              </svg>
+            </div>
+          </article>
+          <article class="events__card">
+            <img class="events__bg" src="assets/img/webinar-2.png" alt="">
+            <div class="events__info">
+              <h3 class="events__title">SoftSnow на&nbsp;конференции Digital University 2026</h3>
+              <div class="events__meta"><span class="events__tag">Новости</span><span class="events__date">25 сентября 2025</span></div>
+              <svg class="events__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
+                <use href="#icon-arrow" />
+              </svg>
+            </div>
+          </article>
+          <article class="events__card">
+            <img class="events__bg" src="assets/img/webinar-3.png" alt="">
+            <div class="events__info">
+              <h3 class="events__title">Цифровой документооборот для&nbsp;вузов: чек-лист запуска</h3>
+              <div class="events__meta"><span class="events__tag">Статья</span><span class="events__date">25 сентября 2025</span></div>
+              <svg class="events__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
+                <use href="#icon-arrow" />
+              </svg>
+            </div>
+          </article>
+          <article class="events__card">
+            <img class="events__bg" src="assets/img/webinar-4.png" alt="">
+            <div class="events__info">
+              <h3 class="events__title">Стратегическая сессия «Будущее университета»</h3>
+              <div class="events__meta"><span class="events__tag">Мероприятие</span><span class="events__date">25 сентября 2025</span></div>
+              <svg class="events__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
+                <use href="#icon-arrow" />
+              </svg>
+            </div>
+          </article>
+        </div>
+        <div class="events-list__more">
+          <button class="btn btn--ghost btn--lg" type="button">Показать ещё</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" aria-label="Нужна консультация">
+      <div class="cta__body">
+        <div class="cta__content">
+          <h2 class="cta__title">Нужна консультация<br>по&nbsp;проекту?</h2>
+          <p class="cta__text">Оставьте контакты, и&nbsp;мы свяжемся с&nbsp;вами, чтобы обсудить задачу, подобрать подходящее направление и&nbsp;предложить следующий шаг</p>
+          <button class="btn btn--lg cta__btn" type="button">Оставить заявку</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="footer__brand-top">
+          <div class="footer__logo">
+            <svg class="logo__icon" width="62" height="65" viewBox="0 0 68 65" fill="none" aria-hidden="true">
+              <path d="M34 2v61M34 2L24 12M34 2l10 10M34 63l-10-10M34 63l10-10" stroke="#FFFFFF" stroke-width="3"
+                stroke-linecap="round" />
+              <path
+                d="M6 12l28 16 28-16M6 53l28-16 28 16M14 18l4 20-14 8M14 47l4-20-14-8M54 18l-4 20 14 8M54 47l-4-20 14-8"
+                stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+            </svg>
+            <span class="footer__logo-text">SOFTSNOW</span>
+          </div>
+          <p class="footer__tagline">Российский аккредитованный разработчик и&nbsp;интегратор</p>
+        </div>
+        <div class="footer__brand-bottom">
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Rutube">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                <circle cx="20" cy="20" r="20" fill="#ED143B" />
+                <path
+                  d="M11 11h11.5c3.6 0 6.5 2.9 6.5 6.5 0 3.6-2.9 6.5-6.5 6.5H16.5V29H11V11zm5.5 4.5v4h6c1.1 0 2-.9 2-2s-.9-2-2-2h-6z"
+                  fill="#fff" />
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="ВКонтакте">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_633_379)">
+                  <rect x="6" y="10" width="30" height="20" fill="white" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M2.8 2.8C2.38419e-07 5.62666 0 10.1467 0 19.2V20.8C0 29.84 2.38419e-07 34.36 2.8 37.2C5.62666 40 10.1467 40 19.2 40H20.8C29.84 40 34.36 40 37.2 37.2C40 34.3734 40 29.8534 40 20.8V19.2C40 10.16 40 5.64 37.2 2.8C34.3734 2.38419e-07 29.8534 0 20.8 0H19.2C10.16 0 5.64 2.38419e-07 2.8 2.8ZM6.74666 12.1733C6.96 22.5734 12.16 28.8134 21.28 28.8134H21.8134V22.8666C25.16 23.2 27.6934 25.6534 28.7066 28.8134H33.44C32.9546 27.0178 32.0938 25.3454 30.9148 23.9066C29.7358 22.468 28.2652 21.2956 26.6 20.4666C28.0922 19.558 29.381 18.3512 30.3858 16.922C31.3906 15.4928 32.09 13.8717 32.44 12.16H28.1466C27.2134 15.4667 24.44 18.4666 21.8134 18.7466V12.1733H17.5066V23.6934C14.84 23.0266 11.48 19.8 11.3333 12.1733H6.74666Z"
+                    fill="#1F67F9" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_633_379">
+                    <rect width="40" height="40" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </a>
+          </div>
+          <div class="footer__contacts">
+            <a href="tel:+78123201130">+7 (812) 320-11-30</a>
+            <a href="mailto:info@softsnow.ru">info@softsnow.ru</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__right">
+        <div class="footer__links">
+          <ul class="footer__col">
+            <li><a href="solutions.html">ЭДО</a></li>
+            <li><a href="solutions.html">КЭДО</a></li>
+            <li><a href="solutions.html">Корпоративные порталы</a></li>
+            <li><a href="solutions.html">Управление стратегией</a></li>
+            <li><a href="solutions.html">Управление проектами</a></li>
+            <li><a href="solutions.html">Решения для вузов</a></li>
+          </ul>
+          <ul class="footer__col">
+            <li><a href="index.html#about">О компании</a></li>
+            <li><a href="index.html#industries">Отрасли</a></li>
+            <li><a href="projects.html">Кейсы</a></li>
+            <li><a href="clients.html">Клиенты</a></li>
+            <li><a href="events.html">Мероприятия</a></li>
+            <li><a href="index.html#cta">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="footer__legal">
+          <a href="#">Политика конфиденциальности</a>
+          <a href="#">Политика обработки персональных данных</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="icon-arrow" viewBox="0 0 17 14">
+        <path
+          d="M14.8975 7.17188L11.2061 10.5381L9.25488 12.5244C9.18457 12.5947 9.13184 12.6768 9.09668 12.7705C9.06152 12.8701 9.04395 12.9727 9.04395 13.0781C9.04395 13.2949 9.11719 13.4736 9.26367 13.6143C9.41602 13.7607 9.60059 13.834 9.81738 13.834C10.0283 13.834 10.2246 13.7461 10.4062 13.5703L16.2246 7.76074C16.4062 7.59082 16.4971 7.39453 16.4971 7.17188C16.4971 6.94922 16.4062 6.75 16.2246 6.57422L10.3887 0.74707C10.2188 0.583008 10.0283 0.500977 9.81738 0.500977C9.60059 0.500977 9.41602 0.571289 9.26367 0.711914C9.11719 0.858398 9.04395 1.04004 9.04395 1.25684C9.04395 1.3623 9.06152 1.46484 9.09668 1.56445C9.1377 1.66406 9.19043 1.74902 9.25488 1.81934L11.2061 3.80566L14.8975 7.17188ZM14.8887 6.52148L12.0498 6.38086H5.9502C4.87207 6.38086 4.01367 6.22559 3.375 5.91504C2.74219 5.60449 2.28516 5.1123 2.00391 4.43848C1.72852 3.76465 1.59082 2.88281 1.59082 1.79297C1.59668 1.59961 1.59961 1.41797 1.59961 1.24805C1.60547 1.07812 1.61133 0.922852 1.61719 0.782227C1.61719 0.553711 1.54102 0.366211 1.38867 0.219727C1.24219 0.0732422 1.05469 0 0.826172 0C0.673828 0 0.544922 0.0322266 0.439453 0.0966797C0.339844 0.155273 0.260742 0.234375 0.202148 0.333984C0.143555 0.433594 0.102539 0.541992 0.0791016 0.65918C0.0498047 0.793945 0.0292969 0.963867 0.0175781 1.16895C0.00585938 1.37988 0 1.61426 0 1.87207C0 3.99902 0.457031 5.54297 1.37109 6.50391C2.28516 7.4707 3.78516 7.9541 5.87109 7.9541H12.0498L14.8799 7.82227C15.0615 7.81055 15.2139 7.74316 15.3369 7.62012C15.4658 7.49707 15.5303 7.34766 15.5303 7.17188C15.5303 6.99609 15.4688 6.84668 15.3457 6.72363C15.2227 6.60059 15.0703 6.5332 14.8887 6.52148Z"
+          fill="currentColor" />
+      </symbol>
+      <symbol id="icon-arrow-right" viewBox="0 0 15 14">
+        <path
+          d="M7.76367 13.6914L6.33789 12.2656L8.76953 9.84375C9.10156 9.51172 9.44987 9.17643 9.81445 8.83789C10.179 8.49284 10.5404 8.1543 10.8984 7.82227C10.6055 7.8418 10.306 7.85807 10 7.87109C9.70052 7.8776 9.40755 7.88086 9.12109 7.88086H0V5.81055H9.12109C9.40755 5.81055 9.70052 5.81706 10 5.83008C10.306 5.83659 10.6022 5.84961 10.8887 5.86914C10.5306 5.53711 10.1693 5.20182 9.80469 4.86328C9.44661 4.52474 9.10156 4.18945 8.76953 3.85742L6.33789 1.43555L7.76367 0L14.6094 6.8457L7.76367 13.6914Z"
+          fill="currentColor" />
+      </symbol>
+      <symbol id="icon-arrow-left" viewBox="0 0 15 14">
+        <path
+          d="M6.8457 13.6914L8.27148 12.2656L5.83984 9.84375C5.50781 9.51172 5.15951 9.17643 4.79492 8.83789C4.43034 8.49284 4.06901 8.1543 3.71094 7.82227C4.00391 7.8418 4.30339 7.85807 4.60938 7.87109C4.90885 7.8776 5.20182 7.88086 5.48828 7.88086H14.6094V5.81055H5.48828C5.20182 5.81055 4.90885 5.81706 4.60938 5.83008C4.30339 5.83659 4.00716 5.84961 3.7207 5.86914C4.07878 5.53711 4.4401 5.20182 4.80469 4.86328C5.16276 4.52474 5.50781 4.18945 5.83984 3.85742L8.27148 1.43555L6.8457 0L0 6.8457L6.8457 13.6914Z"
+          fill="currentColor" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,88 +1,219 @@
+/* ===== Shared components ===== */
+
+/* Container */
 .container {
   width: 100%;
-  max-width: 1870px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 var(--section-px);
+  padding: 0 25px;
 }
 
+/* Card */
 .card {
   background: var(--color-white);
   border-radius: var(--radius-lg);
+  overflow: hidden;
 }
 
+.card--project {
+  height: 460px;
+  border-radius: var(--radius-lg);
+}
+
+.card--company {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  padding: 0 40px;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+}
+.card--company img {
+  max-width: 100%;
+  max-height: 110px;
+  object-fit: contain;
+}
+
+/* Breadcrumb (listing/detail page heroes) */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 90px;
+  font-size: var(--fs-body-14);
+  color: var(--color-grey);
+  letter-spacing: 0.02rem;
+}
+
+.breadcrumb a {
+  color: var(--color-grey);
+}
+
+.breadcrumb a:hover {
+  color: var(--color-sea);
+}
+
+.breadcrumb__sep {
+  color: var(--color-grey);
+}
+
+.breadcrumb__current {
+  color: var(--color-black);
+}
+
+/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-sm);
-  height: 64px;
-  padding: 0 30px;
+  gap: var(--gap-md);
+  height: var(--control-h);
+  padding: 0 28px;
+  font-size: var(--fs-body-16);
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   border-radius: var(--radius-xl);
+  color: var(--color-black);
+  transition: all 0.4s;
+}
+.btn--primary {
   background: var(--color-sea);
   color: var(--color-white);
-  font-weight: 600;
-  font-size: var(--btn-16);
-  letter-spacing: -0.16px;
-  transition: opacity 0.2s;
+}
+.btn--primary:hover {
+  background: var(--color-blue-alt);
+}
+.btn--outline-white {
+  border: 2px solid var(--color-white);
+  color: var(--color-white);
 }
 
-.btn:hover {
-  opacity: 0.85;
+.btn--outline {
+  border: 2px solid var(--color-sea);
+}
+.btn--outline:hover {
+  border-color: var(--color-sea);
+  color: var(--color-sea);
 }
 
-.btn--ghost {
-  background: var(--color-white);
+/* Dark outline — transparent, black border/text (event-detail hero) */
+.btn--outline-dark {
+  border: 2px solid var(--color-black);
   color: var(--color-black);
-  border: 1.5px solid var(--color-black);
+  font-weight: 600;
+}
+.btn--outline-dark:hover {
+  background: var(--color-black);
+  color: var(--color-white);
 }
 
+/* Live ghost (single source of truth — was duplicated/overridden from sections.css) */
+.btn--ghost {
+  background: transparent;
+  border: 2px solid var(--color-sea);
+  color: var(--color-black);
+  font-weight: 500;
+}
 .btn--ghost:hover {
   background: var(--bg-light-alt);
 }
 
-.btn--sm {
-  height: 64px;
-  padding: 0 30px;
-  border-radius: var(--radius-xl);
-  font-size: var(--fs-body-16);
-}
-
-.btn--header {
-  width: 184px;
-}
-
 .btn--search {
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  background: var(--color-white);
-  border-radius: var(--radius-2xl);
+    color: var(--color-grey);
+    background: #fff;
+    padding: 12px 12px;
+    width: 40px;
+    height: 40px;
 }
 
+.btn--search:hover {
+
+}
+
+/* Button variants:
+   .btn--primary — залитая (filled, brand sea)
+   .btn--outline — с рамкой прозрачная (transparent + border)
+   .btn--ghost   — с рамкой прозрачная, sea-accent border
+   .btn--white   — белая (white fill)
+   .btn--black   — чёрная (black fill) */
+
+.btn--white {
+  background: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid var(--color-white);
+}
+.btn--white:hover {
+  background: var(--color-sea);
+  border-color: var(--color-sea);
+  color: var(--color-white);
+}
+
+.btn--black {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+.btn--black:hover {
+  background: var(--color-sea);
+  color: var(--color-white);
+}
+
+/* Width modifiers for repeated 460px / 262px buttons across sections */
+.btn--md {
+  width: 262px;
+}
+.btn--lg {
+  width: 460px;
+}
+
+/* Carousel nav */
 .carousel-nav {
   display: flex;
   gap: var(--gap-sm);
-  flex-shrink: 0;
 }
 
 .carousel-nav__btn {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  border: 1.5px solid var(--color-black);
-  font-size: var(--fs-body-20);
-  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s, color 0.2s;
+  width: 65px;
+  height: 65px;
+  border: var(--border-default);
+  border-radius: var(--radius-full);
+  color: var(--color-black);
+  border: 2px solid var(--color-sea);
+  transition: all 0.4s;
 }
-
-.carousel-nav__btn:last-child {
-  transform: scaleX(-1);
-}
-
 .carousel-nav__btn:hover {
-  background: var(--color-black);
+  border-color: var(--color-sea);
+  color: var(--color-sea);
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: var(--gap-md);
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.tabs__btn {
+  display: inline-flex;
+  align-items: center;
+  height: var(--control-h);
+  padding: 0 30px;
+  font-size: var(--fs-body-16);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--color-grey);
+  border-radius: var(--radius-xl);
+  transition: all 0.4s;
+}
+.tabs__btn:hover {
+  color: var(--color-black);
+}
+.tabs__btn.is-active {
+  background: var(--color-sea);
   color: var(--color-white);
 }

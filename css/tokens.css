@@ -2,7 +2,7 @@
   /* Colors */
   --color-black: #222222;
   --color-white: #FFFFFF;
-  --color-sea: #1342F3;
+  --color-sea: #216CF3;
   --color-grey: rgba(34, 34, 34, 0.7);
   --color-overlay: rgba(0, 0, 0, 0.2);
   --color-dark-navy: #100943;
@@ -33,21 +33,18 @@
   --fs-body-30: 30px;
   --fs-body-24: 24px;
   --fs-body-20: 20px;
+  --fs-body-18: 18px;
   --fs-body-16: 16px;
   --fs-body-14: 14px;
   --fs-body-12: 12px;
 
-  /* Buttons */
-  --btn-16: 16px;
-  --btn-20: 20px;
+  /* Controls */
+  --control-h: 64px;
 
   /* Spacing */
   --section-py: 120px;
   --section-py-md: 80px;
   --section-px: 40px;
-  --card-p: 30px 31px;
-  --card-p-lg: 60px;
-  --card-p-sm: 40px 0;
   --gap-xs: 8px;
   --gap-sm: 10px;
   --gap-md: 16px;
@@ -80,4 +77,16 @@
   --opacity-50: 0.5;
   --opacity-60: 0.6;
   --opacity-70: 0.7;
+
+  /* Shadows */
+  --shadow-popover: 0 20px 50px rgba(34, 34, 34, 0.12);
+
+  /* Transitions */
+  --transition-fast: 0.2s;
+  --transition-base: 0.3s;
+  --transition-slow: 0.35s;
+
+  /* Z-index */
+  --z-header: 2;
+  --z-popover: 20;
 }
