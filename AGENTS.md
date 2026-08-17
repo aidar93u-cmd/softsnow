@@ -278,3 +278,12 @@ New statistics         NEW: .stats
 -  Цифровая трансформация вуза
 
 Все страницы в корне проекта, пути без `../`. Связи: главная → каталоги → детальные страницы; проекты — без детальной страницы.
+
+https://taif.tw1.ru/index.html
+https://taif.tw1.ru/solutions.html
+https://taif.tw1.ru/solution-detail.html
+https://taif.tw1.ru/clients.html
+https://taif.tw1.ru/client-detail.html
+https://taif.tw1.ru/projects.html
+https://taif.tw1.ru/events.html
+https://taif.tw1.ru/event-detail.html

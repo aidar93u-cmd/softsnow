@@ -172,6 +172,25 @@ Detail проекта, фрейм `1128:8159` (COMPONENT, fileKey `tK0WpkPKL3pQG
 
 Особенности: `.client-intro--project` — вариант `.client-intro` (текст 16/400 + `.client-intro__name` 16/500, фото 890×560 справа). Цели — grid 4 колонки, числа/синяя карточка `#1342f3` напрямую (не токен). `.arch` — чистый CSS-grid диаграмма архитектуры (без SVG-файлов, стопки копий через box-shadow). `.video__poster` 1790×700 с play 80×80 (плейсхолдер `project-1.png`). `.gallery__swiper` — swiper slidesPerView 1 + точки `.gallery__dot` (syncDots, `slideTo(i)`, aria-selected) в `js/main.js`. Плейсхолдеры помечены `ponytail:` (видео `project-1.png`, галерея `project-2.png`, клиент `o-kliente.jpg`) — под замену реальными ассетами.
 
+### Экосистема (directum.html)
+
+Лендинг про Directum, SECTION `1060:18355` (fileKey `tK0WpkPKL3pQGAyCfynr3b`). Стили в `css/sections.css` (блок «Directum page»). Собрана сплайсом: head/header/footer/sprite из `index.html` + `<main>` из `C:\Temp\opencode\directum-main.html`.
+
+| # | Figma Section | Code | Status |
+|---|---|---|---|
+| 1 | Header | `.header` | done (reused) |
+| 2 | Hero (bg 1870×758, h1 1021px, 2 заметки) | `.hero` + `.event-hero` + `.directum-hero__*` | done |
+| 3 | «Экосистема решений Directum» (6 карточек без стрелки) | `.partners` + `.partners--eco` | done |
+| 4 | «Почему выбирают Directum» (4 пункта) | `.reasons` (NEW) | done |
+| 5 | CTA синий «Расскажите о вашей задаче» | `.cta--blue` + `.cta--blue--directum` | done |
+| 6 | «Проекты на базе экосистемы» (3 карты, name 24px) | `.projects` + `.projects--eco` | done |
+| 7 | «Варианты внедрения» (3 карточки, средняя синяя + бейдж) | `.vnedrenie` (NEW) | done |
+| 8 | «SoftSnow — официальный партнёр Directum» | `.d-partner` (NEW) | done |
+| 9 | CTA светлый «Подберём решение под ваш контур?» | `.cta` (reused) | done |
+| 10 | Footer | `.footer` | done (reused) |
+
+Особенности: межсекционные отступы 10px. `.partners--eco` — карточки `<article>` (не ссылка), `.partners__arrow` скрыт, tag 16px. Иконки «Почему выбирают» — inline-SVG 64×64 (viewBox 64 + translate(12 12)) stroke `--color-sea`. Свайперы `.partners__swiper`/`.projects__swiper` — существующие инициализации в `js/main.js`. Плейсхолдеры `ponytail:` — 6 лого продуктов (`.partners__logo--eco`), лого Directum (`.d-partner__logo--placeholder`); hero-bg `hero-bg.jpg`; CTA `cta-bg.png`. Отклонения — см. план `2026-08-17-directum-page.md` (цвет `--color-sea` вместо `#1342F3`, бейдж «Популярный» top 30/right 40, lamp собрана вручную).
+
 ## Known Discrepancies
 
 | № | Секция | Расхождение | Статус |
