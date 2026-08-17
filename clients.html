@@ -96,69 +96,365 @@
 
     <section class="c-clients" aria-label="Наши клиенты">
       <div class="container">
-        <h2 class="clients__heading">Компании, которые нам доверяют</h2>
         <div class="c-clients__filters" role="tablist" aria-label="Фильтр по отраслям">
           <button class="c-filter is-active" type="button" data-filter="all">Все отрасли</button>
           <button class="c-filter" type="button" data-filter="vuz">Высшие учебные заведения</button>
           <button class="c-filter" type="button" data-filter="gov">Государственные учреждения</button>
           <button class="c-filter" type="button" data-filter="biz">Бизнес</button>
         </div>
-        <div class="c-clients__grid" id="clientsGrid"></div>
-        <div class="c-clients__more">
-          <button class="btn btn--ghost btn--lg" type="button" id="clientsShowMore">Показать еще</button>
+        <div class="c-clients__grid" id="clientsGrid">
+          <a class="c-clients__card" href="#" data-category="vuz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Московский государственный институт международных отношений (МГИМО)</h3>
+              <p class="c-clients__desc">Высшее образование</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-1.png" alt="МГИМО" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="biz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Российский производитель золота и серебра Полиметалл</h3>
+              <p class="c-clients__desc">Горнодобывающая промышленность</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-2.png" alt="Полиметалл" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="gov">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Вологодская Областная Энергетическая Компания (ВОЭК)</h3>
+              <p class="c-clients__desc">Энергетика</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-3.png" alt="ВОЭК" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="biz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Solidcore Resources</h3>
+              <p class="c-clients__desc">Горнодобывающая промышленность</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-4.png" alt="Solidcore Resources" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="vuz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Московский государственный юридический университет имени О. Е. Кутафина</h3>
+              <p class="c-clients__desc">Высшее образование</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-5.png" alt="МГЮА" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="vuz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Санкт-Петербургский политехнический университет Петра Великого</h3>
+              <p class="c-clients__desc">Высшее образование</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-6.png" alt="СПбПУ" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="vuz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Российская академия правосудия</h3>
+              <p class="c-clients__desc">Высшее образование</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-7.png" alt="Российская академия правосудия" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="vuz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Финансовый университет при Правительстве Российской Федерации</h3>
+              <p class="c-clients__desc">Высшее образование</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-8.png" alt="Финансовый университет" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="vuz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Московский финансово-юридический университет</h3>
+              <p class="c-clients__desc">Высшее образование</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-9.png" alt="МФЮА" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="biz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Азиатско-Тихоокеанский банк</h3>
+              <p class="c-clients__desc">Банковский сектор</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-10.png" alt="Азиатско-Тихоокеанский банк" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="vuz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Санкт-Петербургский государственный университет</h3>
+              <p class="c-clients__desc">Высшее образование</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-11.png" alt="СПбГУ" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="biz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">ЮНИКОН-Информ</h3>
+              <p class="c-clients__desc">ИТ и консалтинг</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-12.png" alt="ЮНИКОН-Информ" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="vuz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Корпорация «Синергия»</h3>
+              <p class="c-clients__desc">Образование</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-13.png" alt="Корпорация «Синергия»" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="vuz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Первый Санкт-Петербургский государственный медицинский университет им. акад. И.П. Павлова</h3>
+              <p class="c-clients__desc">Медицинское образование</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-14.png" alt="ПСПбГМУ им. Павлова" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="vuz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Нижегородский государственный университет им. Н.И. Лобачевского</h3>
+              <p class="c-clients__desc">Высшее образование</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-15.png" alt="ННГУ им. Лобачевского" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="gov">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Общероссийский народный фронт</h3>
+              <p class="c-clients__desc">Общественная организация</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-16.png" alt="ОНФ" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="vuz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Ставропольский государственный аграрный университет</h3>
+              <p class="c-clients__desc">Аграрное образование</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-17.png" alt="СтГАУ" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="vuz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Северо-Восточный федеральный университет имени М. К. Аммосова</h3>
+              <p class="c-clients__desc">Высшее образование</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-18.png" alt="СВФУ им. Аммосова" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="vuz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">СПбГЭТУ «ЛЭТИ»</h3>
+              <p class="c-clients__desc">Высшее образование</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-19.png" alt="СПбГЭТУ «ЛЭТИ»" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="vuz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Московский международный университет</h3>
+              <p class="c-clients__desc">Высшее образование</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-20.png" alt="Московский международный университет" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="vuz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Югорский государственный университет</h3>
+              <p class="c-clients__desc">Высшее образование</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-21.png" alt="Югорский ГУ" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="biz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Коммерсантъ DPO «Корпоративный университет»</h3>
+              <p class="c-clients__desc">Корпоративное обучение</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-22.png" alt="Коммерсантъ DPO" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="vuz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Омский государственный технический университет</h3>
+              <p class="c-clients__desc">Высшее образование</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-23.png" alt="ОмГТУ" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="vuz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Набережночелнинский государственный педагогический университет</h3>
+              <p class="c-clients__desc">Педагогическое образование</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-24.png" alt="НЧГПУ" width="136" height="136"></div>
+          </a>
+          <a class="c-clients__card" href="#" data-category="vuz">
+            <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            <div class="c-clients__body">
+              <h3 class="c-clients__name">Владимирский государственный университет им. А. Г. и Н. Г. Столетовых</h3>
+              <p class="c-clients__desc">Высшее образование</p>
+            </div>
+            <div class="c-clients__logo"><img src="assets/img/clients/client-25.png" alt="ВлГУ им. Столетовых" width="136" height="136"></div>
+          </a>
+        </div>
+        <div class="c-clients__more" id="clientsMore" hidden>
+          <button class="btn btn--ghost btn--lg" type="button" id="clientsShowMore">Показать ещё</button>
         </div>
       </div>
     </section>
 
-    <section class="projects c-projects" id="projects" aria-label="Реализованные проекты">
+    <section class="projects" id="projects" aria-label="Реализованные проекты">
       <div class="container">
         <div class="projects__head">
           <div>
             <h2 class="projects__heading">Реализованные <br>проекты</h2>
-            <p class="projects__sub">Не просто внедряем решения, а&nbsp;выстраиваем рабочую систему: с&nbsp;понятной логикой проекта, этапами запуска и&nbsp;результатом, который можно измерить.</p>
-          </div>
-          <div class="projects__actions">
-            <button class="btn btn--ghost btn--md projects__btn" type="button">Все проекты</button>
+            <div class="projects__bottom">
+              <p class="projects__sub">Не просто внедряем решения, а&nbsp;выстраиваем рабочую систему: с&nbsp;понятной
+                логикой проекта, этапами запуска и&nbsp;результатом, который можно измерить.</p>
+              <div class="projects__actions">
+                <button class="btn btn--ghost btn--md projects__btn" type="button">Все проекты</button>
+                <div class="carousel-nav">
+                  <button class="carousel-nav__btn" type="button" data-scroll-prev aria-label="Назад"><svg width="15"
+                      height="14" viewBox="0 0 15 14" aria-hidden="true">
+                      <use href="#icon-arrow-left" />
+                    </svg></button>
+                  <button class="carousel-nav__btn" type="button" data-scroll-next aria-label="Вперёд"><svg width="15"
+                      height="14" viewBox="0 0 15 14" aria-hidden="true">
+                      <use href="#icon-arrow-right" />
+                    </svg></button>
+                </div>
+              </div>
+    
+            </div>
           </div>
         </div>
         <div class="swiper projects__swiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide"><article class="card projects__card">
-              <div class="projects__top">
-                <h3 class="projects__name">Президентская академия</h3>
-                <svg class="projects__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
-              </div>
-              <p class="projects__text">В РАНХиГС успешно завершён переход на Directum RX. Создана отказоустойчивая архитектура, пользователи работают через веб и мобильные приложения. Поэтапно оцифрованы ключевые процессы, внедрены архив и ИИ-сервисы Directum RX Intelligence</p>
-              <img class="projects__logo" src="assets/img/project-1.png" alt="Президентская академия" width="180" height="180">
-            </article></div>
-            <div class="swiper-slide"><article class="card projects__card">
-              <div class="projects__top">
-                <h3 class="projects__name">Вологодская Областная Энергетическая Компания</h3>
-                <svg class="projects__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
-              </div>
-              <p class="projects__text">Цифровая трансформация документооборота Президентской академии на базе решений Directum</p>
-              <img class="projects__logo" src="assets/img/project-2.png" alt="Вологодская Областная Энергетическая Компания" width="180" height="180">
-            </article></div>
-            <div class="swiper-slide"><article class="card projects__card">
-              <div class="projects__top">
-                <h3 class="projects__name">Вологодская Областная Энергетическая Компания</h3>
-                <svg class="projects__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
-              </div>
-              <p class="projects__text">Цифровая трансформация документооборота Президентской академии на базе решений Directum</p>
-              <span class="projects__year">2025</span>
-              <img class="projects__logo projects__logo--sm" src="assets/img/project-2-small.png" alt="Вологодская Областная Энергетическая Компания" width="100" height="100">
-            </article></div>
+            <div class="swiper-slide">
+              <a class="card projects__card" href="projects.html">
+                <div class="projects__top">
+                  <h3 class="projects__name">Президентская академия</h3>
+                  <svg class="projects__arrow" width="13" height="11" viewBox="0 0 13 11" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M11.5869 5.18164L8.71582 2.56348L7.19824 1.01855C7.14355 0.963867 7.10254 0.900065 7.0752 0.827148C7.04785 0.749674 7.03418 0.669922 7.03418 0.587891C7.03418 0.419271 7.09115 0.280273 7.20508 0.170898C7.32357 0.0569661 7.46712 0 7.63574 0C7.7998 0 7.95247 0.0683594 8.09375 0.205078L12.6191 4.72363C12.7604 4.85579 12.8311 5.00846 12.8311 5.18164C12.8311 5.35482 12.7604 5.50977 12.6191 5.64648L8.08008 10.1787C7.94792 10.3063 7.7998 10.3701 7.63574 10.3701C7.46712 10.3701 7.32357 10.3154 7.20508 10.2061C7.09115 10.0921 7.03418 9.95085 7.03418 9.78223C7.03418 9.7002 7.04785 9.62044 7.0752 9.54297C7.1071 9.46549 7.14811 9.39941 7.19824 9.34473L8.71582 7.7998L11.5869 5.18164ZM11.5801 5.6875L9.37207 5.79688H4.62793C3.78939 5.79688 3.12174 5.91764 2.625 6.15918C2.13281 6.40072 1.77734 6.78353 1.55859 7.30762C1.3444 7.83171 1.2373 8.51758 1.2373 9.36523C1.24186 9.51562 1.24414 9.6569 1.24414 9.78906C1.2487 9.92122 1.25326 10.042 1.25781 10.1514C1.25781 10.3291 1.19857 10.4749 1.08008 10.5889C0.966146 10.7028 0.820312 10.7598 0.642578 10.7598C0.524089 10.7598 0.423828 10.7347 0.341797 10.6846C0.264323 10.639 0.202799 10.5775 0.157227 10.5C0.111654 10.4225 0.0797526 10.3382 0.0615234 10.2471C0.038737 10.1423 0.0227865 10.0101 0.0136719 9.85059C0.00455729 9.68652 0 9.50423 0 9.30371C0 7.64941 0.355469 6.44857 1.06641 5.70117C1.77734 4.94922 2.94401 4.57324 4.56641 4.57324H9.37207L11.5732 4.67578C11.7145 4.6849 11.833 4.7373 11.9287 4.83301C12.029 4.92871 12.0791 5.04492 12.0791 5.18164C12.0791 5.31836 12.0312 5.43457 11.9355 5.53027C11.8398 5.62598 11.7214 5.67839 11.5801 5.6875Z"
+                      fill="#222222" />
+                  </svg>
+    
+                </div>
+                <p class="projects__text">В РАНХиГС успешно завершён переход на Directum RX. Создана отказоустойчивая
+                  архитектура, пользователи работают через веб и мобильные приложения. Поэтапно оцифрованы ключевые
+                  процессы, внедрены архив и ИИ-сервисы Directum RX Intelligence</p>
+                <img class="projects__logo" src="assets/img/project-1.png" alt="Президентская академия" width="180"
+                  height="180">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a class="card projects__card" href="projects.html">
+                <div class="projects__top">
+                  <h3 class="projects__name">Вологодская Областная Энергетическая Компания</h3>
+                  <svg class="projects__arrow" width="13" height="11" viewBox="0 0 13 11" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M11.5869 5.18164L8.71582 2.56348L7.19824 1.01855C7.14355 0.963867 7.10254 0.900065 7.0752 0.827148C7.04785 0.749674 7.03418 0.669922 7.03418 0.587891C7.03418 0.419271 7.09115 0.280273 7.20508 0.170898C7.32357 0.0569661 7.46712 0 7.63574 0C7.7998 0 7.95247 0.0683594 8.09375 0.205078L12.6191 4.72363C12.7604 4.85579 12.8311 5.00846 12.8311 5.18164C12.8311 5.35482 12.7604 5.50977 12.6191 5.64648L8.08008 10.1787C7.94792 10.3063 7.7998 10.3701 7.63574 10.3701C7.46712 10.3701 7.32357 10.3154 7.20508 10.2061C7.09115 10.0921 7.03418 9.95085 7.03418 9.78223C7.03418 9.7002 7.04785 9.62044 7.0752 9.54297C7.1071 9.46549 7.14811 9.39941 7.19824 9.34473L8.71582 7.7998L11.5869 5.18164ZM11.5801 5.6875L9.37207 5.79688H4.62793C3.78939 5.79688 3.12174 5.91764 2.625 6.15918C2.13281 6.40072 1.77734 6.78353 1.55859 7.30762C1.3444 7.83171 1.2373 8.51758 1.2373 9.36523C1.24186 9.51562 1.24414 9.6569 1.24414 9.78906C1.2487 9.92122 1.25326 10.042 1.25781 10.1514C1.25781 10.3291 1.19857 10.4749 1.08008 10.5889C0.966146 10.7028 0.820312 10.7598 0.642578 10.7598C0.524089 10.7598 0.423828 10.7347 0.341797 10.6846C0.264323 10.639 0.202799 10.5775 0.157227 10.5C0.111654 10.4225 0.0797526 10.3382 0.0615234 10.2471C0.038737 10.1423 0.0227865 10.0101 0.0136719 9.85059C0.00455729 9.68652 0 9.50423 0 9.30371C0 7.64941 0.355469 6.44857 1.06641 5.70117C1.77734 4.94922 2.94401 4.57324 4.56641 4.57324H9.37207L11.5732 4.67578C11.7145 4.6849 11.833 4.7373 11.9287 4.83301C12.029 4.92871 12.0791 5.04492 12.0791 5.18164C12.0791 5.31836 12.0312 5.43457 11.9355 5.53027C11.8398 5.62598 11.7214 5.67839 11.5801 5.6875Z"
+                      fill="#222222" />
+                  </svg>
+                </div>
+                <p class="projects__text">Цифровая трансформация документооборота Президентской академии на базе решений
+                  Directum</p>
+                <img class="projects__logo" src="assets/img/project-2.png"
+                  alt="Вологодская Областная Энергетическая Компания" width="180" height="180">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a class="card projects__card" href="projects.html">
+                <div class="projects__top">
+                  <h3 class="projects__name">Вологодская Областная Энергетическая Компания</h3>
+                  <svg class="projects__arrow" width="13" height="11" viewBox="0 0 13 11" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M11.5869 5.18164L8.71582 2.56348L7.19824 1.01855C7.14355 0.963867 7.10254 0.900065 7.0752 0.827148C7.04785 0.749674 7.03418 0.669922 7.03418 0.587891C7.03418 0.419271 7.09115 0.280273 7.20508 0.170898C7.32357 0.0569661 7.46712 0 7.63574 0C7.7998 0 7.95247 0.0683594 8.09375 0.205078L12.6191 4.72363C12.7604 4.85579 12.8311 5.00846 12.8311 5.18164C12.8311 5.35482 12.7604 5.50977 12.6191 5.64648L8.08008 10.1787C7.94792 10.3063 7.7998 10.3701 7.63574 10.3701C7.46712 10.3701 7.32357 10.3154 7.20508 10.2061C7.09115 10.0921 7.03418 9.95085 7.03418 9.78223C7.03418 9.7002 7.04785 9.62044 7.0752 9.54297C7.1071 9.46549 7.14811 9.39941 7.19824 9.34473L8.71582 7.7998L11.5869 5.18164ZM11.5801 5.6875L9.37207 5.79688H4.62793C3.78939 5.79688 3.12174 5.91764 2.625 6.15918C2.13281 6.40072 1.77734 6.78353 1.55859 7.30762C1.3444 7.83171 1.2373 8.51758 1.2373 9.36523C1.24186 9.51562 1.24414 9.6569 1.24414 9.78906C1.2487 9.92122 1.25326 10.042 1.25781 10.1514C1.25781 10.3291 1.19857 10.4749 1.08008 10.5889C0.966146 10.7028 0.820312 10.7598 0.642578 10.7598C0.524089 10.7598 0.423828 10.7347 0.341797 10.6846C0.264323 10.639 0.202799 10.5775 0.157227 10.5C0.111654 10.4225 0.0797526 10.3382 0.0615234 10.2471C0.038737 10.1423 0.0227865 10.0101 0.0136719 9.85059C0.00455729 9.68652 0 9.50423 0 9.30371C0 7.64941 0.355469 6.44857 1.06641 5.70117C1.77734 4.94922 2.94401 4.57324 4.56641 4.57324H9.37207L11.5732 4.67578C11.7145 4.6849 11.833 4.7373 11.9287 4.83301C12.029 4.92871 12.0791 5.04492 12.0791 5.18164C12.0791 5.31836 12.0312 5.43457 11.9355 5.53027C11.8398 5.62598 11.7214 5.67839 11.5801 5.6875Z"
+                      fill="#222222" />
+                  </svg>
+                </div>
+                <p class="projects__text">Цифровая трансформация документооборота Президентской академии на базе решений
+                  Directum</p>
+                <img class="projects__logo " src="assets/img/project-2-small.png"
+                  alt="Вологодская Областная Энергетическая Компания" width="100" height="100">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a class="card projects__card" href="projects.html">
+                <div class="projects__top">
+                  <h3 class="projects__name">Президентская академия</h3>
+                  <svg class="projects__arrow" width="13" height="11" viewBox="0 0 13 11" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M11.5869 5.18164L8.71582 2.56348L7.19824 1.01855C7.14355 0.963867 7.10254 0.900065 7.0752 0.827148C7.04785 0.749674 7.03418 0.669922 7.03418 0.587891C7.03418 0.419271 7.09115 0.280273 7.20508 0.170898C7.32357 0.0569661 7.46712 0 7.63574 0C7.7998 0 7.95247 0.0683594 8.09375 0.205078L12.6191 4.72363C12.7604 4.85579 12.8311 5.00846 12.8311 5.18164C12.8311 5.35482 12.7604 5.50977 12.6191 5.64648L8.08008 10.1787C7.94792 10.3063 7.7998 10.3701 7.63574 10.3701C7.46712 10.3701 7.32357 10.3154 7.20508 10.2061C7.09115 10.0921 7.03418 9.95085 7.03418 9.78223C7.03418 9.7002 7.04785 9.62044 7.0752 9.54297C7.1071 9.46549 7.14811 9.39941 7.19824 9.34473L8.71582 7.7998L11.5869 5.18164ZM11.5801 5.6875L9.37207 5.79688H4.62793C3.78939 5.79688 3.12174 5.91764 2.625 6.15918C2.13281 6.40072 1.77734 6.78353 1.55859 7.30762C1.3444 7.83171 1.2373 8.51758 1.2373 9.36523C1.24186 9.51562 1.24414 9.6569 1.24414 9.78906C1.2487 9.92122 1.25326 10.042 1.25781 10.1514C1.25781 10.3291 1.19857 10.4749 1.08008 10.5889C0.966146 10.7028 0.820312 10.7598 0.642578 10.7598C0.524089 10.7598 0.423828 10.7347 0.341797 10.6846C0.264323 10.639 0.202799 10.5775 0.157227 10.5C0.111654 10.4225 0.0797526 10.3382 0.0615234 10.2471C0.038737 10.1423 0.0227865 10.0101 0.0136719 9.85059C0.00455729 9.68652 0 9.50423 0 9.30371C0 7.64941 0.355469 6.44857 1.06641 5.70117C1.77734 4.94922 2.94401 4.57324 4.56641 4.57324H9.37207L11.5732 4.67578C11.7145 4.6849 11.833 4.7373 11.9287 4.83301C12.029 4.92871 12.0791 5.04492 12.0791 5.18164C12.0791 5.31836 12.0312 5.43457 11.9355 5.53027C11.8398 5.62598 11.7214 5.67839 11.5801 5.6875Z"
+                      fill="#222222" />
+                  </svg>
+    
+                </div>
+                <p class="projects__text">В РАНХиГС успешно завершён переход на Directum RX. Создана отказоустойчивая
+                  архитектура, пользователи работают через веб и мобильные приложения. Поэтапно оцифрованы ключевые
+                  процессы, внедрены архив и ИИ-сервисы Directum RX Intelligence</p>
+                <img class="projects__logo" src="assets/img/project-1.png" alt="Президентская академия" width="180"
+                  height="180">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a class="card projects__card" href="projects.html">
+                <div class="projects__top">
+                  <h3 class="projects__name">Вологодская Областная Энергетическая Компания</h3>
+                  <svg class="projects__arrow" width="13" height="11" viewBox="0 0 13 11" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M11.5869 5.18164L8.71582 2.56348L7.19824 1.01855C7.14355 0.963867 7.10254 0.900065 7.0752 0.827148C7.04785 0.749674 7.03418 0.669922 7.03418 0.587891C7.03418 0.419271 7.09115 0.280273 7.20508 0.170898C7.32357 0.0569661 7.46712 0 7.63574 0C7.7998 0 7.95247 0.0683594 8.09375 0.205078L12.6191 4.72363C12.7604 4.85579 12.8311 5.00846 12.8311 5.18164C12.8311 5.35482 12.7604 5.50977 12.6191 5.64648L8.08008 10.1787C7.94792 10.3063 7.7998 10.3701 7.63574 10.3701C7.46712 10.3701 7.32357 10.3154 7.20508 10.2061C7.09115 10.0921 7.03418 9.95085 7.03418 9.78223C7.03418 9.7002 7.04785 9.62044 7.0752 9.54297C7.1071 9.46549 7.14811 9.39941 7.19824 9.34473L8.71582 7.7998L11.5869 5.18164ZM11.5801 5.6875L9.37207 5.79688H4.62793C3.78939 5.79688 3.12174 5.91764 2.625 6.15918C2.13281 6.40072 1.77734 6.78353 1.55859 7.30762C1.3444 7.83171 1.2373 8.51758 1.2373 9.36523C1.24186 9.51562 1.24414 9.6569 1.24414 9.78906C1.2487 9.92122 1.25326 10.042 1.25781 10.1514C1.25781 10.3291 1.19857 10.4749 1.08008 10.5889C0.966146 10.7028 0.820312 10.7598 0.642578 10.7598C0.524089 10.7598 0.423828 10.7347 0.341797 10.6846C0.264323 10.639 0.202799 10.5775 0.157227 10.5C0.111654 10.4225 0.0797526 10.3382 0.0615234 10.2471C0.038737 10.1423 0.0227865 10.0101 0.0136719 9.85059C0.00455729 9.68652 0 9.50423 0 9.30371C0 7.64941 0.355469 6.44857 1.06641 5.70117C1.77734 4.94922 2.94401 4.57324 4.56641 4.57324H9.37207L11.5732 4.67578C11.7145 4.6849 11.833 4.7373 11.9287 4.83301C12.029 4.92871 12.0791 5.04492 12.0791 5.18164C12.0791 5.31836 12.0312 5.43457 11.9355 5.53027C11.8398 5.62598 11.7214 5.67839 11.5801 5.6875Z"
+                      fill="#222222" />
+                  </svg>
+                </div>
+                <p class="projects__text">Цифровая трансформация документооборота Президентской академии на базе решений
+                  Directum</p>
+                <img class="projects__logo" src="assets/img/project-2.png"
+                  alt="Вологодская Областная Энергетическая Компания" width="180" height="180">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a class="card projects__card" href="projects.html">
+                <div class="projects__top">
+                  <h3 class="projects__name">Вологодская Областная Энергетическая Компания</h3>
+                  <svg class="projects__arrow" width="13" height="11" viewBox="0 0 13 11" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M11.5869 5.18164L8.71582 2.56348L7.19824 1.01855C7.14355 0.963867 7.10254 0.900065 7.0752 0.827148C7.04785 0.749674 7.03418 0.669922 7.03418 0.587891C7.03418 0.419271 7.09115 0.280273 7.20508 0.170898C7.32357 0.0569661 7.46712 0 7.63574 0C7.7998 0 7.95247 0.0683594 8.09375 0.205078L12.6191 4.72363C12.7604 4.85579 12.8311 5.00846 12.8311 5.18164C12.8311 5.35482 12.7604 5.50977 12.6191 5.64648L8.08008 10.1787C7.94792 10.3063 7.7998 10.3701 7.63574 10.3701C7.46712 10.3701 7.32357 10.3154 7.20508 10.2061C7.09115 10.0921 7.03418 9.95085 7.03418 9.78223C7.03418 9.7002 7.04785 9.62044 7.0752 9.54297C7.1071 9.46549 7.14811 9.39941 7.19824 9.34473L8.71582 7.7998L11.5869 5.18164ZM11.5801 5.6875L9.37207 5.79688H4.62793C3.78939 5.79688 3.12174 5.91764 2.625 6.15918C2.13281 6.40072 1.77734 6.78353 1.55859 7.30762C1.3444 7.83171 1.2373 8.51758 1.2373 9.36523C1.24186 9.51562 1.24414 9.6569 1.24414 9.78906C1.2487 9.92122 1.25326 10.042 1.25781 10.1514C1.25781 10.3291 1.19857 10.4749 1.08008 10.5889C0.966146 10.7028 0.820312 10.7598 0.642578 10.7598C0.524089 10.7598 0.423828 10.7347 0.341797 10.6846C0.264323 10.639 0.202799 10.5775 0.157227 10.5C0.111654 10.4225 0.0797526 10.3382 0.0615234 10.2471C0.038737 10.1423 0.0227865 10.0101 0.0136719 9.85059C0.00455729 9.68652 0 9.50423 0 9.30371C0 7.64941 0.355469 6.44857 1.06641 5.70117C1.77734 4.94922 2.94401 4.57324 4.56641 4.57324H9.37207L11.5732 4.67578C11.7145 4.6849 11.833 4.7373 11.9287 4.83301C12.029 4.92871 12.0791 5.04492 12.0791 5.18164C12.0791 5.31836 12.0312 5.43457 11.9355 5.53027C11.8398 5.62598 11.7214 5.67839 11.5801 5.6875Z"
+                      fill="#222222" />
+                  </svg>
+                </div>
+                <p class="projects__text">Цифровая трансформация документооборота Президентской академии на базе решений
+                  Directum</p>
+                <img class="projects__logo " src="assets/img/project-2-small.png"
+                  alt="Вологодская Областная Энергетическая Компания" width="100" height="100">
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta" aria-label="Нужна консультация">
+    <section class="cta" id="cta" aria-label="Нужна консультация">
       <div class="cta__body">
         <div class="cta__content">
           <h2 class="cta__title">Нужна консультация<br>по&nbsp;проекту?</h2>
-          <p class="cta__text">Оставьте контакты, и&nbsp;мы свяжемся с&nbsp;вами, чтобы обсудить задачу, подобрать подходящее направление и&nbsp;предложить следующий шаг</p>
-          <button class="btn btn--lg cta__btn" type="button">Оставить заявку</button>
+          <p class="cta__text">Оставьте контакты, и&nbsp;мы свяжемся с&nbsp;вами, чтобы обсудить задачу, подобрать
+            подходящее направление и&nbsp;предложить следующий шаг</p>
+          <button class="btn btn--primary btn--lg cta__btn" type="button">Оставить заявку</button>
         </div>
       </div>
     </section>

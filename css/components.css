@@ -117,7 +117,6 @@
   font-weight: 500;
 }
 .btn--ghost:hover {
-  background: var(--bg-light-alt);
 }
 
 .btn--search {
@@ -161,10 +160,10 @@
 
 /* Width modifiers for repeated 460px / 262px buttons across sections */
 .btn--md {
-  width: 262px;
+  min-width: 262px;
 }
 .btn--lg {
-  width: 460px;
+   min-width: 460px;
 }
 
 /* Carousel nav */
@@ -189,11 +188,10 @@
   border-color: var(--color-sea);
   color: var(--color-sea);
 }
-
 /* Tabs */
 .tabs {
   display: flex;
-  gap: var(--gap-md);
+  gap: 0;
   flex-wrap: wrap;
   margin-bottom: 40px;
 }

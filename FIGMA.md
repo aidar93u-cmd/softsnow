@@ -113,7 +113,10 @@ Listing `clients.html` (frame `826:1472`), detail `client-detail.html` (frame `8
 | 3 | Tabs (Все отрасли / Вузы / Гос / Бизнес) | `826:1511` | `.c-filter` | done |
 | 4 | Clients grid (16 карточек 460×360) | `826:1522` | `.c-clients__grid` | done |
 | 5 | Detail hero (h1 70px + логотип клиента) | `896:11276` | `.page-hero--detail` | done |
-| 6 | Footer | — | `.footer` | done (reused) |
+| 6 | «Что говорит о нас клиент» (white r20, h2 70/500, цитата: иконка 40×40 #1342F3 + текст 16/400 rgba(34,34,34,.7) 655px + автор: аватар 64×64 + имя 20/500 + роль 16/400; фото 890×560 r20) | `1075:32386` | `.client-quote` | done |
+| 7 | Footer | — | `.footer` | done (reused) |
+
+`client-detail.html`: секция `.client-quote` добавлена после `.stats--client` (по макету). Page-specific CSS в `css/sections.css` (блок «Client detail page»): `.client-quote` (+`__inner/__title/__grid/__quote/__icon/__text/__author/__avatar/__name/__role/__photo`). Цитата — inline-SVG иконка (тот же path, что в `.testimonials__quote`), аватар — `assets/img/logo-ranepa.png`, фото — `assets/img/client-quote.jpg` (экспорт из Figma `Frame 2211`).
 
 ### Медиацентр (events.html)
 
@@ -150,6 +153,24 @@ Detail события, фрейм `896:9497` (1920×7991). Стили в `css/se
 | 12 | Footer | `896:9509` | `.footer` | done (reused) |
 
 Добавлен shared-вариант кнопки `.btn--outline-dark` в `css/components.css` (border `#222`, текст `#222` 600; hover: bg black, white text) — используется в detail hero. Отклонения (компромисс по токенам): title/btn/date/CTA — `--color-sea` #216CF3 и dark-outline вместо #1342f3 (см. план `2026-08-15-events-pages.md`). FAQ открывается через существующий `js/main.js` аккордеон (первый `.faq__item` авто-open).
+
+### Детальная проекта (project-detail.html)
+
+Detail проекта, фрейм `1128:8159` (COMPONENT, fileKey `tK0WpkPKL3pQGAyCfynr3b`). Стили в `css/sections.css` (блок «Project detail page»).
+
+| # | Figma Section | Code | Status |
+|---|---|---|---|
+| 1 | Header | `.header` | done (reused) |
+| 2 | Hero (breadcrumbs Главная/Проекты/… + h1 70px + sub) | `.page-hero--detail` + `.page-hero__title--detail` | done |
+| 3 | «О клиенте» (текст + название + фото) | `.client-intro--project` | done |
+| 4 | «Цели проекта» (4 пункта) + «Текущие результаты» 700/10 000/1 000 | `.goals` | done |
+| 5 | «Реализация проекта» (01 Контекст, 02 Описание, 03 Архитектура, 04 Этапы, 05 Команда) | `.impl` | done |
+| 6 | «Видео о проекте» (плеер 1790×700) | `.video` | done |
+| 7 | «Галерея проекта» (4 слайда 1790×742 + точки) | `.gallery` | done |
+| 8 | «Читайте также» (4 карточки, 4-я синяя) | `.events--readalso` (reused) + `.events__card--blue` | done |
+| 9 | Footer | `.footer` | done (reused) |
+
+Особенности: `.client-intro--project` — вариант `.client-intro` (текст 16/400 + `.client-intro__name` 16/500, фото 890×560 справа). Цели — grid 4 колонки, числа/синяя карточка `#1342f3` напрямую (не токен). `.arch` — чистый CSS-grid диаграмма архитектуры (без SVG-файлов, стопки копий через box-shadow). `.video__poster` 1790×700 с play 80×80 (плейсхолдер `project-1.png`). `.gallery__swiper` — swiper slidesPerView 1 + точки `.gallery__dot` (syncDots, `slideTo(i)`, aria-selected) в `js/main.js`. Плейсхолдеры помечены `ponytail:` (видео `project-1.png`, галерея `project-2.png`, клиент `o-kliente.jpg`) — под замену реальными ассетами.
 
 ## Known Discrepancies
 

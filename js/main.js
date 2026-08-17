@@ -35,78 +35,46 @@ function initAccordion(listSelector, openClass, buttonSelector) {
 }
 
 // ponytail: placeholder client data — replace with CSV/fetch from real source (url = partner website)
-const clientsData = [
-  { name: 'РАНХиГС', cat: 'vuz', desc: 'Цифровизация процессов академии', logo: 'client-1.jpg', url: 'client-detail.html' },
-  { name: 'СПбПУ', cat: 'vuz', desc: 'Корпоративный портал вуза', logo: 'client-2.jpg', url: 'https://spbpu.example.com' },
-  { name: 'МГУ', cat: 'vuz', desc: 'Электронный документооборот', logo: 'client-3.jpg', url: 'https://msu.example.com' },
-  { name: 'Минцифры', cat: 'gov', desc: 'Государственные сервисы', logo: 'client-4.jpg', url: 'https://minczifry.example.com' },
-  { name: 'Росреестр', cat: 'gov', desc: 'Система согласований', logo: 'client-5.jpg', url: 'https://rosreestr.example.com' },
-  { name: 'ФНС', cat: 'gov', desc: 'Интеграция ведомств', logo: 'client-6.png', url: 'https://fns.example.com' },
-  { name: 'Газпром', cat: 'biz', desc: 'Управление проектами', logo: 'client-7.png', url: 'https://gazprom.example.com' },
-  { name: 'Сбер', cat: 'biz', desc: 'КЭДО для сотрудников', logo: 'client-8.png', url: 'https://sber.example.com' },
-  { name: 'РЖД', cat: 'biz', desc: 'Корпоративный портал', logo: 'client-9.png', url: 'https://rzd.example.com' },
-  { name: 'Ростелеком', cat: 'biz', desc: 'Цифровые сервисы', logo: 'client-10.png', url: 'https://rostelecom.example.com' },
-  { name: 'ИТМО', cat: 'vuz', desc: 'Платформа для вузов', logo: 'client-1.jpg', url: 'https://itmo.example.com' },
-  { name: 'МФТИ', cat: 'vuz', desc: 'Учебные процессы', logo: 'client-2.jpg', url: 'https://mfti.example.com' },
-  { name: 'Минобрнауки', cat: 'gov', desc: 'Отраслевая система', logo: 'client-3.jpg', url: 'https://minobrnauki.example.com' },
-  { name: 'Росатом', cat: 'gov', desc: 'Документооборот', logo: 'client-4.jpg', url: 'https://rosatom.example.com' },
-  { name: 'Лукойл', cat: 'biz', desc: 'Стратегия и проекты', logo: 'client-5.jpg', url: 'https://lukoil.example.com' },
-  { name: 'X5 Group', cat: 'biz', desc: 'Внутренние коммуникации', logo: 'client-6.png', url: 'https://x5.example.com' },
-];
-
 function initClientsPage() {
   const grid = document.getElementById('clientsGrid');
   if (!grid) return;
-  const STEP = 12;
-  let visible = STEP;
-
-  function cardHTML(c) {
-    return `<a class="c-clients__card" href="${c.url}" target="_blank" rel="noopener" data-category="${c.cat}">
-      <svg class="c-clients__icon" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>
-      <div class="c-clients__body">
-        <h3 class="c-clients__name">${c.name}</h3>
-        <p class="c-clients__desc">${c.desc}</p>
-      </div>
-      <img class="c-clients__logo" src="assets/img/${c.logo}" alt="${c.name}" width="136" height="136">
-    </a>`;
-  }
-
-  function render(filter) {
-    const items = clientsData.filter((c) => filter === 'all' || c.cat === filter);
-    grid.innerHTML = items.map(cardHTML).join('');
-    Array.from(grid.children).forEach((el, i) => {
-      if (i >= visible) el.classList.add('is-hidden');
-    });
-  }
-
-  render('all');
-
+  const cards = Array.from(grid.querySelectorAll('.c-clients__card'));
   const filters = document.querySelectorAll('.c-filter');
+  const more = document.getElementById('clientsMore');
+  const moreBtn = document.getElementById('clientsShowMore');
+  const INITIAL = 16;
+  let revealed = false;
+
+  const apply = () => {
+    const active = document.querySelector('.c-filter.is-active');
+    const filter = active ? active.dataset.filter : 'all';
+    let shown = 0;
+    cards.forEach((card) => {
+      const on = filter === 'all' || card.dataset.category === filter;
+      card.classList.toggle('is-hidden', !on || (on && !revealed && shown >= INITIAL));
+      if (on) shown++;
+    });
+    const total = cards.filter((c) => filter === 'all' || c.dataset.category === filter).length;
+    if (more) more.hidden = revealed || total <= INITIAL;
+  };
+
   filters.forEach((btn) => {
     btn.addEventListener('click', () => {
       filters.forEach((b) => b.classList.remove('is-active'));
       btn.classList.add('is-active');
-      visible = STEP;
-      render(btn.dataset.filter);
-      updateMore();
+      revealed = false;
+      apply();
     });
   });
 
-  const more = document.getElementById('clientsShowMore');
-  function updateMore() {
-    if (!more) return;
-    const active = document.querySelector('.c-filter.is-active');
-    const total = clientsData.filter((c) => !active || active.dataset.filter === 'all' || c.cat === active.dataset.filter).length;
-    more.style.display = visible < total ? '' : 'none';
-  }
-  if (more) {
-    more.addEventListener('click', () => {
-      visible = clientsData.length;
-      Array.from(grid.children).forEach((el) => el.classList.remove('is-hidden'));
-      updateMore();
+  if (moreBtn) {
+    moreBtn.addEventListener('click', () => {
+      revealed = true;
+      apply();
     });
   }
-  updateMore();
+
+  apply();
 }
 
 // ponytail: multiple <details> dropdowns — native toggle works everywhere; JS only adds badges + reset + removable chips
@@ -230,6 +198,32 @@ function initDropdown() {
   sync();
 }
 
+// ponytail: one popup template, cloned per click; src filled from the tab's screenshot
+function initDemoPopup() {
+  const tpl = document.getElementById('s-features-popup');
+  const btns = document.querySelectorAll('.s-features__demo');
+  if (!tpl || !btns.length) return;
+  btns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const panel = btn.closest('.s-features__panel');
+      const img = panel ? panel.querySelector('.s-features__img') : null;
+      const node = tpl.cloneNode(true);
+      node.hidden = false;
+      if (img) {
+        const popupImg = node.querySelector('.s-features-popup__img');
+        popupImg.src = img.src;
+        popupImg.alt = img.alt;
+      }
+      Fancybox.show([{ src: node, type: 'html' }], {
+        Toolbar: false,
+        Thumbs: false,
+        closeButton: false,
+        Carousel: { infinite: false },
+      });
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const clientsSwiper = initSwiper('.clients__swiper', {
     slidesPerView: 7.8,
@@ -260,6 +254,14 @@ document.addEventListener('DOMContentLoaded', () => {
     speed: 600,
   });
 
+  const eventsFeaturedSwiper = initSwiper('.events-featured__swiper', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    loop: true,
+    speed: 800,
+    effect: 'slide',
+  });
+
   const testimonialsSwiper = initSwiper('.testimonials__swiper', {
     slidesPerView: 3,
     spaceBetween: 10,
@@ -267,11 +269,35 @@ document.addEventListener('DOMContentLoaded', () => {
     speed: 600,
   });
 
+  const gallerySwiper = initSwiper('.gallery__swiper', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    rewind: true,
+    speed: 600,
+  });
+
+  const galleryDots = Array.from(document.querySelectorAll('.gallery__dot'));
+  if (gallerySwiper && galleryDots.length) {
+    const syncDots = () => {
+      galleryDots.forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === gallerySwiper.realIndex);
+        dot.setAttribute('aria-selected', String(i === gallerySwiper.realIndex));
+      });
+    };
+    galleryDots.forEach((dot, i) => {
+      dot.addEventListener('click', () => gallerySwiper.slideTo(i));
+    });
+    gallerySwiper.on('slideChange', syncDots);
+    syncDots();
+  }
+
   [
     ['.partners .carousel-nav', partnersSwiper],
     ['.projects .carousel-nav', projectsSwiper],
     ['.events .carousel-nav', eventsSwiper],
+    ['.events-featured .carousel-nav', eventsFeaturedSwiper],
     ['.testimonials .carousel-nav', testimonialsSwiper],
+    ['.gallery .carousel-nav', gallerySwiper],
   ].forEach(([selector, swiper]) => bindNav(selector, swiper));
 
   const tabs = document.querySelector('.tabs');
@@ -300,6 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initClientsPage();
   initDropdown();
+  initDemoPopup();
 
   document.querySelectorAll('.s-tasks__item:first-child, .faq__item:first-child').forEach((el) => {
     el.classList.add('is-open');

@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/vendor/fancybox/fancybox.css">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/utilities.css">
   <link rel="stylesheet" href="css/components.css">
@@ -85,8 +86,8 @@
 
   <main>
     <section class="hero" aria-label="Цифровой сервис «Конкурс ППС»">
-      <div class="container">
-        <div class="hero-block-inner" style="background-image: url('assets/img/solution-hero-bg.png');">
+      <div class="container flex">
+        <div class="hero-block-inner" style="background-image: url('assets/img/solution-hero-bg.jpg');">
           <div class="hero__body">
             <nav class="breadcrumb" aria-label="Хлебные крошки">
               <a href="index.html">Главная</a>
@@ -100,21 +101,21 @@
               сотрудников и делает процесс прозрачным для всех участников.</p>
             <button class="btn btn--outline" type="button">Получить консультацию</button>
           </div>
-          <div class="hero__footer hero__footer--stats">
-            <div class="s-hero__stat">
-              <span class="s-hero__num">-70%</span>
-              <span class="s-hero__label">Времени на обработку заявлений</span>
-            </div>
-            <div class="s-hero__stat">
-              <span class="s-hero__num">100%</span>
-              <span class="s-hero__label">Этапов фиксируются в системе</span>
-            </div>
-            <div class="s-hero__stat">
-              <span class="s-hero__num">100%</span>
-              <span class="s-hero__label">Кадровых процедур — без бумаги</span>
-            </div>
-            <img class="s-hero__stats-img" src="assets/img/solution-stats.png" alt="" aria-hidden="true">
+        </div>
+        <div class="hero__footer--stats">
+          <div class="s-hero__stat">
+            <span class="s-hero__num">-70%</span>
+            <span class="s-hero__label">Времени на обработку заявлений</span>
           </div>
+          <div class="s-hero__stat">
+            <span class="s-hero__num">100%</span>
+            <span class="s-hero__label">Этапов фиксируются в системе</span>
+          </div>
+          <div class="s-hero__stat">
+            <span class="s-hero__num">100%</span>
+            <span class="s-hero__label">Кадровых процедур — без бумаги</span>
+          </div>
+          <img class="s-hero__stats-img" src="assets/img/solution-stats.png" alt="" aria-hidden="true">
         </div>
       </div>
     </section>
@@ -122,13 +123,16 @@
     <section class="registry" aria-label="Решение включено в реестр Минцифры">
       <div class="container">
         <div class="registry__inner">
-          <div class="registry__text">
+          <div class="registry__inner-block registry__text">
             <h2 class="registry__title">Решение включено в реестр Минцифры</h2>
-            <p class="registry__desc">Сервис официально зарегистрирован в Едином реестре российских программ для ЭВМ и
-              баз данных Министерства цифрового развития РФ. Реестровая запись №19240 от 23 сентября 2023 года.</p>
+            <div class="registry__bottom">
+              <p class="registry__desc">Сервис официально зарегистрирован в Едином реестре российских программ
+                для ЭВМ и баз данных Министерства цифрового развития РФ.</p>
+              <a href="#" class="registry__desc_bottom">Реестровая запись №19240 от 23 сентября 2023 года.</a>
+            </div>
           </div>
-          <div class="registry__img-wrap">
-            <img class="registry__img" src="assets/img/solution-reestr.png"
+          <div class="registry__inner-block  registry__img-wrap">
+            <img class="registry__img" src="assets/img/registry-banner.jpg"
               alt="Свидетельство о регистрации в реестре Минцифры">
           </div>
         </div>
@@ -250,7 +254,7 @@
 
     <section class="s-audience" aria-label="Для кого предназначен">
       <div class="container">
-        <h2 class="s-audience__title">Для кого предназначен</h2>
+        <h2 class="s-audience__title">Для кого<br> предназначен</h2>
         <div class="s-audience__grid">
           <article class="card s-audience__card">
             <h3 class="s-audience__name">Руководству университетов</h3>
@@ -279,223 +283,231 @@
     <section class="s-features" aria-label="Функциональные возможности сервиса">
       <div class="container">
         <div class="s-features__inner">
-        <div class="s-features__head">
-          <h2 class="s-features__title">Функциональные возможности сервиса</h2>
-          <p class="s-features__sub">Мы продумали сервис так, чтобы он закрывал весь цикл конкурсных и выборных процедур
-            — от подачи заявлений до контроля этапов и хранения данных.</p>
-        </div>
-        <div class="tabs" role="tablist" aria-label="Этапы работы с сервисом">
-          <button class="tabs__btn is-active" type="button" role="tab" data-tab="0" aria-selected="true">Запуск конкурса</button>
-          <button class="tabs__btn" type="button" role="tab" data-tab="1" aria-selected="false">Подача заявок</button>
-          <button class="tabs__btn" type="button" role="tab" data-tab="2" aria-selected="false">Проверка и допуск</button>
-          <button class="tabs__btn" type="button" role="tab" data-tab="3" aria-selected="false">Мониторинг и контроль</button>
-          <button class="tabs__btn" type="button" role="tab" data-tab="4" aria-selected="false">Архив и отчётность</button>
-        </div>
-        <div class="s-features__body">
-          <div class="s-features__panels">
-            <div class="s-features__panel is-active" data-tab="0" role="tabpanel">
-              <div class="s-features__content">
-                <h3 class="s-features__name">Быстрый запуск конкурсных процедур в цифровом формате</h3>
-                <p class="s-features__desc">Система позволяет размещать официальные объявления о начале конкурса или
-                  выборов, а претендентам — видеть актуальные позиции и подавать заявки через личный кабинет.</p>
-                <ul class="s-features__points">
-                  <li class="s-features__point">
-                    <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                      <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                    </svg>
-                    <span>Администрация быстрее запускает процедуру</span>
-                  </li>
-                  <li class="s-features__point">
-                    <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                      <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                    </svg>
-                    <span>Кадровые службы сокращают ручную работу с документами</span>
-                  </li>
-                </ul>
-                <div class="s-features__demo">
-                  <svg class="s-features__demo-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
-                    aria-hidden="true">
-                    <path d="M2 2H18V15H11V18H14V20H6V18H9V15H2V2ZM4 4V13H16V4H4Z" fill="#222222" />
-                  </svg>
-                  <span class="s-features__demo-text">
-                    <span class="s-features__demo-title">Посмотреть интерфейс</span>
-                    <span class="s-features__demo-sub">Экраны из реальной работы сервиса</span>
-                  </span>
+          <div class="s-features__head">
+            <h2 class="s-features__title">Функциональные возможности сервиса</h2>
+            <p class="s-features__sub">Мы продумали сервис так, чтобы он закрывал весь цикл конкурсных и выборных
+              процедур
+              — от подачи заявлений до контроля этапов и хранения данных.</p>
+          </div>
+          <div class="tabs" role="tablist" aria-label="Этапы работы с сервисом">
+            <button class="tabs__btn is-active" type="button" role="tab" data-tab="0" aria-selected="true">Запуск
+              конкурса</button>
+            <button class="tabs__btn" type="button" role="tab" data-tab="1" aria-selected="false">Подача заявок</button>
+            <button class="tabs__btn" type="button" role="tab" data-tab="2" aria-selected="false">Проверка и
+              допуск</button>
+            <button class="tabs__btn" type="button" role="tab" data-tab="3" aria-selected="false">Мониторинг и
+              контроль</button>
+            <button class="tabs__btn" type="button" role="tab" data-tab="4" aria-selected="false">Архив и
+              отчётность</button>
+          </div>
+          <div class="s-features__body">
+            <div class="s-features__panels">
+              <div class="s-features__panel is-active" data-tab="0" role="tabpanel">
+                <div class="s-features__content">
+                  <h3 class="s-features__name">Быстрый запуск конкурсных процедур в цифровом формате</h3>
+                  <p class="s-features__desc">Система позволяет размещать официальные объявления о начале конкурса или
+                    выборов, а претендентам — видеть актуальные позиции и подавать заявки через личный кабинет.</p>
+                  <ul class="s-features__points">
+                    <li class="s-features__point">
+                      <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none"
+                        aria-hidden="true">
+                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
+                      </svg>
+                      <span>Администрация быстрее запускает процедуру</span>
+                    </li>
+                    <li class="s-features__point">
+                      <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none"
+                        aria-hidden="true">
+                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
+                      </svg>
+                      <span>Кадровые службы сокращают ручную работу с документами</span>
+                    </li>
+                  </ul>
+                  <button type="button" class="s-features__demo">
+                    <img class="s-features__demo-icon" src="assets/img/s-features-demo.svg" width="69" height="45" alt="">
+
+                    <span class="s-features__demo-text">
+                      <span class="s-features__demo-title">Посмотреть интерфейс</span>
+                      <span class="s-features__demo-sub">Экраны из реальной работы сервиса</span>
+                    </span>
+                  </button>
                 </div>
+                <img class="s-features__img" src="assets/img/solution-features.png"
+                  alt="Экран интерфейса сервиса — запуск конкурса">
               </div>
-              <img class="s-features__img" src="assets/img/solution-features.png"
-                alt="Экран интерфейса сервиса — запуск конкурса">
-            </div>
-            <div class="s-features__panel" data-tab="1" role="tabpanel" aria-hidden="true">
-              <div class="s-features__content">
-                <h3 class="s-features__name">Приём и регистрация заявок в личном кабинете</h3>
-                <p class="s-features__desc">Претенденты заполняют электронные заявки, прикладывают документы и отслеживают
-                  статус. Кадровая служба видит все заявления в едином реестре без ручной переписки.</p>
-                <ul class="s-features__points">
-                  <li class="s-features__point">
-                    <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                      <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                    </svg>
-                    <span>Заявки поступают сразу в единый реестр</span>
-                  </li>
-                  <li class="s-features__point">
-                    <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                      <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                    </svg>
-                    <span>Автоматические напоминания о сроках подачи</span>
-                  </li>
-                  <li class="s-features__point">
-                    <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                      <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                    </svg>
-                    <span>Документы хранятся в привязке к заявке</span>
-                  </li>
-                </ul>
-                <div class="s-features__demo">
-                  <svg class="s-features__demo-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
-                    aria-hidden="true">
-                    <path d="M2 2H18V15H11V18H14V20H6V18H9V15H2V2ZM4 4V13H16V4H4Z" fill="#222222" />
-                  </svg>
-                  <span class="s-features__demo-text">
-                    <span class="s-features__demo-title">Посмотреть интерфейс</span>
-                    <span class="s-features__demo-sub">Экраны из реальной работы сервиса</span>
-                  </span>
+              <div class="s-features__panel" data-tab="1" role="tabpanel" aria-hidden="true">
+                <div class="s-features__content">
+                  <h3 class="s-features__name">Приём и регистрация заявок в личном кабинете</h3>
+                  <p class="s-features__desc">Претенденты заполняют электронные заявки, прикладывают документы и
+                    отслеживают
+                    статус. Кадровая служба видит все заявления в едином реестре без ручной переписки.</p>
+                  <ul class="s-features__points">
+                    <li class="s-features__point">
+                      <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none"
+                        aria-hidden="true">
+                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
+                      </svg>
+                      <span>Заявки поступают сразу в единый реестр</span>
+                    </li>
+                    <li class="s-features__point">
+                      <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none"
+                        aria-hidden="true">
+                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
+                      </svg>
+                      <span>Автоматические напоминания о сроках подачи</span>
+                    </li>
+                    <li class="s-features__point">
+                      <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none"
+                        aria-hidden="true">
+                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
+                      </svg>
+                      <span>Документы хранятся в привязке к заявке</span>
+                    </li>
+                  </ul>
+                  <button type="button" class="s-features__demo">
+                    <img class="s-features__demo-icon" src="assets/img/s-features-demo.svg" width="69" height="45" alt="">
+                    <span class="s-features__demo-text">
+                      <span class="s-features__demo-title">Посмотреть интерфейс</span>
+                      <span class="s-features__demo-sub">Экраны из реальной работы сервиса</span>
+                    </span>
+                  </button>
                 </div>
+                <img class="s-features__img" src="assets/img/solution-features.png"
+                  alt="Экран интерфейса сервиса — подача заявок">
               </div>
-              <img class="s-features__img" src="assets/img/solution-features.png"
-                alt="Экран интерфейса сервиса — подача заявок">
-            </div>
-            <div class="s-features__panel" data-tab="2" role="tabpanel" aria-hidden="true">
-              <div class="s-features__content">
-                <h3 class="s-features__name">Проверка документов и допуск к участию</h3>
-                <p class="s-features__desc">Комиссия проверяет комплектность документов и соответствие требованиям, а
-                  сервис фиксирует решения по каждому претенденту и автоматически сообщает ему итог.</p>
-                <ul class="s-features__points">
-                  <li class="s-features__point">
-                    <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                      <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                    </svg>
-                    <span>Прозрачные чек-листы проверки документов</span>
-                  </li>
-                  <li class="s-features__point">
-                    <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                      <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                    </svg>
-                    <span>Решения комиссии фиксируются в системе</span>
-                  </li>
-                  <li class="s-features__point">
-                    <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                      <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                    </svg>
-                    <span>Уведомления о допуске или отказе — автоматически</span>
-                  </li>
-                </ul>
-                <div class="s-features__demo">
-                  <svg class="s-features__demo-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
-                    aria-hidden="true">
-                    <path d="M2 2H18V15H11V18H14V20H6V18H9V15H2V2ZM4 4V13H16V4H4Z" fill="#222222" />
-                  </svg>
-                  <span class="s-features__demo-text">
-                    <span class="s-features__demo-title">Посмотреть интерфейс</span>
-                    <span class="s-features__demo-sub">Экраны из реальной работы сервиса</span>
-                  </span>
+              <div class="s-features__panel" data-tab="2" role="tabpanel" aria-hidden="true">
+                <div class="s-features__content">
+                  <h3 class="s-features__name">Проверка документов и допуск к участию</h3>
+                  <p class="s-features__desc">Комиссия проверяет комплектность документов и соответствие требованиям, а
+                    сервис фиксирует решения по каждому претенденту и автоматически сообщает ему итог.</p>
+                  <ul class="s-features__points">
+                    <li class="s-features__point">
+                      <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none"
+                        aria-hidden="true">
+                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
+                      </svg>
+                      <span>Прозрачные чек-листы проверки документов</span>
+                    </li>
+                    <li class="s-features__point">
+                      <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none"
+                        aria-hidden="true">
+                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
+                      </svg>
+                      <span>Решения комиссии фиксируются в системе</span>
+                    </li>
+                    <li class="s-features__point">
+                      <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none"
+                        aria-hidden="true">
+                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
+                      </svg>
+                      <span>Уведомления о допуске или отказе — автоматически</span>
+                    </li>
+                  </ul>
+                  <button type="button" class="s-features__demo">
+                    <img class="s-features__demo-icon" src="assets/img/s-features-demo.svg" width="69" height="45" alt="">
+                    <span class="s-features__demo-text">
+                      <span class="s-features__demo-title">Посмотреть интерфейс</span>
+                      <span class="s-features__demo-sub">Экраны из реальной работы сервиса</span>
+                    </span>
+                  </button>
                 </div>
+                <img class="s-features__img" src="assets/img/solution-features.png"
+                  alt="Экран интерфейса сервиса — проверка документов">
               </div>
-              <img class="s-features__img" src="assets/img/solution-features.png"
-                alt="Экран интерфейса сервиса — проверка документов">
-            </div>
-            <div class="s-features__panel" data-tab="3" role="tabpanel" aria-hidden="true">
-              <div class="s-features__content">
-                <h3 class="s-features__name">Мониторинг процедуры в реальном времени</h3>
-                <p class="s-features__desc">Руководство и комиссия видят актуальный статус конкурса: кто подал, кто допущен,
-                  какие сроки истекают. Это упрощает контроль и снижает риск ошибок по срокам.</p>
-                <ul class="s-features__points">
-                  <li class="s-features__point">
-                    <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                      <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                    </svg>
-                    <span>Единая картина по всем активным процедурам</span>
-                  </li>
-                  <li class="s-features__point">
-                    <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                      <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                    </svg>
-                    <span>Контроль сроков и автоматические напоминания</span>
-                  </li>
-                  <li class="s-features__point">
-                    <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                      <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                    </svg>
-                    <span>Отчётность по ходу процедуры без ручной сводки</span>
-                  </li>
-                </ul>
-                <div class="s-features__demo">
-                  <svg class="s-features__demo-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
-                    aria-hidden="true">
-                    <path d="M2 2H18V15H11V18H14V20H6V18H9V15H2V2ZM4 4V13H16V4H4Z" fill="#222222" />
-                  </svg>
-                  <span class="s-features__demo-text">
-                    <span class="s-features__demo-title">Посмотреть интерфейс</span>
-                    <span class="s-features__demo-sub">Экраны из реальной работы сервиса</span>
-                  </span>
+              <div class="s-features__panel" data-tab="3" role="tabpanel" aria-hidden="true">
+                <div class="s-features__content">
+                  <h3 class="s-features__name">Мониторинг процедуры в реальном времени</h3>
+                  <p class="s-features__desc">Руководство и комиссия видят актуальный статус конкурса: кто подал, кто
+                    допущен,
+                    какие сроки истекают. Это упрощает контроль и снижает риск ошибок по срокам.</p>
+                  <ul class="s-features__points">
+                    <li class="s-features__point">
+                      <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none"
+                        aria-hidden="true">
+                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
+                      </svg>
+                      <span>Единая картина по всем активным процедурам</span>
+                    </li>
+                    <li class="s-features__point">
+                      <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none"
+                        aria-hidden="true">
+                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
+                      </svg>
+                      <span>Контроль сроков и автоматические напоминания</span>
+                    </li>
+                    <li class="s-features__point">
+                      <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none"
+                        aria-hidden="true">
+                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
+                      </svg>
+                      <span>Отчётность по ходу процедуры без ручной сводки</span>
+                    </li>
+                  </ul>
+                  <button type="button" class="s-features__demo">
+                    <img class="s-features__demo-icon" src="assets/img/s-features-demo.svg" width="69" height="45" alt="">
+                    <span class="s-features__demo-text">
+                      <span class="s-features__demo-title">Посмотреть интерфейс</span>
+                      <span class="s-features__demo-sub">Экраны из реальной работы сервиса</span>
+                    </span>
+                  </button>
                 </div>
+                <img class="s-features__img" src="assets/img/solution-features.png"
+                  alt="Экран интерфейса сервиса — мониторинг">
               </div>
-              <img class="s-features__img" src="assets/img/solution-features.png"
-                alt="Экран интерфейса сервиса — мониторинг">
-            </div>
-            <div class="s-features__panel" data-tab="4" role="tabpanel" aria-hidden="true">
-              <div class="s-features__content">
-                <h3 class="s-features__name">Архив процедур и аналитическая отчётность</h3>
-                <p class="s-features__desc">Завершённые конкурсы сохраняются в архиве, а сервис формирует отчёты для
-                  кадровой службы и руководства — по соискателям, этапам и итоговым решениям.</p>
-                <ul class="s-features__points">
-                  <li class="s-features__point">
-                    <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                      <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                    </svg>
-                    <span>Хранение всех документов в едином архиве</span>
-                  </li>
-                  <li class="s-features__point">
-                    <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                      <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                    </svg>
-                    <span>Готовые отчёты по итогам каждой процедуры</span>
-                  </li>
-                  <li class="s-features__point">
-                    <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                      <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                    </svg>
-                    <span>Быстрый поиск по истории конкурсов</span>
-                  </li>
-                </ul>
-                <div class="s-features__demo">
-                  <svg class="s-features__demo-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
-                    aria-hidden="true">
-                    <path d="M2 2H18V15H11V18H14V20H6V18H9V15H2V2ZM4 4V13H16V4H4Z" fill="#222222" />
-                  </svg>
-                  <span class="s-features__demo-text">
-                    <span class="s-features__demo-title">Посмотреть интерфейс</span>
-                    <span class="s-features__demo-sub">Экраны из реальной работы сервиса</span>
-                  </span>
+              <div class="s-features__panel" data-tab="4" role="tabpanel" aria-hidden="true">
+                <div class="s-features__content">
+                  <h3 class="s-features__name">Архив процедур и аналитическая отчётность</h3>
+                  <p class="s-features__desc">Завершённые конкурсы сохраняются в архиве, а сервис формирует отчёты для
+                    кадровой службы и руководства — по соискателям, этапам и итоговым решениям.</p>
+                  <ul class="s-features__points">
+                    <li class="s-features__point">
+                      <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none"
+                        aria-hidden="true">
+                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
+                      </svg>
+                      <span>Хранение всех документов в едином архиве</span>
+                    </li>
+                    <li class="s-features__point">
+                      <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none"
+                        aria-hidden="true">
+                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
+                      </svg>
+                      <span>Готовые отчёты по итогам каждой процедуры</span>
+                    </li>
+                    <li class="s-features__point">
+                      <svg class="s-features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none"
+                        aria-hidden="true">
+                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
+                      </svg>
+                      <span>Быстрый поиск по истории конкурсов</span>
+                    </li>
+                  </ul>
+                  <button type="button" class="s-features__demo">
+                    <img class="s-features__demo-icon" src="assets/img/s-features-demo.svg" width="69" height="45" alt="">
+                    <span class="s-features__demo-text">
+                      <span class="s-features__demo-title">Посмотреть интерфейс</span>
+                      <span class="s-features__demo-sub">Экраны из реальной работы сервиса</span>
+                    </span>
+                  </button>
                 </div>
+                <img class="s-features__img" src="assets/img/solution-features.png"
+                  alt="Экран интерфейса сервиса — архив">
               </div>
-              <img class="s-features__img" src="assets/img/solution-features.png"
-                alt="Экран интерфейса сервиса — архив">
             </div>
           </div>
         </div>
-      </div>
       </div>
     </section>
 
     <section class="cta cta--blue" aria-label="Хотите увидеть, как это работает">
       <div class="container">
-      <div class="cta--blue__inner">
-        <h2 class="cta--blue__title">Хотите увидеть, как это работает?</h2>
-        <p class="cta--blue__text">Покажем сервис на ваших сценариях, ответим на вопросы и поможем оценить, как его
-          можно встроить в текущие процессы.</p>
-        <button class="btn btn--outline-white btn--lg" type="button">Запросить демонстрацию</button>
-      </div></div>
+        <div class="cta--blue__inner">
+          <h2 class="cta--blue__title">Хотите увидеть, как это работает?</h2>
+          <p class="cta--blue__text">Покажем сервис на ваших сценариях, ответим на вопросы и поможем оценить, как его
+            можно встроить в текущие процессы.</p>
+          <button class="btn btn--outline-white btn--lg" type="button">Запросить демонстрацию</button>
+        </div>
+      </div>
     </section>
 
     <section class="testimonials" aria-label="Что говорят клиенты">
@@ -517,10 +529,10 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <article class="card testimonials__card">
-                <svg class="testimonials__quote" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                <svg class="testimonials__quote" width="29" height="24" viewBox="0 0 29 24" fill="none"
                   aria-hidden="true">
                   <path
-                    d="M17.5 12C12.8 13.9 10 17 10 21.2C10 24.3 12.2 26.7 15.2 26.7C17.8 26.7 19.9 24.6 19.9 22C19.9 19.5 18.1 17.5 15.7 17.4C16.3 14.9 18.3 12.6 20.6 11.3L17.5 12ZM28.6 12C23.9 13.9 21.1 17 21.1 21.2C21.1 24.3 23.3 26.7 26.3 26.7C28.9 26.7 31 24.6 31 22C31 19.5 29.2 17.5 26.8 17.4C27.4 14.9 29.4 12.6 31.7 11.3L28.6 12Z"
+                    d="M0 23.877L4.29688 0H13.1836L6.05469 23.877H0ZM14.9414 23.877L19.2383 0H28.125L20.9961 23.877H14.9414Z"
                     fill="#1342F3" />
                 </svg>
                 <p class="testimonials__text">Для нас было важно не просто внедрить отдельный сервис, а выстроить
@@ -538,10 +550,10 @@
             </div>
             <div class="swiper-slide">
               <article class="card testimonials__card">
-                <svg class="testimonials__quote" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                <svg class="testimonials__quote" width="29" height="24" viewBox="0 0 29 24" fill="none"
                   aria-hidden="true">
                   <path
-                    d="M17.5 12C12.8 13.9 10 17 10 21.2C10 24.3 12.2 26.7 15.2 26.7C17.8 26.7 19.9 24.6 19.9 22C19.9 19.5 18.1 17.5 15.7 17.4C16.3 14.9 18.3 12.6 20.6 11.3L17.5 12ZM28.6 12C23.9 13.9 21.1 17 21.1 21.2C21.1 24.3 23.3 26.7 26.3 26.7C28.9 26.7 31 24.6 31 22C31 19.5 29.2 17.5 26.8 17.4C27.4 14.9 29.4 12.6 31.7 11.3L28.6 12Z"
+                    d="M0 23.877L4.29688 0H13.1836L6.05469 23.877H0ZM14.9414 23.877L19.2383 0H28.125L20.9961 23.877H14.9414Z"
                     fill="#1342F3" />
                 </svg>
                 <p class="testimonials__text">Команде был важен не только технический результат, но и способность
@@ -552,17 +564,17 @@
                     <span class="testimonials__name">Имя Фамилия</span>
                     <span class="testimonials__role">Должность, компания</span>
                   </div>
-                  <img class="testimonials__logo" src="assets/img/solution-t-logo.png" alt="Логотип клиента"
-                    width="60" height="50">
+                  <img class="testimonials__logo" src="assets/img/solution-t-logo.png" alt="Логотип клиента" width="60"
+                    height="50">
                 </div>
               </article>
             </div>
             <div class="swiper-slide">
               <article class="card testimonials__card">
-                <svg class="testimonials__quote" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                <svg class="testimonials__quote" width="29" height="24" viewBox="0 0 29 24" fill="none"
                   aria-hidden="true">
                   <path
-                    d="M17.5 12C12.8 13.9 10 17 10 21.2C10 24.3 12.2 26.7 15.2 26.7C17.8 26.7 19.9 24.6 19.9 22C19.9 19.5 18.1 17.5 15.7 17.4C16.3 14.9 18.3 12.6 20.6 11.3L17.5 12ZM28.6 12C23.9 13.9 21.1 17 21.1 21.2C21.1 24.3 23.3 26.7 26.3 26.7C28.9 26.7 31 24.6 31 22C31 19.5 29.2 17.5 26.8 17.4C27.4 14.9 29.4 12.6 31.7 11.3L28.6 12Z"
+                    d="M0 23.877L4.29688 0H13.1836L6.05469 23.877H0ZM14.9414 23.877L19.2383 0H28.125L20.9961 23.877H14.9414Z"
                     fill="#1342F3" />
                 </svg>
                 <p class="testimonials__text">Мы искали партнёра, который сможет посмотреть на цифровизацию вуза
@@ -573,17 +585,16 @@
                     <span class="testimonials__name">Имя Фамилия</span>
                     <span class="testimonials__role">Должность, компания</span>
                   </div>
-                  <img class="testimonials__logo" src="assets/img/logo-ranepa.png" alt="РАНХиГС" width="60"
-                    height="50">
+                  <img class="testimonials__logo" src="assets/img/logo-ranepa.png" alt="РАНХиГС" width="60" height="50">
                 </div>
               </article>
             </div>
             <div class="swiper-slide">
               <article class="card testimonials__card">
-                <svg class="testimonials__quote" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                <svg class="testimonials__quote" width="29" height="24" viewBox="0 0 29 24" fill="none"
                   aria-hidden="true">
                   <path
-                    d="M17.5 12C12.8 13.9 10 17 10 21.2C10 24.3 12.2 26.7 15.2 26.7C17.8 26.7 19.9 24.6 19.9 22C19.9 19.5 18.1 17.5 15.7 17.4C16.3 14.9 18.3 12.6 20.6 11.3L17.5 12ZM28.6 12C23.9 13.9 21.1 17 21.1 21.2C21.1 24.3 23.3 26.7 26.3 26.7C28.9 26.7 31 24.6 31 22C31 19.5 29.2 17.5 26.8 17.4C27.4 14.9 29.4 12.6 31.7 11.3L28.6 12Z"
+                    d="M0 23.877L4.29688 0H13.1836L6.05469 23.877H0ZM14.9414 23.877L19.2383 0H28.125L20.9961 23.877H14.9414Z"
                     fill="#1342F3" />
                 </svg>
                 <p class="testimonials__text">SoftSnow помогли нам перевести внутренние конкурсные процедуры в цифровой
@@ -601,10 +612,10 @@
             </div>
             <div class="swiper-slide">
               <article class="card testimonials__card">
-                <svg class="testimonials__quote" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                <svg class="testimonials__quote" width="29" height="24" viewBox="0 0 29 24" fill="none"
                   aria-hidden="true">
                   <path
-                    d="M17.5 12C12.8 13.9 10 17 10 21.2C10 24.3 12.2 26.7 15.2 26.7C17.8 26.7 19.9 24.6 19.9 22C19.9 19.5 18.1 17.5 15.7 17.4C16.3 14.9 18.3 12.6 20.6 11.3L17.5 12ZM28.6 12C23.9 13.9 21.1 17 21.1 21.2C21.1 24.3 23.3 26.7 26.3 26.7C28.9 26.7 31 24.6 31 22C31 19.5 29.2 17.5 26.8 17.4C27.4 14.9 29.4 12.6 31.7 11.3L28.6 12Z"
+                    d="M0 23.877L4.29688 0H13.1836L6.05469 23.877H0ZM14.9414 23.877L19.2383 0H28.125L20.9961 23.877H14.9414Z"
                     fill="#1342F3" />
                 </svg>
                 <p class="testimonials__text">Отдельно отмечу скорость внедрения и то, как команда учитывает специфику
@@ -614,8 +625,8 @@
                     <span class="testimonials__name">Имя Фамилия</span>
                     <span class="testimonials__role">Должность, компания</span>
                   </div>
-                  <img class="testimonials__logo" src="assets/img/solution-t-logo.png" alt="Логотип клиента"
-                    width="60" height="50">
+                  <img class="testimonials__logo" src="assets/img/solution-t-logo.png" alt="Логотип клиента" width="60"
+                    height="50">
                 </div>
               </article>
             </div>
@@ -645,7 +656,7 @@
                     </svg></button>
                 </div>
               </div>
-    
+
             </div>
           </div>
         </div>
@@ -661,7 +672,7 @@
                       d="M11.5869 5.18164L8.71582 2.56348L7.19824 1.01855C7.14355 0.963867 7.10254 0.900065 7.0752 0.827148C7.04785 0.749674 7.03418 0.669922 7.03418 0.587891C7.03418 0.419271 7.09115 0.280273 7.20508 0.170898C7.32357 0.0569661 7.46712 0 7.63574 0C7.7998 0 7.95247 0.0683594 8.09375 0.205078L12.6191 4.72363C12.7604 4.85579 12.8311 5.00846 12.8311 5.18164C12.8311 5.35482 12.7604 5.50977 12.6191 5.64648L8.08008 10.1787C7.94792 10.3063 7.7998 10.3701 7.63574 10.3701C7.46712 10.3701 7.32357 10.3154 7.20508 10.2061C7.09115 10.0921 7.03418 9.95085 7.03418 9.78223C7.03418 9.7002 7.04785 9.62044 7.0752 9.54297C7.1071 9.46549 7.14811 9.39941 7.19824 9.34473L8.71582 7.7998L11.5869 5.18164ZM11.5801 5.6875L9.37207 5.79688H4.62793C3.78939 5.79688 3.12174 5.91764 2.625 6.15918C2.13281 6.40072 1.77734 6.78353 1.55859 7.30762C1.3444 7.83171 1.2373 8.51758 1.2373 9.36523C1.24186 9.51562 1.24414 9.6569 1.24414 9.78906C1.2487 9.92122 1.25326 10.042 1.25781 10.1514C1.25781 10.3291 1.19857 10.4749 1.08008 10.5889C0.966146 10.7028 0.820312 10.7598 0.642578 10.7598C0.524089 10.7598 0.423828 10.7347 0.341797 10.6846C0.264323 10.639 0.202799 10.5775 0.157227 10.5C0.111654 10.4225 0.0797526 10.3382 0.0615234 10.2471C0.038737 10.1423 0.0227865 10.0101 0.0136719 9.85059C0.00455729 9.68652 0 9.50423 0 9.30371C0 7.64941 0.355469 6.44857 1.06641 5.70117C1.77734 4.94922 2.94401 4.57324 4.56641 4.57324H9.37207L11.5732 4.67578C11.7145 4.6849 11.833 4.7373 11.9287 4.83301C12.029 4.92871 12.0791 5.04492 12.0791 5.18164C12.0791 5.31836 12.0312 5.43457 11.9355 5.53027C11.8398 5.62598 11.7214 5.67839 11.5801 5.6875Z"
                       fill="#222222" />
                   </svg>
-    
+
                 </div>
                 <p class="projects__text">В РАНХиГС успешно завершён переход на Directum RX. Создана отказоустойчивая
                   архитектура, пользователи работают через веб и мобильные приложения. Поэтапно оцифрованы ключевые
@@ -714,7 +725,7 @@
                       d="M11.5869 5.18164L8.71582 2.56348L7.19824 1.01855C7.14355 0.963867 7.10254 0.900065 7.0752 0.827148C7.04785 0.749674 7.03418 0.669922 7.03418 0.587891C7.03418 0.419271 7.09115 0.280273 7.20508 0.170898C7.32357 0.0569661 7.46712 0 7.63574 0C7.7998 0 7.95247 0.0683594 8.09375 0.205078L12.6191 4.72363C12.7604 4.85579 12.8311 5.00846 12.8311 5.18164C12.8311 5.35482 12.7604 5.50977 12.6191 5.64648L8.08008 10.1787C7.94792 10.3063 7.7998 10.3701 7.63574 10.3701C7.46712 10.3701 7.32357 10.3154 7.20508 10.2061C7.09115 10.0921 7.03418 9.95085 7.03418 9.78223C7.03418 9.7002 7.04785 9.62044 7.0752 9.54297C7.1071 9.46549 7.14811 9.39941 7.19824 9.34473L8.71582 7.7998L11.5869 5.18164ZM11.5801 5.6875L9.37207 5.79688H4.62793C3.78939 5.79688 3.12174 5.91764 2.625 6.15918C2.13281 6.40072 1.77734 6.78353 1.55859 7.30762C1.3444 7.83171 1.2373 8.51758 1.2373 9.36523C1.24186 9.51562 1.24414 9.6569 1.24414 9.78906C1.2487 9.92122 1.25326 10.042 1.25781 10.1514C1.25781 10.3291 1.19857 10.4749 1.08008 10.5889C0.966146 10.7028 0.820312 10.7598 0.642578 10.7598C0.524089 10.7598 0.423828 10.7347 0.341797 10.6846C0.264323 10.639 0.202799 10.5775 0.157227 10.5C0.111654 10.4225 0.0797526 10.3382 0.0615234 10.2471C0.038737 10.1423 0.0227865 10.0101 0.0136719 9.85059C0.00455729 9.68652 0 9.50423 0 9.30371C0 7.64941 0.355469 6.44857 1.06641 5.70117C1.77734 4.94922 2.94401 4.57324 4.56641 4.57324H9.37207L11.5732 4.67578C11.7145 4.6849 11.833 4.7373 11.9287 4.83301C12.029 4.92871 12.0791 5.04492 12.0791 5.18164C12.0791 5.31836 12.0312 5.43457 11.9355 5.53027C11.8398 5.62598 11.7214 5.67839 11.5801 5.6875Z"
                       fill="#222222" />
                   </svg>
-    
+
                 </div>
                 <p class="projects__text">В РАНХиГС успешно завершён переход на Directum RX. Создана отказоустойчивая
                   архитектура, пользователи работают через веб и мобильные приложения. Поэтапно оцифрованы ключевые
@@ -762,7 +773,7 @@
       </div>
     </section>
 
-    <section class="events" id="events" aria-label="Читайте также">
+    <section class="events" id="events" aria-label="Вебинары, мероприятия и материалы">
       <div class="container">
         <div class="events__head">
           <h2 class="events__heading">Читайте также</h2>
@@ -841,9 +852,10 @@
     <section class="cta" aria-label="Нужна консультация">
       <div class="cta__body">
         <div class="cta__content">
-          <h2 class="cta__title">Нужна консультация<br>по&nbsp;проекту?</h2>
-          <p class="cta__text">Оставьте контакты, и&nbsp;мы свяжемся с&nbsp;вами, чтобы обсудить задачу, подобрать
-            подходящее направление и&nbsp;предложить следующий шаг</p>
+          <h2 class="cta__title">Обсудим внедрение<br> в вашем университете?</h2>
+          <p class="cta__text">Свяжитесь с нами, чтобы обсудить ваш проект:
+          ответим на вопросы, подберём подходящую конфигурацию
+          и покажем сервис на ваших задачах.</p>
           <button class="btn btn--primary btn--lg cta__btn" type="button">Оставить заявку</button>
         </div>
       </div>
@@ -852,81 +864,85 @@
     <section class="faq" aria-label="Часто задаваемые вопросы">
       <div class="container">
         <div class="faq__inner">
-        <h2 class="faq__title">Часто задаваемые<br>вопросы</h2>
-        <div class="faq__list">
-          <div class="faq__item">
-            <button class="faq__q" type="button" aria-expanded="false">
-              <span class="faq__name">Нужно ли иметь технических специалистов в штате, чтобы внедрить и использовать
-                сервис?</span>
-              <svg class="faq__icon" width="24" height="40" viewBox="0 0 24 40" fill="none" aria-hidden="true">
-                <path d="M6 17L12 11L18 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </button>
-            <div class="faq__a">
-              <p>Нет, сервис является готовым решением. Наша команда производит установку и первоначальную настройку.
-                Для повседневной работы достаточно сотрудника, ответственного за кадровое делопроизводство. Он сможет
-                управлять процедурами через понятный веб-интерфейс.</p>
+          <h2 class="faq__title">Часто задаваемые вопросы</h2>
+          <div class="faq__list">
+            <div class="faq__item">
+              <button class="faq__q" type="button" aria-expanded="false">
+                <span class="faq__name">Нужно ли иметь технических специалистов в штате, чтобы внедрить и использовать
+                  сервис?</span>
+                <svg class="faq__icon" width="24" height="40" viewBox="0 0 24 40" fill="none" aria-hidden="true">
+                  <path d="M6 17L12 11L18 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="faq__a">
+                <p>Нет, сервис является готовым решением. Наша команда производит установку и первоначальную настройку.
+                Для повседневной работы достаточно сотрудника, ответственного за кадровое делопроизводство. Он сможет управлять
+                процедурами через понятный веб-интерфейс.</p>
+              </div>
+            </div>
+            <div class="faq__item">
+              <button class="faq__q" type="button" aria-expanded="false">
+                <span class="faq__name">Как происходит интеграция сервиса с существующими информационными системами
+                  университета?</span>
+                <svg class="faq__icon" width="24" height="40" viewBox="0 0 24 40" fill="none" aria-hidden="true">
+                  <path d="M6 17L12 11L18 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="faq__a">
+                <p>Сервис поддерживает интеграцию с корпоративными системами университета по открытым API. На этапе
+                  внедрения мы согласуем сценарии обмена данными с кадровыми и учётными системами, чтобы избежать
+                  двойного
+                  ввода и обеспечить целостность информации.</p>
+              </div>
+            </div>
+            <div class="faq__item">
+              <button class="faq__q" type="button" aria-expanded="false">
+                <span class="faq__name">Соответствует ли сервис требованиям законодательства о персональных
+                  данных?</span>
+                <svg class="faq__icon" width="24" height="40" viewBox="0 0 24 40" fill="none" aria-hidden="true">
+                  <path d="M6 17L12 11L18 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="faq__a">
+                <p>Обработка персональных данных ведётся в соответствии с требованиями законодательства. Данные хранятся
+                  на
+                  территории Российской Федерации, доступ к ним ограничен ролевой моделью, а журналы действий позволяют
+                  отслеживать любые изменения.</p>
+              </div>
+            </div>
+            <div class="faq__item">
+              <button class="faq__q" type="button" aria-expanded="false">
+                <span class="faq__name">Можно ли попробовать сервис перед покупкой?</span>
+                <svg class="faq__icon" width="24" height="40" viewBox="0 0 24 40" fill="none" aria-hidden="true">
+                  <path d="M6 17L12 11L18 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="faq__a">
+                <p>Да, мы предоставляем демо-доступ и проводим презентацию на данных, приближенных к вашим сценариям. На
+                  нейтральных проектах вы сможете оценить интерфейс, скорость работы и удобство сервиса до принятия
+                  решения.</p>
+              </div>
+            </div>
+            <div class="faq__item">
+              <button class="faq__q" type="button" aria-expanded="false">
+                <span class="faq__name">Как происходит переход с бумажного документооборота?</span>
+                <svg class="faq__icon" width="24" height="40" viewBox="0 0 24 40" fill="none" aria-hidden="true">
+                  <path d="M6 17L12 11L18 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="faq__a">
+                <p>Переход проходит поэтапно: сначала мы настраиваем сервис на актуальных данных, параллельно с бумажным
+                  документооборотом. Когда процессы стабилизируются и сотрудники привыкнут к работе в системе, вы
+                  полностью
+                  переводите процедуры в цифровой формат.</p>
+              </div>
             </div>
           </div>
-          <div class="faq__item">
-            <button class="faq__q" type="button" aria-expanded="false">
-              <span class="faq__name">Как происходит интеграция сервиса с существующими информационными системами
-                университета?</span>
-              <svg class="faq__icon" width="24" height="40" viewBox="0 0 24 40" fill="none" aria-hidden="true">
-                <path d="M6 17L12 11L18 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </button>
-            <div class="faq__a">
-              <p>Сервис поддерживает интеграцию с корпоративными системами университета по открытым API. На этапе
-                внедрения мы согласуем сценарии обмена данными с кадровыми и учётными системами, чтобы избежать двойного
-                ввода и обеспечить целостность информации.</p>
-            </div>
-          </div>
-          <div class="faq__item">
-            <button class="faq__q" type="button" aria-expanded="false">
-              <span class="faq__name">Соответствует ли сервис требованиям законодательства о персональных данных?</span>
-              <svg class="faq__icon" width="24" height="40" viewBox="0 0 24 40" fill="none" aria-hidden="true">
-                <path d="M6 17L12 11L18 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </button>
-            <div class="faq__a">
-              <p>Обработка персональных данных ведётся в соответствии с требованиями законодательства. Данные хранятся на
-                территории Российской Федерации, доступ к ним ограничен ролевой моделью, а журналы действий позволяют
-                отслеживать любые изменения.</p>
-            </div>
-          </div>
-          <div class="faq__item">
-            <button class="faq__q" type="button" aria-expanded="false">
-              <span class="faq__name">Можно ли попробовать сервис перед покупкой?</span>
-              <svg class="faq__icon" width="24" height="40" viewBox="0 0 24 40" fill="none" aria-hidden="true">
-                <path d="M6 17L12 11L18 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </button>
-            <div class="faq__a">
-              <p>Да, мы предоставляем демо-доступ и проводим презентацию на данных, приближенных к вашим сценариям. На
-                нейтральных проектах вы сможете оценить интерфейс, скорость работы и удобство сервиса до принятия
-                решения.</p>
-            </div>
-          </div>
-          <div class="faq__item">
-            <button class="faq__q" type="button" aria-expanded="false">
-              <span class="faq__name">Как происходит переход с бумажного документооборота?</span>
-              <svg class="faq__icon" width="24" height="40" viewBox="0 0 24 40" fill="none" aria-hidden="true">
-                <path d="M6 17L12 11L18 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </button>
-            <div class="faq__a">
-              <p>Переход проходит поэтапно: сначала мы настраиваем сервис на актуальных данных, параллельно с бумажным
-                документооборотом. Когда процессы стабилизируются и сотрудники привыкнут к работе в системе, вы полностью
-                переводите процедуры в цифровой формат.</p>
-            </div>
-          </div>
-        </div>
         </div>
       </div>
     </section>
@@ -1008,6 +1024,35 @@
     </div>
   </footer>
 
+  <div class="s-features-popup" id="s-features-popup" hidden>
+    <div class="s-features-popup__card">
+      <button type="button" class="s-features-popup__close" data-fancybox-close aria-label="Закрыть">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M2 2l16 16M18 2L2 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+      <h3 class="s-features-popup__title">обзор</h3>
+      <div class="s-features-popup__media">
+        <div class="s-features-popup__main">
+          <img class="s-features-popup__img" src="" alt="">
+          <button type="button" class="s-features-popup__nav s-features-popup__nav--prev" aria-label="Предыдущий экран">
+            <svg width="15" height="14" viewBox="0 0 15 14" aria-hidden="true"><use href="#icon-arrow-left" /></svg>
+          </button>
+          <button type="button" class="s-features-popup__nav s-features-popup__nav--next" aria-label="Следующий экран">
+            <svg width="15" height="14" viewBox="0 0 15 14" aria-hidden="true"><use href="#icon-arrow-right" /></svg>
+          </button>
+        </div>
+        <div class="s-features-popup__thumbs">
+          <button type="button" class="s-features-popup__thumb" aria-label="Экран 1"><img src="assets/img/solution-features.png" alt=""></button>
+          <button type="button" class="s-features-popup__thumb" aria-label="Экран 2"><img src="assets/img/solution-features.png" alt=""></button>
+          <button type="button" class="s-features-popup__thumb" aria-label="Экран 3"><img src="assets/img/solution-features.png" alt=""></button>
+          <button type="button" class="s-features-popup__thumb" aria-label="Экран 4"><img src="assets/img/solution-features.png" alt=""></button>
+          <button type="button" class="s-features-popup__thumb" aria-label="Экран 5"><img src="assets/img/solution-features.png" alt=""></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
     <defs>
       <symbol id="icon-arrow" viewBox="0 0 17 14">
@@ -1029,6 +1074,7 @@
   </svg>
 
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/fancybox/fancybox.umd.js"></script>
   <script src="js/main.js"></script>
 </body>
 

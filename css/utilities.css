@@ -129,4 +129,8 @@ section {
 	*::after {
 		transition-property: opacity, color, background-color, border-color, box-shadow, outline-color, fill !important;
 	}
+	/* Swiper needs transform transitions for slide motion (loop/fix rely on transitionend). */
+	.swiper-wrapper {
+		transition-property: transform !important;
+	}
 }
