@@ -112,25 +112,3 @@ select {
 section {
 	overflow: hidden;
 }
-
-@media (prefers-reduced-motion: reduce) {
-	*,
-	*::before,
-	*::after {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		scroll-behavior: auto !important;
-	}
-	/* keep vestibular-safe cross-fades (opacity/color); drop motion
-	   transitions (transform/position/size) by restricting the property list.
-	   duration is left as authored so the safe fades stay smooth. */
-	*,
-	*::before,
-	*::after {
-		transition-property: opacity, color, background-color, border-color, box-shadow, outline-color, fill !important;
-	}
-	/* Swiper needs transform transitions for slide motion (loop/fix rely on transitionend). */
-	.swiper-wrapper {
-		transition-property: transform !important;
-	}
-}

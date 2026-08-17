@@ -2,11 +2,12 @@
   /* Colors */
   --color-black: #222222;
   --color-white: #FFFFFF;
-  --color-sea: #216CF3;
+  --color-sea: #1342F3;
+
   --color-grey: rgba(34, 34, 34, 0.7);
   --color-overlay: rgba(0, 0, 0, 0.2);
   --color-dark-navy: #100943;
-  --color-blue-alt: #1F67F9;
+  --color-blue-alt: #1342F3;
   --color-red: #ED143B;
 
   /* Backgrounds */

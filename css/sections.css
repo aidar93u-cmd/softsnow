@@ -58,14 +58,22 @@
   font-size: var(--fs-body-16);
   font-weight: 500;
   color: var(--color-black);
-  text-decoration: underline;
+    position: relative;
 }
-
+.header__link::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--color-black);
+}
 .header__caret {
   flex-shrink: 0;
   color: var(--color-black);
   /* ponytail: forced smooth rotation despite prefers-reduced-motion in utilities.css (explicit user request) */
-  transition: transform 0.3s ease !important;
+  transition: all 0.4s;
 }
 
 .header__dropdown:hover .header__caret,
@@ -181,6 +189,7 @@
 .hero__note_1{  
     max-width: 240px;
     display: block;
+    color: var(--grey, #222222B2);
 }
 .hero-block-page-inner{
     padding: 40px;
@@ -234,6 +243,9 @@
 }
 
 .hero__note_2 {
+    max-width: 290px;
+    display: block;
+    color: var(--grey, #222222B2);
 }
 
 .hero__copy {
@@ -599,6 +611,12 @@
   text-decoration: none;
   transition: all 0.4s;
 }
+.partners__card img{  
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    margin: auto;
+}
 
 .partners__name {
   font-size: var(--fs-h3);
@@ -663,7 +681,7 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-    margin-top: 101px;
+    margin-top: 106px;
 
 }
 .projects__sub {
@@ -675,6 +693,7 @@
     display: flex;
     align-items: flex-end;
     gap: 20px;
+    margin-top: -20px;
 }
 
 .projects__swiper {
@@ -735,6 +754,7 @@
 
 .projects__arrow {
   flex-shrink: 0;
+    margin-top: 7px;
 }
 
 .projects__arrow path {
@@ -1128,8 +1148,8 @@
   z-index: 2;
   display: flex;
   flex-direction: column;
-  width: 440px;
-  height: 140px;
+  width: calc(100% - 20px);
+  min-height: 140px;
   padding: 20px;
   background: var(--color-white);
   border-radius: var(--radius-md);
@@ -1137,8 +1157,7 @@
 }
 
 .events__card--wide .events__info {
-  width: 450px;
-  height: 142px;
+  width: calc(50% - 20px);
 }
 
 .events__title {
@@ -1265,6 +1284,7 @@
   display: flex;
   align-items: center;
   gap: 21px;
+    flex: 1;
 }
 
 .footer__logo-text {
@@ -1290,6 +1310,7 @@
   flex-direction: column;
   gap: var(--gap-sm);
   font-size: var(--fs-body-14);
+    flex: 1;
 }
 
 .footer__contacts a {
@@ -1299,6 +1320,7 @@
 .footer__social {
   display: flex;
   gap: 20px;
+    flex: 1;
 }
 
 .footer__social a {
@@ -1897,7 +1919,7 @@
 
 .s-tasks__icon {
   color: var(--color-black);
-  transition: transform 0.4s ease !important;
+  transition: all 0.4s;
 }
 
 .s-tasks__item.is-open .s-tasks__icon {
@@ -1908,15 +1930,15 @@
   display: grid;
   grid-template-rows: 0fr;
   max-width: 695px;
-  /* ponytail: grid-rows height animation; !important survives prefers-reduced-motion override in utilities.css */
-  transition: grid-template-rows 0.4s ease !important;
+  transition: all 0.4s;
 }
 
 .s-tasks__a > p {
   overflow: hidden;
   min-height: 0;
   margin: 0;
-  transition: padding-bottom 0.4s ease !important;
+  transition: all 0.4s;
+    color: var(--grey, #222222B2);
 }
 
 .s-tasks__item.is-open .s-tasks__a {
@@ -2401,7 +2423,7 @@
   padding: 0;
   text-align: left;
   color: var(--color-black);
-  transition: color 0.4s ease !important;
+  transition: all 0.4s;
 }
 .faq__q:hover {
   color: var(--color-sea);
@@ -2418,7 +2440,7 @@
 .faq__icon {
   flex-shrink: 0;
   color: currentColor;
-  transition: transform 0.4s ease !important;
+  transition: all 0.4s;
 }
 
 .faq__item.is-open .faq__icon {
@@ -2429,15 +2451,14 @@
   display: grid;
   grid-template-rows: 0fr;
   max-width: 815px;
-  /* ponytail: grid-rows height animation; !important survives prefers-reduced-motion override in utilities.css */
-  transition: grid-template-rows 0.4s ease !important;
+  transition: all 0.4s;
 }
 
 .faq__a > p {
   overflow: hidden;
   min-height: 0;
   margin: 0;
-  transition: padding-bottom 0.4s ease !important;
+  transition: all 0.4s;
     color: var(--grey, #222222B2);
 }
 
@@ -2531,6 +2552,10 @@
   color: var(--color-white);
 }
 
+.catalog__arrow {
+  transition: all 0.4s;
+  transform: scale(1);
+}
 .catalog__card:hover .catalog__head,
 .catalog__card:hover .catalog__feat,
 .catalog__card:hover .catalog__arrow {
@@ -2544,9 +2569,8 @@
 .catalog__card:hover .catalog__arrow {
   transform: scale(2);
 }
-
-.catalog__arrow {
-  transition: transform 0.2s ease;
+.catalog__card:hover .catalog__arrow path{
+    opacity: 1;
 }
 
 /* ============ Client detail page ============ */
@@ -3649,7 +3673,7 @@
 }
 
 .directum-hero__btn {
-  width: 184px;
+
 }
 
 .directum-hero__footer::after {
@@ -3734,6 +3758,11 @@
 .reasons__icon {
   flex-shrink: 0;
   color: var(--color-sea);
+    width: 64px;
+    height: 64px;
+    padding: 15px;
+    background: #1342F31A;
+    border-radius: 50%;
 }
 
 .reasons__name {
@@ -3786,17 +3815,20 @@
   padding: 36px 40px 35px;
   background: var(--color-white);
   border-radius: var(--radius-lg);
+  transition: all 0.4s;
 }
 
 .vnedrenie__name {
   font-size: var(--fs-h3);
   font-weight: 500;
+  transition: all 0.4s;
 }
 
 .vnedrenie__sub {
   margin-top: 20px;
   font-size: var(--fs-body-16);
   max-width: 316px;
+  transition: all 0.4s;
 }
 
 .vnedrenie__list {
@@ -3805,12 +3837,14 @@
   flex-direction: column;
   gap: var(--gap-lg);
   list-style: none;
+  transition: all 0.4s;
 }
 
 .vnedrenie__row {
   display: flex;
   gap: var(--gap-lg);
   font-size: 15px;
+  transition: all 0.4s;
 }
 
 .vnedrenie__done {
@@ -3823,17 +3857,21 @@
   width: 100%;
 }
 
-.vnedrenie__card--blue {
+.vnedrenie__card:hover {
   background: var(--color-sea);
   color: var(--color-white);
 }
 
-.vnedrenie__card--blue .vnedrenie__done {
+.vnedrenie__card:hover .vnedrenie__done {
   color: var(--color-white);
 }
-
-.vnedrenie__card--blue .vnedrenie__btn {
-  color: var(--color-sea);
+.vnedrenie__card:hover .vnedrenie__done circle {
+  fill: transparent
+}
+.vnedrenie__card:hover .vnedrenie__btn {
+    /* color: var(--color-sea); */
+    background: var(--color-white);
+    color: var(--color-sea);
 }
 
 .vnedrenie__badge {
@@ -3869,7 +3907,7 @@
 }
 
 .d-partner__title {
-  font-size: var(--fs-h2);
+  font-size: var(--fs-h3);
   font-weight: 500;
   letter-spacing: -0.07em;
   max-width: 713px;
