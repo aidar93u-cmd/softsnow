@@ -1,0 +1,6207 @@
+{
+  "definitely_used": [
+    {
+      "selector": ":root",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": "*",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": "*::after",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": "html",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": "body",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": "h6",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": "h1",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": "h2",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": "h3",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": "h4",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": "img",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": "p",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": "svg",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": "::selection",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": ":focus-visible",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": "a",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": "ol",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": "button",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": "select",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": "section",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": ".container",
+      "locations": [
+        [
+          "components.css",
+          4
+        ]
+      ]
+    },
+    {
+      "selector": ".card",
+      "locations": [
+        [
+          "components.css",
+          12
+        ]
+      ]
+    },
+    {
+      "selector": ".card--company img",
+      "locations": [
+        [
+          "components.css",
+          32
+        ]
+      ]
+    },
+    {
+      "selector": ".breadcrumb",
+      "locations": [
+        [
+          "components.css",
+          39
+        ]
+      ]
+    },
+    {
+      "selector": ".breadcrumb a",
+      "locations": [
+        [
+          "components.css",
+          50
+        ]
+      ]
+    },
+    {
+      "selector": ".breadcrumb a:hover",
+      "locations": [
+        [
+          "components.css",
+          54
+        ]
+      ]
+    },
+    {
+      "selector": ".breadcrumb__sep",
+      "locations": [
+        [
+          "components.css",
+          58
+        ]
+      ]
+    },
+    {
+      "selector": ".breadcrumb__current",
+      "locations": [
+        [
+          "components.css",
+          62
+        ]
+      ]
+    },
+    {
+      "selector": ".btn",
+      "locations": [
+        [
+          "components.css",
+          67
+        ]
+      ]
+    },
+    {
+      "selector": ".btn--primary",
+      "locations": [
+        [
+          "components.css",
+          82
+        ]
+      ]
+    },
+    {
+      "selector": ".btn--primary:hover",
+      "locations": [
+        [
+          "components.css",
+          87
+        ]
+      ]
+    },
+    {
+      "selector": ".btn--outline-white",
+      "locations": [
+        [
+          "components.css",
+          92
+        ]
+      ]
+    },
+    {
+      "selector": ".btn--outline",
+      "locations": [
+        [
+          "components.css",
+          97
+        ]
+      ]
+    },
+    {
+      "selector": ".btn--outline:hover",
+      "locations": [
+        [
+          "components.css",
+          100
+        ]
+      ]
+    },
+    {
+      "selector": ".btn--outline-white:hover",
+      "locations": [
+        [
+          "components.css",
+          104
+        ]
+      ]
+    },
+    {
+      "selector": ".btn--outline-dark",
+      "locations": [
+        [
+          "components.css",
+          109
+        ]
+      ]
+    },
+    {
+      "selector": ".btn--outline-dark:hover",
+      "locations": [
+        [
+          "components.css",
+          114
+        ]
+      ]
+    },
+    {
+      "selector": ".btn--ghost",
+      "locations": [
+        [
+          "components.css",
+          120
+        ]
+      ]
+    },
+    {
+      "selector": ".btn--ghost:hover",
+      "locations": [
+        [
+          "components.css",
+          126
+        ]
+      ]
+    },
+    {
+      "selector": ".btn--search",
+      "locations": [
+        [
+          "components.css",
+          131
+        ]
+      ]
+    },
+    {
+      "selector": ".btn--search:hover",
+      "locations": [
+        [
+          "components.css",
+          139
+        ]
+      ]
+    },
+    {
+      "selector": ".btn--md",
+      "locations": [
+        [
+          "components.css",
+          166
+        ]
+      ]
+    },
+    {
+      "selector": ".btn--lg",
+      "locations": [
+        [
+          "components.css",
+          169
+        ]
+      ]
+    },
+    {
+      "selector": ".carousel-nav",
+      "locations": [
+        [
+          "components.css",
+          174
+        ]
+      ]
+    },
+    {
+      "selector": ".carousel-nav__btn",
+      "locations": [
+        [
+          "components.css",
+          179
+        ]
+      ]
+    },
+    {
+      "selector": ".carousel-nav__btn:hover",
+      "locations": [
+        [
+          "components.css",
+          191
+        ]
+      ]
+    },
+    {
+      "selector": ".tabs",
+      "locations": [
+        [
+          "components.css",
+          196
+        ]
+      ]
+    },
+    {
+      "selector": ".tabs__btn",
+      "locations": [
+        [
+          "components.css",
+          203
+        ]
+      ]
+    },
+    {
+      "selector": ".tabs__btn:hover",
+      "locations": [
+        [
+          "components.css",
+          216
+        ]
+      ]
+    },
+    {
+      "selector": ".tabs__btn.is-active",
+      "locations": [
+        [
+          "components.css",
+          219
+        ]
+      ]
+    },
+    {
+      "selector": ".header",
+      "locations": [
+        [
+          "sections.css",
+          2
+        ]
+      ]
+    },
+    {
+      "selector": ".header__inner",
+      "locations": [
+        [
+          "sections.css",
+          7
+        ]
+      ]
+    },
+    {
+      "selector": ".logo",
+      "locations": [
+        [
+          "sections.css",
+          18
+        ]
+      ]
+    },
+    {
+      "selector": ".logo__mark",
+      "locations": [
+        [
+          "sections.css",
+          25
+        ]
+      ]
+    },
+    {
+      "selector": ".logo__icon",
+      "locations": [
+        [
+          "sections.css",
+          29
+        ]
+      ]
+    },
+    {
+      "selector": ".header__nav",
+      "locations": [
+        [
+          "sections.css",
+          47
+        ]
+      ]
+    },
+    {
+      "selector": ".header__link",
+      "locations": [
+        [
+          "sections.css",
+          54
+        ]
+      ]
+    },
+    {
+      "selector": ".header__link::after",
+      "locations": [
+        [
+          "sections.css",
+          63
+        ]
+      ]
+    },
+    {
+      "selector": ".header__caret",
+      "locations": [
+        [
+          "sections.css",
+          72
+        ]
+      ]
+    },
+    {
+      "selector": ".header__dropdown:focus-within .header__caret",
+      "locations": [
+        [
+          "sections.css",
+          80
+        ]
+      ]
+    },
+    {
+      "selector": ".header__link:hover",
+      "locations": [
+        [
+          "sections.css",
+          84
+        ]
+      ]
+    },
+    {
+      "selector": ".header__dropdown",
+      "locations": [
+        [
+          "sections.css",
+          88
+        ]
+      ]
+    },
+    {
+      "selector": ".header__dropdown::before",
+      "locations": [
+        [
+          "sections.css",
+          92
+        ]
+      ]
+    },
+    {
+      "selector": ".header__dropdown-panel",
+      "locations": [
+        [
+          "sections.css",
+          102
+        ]
+      ]
+    },
+    {
+      "selector": ".header__dropdown:focus-within .header__dropdown-panel",
+      "locations": [
+        [
+          "sections.css",
+          121
+        ]
+      ]
+    },
+    {
+      "selector": ".header__dropdown-link",
+      "locations": [
+        [
+          "sections.css",
+          127
+        ]
+      ]
+    },
+    {
+      "selector": ".header__dropdown-link:hover",
+      "locations": [
+        [
+          "sections.css",
+          137
+        ]
+      ]
+    },
+    {
+      "selector": ".header__contacts",
+      "locations": [
+        [
+          "sections.css",
+          141
+        ]
+      ]
+    },
+    {
+      "selector": ".header__phone",
+      "locations": [
+        [
+          "sections.css",
+          148
+        ]
+      ]
+    },
+    {
+      "selector": ".header__phone-label",
+      "locations": [
+        [
+          "sections.css",
+          158
+        ]
+      ]
+    },
+    {
+      "selector": ".header__phone-num",
+      "locations": [
+        [
+          "sections.css",
+          165
+        ]
+      ]
+    },
+    {
+      "selector": ".hero",
+      "locations": [
+        [
+          "sections.css",
+          173
+        ]
+      ]
+    },
+    {
+      "selector": ".hero-block-inner",
+      "locations": [
+        [
+          "sections.css",
+          178
+        ]
+      ]
+    },
+    {
+      "selector": ".hero__note_1",
+      "locations": [
+        [
+          "sections.css",
+          190
+        ]
+      ]
+    },
+    {
+      "selector": ".hero-block-page-inner",
+      "locations": [
+        [
+          "sections.css",
+          195
+        ]
+      ]
+    },
+    {
+      "selector": ".hero .flex",
+      "locations": [
+        [
+          "sections.css",
+          203
+        ]
+      ]
+    },
+    {
+      "selector": ".hero__body",
+      "locations": [
+        [
+          "sections.css",
+          208
+        ]
+      ]
+    },
+    {
+      "selector": ".hero__title",
+      "locations": [
+        [
+          "sections.css",
+          213
+        ]
+      ]
+    },
+    {
+      "selector": ".hero__brand",
+      "locations": [
+        [
+          "sections.css",
+          221
+        ]
+      ]
+    },
+    {
+      "selector": ".hero__footer",
+      "locations": [
+        [
+          "sections.css",
+          226
+        ]
+      ]
+    },
+    {
+      "selector": ".hero__note",
+      "locations": [
+        [
+          "sections.css",
+          242
+        ]
+      ]
+    },
+    {
+      "selector": ".hero__note_2",
+      "locations": [
+        [
+          "sections.css",
+          246
+        ]
+      ]
+    },
+    {
+      "selector": ".hero__footer::after",
+      "locations": [
+        [
+          "sections.css",
+          258
+        ]
+      ]
+    },
+    {
+      "selector": ".industries",
+      "locations": [
+        [
+          "sections.css",
+          269
+        ]
+      ]
+    },
+    {
+      "selector": ".industries__grid",
+      "locations": [
+        [
+          "sections.css",
+          274
+        ]
+      ]
+    },
+    {
+      "selector": ".industries__card",
+      "locations": [
+        [
+          "sections.css",
+          280
+        ]
+      ]
+    },
+    {
+      "selector": ".industries__bg",
+      "locations": [
+        [
+          "sections.css",
+          292
+        ]
+      ]
+    },
+    {
+      "selector": ".industries__card:not(.industries__card--cta) .industries__arrow",
+      "locations": [
+        [
+          "sections.css",
+          314
+        ]
+      ]
+    },
+    {
+      "selector": ".industries__card:not(.industries__card--cta):hover .industries__text",
+      "locations": [
+        [
+          "sections.css",
+          329
+        ]
+      ]
+    },
+    {
+      "selector": ".industries__title",
+      "locations": [
+        [
+          "sections.css",
+          333
+        ]
+      ]
+    },
+    {
+      "selector": ".industries__text",
+      "locations": [
+        [
+          "sections.css",
+          338
+        ]
+      ]
+    },
+    {
+      "selector": ".industries__card--cta .industries__title",
+      "locations": [
+        [
+          "sections.css",
+          346
+        ]
+      ]
+    },
+    {
+      "selector": ".industries__card--cta",
+      "locations": [
+        [
+          "sections.css",
+          351
+        ]
+      ]
+    },
+    {
+      "selector": ".industries__card--cta:hover",
+      "locations": [
+        [
+          "sections.css",
+          356
+        ]
+      ]
+    },
+    {
+      "selector": ".industries__card--cta:hover .industries__arrow",
+      "locations": [
+        [
+          "sections.css",
+          362
+        ]
+      ]
+    },
+    {
+      "selector": ".industries__arrow",
+      "locations": [
+        [
+          "sections.css",
+          366
+        ]
+      ]
+    },
+    {
+      "selector": ".industries__card--cta .industries__arrow",
+      "locations": [
+        [
+          "sections.css",
+          373
+        ]
+      ]
+    },
+    {
+      "selector": ".stats",
+      "locations": [
+        [
+          "sections.css",
+          378
+        ]
+      ]
+    },
+    {
+      "selector": ".stats__heading",
+      "locations": [
+        [
+          "sections.css",
+          382
+        ]
+      ]
+    },
+    {
+      "selector": ".stats__grid",
+      "locations": [
+        [
+          "sections.css",
+          388
+        ]
+      ]
+    },
+    {
+      "selector": ".stats__grid--4",
+      "locations": [
+        [
+          "sections.css",
+          395
+        ]
+      ]
+    },
+    {
+      "selector": ".stats--client .stats__item",
+      "locations": [
+        [
+          "sections.css",
+          400
+        ]
+      ]
+    },
+    {
+      "selector": ".stats--client .stats__label",
+      "locations": [
+        [
+          "sections.css",
+          406
+        ]
+      ]
+    },
+    {
+      "selector": ".stats__item",
+      "locations": [
+        [
+          "sections.css",
+          412
+        ]
+      ]
+    },
+    {
+      "selector": ".stats__num",
+      "locations": [
+        [
+          "sections.css",
+          421
+        ]
+      ]
+    },
+    {
+      "selector": ".stats__label",
+      "locations": [
+        [
+          "sections.css",
+          430
+        ]
+      ]
+    },
+    {
+      "selector": ".tasks",
+      "locations": [
+        [
+          "sections.css",
+          437
+        ]
+      ]
+    },
+    {
+      "selector": ".tasks__inner",
+      "locations": [
+        [
+          "sections.css",
+          441
+        ]
+      ]
+    },
+    {
+      "selector": ".tasks__heading",
+      "locations": [
+        [
+          "sections.css",
+          447
+        ]
+      ]
+    },
+    {
+      "selector": ".tasks__list",
+      "locations": [
+        [
+          "sections.css",
+          454
+        ]
+      ]
+    },
+    {
+      "selector": ".tasks__item",
+      "locations": [
+        [
+          "sections.css",
+          459
+        ]
+      ]
+    },
+    {
+      "selector": ".tasks__bg",
+      "locations": [
+        [
+          "sections.css",
+          466
+        ]
+      ]
+    },
+    {
+      "selector": ".tasks__item::after",
+      "locations": [
+        [
+          "sections.css",
+          477
+        ]
+      ]
+    },
+    {
+      "selector": ".tasks__item:hover::after",
+      "locations": [
+        [
+          "sections.css",
+          489
+        ]
+      ]
+    },
+    {
+      "selector": ".tasks__link",
+      "locations": [
+        [
+          "sections.css",
+          493
+        ]
+      ]
+    },
+    {
+      "selector": ".tasks__arrow",
+      "locations": [
+        [
+          "sections.css",
+          508
+        ],
+        [
+          "sections.css",
+          514
+        ]
+      ]
+    },
+    {
+      "selector": ".tasks__item:hover .tasks__link",
+      "locations": [
+        [
+          "sections.css",
+          518
+        ]
+      ]
+    },
+    {
+      "selector": ".tasks__footer",
+      "locations": [
+        [
+          "sections.css",
+          522
+        ]
+      ]
+    },
+    {
+      "selector": ".clients",
+      "locations": [
+        [
+          "sections.css",
+          530
+        ]
+      ]
+    },
+    {
+      "selector": ".clients__heading",
+      "locations": [
+        [
+          "sections.css",
+          534
+        ]
+      ]
+    },
+    {
+      "selector": ".clients__marquee",
+      "locations": [
+        [
+          "sections.css",
+          540
+        ]
+      ]
+    },
+    {
+      "selector": ".clients__track",
+      "locations": [
+        [
+          "sections.css",
+          544
+        ]
+      ]
+    },
+    {
+      "selector": ".clients__track .clients__cell",
+      "locations": [
+        [
+          "sections.css",
+          550
+        ]
+      ]
+    },
+    {
+      "selector": "from",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": "to",
+      "locations": "element/utility selector"
+    },
+    {
+      "selector": ".clients__cell",
+      "locations": [
+        [
+          "sections.css",
+          563
+        ]
+      ]
+    },
+    {
+      "selector": ".client-image",
+      "locations": [
+        [
+          "sections.css",
+          569
+        ]
+      ]
+    },
+    {
+      "selector": ".clients__cell img",
+      "locations": [
+        [
+          "sections.css",
+          581
+        ]
+      ]
+    },
+    {
+      "selector": ".partners",
+      "locations": [
+        [
+          "sections.css",
+          589
+        ]
+      ]
+    },
+    {
+      "selector": ".partners__head",
+      "locations": [
+        [
+          "sections.css",
+          594
+        ]
+      ]
+    },
+    {
+      "selector": ".partners__heading",
+      "locations": [
+        [
+          "sections.css",
+          602
+        ]
+      ]
+    },
+    {
+      "selector": ".partners__sub",
+      "locations": [
+        [
+          "sections.css",
+          609
+        ]
+      ]
+    },
+    {
+      "selector": ".partners__actions",
+      "locations": [
+        [
+          "sections.css",
+          613
+        ]
+      ]
+    },
+    {
+      "selector": ".partners .carousel-nav",
+      "locations": [
+        [
+          "sections.css",
+          617
+        ]
+      ]
+    },
+    {
+      "selector": ".partners__swiper",
+      "locations": [
+        [
+          "sections.css",
+          620
+        ]
+      ]
+    },
+    {
+      "selector": ".partners__card",
+      "locations": [
+        [
+          "sections.css",
+          624
+        ]
+      ]
+    },
+    {
+      "selector": ".partners__card img",
+      "locations": [
+        [
+          "sections.css",
+          635
+        ]
+      ]
+    },
+    {
+      "selector": ".partners__name",
+      "locations": [
+        [
+          "sections.css",
+          642
+        ]
+      ]
+    },
+    {
+      "selector": ".partners__tag",
+      "locations": [
+        [
+          "sections.css",
+          645
+        ]
+      ]
+    },
+    {
+      "selector": ".partners__logo",
+      "locations": [
+        [
+          "sections.css",
+          651
+        ]
+      ]
+    },
+    {
+      "selector": ".partners__desc",
+      "locations": [
+        [
+          "sections.css",
+          656
+        ]
+      ]
+    },
+    {
+      "selector": ".partners__arrow",
+      "locations": [
+        [
+          "sections.css",
+          663
+        ]
+      ]
+    },
+    {
+      "selector": ".partners__card:hover",
+      "locations": [
+        [
+          "sections.css",
+          670
+        ]
+      ]
+    },
+    {
+      "selector": ".partners__card:hover .partners__desc",
+      "locations": [
+        [
+          "sections.css",
+          676
+        ]
+      ]
+    },
+    {
+      "selector": ".projects",
+      "locations": [
+        [
+          "sections.css",
+          681
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__head",
+      "locations": [
+        [
+          "sections.css",
+          687
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__heading",
+      "locations": [
+        [
+          "sections.css",
+          695
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__bottom",
+      "locations": [
+        [
+          "sections.css",
+          699
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__sub",
+      "locations": [
+        [
+          "sections.css",
+          706
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__actions",
+      "locations": [
+        [
+          "sections.css",
+          711
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__swiper",
+      "locations": [
+        [
+          "sections.css",
+          718
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__card",
+      "locations": [
+        [
+          "sections.css",
+          722
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__card[hidden]",
+      "locations": [
+        [
+          "sections.css",
+          735
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__empty",
+      "locations": [
+        [
+          "sections.css",
+          739
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__card:focus-visible .projects__year",
+      "locations": [
+        [
+          "sections.css",
+          756
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__top",
+      "locations": [
+        [
+          "sections.css",
+          760
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__name",
+      "locations": [
+        [
+          "sections.css",
+          767
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__arrow",
+      "locations": [
+        [
+          "sections.css",
+          774
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__arrow path",
+      "locations": [
+        [
+          "sections.css",
+          779
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__text",
+      "locations": [
+        [
+          "sections.css",
+          783
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__year",
+      "locations": [
+        [
+          "sections.css",
+          789
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__logo",
+      "locations": [
+        [
+          "sections.css",
+          796
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__logo--sm",
+      "locations": [
+        [
+          "sections.css",
+          804
+        ]
+      ]
+    },
+    {
+      "selector": ".page-hero__title",
+      "locations": [
+        [
+          "sections.css",
+          810
+        ]
+      ]
+    },
+    {
+      "selector": ".page-hero__sub",
+      "locations": [
+        [
+          "sections.css",
+          816
+        ]
+      ]
+    },
+    {
+      "selector": ".projects-page",
+      "locations": [
+        [
+          "sections.css",
+          822
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__filterbar",
+      "locations": [
+        [
+          "sections.css",
+          828
+        ]
+      ]
+    },
+    {
+      "selector": ".projects-page .projects__name",
+      "locations": [
+        [
+          "sections.css",
+          832
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__filters",
+      "locations": [
+        [
+          "sections.css",
+          835
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__dropdowns",
+      "locations": [
+        [
+          "sections.css",
+          842
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__chips",
+      "locations": [
+        [
+          "sections.css",
+          847
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__chips:empty",
+      "locations": [
+        [
+          "sections.css",
+          854
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__chip",
+      "locations": [
+        [
+          "sections.css",
+          858
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__chip:hover .projects__chip-x",
+      "locations": [
+        [
+          "sections.css",
+          884
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__reset",
+      "locations": [
+        [
+          "sections.css",
+          888
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__reset.is-hidden",
+      "locations": [
+        [
+          "sections.css",
+          906
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__reset-x",
+      "locations": [
+        [
+          "sections.css",
+          910
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__reset:hover",
+      "locations": [
+        [
+          "sections.css",
+          916
+        ]
+      ]
+    },
+    {
+      "selector": ".dropdown",
+      "locations": [
+        [
+          "sections.css",
+          921
+        ]
+      ]
+    },
+    {
+      "selector": ".dropdown__trigger",
+      "locations": [
+        [
+          "sections.css",
+          925
+        ]
+      ]
+    },
+    {
+      "selector": ".dropdown__trigger:hover",
+      "locations": [
+        [
+          "sections.css",
+          945
+        ]
+      ]
+    },
+    {
+      "selector": ".dropdown__count",
+      "locations": [
+        [
+          "sections.css",
+          954
+        ]
+      ]
+    },
+    {
+      "selector": ".dropdown__count.is-hidden",
+      "locations": [
+        [
+          "sections.css",
+          967
+        ]
+      ]
+    },
+    {
+      "selector": ".dropdown__caret path",
+      "locations": [
+        [
+          "sections.css",
+          971
+        ]
+      ]
+    },
+    {
+      "selector": ".dropdown__trigger:hover svg path",
+      "locations": [
+        [
+          "sections.css",
+          974
+        ]
+      ]
+    },
+    {
+      "selector": ".dropdown__caret",
+      "locations": [
+        [
+          "sections.css",
+          977
+        ]
+      ]
+    },
+    {
+      "selector": ".dropdown[open] .dropdown__caret",
+      "locations": [
+        [
+          "sections.css",
+          985
+        ]
+      ]
+    },
+    {
+      "selector": ".dropdown__panel",
+      "locations": [
+        [
+          "sections.css",
+          989
+        ]
+      ]
+    },
+    {
+      "selector": ".dropdown__option",
+      "locations": [
+        [
+          "sections.css",
+          1005
+        ]
+      ]
+    },
+    {
+      "selector": ".dropdown__check",
+      "locations": [
+        [
+          "sections.css",
+          1016
+        ]
+      ]
+    },
+    {
+      "selector": ".dropdown__check::after",
+      "locations": [
+        [
+          "sections.css",
+          1032
+        ]
+      ]
+    },
+    {
+      "selector": ".dropdown__check:checked",
+      "locations": [
+        [
+          "sections.css",
+          1042
+        ]
+      ]
+    },
+    {
+      "selector": ".dropdown__check:checked::after",
+      "locations": [
+        [
+          "sections.css",
+          1047
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__grid",
+      "locations": [
+        [
+          "sections.css",
+          1056
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__more",
+      "locations": [
+        [
+          "sections.css",
+          1062
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__more[hidden]",
+      "locations": [
+        [
+          "sections.css",
+          1068
+        ]
+      ]
+    },
+    {
+      "selector": ".events",
+      "locations": [
+        [
+          "sections.css",
+          1088
+        ]
+      ]
+    },
+    {
+      "selector": ".events__head",
+      "locations": [
+        [
+          "sections.css",
+          1093
+        ]
+      ]
+    },
+    {
+      "selector": ".events__heading",
+      "locations": [
+        [
+          "sections.css",
+          1105
+        ]
+      ]
+    },
+    {
+      "selector": ".events__head-actions",
+      "locations": [
+        [
+          "sections.css",
+          1110
+        ]
+      ]
+    },
+    {
+      "selector": ".events__swiper",
+      "locations": [
+        [
+          "sections.css",
+          1119
+        ]
+      ]
+    },
+    {
+      "selector": ".events__swiper .swiper-slide",
+      "locations": [
+        [
+          "sections.css",
+          1123
+        ]
+      ]
+    },
+    {
+      "selector": ".events__swiper .swiper-slide.events__slide--wide",
+      "locations": [
+        [
+          "sections.css",
+          1127
+        ]
+      ]
+    },
+    {
+      "selector": ".events__card",
+      "locations": [
+        [
+          "sections.css",
+          1131
+        ]
+      ]
+    },
+    {
+      "selector": ".events__card::after",
+      "locations": [
+        [
+          "sections.css",
+          1142
+        ]
+      ]
+    },
+    {
+      "selector": ".events__card--wide",
+      "locations": [
+        [
+          "sections.css",
+          1150
+        ]
+      ]
+    },
+    {
+      "selector": ".events__bg",
+      "locations": [
+        [
+          "sections.css",
+          1154
+        ]
+      ]
+    },
+    {
+      "selector": ".events__info",
+      "locations": [
+        [
+          "sections.css",
+          1163
+        ]
+      ]
+    },
+    {
+      "selector": ".events__card--wide .events__info",
+      "locations": [
+        [
+          "sections.css",
+          1178
+        ]
+      ]
+    },
+    {
+      "selector": ".events__title",
+      "locations": [
+        [
+          "sections.css",
+          1183
+        ]
+      ]
+    },
+    {
+      "selector": ".events__meta",
+      "locations": [
+        [
+          "sections.css",
+          1190
+        ]
+      ]
+    },
+    {
+      "selector": ".events__tag",
+      "locations": [
+        [
+          "sections.css",
+          1198
+        ]
+      ]
+    },
+    {
+      "selector": ".events__date",
+      "locations": [
+        [
+          "sections.css",
+          1206
+        ]
+      ]
+    },
+    {
+      "selector": ".events__arrow",
+      "locations": [
+        [
+          "sections.css",
+          1211
+        ]
+      ]
+    },
+    {
+      "selector": ".events__card:hover .events__date",
+      "locations": [
+        [
+          "sections.css",
+          1217
+        ]
+      ]
+    },
+    {
+      "selector": ".events__card:hover .events__info",
+      "locations": [
+        [
+          "sections.css",
+          1220
+        ]
+      ]
+    },
+    {
+      "selector": ".events__card:hover .events__arrow",
+      "locations": [
+        [
+          "sections.css",
+          1224
+        ]
+      ]
+    },
+    {
+      "selector": ".events__card:hover .events__tag",
+      "locations": [
+        [
+          "sections.css",
+          1227
+        ]
+      ]
+    },
+    {
+      "selector": ".cta",
+      "locations": [
+        [
+          "sections.css",
+          1231
+        ]
+      ]
+    },
+    {
+      "selector": ".cta__body",
+      "locations": [
+        [
+          "sections.css",
+          1235
+        ]
+      ]
+    },
+    {
+      "selector": ".cta__content",
+      "locations": [
+        [
+          "sections.css",
+          1247
+        ]
+      ]
+    },
+    {
+      "selector": ".cta__title",
+      "locations": [
+        [
+          "sections.css",
+          1254
+        ]
+      ]
+    },
+    {
+      "selector": ".cta__text",
+      "locations": [
+        [
+          "sections.css",
+          1260
+        ]
+      ]
+    },
+    {
+      "selector": ".cta__btn",
+      "locations": [
+        [
+          "sections.css",
+          1267
+        ]
+      ]
+    },
+    {
+      "selector": ".footer",
+      "locations": [
+        [
+          "sections.css",
+          1273
+        ]
+      ]
+    },
+    {
+      "selector": ".footer__inner",
+      "locations": [
+        [
+          "sections.css",
+          1280
+        ],
+        [
+          "sections.css",
+          1420
+        ]
+      ]
+    },
+    {
+      "selector": ".footer__brand",
+      "locations": [
+        [
+          "sections.css",
+          1287
+        ]
+      ]
+    },
+    {
+      "selector": ".footer__brand-top",
+      "locations": [
+        [
+          "sections.css",
+          1297
+        ]
+      ]
+    },
+    {
+      "selector": ".footer__brand-bottom",
+      "locations": [
+        [
+          "sections.css",
+          1305
+        ]
+      ]
+    },
+    {
+      "selector": ".footer__logo",
+      "locations": [
+        [
+          "sections.css",
+          1312
+        ]
+      ]
+    },
+    {
+      "selector": ".footer__logo-text",
+      "locations": [
+        [
+          "sections.css",
+          1319
+        ]
+      ]
+    },
+    {
+      "selector": ".footer__tagline",
+      "locations": [
+        [
+          "sections.css",
+          1326
+        ],
+        [
+          "sections.css",
+          1426
+        ]
+      ]
+    },
+    {
+      "selector": ".footer__contacts",
+      "locations": [
+        [
+          "sections.css",
+          1338
+        ]
+      ]
+    },
+    {
+      "selector": ".footer__contacts a",
+      "locations": [
+        [
+          "sections.css",
+          1346
+        ]
+      ]
+    },
+    {
+      "selector": ".footer__social",
+      "locations": [
+        [
+          "sections.css",
+          1350
+        ]
+      ]
+    },
+    {
+      "selector": ".footer__social a",
+      "locations": [
+        [
+          "sections.css",
+          1356
+        ]
+      ]
+    },
+    {
+      "selector": ".footer__right",
+      "locations": [
+        [
+          "sections.css",
+          1360
+        ]
+      ]
+    },
+    {
+      "selector": ".footer__links",
+      "locations": [
+        [
+          "sections.css",
+          1370
+        ]
+      ]
+    },
+    {
+      "selector": ".footer__col",
+      "locations": [
+        [
+          "sections.css",
+          1376
+        ]
+      ]
+    },
+    {
+      "selector": ".footer__col + .footer__col",
+      "locations": [
+        [
+          "sections.css",
+          1386
+        ]
+      ]
+    },
+    {
+      "selector": ".footer__col li",
+      "locations": [
+        [
+          "sections.css",
+          1390
+        ]
+      ]
+    },
+    {
+      "selector": ".footer__col a",
+      "locations": [
+        [
+          "sections.css",
+          1394
+        ]
+      ]
+    },
+    {
+      "selector": ".footer__col a:hover",
+      "locations": [
+        [
+          "sections.css",
+          1401
+        ]
+      ]
+    },
+    {
+      "selector": ".footer__legal",
+      "locations": [
+        [
+          "sections.css",
+          1405
+        ]
+      ]
+    },
+    {
+      "selector": ".footer__legal a",
+      "locations": [
+        [
+          "sections.css",
+          1412
+        ]
+      ]
+    },
+    {
+      "selector": ".header__link.is-active",
+      "locations": [
+        [
+          "sections.css",
+          1432
+        ]
+      ]
+    },
+    {
+      "selector": ".page-hero--detail .hero-block-page-inner",
+      "locations": [
+        [
+          "sections.css",
+          1437
+        ]
+      ]
+    },
+    {
+      "selector": ".page-hero__title--detail",
+      "locations": [
+        [
+          "sections.css",
+          1441
+        ]
+      ]
+    },
+    {
+      "selector": ".page-hero__media",
+      "locations": [
+        [
+          "sections.css",
+          1449
+        ]
+      ]
+    },
+    {
+      "selector": ".page-hero__logo",
+      "locations": [
+        [
+          "sections.css",
+          1461
+        ]
+      ]
+    },
+    {
+      "selector": ".page-hero--media .hero-block-page-inner",
+      "locations": [
+        [
+          "sections.css",
+          1471
+        ]
+      ]
+    },
+    {
+      "selector": ".page-hero--media__actions",
+      "locations": [
+        [
+          "sections.css",
+          1478
+        ]
+      ]
+    },
+    {
+      "selector": ".hero-socials",
+      "locations": [
+        [
+          "sections.css",
+          1485
+        ]
+      ]
+    },
+    {
+      "selector": ".hero-socials__link",
+      "locations": [
+        [
+          "sections.css",
+          1490
+        ]
+      ]
+    },
+    {
+      "selector": ".hero-socials__link svg",
+      "locations": [
+        [
+          "sections.css",
+          1494
+        ]
+      ]
+    },
+    {
+      "selector": ".events-featured",
+      "locations": [
+        [
+          "sections.css",
+          1497
+        ]
+      ]
+    },
+    {
+      "selector": ".events-featured__panel",
+      "locations": [
+        [
+          "sections.css",
+          1501
+        ]
+      ]
+    },
+    {
+      "selector": ".events-list__title",
+      "locations": [
+        [
+          "sections.css",
+          1506
+        ]
+      ]
+    },
+    {
+      "selector": ".events-featured__title",
+      "locations": [
+        [
+          "sections.css",
+          1510
+        ]
+      ]
+    },
+    {
+      "selector": ".events-featured__slide",
+      "locations": [
+        [
+          "sections.css",
+          1516
+        ]
+      ]
+    },
+    {
+      "selector": ".events-featured__card",
+      "locations": [
+        [
+          "sections.css",
+          1523
+        ]
+      ]
+    },
+    {
+      "selector": ".events-featured__content",
+      "locations": [
+        [
+          "sections.css",
+          1530
+        ]
+      ]
+    },
+    {
+      "selector": ".events-featured__meta",
+      "locations": [
+        [
+          "sections.css",
+          1536
+        ]
+      ]
+    },
+    {
+      "selector": ".events-featured__tag",
+      "locations": [
+        [
+          "sections.css",
+          1543
+        ]
+      ]
+    },
+    {
+      "selector": ".events-featured__date",
+      "locations": [
+        [
+          "sections.css",
+          1550
+        ]
+      ]
+    },
+    {
+      "selector": ".events-featured__name",
+      "locations": [
+        [
+          "sections.css",
+          1554
+        ]
+      ]
+    },
+    {
+      "selector": ".events-featured__actions",
+      "locations": [
+        [
+          "sections.css",
+          1561
+        ]
+      ]
+    },
+    {
+      "selector": ".events-featured__media",
+      "locations": [
+        [
+          "sections.css",
+          1568
+        ]
+      ]
+    },
+    {
+      "selector": ".events-featured__media img",
+      "locations": [
+        [
+          "sections.css",
+          1575
+        ]
+      ]
+    },
+    {
+      "selector": ".events-list",
+      "locations": [
+        [
+          "sections.css",
+          1581
+        ]
+      ]
+    },
+    {
+      "selector": ".events-list__grid",
+      "locations": [
+        [
+          "sections.css",
+          1586
+        ]
+      ]
+    },
+    {
+      "selector": ".events-list__more",
+      "locations": [
+        [
+          "sections.css",
+          1593
+        ]
+      ]
+    },
+    {
+      "selector": ".c-clients",
+      "locations": [
+        [
+          "sections.css",
+          1599
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__row",
+      "locations": [
+        [
+          "sections.css",
+          1602
+        ]
+      ]
+    },
+    {
+      "selector": ".tab-filters",
+      "locations": [
+        [
+          "sections.css",
+          1608
+        ]
+      ]
+    },
+    {
+      "selector": ".tab-filter",
+      "locations": [
+        [
+          "sections.css",
+          1615
+        ]
+      ]
+    },
+    {
+      "selector": ".tab-filter:hover",
+      "locations": [
+        [
+          "sections.css",
+          1630
+        ]
+      ]
+    },
+    {
+      "selector": ".tab-filter.is-active",
+      "locations": [
+        [
+          "sections.css",
+          1635
+        ]
+      ]
+    },
+    {
+      "selector": ".c-clients__grid",
+      "locations": [
+        [
+          "sections.css",
+          1640
+        ]
+      ]
+    },
+    {
+      "selector": ".c-clients__card",
+      "locations": [
+        [
+          "sections.css",
+          1647
+        ]
+      ]
+    },
+    {
+      "selector": ".c-clients__body",
+      "locations": [
+        [
+          "sections.css",
+          1668
+        ]
+      ]
+    },
+    {
+      "selector": ".c-clients__name",
+      "locations": [
+        [
+          "sections.css",
+          1672
+        ]
+      ]
+    },
+    {
+      "selector": ".c-clients__desc",
+      "locations": [
+        [
+          "sections.css",
+          1679
+        ]
+      ]
+    },
+    {
+      "selector": ".c-clients__logo",
+      "locations": [
+        [
+          "sections.css",
+          1685
+        ]
+      ]
+    },
+    {
+      "selector": ".c-clients__logo img",
+      "locations": [
+        [
+          "sections.css",
+          1700
+        ]
+      ]
+    },
+    {
+      "selector": ".c-clients__card:hover",
+      "locations": [
+        [
+          "sections.css",
+          1707
+        ]
+      ]
+    },
+    {
+      "selector": ".c-clients__card:hover .c-clients__icon",
+      "locations": [
+        [
+          "sections.css",
+          1712
+        ]
+      ]
+    },
+    {
+      "selector": ".c-clients__card:hover .c-clients__desc",
+      "locations": [
+        [
+          "sections.css",
+          1715
+        ]
+      ]
+    },
+    {
+      "selector": ".c-clients__card:hover .c-clients__logo",
+      "locations": [
+        [
+          "sections.css",
+          1719
+        ]
+      ]
+    },
+    {
+      "selector": ".c-clients__card:hover .c-clients__logo img",
+      "locations": [
+        [
+          "sections.css",
+          1723
+        ]
+      ]
+    },
+    {
+      "selector": ".c-clients__more",
+      "locations": [
+        [
+          "sections.css",
+          1731
+        ]
+      ]
+    },
+    {
+      "selector": ".c-projects .projects__head",
+      "locations": [
+        [
+          "sections.css",
+          1744
+        ]
+      ]
+    },
+    {
+      "selector": ".c-projects .projects__sub",
+      "locations": [
+        [
+          "sections.css",
+          1750
+        ]
+      ]
+    },
+    {
+      "selector": ".s-hero__sub",
+      "locations": [
+        [
+          "sections.css",
+          1757
+        ]
+      ]
+    },
+    {
+      "selector": ".s-hero__stat",
+      "locations": [
+        [
+          "sections.css",
+          1763
+        ]
+      ]
+    },
+    {
+      "selector": ".s-hero__stat + .s-hero__stat",
+      "locations": [
+        [
+          "sections.css",
+          1770
+        ]
+      ]
+    },
+    {
+      "selector": ".s-hero__num",
+      "locations": [
+        [
+          "sections.css",
+          1774
+        ]
+      ]
+    },
+    {
+      "selector": ".s-hero__label",
+      "locations": [
+        [
+          "sections.css",
+          1780
+        ]
+      ]
+    },
+    {
+      "selector": ".s-hero__stats-img",
+      "locations": [
+        [
+          "sections.css",
+          1784
+        ]
+      ]
+    },
+    {
+      "selector": ".hero__footer--stats",
+      "locations": [
+        [
+          "sections.css",
+          1791
+        ]
+      ]
+    },
+    {
+      "selector": ".hero__footer--stats::after",
+      "locations": [
+        [
+          "sections.css",
+          1810
+        ]
+      ]
+    },
+    {
+      "selector": ".registry",
+      "locations": [
+        [
+          "sections.css",
+          1815
+        ]
+      ]
+    },
+    {
+      "selector": ".registry__inner",
+      "locations": [
+        [
+          "sections.css",
+          1820
+        ]
+      ]
+    },
+    {
+      "selector": ".registry__inner-block",
+      "locations": [
+        [
+          "sections.css",
+          1826
+        ]
+      ]
+    },
+    {
+      "selector": ".registry__img-wrap",
+      "locations": [
+        [
+          "sections.css",
+          1834
+        ]
+      ]
+    },
+    {
+      "selector": ".registry__text",
+      "locations": [
+        [
+          "sections.css",
+          1840
+        ]
+      ]
+    },
+    {
+      "selector": ".registry__title",
+      "locations": [
+        [
+          "sections.css",
+          1848
+        ]
+      ]
+    },
+    {
+      "selector": ".registry__bottom",
+      "locations": [
+        [
+          "sections.css",
+          1854
+        ]
+      ]
+    },
+    {
+      "selector": ".registry__desc",
+      "locations": [
+        [
+          "sections.css",
+          1859
+        ]
+      ]
+    },
+    {
+      "selector": ".registry__desc_bottom",
+      "locations": [
+        [
+          "sections.css",
+          1863
+        ]
+      ]
+    },
+    {
+      "selector": ".registry__img",
+      "locations": [
+        [
+          "sections.css",
+          1867
+        ]
+      ]
+    },
+    {
+      "selector": ".s-tasks",
+      "locations": [
+        [
+          "sections.css",
+          1874
+        ]
+      ]
+    },
+    {
+      "selector": ".s-tasks__inner",
+      "locations": [
+        [
+          "sections.css",
+          1878
+        ]
+      ]
+    },
+    {
+      "selector": ".s-tasks__head",
+      "locations": [
+        [
+          "sections.css",
+          1889
+        ]
+      ]
+    },
+    {
+      "selector": ".s-tasks__title",
+      "locations": [
+        [
+          "sections.css",
+          1894
+        ]
+      ]
+    },
+    {
+      "selector": ".s-tasks__sub",
+      "locations": [
+        [
+          "sections.css",
+          1900
+        ]
+      ]
+    },
+    {
+      "selector": ".s-tasks__list",
+      "locations": [
+        [
+          "sections.css",
+          1905
+        ]
+      ]
+    },
+    {
+      "selector": ".s-tasks__item",
+      "locations": [
+        [
+          "sections.css",
+          1910
+        ]
+      ]
+    },
+    {
+      "selector": ".s-tasks__item + .s-tasks__item",
+      "locations": [
+        [
+          "sections.css",
+          1914
+        ]
+      ]
+    },
+    {
+      "selector": ".s-tasks__q",
+      "locations": [
+        [
+          "sections.css",
+          1918
+        ]
+      ]
+    },
+    {
+      "selector": ".s-tasks__name",
+      "locations": [
+        [
+          "sections.css",
+          1929
+        ]
+      ]
+    },
+    {
+      "selector": ".s-tasks__btn",
+      "locations": [
+        [
+          "sections.css",
+          1937
+        ]
+      ]
+    },
+    {
+      "selector": ".s-tasks__btn::before",
+      "locations": [
+        [
+          "sections.css",
+          1952
+        ]
+      ]
+    },
+    {
+      "selector": ".s-tasks__item.is-open .s-tasks__btn::before",
+      "locations": [
+        [
+          "sections.css",
+          1957
+        ]
+      ]
+    },
+    {
+      "selector": ".s-tasks__a",
+      "locations": [
+        [
+          "sections.css",
+          1961
+        ]
+      ]
+    },
+    {
+      "selector": ".s-tasks__a > p",
+      "locations": [
+        [
+          "sections.css",
+          1968
+        ]
+      ]
+    },
+    {
+      "selector": ".s-tasks__item.is-open .s-tasks__a",
+      "locations": [
+        [
+          "sections.css",
+          1976
+        ]
+      ]
+    },
+    {
+      "selector": ".s-tasks__item.is-open .s-tasks__a > p",
+      "locations": [
+        [
+          "sections.css",
+          1980
+        ]
+      ]
+    },
+    {
+      "selector": ".s-audience",
+      "locations": [
+        [
+          "sections.css",
+          1985
+        ]
+      ]
+    },
+    {
+      "selector": ".s-audience__title",
+      "locations": [
+        [
+          "sections.css",
+          1989
+        ]
+      ]
+    },
+    {
+      "selector": ".s-audience__grid",
+      "locations": [
+        [
+          "sections.css",
+          1995
+        ]
+      ]
+    },
+    {
+      "selector": ".s-audience__card",
+      "locations": [
+        [
+          "sections.css",
+          2002
+        ],
+        [
+          "sections.css",
+          2875
+        ]
+      ]
+    },
+    {
+      "selector": ".s-audience__name",
+      "locations": [
+        [
+          "sections.css",
+          2009
+        ]
+      ]
+    },
+    {
+      "selector": ".s-audience__desc",
+      "locations": [
+        [
+          "sections.css",
+          2014
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features",
+      "locations": [
+        [
+          "sections.css",
+          2022
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features__inner",
+      "locations": [
+        [
+          "sections.css",
+          2026
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features__head",
+      "locations": [
+        [
+          "sections.css",
+          2032
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features__title",
+      "locations": [
+        [
+          "sections.css",
+          2040
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features__sub",
+      "locations": [
+        [
+          "sections.css",
+          2045
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features__body",
+      "locations": [
+        [
+          "sections.css",
+          2050
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features__panels",
+      "locations": [
+        [
+          "sections.css",
+          2056
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features__panel",
+      "locations": [
+        [
+          "sections.css",
+          2060
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features__content",
+      "locations": [
+        [
+          "sections.css",
+          2067
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features__panel.is-active",
+      "locations": [
+        [
+          "sections.css",
+          2076
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features__name",
+      "locations": [
+        [
+          "sections.css",
+          2086
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features__desc",
+      "locations": [
+        [
+          "sections.css",
+          2092
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features__points",
+      "locations": [
+        [
+          "sections.css",
+          2098
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features__point",
+      "locations": [
+        [
+          "sections.css",
+          2104
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features__dot",
+      "locations": [
+        [
+          "sections.css",
+          2113
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features__demo",
+      "locations": [
+        [
+          "sections.css",
+          2117
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features__demo:hover",
+      "locations": [
+        [
+          "sections.css",
+          2134
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features__demo-text",
+      "locations": [
+        [
+          "sections.css",
+          2138
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features__demo-title",
+      "locations": [
+        [
+          "sections.css",
+          2144
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features__demo-sub",
+      "locations": [
+        [
+          "sections.css",
+          2149
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features__img",
+      "locations": [
+        [
+          "sections.css",
+          2153
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features-popup__card",
+      "locations": [
+        [
+          "sections.css",
+          2160
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features-popup__close",
+      "locations": [
+        [
+          "sections.css",
+          2170
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features-popup__title",
+      "locations": [
+        [
+          "sections.css",
+          2185
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features-popup__media",
+      "locations": [
+        [
+          "sections.css",
+          2192
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features-popup__main",
+      "locations": [
+        [
+          "sections.css",
+          2196
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features-popup__img",
+      "locations": [
+        [
+          "sections.css",
+          2203
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features-popup__nav",
+      "locations": [
+        [
+          "sections.css",
+          2211
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features-popup__nav:hover",
+      "locations": [
+        [
+          "sections.css",
+          2228
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features-popup__nav--prev",
+      "locations": [
+        [
+          "sections.css",
+          2233
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features-popup__nav--next",
+      "locations": [
+        [
+          "sections.css",
+          2237
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features-popup__thumbs",
+      "locations": [
+        [
+          "sections.css",
+          2241
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features-popup__thumb",
+      "locations": [
+        [
+          "sections.css",
+          2248
+        ]
+      ]
+    },
+    {
+      "selector": ".s-features-popup__thumb img",
+      "locations": [
+        [
+          "sections.css",
+          2259
+        ]
+      ]
+    },
+    {
+      "selector": ".testimonials",
+      "locations": [
+        [
+          "sections.css",
+          2268
+        ]
+      ]
+    },
+    {
+      "selector": ".testimonials__head",
+      "locations": [
+        [
+          "sections.css",
+          2272
+        ]
+      ]
+    },
+    {
+      "selector": ".testimonials__title",
+      "locations": [
+        [
+          "sections.css",
+          2281
+        ]
+      ]
+    },
+    {
+      "selector": ".testimonials .carousel-nav",
+      "locations": [
+        [
+          "sections.css",
+          2285
+        ]
+      ]
+    },
+    {
+      "selector": ".testimonials__swiper",
+      "locations": [
+        [
+          "sections.css",
+          2289
+        ]
+      ]
+    },
+    {
+      "selector": ".testimonials__card",
+      "locations": [
+        [
+          "sections.css",
+          2294
+        ]
+      ]
+    },
+    {
+      "selector": ".testimonials__quote",
+      "locations": [
+        [
+          "sections.css",
+          2302
+        ]
+      ]
+    },
+    {
+      "selector": ".testimonials__text",
+      "locations": [
+        [
+          "sections.css",
+          2306
+        ]
+      ]
+    },
+    {
+      "selector": ".testimonials__footer",
+      "locations": [
+        [
+          "sections.css",
+          2311
+        ]
+      ]
+    },
+    {
+      "selector": ".testimonials__author",
+      "locations": [
+        [
+          "sections.css",
+          2319
+        ]
+      ]
+    },
+    {
+      "selector": ".testimonials__name",
+      "locations": [
+        [
+          "sections.css",
+          2325
+        ]
+      ]
+    },
+    {
+      "selector": ".testimonials__role",
+      "locations": [
+        [
+          "sections.css",
+          2330
+        ]
+      ]
+    },
+    {
+      "selector": ".testimonials__logo",
+      "locations": [
+        [
+          "sections.css",
+          2334
+        ]
+      ]
+    },
+    {
+      "selector": ".cta--blue",
+      "locations": [
+        [
+          "sections.css",
+          2382
+        ]
+      ]
+    },
+    {
+      "selector": ".cta--blue__inner",
+      "locations": [
+        [
+          "sections.css",
+          2386
+        ]
+      ]
+    },
+    {
+      "selector": ".cta--blue__title",
+      "locations": [
+        [
+          "sections.css",
+          2395
+        ]
+      ]
+    },
+    {
+      "selector": ".cta--blue__text",
+      "locations": [
+        [
+          "sections.css",
+          2402
+        ]
+      ]
+    },
+    {
+      "selector": ".faq",
+      "locations": [
+        [
+          "sections.css",
+          2412
+        ]
+      ]
+    },
+    {
+      "selector": ".faq__title",
+      "locations": [
+        [
+          "sections.css",
+          2417
+        ]
+      ]
+    },
+    {
+      "selector": ".faq__inner",
+      "locations": [
+        [
+          "sections.css",
+          2421
+        ]
+      ]
+    },
+    {
+      "selector": ".faq__list",
+      "locations": [
+        [
+          "sections.css",
+          2427
+        ]
+      ]
+    },
+    {
+      "selector": ".faq__item + .faq__item",
+      "locations": [
+        [
+          "sections.css",
+          2431
+        ]
+      ]
+    },
+    {
+      "selector": ".faq__q",
+      "locations": [
+        [
+          "sections.css",
+          2435
+        ]
+      ]
+    },
+    {
+      "selector": ".faq__q:hover",
+      "locations": [
+        [
+          "sections.css",
+          2447
+        ]
+      ]
+    },
+    {
+      "selector": ".faq__name",
+      "locations": [
+        [
+          "sections.css",
+          2451
+        ]
+      ]
+    },
+    {
+      "selector": ".faq__icon",
+      "locations": [
+        [
+          "sections.css",
+          2459
+        ]
+      ]
+    },
+    {
+      "selector": ".faq__item.is-open .faq__icon",
+      "locations": [
+        [
+          "sections.css",
+          2465
+        ]
+      ]
+    },
+    {
+      "selector": ".faq__a",
+      "locations": [
+        [
+          "sections.css",
+          2469
+        ]
+      ]
+    },
+    {
+      "selector": ".faq__a > p",
+      "locations": [
+        [
+          "sections.css",
+          2476
+        ]
+      ]
+    },
+    {
+      "selector": ".faq__item.is-open .faq__a",
+      "locations": [
+        [
+          "sections.css",
+          2484
+        ]
+      ]
+    },
+    {
+      "selector": ".faq__item.is-open .faq__a > p",
+      "locations": [
+        [
+          "sections.css",
+          2488
+        ]
+      ]
+    },
+    {
+      "selector": ".catalog",
+      "locations": [
+        [
+          "sections.css",
+          2493
+        ]
+      ]
+    },
+    {
+      "selector": ".catalog__list",
+      "locations": [
+        [
+          "sections.css",
+          2498
+        ]
+      ]
+    },
+    {
+      "selector": ".catalog__card",
+      "locations": [
+        [
+          "sections.css",
+          2504
+        ]
+      ]
+    },
+    {
+      "selector": ".catalog__head",
+      "locations": [
+        [
+          "sections.css",
+          2515
+        ]
+      ]
+    },
+    {
+      "selector": ".catalog__name",
+      "locations": [
+        [
+          "sections.css",
+          2524
+        ]
+      ]
+    },
+    {
+      "selector": ".catalog__platform",
+      "locations": [
+        [
+          "sections.css",
+          2532
+        ]
+      ]
+    },
+    {
+      "selector": ".catalog__feats",
+      "locations": [
+        [
+          "sections.css",
+          2537
+        ]
+      ]
+    },
+    {
+      "selector": ".catalog__feats--single",
+      "locations": [
+        [
+          "sections.css",
+          2545
+        ]
+      ]
+    },
+    {
+      "selector": ".catalog__col",
+      "locations": [
+        [
+          "sections.css",
+          2549
+        ]
+      ]
+    },
+    {
+      "selector": ".catalog__feat",
+      "locations": [
+        [
+          "sections.css",
+          2558
+        ]
+      ]
+    },
+    {
+      "selector": ".catalog__arrow",
+      "locations": [
+        [
+          "sections.css",
+          2562
+        ],
+        [
+          "sections.css",
+          2574
+        ]
+      ]
+    },
+    {
+      "selector": ".catalog__card:hover",
+      "locations": [
+        [
+          "sections.css",
+          2569
+        ]
+      ]
+    },
+    {
+      "selector": ".catalog__card:hover .catalog__arrow",
+      "locations": [
+        [
+          "sections.css",
+          2580
+        ],
+        [
+          "sections.css",
+          2588
+        ]
+      ]
+    },
+    {
+      "selector": ".catalog__arrow path",
+      "locations": [
+        [
+          "sections.css",
+          2584
+        ]
+      ]
+    },
+    {
+      "selector": ".catalog__card:hover .catalog__arrow path",
+      "locations": [
+        [
+          "sections.css",
+          2591
+        ]
+      ]
+    },
+    {
+      "selector": ".client-intro",
+      "locations": [
+        [
+          "sections.css",
+          2596
+        ]
+      ]
+    },
+    {
+      "selector": ".client-intro__content-inner",
+      "locations": [
+        [
+          "sections.css",
+          2606
+        ]
+      ]
+    },
+    {
+      "selector": ".client-intro__inner",
+      "locations": [
+        [
+          "sections.css",
+          2612
+        ]
+      ]
+    },
+    {
+      "selector": ".client-intro__text",
+      "locations": [
+        [
+          "sections.css",
+          2622
+        ]
+      ]
+    },
+    {
+      "selector": ".client-intro__text p",
+      "locations": [
+        [
+          "sections.css",
+          2626
+        ]
+      ]
+    },
+    {
+      "selector": ".client-intro__media img",
+      "locations": [
+        [
+          "sections.css",
+          2633
+        ]
+      ]
+    },
+    {
+      "selector": ".stages",
+      "locations": [
+        [
+          "sections.css",
+          2640
+        ]
+      ]
+    },
+    {
+      "selector": ".stages__inner",
+      "locations": [
+        [
+          "sections.css",
+          2645
+        ]
+      ]
+    },
+    {
+      "selector": ".stages__heading",
+      "locations": [
+        [
+          "sections.css",
+          2654
+        ]
+      ]
+    },
+    {
+      "selector": ".stages__intro",
+      "locations": [
+        [
+          "sections.css",
+          2661
+        ]
+      ]
+    },
+    {
+      "selector": ".stages__list",
+      "locations": [
+        [
+          "sections.css",
+          2669
+        ]
+      ]
+    },
+    {
+      "selector": ".stages__item + .stages__item",
+      "locations": [
+        [
+          "sections.css",
+          2676
+        ]
+      ]
+    },
+    {
+      "selector": ".stages__head",
+      "locations": [
+        [
+          "sections.css",
+          2681
+        ]
+      ]
+    },
+    {
+      "selector": ".stages__title",
+      "locations": [
+        [
+          "sections.css",
+          2685
+        ]
+      ]
+    },
+    {
+      "selector": ".stages__text",
+      "locations": [
+        [
+          "sections.css",
+          2693
+        ]
+      ]
+    },
+    {
+      "selector": ".stages__card",
+      "locations": [
+        [
+          "sections.css",
+          2699
+        ]
+      ]
+    },
+    {
+      "selector": ".stages__label",
+      "locations": [
+        [
+          "sections.css",
+          2713
+        ]
+      ]
+    },
+    {
+      "selector": ".stages__desc",
+      "locations": [
+        [
+          "sections.css",
+          2720
+        ]
+      ]
+    },
+    {
+      "selector": ".stages__card:hover",
+      "locations": [
+        [
+          "sections.css",
+          2729
+        ]
+      ]
+    },
+    {
+      "selector": ".stages__arrow",
+      "locations": [
+        [
+          "sections.css",
+          2733
+        ]
+      ]
+    },
+    {
+      "selector": ".stages__card:hover .stages__arrow",
+      "locations": [
+        [
+          "sections.css",
+          2741
+        ]
+      ]
+    },
+    {
+      "selector": ".client-quote",
+      "locations": [
+        [
+          "sections.css",
+          2754
+        ]
+      ]
+    },
+    {
+      "selector": ".client-quote__inner",
+      "locations": [
+        [
+          "sections.css",
+          2759
+        ]
+      ]
+    },
+    {
+      "selector": ".client-quote__title",
+      "locations": [
+        [
+          "sections.css",
+          2765
+        ]
+      ]
+    },
+    {
+      "selector": ".client-quote__grid",
+      "locations": [
+        [
+          "sections.css",
+          2773
+        ]
+      ]
+    },
+    {
+      "selector": ".client-quote__quote",
+      "locations": [
+        [
+          "sections.css",
+          2779
+        ]
+      ]
+    },
+    {
+      "selector": ".client-quote__icon",
+      "locations": [
+        [
+          "sections.css",
+          2785
+        ]
+      ]
+    },
+    {
+      "selector": ".client-quote__text",
+      "locations": [
+        [
+          "sections.css",
+          2792
+        ]
+      ]
+    },
+    {
+      "selector": ".client-quote__author",
+      "locations": [
+        [
+          "sections.css",
+          2799
+        ]
+      ]
+    },
+    {
+      "selector": ".client-quote__avatar",
+      "locations": [
+        [
+          "sections.css",
+          2806
+        ]
+      ]
+    },
+    {
+      "selector": ".client-quote__name",
+      "locations": [
+        [
+          "sections.css",
+          2812
+        ]
+      ]
+    },
+    {
+      "selector": ".client-quote__role",
+      "locations": [
+        [
+          "sections.css",
+          2821
+        ]
+      ]
+    },
+    {
+      "selector": ".client-quote__photo",
+      "locations": [
+        [
+          "sections.css",
+          2828
+        ]
+      ]
+    },
+    {
+      "selector": ".hero__overlay",
+      "locations": [
+        [
+          "sections.css",
+          2836
+        ]
+      ]
+    },
+    {
+      "selector": ".event-hero .hero__title",
+      "locations": [
+        [
+          "sections.css",
+          2846
+        ]
+      ]
+    },
+    {
+      "selector": ".event-about",
+      "locations": [
+        [
+          "sections.css",
+          2850
+        ]
+      ]
+    },
+    {
+      "selector": ".event-about__card",
+      "locations": [
+        [
+          "sections.css",
+          2854
+        ]
+      ]
+    },
+    {
+      "selector": ".event-about__title",
+      "locations": [
+        [
+          "sections.css",
+          2863
+        ]
+      ]
+    },
+    {
+      "selector": ".event-about__row",
+      "locations": [
+        [
+          "sections.css",
+          2868
+        ]
+      ]
+    },
+    {
+      "selector": ".event-about__text",
+      "locations": [
+        [
+          "sections.css",
+          2878
+        ]
+      ]
+    },
+    {
+      "selector": ".event-about__date",
+      "locations": [
+        [
+          "sections.css",
+          2884
+        ]
+      ]
+    },
+    {
+      "selector": ".s-audience__icon",
+      "locations": [
+        [
+          "sections.css",
+          2890
+        ]
+      ]
+    },
+    {
+      "selector": ".event-about__date-num",
+      "locations": [
+        [
+          "sections.css",
+          2898
+        ]
+      ]
+    },
+    {
+      "selector": ".event-about__date-time",
+      "locations": [
+        [
+          "sections.css",
+          2904
+        ]
+      ]
+    },
+    {
+      "selector": ".s-audience__card--accent",
+      "locations": [
+        [
+          "sections.css",
+          2908
+        ]
+      ]
+    },
+    {
+      "selector": ".s-audience__card--accent .s-audience__name",
+      "locations": [
+        [
+          "sections.css",
+          2913
+        ]
+      ]
+    },
+    {
+      "selector": ".s-audience__card--accent:hover",
+      "locations": [
+        [
+          "sections.css",
+          2917
+        ]
+      ]
+    },
+    {
+      "selector": ".s-audience__card--accent svg",
+      "locations": [
+        [
+          "sections.css",
+          2922
+        ]
+      ]
+    },
+    {
+      "selector": ".s-audience__card--accent:hover svg",
+      "locations": [
+        [
+          "sections.css",
+          2925
+        ]
+      ]
+    },
+    {
+      "selector": ".program",
+      "locations": [
+        [
+          "sections.css",
+          2928
+        ]
+      ]
+    },
+    {
+      "selector": ".program__head",
+      "locations": [
+        [
+          "sections.css",
+          2933
+        ]
+      ]
+    },
+    {
+      "selector": ".program__title",
+      "locations": [
+        [
+          "sections.css",
+          2941
+        ]
+      ]
+    },
+    {
+      "selector": ".program__download",
+      "locations": [
+        [
+          "sections.css",
+          2946
+        ]
+      ]
+    },
+    {
+      "selector": ".program__row",
+      "locations": [
+        [
+          "sections.css",
+          2950
+        ]
+      ]
+    },
+    {
+      "selector": ".program__list",
+      "locations": [
+        [
+          "sections.css",
+          2956
+        ]
+      ]
+    },
+    {
+      "selector": ".program__item",
+      "locations": [
+        [
+          "sections.css",
+          2963
+        ]
+      ]
+    },
+    {
+      "selector": ".program__item.is-active",
+      "locations": [
+        [
+          "sections.css",
+          2980
+        ]
+      ]
+    },
+    {
+      "selector": ".program__num",
+      "locations": [
+        [
+          "sections.css",
+          2986
+        ]
+      ]
+    },
+    {
+      "selector": ".program__item.is-active .program__num",
+      "locations": [
+        [
+          "sections.css",
+          3001
+        ]
+      ]
+    },
+    {
+      "selector": ".program__name",
+      "locations": [
+        [
+          "sections.css",
+          3007
+        ]
+      ]
+    },
+    {
+      "selector": ".program__panels",
+      "locations": [
+        [
+          "sections.css",
+          3012
+        ]
+      ]
+    },
+    {
+      "selector": ".program__panel",
+      "locations": [
+        [
+          "sections.css",
+          3023
+        ]
+      ]
+    },
+    {
+      "selector": ".program__panel.is-active",
+      "locations": [
+        [
+          "sections.css",
+          3033
+        ]
+      ]
+    },
+    {
+      "selector": ".program__label",
+      "locations": [
+        [
+          "sections.css",
+          3037
+        ]
+      ]
+    },
+    {
+      "selector": ".program__panel-title",
+      "locations": [
+        [
+          "sections.css",
+          3046
+        ]
+      ]
+    },
+    {
+      "selector": ".program__panel-text",
+      "locations": [
+        [
+          "sections.css",
+          3053
+        ]
+      ]
+    },
+    {
+      "selector": ".program__speaker",
+      "locations": [
+        [
+          "sections.css",
+          3059
+        ]
+      ]
+    },
+    {
+      "selector": ".program__avatar",
+      "locations": [
+        [
+          "sections.css",
+          3065
+        ]
+      ]
+    },
+    {
+      "selector": ".program__speaker-info",
+      "locations": [
+        [
+          "sections.css",
+          3072
+        ]
+      ]
+    },
+    {
+      "selector": ".program__speaker-name",
+      "locations": [
+        [
+          "sections.css",
+          3078
+        ]
+      ]
+    },
+    {
+      "selector": ".program__speaker-role",
+      "locations": [
+        [
+          "sections.css",
+          3083
+        ]
+      ]
+    },
+    {
+      "selector": ".program__speaker-caption",
+      "locations": [
+        [
+          "sections.css",
+          3087
+        ]
+      ]
+    },
+    {
+      "selector": ".seminar-topics",
+      "locations": [
+        [
+          "sections.css",
+          3092
+        ]
+      ]
+    },
+    {
+      "selector": ".seminar-topics__inner",
+      "locations": [
+        [
+          "sections.css",
+          3096
+        ]
+      ]
+    },
+    {
+      "selector": ".seminar-topics__title",
+      "locations": [
+        [
+          "sections.css",
+          3102
+        ]
+      ]
+    },
+    {
+      "selector": ".seminar-topics__grid",
+      "locations": [
+        [
+          "sections.css",
+          3108
+        ]
+      ]
+    },
+    {
+      "selector": ".seminar-topics_header",
+      "locations": [
+        [
+          "sections.css",
+          3114
+        ]
+      ]
+    },
+    {
+      "selector": ".seminar-topics_header .seminar-topics__num",
+      "locations": [
+        [
+          "sections.css",
+          3120
+        ]
+      ]
+    },
+    {
+      "selector": ".seminar-topics__card",
+      "locations": [
+        [
+          "sections.css",
+          3123
+        ]
+      ]
+    },
+    {
+      "selector": ".seminar-topics__name",
+      "locations": [
+        [
+          "sections.css",
+          3132
+        ]
+      ]
+    },
+    {
+      "selector": ".seminar-topics__desc",
+      "locations": [
+        [
+          "sections.css",
+          3137
+        ]
+      ]
+    },
+    {
+      "selector": ".event-partners",
+      "locations": [
+        [
+          "sections.css",
+          3144
+        ]
+      ]
+    },
+    {
+      "selector": ".event-partners__title",
+      "locations": [
+        [
+          "sections.css",
+          3148
+        ]
+      ]
+    },
+    {
+      "selector": ".event-partners__grid",
+      "locations": [
+        [
+          "sections.css",
+          3154
+        ]
+      ]
+    },
+    {
+      "selector": ".event-partners__card",
+      "locations": [
+        [
+          "sections.css",
+          3159
+        ]
+      ]
+    },
+    {
+      "selector": ".event-partners__card:hover",
+      "locations": [
+        [
+          "sections.css",
+          3173
+        ]
+      ]
+    },
+    {
+      "selector": ".event-partners__card:hover .event-partners__icon",
+      "locations": [
+        [
+          "sections.css",
+          3177
+        ]
+      ]
+    },
+    {
+      "selector": ".event-partners__text",
+      "locations": [
+        [
+          "sections.css",
+          3180
+        ]
+      ]
+    },
+    {
+      "selector": ".event-partners__logo",
+      "locations": [
+        [
+          "sections.css",
+          3183
+        ]
+      ]
+    },
+    {
+      "selector": ".event-partners-header",
+      "locations": [
+        [
+          "sections.css",
+          3192
+        ]
+      ]
+    },
+    {
+      "selector": ".event-partners-header .event-partners__icon",
+      "locations": [
+        [
+          "sections.css",
+          3201
+        ]
+      ]
+    },
+    {
+      "selector": ".event-partners__name",
+      "locations": [
+        [
+          "sections.css",
+          3207
+        ]
+      ]
+    },
+    {
+      "selector": ".event-partners__desc",
+      "locations": [
+        [
+          "sections.css",
+          3211
+        ]
+      ]
+    },
+    {
+      "selector": ".client-intro__content",
+      "locations": [
+        [
+          "sections.css",
+          3281
+        ]
+      ]
+    },
+    {
+      "selector": ".client-intro__name",
+      "locations": [
+        [
+          "sections.css",
+          3288
+        ]
+      ]
+    },
+    {
+      "selector": ".goals",
+      "locations": [
+        [
+          "sections.css",
+          3298
+        ]
+      ]
+    },
+    {
+      "selector": ".goals__inner",
+      "locations": [
+        [
+          "sections.css",
+          3303
+        ]
+      ]
+    },
+    {
+      "selector": ".goals__title",
+      "locations": [
+        [
+          "sections.css",
+          3312
+        ]
+      ]
+    },
+    {
+      "selector": ".goals__list",
+      "locations": [
+        [
+          "sections.css",
+          3321
+        ]
+      ]
+    },
+    {
+      "selector": ".goals__item",
+      "locations": [
+        [
+          "sections.css",
+          3332
+        ]
+      ]
+    },
+    {
+      "selector": ".goals__num",
+      "locations": [
+        [
+          "sections.css",
+          3338
+        ]
+      ]
+    },
+    {
+      "selector": ".goals__text",
+      "locations": [
+        [
+          "sections.css",
+          3351
+        ]
+      ]
+    },
+    {
+      "selector": ".goals__results",
+      "locations": [
+        [
+          "sections.css",
+          3359
+        ]
+      ]
+    },
+    {
+      "selector": ".goals__results-title",
+      "locations": [
+        [
+          "sections.css",
+          3366
+        ]
+      ]
+    },
+    {
+      "selector": ".goals__stats",
+      "locations": [
+        [
+          "sections.css",
+          3372
+        ]
+      ]
+    },
+    {
+      "selector": ".goals__stat-num",
+      "locations": [
+        [
+          "sections.css",
+          3379
+        ]
+      ]
+    },
+    {
+      "selector": ".goals__stat-label",
+      "locations": [
+        [
+          "sections.css",
+          3386
+        ]
+      ]
+    },
+    {
+      "selector": ".impl",
+      "locations": [
+        [
+          "sections.css",
+          3477
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__inner",
+      "locations": [
+        [
+          "sections.css",
+          3482
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__title",
+      "locations": [
+        [
+          "sections.css",
+          3491
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__body",
+      "locations": [
+        [
+          "sections.css",
+          3498
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__block",
+      "locations": [
+        [
+          "sections.css",
+          3504
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__block:last-child",
+      "locations": [
+        [
+          "sections.css",
+          3508
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__block-title",
+      "locations": [
+        [
+          "sections.css",
+          3512
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__text",
+      "locations": [
+        [
+          "sections.css",
+          3517
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__text p",
+      "locations": [
+        [
+          "sections.css",
+          3523
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__text ul",
+      "locations": [
+        [
+          "sections.css",
+          3526
+        ]
+      ]
+    },
+    {
+      "selector": ".arch",
+      "locations": [
+        [
+          "sections.css",
+          3534
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__stages",
+      "locations": [
+        [
+          "sections.css",
+          3546
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__stages li",
+      "locations": [
+        [
+          "sections.css",
+          3555
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__stage-head",
+      "locations": [
+        [
+          "sections.css",
+          3561
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__stage-dot",
+      "locations": [
+        [
+          "sections.css",
+          3568
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__stage-date",
+      "locations": [
+        [
+          "sections.css",
+          3577
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__stage-name",
+      "locations": [
+        [
+          "sections.css",
+          3583
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__text .impl__stage-procs",
+      "locations": [
+        [
+          "sections.css",
+          3591
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__text ul li",
+      "locations": [
+        [
+          "sections.css",
+          3600
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__text ul li::before",
+      "locations": [
+        [
+          "sections.css",
+          3609
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__team",
+      "locations": [
+        [
+          "sections.css",
+          3619
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__team-name",
+      "locations": [
+        [
+          "sections.css",
+          3626
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__team-list",
+      "locations": [
+        [
+          "sections.css",
+          3632
+        ]
+      ]
+    },
+    {
+      "selector": ".impl__team-total",
+      "locations": [
+        [
+          "sections.css",
+          3642
+        ]
+      ]
+    },
+    {
+      "selector": ".video",
+      "locations": [
+        [
+          "sections.css",
+          3651
+        ]
+      ]
+    },
+    {
+      "selector": ".video__inner",
+      "locations": [
+        [
+          "sections.css",
+          3657
+        ]
+      ]
+    },
+    {
+      "selector": ".video__title",
+      "locations": [
+        [
+          "sections.css",
+          3663
+        ]
+      ]
+    },
+    {
+      "selector": ".video__sub",
+      "locations": [
+        [
+          "sections.css",
+          3669
+        ]
+      ]
+    },
+    {
+      "selector": ".video__player",
+      "locations": [
+        [
+          "sections.css",
+          3676
+        ]
+      ]
+    },
+    {
+      "selector": ".video__poster",
+      "locations": [
+        [
+          "sections.css",
+          3684
+        ]
+      ]
+    },
+    {
+      "selector": ".video__player::after",
+      "locations": [
+        [
+          "sections.css",
+          3690
+        ]
+      ]
+    },
+    {
+      "selector": ".video__play",
+      "locations": [
+        [
+          "sections.css",
+          3697
+        ]
+      ]
+    },
+    {
+      "selector": ".video__play:hover",
+      "locations": [
+        [
+          "sections.css",
+          3714
+        ]
+      ]
+    },
+    {
+      "selector": ".gallery",
+      "locations": [
+        [
+          "sections.css",
+          3719
+        ]
+      ]
+    },
+    {
+      "selector": ".gallery__inner",
+      "locations": [
+        [
+          "sections.css",
+          3724
+        ]
+      ]
+    },
+    {
+      "selector": ".gallery__head",
+      "locations": [
+        [
+          "sections.css",
+          3730
+        ]
+      ]
+    },
+    {
+      "selector": ".gallery__title",
+      "locations": [
+        [
+          "sections.css",
+          3738
+        ]
+      ]
+    },
+    {
+      "selector": ".gallery__sub",
+      "locations": [
+        [
+          "sections.css",
+          3744
+        ]
+      ]
+    },
+    {
+      "selector": ".gallery__swiper",
+      "locations": [
+        [
+          "sections.css",
+          3751
+        ]
+      ]
+    },
+    {
+      "selector": ".gallery__swiper .swiper-slide",
+      "locations": [
+        [
+          "sections.css",
+          3755
+        ]
+      ]
+    },
+    {
+      "selector": ".gallery__img",
+      "locations": [
+        [
+          "sections.css",
+          3760
+        ]
+      ]
+    },
+    {
+      "selector": ".gallery__dots",
+      "locations": [
+        [
+          "sections.css",
+          3767
+        ]
+      ]
+    },
+    {
+      "selector": ".gallery__dot",
+      "locations": [
+        [
+          "sections.css",
+          3780
+        ]
+      ]
+    },
+    {
+      "selector": ".gallery__dot.is-active",
+      "locations": [
+        [
+          "sections.css",
+          3791
+        ]
+      ]
+    },
+    {
+      "selector": ".events__card--blue .events__info",
+      "locations": [
+        [
+          "sections.css",
+          3804
+        ]
+      ]
+    },
+    {
+      "selector": ".events__card--blue .events__title",
+      "locations": [
+        [
+          "sections.css",
+          3809
+        ]
+      ]
+    },
+    {
+      "selector": ".events__card--blue .events__meta",
+      "locations": [
+        [
+          "sections.css",
+          3813
+        ]
+      ]
+    },
+    {
+      "selector": ".events__card--blue .events__date",
+      "locations": [
+        [
+          "sections.css",
+          3818
+        ]
+      ]
+    },
+    {
+      "selector": ".partners--eco .partners__arrow",
+      "locations": [
+        [
+          "sections.css",
+          3842
+        ]
+      ]
+    },
+    {
+      "selector": ".partners--eco .partners__tag",
+      "locations": [
+        [
+          "sections.css",
+          3846
+        ]
+      ]
+    },
+    {
+      "selector": ".partners--eco .partners__logo",
+      "locations": [
+        [
+          "sections.css",
+          3851
+        ]
+      ]
+    },
+    {
+      "selector": ".partners--eco .partners__desc",
+      "locations": [
+        [
+          "sections.css",
+          3855
+        ]
+      ]
+    },
+    {
+      "selector": ".reasons",
+      "locations": [
+        [
+          "sections.css",
+          3872
+        ]
+      ]
+    },
+    {
+      "selector": ".reasons__inner",
+      "locations": [
+        [
+          "sections.css",
+          3877
+        ]
+      ]
+    },
+    {
+      "selector": ".reasons__head",
+      "locations": [
+        [
+          "sections.css",
+          3885
+        ]
+      ]
+    },
+    {
+      "selector": ".reasons__title",
+      "locations": [
+        [
+          "sections.css",
+          3890
+        ]
+      ]
+    },
+    {
+      "selector": ".reasons__desc",
+      "locations": [
+        [
+          "sections.css",
+          3896
+        ]
+      ]
+    },
+    {
+      "selector": ".reasons__list",
+      "locations": [
+        [
+          "sections.css",
+          3902
+        ]
+      ]
+    },
+    {
+      "selector": ".reasons__item",
+      "locations": [
+        [
+          "sections.css",
+          3910
+        ]
+      ]
+    },
+    {
+      "selector": ".reasons__icon",
+      "locations": [
+        [
+          "sections.css",
+          3915
+        ]
+      ]
+    },
+    {
+      "selector": ".reasons__name",
+      "locations": [
+        [
+          "sections.css",
+          3925
+        ]
+      ]
+    },
+    {
+      "selector": ".reasons__text",
+      "locations": [
+        [
+          "sections.css",
+          3931
+        ]
+      ]
+    },
+    {
+      "selector": ".cta--blue--directum .cta--blue__title",
+      "locations": [
+        [
+          "sections.css",
+          3937
+        ]
+      ]
+    },
+    {
+      "selector": ".projects--eco",
+      "locations": [
+        [
+          "sections.css",
+          3941
+        ]
+      ]
+    },
+    {
+      "selector": ".vnedrenie",
+      "locations": [
+        [
+          "sections.css",
+          3947
+        ]
+      ]
+    },
+    {
+      "selector": ".vnedrenie__title",
+      "locations": [
+        [
+          "sections.css",
+          3951
+        ]
+      ]
+    },
+    {
+      "selector": ".vnedrenie__grid",
+      "locations": [
+        [
+          "sections.css",
+          3958
+        ]
+      ]
+    },
+    {
+      "selector": ".vnedrenie__card",
+      "locations": [
+        [
+          "sections.css",
+          3964
+        ]
+      ]
+    },
+    {
+      "selector": ".vnedrenie__name",
+      "locations": [
+        [
+          "sections.css",
+          3975
+        ]
+      ]
+    },
+    {
+      "selector": ".vnedrenie__sub",
+      "locations": [
+        [
+          "sections.css",
+          3981
+        ]
+      ]
+    },
+    {
+      "selector": ".vnedrenie__list",
+      "locations": [
+        [
+          "sections.css",
+          3988
+        ]
+      ]
+    },
+    {
+      "selector": ".vnedrenie__row",
+      "locations": [
+        [
+          "sections.css",
+          3997
+        ]
+      ]
+    },
+    {
+      "selector": ".vnedrenie__done",
+      "locations": [
+        [
+          "sections.css",
+          4004
+        ]
+      ]
+    },
+    {
+      "selector": ".vnedrenie__btn",
+      "locations": [
+        [
+          "sections.css",
+          4009
+        ]
+      ]
+    },
+    {
+      "selector": ".vnedrenie__card:hover",
+      "locations": [
+        [
+          "sections.css",
+          4014
+        ]
+      ]
+    },
+    {
+      "selector": ".vnedrenie__card:hover .vnedrenie__done",
+      "locations": [
+        [
+          "sections.css",
+          4019
+        ]
+      ]
+    },
+    {
+      "selector": ".vnedrenie__card:hover .vnedrenie__done circle",
+      "locations": [
+        [
+          "sections.css",
+          4022
+        ]
+      ]
+    },
+    {
+      "selector": ".vnedrenie__card:hover .vnedrenie__btn",
+      "locations": [
+        [
+          "sections.css",
+          4025
+        ]
+      ]
+    },
+    {
+      "selector": ".vnedrenie__badge",
+      "locations": [
+        [
+          "sections.css",
+          4031
+        ]
+      ]
+    },
+    {
+      "selector": ".card:hover .vnedrenie__badge",
+      "locations": [
+        [
+          "sections.css",
+          4045
+        ]
+      ]
+    },
+    {
+      "selector": ".cta--directum",
+      "locations": [
+        [
+          "sections.css",
+          4093
+        ]
+      ]
+    },
+    {
+      "selector": ".cta--directum .cta__text",
+      "locations": [
+        [
+          "sections.css",
+          4097
+        ]
+      ]
+    },
+    {
+      "selector": ".univer-registry",
+      "locations": [
+        [
+          "sections.css",
+          4104
+        ]
+      ]
+    },
+    {
+      "selector": ".univer-registry__inner",
+      "locations": [
+        [
+          "sections.css",
+          4108
+        ]
+      ]
+    },
+    {
+      "selector": ".univer-registry__inner-block",
+      "locations": [
+        [
+          "sections.css",
+          4118
+        ]
+      ]
+    },
+    {
+      "selector": ".univer-registry__img-wrap",
+      "locations": [
+        [
+          "sections.css",
+          4122
+        ]
+      ]
+    },
+    {
+      "selector": ".univer-registry__text",
+      "locations": [
+        [
+          "sections.css",
+          4128
+        ]
+      ]
+    },
+    {
+      "selector": ".univer-registry__title",
+      "locations": [
+        [
+          "sections.css",
+          4136
+        ]
+      ]
+    },
+    {
+      "selector": ".univer-registry__bottom",
+      "locations": [
+        [
+          "sections.css",
+          4142
+        ]
+      ]
+    },
+    {
+      "selector": ".univer-registry__desc",
+      "locations": [
+        [
+          "sections.css",
+          4147
+        ]
+      ]
+    },
+    {
+      "selector": ".univer-registry__desc_bottom",
+      "locations": [
+        [
+          "sections.css",
+          4151
+        ]
+      ]
+    },
+    {
+      "selector": ".univer-registry__img",
+      "locations": [
+        [
+          "sections.css",
+          4153
+        ]
+      ]
+    },
+    {
+      "selector": ".reasons--univer .reasons__icon",
+      "locations": [
+        [
+          "sections.css",
+          4160
+        ]
+      ]
+    },
+    {
+      "selector": ".cta--blue--univer .cta--blue__title",
+      "locations": [
+        [
+          "sections.css",
+          4170
+        ]
+      ]
+    },
+    {
+      "selector": ".s-services",
+      "locations": [
+        [
+          "sections.css",
+          4175
+        ]
+      ]
+    },
+    {
+      "selector": ".s-services__inner",
+      "locations": [
+        [
+          "sections.css",
+          4178
+        ]
+      ]
+    },
+    {
+      "selector": ".s-services__head",
+      "locations": [
+        [
+          "sections.css",
+          4186
+        ]
+      ]
+    },
+    {
+      "selector": ".s-services__title",
+      "locations": [
+        [
+          "sections.css",
+          4189
+        ]
+      ]
+    },
+    {
+      "selector": ".s-services__sub",
+      "locations": [
+        [
+          "sections.css",
+          4194
+        ]
+      ]
+    },
+    {
+      "selector": ".s-services__grid",
+      "locations": [
+        [
+          "sections.css",
+          4199
+        ]
+      ]
+    },
+    {
+      "selector": ".s-services__card .partners__tag",
+      "locations": [
+        [
+          "sections.css",
+          4204
+        ]
+      ]
+    },
+    {
+      "selector": ".s-services__card .partners__logo",
+      "locations": [
+        [
+          "sections.css",
+          4207
+        ]
+      ]
+    },
+    {
+      "selector": ".s-services .partners__name",
+      "locations": [
+        [
+          "sections.css",
+          4210
+        ]
+      ]
+    },
+    {
+      "selector": ".vnedrenie--univer .vnedrenie__sub",
+      "locations": [
+        [
+          "sections.css",
+          4216
+        ]
+      ]
+    },
+    {
+      "selector": ".vnedrenie--univer .vnedrenie__list",
+      "locations": [
+        [
+          "sections.css",
+          4219
+        ]
+      ]
+    },
+    {
+      "selector": ".vnedrenie--univer .vnedrenie__row",
+      "locations": [
+        [
+          "sections.css",
+          4222
+        ]
+      ]
+    },
+    {
+      "selector": ".s-team",
+      "locations": [
+        [
+          "sections.css",
+          4229
+        ]
+      ]
+    },
+    {
+      "selector": ".s-team__flex",
+      "locations": [
+        [
+          "sections.css",
+          4233
+        ]
+      ]
+    },
+    {
+      "selector": ".s-team__inner",
+      "locations": [
+        [
+          "sections.css",
+          4238
+        ]
+      ]
+    },
+    {
+      "selector": ".s-team__photos",
+      "locations": [
+        [
+          "sections.css",
+          4243
+        ],
+        [
+          "sections.css",
+          4269
+        ]
+      ]
+    },
+    {
+      "selector": ".s-team__head",
+      "locations": [
+        [
+          "sections.css",
+          4248
+        ]
+      ]
+    },
+    {
+      "selector": ".s-team__title",
+      "locations": [
+        [
+          "sections.css",
+          4254
+        ]
+      ]
+    },
+    {
+      "selector": ".s-team__texts",
+      "locations": [
+        [
+          "sections.css",
+          4258
+        ]
+      ]
+    },
+    {
+      "selector": ".s-team__text",
+      "locations": [
+        [
+          "sections.css",
+          4264
+        ]
+      ]
+    },
+    {
+      "selector": ".s-team__photo",
+      "locations": [
+        [
+          "sections.css",
+          4277
+        ]
+      ]
+    },
+    {
+      "selector": ".s-team__photo--main",
+      "locations": [
+        [
+          "sections.css",
+          4280
+        ]
+      ]
+    }
+  ],
+  "potentially_used": [],
+  "definitely_unused": [
+    {
+      "selector": ".card--project",
+      "locations": [
+        [
+          "components.css",
+          18
+        ]
+      ]
+    },
+    {
+      "selector": ".card--company",
+      "locations": [
+        [
+          "components.css",
+          23
+        ]
+      ]
+    },
+    {
+      "selector": ".btn--white",
+      "locations": [
+        [
+          "components.css",
+          145
+        ]
+      ]
+    },
+    {
+      "selector": ".btn--white:hover",
+      "locations": [
+        [
+          "components.css",
+          150
+        ]
+      ]
+    },
+    {
+      "selector": ".btn--black",
+      "locations": [
+        [
+          "components.css",
+          156
+        ]
+      ]
+    },
+    {
+      "selector": ".btn--black:hover",
+      "locations": [
+        [
+          "components.css",
+          160
+        ]
+      ]
+    },
+    {
+      "selector": ".logo__word",
+      "locations": [
+        [
+          "sections.css",
+          33
+        ]
+      ]
+    },
+    {
+      "selector": ".logo__tm",
+      "locations": [
+        [
+          "sections.css",
+          37
+        ]
+      ]
+    },
+    {
+      "selector": ".hero__copy",
+      "locations": [
+        [
+          "sections.css",
+          252
+        ]
+      ]
+    },
+    {
+      "selector": ".industries__card:not(.industries__card--cta)::after",
+      "locations": [
+        [
+          "sections.css",
+          303
+        ]
+      ]
+    },
+    {
+      "selector": ".industries__card:not(.industries__card--cta):hover",
+      "locations": [
+        [
+          "sections.css",
+          320
+        ]
+      ]
+    },
+    {
+      "selector": ".industries__card:not(.industries__card--cta):hover::after",
+      "locations": [
+        [
+          "sections.css",
+          325
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__card:focus-visible",
+      "locations": [
+        [
+          "sections.css",
+          746
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__chip-x",
+      "locations": [
+        [
+          "sections.css",
+          875
+        ]
+      ]
+    },
+    {
+      "selector": ".dropdown__trigger::-webkit-details-marker",
+      "locations": [
+        [
+          "sections.css",
+          950
+        ]
+      ]
+    },
+    {
+      "selector": ".dropdown__check:focus-visible",
+      "locations": [
+        [
+          "sections.css",
+          1051
+        ]
+      ]
+    },
+    {
+      "selector": ".projects__card.card-appear",
+      "locations": [
+        [
+          "sections.css",
+          1083
+        ]
+      ]
+    },
+    {
+      "selector": ".is-hidden",
+      "locations": [
+        [
+          "sections.css",
+          1727
+        ]
+      ]
+    },
+    {
+      "selector": ".c-projects",
+      "locations": [
+        [
+          "sections.css",
+          1740
+        ]
+      ]
+    },
+    {
+      "selector": ".cta--center",
+      "locations": [
+        [
+          "sections.css",
+          2341
+        ]
+      ]
+    },
+    {
+      "selector": ".cta--center::before",
+      "locations": [
+        [
+          "sections.css",
+          2351
+        ]
+      ]
+    },
+    {
+      "selector": ".cta--center__inner",
+      "locations": [
+        [
+          "sections.css",
+          2358
+        ]
+      ]
+    },
+    {
+      "selector": ".cta--center__title",
+      "locations": [
+        [
+          "sections.css",
+          2366
+        ]
+      ]
+    },
+    {
+      "selector": ".cta--center__text",
+      "locations": [
+        [
+          "sections.css",
+          2371
+        ]
+      ]
+    },
+    {
+      "selector": ".cta--center__btn",
+      "locations": [
+        [
+          "sections.css",
+          2377
+        ]
+      ]
+    },
+    {
+      "selector": "h2.client-title",
+      "locations": [
+        [
+          "sections.css",
+          2600
+        ]
+      ]
+    },
+    {
+      "selector": "h3.client-title",
+      "locations": [
+        [
+          "sections.css",
+          2603
+        ]
+      ]
+    },
+    {
+      "selector": ".stages__thumb",
+      "locations": [
+        [
+          "sections.css",
+          2744
+        ]
+      ]
+    },
+    {
+      "selector": ".trust",
+      "locations": [
+        [
+          "sections.css",
+          3217
+        ]
+      ]
+    },
+    {
+      "selector": ".trust__card",
+      "locations": [
+        [
+          "sections.css",
+          3221
+        ]
+      ]
+    },
+    {
+      "selector": ".trust__head",
+      "locations": [
+        [
+          "sections.css",
+          3229
+        ]
+      ]
+    },
+    {
+      "selector": ".trust__title",
+      "locations": [
+        [
+          "sections.css",
+          3234
+        ]
+      ]
+    },
+    {
+      "selector": ".trust__sub",
+      "locations": [
+        [
+          "sections.css",
+          3239
+        ]
+      ]
+    },
+    {
+      "selector": ".trust__list",
+      "locations": [
+        [
+          "sections.css",
+          3246
+        ]
+      ]
+    },
+    {
+      "selector": ".trust__item",
+      "locations": [
+        [
+          "sections.css",
+          3253
+        ]
+      ]
+    },
+    {
+      "selector": ".trust__icon",
+      "locations": [
+        [
+          "sections.css",
+          3259
+        ]
+      ]
+    },
+    {
+      "selector": ".trust__name",
+      "locations": [
+        [
+          "sections.css",
+          3270
+        ]
+      ]
+    },
+    {
+      "selector": ".trust__text",
+      "locations": [
+        [
+          "sections.css",
+          3275
+        ]
+      ]
+    },
+    {
+      "selector": ".s-environment",
+      "locations": [
+        [
+          "sections.css",
+          3393
+        ]
+      ]
+    },
+    {
+      "selector": ".s-environment__inner",
+      "locations": [
+        [
+          "sections.css",
+          3399
+        ]
+      ]
+    },
+    {
+      "selector": ".s-environment__title",
+      "locations": [
+        [
+          "sections.css",
+          3405
+        ]
+      ]
+    },
+    {
+      "selector": ".s-environment__grid",
+      "locations": [
+        [
+          "sections.css",
+          3413
+        ]
+      ]
+    },
+    {
+      "selector": ".s-environment__card",
+      "locations": [
+        [
+          "sections.css",
+          3420
+        ]
+      ]
+    },
+    {
+      "selector": ".s-environment__card .icon",
+      "locations": [
+        [
+          "sections.css",
+          3433
+        ]
+      ]
+    },
+    {
+      "selector": ".s-environment__card .name",
+      "locations": [
+        [
+          "sections.css",
+          3439
+        ]
+      ]
+    },
+    {
+      "selector": ".s-environment__card .desc",
+      "locations": [
+        [
+          "sections.css",
+          3446
+        ]
+      ]
+    },
+    {
+      "selector": ".s-environment__circle",
+      "locations": [
+        [
+          "sections.css",
+          3452
+        ]
+      ]
+    },
+    {
+      "selector": ".s-environment__circle .text",
+      "locations": [
+        [
+          "sections.css",
+          3467
+        ]
+      ]
+    },
+    {
+      "selector": ".events__card--blue",
+      "locations": [
+        [
+          "sections.css",
+          3796
+        ]
+      ]
+    },
+    {
+      "selector": ".events__card--blue::after",
+      "locations": [
+        [
+          "sections.css",
+          3800
+        ]
+      ]
+    },
+    {
+      "selector": ".directum-hero__title",
+      "locations": [
+        [
+          "sections.css",
+          3824
+        ]
+      ]
+    },
+    {
+      "selector": ".directum-hero__btn",
+      "locations": [
+        [
+          "sections.css",
+          3830
+        ]
+      ]
+    },
+    {
+      "selector": ".directum-hero__footer::after",
+      "locations": [
+        [
+          "sections.css",
+          3834
+        ]
+      ]
+    },
+    {
+      "selector": ".directum-hero__note + .directum-hero__note",
+      "locations": [
+        [
+          "sections.css",
+          3838
+        ]
+      ]
+    },
+    {
+      "selector": ".partners__logo--eco",
+      "locations": [
+        [
+          "sections.css",
+          3859
+        ]
+      ]
+    },
+    {
+      "selector": ".d-partner",
+      "locations": [
+        [
+          "sections.css",
+          4049
+        ]
+      ]
+    },
+    {
+      "selector": ".d-partner__inner",
+      "locations": [
+        [
+          "sections.css",
+          4053
+        ]
+      ]
+    },
+    {
+      "selector": ".d-partner__head",
+      "locations": [
+        [
+          "sections.css",
+          4062
+        ]
+      ]
+    },
+    {
+      "selector": ".d-partner__title",
+      "locations": [
+        [
+          "sections.css",
+          4068
+        ]
+      ]
+    },
+    {
+      "selector": ".d-partner__desc",
+      "locations": [
+        [
+          "sections.css",
+          4075
+        ]
+      ]
+    },
+    {
+      "selector": ".d-partner__logo--placeholder",
+      "locations": [
+        [
+          "sections.css",
+          4081
+        ]
+      ]
+    }
+  ]
+}
