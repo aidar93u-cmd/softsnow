@@ -71,7 +71,7 @@
       "id": "page-solution-detail",
       "type": "Module",
       "name": "solution-detail.html",
-      "content": "Detailed solution: s-hero, registry, s-tasks (accordion), s-audience (4 cards), s-features (tabs data-tab 0-4, panel switching), cta--dark, testimonials (swiper), events--readalso, faq. Only page importing fancybox.css + jQuery",
+      "content": "Detailed solution: hero, registry, tasks (accordion), audience (4 cards), features (tabs data-tab 0-4, panel switching), cta--dark, testimonials (swiper), events--readalso, faq. Only page importing fancybox.css + jQuery",
       "source_file": "solution-detail.html",
       "metadata": {
         "captured_at": "2026-08-17T14:47:53Z",
@@ -137,7 +137,7 @@
       "id": "page-event-detail",
       "type": "Module",
       "name": "event-detail.html",
-      "content": "Event detail: event-hero, event-about, s-audience, program, cta--blue, seminar-topics, event-partners, trust, clients, faq",
+      "content": "Event detail: event-hero, event-about, audience, program, cta--blue, seminar-topics, event-partners, trust, clients, faq",
       "source_file": "event-detail.html",
       "metadata": {
         "captured_at": "2026-08-17T14:47:53Z",
@@ -159,7 +159,7 @@
       "id": "page-univer",
       "type": "Module",
       "name": "univer-online.html",
-      "content": "Univer Online ecosystem: hero, univer-registry, s-audience, reasons--univer, cta--blue--univer, s-services, projects--univer, vnedrenie--univer, s-team, cta, footer",
+      "content": "Univer Online ecosystem: hero, univer-registry, audience, reasons--univer, cta--blue--univer, services, projects--univer, vnedrenie--univer, team, cta, footer",
       "source_file": "univer-online.html",
       "metadata": {
         "captured_at": "2026-08-17T14:47:53Z",
@@ -181,7 +181,7 @@
       "id": "js-main",
       "type": "Module",
       "name": "js/main.js",
-      "content": "Single JS file: initSwiper (hero/partners/events/galleries 617/618/460px), bindNav (hamburger), initAccordion (s-tasks), initClientsPage (filter/render/detail/quote from JSON), initProjectsPage (filter/render), initNewsPage (events from JSON), initTabs (data-tab switching)",
+      "content": "Single JS file: initSwiper (hero/partners/events/galleries 617/618/460px), bindNav (hamburger), initAccordion (tasks), initClientsPage (filter/render/detail/quote from JSON), initProjectsPage (filter/render), initNewsPage (events from JSON), initTabs (data-tab switching)",
       "source_file": "js/main.js",
       "metadata": {
         "captured_at": "2026-08-17T14:47:53Z",

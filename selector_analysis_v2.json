@@ -2720,7 +2720,7 @@
       ]
     },
     {
-      "selector": ".s-hero__sub",
+      "selector": ".hero__sub",
       "locations": [
         [
           "sections.css",
@@ -2729,7 +2729,7 @@
       ]
     },
     {
-      "selector": ".s-hero__stat",
+      "selector": ".hero__stat",
       "locations": [
         [
           "sections.css",
@@ -2738,7 +2738,7 @@
       ]
     },
     {
-      "selector": ".s-hero__stat + .s-hero__stat",
+      "selector": ".hero__stat + .hero__stat",
       "locations": [
         [
           "sections.css",
@@ -2747,7 +2747,7 @@
       ]
     },
     {
-      "selector": ".s-hero__num",
+      "selector": ".hero__num",
       "locations": [
         [
           "sections.css",
@@ -2756,7 +2756,7 @@
       ]
     },
     {
-      "selector": ".s-hero__label",
+      "selector": ".hero__label",
       "locations": [
         [
           "sections.css",
@@ -2765,7 +2765,7 @@
       ]
     },
     {
-      "selector": ".s-hero__stats-img",
+      "selector": ".hero__stats-img",
       "locations": [
         [
           "sections.css",
@@ -2882,7 +2882,7 @@
       ]
     },
     {
-      "selector": ".s-tasks",
+      "selector": ".tasks",
       "locations": [
         [
           "sections.css",
@@ -2891,7 +2891,7 @@
       ]
     },
     {
-      "selector": ".s-tasks__inner",
+      "selector": ".tasks__inner",
       "locations": [
         [
           "sections.css",
@@ -2900,7 +2900,7 @@
       ]
     },
     {
-      "selector": ".s-tasks__head",
+      "selector": ".tasks__head",
       "locations": [
         [
           "sections.css",
@@ -2909,7 +2909,7 @@
       ]
     },
     {
-      "selector": ".s-tasks__title",
+      "selector": ".tasks__title",
       "locations": [
         [
           "sections.css",
@@ -2918,7 +2918,7 @@
       ]
     },
     {
-      "selector": ".s-tasks__sub",
+      "selector": ".tasks__sub",
       "locations": [
         [
           "sections.css",
@@ -2927,7 +2927,7 @@
       ]
     },
     {
-      "selector": ".s-tasks__list",
+      "selector": ".tasks__list",
       "locations": [
         [
           "sections.css",
@@ -2936,7 +2936,7 @@
       ]
     },
     {
-      "selector": ".s-tasks__item",
+      "selector": ".tasks__item",
       "locations": [
         [
           "sections.css",
@@ -2945,7 +2945,7 @@
       ]
     },
     {
-      "selector": ".s-tasks__item + .s-tasks__item",
+      "selector": ".tasks__item + .tasks__item",
       "locations": [
         [
           "sections.css",
@@ -2954,7 +2954,7 @@
       ]
     },
     {
-      "selector": ".s-tasks__q",
+      "selector": ".tasks__q",
       "locations": [
         [
           "sections.css",
@@ -2963,7 +2963,7 @@
       ]
     },
     {
-      "selector": ".s-tasks__name",
+      "selector": ".tasks__name",
       "locations": [
         [
           "sections.css",
@@ -2972,7 +2972,7 @@
       ]
     },
     {
-      "selector": ".s-tasks__btn",
+      "selector": ".tasks__btn",
       "locations": [
         [
           "sections.css",
@@ -2981,7 +2981,7 @@
       ]
     },
     {
-      "selector": ".s-tasks__btn::before",
+      "selector": ".tasks__btn::before",
       "locations": [
         [
           "sections.css",
@@ -2990,7 +2990,7 @@
       ]
     },
     {
-      "selector": ".s-tasks__item.is-open .s-tasks__btn::before",
+      "selector": ".tasks__item.is-open .tasks__btn::before",
       "locations": [
         [
           "sections.css",
@@ -2999,7 +2999,7 @@
       ]
     },
     {
-      "selector": ".s-tasks__a",
+      "selector": ".tasks__a",
       "locations": [
         [
           "sections.css",
@@ -3008,7 +3008,7 @@
       ]
     },
     {
-      "selector": ".s-tasks__a > p",
+      "selector": ".tasks__a > p",
       "locations": [
         [
           "sections.css",
@@ -3017,7 +3017,7 @@
       ]
     },
     {
-      "selector": ".s-tasks__item.is-open .s-tasks__a",
+      "selector": ".tasks__item.is-open .tasks__a",
       "locations": [
         [
           "sections.css",
@@ -3026,7 +3026,7 @@
       ]
     },
     {
-      "selector": ".s-tasks__item.is-open .s-tasks__a > p",
+      "selector": ".tasks__item.is-open .tasks__a > p",
       "locations": [
         [
           "sections.css",
@@ -3035,7 +3035,7 @@
       ]
     },
     {
-      "selector": ".s-audience",
+      "selector": ".audience",
       "locations": [
         [
           "sections.css",
@@ -3044,7 +3044,7 @@
       ]
     },
     {
-      "selector": ".s-audience__title",
+      "selector": ".audience__title",
       "locations": [
         [
           "sections.css",
@@ -3053,7 +3053,7 @@
       ]
     },
     {
-      "selector": ".s-audience__grid",
+      "selector": ".audience__grid",
       "locations": [
         [
           "sections.css",
@@ -3062,7 +3062,7 @@
       ]
     },
     {
-      "selector": ".s-audience__card",
+      "selector": ".audience__card",
       "locations": [
         [
           "sections.css",
@@ -3075,7 +3075,7 @@
       ]
     },
     {
-      "selector": ".s-audience__name",
+      "selector": ".audience__name",
       "locations": [
         [
           "sections.css",
@@ -3084,7 +3084,7 @@
       ]
     },
     {
-      "selector": ".s-audience__desc",
+      "selector": ".audience__desc",
       "locations": [
         [
           "sections.css",
@@ -3093,7 +3093,7 @@
       ]
     },
     {
-      "selector": ".s-features",
+      "selector": ".features",
       "locations": [
         [
           "sections.css",
@@ -3102,7 +3102,7 @@
       ]
     },
     {
-      "selector": ".s-features__inner",
+      "selector": ".features__inner",
       "locations": [
         [
           "sections.css",
@@ -3111,7 +3111,7 @@
       ]
     },
     {
-      "selector": ".s-features__head",
+      "selector": ".features__head",
       "locations": [
         [
           "sections.css",
@@ -3120,7 +3120,7 @@
       ]
     },
     {
-      "selector": ".s-features__title",
+      "selector": ".features__title",
       "locations": [
         [
           "sections.css",
@@ -3129,7 +3129,7 @@
       ]
     },
     {
-      "selector": ".s-features__sub",
+      "selector": ".features__sub",
       "locations": [
         [
           "sections.css",
@@ -3138,7 +3138,7 @@
       ]
     },
     {
-      "selector": ".s-features__body",
+      "selector": ".features__body",
       "locations": [
         [
           "sections.css",
@@ -3147,7 +3147,7 @@
       ]
     },
     {
-      "selector": ".s-features__panels",
+      "selector": ".features__panels",
       "locations": [
         [
           "sections.css",
@@ -3156,7 +3156,7 @@
       ]
     },
     {
-      "selector": ".s-features__panel",
+      "selector": ".features__panel",
       "locations": [
         [
           "sections.css",
@@ -3165,7 +3165,7 @@
       ]
     },
     {
-      "selector": ".s-features__content",
+      "selector": ".features__content",
       "locations": [
         [
           "sections.css",
@@ -3174,7 +3174,7 @@
       ]
     },
     {
-      "selector": ".s-features__panel.is-active",
+      "selector": ".features__panel.is-active",
       "locations": [
         [
           "sections.css",
@@ -3183,7 +3183,7 @@
       ]
     },
     {
-      "selector": ".s-features__name",
+      "selector": ".features__name",
       "locations": [
         [
           "sections.css",
@@ -3192,7 +3192,7 @@
       ]
     },
     {
-      "selector": ".s-features__desc",
+      "selector": ".features__desc",
       "locations": [
         [
           "sections.css",
@@ -3201,7 +3201,7 @@
       ]
     },
     {
-      "selector": ".s-features__points",
+      "selector": ".features__points",
       "locations": [
         [
           "sections.css",
@@ -3210,7 +3210,7 @@
       ]
     },
     {
-      "selector": ".s-features__point",
+      "selector": ".features__point",
       "locations": [
         [
           "sections.css",
@@ -3219,7 +3219,7 @@
       ]
     },
     {
-      "selector": ".s-features__dot",
+      "selector": ".features__dot",
       "locations": [
         [
           "sections.css",
@@ -3228,7 +3228,7 @@
       ]
     },
     {
-      "selector": ".s-features__demo",
+      "selector": ".features__demo",
       "locations": [
         [
           "sections.css",
@@ -3237,7 +3237,7 @@
       ]
     },
     {
-      "selector": ".s-features__demo:hover",
+      "selector": ".features__demo:hover",
       "locations": [
         [
           "sections.css",
@@ -3246,7 +3246,7 @@
       ]
     },
     {
-      "selector": ".s-features__demo-text",
+      "selector": ".features__demo-text",
       "locations": [
         [
           "sections.css",
@@ -3255,7 +3255,7 @@
       ]
     },
     {
-      "selector": ".s-features__demo-title",
+      "selector": ".features__demo-title",
       "locations": [
         [
           "sections.css",
@@ -3264,7 +3264,7 @@
       ]
     },
     {
-      "selector": ".s-features__demo-sub",
+      "selector": ".features__demo-sub",
       "locations": [
         [
           "sections.css",
@@ -3273,7 +3273,7 @@
       ]
     },
     {
-      "selector": ".s-features__img",
+      "selector": ".features__img",
       "locations": [
         [
           "sections.css",
@@ -3282,7 +3282,7 @@
       ]
     },
     {
-      "selector": ".s-features-popup__card",
+      "selector": ".features-popup__card",
       "locations": [
         [
           "sections.css",
@@ -3291,7 +3291,7 @@
       ]
     },
     {
-      "selector": ".s-features-popup__close",
+      "selector": ".features-popup__close",
       "locations": [
         [
           "sections.css",
@@ -3300,7 +3300,7 @@
       ]
     },
     {
-      "selector": ".s-features-popup__title",
+      "selector": ".features-popup__title",
       "locations": [
         [
           "sections.css",
@@ -3309,7 +3309,7 @@
       ]
     },
     {
-      "selector": ".s-features-popup__media",
+      "selector": ".features-popup__media",
       "locations": [
         [
           "sections.css",
@@ -3318,7 +3318,7 @@
       ]
     },
     {
-      "selector": ".s-features-popup__main",
+      "selector": ".features-popup__main",
       "locations": [
         [
           "sections.css",
@@ -3327,7 +3327,7 @@
       ]
     },
     {
-      "selector": ".s-features-popup__img",
+      "selector": ".features-popup__img",
       "locations": [
         [
           "sections.css",
@@ -3336,7 +3336,7 @@
       ]
     },
     {
-      "selector": ".s-features-popup__nav",
+      "selector": ".features-popup__nav",
       "locations": [
         [
           "sections.css",
@@ -3345,7 +3345,7 @@
       ]
     },
     {
-      "selector": ".s-features-popup__nav:hover",
+      "selector": ".features-popup__nav:hover",
       "locations": [
         [
           "sections.css",
@@ -3354,7 +3354,7 @@
       ]
     },
     {
-      "selector": ".s-features-popup__nav--prev",
+      "selector": ".features-popup__nav--prev",
       "locations": [
         [
           "sections.css",
@@ -3363,7 +3363,7 @@
       ]
     },
     {
-      "selector": ".s-features-popup__nav--next",
+      "selector": ".features-popup__nav--next",
       "locations": [
         [
           "sections.css",
@@ -3372,7 +3372,7 @@
       ]
     },
     {
-      "selector": ".s-features-popup__thumbs",
+      "selector": ".features-popup__thumbs",
       "locations": [
         [
           "sections.css",
@@ -3381,7 +3381,7 @@
       ]
     },
     {
-      "selector": ".s-features-popup__thumb",
+      "selector": ".features-popup__thumb",
       "locations": [
         [
           "sections.css",
@@ -3390,7 +3390,7 @@
       ]
     },
     {
-      "selector": ".s-features-popup__thumb img",
+      "selector": ".features-popup__thumb img",
       "locations": [
         [
           "sections.css",
@@ -4208,7 +4208,7 @@
       ]
     },
     {
-      "selector": ".s-audience__icon",
+      "selector": ".audience__icon",
       "locations": [
         [
           "sections.css",
@@ -4235,7 +4235,7 @@
       ]
     },
     {
-      "selector": ".s-audience__card--accent",
+      "selector": ".audience__card--accent",
       "locations": [
         [
           "sections.css",
@@ -4244,7 +4244,7 @@
       ]
     },
     {
-      "selector": ".s-audience__card--accent .s-audience__name",
+      "selector": ".audience__card--accent .audience__name",
       "locations": [
         [
           "sections.css",
@@ -4253,7 +4253,7 @@
       ]
     },
     {
-      "selector": ".s-audience__card--accent:hover",
+      "selector": ".audience__card--accent:hover",
       "locations": [
         [
           "sections.css",
@@ -4262,7 +4262,7 @@
       ]
     },
     {
-      "selector": ".s-audience__card--accent svg",
+      "selector": ".audience__card--accent svg",
       "locations": [
         [
           "sections.css",
@@ -4271,7 +4271,7 @@
       ]
     },
     {
-      "selector": ".s-audience__card--accent:hover svg",
+      "selector": ".audience__card--accent:hover svg",
       "locations": [
         [
           "sections.css",
@@ -5648,7 +5648,7 @@
       ]
     },
     {
-      "selector": ".s-services",
+      "selector": ".services",
       "locations": [
         [
           "sections.css",
@@ -5657,7 +5657,7 @@
       ]
     },
     {
-      "selector": ".s-services__inner",
+      "selector": ".services__inner",
       "locations": [
         [
           "sections.css",
@@ -5666,7 +5666,7 @@
       ]
     },
     {
-      "selector": ".s-services__head",
+      "selector": ".services__head",
       "locations": [
         [
           "sections.css",
@@ -5675,7 +5675,7 @@
       ]
     },
     {
-      "selector": ".s-services__title",
+      "selector": ".services__title",
       "locations": [
         [
           "sections.css",
@@ -5684,7 +5684,7 @@
       ]
     },
     {
-      "selector": ".s-services__sub",
+      "selector": ".services__sub",
       "locations": [
         [
           "sections.css",
@@ -5693,7 +5693,7 @@
       ]
     },
     {
-      "selector": ".s-services__grid",
+      "selector": ".services__grid",
       "locations": [
         [
           "sections.css",
@@ -5702,7 +5702,7 @@
       ]
     },
     {
-      "selector": ".s-services__card .partners__tag",
+      "selector": ".services__card .partners__tag",
       "locations": [
         [
           "sections.css",
@@ -5711,7 +5711,7 @@
       ]
     },
     {
-      "selector": ".s-services__card .partners__logo",
+      "selector": ".services__card .partners__logo",
       "locations": [
         [
           "sections.css",
@@ -5720,7 +5720,7 @@
       ]
     },
     {
-      "selector": ".s-services .partners__name",
+      "selector": ".services .partners__name",
       "locations": [
         [
           "sections.css",
@@ -5756,7 +5756,7 @@
       ]
     },
     {
-      "selector": ".s-team",
+      "selector": ".team",
       "locations": [
         [
           "sections.css",
@@ -5765,7 +5765,7 @@
       ]
     },
     {
-      "selector": ".s-team__flex",
+      "selector": ".team__flex",
       "locations": [
         [
           "sections.css",
@@ -5774,7 +5774,7 @@
       ]
     },
     {
-      "selector": ".s-team__inner",
+      "selector": ".team__inner",
       "locations": [
         [
           "sections.css",
@@ -5783,7 +5783,7 @@
       ]
     },
     {
-      "selector": ".s-team__photos",
+      "selector": ".team__photos",
       "locations": [
         [
           "sections.css",
@@ -5796,7 +5796,7 @@
       ]
     },
     {
-      "selector": ".s-team__head",
+      "selector": ".team__head",
       "locations": [
         [
           "sections.css",
@@ -5805,7 +5805,7 @@
       ]
     },
     {
-      "selector": ".s-team__title",
+      "selector": ".team__title",
       "locations": [
         [
           "sections.css",
@@ -5814,7 +5814,7 @@
       ]
     },
     {
-      "selector": ".s-team__texts",
+      "selector": ".team__texts",
       "locations": [
         [
           "sections.css",
@@ -5823,7 +5823,7 @@
       ]
     },
     {
-      "selector": ".s-team__text",
+      "selector": ".team__text",
       "locations": [
         [
           "sections.css",
@@ -5832,7 +5832,7 @@
       ]
     },
     {
-      "selector": ".s-team__photo",
+      "selector": ".team__photo",
       "locations": [
         [
           "sections.css",
@@ -5841,7 +5841,7 @@
       ]
     },
     {
-      "selector": ".s-team__photo--main",
+      "selector": ".team__photo--main",
       "locations": [
         [
           "sections.css",

@@ -1863,37 +1863,37 @@
       1711
     ]
   ],
-  ".s-hero__sub": [
+  ".hero__sub": [
     [
       "sections.css",
       1723
     ]
   ],
-  ".s-hero__stat": [
+  ".hero__stat": [
     [
       "sections.css",
       1729
     ]
   ],
-  ".s-hero__stat + .s-hero__stat": [
+  ".hero__stat + .hero__stat": [
     [
       "sections.css",
       1736
     ]
   ],
-  ".s-hero__num": [
+  ".hero__num": [
     [
       "sections.css",
       1740
     ]
   ],
-  ".s-hero__label": [
+  ".hero__label": [
     [
       "sections.css",
       1746
     ]
   ],
-  ".s-hero__stats-img": [
+  ".hero__stats-img": [
     [
       "sections.css",
       1750
@@ -1971,127 +1971,127 @@
       1833
     ]
   ],
-  ".s-tasks": [
+  ".tasks": [
     [
       "sections.css",
       1840
     ]
   ],
-  ".s-tasks__inner": [
+  ".tasks__inner": [
     [
       "sections.css",
       1844
     ]
   ],
-  ".s-tasks__head": [
+  ".tasks__head": [
     [
       "sections.css",
       1855
     ]
   ],
-  ".s-tasks__title": [
+  ".tasks__title": [
     [
       "sections.css",
       1860
     ]
   ],
-  ".s-tasks__sub": [
+  ".tasks__sub": [
     [
       "sections.css",
       1866
     ]
   ],
-  ".s-tasks__list": [
+  ".tasks__list": [
     [
       "sections.css",
       1871
     ]
   ],
-  ".s-tasks__item": [
+  ".tasks__item": [
     [
       "sections.css",
       1876
     ]
   ],
-  ".s-tasks__item + .s-tasks__item": [
+  ".tasks__item + .tasks__item": [
     [
       "sections.css",
       1880
     ]
   ],
-  ".s-tasks__q": [
+  ".tasks__q": [
     [
       "sections.css",
       1884
     ]
   ],
-  ".s-tasks__name": [
+  ".tasks__name": [
     [
       "sections.css",
       1895
     ]
   ],
-  ".s-tasks__btn": [
+  ".tasks__btn": [
     [
       "sections.css",
       1903
     ]
   ],
-  ".s-tasks__btn::before": [
+  ".tasks__btn::before": [
     [
       "sections.css",
       1918
     ]
   ],
-  ".s-tasks__item.is-open .s-tasks__btn::before": [
+  ".tasks__item.is-open .tasks__btn::before": [
     [
       "sections.css",
       1923
     ]
   ],
-  ".s-tasks__a": [
+  ".tasks__a": [
     [
       "sections.css",
       1927
     ]
   ],
-  ".s-tasks__a > p": [
+  ".tasks__a > p": [
     [
       "sections.css",
       1934
     ]
   ],
-  ".s-tasks__item.is-open .s-tasks__a": [
+  ".tasks__item.is-open .tasks__a": [
     [
       "sections.css",
       1942
     ]
   ],
-  ".s-tasks__item.is-open .s-tasks__a > p": [
+  ".tasks__item.is-open .tasks__a > p": [
     [
       "sections.css",
       1946
     ]
   ],
-  ".s-audience": [
+  ".audience": [
     [
       "sections.css",
       1951
     ]
   ],
-  ".s-audience__title": [
+  ".audience__title": [
     [
       "sections.css",
       1955
     ]
   ],
-  ".s-audience__grid": [
+  ".audience__grid": [
     [
       "sections.css",
       1961
     ]
   ],
-  ".s-audience__card": [
+  ".audience__card": [
     [
       "sections.css",
       1968
@@ -2101,217 +2101,217 @@
       2831
     ]
   ],
-  ".s-audience__name": [
+  ".audience__name": [
     [
       "sections.css",
       1975
     ]
   ],
-  ".s-audience__desc": [
+  ".audience__desc": [
     [
       "sections.css",
       1980
     ]
   ],
-  ".s-features": [
+  ".features": [
     [
       "sections.css",
       1988
     ]
   ],
-  ".s-features__inner": [
+  ".features__inner": [
     [
       "sections.css",
       1992
     ]
   ],
-  ".s-features__head": [
+  ".features__head": [
     [
       "sections.css",
       1998
     ]
   ],
-  ".s-features__title": [
+  ".features__title": [
     [
       "sections.css",
       2006
     ]
   ],
-  ".s-features__sub": [
+  ".features__sub": [
     [
       "sections.css",
       2011
     ]
   ],
-  ".s-features__body": [
+  ".features__body": [
     [
       "sections.css",
       2016
     ]
   ],
-  ".s-features__panels": [
+  ".features__panels": [
     [
       "sections.css",
       2022
     ]
   ],
-  ".s-features__panel": [
+  ".features__panel": [
     [
       "sections.css",
       2026
     ]
   ],
-  ".s-features__content": [
+  ".features__content": [
     [
       "sections.css",
       2033
     ]
   ],
-  ".s-features__panel.is-active": [
+  ".features__panel.is-active": [
     [
       "sections.css",
       2042
     ]
   ],
-  ".s-features__name": [
+  ".features__name": [
     [
       "sections.css",
       2052
     ]
   ],
-  ".s-features__desc": [
+  ".features__desc": [
     [
       "sections.css",
       2058
     ]
   ],
-  ".s-features__points": [
+  ".features__points": [
     [
       "sections.css",
       2064
     ]
   ],
-  ".s-features__point": [
+  ".features__point": [
     [
       "sections.css",
       2070
     ]
   ],
-  ".s-features__dot": [
+  ".features__dot": [
     [
       "sections.css",
       2079
     ]
   ],
-  ".s-features__demo": [
+  ".features__demo": [
     [
       "sections.css",
       2083
     ]
   ],
-  ".s-features__demo:hover": [
+  ".features__demo:hover": [
     [
       "sections.css",
       2100
     ]
   ],
-  ".s-features__demo-text": [
+  ".features__demo-text": [
     [
       "sections.css",
       2104
     ]
   ],
-  ".s-features__demo-title": [
+  ".features__demo-title": [
     [
       "sections.css",
       2110
     ]
   ],
-  ".s-features__demo-sub": [
+  ".features__demo-sub": [
     [
       "sections.css",
       2115
     ]
   ],
-  ".s-features__img": [
+  ".features__img": [
     [
       "sections.css",
       2119
     ]
   ],
-  ".s-features-popup__card": [
+  ".features-popup__card": [
     [
       "sections.css",
       2126
     ]
   ],
-  ".s-features-popup__close": [
+  ".features-popup__close": [
     [
       "sections.css",
       2136
     ]
   ],
-  ".s-features-popup__title": [
+  ".features-popup__title": [
     [
       "sections.css",
       2151
     ]
   ],
-  ".s-features-popup__media": [
+  ".features-popup__media": [
     [
       "sections.css",
       2158
     ]
   ],
-  ".s-features-popup__main": [
+  ".features-popup__main": [
     [
       "sections.css",
       2162
     ]
   ],
-  ".s-features-popup__img": [
+  ".features-popup__img": [
     [
       "sections.css",
       2169
     ]
   ],
-  ".s-features-popup__nav": [
+  ".features-popup__nav": [
     [
       "sections.css",
       2177
     ]
   ],
-  ".s-features-popup__nav:hover": [
+  ".features-popup__nav:hover": [
     [
       "sections.css",
       2194
     ]
   ],
-  ".s-features-popup__nav--prev": [
+  ".features-popup__nav--prev": [
     [
       "sections.css",
       2199
     ]
   ],
-  ".s-features-popup__nav--next": [
+  ".features-popup__nav--next": [
     [
       "sections.css",
       2203
     ]
   ],
-  ".s-features-popup__thumbs": [
+  ".features-popup__thumbs": [
     [
       "sections.css",
       2207
     ]
   ],
-  ".s-features-popup__thumb": [
+  ".features-popup__thumb": [
     [
       "sections.css",
       2214
     ]
   ],
-  ".s-features-popup__thumb img": [
+  ".features-popup__thumb img": [
     [
       "sections.css",
       2225
@@ -2895,7 +2895,7 @@
       2840
     ]
   ],
-  ".s-audience__icon": [
+  ".audience__icon": [
     [
       "sections.css",
       2846
@@ -2913,31 +2913,31 @@
       2860
     ]
   ],
-  ".s-audience__card--accent": [
+  ".audience__card--accent": [
     [
       "sections.css",
       2864
     ]
   ],
-  ".s-audience__card--accent .s-audience__name": [
+  ".audience__card--accent .audience__name": [
     [
       "sections.css",
       2869
     ]
   ],
-  ".s-audience__card--accent:hover": [
+  ".audience__card--accent:hover": [
     [
       "sections.css",
       2873
     ]
   ],
-  ".s-audience__card--accent svg": [
+  ".audience__card--accent svg": [
     [
       "sections.css",
       2878
     ]
   ],
-  ".s-audience__card--accent:hover svg": [
+  ".audience__card--accent:hover svg": [
     [
       "sections.css",
       2881
@@ -3873,55 +3873,55 @@
       3914
     ]
   ],
-  ".s-services": [
+  ".services": [
     [
       "sections.css",
       3919
     ]
   ],
-  ".s-services__inner": [
+  ".services__inner": [
     [
       "sections.css",
       3922
     ]
   ],
-  ".s-services__head": [
+  ".services__head": [
     [
       "sections.css",
       3930
     ]
   ],
-  ".s-services__title": [
+  ".services__title": [
     [
       "sections.css",
       3933
     ]
   ],
-  ".s-services__sub": [
+  ".services__sub": [
     [
       "sections.css",
       3938
     ]
   ],
-  ".s-services__grid": [
+  ".services__grid": [
     [
       "sections.css",
       3943
     ]
   ],
-  ".s-services__card .partners__tag": [
+  ".services__card .partners__tag": [
     [
       "sections.css",
       3948
     ]
   ],
-  ".s-services__card .partners__logo": [
+  ".services__card .partners__logo": [
     [
       "sections.css",
       3951
     ]
   ],
-  ".s-services .partners__name": [
+  ".services .partners__name": [
     [
       "sections.css",
       3954
@@ -3945,25 +3945,25 @@
       3966
     ]
   ],
-  ".s-team": [
+  ".team": [
     [
       "sections.css",
       3973
     ]
   ],
-  ".s-team__flex": [
+  ".team__flex": [
     [
       "sections.css",
       3977
     ]
   ],
-  ".s-team__inner": [
+  ".team__inner": [
     [
       "sections.css",
       3982
     ]
   ],
-  ".s-team__photos": [
+  ".team__photos": [
     [
       "sections.css",
       3987
@@ -3973,37 +3973,37 @@
       4013
     ]
   ],
-  ".s-team__head": [
+  ".team__head": [
     [
       "sections.css",
       3992
     ]
   ],
-  ".s-team__title": [
+  ".team__title": [
     [
       "sections.css",
       3998
     ]
   ],
-  ".s-team__texts": [
+  ".team__texts": [
     [
       "sections.css",
       4002
     ]
   ],
-  ".s-team__text": [
+  ".team__text": [
     [
       "sections.css",
       4008
     ]
   ],
-  ".s-team__photo": [
+  ".team__photo": [
     [
       "sections.css",
       4021
     ]
   ],
-  ".s-team__photo--main": [
+  ".team__photo--main": [
     [
       "sections.css",
       4024

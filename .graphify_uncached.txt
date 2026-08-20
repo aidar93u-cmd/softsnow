@@ -80,7 +80,7 @@ assets\img\project-2-small.png
 assets\img\project-2.png
 assets\img\projects_logo_horisontal-black.svg
 assets\img\registry-banner.jpg
-assets\img\s-features-demo.svg
+assets\img\features-demo.svg
 assets\img\sed-plus-logo-horizontal-short.svg
 assets\img\solution-cta.png
 assets\img\solution-features.png

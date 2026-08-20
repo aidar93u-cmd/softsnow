@@ -39,7 +39,7 @@
 
 `.tabs`/`.tabs__btn`/`.tabs__btn.is-active` и `.breadcrumbs*` сейчас лежат в `css/solution.css`. Они нужны по 2-му экземпляру (страница «Клиенты») → перенести оба блока в `css/components.css` (shared registry), из `solution.css` удалить. Это безопасно: селекторы не переопределяются в `solution.css` поверх (проверить перед переносом). НЕ трогать стили как есть — только место хранения.
 
-**Выполнено:** `css/solution.css` упразднён — `.tabs`/`.breadcrumbs` перенесены в `components.css`, layout-секции (`.s-hero`, `.s-tasks`, `.s-audience`, `.s-features`, `.cta--dark/-center`, `.testimonials`, `.faq`, `.catalog`, `.registry`, `.events--readalso`) — в `sections.css`. Ссылки на `solution.css` убраны из `solution-detail.html` и `solutions.html`. Per-page CSS-файлов больше нет.
+**Выполнено:** `css/solution.css` упразднён — `.tabs`/`.breadcrumbs` перенесены в `components.css`, layout-секции (`.hero`, `.tasks`, `.audience`, `.features`, `.cta--dark/-center`, `.testimonials`, `.faq`, `.catalog`, `.registry`, `.events--readalso`) — в `sections.css`. Ссылки на `solution.css` убраны из `solution-detail.html` и `solutions.html`. Per-page CSS-файлов больше нет.
 
 ## Данные секций (из аудита)
 

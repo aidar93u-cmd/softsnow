@@ -73,7 +73,7 @@
 | # | Figma Section | Figma node | Code | Status |
 |---|---|---|---|---|
 | 1 | Header | `863:18269` | `.header` | done |
-| 2 | Hero (bg + breadcrumbs + h1 «Решения») | `736:17807` / `2238` | `.s-hero` + `.breadcrumbs` | done |
+| 2 | Hero (bg + breadcrumbs + h1 «Решения») | `736:17807` / `2238` | `.hero` + `.breadcrumbs` | done |
 | 3 | Каталог (6 карточек-решений) | `2147239884` | `.catalog` (новая) | done |
 | 4 | CTA | `2210` | `.cta` | done |
 | 5 | Footer | `2147239878` | `.footer` | done |
@@ -82,9 +82,9 @@
 
 ### Детальная решений (solution-detail.html)
 
-Страница решения, фрейм `922:19917` (1920×9989). Секции: s-hero (bg, breadcrumbs, title, stats), registry, s-tasks (аккордеон «+»), s-audience (4 карточки), s-features (tabs 890/460, 5 панелей, переключение по `data-tab`), cta--dark, testimonials (swiper 617), events--readalso, cta--center, faq, footer. Стили в `css/solution.css`.
+Страница решения, фрейм `922:19917` (1920×9989). Секции: hero (bg, breadcrumbs, title, stats), registry, tasks (аккордеон «+»), audience (4 карточки), features (tabs 890/460, 5 панелей, переключение по `data-tab`), cta--dark, testimonials (swiper 617), events--readalso, cta--center, faq, footer. Стили в `css/solution.css`.
 
-`s-features` табы: кнопки `.tabs__btn` с `data-tab` (0–4), панели `.s-features__panel` со стеком `.s-features__panels` (absolute, 1790×560). Каждая панель = `.s-features__content` (890×560, белая карточка: название/описание/пункты/demo) + `.s-features__img` (890×560) — при переключении меняется и контент, и картинка. Активная панель `.is-active` — opacity 1, остальные 0 + `translateY(16px)`, transition 0.4s (`!important`, обход reduced-motion). Переключение в `js/main.js` (`.tabs` handler) — `classList.toggle('is-active')` + `aria-hidden`.
+`features` табы: кнопки `.tabs__btn` с `data-tab` (0–4), панели `.features__panel` со стеком `.features__panels` (absolute, 1790×560). Каждая панель = `.features__content` (890×560, белая карточка: название/описание/пункты/demo) + `.features__img` (890×560) — при переключении меняется и контент, и картинка. Активная панель `.is-active` — opacity 1, остальные 0 + `translateY(16px)`, transition 0.4s (`!important`, обход reduced-motion). Переключение в `js/main.js` (`.tabs` handler) — `classList.toggle('is-active')` + `aria-hidden`.
 
 ### Проекты (projects.html)
 
@@ -142,7 +142,7 @@ Detail события, фрейм `896:9497` (1920×7991). Стили в `css/se
 | 1 | Header | `896:9508` | `.header` | done (reused) |
 | 2 | Hero (IMAGE bg 1870×758, h1 «Стратегический рывок…» 100/500 opacity .7, btn «Зарегистрироваться» 216×64, 2 текста снизу 16/500) | `896:9498` | `.event-hero` (reuse `.hero`) | done |
 | 3 | «Что обсудим на семинаре» (white r20, 360h, дата «22 апреля 2026» 40/500 + время) | `896:9551` | `.event-about` | done |
-| 4 | «Будет полезно для» (4 карточки 460×460) | `896:9593` | `.s-audience` + `.s-audience__card--accent` | done (reused) |
+| 4 | «Будет полезно для» (4 карточки 460×460) | `896:9593` | `.audience` + `.audience__card--accent` | done (reused) |
 | 5 | «Программа семинара» (4 пункта, круг 64×64, 2-й активный; IMAGE 925×560 + label «Блок 1») | `896:9608` | `.program` | done |
 | 6 | CTA «Забронируйте место» (bg sea, r20) | `896:9557` | `.cta--blue` | done (reused) |
 | 7 | «Что разберём на семинаре» (6 карточек 590×360, 2×3) | `896:9564` | `.seminar-topics` (+`.seminar-topics__inner` white r20) | done |
@@ -200,13 +200,13 @@ Detail проекта, фрейм `1128:8159` (COMPONENT, fileKey `tK0WpkPKL3pQG
 | 1 | Header | `.header` | done (reused) |
 | 2 | Hero (bg 1870×758, h1 100px, 2 заметки, btn 184×64) | `.hero` (копия из `index.html`, контент заменён) | done |
 | 3 | «Решение включено в реестр Минцифры» | `.univer-registry` (NEW, структура как `.registry`) | done |
-| 4 | «Основа цифровой среды вуза» (4 карточки) | `.s-audience` (reused) | done |
+| 4 | «Основа цифровой среды вуза» (4 карточки) | `.audience` (reused) | done |
 | 5 | «Почему выбирают Univer Online» (4 пункта) | `.reasons` + `.reasons--univer` | done |
 | 6 | CTA синий «Расскажите нам о задачах вашего университета» (btn outline) | `.cta--blue` + `.cta--blue--univer` | done |
-| 7 | «Ключевые решения внутри Univer Online» (7 карточек 460×510, grid 4+3) | `.s-services` (NEW) + `.partners__card` | done |
+| 7 | «Ключевые решения внутри Univer Online» (7 карточек 460×510, grid 4+3) | `.services` (NEW) + `.partners__card` | done |
 | 8 | «Проекты на базе экосистемы» (3 карты swiper) | `.projects` (reused) | done |
 | 9 | «Варианты внедрения» (3 карточки, средняя синяя + бейдж) | `.vnedrenie` + `.vnedrenie--univer` | done |
-| 10 | «SoftSnow — команда» (title + 2 текста + коллаж телефонов) | `.s-team` (NEW) | done |
+| 10 | «SoftSnow — команда» (title + 2 текста + коллаж телефонов) | `.team` (NEW) | done |
 | 11 | CTA светлый «Подберём решение под задачи вашего университета» | `.cta` (reused) | done |
 | 12 | Footer | `.footer` | done (reused) |
 

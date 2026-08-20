@@ -255,17 +255,17 @@ function initDropdown() {
 
 // ponytail: one popup template, cloned per click; src filled from the tab's screenshot
 function initDemoPopup() {
-  const tpl = document.getElementById('s-features-popup');
-  const btns = document.querySelectorAll('.s-features__demo');
+  const tpl = document.getElementById('features-popup');
+  const btns = document.querySelectorAll('.features__demo');
   if (!tpl || !btns.length) return;
   btns.forEach((btn) => {
     btn.addEventListener('click', () => {
-      const panel = btn.closest('.s-features__panel');
-      const img = panel ? panel.querySelector('.s-features__img') : null;
+      const panel = btn.closest('.features__panel');
+      const img = panel ? panel.querySelector('.features__img') : null;
       const node = tpl.cloneNode(true);
       node.hidden = false;
       if (img) {
-        const popupImg = node.querySelector('.s-features-popup__img');
+        const popupImg = node.querySelector('.features-popup__img');
         popupImg.src = img.src;
         popupImg.alt = img.alt;
       }
@@ -402,7 +402,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const tabs = document.querySelector('.tabs');
   if (tabs) {
-    const panels = document.querySelectorAll('.s-features__panel');
+    const panels = document.querySelectorAll('.features__panel');
     tabs.addEventListener('click', (e) => {
       const btn = e.target.closest('.tabs__btn');
       if (!btn) return;
@@ -421,7 +421,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  initAccordion('.s-tasks__list', 'is-open', '.s-tasks__q');
+  initAccordion('.tasks__list', 'is-open', '.tasks__q');
   initAccordion('.faq__list', 'is-open', '.faq__q');
 
   initClientsPage();
@@ -431,9 +431,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initVideoPopup();
   initProgramTabs();
 
-  document.querySelectorAll('.s-tasks__item:first-child, .faq__item:first-child').forEach((el) => {
+  document.querySelectorAll('.tasks__item:first-child, .faq__item:first-child').forEach((el) => {
     el.classList.add('is-open');
-    const b = el.querySelector('.s-tasks__q, .faq__q');
+    const b = el.querySelector('.tasks__q, .faq__q');
     if (b) b.setAttribute('aria-expanded', 'true');
   });
 });

@@ -98,9 +98,9 @@ softsnow/
 |---|--------|-------|------------|
 | 1 | Hero решения | `.hero` | заголовок + описание + CTA |
 | 2 | Реестр функций | `.registry` |  |
-| 3 | Задачи сервиса | `.s-tasks` |  |
-| 4 | Аудитория | `.s-audience` |  |
-| 5 | Возможности сервиса | `.s-features` | табы |
+| 3 | Задачи сервиса | `.tasks` |  |
+| 4 | Аудитория | `.audience` |  |
+| 5 | Возможности сервиса | `.features` | табы |
 | 6 | CTA (синий) | `.cta--blue` |  |
 | 7 | Отзывы | `.testimonials` |  |
 | 8 | Реализованные проекты | `.projects` `#projects` | карточки → `projects.html` |
@@ -152,7 +152,7 @@ softsnow/
 |---|--------|-------|------------|
 | 1 | Hero мероприятия | `.event-hero` |  |
 | 2 | О мероприятии | `.event-about` |  |
-| 3 | Аудитория | `.s-audience` |  |
+| 3 | Аудитория | `.audience` |  |
 | 4 | Программа | `.program` |  |
 | 5 | CTA (синий) | `.cta--blue` |  |
 | 6 | Темы семинара | `.seminar-topics` |  |
@@ -267,14 +267,14 @@ New statistics         NEW: .stats
 
 ++ `index.html` — главная (hero, отрасли, цифры, задачи, компании, партнёры, проекты, вебинары, CTA)
 ++ `solutions.html` — каталог решений (page-hero, catalog, CTA)
-++ `solution-detail.html` — детальная страница решения (hero, registry, s-tasks, s-audience, s-features, CTA синий, testimonials, projects, events, CTA, faq)
+++ `solution-detail.html` — детальная страница решения (hero, registry, tasks, audience, features, CTA синий, testimonials, projects, events, CTA, faq)
 ++ `clients.html` — клиенты (page-hero, c-clients, projects, CTA)
 ++ `client-detail.html` — детальная страница клиента (page-hero--detail, client-intro, stats--client, stages, CTA синий, events--readalso)
 ++ `projects.html` — проекты (page-hero, projects-page, CTA)
 +- `project-detail.html` — страница проекта 
-++ `univer-online.html` — Экосистема Univer Online (hero, univer-registry, s-audience, reasons--univer, cta--blue--univer, s-services, projects--univer, vnedrenie--univer, s-team, cta, footer)
+++ `univer-online.html` — Экосистема Univer Online (hero, univer-registry, audience, reasons--univer, cta--blue--univer, services, projects--univer, vnedrenie--univer, team, cta, footer)
 - `events.html` — медиацентр (page-hero--media, events-featured, events-list, CTA)
-- `event-detail.html` — детальная страница мероприятия (event-hero, event-about, s-audience, program, CTA синий, seminar-topics, event-partners, trust, clients, faq)
+- `event-detail.html` — детальная страница мероприятия (event-hero, event-about, audience, program, CTA синий, seminar-topics, event-partners, trust, clients, faq)
 -  Directum — цифровая экосистема для управления организацией
 -  Цифровая трансформация вуза
 
