@@ -268,13 +268,14 @@ New statistics         NEW: .stats
 ++ `index.html` — главная (hero, отрасли, цифры, задачи, компании, партнёры, проекты, вебинары, CTA)
 ++ `solutions.html` — каталог решений (page-hero, catalog, CTA)
 ++ `solution-detail.html` — детальная страница решения (hero, registry, s-tasks, s-audience, s-features, CTA синий, testimonials, projects, events, CTA, faq)
-+ `clients.html` — клиенты (page-hero, c-clients, projects, CTA)
-+ `client-detail.html` — детальная страница клиента (page-hero--detail, client-intro, stats--client, stages, CTA синий, events--readalso)
-+ `projects.html` — проекты (page-hero, projects-page, CTA)
-+ `events.html` — медиацентр (page-hero--media, events-featured, events-list, CTA)
-+ `event-detail.html` — детальная страница мероприятия (event-hero, event-about, s-audience, program, CTA синий, seminar-topics, event-partners, trust, clients, faq)
+++ `clients.html` — клиенты (page-hero, c-clients, projects, CTA)
+++ `client-detail.html` — детальная страница клиента (page-hero--detail, client-intro, stats--client, stages, CTA синий, events--readalso)
+++ `projects.html` — проекты (page-hero, projects-page, CTA)
++- `project-detail.html` — страница проекта 
+++ `univer-online.html` — Экосистема Univer Online (hero, univer-registry, s-audience, reasons--univer, cta--blue--univer, s-services, projects--univer, vnedrenie--univer, s-team, cta, footer)
+- `events.html` — медиацентр (page-hero--media, events-featured, events-list, CTA)
+- `event-detail.html` — детальная страница мероприятия (event-hero, event-about, s-audience, program, CTA синий, seminar-topics, event-partners, trust, clients, faq)
 -  Directum — цифровая экосистема для управления организацией
--  Univer Online — комплекс цифровых сервисов для вузов
 -  Цифровая трансформация вуза
 
 Все страницы в корне проекта, пути без `../`. Связи: главная → каталоги → детальные страницы; проекты — без детальной страницы.

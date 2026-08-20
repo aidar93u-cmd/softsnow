@@ -1,0 +1,1207 @@
+{
+  "metadata": {
+    "title": "SoftSnow Webinar & Client Logo Image Extraction",
+    "date": "2026-08-19",
+    "description": "Knowledge graph fragment extracted from SoftSnow webinar event images (4 files) and client logo images (23 files). Entities and relationships are inferred from HTML source referencing each image.",
+    "model": "big-pickle",
+    "generator": "openai-gpt-4o",
+    "confidence_threshold": 0.6
+  },
+  "nodes": [
+    {
+      "id": "image-webinar-1",
+      "type": "file",
+      "label": "Webinar 1 - Strategic Push for University Future",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/webinar-1.png",
+        "format": "PNG",
+        "use": "Webinar event thumbnail and featured event illustration",
+        "display_location": "events.html - featured swiper slide + events list grid",
+        "related_events": [
+          "\u0421\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0440\u044b\u0432\u043e\u043a: \u043a\u0430\u043a \u043d\u0430\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u0441\u0438\u0441\u0442\u0435\u043c\u043d\u0443\u044e \u0440\u0430\u0431\u043e\u0442\u0443 \u043d\u0430\u0434 \u0431\u0443\u0434\u0443\u0449\u0438\u043c \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442\u0430",
+          "\u0421\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u0430\u044f \u043a\u043e\u043d\u0444\u0435\u0440\u0435\u043d\u0446\u0438\u044f \u041f\u043e\u043b\u0438\u0442\u0435\u0445\u0430 \u0438 \u0421\u043e\u0444\u0442\u0421\u043d\u043e\u0443"
+        ]
+      },
+      "confidence": 0.9,
+      "metadata": {
+        "evidence": "Alt text on events.html lines 215, 265",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "image-webinar-2",
+      "type": "file",
+      "label": "Webinar 2 - Digital University Environment",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/webinar-2.png",
+        "format": "PNG",
+        "use": "Webinar event thumbnail and featured event illustration",
+        "display_location": "events.html - featured swiper slide + events list grid",
+        "related_events": [
+          "\u0426\u0438\u0444\u0440\u043e\u0432\u0430\u044f \u0441\u0440\u0435\u0434\u0430 \u0432\u0443\u0437\u0430: \u043a\u0430\u043a \u0441\u0432\u044f\u0437\u0430\u0442\u044c \u0441\u0435\u0440\u0432\u0438\u0441\u044b, \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u044b \u0438 \u0434\u0430\u043d\u043d\u044b\u0435",
+          "\u0417\u0430\u043a\u0430\u0437\u0447\u0438\u043a\u0438 \u0421\u043e\u0444\u0442\u0421\u043d\u043e\u0443 \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u0438\u043b\u0438 \u043f\u0440\u043e\u0435\u043a\u0442\u044b \u043d\u0430 Directum Awards 2026"
+        ]
+      },
+      "confidence": 0.9,
+      "metadata": {
+        "evidence": "Alt text on events.html lines 244, 275",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "image-webinar-3",
+      "type": "file",
+      "label": "Webinar 3 - KEDO and Digital Transformation",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/webinar-3.png",
+        "format": "PNG",
+        "use": "Webinar article thumbnail",
+        "display_location": "events.html - events list grid cards",
+        "related_events": [
+          "\u041a\u042d\u0414\u041e \u0432 \u0432\u0443\u0437\u0435: \u043e\u043f\u044b\u0442 \u0432\u043d\u0435\u0434\u0440\u0435\u043d\u0438\u044f \u0438 \u043f\u0435\u0440\u0432\u044b\u0435 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b",
+          "\u0426\u0438\u0444\u0440\u043e\u0432\u043e\u0439 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u043e\u043e\u0431\u043e\u0440\u043e\u0442 \u0434\u043b\u044f \u0432\u0443\u0437\u043e\u0432: \u0447\u0435\u043a-\u043b\u0438\u0441\u0442 \u0437\u0430\u043f\u0443\u0441\u043a\u0430"
+        ]
+      },
+      "confidence": 0.85,
+      "metadata": {
+        "evidence": "HTML src references on events.html lines 285, 325",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "image-webinar-4",
+      "type": "file",
+      "label": "Webinar 4 - Digitize University HR Processes",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/webinar-4.png",
+        "format": "PNG",
+        "use": "Webinar article thumbnail",
+        "display_location": "events.html - events list grid cards",
+        "related_events": [
+          "\u041a\u0430\u043a \u043e\u0446\u0438\u0444\u0440\u043e\u0432\u0430\u0442\u044c \u043a\u0430\u0434\u0440\u043e\u0432\u044b\u0435 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u044b \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442\u0430"
+        ]
+      },
+      "confidence": 0.85,
+      "metadata": {
+        "evidence": "HTML src reference on events.html line 295",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-mgimo",
+      "type": "file",
+      "label": "MGIMO Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-1.png",
+        "format": "PNG",
+        "client_full_name": "\u041c\u043e\u0441\u043a\u043e\u0432\u0441\u043a\u0438\u0439 \u0433\u043e\u0441\u0443\u0434\u0430\u0440\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442 \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0445 \u043e\u0442\u043d\u043e\u0448\u0435\u043d\u0438\u0439",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text '\u041c\u0413\u0418\u041c\u041e' on clients.html line 182",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-polymetal",
+      "type": "file",
+      "label": "Polymetal Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-2.png",
+        "format": "PNG",
+        "client_full_name": "\u041f\u043e\u043b\u0438\u043c\u0435\u0442\u0430\u043b\u043b",
+        "sector": "\u0413\u043e\u0440\u043d\u043e\u0434\u043e\u0431\u044b\u0432\u0430\u044e\u0449\u0430\u044f \u043f\u0440\u043e\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u043e\u0441\u0442\u044c",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 197",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-voek",
+      "type": "file",
+      "label": "VOEK Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-3.png",
+        "format": "PNG",
+        "client_full_name": "\u0412\u043e\u043b\u043e\u0433\u043e\u0434\u0441\u043a\u0430\u044f \u041e\u0431\u043b\u0430\u0441\u0442\u043d\u0430\u044f \u042d\u043d\u0435\u0440\u0433\u0435\u0442\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u041a\u043e\u043c\u043f\u0430\u043d\u0438\u044f",
+        "sector": "\u042d\u043d\u0435\u0440\u0433\u0435\u0442\u0438\u043a\u0430",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text '\u0412\u041e\u042d\u041a' on clients.html line 211",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-solidcore",
+      "type": "file",
+      "label": "Solidcore Resources Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-4.png",
+        "format": "PNG",
+        "client_full_name": "Solidcore Resources",
+        "sector": "\u0413\u043e\u0440\u043d\u043e\u0434\u043e\u0431\u044b\u0432\u0430\u044e\u0449\u0430\u044f \u043f\u0440\u043e\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u043e\u0441\u0442\u044c",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 225",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-mguya",
+      "type": "file",
+      "label": "MGYuA Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-5.png",
+        "format": "PNG",
+        "client_full_name": "\u041c\u043e\u0441\u043a\u043e\u0432\u0441\u043a\u0438\u0439 \u0433\u043e\u0441\u0443\u0434\u0430\u0440\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439 \u044e\u0440\u0438\u0434\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text '\u041c\u0413\u042e\u0410' on clients.html line 239",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-spbpu",
+      "type": "file",
+      "label": "SPbPU Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-6.png",
+        "format": "PNG",
+        "client_full_name": "\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433\u0441\u043a\u0438\u0439 \u043f\u043e\u043b\u0438\u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442 \u041f\u0435\u0442\u0440\u0430 \u0412\u0435\u043b\u0438\u043a\u043e\u0433\u043e",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text '\u0421\u041f\u0431\u041f\u0423' on clients.html line 253",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-russian-justice-academy",
+      "type": "file",
+      "label": "Russian Academy of Justice Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-7.png",
+        "format": "PNG",
+        "client_full_name": "\u0420\u043e\u0441\u0441\u0438\u0439\u0441\u043a\u0430\u044f \u0430\u043a\u0430\u0434\u0435\u043c\u0438\u044f \u043f\u0440\u0430\u0432\u043e\u0441\u0443\u0434\u0438\u044f",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 267",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-finance-university",
+      "type": "file",
+      "label": "Finance University Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-8.png",
+        "format": "PNG",
+        "client_full_name": "\u0424\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u044b\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442 \u043f\u0440\u0438 \u041f\u0440\u0430\u0432\u0438\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u0435 \u0420\u0424",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 281",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-mfua",
+      "type": "file",
+      "label": "MFYuA Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-9.png",
+        "format": "PNG",
+        "client_full_name": "\u041c\u043e\u0441\u043a\u043e\u0432\u0441\u043a\u0438\u0439 \u0444\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u043e-\u044e\u0440\u0438\u0434\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text '\u041c\u0424\u042e\u0410' on clients.html line 295",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-apb",
+      "type": "file",
+      "label": "Asia-Pacific Bank Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-10.png",
+        "format": "PNG",
+        "client_full_name": "\u0410\u0437\u0438\u0430\u0442\u0441\u043a\u043e-\u0422\u0438\u0445\u043e\u043e\u043a\u0435\u0430\u043d\u0441\u043a\u0438\u0439 \u0431\u0430\u043d\u043a",
+        "sector": "\u0411\u0430\u043d\u043a\u043e\u0432\u0441\u043a\u0438\u0439 \u0441\u0435\u043a\u0442\u043e\u0440",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 309",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-spbgu",
+      "type": "file",
+      "label": "SPbSU Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-11.png",
+        "format": "PNG",
+        "client_full_name": "\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433\u0441\u043a\u0438\u0439 \u0433\u043e\u0441\u0443\u0434\u0430\u0440\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text '\u0421\u041f\u0431\u0413\u0423' on clients.html line 323",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-unikon",
+      "type": "file",
+      "label": "UNIKON-Inform Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-12.png",
+        "format": "PNG",
+        "client_full_name": "\u042e\u041d\u0418\u041a\u041e\u041d-\u0418\u043d\u0444\u043e\u0440\u043c",
+        "sector": "\u0418\u0422 \u0438 \u043a\u043e\u043d\u0441\u0430\u043b\u0442\u0438\u043d\u0433",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 337",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-synergy",
+      "type": "file",
+      "label": "Synergy Corporation Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-13.png",
+        "format": "PNG",
+        "client_full_name": "\u041a\u043e\u0440\u043f\u043e\u0440\u0430\u0446\u0438\u044f \u0421\u0438\u043d\u0435\u0440\u0433\u0438\u044f",
+        "sector": "\u041e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 351",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-pavlov-university",
+      "type": "file",
+      "label": "Pavlov Medical University Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-14.png",
+        "format": "PNG",
+        "client_full_name": "\u041f\u0421\u041f\u0431\u0413\u041c\u0423 \u0438\u043c. \u041f\u0430\u0432\u043b\u043e\u0432\u0430",
+        "sector": "\u041c\u0435\u0434\u0438\u0446\u0438\u043d\u0441\u043a\u043e\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 366",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-nngu",
+      "type": "file",
+      "label": "Nizhny Novgorod Lobachevsky University Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-15.png",
+        "format": "PNG",
+        "client_full_name": "\u041d\u041d\u0413\u0423 \u0438\u043c. \u041b\u043e\u0431\u0430\u0447\u0435\u0432\u0441\u043a\u043e\u0433\u043e",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 380",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-onf",
+      "type": "file",
+      "label": "ONF Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-16.png",
+        "format": "PNG",
+        "client_full_name": "\u041e\u0431\u0449\u0435\u0440\u043e\u0441\u0441\u0438\u0439\u0441\u043a\u0438\u0439 \u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0439 \u0444\u0440\u043e\u043d\u0442",
+        "sector": "\u041e\u0431\u0449\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0430\u044f \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u044f",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text '\u041e\u041d\u0424' on clients.html line 394",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-stau",
+      "type": "file",
+      "label": "Stavropol Agrarian University Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-17.png",
+        "format": "PNG",
+        "client_full_name": "\u0421\u0442\u0430\u0432\u0440\u043e\u043f\u043e\u043b\u044c\u0441\u043a\u0438\u0439 \u0433\u043e\u0441\u0443\u0434\u0430\u0440\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439 \u0430\u0433\u0440\u0430\u0440\u043d\u044b\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442",
+        "sector": "\u0410\u0433\u0440\u0430\u0440\u043d\u043e\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text '\u0421\u0442\u0413\u0410\u0423' on clients.html line 408",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-svfu",
+      "type": "file",
+      "label": "NEFU Ammosov Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-18.png",
+        "format": "PNG",
+        "client_full_name": "\u0421\u0412\u0424\u0423 \u0438\u043c. \u0410\u043c\u043c\u043e\u0441\u043e\u0432\u0430",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 419",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-leti",
+      "type": "file",
+      "label": "SPbGETU LETI Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-19.png",
+        "format": "PNG",
+        "client_full_name": "\u0421\u041f\u0431\u0413\u042d\u0422\u0423 \u041b\u042d\u0422\u0418",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 435",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-mmuni",
+      "type": "file",
+      "label": "Moscow International University Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-20.png",
+        "format": "PNG",
+        "client_full_name": "\u041c\u043e\u0441\u043a\u043e\u0432\u0441\u043a\u0438\u0439 \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 451",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-ugrasu",
+      "type": "file",
+      "label": "Ugra State University Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-21.png",
+        "format": "PNG",
+        "client_full_name": "\u042e\u0433\u043e\u0440\u0441\u043a\u0438\u0439 \u0433\u043e\u0441\u0443\u0434\u0430\u0440\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 464",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-kom-dpo",
+      "type": "file",
+      "label": "Kommersant DPO Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-22.png",
+        "format": "PNG",
+        "client_full_name": "\u041a\u043e\u043c\u043c\u0435\u0440\u0441\u0430\u043d\u0442\u044a DPO",
+        "sector": "\u041e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 480",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-omgtu",
+      "type": "file",
+      "label": "Omsk State Technical University Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-23.png",
+        "format": "PNG",
+        "client_full_name": "\u041e\u043c\u0441\u043a\u0438\u0439 \u0433\u043e\u0441\u0443\u0434\u0430\u0440\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text '\u041e\u043c\u0413\u0422\u0423' on clients.html line 494",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "concept-strategic-planning",
+      "type": "topic",
+      "label": "Strategic Planning in Higher Education",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "context": "Webinar-1 title: systemic work on university future",
+        "related_to": "image-webinar-1"
+      },
+      "confidence": 0.9,
+      "metadata": {
+        "evidence": "Alt text: \u0421\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0440\u044b\u0432\u043e\u043a",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "concept-digital-university",
+      "type": "topic",
+      "label": "Digital University Environment",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "context": "Webinar-2 title: connecting services, processes and data",
+        "related_to": "image-webinar-2"
+      },
+      "confidence": 0.9,
+      "metadata": {
+        "evidence": "Alt text: \u0426\u0438\u0444\u0440\u043e\u0432\u0430\u044f \u0441\u0440\u0435\u0434\u0430 \u0432\u0443\u0437\u0430",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "concept-kedo",
+      "type": "topic",
+      "label": "KEDO (Electronic Document Workflow in Education)",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "context": "Webinar-3: KEDO implementation experience in universities",
+        "related_to": "image-webinar-3"
+      },
+      "confidence": 0.85,
+      "metadata": {
+        "evidence": "Article title: \u041a\u042d\u0414\u041e \u0432 \u0432\u0443\u0437\u0435",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "concept-hr-digital",
+      "type": "topic",
+      "label": "HR Process Digitization in Universities",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "context": "Webinar-4: how to digitize university HR processes",
+        "related_to": "image-webinar-4"
+      },
+      "confidence": 0.85,
+      "metadata": {
+        "evidence": "Article title: \u041a\u0430\u043a \u043e\u0446\u0438\u0444\u0440\u043e\u0432\u0430\u0442\u044c \u043a\u0430\u0434\u0440\u043e\u0432\u044b\u0435 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u044b",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "concept-directum-awards",
+      "type": "topic",
+      "label": "Directum Awards 2026",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "context": "SoftSnow customers presented projects at Directum Awards",
+        "related_images": [
+          "image-webinar-2",
+          "image-webinar-1"
+        ]
+      },
+      "confidence": 0.9,
+      "metadata": {
+        "evidence": "Events list text on events.html",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "concept-digital-doc-workflow",
+      "type": "topic",
+      "label": "Digital Document Workflow for Universities",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "context": "Checklist article for launching digital document flow",
+        "related_images": [
+          "image-webinar-3"
+        ]
+      },
+      "confidence": 0.85,
+      "metadata": {
+        "evidence": "Article: \u0426\u0438\u0444\u0440\u043e\u0432\u043e\u0439 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u043e\u043e\u0431\u043e\u0440\u043e\u0442 \u0434\u043b\u044f \u0432\u0443\u0437\u043e\u0432",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "concept-softsnow",
+      "type": "organization",
+      "label": "SoftSnow",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "website": "https://softsnow.ru",
+        "sectors_served": [
+          "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+          "\u0413\u043e\u0440\u043d\u043e\u0434\u043e\u0431\u044b\u0432\u0430\u044e\u0449\u0430\u044f \u043f\u0440\u043e\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u043e\u0441\u0442\u044c",
+          "\u042d\u043d\u0435\u0440\u0433\u0435\u0442\u0438\u043a\u0430",
+          "\u0411\u0430\u043d\u043a\u043e\u0432\u0441\u043a\u0438\u0439 \u0441\u0435\u043a\u0442\u043e\u0440",
+          "\u0418\u0422 \u0438 \u043a\u043e\u043d\u0441\u0430\u043b\u0442\u0438\u043d\u0433",
+          "\u041c\u0435\u0434\u0438\u0446\u0438\u043d\u0441\u043a\u043e\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+          "\u0410\u0433\u0440\u0430\u0440\u043d\u043e\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+          "\u041e\u0431\u0449\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0430\u044f \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u044f"
+        ]
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "All 23 clients are SoftSnow customers",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "concept-higher-education",
+      "type": "industry",
+      "label": "Higher Education Sector (Russia)",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "client_count": 15
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "15 of 23 client logos are from higher education institutions",
+        "reliability": "high"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "client-mgimo",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-polymetal",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-voek",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-solidcore",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-mguya",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-spbpu",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-russian-justice-academy",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-finance-university",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-mfua",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-apb",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-spbgu",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-unikon",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-synergy",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-pavlov-university",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-nngu",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-onf",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-stau",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-svfu",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-leti",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-mmuni",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-ugrasu",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-kom-dpo",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-omgtu",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "image-webinar-1",
+      "target": "concept-strategic-planning",
+      "relation": "depicts",
+      "weight": 1.0,
+      "confidence": 0.9
+    },
+    {
+      "source": "image-webinar-2",
+      "target": "concept-digital-university",
+      "relation": "depicts",
+      "weight": 1.0,
+      "confidence": 0.9
+    },
+    {
+      "source": "image-webinar-3",
+      "target": "concept-kedo",
+      "relation": "depicts",
+      "weight": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "image-webinar-3",
+      "target": "concept-digital-doc-workflow",
+      "relation": "depicts",
+      "weight": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "image-webinar-4",
+      "target": "concept-hr-digital",
+      "relation": "depicts",
+      "weight": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "image-webinar-1",
+      "target": "concept-directum-awards",
+      "relation": "depicts",
+      "weight": 0.6,
+      "confidence": 0.7
+    },
+    {
+      "source": "image-webinar-2",
+      "target": "concept-directum-awards",
+      "relation": "depicts",
+      "weight": 0.6,
+      "confidence": 0.7
+    },
+    {
+      "source": "client-mgimo",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-mguya",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-spbpu",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-russian-justice-academy",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-finance-university",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-mfua",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-spbgu",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-nngu",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-svfu",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-leti",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-mmuni",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-ugrasu",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-omgtu",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-pavlov-university",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 0.8,
+      "confidence": 0.9
+    },
+    {
+      "source": "client-stau",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 0.8,
+      "confidence": 0.9
+    },
+    {
+      "source": "client-synergy",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 0.7,
+      "confidence": 0.8
+    },
+    {
+      "source": "client-kom-dpo",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 0.7,
+      "confidence": 0.8
+    },
+    {
+      "source": "client-polymetal",
+      "target": "client-solidcore",
+      "relation": "semantically_similar_to",
+      "weight": 0.75,
+      "confidence": 0.75
+    },
+    {
+      "source": "client-apb",
+      "target": "client-unikon",
+      "relation": "semantically_similar_to",
+      "weight": 0.7,
+      "confidence": 0.7
+    },
+    {
+      "source": "client-voek",
+      "target": "client-onf",
+      "relation": "semantically_similar_to",
+      "weight": 0.7,
+      "confidence": 0.7
+    },
+    {
+      "source": "concept-strategic-planning",
+      "target": "concept-digital-university",
+      "relation": "semantically_similar_to",
+      "weight": 0.8,
+      "confidence": 0.8
+    },
+    {
+      "source": "concept-kedo",
+      "target": "concept-digital-doc-workflow",
+      "relation": "semantically_similar_to",
+      "weight": 0.9,
+      "confidence": 0.9
+    },
+    {
+      "source": "concept-kedo",
+      "target": "concept-hr-digital",
+      "relation": "semantically_similar_to",
+      "weight": 0.7,
+      "confidence": 0.7
+    },
+    {
+      "source": "concept-digital-doc-workflow",
+      "target": "concept-hr-digital",
+      "relation": "semantically_similar_to",
+      "weight": 0.7,
+      "confidence": 0.7
+    },
+    {
+      "source": "concept-strategic-planning",
+      "target": "concept-kedo",
+      "relation": "semantically_similar_to",
+      "weight": 0.6,
+      "confidence": 0.6
+    },
+    {
+      "source": "concept-digital-university",
+      "target": "concept-kedo",
+      "relation": "semantically_similar_to",
+      "weight": 0.75,
+      "confidence": 0.75
+    },
+    {
+      "source": "concept-directum-awards",
+      "target": "concept-softsnow",
+      "relation": "related_to",
+      "weight": 1.0,
+      "confidence": 0.9
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "he-higher-ed-clients",
+      "type": "client_cohort",
+      "members": [
+        "client-mgimo",
+        "client-mguya",
+        "client-spbpu",
+        "client-russian-justice-academy",
+        "client-finance-university",
+        "client-mfua",
+        "client-spbgu",
+        "client-nngu",
+        "client-svfu",
+        "client-leti",
+        "client-mmuni",
+        "client-ugrasu",
+        "client-omgtu"
+      ],
+      "label": "Russian Higher Education Institutions",
+      "properties": {
+        "count": 13,
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "he-adjacent-education",
+      "type": "client_cohort",
+      "members": [
+        "client-pavlov-university",
+        "client-stau",
+        "client-synergy",
+        "client-kom-dpo"
+      ],
+      "label": "Adjacent Education Sector Clients",
+      "properties": {
+        "count": 4,
+        "sectors": [
+          "\u041c\u0435\u0434\u0438\u0446\u0438\u043d\u0441\u043a\u043e\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+          "\u0410\u0433\u0440\u0430\u0440\u043d\u043e\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+          "\u041e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435"
+        ]
+      },
+      "confidence": 0.9
+    },
+    {
+      "id": "he-non-education",
+      "type": "client_cohort",
+      "members": [
+        "client-polymetal",
+        "client-solidcore",
+        "client-voek",
+        "client-apb",
+        "client-unikon",
+        "client-onf"
+      ],
+      "label": "Non-Education Industry Clients",
+      "properties": {
+        "count": 6,
+        "sectors": [
+          "\u0413\u043e\u0440\u043d\u043e\u0434\u043e\u0431\u044b\u0432\u0430\u044e\u0449\u0430\u044f \u043f\u0440\u043e\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u043e\u0441\u0442\u044c",
+          "\u042d\u043d\u0435\u0440\u0433\u0435\u0442\u0438\u043a\u0430",
+          "\u0411\u0430\u043d\u043a\u043e\u0432\u0441\u043a\u0438\u0439 \u0441\u0435\u043a\u0442\u043e\u0440",
+          "\u0418\u0422 \u0438 \u043a\u043e\u043d\u0441\u0430\u043b\u0442\u0438\u043d\u0433",
+          "\u041e\u0431\u0449\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0430\u044f \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u044f"
+        ]
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "he-all-clients",
+      "type": "client_cohort",
+      "members": [
+        "client-mgimo",
+        "client-polymetal",
+        "client-voek",
+        "client-solidcore",
+        "client-mguya",
+        "client-spbpu",
+        "client-russian-justice-academy",
+        "client-finance-university",
+        "client-mfua",
+        "client-apb",
+        "client-spbgu",
+        "client-unikon",
+        "client-synergy",
+        "client-pavlov-university",
+        "client-nngu",
+        "client-onf",
+        "client-stau",
+        "client-svfu",
+        "client-leti",
+        "client-mmuni",
+        "client-ugrasu",
+        "client-kom-dpo",
+        "client-omgtu"
+      ],
+      "label": "All SoftSnow Clients (logo page)",
+      "properties": {
+        "count": 23
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "he-webinar-assets",
+      "type": "event_cluster",
+      "members": [
+        "image-webinar-1",
+        "image-webinar-2",
+        "image-webinar-3",
+        "image-webinar-4"
+      ],
+      "label": "SoftSnow Webinar & Article Media Assets",
+      "properties": {
+        "count": 4,
+        "platform": "events.html"
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "he-university-digital-topics",
+      "type": "topic_cluster",
+      "members": [
+        "concept-strategic-planning",
+        "concept-digital-university",
+        "concept-kedo",
+        "concept-hr-digital",
+        "concept-digital-doc-workflow"
+      ],
+      "label": "University Digital Transformation Topics",
+      "properties": {
+        "count": 5
+      },
+      "confidence": 0.85
+    }
+  ],
+  "tokens": {
+    "input": 4820,
+    "output": 6250
+  },
+  "statistics": {
+    "total_nodes": 37,
+    "total_edges": 55,
+    "total_hyperedges": 6,
+    "node_types": {
+      "file": 27,
+      "topic": 6,
+      "organization": 1,
+      "industry": 1,
+      "concept": 2
+    },
+    "edge_types": {
+      "client_of": 23,
+      "depicts": 7,
+      "belongs_to_sector": 15,
+      "semantically_similar_to": 10,
+      "related_to": 1
+    }
+  },
+  "source_files": [
+    "events.html",
+    "clients.html"
+  ]
+}

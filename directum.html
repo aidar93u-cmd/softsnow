@@ -140,23 +140,24 @@
   </header>
 
   <main>
-
-    <section class="hero event-hero directum-hero" aria-label="Directum — цифровая экосистема">
-      <div class="container">
-        <div class="hero-block-inner event-hero__inner">
-          <!-- ponytail: фон-плейсхолдер hero-bg.jpg — заменить на img из макета (1870×758) после экспорта -->
-          <img class="event-hero__img" src="assets/img/hero-bg.jpg" alt="">
-          <div class="hero__body event-hero__body">
-            <h1 class="hero__title event-hero__title directum-hero__title">Directum&nbsp;— цифровая экосистема
-              для&nbsp;управления
-              организацией</h1>
-            <button class="btn btn--outline-dark event-hero__btn directum-hero__btn" type="button">Оставить
-              заявку</button>
+    <section class="hero" aria-label="Directum — цифровая экосистема">
+      <div class="container flex">
+        <div class="hero-block-inner" style="background-image: url('assets/img/directum-bg.jpg');">
+          <div class="hero__body">
+            <h1 class="hero__title"><span class="hero__brand">Directum&nbsp;—</span><br> цифровая экосистема
+            для&nbsp;управления
+            организацией</h1>
+            <button class="btn btn--outline" type="button">Оставить заявку</button>
           </div>
-          <div class="hero__footer event-hero__footer directum-hero__footer">
-            <span class="event-hero__note directum-hero__note">Единый цифровой контур для&nbsp;ключевых процессов
-              организации</span>
-            <span class="event-hero__note directum-hero__note">Входит в&nbsp;реестр отечественного ПО</span>
+        </div>
+
+        <div class="hero__footer">
+          <div class="hero__note">
+            <span class="hero__note_1">Единый цифровой контур для&nbsp;ключевых процессов
+            организации</span>
+          </div>
+          <div class="hero__note">
+            <span class="hero__note_2">Входит в&nbsp;реестр отечественного ПО</span>
           </div>
         </div>
       </div>
@@ -166,7 +167,7 @@
       <div class="container">
         <div class="partners__head">
           <div>
-            <h2 class="partners__heading">Экосистема решений Directum</h2>
+            <h2 class="partners__heading">Экосистема решений<br> Directum</h2>
             <div class="partners__actions">
               <p class="partners__sub">Решения Directum можно внедрять поэтапно под&nbsp;текущие задачи, сохраняя единую
                 архитектуру и&nbsp;прозрачные связи между документами, задачами, сервисами и&nbsp;показателями.</p>
@@ -252,7 +253,7 @@
       <div class="container">
         <div class="reasons__inner">
           <div class="reasons__head">
-            <h2 class="reasons__title">Почему выбирают Directum</h2>
+            <h2 class="reasons__title">Почему выбирают<br> Directum</h2>
             <p class="reasons__desc">Directum&nbsp;— российский разработчик платформы для&nbsp;цифрового управления
               организацией. Решения рассчитаны на&nbsp;крупные проекты и&nbsp;позволяют развивать цифровую среду
               без&nbsp;постоянной
@@ -279,8 +280,8 @@
             </div>
             <div class="reasons__item">
               <svg class="reasons__icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M13.3359 30L3.33594 20L13.3359 10M26.6693 10L36.6693 20L26.6693 30" stroke="#1342F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+              <path d="M13.3359 30L3.33594 20L13.3359 10M26.6693 10L36.6693 20L26.6693 30" stroke="#1342F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
 
               <div class="reasons__body">
                 <h3 class="reasons__name">No-code / Low-code</h3>
@@ -350,7 +351,7 @@
       <div class="container">
         <div class="projects__head">
           <div>
-            <h2 class="projects__heading">Проекты на&nbsp;базе экосистемы</h2>
+            <h2 class="projects__heading">Проекты на&nbsp;базе<br> экосистемы</h2>
             <div class="projects__bottom">
               <p class="projects__sub">Показываем, как решения Directum помогают автоматизировать ключевые процессы,
                 выстраивать единый цифровой контур и&nbsp;масштабировать систему под&nbsp;новые задачи.</p>
@@ -432,131 +433,150 @@
       </div>
     </section>
 
-    <section class="vnedrenie" aria-label="Варианты внедрения">
+    <section class="vnedrenie vnedrenie--univer" aria-label="Варианты внедрения">
       <div class="container">
-        <h2 class="vnedrenie__title">Варианты внедрения</h2>
+        <h2 class="vnedrenie__title">Варианты<br> внедрения</h2>
         <div class="vnedrenie__grid">
-          <article class="vnedrenie__card">
+          <article class="card vnedrenie__card">
             <h3 class="vnedrenie__name">Базовый</h3>
-            <p class="vnedrenie__sub">Настройка системы без&nbsp;доработок и&nbsp;интеграций</p>
+            <p class="vnedrenie__sub">Настройка системы без доработок
+            и интеграций</p>
             <ul class="vnedrenie__list">
               <li class="vnedrenie__row">
                 <svg class="vnedrenie__done" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="12" cy="12" r="11" fill="#FFFFFF" />
+    
                   <path d="M7.5 12.5L10.5 15.5L16.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
                 </svg>
-                Срок: 2–3&nbsp;месяца
+                <span>Срок: 2–3 месяца</span>
               </li>
               <li class="vnedrenie__row">
                 <svg class="vnedrenie__done" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="12" cy="12" r="11" fill="#FFFFFF" />
+    
                   <path d="M7.5 12.5L10.5 15.5L16.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
                 </svg>
-                10 часов поддержки
+                <span>10 часов поддержки</span>
               </li>
               <li class="vnedrenie__row">
                 <svg class="vnedrenie__done" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="12" cy="12" r="11" fill="#FFFFFF" />
+    
                   <path d="M7.5 12.5L10.5 15.5L16.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
                 </svg>
-                4 часов обучения
+                <span>4 часов обучения</span>
               </li>
             </ul>
-            <button class="btn btn--ghost vnedrenie__btn" type="button">Оставить заявку</button>
+            <button class="btn btn--primary vnedrenie__btn" type="button">Оставить заявку</button>
           </article>
-          <article class="vnedrenie__card ">
-            <span class="vnedrenie__badge">Популярный</span>
-            <h3 class="vnedrenie__name">Стандартный</h3>
-            <p class="vnedrenie__sub">Настройка системы с&nbsp;базовыми интеграциями и&nbsp;адаптациями</p>
+          <article class="card vnedrenie__card">
+            <h3 class="vnedrenie__name">Стандартный<span class="vnedrenie__badge">Популярный</span></h3>
+            <p class="vnedrenie__sub">Настройка системы с базовыми интеграциями
+            и адаптациями</p>
             <ul class="vnedrenie__list">
               <li class="vnedrenie__row">
                 <svg class="vnedrenie__done" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="12" cy="12" r="11" fill="#FFFFFF" />
+    
                   <path d="M7.5 12.5L10.5 15.5L16.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
                 </svg>
-                Срок: 4–6&nbsp;месяцев
+                <span>Срок: 4–6 месяцев</span>
               </li>
               <li class="vnedrenie__row">
                 <svg class="vnedrenie__done" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="12" cy="12" r="11" fill="#FFFFFF" />
+    
                   <path d="M7.5 12.5L10.5 15.5L16.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
                 </svg>
-                20 часов поддержки
+                <span>20 часов поддержки</span>
               </li>
               <li class="vnedrenie__row">
                 <svg class="vnedrenie__done" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="12" cy="12" r="11" fill="#FFFFFF" />
+    
                   <path d="M7.5 12.5L10.5 15.5L16.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
                 </svg>
-                8 часов обучения
+                <span>8 часов обучения</span>
+              </li>
+              <li class="vnedrenie__row">
+                <svg class="vnedrenie__done" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    
+                  <path d="M7.5 12.5L10.5 15.5L16.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+                <span>Поэтапное развитие</span>
               </li>
             </ul>
-            <button class="btn btn--white vnedrenie__btn" type="button">Оставить заявку</button>
+            <button class="btn btn--primary vnedrenie__btn" type="button">Оставить заявку</button>
           </article>
-          <article class="vnedrenie__card">
+          <article class="card vnedrenie__card">
             <h3 class="vnedrenie__name">Комплексный</h3>
-            <p class="vnedrenie__sub">Индивидуальное внедрение с&nbsp;нетиповыми решениями</p>
+            <p class="vnedrenie__sub">Индивидуальное внедрение с нетиповыми решениями</p>
             <ul class="vnedrenie__list">
               <li class="vnedrenie__row">
                 <svg class="vnedrenie__done" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="12" cy="12" r="11" fill="#FFFFFF" />
+    
                   <path d="M7.5 12.5L10.5 15.5L16.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
                 </svg>
-                Срок: от&nbsp;6&nbsp;месяцев
+                <span>Срок: от 6 месяцев</span>
               </li>
               <li class="vnedrenie__row">
                 <svg class="vnedrenie__done" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="12" cy="12" r="11" fill="#FFFFFF" />
+    
                   <path d="M7.5 12.5L10.5 15.5L16.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
                 </svg>
-                Сложная архитектура
+                <span>Сложная архитектура</span>
               </li>
               <li class="vnedrenie__row">
                 <svg class="vnedrenie__done" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="12" cy="12" r="11" fill="#FFFFFF" />
+    
                   <path d="M7.5 12.5L10.5 15.5L16.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
                 </svg>
-                Миграция данных
+                <span>Миграция данных</span>
               </li>
               <li class="vnedrenie__row">
                 <svg class="vnedrenie__done" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="12" cy="12" r="11" fill="#FFFFFF" />
+    
                   <path d="M7.5 12.5L10.5 15.5L16.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
                 </svg>
-                16 часов обучения
+                <span>16 часов обучения</span>
               </li>
             </ul>
-            <button class="btn btn--ghost vnedrenie__btn" type="button">Оставить заявку</button>
+            <button class="btn btn--primary vnedrenie__btn" type="button">Оставить заявку</button>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="d-partner" aria-label="SoftSnow — официальный партнёр Directum">
-      <div class="container">
-        <div class="d-partner__inner">
-          <div class="d-partner__head">
-            <h2 class="d-partner__title">SoftSnow&nbsp;— официальный партнёр Directum</h2>
-            <p class="d-partner__desc">SoftSnow оказывает полный спектр услуг по&nbsp;выстраиванию цифрового
-              взаимодействия
-              на&nbsp;базе решений Directum: анализ бизнес-процессов, проектирование архитектуры, внедрение, адаптация
-              и&nbsp;сопровождение IT-решений для&nbsp;организаций разного масштаба и&nbsp;отраслей.</p>
-          </div>
-          <!-- ponytail: плейсхолдер логотипа Directum — заменить <img src="assets/img/logo-directum.png"> после экспорта -->
-          <span class="d-partner__logo d-partner__logo--placeholder">Directum</span>
+<section class="s-team" aria-label="SoftSnow — команда">
+  <div class="container">
+    <div class="s-team__flex">
+      <div class="s-team__head">
+        <h2 class="s-team__title">SoftSnow —
+        официальный партнёр
+        Directum</h2>
+        <div class="s-team__texts">
+          <p class="s-team__text">SoftSnow оказывает полный спектр услуг по выстраиванию цифрового
+          взаимодействия на базе решений Directum: анализ бизнес-процессов, проектирование архитектуры, внедрение, адаптация и
+          сопровождение IT-решений для организаций разного масштаба и отраслей.</p>
+          
+        </div>
+
+
+      </div>
+
+      <div class="s-team__inner">
+        <div class="s-team__photos">
+          <img class="s-team__photo" src="assets/img/softlogo.jpg" alt="Скриншот сервиса Univer Online">
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <section class="cta cta--directum" aria-label="Подберём решение под ваш контур">
       <div class="cta__body">

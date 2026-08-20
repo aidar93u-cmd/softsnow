@@ -1,0 +1,804 @@
+{
+  "nodes": [
+    {
+      "id": "css-tokens",
+      "type": "Concept",
+      "name": "CSS Custom Properties",
+      "content": "Design tokens in tokens.css: colors (--color-sea #1342F3, --color-black #222222, --color-white, --bg-light, --bg-light-alt, --bg-border, --color-grey), spacing (--gap-xs to --gap-xl, --section-px 40px), radii (--radius-md 16px, --radius-lg 20px, --radius-xl 30px, --radius-full), type scale (--fs-h1 100px, --fs-h2 70px, --fs-h3 40px, --fs-h4 24px, --fs-body-14/16/18, --fs-numbers 75px), shadows (--shadow-card, --shadow-hover), breakpoints (--bp-mobile 375px, --bp-tablet 768px, --bp-desktop 1920px)",
+      "source_file": "css/tokens.css",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "css-components",
+      "type": "Concept",
+      "name": "Shared CSS Components",
+      "content": "Reusable UI components in components.css: .container (1790px), .card/.card--company/.card--partner/.card--project/.card--webinar (668/930/460px), .btn/.btn--primary/.btn--outline/.btn--outline-white/.btn--outline-dark/.btn--ghost/.btn--white/.btn--black/.btn--search (50px radius), .carousel-nav/__btn, .tabs/.tabs__btn (data-tab), .section-title/.section-label/.body-text",
+      "source_file": "css/components.css",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "css-utilities",
+      "type": "Concept",
+      "name": "CSS Utilities",
+      "content": "Reset styles (*box-sizing, margin, padding), typography (h1-h6, p, a, img, ul), .truncate (text-overflow ellipsis), .is-hidden/.is-visible (display none/flex)",
+      "source_file": "css/utilities.css",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "css-sections",
+      "type": "Concept",
+      "name": "CSS Sections",
+      "content": "Page-specific layout in sections.css: .header, .hero, .industries, .stats, .tasks, .clients, .partners, .projects, .events, .cta, .footer. Megafile with 500+ lines. Contains prefers-reduced-motion media query. TODO: split into per-section files",
+      "source_file": "css/sections.css",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-index",
+      "type": "Module",
+      "name": "index.html",
+      "content": "Homepage: hero, industries (4 cards -> solutions.html), stats (5 columns), tasks (6 links hover-bg), clients (10 logos JS-rendered), partners (5 cards carousel), projects (3 cards -> projects.html), events (4 cards carousel), CTA. Inline SVG logo, icon sprite, Swiper, Google Fonts Inter",
+      "source_file": "index.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website",
+        "contributor": "taif.tw1.ru"
+      }
+    },
+    {
+      "id": "page-solutions",
+      "type": "Module",
+      "name": "solutions.html",
+      "content": "Solutions catalog: .page-hero (breadcrumbs + h1), .catalog (6 solution cards, grid layout, --single modifier), .cta. Cards link to solution-detail.html",
+      "source_file": "solutions.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-solution-detail",
+      "type": "Module",
+      "name": "solution-detail.html",
+      "content": "Detailed solution: s-hero, registry, s-tasks (accordion), s-audience (4 cards), s-features (tabs data-tab 0-4, panel switching), cta--dark, testimonials (swiper), events--readalso, faq. Only page importing fancybox.css + jQuery",
+      "source_file": "solution-detail.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-clients",
+      "type": "Module",
+      "name": "clients.html",
+      "content": "Clients listing: page-hero--media, .c-clients (JS-rendered), .projects .c-projects, .cta",
+      "source_file": "clients.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-client-detail",
+      "type": "Module",
+      "name": "client-detail.html",
+      "content": "Client detail: page-hero--detail, client-intro, stats--client (3 columns), client-quote, stages (timeline), cta--blue, events--readalso",
+      "source_file": "client-detail.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-projects",
+      "type": "Module",
+      "name": "projects.html",
+      "content": "Projects catalog: page-hero, .projects__filters (3 dropdowns: Otresli/Resheniya/Produkty), .projects__grid (6 cards 930x460), .projects__more, .cta",
+      "source_file": "projects.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-project-detail",
+      "type": "Module",
+      "name": "project-detail.html",
+      "content": "Project detail: page-hero, .project-intro (back link, stats--project 4 cols, video), .project-about (quote, content, sidebar images), .project-gallery (--mosaic 3-col), .project-partners (collapsible table), .cta",
+      "source_file": "project-detail.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-events",
+      "type": "Module",
+      "name": "events.html",
+      "content": "Media center: page-hero--media, .events-featured, .events-list, .cta",
+      "source_file": "events.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-event-detail",
+      "type": "Module",
+      "name": "event-detail.html",
+      "content": "Event detail: event-hero, event-about, s-audience, program, cta--blue, seminar-topics, event-partners, trust, clients, faq",
+      "source_file": "event-detail.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-directum",
+      "type": "Module",
+      "name": "directum.html",
+      "content": "Directum digital ecosystem page",
+      "source_file": "directum.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-univer",
+      "type": "Module",
+      "name": "univer-online.html",
+      "content": "Univer Online ecosystem: hero, univer-registry, s-audience, reasons--univer, cta--blue--univer, s-services, projects--univer, vnedrenie--univer, s-team, cta, footer",
+      "source_file": "univer-online.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-vuz",
+      "type": "Module",
+      "name": "vuz.html",
+      "content": "University digital transformation page",
+      "source_file": "vuz.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "js-main",
+      "type": "Module",
+      "name": "js/main.js",
+      "content": "Single JS file: initSwiper (hero/partners/events/galleries 617/618/460px), bindNav (hamburger), initAccordion (s-tasks), initClientsPage (filter/render/detail/quote from JSON), initProjectsPage (filter/render), initNewsPage (events from JSON), initTabs (data-tab switching)",
+      "source_file": "js/main.js",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "dep-swiper",
+      "type": "Dependency",
+      "name": "Swiper.js",
+      "content": "Local copy: assets/vendor/swiper/ (swiper-bundle.min.js + min.css). Instances: hero (617px), partners (460px), events (617px), galleries on project-detail (617/618/460px). Nav via .carousel-nav buttons",
+      "source_file": "assets/vendor/swiper/",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "dep-gfonts",
+      "type": "Dependency",
+      "name": "Google Fonts (Inter)",
+      "content": "External: preconnect fonts.googleapis.com + fonts.gstatic.com, css2?family=Inter:wght@400;500;600;700. Loaded in every page via <link>",
+      "source_file": "index.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "dep-fancybox",
+      "type": "Dependency",
+      "name": "Fancybox",
+      "content": "Lightbox library. Imported in solution-detail.html and project-detail.html",
+      "source_file": "solution-detail.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "dep-jquery",
+      "type": "Dependency",
+      "name": "jQuery",
+      "content": "jQuery loaded in solution-detail.html and project-detail.html (for fancybox)",
+      "source_file": "solution-detail.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-4files",
+      "type": "Concept",
+      "name": "4-File CSS Architecture",
+      "content": "tokens.css (variables) -> utilities.css (reset/typo) -> components.css (shared UI) -> sections.css (page layout). Dedicated CSS per detail page (solution.css, project.css, event.css, univer.css)",
+      "source_file": "AGENTS.md",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-routing",
+      "type": "Concept",
+      "name": "Static Page Routing",
+      "content": "Multi-page static site: all HTML in root. Links: solutions->solution-detail, clients->client-detail, projects->project-detail, events->event-detail. No JS router",
+      "source_file": "AGENTS.md",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-figma",
+      "type": "Concept",
+      "name": "Figma Dual Source of Truth",
+      "content": "Figma=visual design truth, Code=implementation structure truth. Workflow: FIGMA_AUDIT -> FIGMA_IMPLEMENT -> FIGMA_QA. Section-as-task with subagents. Registry in FIGMA.md",
+      "source_file": "docs/FIGMA_WORKFLOW.md",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-bem",
+      "type": "Concept",
+      "name": "BEM Naming Convention",
+      "content": "Block__Element--Modifier: .carousel-nav__btn, .card--partner, .btn--primary, .tabs__btn.is-active. Section classes: .hero, .industries, .stats, .tasks, .clients, .partners, .projects, .events, .cta, .footer",
+      "source_file": "AGENTS.md",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-component-reuse",
+      "type": "Concept",
+      "name": "Component Reuse Rules",
+      "content": "Before new component: 1) search codebase, 2) check equivalent, 3) check Figma variant. Figma naming != code. Blue Button -> .btn--primary. Component Registry in AGENTS.md",
+      "source_file": "AGENTS.md",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-icons",
+      "type": "Concept",
+      "name": "Inline SVG Icon System",
+      "content": "Inline SVG per page (Figma vectorPaths). Arrow sprite: #icon-arrow (17x14, fill=currentColor), #icon-arrow-right (15x14). Use <use href>, not text arrow",
+      "source_file": "AGENTS.md",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-fonts",
+      "type": "Concept",
+      "name": "Google Fonts Inter",
+      "content": "Inter 400/500/600/700 via Google Fonts <link> in every page. No local woff2. --font-heading/inter, --font-body/Inter",
+      "source_file": "AGENTS.md",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-data-flow",
+      "type": "Concept",
+      "name": "JSON Data Flow",
+      "content": "Clients/projects/news rendered from JSON via fetch+render, not static HTML. Projects page: clients.json filtered by project_ids. Architectural detail, not changed during Figma verification",
+      "source_file": "AGENTS.md",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-reduced-motion",
+      "type": "Concept",
+      "name": "Reduced Motion",
+      "content": "prefers-reduced-motion: reduce disables transitions. Some elements override with !important. CSS media query in sections.css and page stylesheets",
+      "source_file": "css/sections.css",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-status",
+      "type": "Concept",
+      "name": "Section Implementation Status",
+      "content": "FIGMA.md tracks per-section status (done/in-progress/pending). All main page sections done. Detail pages done. Parallel pages (univer, vuz, directum) done",
+      "source_file": "FIGMA.md",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-todo",
+      "type": "Concept",
+      "name": "Outstanding TODOs",
+      "content": "1) Split sections.css (500+ lines) into per-section files. 2) Fix missing favicon.ico (404 on homepage)",
+      "source_file": "AGENTS.md",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "page-index",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "imports tokens.css"
+    },
+    {
+      "source": "page-index",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "imports components.css"
+    },
+    {
+      "source": "page-index",
+      "target": "css-utilities",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "imports utilities.css"
+    },
+    {
+      "source": "page-index",
+      "target": "css-sections",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "imports sections.css"
+    },
+    {
+      "source": "page-index",
+      "target": "dep-swiper",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "Swiper for carousels"
+    },
+    {
+      "source": "page-index",
+      "target": "dep-gfonts",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "Google Fonts link"
+    },
+    {
+      "source": "page-index",
+      "target": "js-main",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "initSwiper, bindNav"
+    },
+    {
+      "source": "page-solutions",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-solutions",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-solutions",
+      "target": "js-main",
+      "type": "DEPENDS_ON",
+      "confidence": 0.9
+    },
+    {
+      "source": "page-solution-detail",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-solution-detail",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-solution-detail",
+      "target": "dep-fancybox",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "only page with fancybox"
+    },
+    {
+      "source": "page-solution-detail",
+      "target": "dep-jquery",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-solution-detail",
+      "target": "js-main",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "initTabs, initAccordion"
+    },
+    {
+      "source": "page-clients",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-clients",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-clients",
+      "target": "js-main",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "initClientsPage"
+    },
+    {
+      "source": "page-client-detail",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-client-detail",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-projects",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-projects",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-projects",
+      "target": "js-main",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "initProjectsPage"
+    },
+    {
+      "source": "page-project-detail",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-project-detail",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-project-detail",
+      "target": "dep-fancybox",
+      "type": "DEPENDS_ON",
+      "confidence": 0.9
+    },
+    {
+      "source": "page-project-detail",
+      "target": "dep-jquery",
+      "type": "DEPENDS_ON",
+      "confidence": 0.9
+    },
+    {
+      "source": "page-events",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-events",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-events",
+      "target": "js-main",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "initNewsPage"
+    },
+    {
+      "source": "page-event-detail",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-event-detail",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-directum",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 0.9
+    },
+    {
+      "source": "page-directum",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 0.9
+    },
+    {
+      "source": "page-univer",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 0.9
+    },
+    {
+      "source": "page-univer",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 0.9
+    },
+    {
+      "source": "page-vuz",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 0.9
+    },
+    {
+      "source": "page-vuz",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 0.9
+    },
+    {
+      "source": "js-main",
+      "target": "dep-swiper",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "new Swiper(...) calls"
+    },
+    {
+      "source": "arch-4files",
+      "target": "css-tokens",
+      "type": "IMPLEMENTED_BY",
+      "confidence": 1.0
+    },
+    {
+      "source": "arch-4files",
+      "target": "css-components",
+      "type": "IMPLEMENTED_BY",
+      "confidence": 1.0
+    },
+    {
+      "source": "arch-4files",
+      "target": "css-utilities",
+      "type": "IMPLEMENTED_BY",
+      "confidence": 1.0
+    },
+    {
+      "source": "arch-4files",
+      "target": "css-sections",
+      "type": "IMPLEMENTED_BY",
+      "confidence": 1.0
+    },
+    {
+      "source": "arch-bem",
+      "target": "css-components",
+      "type": "IMPLEMENTED_BY",
+      "confidence": 1.0
+    },
+    {
+      "source": "arch-icons",
+      "target": "page-index",
+      "type": "IMPLEMENTED_IN",
+      "confidence": 1.0,
+      "content": "SVG sprite in index.html"
+    },
+    {
+      "source": "arch-fonts",
+      "target": "dep-gfonts",
+      "type": "IMPLEMENTED_BY",
+      "confidence": 1.0
+    },
+    {
+      "source": "arch-routing",
+      "target": "page-index",
+      "type": "RELATES_TO",
+      "confidence": 0.8,
+      "content": "homepage links to catalog pages"
+    },
+    {
+      "source": "arch-routing",
+      "target": "page-solutions",
+      "type": "RELATES_TO",
+      "confidence": 0.8
+    },
+    {
+      "source": "arch-routing",
+      "target": "page-solution-detail",
+      "type": "RELATES_TO",
+      "confidence": 0.8
+    },
+    {
+      "source": "arch-routing",
+      "target": "page-clients",
+      "type": "RELATES_TO",
+      "confidence": 0.8
+    },
+    {
+      "source": "arch-routing",
+      "target": "page-projects",
+      "type": "RELATES_TO",
+      "confidence": 0.8
+    },
+    {
+      "source": "arch-routing",
+      "target": "page-events",
+      "type": "RELATES_TO",
+      "confidence": 0.8
+    },
+    {
+      "source": "arch-data-flow",
+      "target": "page-clients",
+      "type": "RELATES_TO",
+      "confidence": 0.8,
+      "content": "renders clients from JSON"
+    },
+    {
+      "source": "arch-data-flow",
+      "target": "page-projects",
+      "type": "RELATES_TO",
+      "confidence": 0.8,
+      "content": "renders projects from JSON"
+    },
+    {
+      "source": "arch-data-flow",
+      "target": "page-events",
+      "type": "RELATES_TO",
+      "confidence": 0.8,
+      "content": "renders events from JSON"
+    },
+    {
+      "source": "arch-data-flow",
+      "target": "js-main",
+      "type": "RELATES_TO",
+      "confidence": 1.0,
+      "content": "fetch+render logic in main.js"
+    },
+    {
+      "source": "arch-figma",
+      "target": "arch-status",
+      "type": "RELATES_TO",
+      "confidence": 1.0,
+      "content": "status tracked in FIGMA.md"
+    },
+    {
+      "source": "arch-todo",
+      "target": "css-sections",
+      "type": "RELATES_TO",
+      "confidence": 1.0,
+      "content": "TODO: split sections.css"
+    },
+    {
+      "source": "arch-reduced-motion",
+      "target": "css-sections",
+      "type": "IMPLEMENTED_IN",
+      "confidence": 1.0
+    },
+    {
+      "source": "arch-component-reuse",
+      "target": "arch-bem",
+      "type": "RELATES_TO",
+      "confidence": 0.8
+    },
+    {
+      "source": "arch-component-reuse",
+      "target": "css-components",
+      "type": "RELATES_TO",
+      "confidence": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "hyper-css-arch",
+      "type": "ArchitectureLayer",
+      "name": "CSS Architecture Stack",
+      "members": [
+        "arch-4files",
+        "css-tokens",
+        "css-utilities",
+        "css-components",
+        "css-sections"
+      ],
+      "content": "Complete CSS architecture: tokens define variables, utilities reset and set base typography, components provide shared UI, sections handle page layout. Loading order matters for cascade"
+    },
+    {
+      "id": "hyper-page-deps",
+      "type": "DependencyGroup",
+      "name": "Page Dependency Graph",
+      "members": [
+        "page-index",
+        "page-solutions",
+        "page-solution-detail",
+        "page-clients",
+        "page-client-detail",
+        "page-projects",
+        "page-project-detail",
+        "page-events",
+        "page-event-detail",
+        "js-main",
+        "dep-swiper",
+        "dep-gfonts",
+        "dep-fancybox",
+        "dep-jquery"
+      ],
+      "content": "All pages depend on CSS tokens/components and js-main. index.html and detail pages also depend on Swiper and Google Fonts. solution-detail and project-detail uniquely depend on Fancybox+jQuery"
+    },
+    {
+      "id": "hyper-arch-concepts",
+      "type": "DesignPrinciples",
+      "name": "Core Architecture Concepts",
+      "members": [
+        "arch-4files",
+        "arch-routing",
+        "arch-figma",
+        "arch-bem",
+        "arch-component-reuse",
+        "arch-icons",
+        "arch-fonts",
+        "arch-data-flow",
+        "arch-reduced-motion",
+        "arch-status",
+        "arch-todo"
+      ],
+      "content": "Fundamental architecture decisions governing the codebase: CSS layering, static routing, Figma integration, BEM naming, component reuse, inline SVG icons, Inter font, JSON data rendering, accessibility motion preferences, implementation tracking, and remaining technical debt"
+    }
+  ],
+  "input_tokens": 58935,
+  "output_tokens": 4200
+}

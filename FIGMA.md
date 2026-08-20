@@ -110,7 +110,7 @@ Listing `clients.html` (frame `826:1472`), detail `client-detail.html` (frame `8
 |---|---|---|---|---|
 | 1 | Header | `863:18238` | `.header` | done (reused) |
 | 2 | Hero (breadcrumbs + h1 100px + subtitle 16px) | `826:1475` | `.page-hero` + `.hero-block-page-inner` | done |
-| 3 | Tabs (Все отрасли / Вузы / Гос / Бизнес) | `826:1511` | `.c-filter` | done |
+| 3 | Tabs (Все отрасли / Вузы / Гос / Бизнес) | `826:1511` | `.tab-filter` | done |
 | 4 | Clients grid (16 карточек 460×360) | `826:1522` | `.c-clients__grid` | done |
 | 5 | Detail hero (h1 70px + логотип клиента) | `896:11276` | `.page-hero--detail` | done |
 | 6 | «Что говорит о нас клиент» (white r20, h2 70/500, цитата: иконка 40×40 #1342F3 + текст 16/400 rgba(34,34,34,.7) 655px + автор: аватар 64×64 + имя 20/500 + роль 16/400; фото 890×560 r20) | `1075:32386` | `.client-quote` | done |
@@ -190,6 +190,27 @@ Detail проекта, фрейм `1128:8159` (COMPONENT, fileKey `tK0WpkPKL3pQG
 | 10 | Footer | `.footer` | done (reused) |
 
 Особенности: межсекционные отступы 10px. `.partners--eco` — карточки `<article>` (не ссылка), `.partners__arrow` скрыт, tag 16px. Иконки «Почему выбирают» — inline-SVG 64×64 (viewBox 64 + translate(12 12)) stroke `--color-sea`. Свайперы `.partners__swiper`/`.projects__swiper` — существующие инициализации в `js/main.js`. Плейсхолдеры `ponytail:` — 6 лого продуктов (`.partners__logo--eco`), лого Directum (`.d-partner__logo--placeholder`); hero-bg `hero-bg.jpg`; CTA `cta-bg.png`. Отклонения — см. план `2026-08-17-directum-page.md` (цвет `--color-sea` вместо `#1342F3`, бейдж «Популярный» top 30/right 40, lamp собрана вручную).
+
+### Экосистема (univer-online.html)
+
+Лендинг «Экосистема Univer Online», FRAME `1065:18683` (fileKey `tK0WpkPKL3pQGAyCfynr3b`, 1920×8688). Стили в `css/sections.css` (блок «Univer Online page»). Собрана сплайсом: head/header/footer/sprite из `index.html` + `<main>` из `C:\Temp\opencode\univer-main.html`.
+
+| # | Figma Section | Code | Status |
+|---|---|---|---|
+| 1 | Header | `.header` | done (reused) |
+| 2 | Hero (bg 1870×758, h1 100px, 2 заметки, btn 184×64) | `.hero` (копия из `index.html`, контент заменён) | done |
+| 3 | «Решение включено в реестр Минцифры» | `.univer-registry` (NEW, структура как `.registry`) | done |
+| 4 | «Основа цифровой среды вуза» (4 карточки) | `.s-audience` (reused) | done |
+| 5 | «Почему выбирают Univer Online» (4 пункта) | `.reasons` + `.reasons--univer` | done |
+| 6 | CTA синий «Расскажите нам о задачах вашего университета» (btn outline) | `.cta--blue` + `.cta--blue--univer` | done |
+| 7 | «Ключевые решения внутри Univer Online» (7 карточек 460×510, grid 4+3) | `.s-services` (NEW) + `.partners__card` | done |
+| 8 | «Проекты на базе экосистемы» (3 карты swiper) | `.projects` (reused) | done |
+| 9 | «Варианты внедрения» (3 карточки, средняя синяя + бейдж) | `.vnedrenie` + `.vnedrenie--univer` | done |
+| 10 | «SoftSnow — команда» (title + 2 текста + коллаж телефонов) | `.s-team` (NEW) | done |
+| 11 | CTA светлый «Подберём решение под задачи вашего университета» | `.cta` (reused) | done |
+| 12 | Footer | `.footer` | done (reused) |
+
+Особенности: межсекционные отступы 10px. Иконки «Почему выбирают» — PNG `icon-reason-1..4.png` (40×40) на круге 64×64 bg `--color-sea`. Иконки «Ключевые решения» — PNG `svc-1..7.png` (130×130) через `.partners__card img` (margin auto). Галочки «Вариантов внедрения» — inline-SVG (круг white + path `currentColor`). Коллаж телефонов — `phone-1..4.png` (main 330px, остальные 300px, `object-fit: cover`). Свайперы `.projects__swiper` — существующие инициализации в `js/main.js`. Ссылка: partners-карточка Univer Online на главной → `univer-online.html`. Отклонения — см. план `2026-08-17-univer-ecosystem.md`.
 
 ## Known Discrepancies
 

@@ -1,0 +1,569 @@
+{
+  "nodes": [
+    {
+      "id": "solution-hero-bg",
+      "label": "Solution Detail Hero Background",
+      "file_type": "image",
+      "source_file": "assets/img/solution-hero-bg.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "solution-reestr",
+      "label": "Solution Registry Certificate",
+      "file_type": "image",
+      "source_file": "assets/img/solution-reestr.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "solution-stats",
+      "label": "Solution Detail Statistics Graphic",
+      "file_type": "image",
+      "source_file": "assets/img/solution-stats.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "solution-t-logo",
+      "label": "Solution Detail Testimonial Client Logo",
+      "file_type": "image",
+      "source_file": "assets/img/solution-t-logo.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "svc-1",
+      "label": "Univer Online Personal Cabinets Service Icon",
+      "file_type": "image",
+      "source_file": "assets/img/svc-1.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "svc-2",
+      "label": "Univer Online Mobile Application Service Icon",
+      "file_type": "image",
+      "source_file": "assets/img/svc-2.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "svc-3",
+      "label": "Univer Online Digital Services Icon",
+      "file_type": "image",
+      "source_file": "assets/img/svc-3.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "svc-4",
+      "label": "Univer Online Election Service Icon",
+      "file_type": "image",
+      "source_file": "assets/img/svc-4.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "svc-5",
+      "label": "Univer Online Survey Service Icon",
+      "file_type": "image",
+      "source_file": "assets/img/svc-5.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "svc-6",
+      "label": "Univer Online LMS for Continuing Education Icon",
+      "file_type": "image",
+      "source_file": "assets/img/svc-6.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "svc-7",
+      "label": "Univer Online CRM for Continuing Education Icon",
+      "file_type": "image",
+      "source_file": "assets/img/svc-7.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "univer-cta-bg",
+      "label": "Univer Online CTA Section Background",
+      "file_type": "image",
+      "source_file": "assets/img/univer-cta-bg.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "univer-hero-bg",
+      "label": "Univer Online Hero Background",
+      "file_type": "image",
+      "source_file": "assets/img/univer-hero-bg.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "univer-registry",
+      "label": "Univer Online Ministry of Digital Development Registry Certificate",
+      "file_type": "image",
+      "source_file": "assets/img/univer-registry.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "video-placeholder",
+      "label": "Video Placeholder Thumbnail",
+      "file_type": "image",
+      "source_file": "assets/img/video-placeholder.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "vuz-event-1",
+      "label": "University Event Photo 1",
+      "file_type": "image",
+      "source_file": "assets/img/vuz-event-1.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "vuz-event-2",
+      "label": "University Event Photo 2",
+      "file_type": "image",
+      "source_file": "assets/img/vuz-event-2.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "vuz-event-3",
+      "label": "University Event Photo 3",
+      "file_type": "image",
+      "source_file": "assets/img/vuz-event-3.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "vuz-event-4",
+      "label": "University Event Photo 4",
+      "file_type": "image",
+      "source_file": "assets/img/vuz-event-4.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "vuz-hero-bg",
+      "label": "University Ecosystem Hero Background",
+      "file_type": "image",
+      "source_file": "assets/img/vuz-hero-bg.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "solution-hero-bg",
+      "target": "solution-detail-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/solution-hero-bg.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "solution-stats",
+      "target": "solution-detail-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/solution-stats.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "solution-t-logo",
+      "target": "solution-detail-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/solution-t-logo.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-1",
+      "target": "univer-online-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/svc-1.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-2",
+      "target": "univer-online-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/svc-2.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-3",
+      "target": "univer-online-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/svc-3.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-4",
+      "target": "univer-online-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/svc-4.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-5",
+      "target": "univer-online-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/svc-5.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-6",
+      "target": "univer-online-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/svc-6.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-7",
+      "target": "univer-online-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/svc-7.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "univer-hero-bg",
+      "target": "univer-online-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/univer-hero-bg.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "univer-registry",
+      "target": "univer-online-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/univer-registry.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "video-placeholder",
+      "target": "project-detail-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/video-placeholder.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "univer-online-page",
+      "target": "softsnow-website",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "univer-online.html",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "solution-detail-page",
+      "target": "softsnow-website",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "solution-detail.html",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "solution-reestr",
+      "target": "solution-reestr-mintsifry",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "assets/img/solution-reestr.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "univer-registry",
+      "target": "solution-reestr-mintsifry",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "assets/img/univer-registry.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "vuz-event-1",
+      "target": "univer-online-page",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "assets/img/vuz-event-1.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "vuz-event-2",
+      "target": "univer-online-page",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "assets/img/vuz-event-2.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "vuz-event-3",
+      "target": "univer-online-page",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "assets/img/vuz-event-3.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "vuz-event-4",
+      "target": "univer-online-page",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "assets/img/vuz-event-4.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "vuz-hero-bg",
+      "target": "univer-online-page",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "assets/img/vuz-hero-bg.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "univer-cta-bg",
+      "target": "univer-online-page",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "assets/img/univer-cta-bg.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-1",
+      "target": "svc-2",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "assets/img/svc-1.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-2",
+      "target": "svc-3",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "assets/img/svc-2.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-3",
+      "target": "svc-4",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "assets/img/svc-3.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-4",
+      "target": "svc-5",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "assets/img/svc-4.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-5",
+      "target": "svc-6",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "assets/img/svc-5.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-6",
+      "target": "svc-7",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "assets/img/svc-6.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "vuz-event-1",
+      "target": "vuz-event-2",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "assets/img/vuz-event-1.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "vuz-event-2",
+      "target": "vuz-event-3",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "assets/img/vuz-event-2.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "vuz-event-3",
+      "target": "vuz-event-4",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "assets/img/vuz-event-3.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "solution-reestr",
+      "target": "univer-registry",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "assets/img/solution-reestr.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "solution-hero-bg",
+      "target": "univer-hero-bg",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "assets/img/solution-hero-bg.jpg",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

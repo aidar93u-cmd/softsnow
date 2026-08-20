@@ -1,3 +1,14 @@
+// ponytail: duplicate track until >= 2x viewport (even count keeps the -50% loop seamless)
+function initClientsMarquee() {
+  const marquee = document.querySelector('.clients__marquee');
+  const track = marquee && marquee.querySelector('.clients__track');
+  if (!track) return;
+  const cells = Array.from(track.children);
+  while (track.scrollWidth < marquee.clientWidth * 2) {
+    cells.forEach((c) => track.appendChild(c.cloneNode(true)));
+  }
+}
+
 function initSwiper(selector, options) {
   const el = document.querySelector(selector);
   if (!el) return null;
@@ -5,12 +16,14 @@ function initSwiper(selector, options) {
 }
 
 function bindNav(selector, swiper) {
-  const nav = document.querySelector(selector);
-  if (!nav || !swiper) return;
-  const prev = nav.querySelector('[data-scroll-prev]');
-  const next = nav.querySelector('[data-scroll-next]');
-  if (prev) prev.addEventListener('click', () => swiper.slidePrev());
-  if (next) next.addEventListener('click', () => swiper.slideNext());
+  const navs = document.querySelectorAll(selector);
+  if (!navs.length || !swiper) return;
+  navs.forEach((nav) => {
+    const prev = nav.querySelector('[data-scroll-prev]');
+    const next = nav.querySelector('[data-scroll-next]');
+    if (prev) prev.addEventListener('click', () => swiper.slidePrev());
+    if (next) next.addEventListener('click', () => swiper.slideNext());
+  });
 }
 
 function initAccordion(listSelector, openClass, buttonSelector) {
@@ -39,14 +52,14 @@ function initClientsPage() {
   const grid = document.getElementById('clientsGrid');
   if (!grid) return;
   const cards = Array.from(grid.querySelectorAll('.c-clients__card'));
-  const filters = document.querySelectorAll('.c-filter');
+  const filters = document.querySelectorAll('.tab-filter');
   const more = document.getElementById('clientsMore');
   const moreBtn = document.getElementById('clientsShowMore');
   const INITIAL = 16;
   let revealed = false;
 
   const apply = () => {
-    const active = document.querySelector('.c-filter.is-active');
+    const active = document.querySelector('.tab-filter.is-active');
     const filter = active ? active.dataset.filter : 'all';
     let shown = 0;
     cards.forEach((card) => {
@@ -56,6 +69,48 @@ function initClientsPage() {
     });
     const total = cards.filter((c) => filter === 'all' || c.dataset.category === filter).length;
     if (more) more.hidden = revealed || total <= INITIAL;
+  };
+
+  filters.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filters.forEach((b) => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      revealed = false;
+      apply();
+    });
+  });
+
+  if (moreBtn) {
+    moreBtn.addEventListener('click', () => {
+      revealed = true;
+      apply();
+    });
+  }
+
+  apply();
+}
+
+function initEventsPage() {
+  const grid = document.getElementById('eventsGrid');
+  if (!grid) return;
+  const cards = Array.from(grid.querySelectorAll('.events__card'));
+  const filters = document.querySelectorAll('.tab-filter');
+  const more = document.getElementById('eventsMore');
+  const moreBtn = document.getElementById('eventsShowMore');
+  const INITIAL = 8;
+  let revealed = false;
+
+  const apply = () => {
+    const active = document.querySelector('.tab-filter.is-active');
+    const filter = active ? active.dataset.filter : 'all';
+    let shown = 0;
+    cards.forEach((card) => {
+      const on = filter === 'all' || card.dataset.category === filter;
+      card.classList.toggle('is-hidden', !on || (on && !revealed && shown >= INITIAL));
+      if (on) shown++;
+    });
+    const total = cards.filter((c) => filter === 'all' || c.dataset.category === filter).length;
+    if (more) more.classList.toggle('is-hidden', revealed || total <= INITIAL);
   };
 
   filters.forEach((btn) => {
@@ -224,7 +279,52 @@ function initDemoPopup() {
   });
 }
 
+// ponytail: hover/click on a program block shows its matching content panel
+function initProgramTabs() {
+  const list = document.querySelector('.program__list');
+  const panels = document.querySelectorAll('.program__panel');
+  if (!list || !panels.length) return;
+  const setActive = (item) => {
+    list.querySelectorAll('.program__item').forEach((b) => {
+      const on = b === item;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-selected', String(on));
+    });
+    panels.forEach((p) => {
+      const on = p.dataset.tab === item.dataset.tab;
+      p.classList.toggle('is-active', on);
+      p.setAttribute('aria-hidden', String(!on));
+    });
+  };
+  list.querySelectorAll('.program__item').forEach((item) => {
+    item.addEventListener('mouseenter', () => setActive(item));
+    item.addEventListener('click', () => setActive(item));
+  });
+}
+
+// ponytail: open the section video in a Fancybox popup
+function initVideoPopup() {
+  const plays = document.querySelectorAll('.video__player .video__play');
+  if (!plays.length || typeof Fancybox === 'undefined') return;
+  plays.forEach((play) => {
+    play.addEventListener('click', () => {
+      const src = play.dataset.videoSrc;
+      if (!src) return;
+      const videoHtml = `<video controls autoplay playsinline style="max-width:100%;max-height:80vh"><source src="${src}" type="video/mp4"></video>`;
+      Fancybox.show([{ src: videoHtml, type: 'html' }], {
+        Toolbar: false,
+        Thumbs: false,
+        closeButton: 'top',
+        Carousel: { infinite: false }
+      });
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  initClientsMarquee();
+  window.addEventListener('resize', initClientsMarquee);
+
   const clientsSwiper = initSwiper('.clients__swiper', {
     slidesPerView: 7.8,
     spaceBetween: 10,
@@ -325,8 +425,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initAccordion('.faq__list', 'is-open', '.faq__q');
 
   initClientsPage();
+  initEventsPage();
   initDropdown();
   initDemoPopup();
+  initVideoPopup();
+  initProgramTabs();
 
   document.querySelectorAll('.s-tasks__item:first-child, .faq__item:first-child').forEach((el) => {
     el.classList.add('is-open');
