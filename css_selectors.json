@@ -1743,7 +1743,7 @@
       1573
     ]
   ],
-  ".c-clients": [
+  ".clients": [
     [
       "sections.css",
       1579
@@ -1779,73 +1779,73 @@
       1615
     ]
   ],
-  ".c-clients__grid": [
+  ".clients__grid": [
     [
       "sections.css",
       1620
     ]
   ],
-  ".c-clients__card": [
+  ".clients__card": [
     [
       "sections.css",
       1627
     ]
   ],
-  ".c-clients__body": [
+  ".clients__body": [
     [
       "sections.css",
       1648
     ]
   ],
-  ".c-clients__name": [
+  ".clients__name": [
     [
       "sections.css",
       1652
     ]
   ],
-  ".c-clients__desc": [
+  ".clients__desc": [
     [
       "sections.css",
       1659
     ]
   ],
-  ".c-clients__logo": [
+  ".clients__logo": [
     [
       "sections.css",
       1665
     ]
   ],
-  ".c-clients__logo img": [
+  ".clients__logo img": [
     [
       "sections.css",
       1680
     ]
   ],
-  ".c-clients__card:hover": [
+  ".clients__card:hover": [
     [
       "sections.css",
       1687
     ]
   ],
-  ".c-clients__card:hover .c-clients__icon": [
+  ".clients__card:hover .clients__icon": [
     [
       "sections.css",
       1692
     ]
   ],
-  ".c-clients__card:hover .c-clients__desc": [
+  ".clients__card:hover .clients__desc": [
     [
       "sections.css",
       1695
     ]
   ],
-  ".c-clients__card:hover .c-clients__logo": [
+  ".clients__card:hover .clients__logo": [
     [
       "sections.css",
       1699
     ]
   ],
-  ".c-clients__card:hover .c-clients__logo img": [
+  ".clients__card:hover .clients__logo img": [
     [
       "sections.css",
       1703
@@ -1857,7 +1857,7 @@
       1707
     ]
   ],
-  ".c-clients__more": [
+  ".clients__more": [
     [
       "sections.css",
       1711

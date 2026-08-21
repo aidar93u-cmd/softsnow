@@ -4,14 +4,21 @@
 	box-sizing: border-box;
 }
 
-/* global default: every property change animates at 0.4s.
-   individual component/section rules keep the same value; this
-   guarantees base elements (a, button, img, …) animate too.
-   reduced-motion (below) still restricts to safe properties. */
-*,
-*::before,
-*::after {
-	transition: all 0.4s;
+/* Точечные переходы вместо глобального transition: all —
+   анимируем только то, что реально меняется (hover/focus),
+   и не мешаем responsive-переходам между брейкпоинтами. */
+button,
+a,
+.btn,
+.card,
+.tabs__btn,
+.carousel-nav__btn {
+	transition:
+		background-color 0.4s,
+		border-color 0.4s,
+		color 0.4s,
+		opacity 0.4s,
+		transform 0.4s;
 }
 
 html {

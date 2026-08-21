@@ -2,142 +2,157 @@
 
 /* Container */
 .container {
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 1.5625rem;
+	width: 100%;
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 0 1.5625rem;
+}
+
+/* Sticky column — floats a grid/flex column while the sibling column scrolls.
+   Requires the parent to be a grid/flex with align-items: start, and the
+   section to allow visible overflow (the global `section { overflow: hidden }`
+   clips sticky children, so add `overflow: visible` to the section). */
+.sticky-col {
+	position: sticky;
+	top: 5rem;
 }
 
 /* Card */
 .card {
-  background: var(--color-white);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+	background: var(--color-white);
+	border-radius: var(--radius-lg);
+	overflow: hidden;
 }
 
 .card--project {
-  height: 28.75rem;
-  border-radius: var(--radius-lg);
+	height: 28.75rem;
+	border-radius: var(--radius-lg);
 }
 
 .card--company {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 12.5rem;
-  padding: 0 2.5rem;
-  background: var(--color-white);
-  border-radius: var(--radius-lg);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 12.5rem;
+	padding: 0 2.5rem;
+	background: var(--color-white);
+	border-radius: var(--radius-lg);
 }
 .card--company img {
-  max-width: 100%;
-  max-height: 6.875rem;
-  object-fit: contain;
+	max-width: 100%;
+	max-height: 6.875rem;
+	object-fit: contain;
 }
 
 /* Breadcrumb (listing/detail page heroes) */
 .breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    margin-bottom: 5.625rem;
-    font-size: 1rem;
-    color: var(--color-grey);
-    letter-spacing: -0.037rem;
-    font-weight: 400;
+	display: flex;
+	align-items: center;
+	gap: 0.625rem;
+	margin-bottom: 5.625rem;
+	font-size: 1rem;
+	color: var(--color-grey);
+	letter-spacing: -0.037rem;
+	font-weight: 400;
 }
 
 .breadcrumb a {
-  color: var(--color-grey);
+	color: var(--color-grey);
 }
 
 .breadcrumb a:hover {
-  color: var(--color-sea);
+	color: var(--color-sea);
 }
 
 .breadcrumb__sep {
-  color: var(--color-grey);
+	color: var(--color-grey);
 }
 
 .breadcrumb__current {
-  color: var(--color-black);
+	color: var(--color-black);
 }
 
 /* Buttons */
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--gap-md);
-  height: var(--control-h);
-  padding: 0 1.75rem;
-  font-size: var(--fs-body-16);
-  line-height: 1.2;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  border-radius: var(--radius-xl);
-  color: var(--color-black);
-  transition: all 0.4s;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--gap-md);
+	height: var(--control-h);
+	padding: 0 1.75rem;
+	font-size: var(--fs-body-16);
+	line-height: 1.2;
+	font-weight: 600;
+	letter-spacing: -0.02em;
+	border-radius: var(--radius-xl);
+	color: var(--color-black);
+	transition: all 0.4s;
 }
 .btn--primary {
-  background: var(--color-sea);
-  color: var(--color-white);
-     border: 1px solid var(--color-white);
+	background: var(--color-sea);
+	color: var(--color-white);
+	border: 1px solid var(--color-white);
 }
 .btn--primary:hover {
-    background: var(--color-white);
-     border: 1px solid var(--color-sea);
-    color: var(--color-sea);
+	background: var(--color-white);
+	border: 1px solid var(--color-sea);
+	color: var(--color-sea);
 }
 .btn--outline-white {
-  border: 2px solid var(--color-white);
-  color: var(--color-white);
+	border: 2px solid var(--color-white);
+	color: var(--color-white);
 }
 
 .btn--outline {
-  border: 2px solid var(--color-sea);
+	border: 2px solid var(--color-sea);
 }
 .btn--outline:hover {
-    background: var(--color-sea);
-    color: var(--color-white);
+	background: var(--color-sea);
+	color: var(--color-white);
+}
+
+.btn--outline svg {
+	stroke: var(--color-black);
+}
+.btn--outline:hover svg {
+	stroke: var(--color-white);
 }
 .btn--outline-white:hover {
-    background: var(--color-white);
-    color: var(--color-sea);
+	background: var(--color-white);
+	color: var(--color-sea);
 }
 /* Dark outline — transparent, black border/text (event-detail hero) */
 .btn--outline-dark {
-  border: 2px solid var(--color-black);
-  color: var(--color-black);
-  font-weight: 600;
+	border: 2px solid var(--color-black);
+	color: var(--color-black);
+	font-weight: 600;
 }
 .btn--outline-dark:hover {
-  background: var(--color-black);
-  color: var(--color-white);
+	background: var(--color-black);
+	color: var(--color-white);
 }
 
 /* Live ghost (single source of truth — was duplicated/overridden from sections.css) */
 .btn--ghost {
-  background: transparent;
-  border: 2px solid var(--color-sea);
-  color: var(--color-black);
-  font-weight: 500;
+	background: transparent;
+	border: 2px solid var(--color-sea);
+	color: var(--color-black);
+	font-weight: 500;
 }
 .btn--ghost:hover {
-    background: var(--color-sea);
-    color: var(--color-white);
+	background: var(--color-sea);
+	color: var(--color-white);
 }
 
 .btn--search {
-    color: var(--color-grey);
-    background: #fff;
-    padding: 0.75rem 0.75rem;
-    width: 2.5rem;
-    height: 2.5rem;
+	color: var(--color-grey);
+	background: #fff;
+	padding: 0.75rem 0.75rem;
+	width: 2.5rem;
+	height: 2.5rem;
 }
 
 .btn--search:hover {
-
 }
 
 /* Button variants:
@@ -148,80 +163,80 @@
    .btn--black   — чёрная (black fill) */
 
 .btn--white {
-  background: var(--color-white);
-  color: var(--color-black);
-  border: 1px solid var(--color-white);
+	background: var(--color-white);
+	color: var(--color-black);
+	border: 1px solid var(--color-white);
 }
 .btn--white:hover {
-  background: var(--color-sea);
-  border-color: var(--color-sea);
-  color: var(--color-white);
+	background: var(--color-sea);
+	border-color: var(--color-sea);
+	color: var(--color-white);
 }
 
 .btn--black {
-  background: var(--color-black);
-  color: var(--color-white);
+	background: var(--color-black);
+	color: var(--color-white);
 }
 .btn--black:hover {
-  background: var(--color-sea);
-  color: var(--color-white);
+	background: var(--color-sea);
+	color: var(--color-white);
 }
 
 /* Width modifiers for repeated 460px / 262px buttons across sections */
 .btn--md {
-  min-width: 16.375rem;
+	min-width: 16.375rem;
 }
 .btn--lg {
-   min-width: 28.75rem;
+	min-width: 28.75rem;
 }
 
 /* Carousel nav */
 .carousel-nav {
-  display: flex;
-  gap: var(--gap-sm);
+	display: flex;
+	gap: var(--gap-sm);
 }
 
 .carousel-nav__btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 4.0625rem;
-  height: 4.0625rem;
-  border: var(--border-default);
-  border-radius: var(--radius-full);
-  color: var(--color-black);
-  border: 2px solid var(--color-sea);
-  transition: all 0.4s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 4.0625rem;
+	height: 4.0625rem;
+	border: var(--border-default);
+	border-radius: var(--radius-full);
+	color: var(--color-black);
+	border: 2px solid var(--color-sea);
+	transition: all 0.4s;
 }
 .carousel-nav__btn:hover {
-    background: var(--color-sea);
-    color: var(--color-white);
+	background: var(--color-sea);
+	color: var(--color-white);
 }
 /* Tabs */
 .tabs {
-  display: flex;
-    gap: 0.375rem;
-  flex-wrap: wrap;
-  margin-bottom: 2.5rem;
+	display: flex;
+	gap: 0.375rem;
+	flex-wrap: wrap;
+	margin-bottom: 2.5rem;
 }
 
 .tabs__btn {
-  display: inline-flex;
-  align-items: center;
-  height: var(--control-h);
-  padding: 0 1.875rem;
-  font-size: var(--fs-body-16);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: var(--color-grey);
-  border-radius: var(--radius-xl);
-  transition: all 0.4s;
-    border: 2px solid #2222221A;
+	display: inline-flex;
+	align-items: center;
+	height: var(--control-h);
+	padding: 0 1.875rem;
+	font-size: var(--fs-body-16);
+	font-weight: 500;
+	letter-spacing: -0.02em;
+	color: var(--color-grey);
+	border-radius: var(--radius-xl);
+	transition: all 0.4s;
+	border: 2px solid #2222221a;
 }
 .tabs__btn:hover {
-  color: var(--color-black);
+	color: var(--color-black);
 }
 .tabs__btn.is-active {
-  background: var(--color-sea);
-  color: var(--color-white);
+	background: var(--color-sea);
+	color: var(--color-white);
 }

@@ -111,7 +111,7 @@ Listing `clients.html` (frame `826:1472`), detail `client-detail.html` (frame `8
 | 1 | Header | `863:18238` | `.header` | done (reused) |
 | 2 | Hero (breadcrumbs + h1 100px + subtitle 16px) | `826:1475` | `.page-hero` + `.hero-block-page-inner` | done |
 | 3 | Tabs (Все отрасли / Вузы / Гос / Бизнес) | `826:1511` | `.tab-filter` | done |
-| 4 | Clients grid (16 карточек 460×360) | `826:1522` | `.c-clients__grid` | done |
+| 4 | Clients grid (16 карточек 460×360) | `826:1522` | `.clients__grid` | done |
 | 5 | Detail hero (h1 70px + логотип клиента) | `896:11276` | `.page-hero--detail` | done |
 | 6 | «Что говорит о нас клиент» (white r20, h2 70/500, цитата: иконка 40×40 #1342F3 + текст 16/400 rgba(34,34,34,.7) 655px + автор: аватар 64×64 + имя 20/500 + роль 16/400; фото 890×560 r20) | `1075:32386` | `.client-quote` | done |
 | 7 | Footer | — | `.footer` | done (reused) |
@@ -211,6 +211,18 @@ Detail проекта, фрейм `1128:8159` (COMPONENT, fileKey `tK0WpkPKL3pQG
 | 12 | Footer | `.footer` | done (reused) |
 
 Особенности: межсекционные отступы 10px. Иконки «Почему выбирают» — PNG `icon-reason-1..4.png` (40×40) на круге 64×64 bg `--color-sea`. Иконки «Ключевые решения» — PNG `svc-1..7.png` (130×130) через `.partners__card img` (margin auto). Галочки «Вариантов внедрения» — inline-SVG (круг white + path `currentColor`). Коллаж телефонов — `phone-1..4.png` (main 330px, остальные 300px, `object-fit: cover`). Свайперы `.projects__swiper` — существующие инициализации в `js/main.js`. Ссылка: partners-карточка Univer Online на главной → `univer-online.html`. Отклонения — см. план `2026-08-17-univer-ecosystem.md`.
+
+### Цифровая трансформация вуза (vuz.html)
+
+Лендинг «Цифровая трансформация документооборота Президентской библиотеки» (fileKey `43Ny8TAsFnSrmCOYtYTZIV`). Секция добавлена в конец `<main>` перед футером.
+
+| # | Figma Section | Code | Status |
+|---|---|---|---|
+| 1 | «Помогаем связать процессы…» FRAME `1366:20995` (1870×1071, white r20) | `.ecosystem` + `.ecosystem__inner` (NEW) | done |
+| 1a | Кольцо 640 (border 2 `--color-sea`) + ядро 400 (`--color-sea`, текст fs40 white) | `.ecosystem__ring` / `.ecosystem__core` | done |
+| 1b | 6 карточек 500×111 (r20, border rgba(34,34,34,.1); левые flip: текст right + иконка справа) | `.eco-card` (+`--flip`, `--1..--6`) | done |
+
+Особенности: диаграмма — absolute-позиционирование в `.ecosystem__diagram` (1790×640, координаты из Figma: кольцо x575 y0; карточки (170/112/170, 94/265/436) и (1120/1178/1120, …)); ≤1200px — grid 2 кол. (кольцо сверху по центру), ≤767px — 1 кол. Иконки — оригинальные SVG из библиотек Figma через Iconify API (ion:school-outline, material-symbols-light:task-alt-rounded/work-outline, ion:folder-open-outline, ci:file-document, reicon:chart-trend), круг 64 bg `#1342F31A`, svg 40 `currentColor`. QA 2026-08-21: все координаты ±1px при 1920px.
 
 ## Known Discrepancies
 

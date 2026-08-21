@@ -37,6 +37,7 @@ function initAccordion(listSelector, openClass, buttonSelector) {
     const isOpen = item.classList.contains(openClass);
     list.querySelectorAll(`.${openClass}`).forEach((el) => {
       el.classList.remove(openClass);
+      el.offsetHeight;
       const b = el.querySelector(buttonSelector);
       if (b) b.setAttribute('aria-expanded', 'false');
     });
@@ -51,7 +52,7 @@ function initAccordion(listSelector, openClass, buttonSelector) {
 function initClientsPage() {
   const grid = document.getElementById('clientsGrid');
   if (!grid) return;
-  const cards = Array.from(grid.querySelectorAll('.c-clients__card'));
+  const cards = Array.from(grid.querySelectorAll('.clients__card'));
   const filters = document.querySelectorAll('.tab-filter');
   const more = document.getElementById('clientsMore');
   const moreBtn = document.getElementById('clientsShowMore');
@@ -90,49 +91,6 @@ function initClientsPage() {
   apply();
 }
 
-function initEventsPage() {
-  const grid = document.getElementById('eventsGrid');
-  if (!grid) return;
-  const cards = Array.from(grid.querySelectorAll('.events__card'));
-  const filters = document.querySelectorAll('.tab-filter');
-  const more = document.getElementById('eventsMore');
-  const moreBtn = document.getElementById('eventsShowMore');
-  const INITIAL = 8;
-  let revealed = false;
-
-  const apply = () => {
-    const active = document.querySelector('.tab-filter.is-active');
-    const filter = active ? active.dataset.filter : 'all';
-    let shown = 0;
-    cards.forEach((card) => {
-      const on = filter === 'all' || card.dataset.category === filter;
-      card.classList.toggle('is-hidden', !on || (on && !revealed && shown >= INITIAL));
-      if (on) shown++;
-    });
-    const total = cards.filter((c) => filter === 'all' || c.dataset.category === filter).length;
-    if (more) more.classList.toggle('is-hidden', revealed || total <= INITIAL);
-  };
-
-  filters.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      filters.forEach((b) => b.classList.remove('is-active'));
-      btn.classList.add('is-active');
-      revealed = false;
-      apply();
-    });
-  });
-
-  if (moreBtn) {
-    moreBtn.addEventListener('click', () => {
-      revealed = true;
-      apply();
-    });
-  }
-
-  apply();
-}
-
-// ponytail: multiple <details> dropdowns — native toggle works everywhere; JS only adds badges + reset + removable chips
 function initDropdown() {
   const bar = document.querySelector('.projects__filters');
   if (!bar) return;
@@ -142,8 +100,8 @@ function initDropdown() {
   const allChecks = Array.from(bar.querySelectorAll('.dropdown__check'));
   const chipX = '<svg class="projects__chip-x" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 1l10 10M11 1L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
 
-  const grid = document.querySelector('.projects__grid');
-  const cards = grid ? Array.from(grid.querySelectorAll('.projects__card')) : [];
+  const grid = document.querySelector('.projects__grid, #eventsGrid');
+  const cards = grid ? Array.from(grid.querySelectorAll('.projects__card, .events__card')) : [];
   const empty = document.getElementById('projectsEmpty');
   const more = document.getElementById('projectsMore');
   const moreBtn = document.getElementById('projectsShowMore');
@@ -321,6 +279,70 @@ function initVideoPopup() {
   });
 }
 
+function closeMobileMenu(menu, burger) {
+  menu.classList.remove('is-open');
+  burger.classList.remove('is-open');
+  burger.setAttribute('aria-expanded', 'false');
+  burger.setAttribute('aria-label', 'Открыть меню');
+  document.body.classList.remove('menu-open');
+  document.body.style.overflow = '';
+}
+
+function initMobileMenu() {
+  const burger = document.querySelector('.header__burger');
+  const nav = document.querySelector('.header__nav');
+  if (!burger || !nav || document.querySelector('.mobile-menu')) return;
+
+  const menu = document.createElement('nav');
+  menu.className = 'mobile-menu';
+  menu.setAttribute('aria-label', 'Мобильное меню');
+
+  const inner = document.createElement('div');
+  inner.className = 'container mobile-menu__inner';
+
+  nav.querySelectorAll('.header__link').forEach((a) => {
+    const clone = a.cloneNode(true);
+    const caret = clone.querySelector('.header__caret');
+    if (caret) caret.remove();
+    inner.appendChild(clone);
+  });
+
+  const phone = document.querySelector('.header .header__phone-num');
+  if (phone) {
+    const phoneClone = phone.cloneNode(true);
+    phoneClone.className = 'mobile-menu__phone';
+    inner.appendChild(phoneClone);
+  }
+
+  const cta = document.querySelector('.header .btn--primary');
+  if (cta) {
+    const ctaClone = cta.cloneNode(true);
+    ctaClone.classList.add('mobile-menu__cta');
+    inner.appendChild(ctaClone);
+  }
+
+  menu.appendChild(inner);
+  document.body.appendChild(menu);
+
+  burger.addEventListener('click', () => {
+    const open = !menu.classList.contains('is-open');
+    menu.classList.toggle('is-open', open);
+    burger.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+    document.body.classList.toggle('menu-open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  menu.addEventListener('click', (e) => {
+    if (e.target.closest('a')) closeMobileMenu(menu, burger);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1199 && menu.classList.contains('is-open')) closeMobileMenu(menu, burger);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initClientsMarquee();
   window.addEventListener('resize', initClientsMarquee);
@@ -334,17 +356,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const partnersSwiper = initSwiper('.partners__swiper', {
-    slidesPerView: 4,
+    slidesPerView: 1.5,
     spaceBetween: 10,
     rewind: true,
     speed: 600,
+    breakpoints: { 768: { slidesPerView: 4 } },
   });
 
   const projectsSwiper = initSwiper('.projects__swiper', {
-    slidesPerView: 2,
+    slidesPerView: 1,
     spaceBetween: 10,
     rewind: true,
     speed: 600,
+    breakpoints: { 768: { slidesPerView: 2 } },
   });
 
   const eventsSwiper = initSwiper('.events__swiper', {
@@ -363,10 +387,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const testimonialsSwiper = initSwiper('.testimonials__swiper', {
-    slidesPerView: 3,
+    slidesPerView: 1.5,
     spaceBetween: 10,
     rewind: true,
     speed: 600,
+    breakpoints: { 768: { slidesPerView: 3 } },
   });
 
   const gallerySwiper = initSwiper('.gallery__swiper', {
@@ -425,11 +450,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initAccordion('.faq__list', 'is-open', '.faq__q');
 
   initClientsPage();
-  initEventsPage();
   initDropdown();
   initDemoPopup();
   initVideoPopup();
   initProgramTabs();
+  initMobileMenu();
 
   document.querySelectorAll('.tasks__item:first-child, .faq__item:first-child').forEach((el) => {
     el.classList.add('is-open');
@@ -437,3 +462,5 @@ document.addEventListener('DOMContentLoaded', () => {
     if (b) b.setAttribute('aria-expanded', 'true');
   });
 });
+
+// ponytail: CSS `position: sticky` on .stages__head-col handles the floating left block natively

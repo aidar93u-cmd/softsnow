@@ -3127,7 +3127,7 @@
       "id": "page-clients",
       "type": "Module",
       "name": "clients.html",
-      "content": "Clients listing: page-hero--media, .c-clients (JS-rendered), .projects .c-projects, .cta",
+      "content": "Clients listing: page-hero--media, .clients (JS-rendered), .projects .c-projects, .cta",
       "source_file": "clients.html",
       "metadata": {
         "captured_at": "2026-08-17T14:47:53Z",

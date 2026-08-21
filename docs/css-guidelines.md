@@ -64,7 +64,7 @@ base/slow`), z-index (`--z-header`, `--z-popover`).
 - Контентный контейнер: `.container` (max-width 1870px, padding 40px).
 - Карточные сетки — CSS Grid с фиксированными колонками `repeat(N, 460px)` и
   `gap: 10px`; карточкам не нужен явный `width`, его задаёт колонка (удалено
-  избыточное `width: 460px` в `.industries__card`, `.audience__card`, `.c-clients__card`).
+  избыточное `width: 460px` в `.industries__card`, `.audience__card`, `.clients__card`).
 - **Текущее состояние:** дизайн рассчитан на 1920px и **не содержит медиазапросов**.
   Ряд блоков имеет жёсткие фиксированные ширины (`1870px`, `890px`, `460px`,
   `242px`, `margin-left: 25px`), привязанные к макету.

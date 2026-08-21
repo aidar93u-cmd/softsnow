@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/utilities.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/media.css">
   <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="assets/vendor/fancybox/fancybox.css">
 </head>
@@ -120,6 +121,10 @@
           </div>
         </nav>
 
+        <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
         <div class="header__contacts">
           <div class="header__phone">
             <a href="tel:+78123201130" class="header__phone-label">Контакты</a>
@@ -242,7 +247,9 @@
     <section class="impl">
       <div class="container">
         <div class="impl__inner">
-          <h2 class="impl__title">Реализация проекта</h2>
+          <div class="impl__header sticky-col">
+            <h2 class="impl__title">Реализация проекта</h2>
+          </div>
           <div class="impl__body">
             <article class="impl__block">
               <h3 class="impl__block-title">01. Контекст</h3>

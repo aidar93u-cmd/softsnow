@@ -33,7 +33,7 @@
 ## Новые файлы
 
 - `pages/clients.html` — страница (по паттерну `solution-detail.html`).
-- `css/sections.css` — страница «Клиенты»: стили `.c-hero`/`.c-clients` влиты в общий `sections.css` (без per-page файла).
+- `css/sections.css` — страница «Клиенты»: стили `.c-hero`/`.clients` влиты в общий `sections.css` (без per-page файла).
 
 ## Перенос shared-классов
 

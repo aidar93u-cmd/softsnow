@@ -23,7 +23,8 @@ softsnow/
 │   ├── tokens.css        # только design tokens: @font-face, :root (цвета/шрифты/спейсинг/радиусы)
 │   ├── utilities.css     # только универсальное: reset (*), body, типографика h1-h6, img/a/ul/button/input
 │   ├── components.css    # повторяющиеся элементы: .container, .card, .btn (+модификаторы), .carousel-nav
-│   └── sections.css      # layout конкретных секций: .header, .hero, .industries, ..., .footer
+│   ├── sections.css      # layout конкретных секций: .header, .hero, .industries, ..., .footer
+│   └── media.css         # ВСЕ @media-переопределения (адаптив): 1600/1440/1280/1024/768/576/375, адаптация через токены
 ├── js/
 │   └── main.js           # инициализация Swiper + carousel-nav
 ├── assets/
@@ -40,7 +41,7 @@ softsnow/
 
 Принципы (важнее конкретных файлов):
 1. **Многостраничник, все страницы в корне.** Все `*.html` лежат в корне проекта (без подпапки `pages/`), поэтому пути из любого HTML: `assets/img/...`, `css/...`, `js/...` — без `../`. Ссылки между страницами — просто имена файлов: `href="solutions.html"`, `href="index.html"`.
-2. **CSS — 4 файла, каждый с одной зоной ответственности:** `tokens.css` (только переменные) → `utilities.css` (только универсальное; НЕ превращать в Tailwind-клон без необходимости) → `components.css` (повторяющиеся элементы) → `sections.css` (layout секций). Подключаются в этом порядке. Порядок каскада: секции переопределяют компоненты. Новый стиль кладётся по зоне, а не в первый попавшийся файл.
+2. **CSS — 5 файлов, каждый с одной зоной ответственности:** `tokens.css` (только переменные) → `utilities.css` (только универсальное; НЕ превращать в Tailwind-клон без необходимости) → `components.css` (повторяющиеся элементы) → `sections.css` (layout секций) → `media.css` (ТОЛЬКО @media-переопределения для адаптива). Подключаются в этом порядке. Порядок каскада: секции переопределяют компоненты, media.css переопределяет всё при той же специфичности. Новое адаптивное правило кладётся в `media.css`, а не в файл исходного стиля. Новый стиль кладётся по зоне, а не в первый попавшийся файл. Адаптация — прежде всего через токены: в `media.css` по брейкпоинтам меняем `:root`-переменные (`--fs-*`, `--section-py/-md/-px`, `--control-h`), компоненты и гриды переопределяем точечно. `html { font-size: 16px }` — постоянный, vw-зум не используем. Токены, не зависящие от ширины (`--gap-xs/sm/md`, `--radius-md/lg`), не адаптируются. Глобальный `transition: all` запрещён — только точечные переходы на интерактивных элементах.
 3. **JS — `main.js` (одна инициализация).** Swiper-слайдеры и кнопки каруселей. Пока ~40 строк — подпапки `js/components/` и `js/sections/` не нужны; выделять модули только когда скрипт перестанет помещаться в один файл.
 4. **Картинки** — в `assets/img/`, растровые. Пути: из HTML → `assets/img/...` (без `../`), из CSS → `../assets/img/...` (файл CSS лежит в `css/`). Никогда не наоборот.
 5. **Иконки** — inline-SVG в каждой странице (vectorPaths из Figma). Отдельные файлы иконок НЕ создавать, пока иконка не переиспользуется между страницами. Стрелки — единый SVG-sprite: `#icon-arrow` (17×14, inbox, `fill="currentColor"`, стрелка для ссылок/блоков: карточки, задачи, проекты, вебинары) и `#icon-arrow-right` / `#icon-arrow-left` (15×14, стрелки для слайдеров: «Вперёд»/«Назад»). Подключение для ссылок/блоков: `<svg width="17" height="14" viewBox="0 0 17 14" aria-hidden="true"><use href="#icon-arrow"/></svg>`, для слайдеров: `<svg width="15" height="14" viewBox="0 0 15 14" aria-hidden="true"><use href="#icon-arrow-right"/></svg>`. НЕ использовать текст «→» и НЕ переворачивать CSS (`transform: scaleX(-1)`) — вместо этого вставлять правильную иконку.
@@ -121,7 +122,7 @@ softsnow/
 | # | Секция | Класс | Примечание |
 |---|--------|-------|------------|
 | 1 | Заголовок страницы | `.page-hero` |  |
-| 2 | Список клиентов | `.c-clients` | карточки рендерятся из `js/main.js` |
+| 2 | Список клиентов | `.clients` | карточки рендерятся из `js/main.js` |
 | 3 | Реализованные проекты | `.projects .c-projects` `#projects` |  |
 | 4 | CTA «Нужна консультация» | `.cta` |  |
 
@@ -265,18 +266,19 @@ New statistics         NEW: .stats
 
 ## Список страниц
 
-++ `index.html` — главная (hero, отрасли, цифры, задачи, компании, партнёры, проекты, вебинары, CTA)
-++ `solutions.html` — каталог решений (page-hero, catalog, CTA)
-++ `solution-detail.html` — детальная страница решения (hero, registry, tasks, audience, features, CTA синий, testimonials, projects, events, CTA, faq)
-++ `clients.html` — клиенты (page-hero, c-clients, projects, CTA)
-++ `client-detail.html` — детальная страница клиента (page-hero--detail, client-intro, stats--client, stages, CTA синий, events--readalso)
-++ `projects.html` — проекты (page-hero, projects-page, CTA)
-+- `project-detail.html` — страница проекта 
-++ `univer-online.html` — Экосистема Univer Online (hero, univer-registry, audience, reasons--univer, cta--blue--univer, services, projects--univer, vnedrenie--univer, team, cta, footer)
-- `events.html` — медиацентр (page-hero--media, events-featured, events-list, CTA)
-- `event-detail.html` — детальная страница мероприятия (event-hero, event-about, audience, program, CTA синий, seminar-topics, event-partners, trust, clients, faq)
++++ `index.html` — главная (hero, отрасли, цифры, задачи, компании, партнёры, проекты, вебинары, CTA)
++++ `solutions.html` — каталог решений (page-hero, catalog, CTA)
++++ `solution-detail.html` — детальная страница решения (hero, registry, tasks, audience, features, CTA синий, testimonials, projects, events, CTA, faq)
++++ `clients.html` — клиенты (page-hero, clients, projects, CTA)
++++ `client-detail.html` — детальная страница клиента (page-hero--detail, client-intro, stats--client, stages, CTA синий, events--readalso)
++++ `projects.html` — проекты (page-hero, projects-page, CTA)
++++ `project-detail.html` — страница проекта 
++++ `univer-online.html` 
++++ `events.html` — медиацентр (page-hero--media, events-featured, events-list, CTA)
++++ `event-detail.html` — детальная страница мероприятия (event-hero, event-about, audience, program, CTA синий, seminar-topics, event-partners, trust, clients, faq)
 -  Directum — цифровая экосистема для управления организацией
 -  Цифровая трансформация вуза
+-  Детальная статьи
 
 Все страницы в корне проекта, пути без `../`. Связи: главная → каталоги → детальные страницы; проекты — без детальной страницы.
 

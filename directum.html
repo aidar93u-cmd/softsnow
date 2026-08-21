@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/utilities.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/media.css">
 </head>
 
 <body>
@@ -121,6 +122,10 @@
           </div>
         </nav>
   
+        <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
         <div class="header__contacts">
           <div class="header__phone">
             <a href="tel:+78123201130" class="header__phone-label">Контакты</a>
@@ -171,80 +176,56 @@
             <div class="partners__actions">
               <p class="partners__sub">Решения Directum можно внедрять поэтапно под&nbsp;текущие задачи, сохраняя единую
                 архитектуру и&nbsp;прозрачные связи между документами, задачами, сервисами и&nbsp;показателями.</p>
-              <div class="carousel-nav">
-                <button class="carousel-nav__btn" type="button" data-scroll-prev aria-label="Назад"><svg width="15"
-                    height="14" viewBox="0 0 15 14" aria-hidden="true">
-                    <use href="#icon-arrow-left" />
-                  </svg></button>
-                <button class="carousel-nav__btn" type="button" data-scroll-next aria-label="Вперёд"><svg width="15"
-                    height="14" viewBox="0 0 15 14" aria-hidden="true">
-                    <use href="#icon-arrow-right" />
-                  </svg></button>
-              </div>
             </div>
           </div>
         </div>
-        <div class="swiper partners__swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <article class="card partners__card partners__card--eco">
-                <h3 class="partners__name">СЭД+</h3>
-                <span class="partners__tag">Полный цикл работы с&nbsp;документами</span>
-                <img src="assets/img/sed-plus-logo-horizontal-short.svg">
-                <p class="partners__desc">Для документооборота, автоматизации процессов, договорной работы
-                  и&nbsp;электронных
-                  архивов.</p>
-              </article>
-            </div>
-            <div class="swiper-slide">
-              <article class="card partners__card partners__card--eco">
-                <h3 class="partners__name">HR Pro</h3>
-                <span class="partners__tag">Цифровизация кадрового делопроизводства</span>
-                <img src="assets/img/hr-pro_logo_black-text.svg">
-                <p class="partners__desc">Для управления кадровыми процессами, документами, электронной подписью
-                  и&nbsp;хранением
-                  кадровых данных.</p>
-              </article>
-            </div>
-            <div class="swiper-slide">
-              <article class="card partners__card partners__card--eco">
-                <h3 class="partners__name">Projects</h3>
-                <span class="partners__tag">Управление проектами, задачами, целями</span>
-                <img src="assets/img/projects_logo_horisontal-black.svg">
-                <p class="partners__desc">Для планирования проектов, контроля ресурсов, дорожных карт и&nbsp;работы
-                  команд.</p>
-              </article>
-            </div>
-            <div class="swiper-slide">
-              <article class="card partners__card partners__card--eco">
-                <h3 class="partners__name">Targets</h3>
-                <span class="partners__tag">Система стратегического управления</span>
-                <img src="assets/img/d-targets_logo-horizontal.svg">
-                <p class="partners__desc">Для управления стратегией, декомпозиции целей и&nbsp;контроля
-                  их&nbsp;выполнения.</p>
-              </article>
-            </div>
-            <div class="swiper-slide">
-              <article class="card partners__card partners__card--eco">
-                <h3 class="partners__name">ESM</h3>
-                <span class="partners__tag">Цифровизация корпоративных сервисов</span>
-                <img src="assets/img/sed-plus-logo-horizontal-short.svg">
-                <p class="partners__desc">Для автоматизации корпоративных услуг и&nbsp;внутренних сервисов
-                  по&nbsp;принципам
-                  ITSM</p>
-              </article>
-            </div>
-            <div class="swiper-slide">
-              <article class="card partners__card partners__card--eco">
-                <h3 class="partners__name">Omni</h3>
-                <span class="partners__tag">Корпоративные коммуникации</span>
-                <img src="assets/img/projects_logo_horisontal-black.svg">
-                <p class="partners__desc">Корпоративный SuperApp с&nbsp;ИИ: мессенджер, помощник и&nbsp;поиск
-                  в&nbsp;одном
-                  интерфейсе.</p>
-              </article>
-            </div>
-          </div>
+        <div class="partners__grid">
+            <article class="card partners__card partners__card--eco">
+              <h3 class="partners__name">СЭД+</h3>
+              <span class="partners__tag">Полный цикл работы с&nbsp;документами</span>
+              <img src="assets/img/sed-plus-logo-horizontal-short.svg">
+              <p class="partners__desc">Для документооборота, автоматизации процессов, договорной работы
+                и&nbsp;электронных
+                архивов.</p>
+            </article>
+            <article class="card partners__card partners__card--eco">
+              <h3 class="partners__name">HR Pro</h3>
+              <span class="partners__tag">Цифровизация кадрового делопроизводства</span>
+              <img src="assets/img/hr-pro_logo_black-text.svg">
+              <p class="partners__desc">Для управления кадровыми процессами, документами, электронной подписью
+                и&nbsp;хранением
+                кадровых данных.</p>
+            </article>
+            <article class="card partners__card partners__card--eco">
+              <h3 class="partners__name">Projects</h3>
+              <span class="partners__tag">Управление проектами, задачами, целями</span>
+              <img src="assets/img/projects_logo_horisontal-black.svg">
+              <p class="partners__desc">Для планирования проектов, контроля ресурсов, дорожных карт и&nbsp;работы
+                команд.</p>
+            </article>
+            <article class="card partners__card partners__card--eco">
+              <h3 class="partners__name">Targets</h3>
+              <span class="partners__tag">Система стратегического управления</span>
+              <img src="assets/img/d-targets_logo-horizontal.svg">
+              <p class="partners__desc">Для управления стратегией, декомпозиции целей и&nbsp;контроля
+                их&nbsp;выполнения.</p>
+            </article>
+            <article class="card partners__card partners__card--eco">
+              <h3 class="partners__name">ESM</h3>
+              <span class="partners__tag">Цифровизация корпоративных сервисов</span>
+              <img src="assets/img/sed-plus-logo-horizontal-short.svg">
+              <p class="partners__desc">Для автоматизации корпоративных услуг и&nbsp;внутренних сервисов
+                по&nbsp;принципам
+                ITSM</p>
+            </article>
+            <article class="card partners__card partners__card--eco">
+              <h3 class="partners__name">Omni</h3>
+              <span class="partners__tag">Корпоративные коммуникации</span>
+              <img src="assets/img/projects_logo_horisontal-black.svg">
+              <p class="partners__desc">Корпоративный SuperApp с&nbsp;ИИ: мессенджер, помощник и&nbsp;поиск
+                в&nbsp;одном
+                интерфейсе.</p>
+            </article>
         </div>
       </div>
     </section>
@@ -350,7 +331,7 @@
     <section class="projects projects--eco" aria-label="Проекты на базе экосистемы">
       <div class="container">
         <div class="projects__head">
-          <div>
+          <div class="projects__inner">
             <h2 class="projects__heading">Проекты на&nbsp;базе<br> экосистемы</h2>
             <div class="projects__bottom">
               <p class="projects__sub">Показываем, как решения Directum помогают автоматизировать ключевые процессы,

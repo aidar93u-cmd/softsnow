@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/utilities.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/media.css">
 </head>
 
 <body>
@@ -121,6 +122,10 @@
           </div>
         </nav>
 
+        <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
         <div class="header__contacts">
           <div class="header__phone">
             <a href="tel:+78123201130" class="header__phone-label">Контакты</a>
@@ -223,11 +228,13 @@
       <div class="container">
         <div class="program__head">
           <h2 class="program__title">Программа семинара</h2>
-          <a class="btn btn--outline-dark btn--md program__download" href="#">
+          <a class="btn btn--outline btn--md program__download" href="#">
             Скачать программу
-            <svg width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
-              <use href="#icon-arrow" />
+            <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.75 14.75H12.75M6.75 0.75V10.75M3.25 7.25L6.75 10.75L10.25 7.25"  stroke-width="1.5"
+                stroke-linecap="square" stroke-linejoin="round" />
             </svg>
+
           </a>
         </div>
         <div class="program__row">
@@ -251,28 +258,31 @@
           </div>
           <div class="program__panels">
             <article class="program__panel is-active" data-tab="1" role="tabpanel">
-              <span class="program__label">Блок 1</span>
               <div class="program__content">
-                <h3 class="program__panel-title">Возможности Directum&nbsp;Targets для университета</h3>
-                <p class="program__panel-text">Целеполагание, каскадирование KPI и&nbsp;контроль исполнения
-                  стратегии&nbsp;— обзор ключевых функций системы на&nbsp;примере реального вуза.</p>
-                <div class="program__speaker">
-                  <img class="program__avatar" src="assets/img/avatar2.jpg" alt="Пяткин Никита">
-                  <div class="program__speaker-info">
-                    <div class="program__speaker-name">Пяткин Никита</div>
-                    <div class="program__speaker-role">Менеджер решения Directum</div>
-                    <div class="program__speaker-caption">Спикер</div>
-                  </div>
+                <div class="program__content-header">
+                  <h3 class="program__panel-title">Возможности Directum&nbsp;Targets для университета</h3>
+                  <p class="program__panel-text">Целеполагание, каскадирование KPI и&nbsp;контроль исполнения
+                    стратегии&nbsp;— обзор ключевых функций системы на&nbsp;примере реального вуза.</p>
                 </div>
+                  <div class="program__speaker">
+                    <img class="program__avatar" src="assets/img/avatar2.jpg" alt="Пяткин Никита">
+                    <div class="program__speaker-info">
+                      <div class="program__speaker-name">Пяткин Никита</div>
+                      <div class="program__speaker-role">Менеджер решения Directum</div>
+                      <div class="program__speaker-caption">Спикер</div>
+                    </div>
+                  </div>
+                  
               </div>
             </article>
             <article class="program__panel" data-tab="2" role="tabpanel" aria-hidden="true">
-              <span class="program__label">Блок 2</span>
               <div class="program__content">
+                <div class="program__content-header">
                 <h3 class="program__panel-title">Управление стратегией в&nbsp;вузе с&nbsp;помощью современных
                   инструментов</h3>
                 <p class="program__panel-text">Опыт внедрения цифровых решений в&nbsp;вузах и&nbsp;сценарии
                   использования Directum Targets для решения специфических задач отрасли.</p>
+                </div>
                 <div class="program__speaker">
                   <img class="program__avatar" src="assets/img/client-quote.jpg" alt="Пяткин Никита">
                   <div class="program__speaker-info">
@@ -284,11 +294,12 @@
               </div>
             </article>
             <article class="program__panel" data-tab="3" role="tabpanel" aria-hidden="true">
-              <span class="program__label">Блок 3</span>
               <div class="program__content">
+                <div class="program__content-header">
                 <h3 class="program__panel-title">Живая демонстрация Directum&nbsp;Targets</h3>
                 <p class="program__panel-text">На&nbsp;реальных данных покажем, как настраивается стратегия вуза,
                   рассчитываются KPI и&nbsp;формируются отчёты для руководства.</p>
+                </div>
                 <div class="program__speaker">
                   <img class="program__avatar" src="assets/img/avatar2.jpg" alt="Пяткин Никита">
                   <div class="program__speaker-info">
@@ -300,11 +311,12 @@
               </div>
             </article>
             <article class="program__panel" data-tab="4" role="tabpanel" aria-hidden="true">
-              <span class="program__label">Блок 4</span>
               <div class="program__content">
+                <div class="program__content-header">
                 <h3 class="program__panel-title">Ответы на&nbsp;ваши вопросы</h3>
                 <p class="program__panel-text">Открытый диалог с&nbsp;экспертом: обсудим сценарии внедрения, интеграции
                   и&nbsp;типовые сложности, которые возникают на&nbsp;практике.</p>
+                  </div>
                 <div class="program__speaker">
                   <img class="program__avatar" src="assets/img/client-quote.jpg" alt="Пяткин Никита">
                   <div class="program__speaker-info">
@@ -351,6 +363,8 @@
               <div class="seminar-topics_header">
                 <h3 class="seminar-topics__name">Единая
                   аналитика</h3>
+                  <div class="seminar-topics__num">/ 02</div>
+              </div>
                 <p class="seminar-topics__desc">Посмотрите, как автоматически собирать ключевые показатели из разных
                   источников и работать с актуальными данными в
                   едином аналитическом пространстве.</p>
@@ -359,7 +373,7 @@
               <div class="seminar-topics_header">
                 <h3 class="seminar-topics__name">Контроль
                   исполнения</h3>
-                <div class="seminar-topics__num">/ 01</div>
+                <div class="seminar-topics__num">/ 03</div>
               </div>
               <p class="seminar-topics__desc">Разберем, как в режиме реального времени отслеживать выполнение
                 проектов, достижение KPI и своевременно выявлять
@@ -369,7 +383,7 @@
               <div class="seminar-topics_header">
                 <h3 class="seminar-topics__name">Управление
                   изменениями</h3>
-                <div class="seminar-topics__num">/ 05</div>
+                <div class="seminar-topics__num">/ 04</div>
               </div>
               <p class="seminar-topics__desc">Покажем, как быстро корректировать стратегические планы,
                 перераспределять ресурсы и принимать решения на основе
@@ -379,7 +393,7 @@
               <div class="seminar-topics_header">
                 <h3 class="seminar-topics__name">Low-code
                   платформа</h3>
-                <div class="seminar-topics__num">/ 06</div>
+                <div class="seminar-topics__num">/ 05</div>
               </div>
               <p class="seminar-topics__desc">Расскажем, как low-code платформа позволяет быстро адаптировать систему
                 под процессы университета без длительной
@@ -389,7 +403,7 @@
               <div class="seminar-topics_header">
                 <h3 class="seminar-topics__name">Безопасная
                   экосистема</h3>
-                <div class="seminar-topics__num">/ 07</div>
+                <div class="seminar-topics__num">/ 06</div>
               </div>
               <p class="seminar-topics__desc">Обсудим защиту данных, интеграцию с существующими информационными
                 системами, а также возможности обучения и
@@ -402,7 +416,7 @@
 
     <section class="event-partners" aria-label="Партнёры мероприятия">
       <div class="container">
-        <h2 class="event-partners__title">Партнёры мероприятия</h2>
+        <h2 class="event-partners__title">Партнёры<br> мероприятия</h2>
         <div class="event-partners__grid">
           <a href="#" class="card event-partners__card">
             <div class="event-partners-header">
@@ -423,7 +437,7 @@
           <a href="#" class="card event-partners__card">
             <div class="event-partners-header">
               <h3 class="event-partners__name">Битрикс24</h3>
-              <p class="event-partners__text">Российская ИТ-компания</p>
+              <p class="event-partners__text">Корпоративные порталы</p>
               <svg class="event-partners__icon" width="13" height="11" viewBox="0 0 13 11" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -461,9 +475,9 @@
       <div class="container">
         <div class="reasons__inner">
           <div class="reasons__head">
-            <h2 class="reasons__title">Почему нам <br>доверяют ВУЗы?</h2>
-            <p class="reasons__desc">Более 120 университетов России используют решения SoftSnow для цифровизации и
-              управления развитием.</p>
+            <h2 class="reasons__title">Почему нам <br>доверяют ВУЗЫ?</h2>
+            <p class="reasons__desc">ООО «СофтСноу» — аккредитованный российский разработчик и интегратор ПО
+            с подтвержденным опытом внедрения решений в ведущих российских вузах.</p>
           </div>
           <ul class="reasons__list">
             <li class="reasons__item">
@@ -477,8 +491,10 @@
 
               </div>
               <div>
-                <h3 class="reasons__name">120+ вузов</h3>
-                <p class="reasons__text">Работают с нашими решениями по стратегии и управлению.</p>
+                <h3 class="reasons__name">Более 30 проектов
+                в вузах</h3>
+                <p class="reasons__text">Успешно реализовали проекты цифровой трансформации в ведущих университетах России — от автоматизации документооборота и
+                кадровых процессов до комплексного управления стратегией развития вуза.</p>
               </div>
             </li>
             <li class="reasons__item">
@@ -492,8 +508,9 @@
 
               </div>
               <div>
-                <h3 class="reasons__name">Аккредитованный разработчик</h3>
-                <p class="reasons__text">Российское ПО, включённое в реестр отечественного программного обеспечения.</p>
+                <h3 class="reasons__name">Отечественный стек</h3>
+                <p class="reasons__text">Решения работают на базе российских операционных систем и СУБД, входят в реестр отечественного ПО и соответствуют
+                требованиям по импортозамещению и информационной безопасности.</p>
               </div>
             </li>
             <li class="reasons__item">
@@ -507,25 +524,13 @@
 
               </div>
               <div>
-                <h3 class="reasons__name">Собственная экспертиза</h3>
-                <p class="reasons__text">Методологи и консультанты с опытом внедрений в университетах.</p>
+                <h3 class="reasons__name">Сертифицированный
+                партнёр Directum</h3>
+                <p class="reasons__text">Обладаем официальным статусом партнёра Directum, обеспечиваем внедрение, адаптацию и сопровождение решений с
+                использованием лучших практик и экспертной поддержки вендора.</p>
               </div>
             </li>
-            <li class="reasons__item">
-              <div class="reasons__icon">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M5.93848 4.99805C6.18725 4.99806 6.42659 5.0966 6.60254 5.27246C6.77828 5.44823 6.87673 5.68701 6.87695 5.93555V29.1426C6.87706 30.1991 7.29785 31.2129 8.04492 31.96C8.79199 32.7067 9.80506 33.1259 10.8613 33.126H34.0674C34.3159 33.1261 34.5546 33.2248 34.7305 33.4004C34.9064 33.5764 35.0049 33.8166 35.0049 34.0654C35.0047 34.314 34.9063 34.5527 34.7305 34.7285C34.5546 34.9043 34.316 35.0028 34.0674 35.0029H10.8613C9.30699 35.0029 7.81588 34.3852 6.7168 33.2861C5.61794 32.1871 5.0001 30.6967 5 29.1426V5.93555C5.00022 5.68698 5.09961 5.44824 5.27539 5.27246C5.45125 5.09673 5.68987 4.99815 5.93848 4.99805ZM12.9619 25.3896C13.2108 25.3896 13.451 25.4891 13.627 25.665C13.8025 25.8409 13.9013 26.0797 13.9014 26.3281V28.4375C13.9012 28.6859 13.8024 28.9248 13.627 29.1006C13.451 29.2764 13.2106 29.377 12.9619 29.377C12.7135 29.3767 12.4746 29.2762 12.2988 29.1006C12.1233 28.9248 12.0245 28.6859 12.0244 28.4375V26.3281C12.0245 26.0797 12.1233 25.8409 12.2988 25.665C12.4746 25.4893 12.7134 25.3899 12.9619 25.3896ZM18.5879 22.7881C18.8367 22.7881 19.076 22.8866 19.252 23.0625C19.4277 23.2384 19.5273 23.4779 19.5273 23.7266V28.4375C19.5272 28.686 19.4276 28.9248 19.252 29.1006C19.076 29.2764 18.8366 29.377 18.5879 29.377C18.3393 29.3768 18.1006 29.2763 17.9248 29.1006C17.7492 28.9248 17.6505 28.686 17.6504 28.4375V23.7266C17.6505 23.4779 17.7491 23.2384 17.9248 23.0625C18.1006 22.8867 18.3393 22.7883 18.5879 22.7881ZM24.2139 20.1865C24.4626 20.1866 24.702 20.285 24.8779 20.4609C25.0535 20.6368 25.1522 20.8755 25.1523 21.124V28.4375C25.1522 28.6859 25.0534 28.9248 24.8779 29.1006C24.702 29.2763 24.4625 29.3769 24.2139 29.377C23.9653 29.3768 23.7256 29.2763 23.5498 29.1006C23.3744 28.9248 23.2755 28.6858 23.2754 28.4375V21.124C23.2755 20.8756 23.3743 20.6367 23.5498 20.4609C23.7257 20.2851 23.9652 20.1867 24.2139 20.1865ZM29.8398 17.6543C30.0885 17.6544 30.3281 17.7529 30.5039 17.9287C30.6796 18.1046 30.7782 18.3442 30.7783 18.5928V28.4375C30.7782 28.6859 30.6793 28.9248 30.5039 29.1006C30.3281 29.2763 30.0884 29.3768 29.8398 29.377C29.5912 29.3768 29.3516 29.2763 29.1758 29.1006C29.0003 28.9248 28.9015 28.6859 28.9014 28.4375V18.5928C28.9015 18.3442 29.0001 18.1046 29.1758 17.9287C29.3516 17.7529 29.5912 17.6544 29.8398 17.6543ZM31.2461 6.40332C31.4948 6.40338 31.7342 6.50186 31.9102 6.67773C32.0857 6.85348 32.1843 7.0924 32.1846 7.34082V12.6162C32.1843 12.8646 32.0858 13.1036 31.9102 13.2793C31.7343 13.455 31.4947 13.5536 31.2461 13.5537C30.9976 13.5536 30.7589 13.4549 30.583 13.2793C30.4073 13.1036 30.3079 12.8647 30.3076 12.6162V9.69043L30.1064 9.90332C27.519 12.6407 25.0982 14.7078 22.5459 16.2168L22.0332 16.5107C18.9085 18.2576 15.6115 19.1657 11.6416 19.5273C11.3939 19.5498 11.1462 19.4726 10.9551 19.3135C10.7643 19.1543 10.6437 18.9252 10.6211 18.6777C10.5987 18.4303 10.6761 18.1832 10.835 17.9922C10.9942 17.8011 11.224 17.6808 11.4717 17.6582C15.2365 17.3167 18.2684 16.466 21.1191 14.873C23.6826 13.4407 26.1406 11.3841 28.8721 8.47656L29.0566 8.28027H25.9717C25.7232 8.28014 25.4844 8.18138 25.3086 8.00586C25.1327 7.83 25.0343 7.58951 25.0342 7.34082C25.0344 7.0924 25.133 6.85348 25.3086 6.67773C25.4844 6.50201 25.7231 6.40346 25.9717 6.40332H31.2461Z"
-                    fill="#1342F3" />
-                </svg>
-
-              </div>
-              <div>
-                <h3 class="reasons__name">Измеримый управленческий эффект</h3>
-                <p class="reasons__text">Цифровые сервисы помогают упростить процессы, снизить ручную нагрузку
-                  и&nbsp;быстрее получать управленческий результат.</p>
-              </div>
-            </li>
+            
           </ul>
         </div>
       </div>
@@ -592,7 +597,7 @@
     <section class="faq" aria-label="Часто задаваемые вопросы">
       <div class="container">
         <div class="faq__inner">
-          <h2 class="faq__title">Часто задаваемые<br>вопросы</h2>
+          <h2 class="faq__title">Часто задаваемые вопросы</h2>
           <div class="faq__list">
             <div class="faq__item">
               <button class="faq__q" type="button" aria-expanded="false">

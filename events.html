@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/utilities.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/media.css">
 </head>
 
 <body>
@@ -121,6 +122,10 @@
           </div>
         </nav>
 
+        <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
         <div class="header__contacts">
           <div class="header__phone">
             <a href="tel:+78123201130" class="header__phone-label">Контакты</a>
@@ -265,14 +270,78 @@
       <div class="container">
         <h2 class="events-list__title">Новости и&nbsp;публикации</h2>
 
-        <div class="tab-filters" role="tablist" aria-label="Фильтр материалов">
-          <button class="tab-filter is-active" type="button" data-filter="all">Все</button>
-          <button class="tab-filter" type="button" data-filter="event">Мероприятия</button>
-          <button class="tab-filter" type="button" data-filter="article">Статьи</button>
-          <button class="tab-filter" type="button" data-filter="news">Новости</button>
+        <div class="projects__filterbar">
+          <div class="projects__filters">
+            <div class="projects__dropdowns">
+              <details class="dropdown" data-filter="tem">
+                <summary class="dropdown__trigger" aria-label="Фильтр по теме">
+                  <span class="dropdown__label">Тема</span>
+                  <span class="dropdown__count is-hidden"></span>
+                  <svg class="dropdown__caret" width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.441406 0.441956L6.94141 6.94196L13.4414 0.441956" stroke="#222222" stroke-width="1.25" />
+                  </svg>
+                </summary>
+                <div class="dropdown__panel" role="group" aria-label="Тема">
+                  <label class="dropdown__option"><input class="dropdown__check" type="checkbox" name="tem"
+                      value="edo"> Электронный документооборот</label>
+                  <label class="dropdown__option"><input class="dropdown__check" type="checkbox" name="tem" value="hr">
+                    Кадровые процессы</label>
+                  <label class="dropdown__option"><input class="dropdown__check" type="checkbox" name="tem"
+                      value="strategy"> Управление стратегией</label>
+                  <label class="dropdown__option"><input class="dropdown__check" type="checkbox" name="tem"
+                      value="project"> Управление проектами</label>
+                  <label class="dropdown__option"><input class="dropdown__check" type="checkbox" name="tem"
+                      value="digital"> Цифровизация вузов</label>
+                  <label class="dropdown__option"><input class="dropdown__check" type="checkbox" name="tem"
+                      value="campaign"> Приёмная кампания</label>
+                </div>
+              </details>
+              <details class="dropdown" data-filter="format">
+                <summary class="dropdown__trigger" aria-label="Фильтр по формату">
+                  <span class="dropdown__label">Формат</span>
+                  <span class="dropdown__count is-hidden"></span>
+                  <svg class="dropdown__caret" width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.441406 0.441956L6.94141 6.94196L13.4414 0.441956" stroke="#222222" stroke-width="1.25" />
+                  </svg>
+                </summary>
+                <div class="dropdown__panel" role="group" aria-label="Формат">
+                  <label class="dropdown__option"><input class="dropdown__check" type="checkbox" name="format"
+                      value="event"> Мероприятия</label>
+                  <label class="dropdown__option"><input class="dropdown__check" type="checkbox" name="format"
+                      value="article"> Статьи</label>
+                  <label class="dropdown__option"><input class="dropdown__check" type="checkbox" name="format"
+                      value="news"> Новости</label>
+                </div>
+              </details>
+              <details class="dropdown" data-filter="period">
+                <summary class="dropdown__trigger" aria-label="Фильтр по периоду">
+                  <span class="dropdown__label">Период</span>
+                  <span class="dropdown__count is-hidden"></span>
+                  <svg class="dropdown__caret" width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.441406 0.441956L6.94141 6.94196L13.4414 0.441956" stroke="#222222" stroke-width="1.25" />
+                  </svg>
+                </summary>
+                <div class="dropdown__panel" role="group" aria-label="Период">
+                  <label class="dropdown__option"><input class="dropdown__check" type="checkbox" name="period"
+                      value="2025"> 2025 год</label>
+                  <label class="dropdown__option"><input class="dropdown__check" type="checkbox" name="period"
+                      value="2024"> 2024 год</label>
+                  <label class="dropdown__option"><input class="dropdown__check" type="checkbox" name="period"
+                      value="2023"> 2023 год</label>
+                </div>
+              </details>
+            </div>
+            <button type="button" class="projects__reset is-hidden" id="projectsReset">
+              <span>Сбросить фильтрацию</span>
+              <svg class="projects__reset-x" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+                <path d="M1 1l10 10M11 1L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+            </button>
+          </div>
+          <div class="projects__chips" id="projectsChips"></div>
         </div>
         <div class="events-list__grid" id="eventsGrid">
-          <article class="events__card" data-category="event">
+          <article class="events__card" data-category="event" data-tem="digital" data-format="event" data-period="2025">
             <img class="events__bg" src="assets/img/placeholder.jpg" alt="">
             <div class="events__info">
               <h3 class="events__title">Совместная конференция Политеха и&nbsp;«СофтСноу»</h3>
@@ -283,7 +352,7 @@
               </svg>
             </div>
           </article>
-          <article class="events__card" data-category="event">
+          <article class="events__card" data-category="event" data-tem="digital" data-format="event" data-period="2025">
             <img class="events__bg" src="assets/img/webinar-2.png" alt="">
             <div class="events__info">
               <h3 class="events__title">Заказчики «СофтСноу» представили проекты на&nbsp;Directum Awards 2026</h3>
@@ -294,7 +363,7 @@
               </svg>
             </div>
           </article>
-          <article class="events__card" data-category="article">
+          <article class="events__card" data-category="article" data-tem="hr" data-format="article" data-period="2025">
             <img class="events__bg" src="assets/img/webinar-3.png" alt="">
             <div class="events__info">
               <h3 class="events__title">КЭДО в&nbsp;вузе: опыт внедрения и&nbsp;первые результаты</h3>
@@ -305,7 +374,7 @@
               </svg>
             </div>
           </article>
-          <article class="events__card" data-category="article">
+          <article class="events__card" data-category="article" data-tem="hr" data-format="article" data-period="2025">
             <img class="events__bg" src="assets/img/placeholder.jpg" alt="">
             <div class="events__info">
               <h3 class="events__title">Как оцифровать кадровые процессы университета</h3>
@@ -316,7 +385,7 @@
               </svg>
             </div>
           </article>
-          <article class="events__card" data-category="news">
+          <article class="events__card" data-category="news" data-tem="digital" data-format="news" data-period="2025">
             <img class="events__bg" src="assets/img/webinar-1.png" alt="">
             <div class="events__info">
               <h3 class="events__title">Directum Awards 2026: итоги и&nbsp;победители</h3>
@@ -327,7 +396,7 @@
               </svg>
             </div>
           </article>
-          <article class="events__card" data-category="news">
+          <article class="events__card" data-category="news" data-tem="digital" data-format="news" data-period="2025">
             <img class="events__bg" src="assets/img/webinar-2.png" alt="">
             <div class="events__info">
               <h3 class="events__title">SoftSnow на&nbsp;конференции Digital University 2026</h3>
@@ -338,7 +407,7 @@
               </svg>
             </div>
           </article>
-          <article class="events__card" data-category="article">
+          <article class="events__card" data-category="article" data-tem="edo" data-format="article" data-period="2025">
             <img class="events__bg" src="assets/img/webinar-3.png" alt="">
             <div class="events__info">
               <h3 class="events__title">Цифровой документооборот для&nbsp;вузов: чек-лист запуска</h3>
@@ -349,7 +418,7 @@
               </svg>
             </div>
           </article>
-          <article class="events__card" data-category="event">
+          <article class="events__card" data-category="event" data-tem="strategy" data-format="event" data-period="2025">
             <img class="events__bg" src="assets/img/webinar-4.png" alt="">
             <div class="events__info">
               <h3 class="events__title">Стратегическая сессия «Будущее университета»</h3>
@@ -360,7 +429,7 @@
               </svg>
             </div>
           </article>
-          <article class="events__card" data-category="event">
+          <article class="events__card" data-category="event" data-tem="hr" data-format="event" data-period="2025">
             <img class="events__bg" src="assets/img/webinar-1.png" alt="">
             <div class="events__info">
               <h3 class="events__title">Вебинар: Внедрение КЭДО за 30 дней</h3>
@@ -371,7 +440,7 @@
               </svg>
             </div>
           </article>
-          <article class="events__card" data-category="event">
+          <article class="events__card" data-category="event" data-tem="digital" data-format="event" data-period="2025">
             <img class="events__bg" src="assets/img/webinar-2.png" alt="">
             <div class="events__info">
               <h3 class="events__title">Конференция «Цифровой кампус 2026»</h3>
@@ -382,7 +451,7 @@
               </svg>
             </div>
           </article>
-          <article class="events__card" data-category="article">
+          <article class="events__card" data-category="article" data-tem="campaign" data-format="article" data-period="2025">
             <img class="events__bg" src="assets/img/webinar-3.png" alt="">
             <div class="events__info">
               <h3 class="events__title">Автоматизация приёмной кампании: кейс ВШЭ</h3>
@@ -393,7 +462,7 @@
               </svg>
             </div>
           </article>
-          <article class="events__card" data-category="article">
+          <article class="events__card" data-category="article" data-tem="edo" data-format="article" data-period="2025">
             <img class="events__bg" src="assets/img/webinar-4.png" alt="">
             <div class="events__info">
               <h3 class="events__title">Электронный документооборот: мифы и реальность</h3>
@@ -404,7 +473,7 @@
               </svg>
             </div>
           </article>
-          <article class="events__card" data-category="article">
+          <article class="events__card" data-category="article" data-tem="project" data-format="article" data-period="2025">
             <img class="events__bg" src="assets/img/webinar-1.png" alt="">
             <div class="events__info">
               <h3 class="events__title">Управление проектами в вузе: инструменты и практики</h3>
@@ -415,7 +484,7 @@
               </svg>
             </div>
           </article>
-          <article class="events__card" data-category="news">
+          <article class="events__card" data-category="news" data-tem="digital" data-format="news" data-period="2025">
             <img class="events__bg" src="assets/img/webinar-2.png" alt="">
             <div class="events__info">
               <h3 class="events__title">SoftSnow стал партнёром года Directum</h3>
@@ -426,7 +495,7 @@
               </svg>
             </div>
           </article>
-          <article class="events__card" data-category="news">
+          <article class="events__card" data-category="news" data-tem="digital" data-format="news" data-period="2025">
             <img class="events__bg" src="assets/img/webinar-3.png" alt="">
             <div class="events__info">
               <h3 class="events__title">Открыт приём заявок на грант по цифровизации</h3>
@@ -437,7 +506,7 @@
               </svg>
             </div>
           </article>
-          <article class="events__card" data-category="news">
+          <article class="events__card" data-category="news" data-tem="digital" data-format="news" data-period="2025">
             <img class="events__bg" src="assets/img/webinar-4.png" alt="">
             <div class="events__info">
               <h3 class="events__title">Новая версия платформы Univer Online 2.0</h3>
@@ -448,7 +517,7 @@
               </svg>
             </div>
           </article>
-          <article class="events__card" data-category="event">
+          <article class="events__card" data-category="event" data-tem="strategy" data-format="event" data-period="2025">
             <img class="events__bg" src="assets/img/webinar-1.png" alt="">
             <div class="events__info">
               <h3 class="events__title">Мастер-класс: Стратегическое планирование в вузе</h3>
@@ -460,8 +529,9 @@
             </div>
           </article>
         </div>
-        <div class="events-list__more" id="eventsMore">
-          <button class="btn btn--ghost btn--lg" id="eventsShowMore" type="button">Показать ещё</button>
+        <p class="projects__empty" id="projectsEmpty" hidden>По выбранным фильтрам материалы не найдены</p>
+        <div class="events-list__more" id="projectsMore">
+          <button class="btn btn--ghost btn--lg" type="button" id="projectsShowMore">Показать ещё</button>
         </div>
       </div>
     </section>

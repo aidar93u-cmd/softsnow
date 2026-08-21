@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="css/utilities.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/media.css">
 </head>
 
 <body>
@@ -122,6 +123,10 @@
           </div>
         </nav>
 
+        <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
         <div class="header__contacts">
           <div class="header__phone">
             <a href="tel:+78123201130" class="header__phone-label">Контакты</a>
@@ -196,7 +201,7 @@
             </div>
           </div>
           <div class="registry__inner-block  registry__img-wrap">
-            <img class="registry__img" src="assets/img/registry-banner.jpg"
+            <img class="registry__img" src="assets/img/single-logo-reestr.svg"
               alt="Свидетельство о регистрации в реестре Минцифры">
           </div>
         </div>
@@ -206,16 +211,19 @@
     <section class="tasks" aria-label="Для каких задач подходит">
       <div class="container">
         <div class=" tasks__inner">
-          <div class="tasks__head">
+          <div class="tasks__head sticky-col">
             <h2 class="tasks__title">Для каких задач подходит</h2>
             <p class="tasks__sub">Сервис полностью автоматизирует процесс подготовки документов к проведению
               конкурсного отбора и выборов и помогает университету решать ключевые задачи.</p>
           </div>
           <ul class="tasks__list">
-            <li class="tasks__item">
+            <li class="tasks__item is-open">
               <button class="tasks__q" type="button" aria-expanded="true">
                 <span class="tasks__name">Публикация объявлений о проведении конкурса</span>
-                <span class="tasks__btn" aria-hidden="true">+</span>
+                <span class="tasks__btn" aria-hidden="true">
+                  <svg class="tasks__icon tasks__icon--plus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <svg class="tasks__icon tasks__icon--minus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
               </button>
               <div class="tasks__a">
                 <p>Официальные объявления о проведении конкурса или выборов публикуются<br>в едином окне с указанием
@@ -227,7 +235,10 @@
             <li class="tasks__item">
               <button class="tasks__q" type="button" aria-expanded="false">
                 <span class="tasks__name">Подготовка и подача претендентами резюме и заявлений</span>
-                <span class="tasks__btn" aria-hidden="true">+</span>
+                <span class="tasks__btn" aria-hidden="true">
+                  <svg class="tasks__icon tasks__icon--plus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <svg class="tasks__icon tasks__icon--minus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
               </button>
               <div class="tasks__a">
                 <p>Претенденты готовят резюме и заявления в&nbsp;личном кабинете по&nbsp;единому шаблону. Система
@@ -238,7 +249,10 @@
             <li class="tasks__item">
               <button class="tasks__q" type="button" aria-expanded="false">
                 <span class="tasks__name">Учёт всех поданных заявлений в единой системе</span>
-                <span class="tasks__btn" aria-hidden="true">+</span>
+                <span class="tasks__btn" aria-hidden="true">
+                  <svg class="tasks__icon tasks__icon--plus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <svg class="tasks__icon tasks__icon--minus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
               </button>
               <div class="tasks__a">
                 <p>Все поступившие заявления собираются в&nbsp;едином реестре: статусы, документы и&nbsp;сроки
@@ -249,7 +263,10 @@
             <li class="tasks__item">
               <button class="tasks__q" type="button" aria-expanded="false">
                 <span class="tasks__name">Предварительное рассмотрение кандидатур</span>
-                <span class="tasks__btn" aria-hidden="true">+</span>
+                <span class="tasks__btn" aria-hidden="true">
+                  <svg class="tasks__icon tasks__icon--plus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <svg class="tasks__icon tasks__icon--minus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
               </button>
               <div class="tasks__a">
                 <p>На&nbsp;этапе предварительного отбора система помогает проверять кандидатуры на&nbsp;соответствие
@@ -260,18 +277,24 @@
             <li class="tasks__item">
               <button class="tasks__q" type="button" aria-expanded="false">
                 <span class="tasks__name">Фиксация результатов конкурсного отбора и выборов</span>
-                <span class="tasks__btn" aria-hidden="true">+</span>
+                <span class="tasks__btn" aria-hidden="true">
+                  <svg class="tasks__icon tasks__icon--plus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <svg class="tasks__icon tasks__icon--minus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
               </button>
               <div class="tasks__a">
                 <p>Итоги конкурса фиксируются в&nbsp;системе автоматически: формируются протоколы, сохраняются
-                  решения комиссии и&nbsp;обоснования. Документы готовы к&nbsp;архивации и&nbsp;предоставлению
+                  решения комиссии и&nbsp;обоснования. Документы готовы к&nbsp;архивиции и&nbsp;предоставлению
                   контролирующим органам в&nbsp;установленном порядке.</p>
               </div>
             </li>
             <li class="tasks__item">
               <button class="tasks__q" type="button" aria-expanded="false">
                 <span class="tasks__name">Cвоевременное информирование всех участников</span>
-                <span class="tasks__btn" aria-hidden="true">+</span>
+                <span class="tasks__btn" aria-hidden="true">
+                  <svg class="tasks__icon tasks__icon--plus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <svg class="tasks__icon tasks__icon--minus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
               </button>
               <div class="tasks__a">
                 <p>Претенденты и&nbsp;комиссия получают уведомления о&nbsp;ключевых этапах: изменения статусов,
@@ -282,7 +305,10 @@
             <li class="tasks__item">
               <button class="tasks__q" type="button" aria-expanded="false">
                 <span class="tasks__name">Мониторинг и контроль на всех этапах процедуры</span>
-                <span class="tasks__btn" aria-hidden="true">+</span>
+                <span class="tasks__btn" aria-hidden="true">
+                  <svg class="tasks__icon tasks__icon--plus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <svg class="tasks__icon tasks__icon--minus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
               </button>
               <div class="tasks__a">
                 <p>Руководство видит динамику конкурса на&nbsp;дашборде: сроки, загрузку, этапы и&nbsp;отклонения
@@ -376,7 +402,7 @@
                     </span>
                   </button>
                 </div>
-                <img class="features__img" src="assets/img/solution-features.png"
+                <img class="features__img" src="assets/img/popup1.jpg"
                   alt="Экран интерфейса сервиса — запуск конкурса">
               </div>
               <div class="features__panel" data-tab="1" role="tabpanel" aria-hidden="true">
@@ -417,7 +443,7 @@
                     </span>
                   </button>
                 </div>
-                <img class="features__img" src="assets/img/solution-features.png"
+                <img class="features__img" src="assets/img/popup2.jpg"
                   alt="Экран интерфейса сервиса — подача заявок">
               </div>
               <div class="features__panel" data-tab="2" role="tabpanel" aria-hidden="true">
@@ -457,7 +483,7 @@
                     </span>
                   </button>
                 </div>
-                <img class="features__img" src="assets/img/solution-features.png"
+                <img class="features__img" src="assets/img/popup3.jpg"
                   alt="Экран интерфейса сервиса — проверка документов">
               </div>
               <div class="features__panel" data-tab="3" role="tabpanel" aria-hidden="true">
@@ -498,7 +524,7 @@
                     </span>
                   </button>
                 </div>
-                <img class="features__img" src="assets/img/solution-features.png"
+                <img class="features__img" src="assets/img/popup4.jpg"
                   alt="Экран интерфейса сервиса — мониторинг">
               </div>
               <div class="features__panel" data-tab="4" role="tabpanel" aria-hidden="true">
@@ -538,7 +564,7 @@
                     </span>
                   </button>
                 </div>
-                <img class="features__img" src="assets/img/solution-features.png"
+                <img class="features__img" src="assets/img/popup5.jpg"
                   alt="Экран интерфейса сервиса — архив">
               </div>
             </div>
@@ -686,7 +712,7 @@
     <section class="projects" id="projects" aria-label="Реализованные проекты">
       <div class="container">
         <div class="projects__head">
-          <div>
+          <div  class="projects__inner">
             <h2 class="projects__heading">Реализованные <br>проекты</h2>
             <div class="projects__bottom">
               <p class="projects__sub">На примере реализованных проектов показываем, как автоматизация кадровых процедур
@@ -1110,7 +1136,7 @@
           <path d="M2 2l16 16M18 2L2 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
         </svg>
       </button>
-      <h3 class="features-popup__title">обзор</h3>
+      <h3 class="features-popup__title">Дашборд конкурсов</h3>
       <div class="features-popup__media">
         <div class="features-popup__main">
           <img class="features-popup__img" src="" alt="">
@@ -1126,16 +1152,21 @@
           </button>
         </div>
         <div class="features-popup__thumbs">
-          <button type="button" class="features-popup__thumb" aria-label="Экран 1"><img
-              src="assets/img/solution-features.png" alt=""></button>
-          <button type="button" class="features-popup__thumb" aria-label="Экран 2"><img
-              src="assets/img/solution-features.png" alt=""></button>
-          <button type="button" class="features-popup__thumb" aria-label="Экран 3"><img
-              src="assets/img/solution-features.png" alt=""></button>
-          <button type="button" class="features-popup__thumb" aria-label="Экран 4"><img
-              src="assets/img/solution-features.png" alt=""></button>
-          <button type="button" class="features-popup__thumb" aria-label="Экран 5"><img
-              src="assets/img/solution-features.png" alt=""></button>
+          <button type="button" class="features-popup__thumb" aria-label="Экран 1">
+            <img src="assets/img/popup1.jpg" alt="">
+          </button>
+          <button type="button" class="features-popup__thumb" aria-label="Экран 2">
+            <img src="assets/img/popup2.jpg" alt="">
+          </button>
+          <button type="button" class="features-popup__thumb" aria-label="Экран 3">
+            <img src="assets/img/popup3.jpg" alt="">
+          </button>
+          <button type="button" class="features-popup__thumb" aria-label="Экран 4">
+            <img src="assets/img/popup4.jpg" alt="">
+          </button>
+          <button type="button" class="features-popup__thumb" aria-label="Экран 5">
+            <img src="assets/img/popup5.jpg" alt="">
+          </button>
         </div>
       </div>
     </div>
