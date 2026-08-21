@@ -232,32 +232,32 @@
   --z-popover: 20;
   --z-modal: 100;
   --z-tooltip: 1000;
+
+  /* Additional spacing tokens for rem values */
+  --sp-0-5: 0.125rem;   /* 2px */
+  --sp-1-5: 0.375rem;   /* 6px */
+  --sp-2-5: 0.625rem;   /* 10px */
+  --sp-3-5: 0.875rem;   /* 14px */
+  --sp-4-5: 1.125rem;   /* 18px */
+  --sp-5-5: 1.375rem;   /* 22px */
+  --sp-6-5: 1.625rem;   /* 26px */
+  --sp-7-5: 1.875rem;   /* 30px */
+  --sp-8-5: 2.125rem;   /* 34px */
+  --sp-9-5: 2.375rem;   /* 38px */
+  --sp-10-5: 2.625rem;  /* 42px */
+  --sp-11-5: 2.875rem;  /* 46px */
+  --sp-12-5: 3.125rem;  /* 50px */
+  --sp-13-5: 3.375rem;  /* 54px */
+  --sp-14-5: 3.625rem;  /* 58px */
+  --sp-15-5: 3.875rem;  /* 62px */
+  
+  /* Large spacing tokens */
+  --sp-35: 8.75rem;     /* 140px */
+  --sp-40: 10rem;       /* 160px */
+  --sp-45: 11.25rem;    /* 180px */
+  --sp-50: 12.5rem;     /* 200px */
+  --sp-55: 13.75rem;    /* 220px */
 }
-
-/* Additional spacing tokens for rem values */
---sp-0-5: 0.125rem;   /* 2px */
---sp-1-5: 0.375rem;   /* 6px */
---sp-2-5: 0.625rem;   /* 10px */
---sp-3-5: 0.875rem;   /* 14px */
---sp-4-5: 1.125rem;   /* 18px */
---sp-5-5: 1.375rem;   /* 22px */
---sp-6-5: 1.625rem;   /* 26px */
---sp-7-5: 1.875rem;   /* 30px */
---sp-8-5: 2.125rem;   /* 34px */
---sp-9-5: 2.375rem;   /* 38px */
---sp-10-5: 2.625rem;  /* 42px */
---sp-11-5: 2.875rem;  /* 46px */
---sp-12-5: 3.125rem;  /* 50px */
---sp-13-5: 3.375rem;  /* 54px */
---sp-14-5: 3.625rem;  /* 58px */
---sp-15-5: 3.875rem;  /* 62px */
-
-/* Large spacing tokens */
---sp-35: 8.75rem;     /* 140px */
---sp-40: 10rem;       /* 160px */
---sp-45: 11.25rem;    /* 180px */
---sp-50: 12.5rem;     /* 200px */
---sp-55: 13.75rem;    /* 220px */
 --sp-60: 15rem;       /* 240px */
 --sp-70: 17.5rem;     /* 280px */
 --sp-80: 20rem;       /* 320px */
