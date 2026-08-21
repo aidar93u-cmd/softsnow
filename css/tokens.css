@@ -1,14 +1,36 @@
+/* =========================================
+   COLOR TOKENS
+   ========================================= */
 :root {
-  /* Colors */
+  /* Primary */
+  --color-primary: #1342F3;
+  --color-primary-hover: #0f35c7;
+  --color-primary-light: rgba(19, 66, 243, 0.1);
+
+  /* Secondary & Accents */
+  --color-secondary: #ED143B;
+  --color-accent: #ED143B;
+  --color-dark-navy: #100943;
+
+  /* Grays */
   --color-black: #222222;
   --color-white: #FFFFFF;
-  --color-sea: #1342F3;
-
   --color-grey: rgba(34, 34, 34, 0.7);
-  --color-overlay: rgba(0, 0, 0, 0.2);
-  --color-dark-navy: #100943;
-  --color-blue-alt: #1342F3;
-  --color-red: #ED143B;
+  --color-gray-50: #F5F4F5;
+  --color-gray-100: #F5F5F5;
+  --color-gray-200: #E8E8E8;
+  --color-gray-300: #D9D9D9;
+  --color-gray-400: #A0A0A0;
+  --color-gray-500: #808080;
+  --color-gray-600: #606060;
+  --color-gray-700: #404040;
+  --color-gray-800: #303030;
+  --color-gray-900: #222222;
+
+  /* Semantic Colors */
+  --color-success: #10b981;
+  --color-error: #ef4444;
+  --color-warning: #f59e0b;
 
   /* Backgrounds */
   --bg-light: #F5F4F5;
@@ -16,21 +38,57 @@
   --bg-border: #E8E8E8;
   --bg-placeholder: #D9D9D9;
 
-  /* Gradients */
+  /* Overlays */
+  --color-overlay: rgba(0, 0, 0, 0.2);
+  --overlay-dark: rgba(0, 0, 0, 0.5);
+  --overlay-light: rgba(255, 255, 255, 0.8);
+
+  /* Text Colors */
+  --color-text-primary: #222222;
+  --color-text-secondary: rgba(34, 34, 34, 0.7);
+  --color-text-muted: #808080;
+  --color-text-inverse: #FFFFFF;
+}
+
+/* =========================================
+   GRADIENT TOKENS
+   ========================================= */
+:root {
   --gradient-fade: linear-gradient(to bottom, rgba(245, 244, 245, 0.6), rgba(245, 244, 245, 0));
   --gradient-overlay: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   --gradient-card-bottom: linear-gradient(to bottom, rgba(0, 0, 0, 0) 63%, rgba(0, 0, 0, 1) 100%);
+}
 
-  /* Fonts */
+/* =========================================
+   TYPOGRAPHY TOKENS
+   ========================================= */
+:root {
+  /* Font Families */
   --font-heading: 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
+  --font-mono: 'Fira Code', monospace;
 
-  /* Type scale */
+  /* Font Sizes (Type Scale) */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.875rem;  /* 30px */
+  --text-4xl: 2.5rem;    /* 40px */
+  --text-5xl: 3.125rem;  /* 50px */
+  --text-6xl: 4.375rem;  /* 70px */
+  --text-7xl: 6.25rem;   /* 100px */
+
+  /* Heading Sizes (Legacy aliases) */
   --fs-h1: 6.25rem;
   --fs-h2: 4.375rem;
   --fs-h3: 2.5rem;
   --fs-h4: 1.25rem;
   --fs-numbers: 4.6875rem;
+
+  /* Body Sizes (Legacy aliases) */
   --fs-body-30: 1.875rem;
   --fs-body-24: 1.5rem;
   --fs-body-20: 1.25rem;
@@ -39,13 +97,55 @@
   --fs-body-14: 0.875rem;
   --fs-body-12: 0.75rem;
 
-  /* Controls */
-  --control-h: 4rem;
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
 
-  /* Spacing */
-  --section-py: 7.5rem;
-  --section-py-md: 5rem;
-  --section-px: 2.5rem;
+  /* Line Heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  /* Letter Spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+}
+
+/* =========================================
+   SPACING TOKENS
+   ========================================= */
+:root {
+  /* Section Spacing */
+  --section-py: 7.5rem;      /* 120px */
+  --section-py-md: 5rem;     /* 80px */
+  --section-px: 2.5rem;      /* 40px */
+
+  /* Gap/Spacing Scale */
+  --sp-0: 0;
+  --sp-1: 0.25rem;           /* 4px */
+  --sp-2: 0.5rem;            /* 8px */
+  --sp-3: 0.75rem;           /* 12px */
+  --sp-4: 1rem;              /* 16px */
+  --sp-5: 1.25rem;           /* 20px */
+  --sp-6: 1.5rem;            /* 24px */
+  --sp-8: 2rem;              /* 32px */
+  --sp-10: 2.5rem;           /* 40px */
+  --sp-12: 3rem;             /* 48px */
+  --sp-14: 3.5rem;           /* 56px */
+  --sp-16: 4rem;             /* 64px */
+  --sp-20: 5rem;             /* 80px */
+  --sp-24: 6rem;             /* 96px */
+  --sp-32: 8rem;             /* 128px */
+
+  /* Legacy Gap Aliases */
   --gap-xs: 0.5rem;
   --gap-sm: 0.625rem;
   --gap-md: 1rem;
@@ -55,39 +155,219 @@
   --gap-3xl: 3.125rem;
   --gap-4xl: 3.75rem;
   --gap-5xl: 4.25rem;
+}
 
-  /* Radius */
-  --radius-xs: 0.25rem;
-  --radius-sm: 0.3125rem;
-  --radius-md: 0.625rem;
-  --radius-lg: 1.25rem;
-  --radius-xl: 3.125rem;
-  --radius-2xl: 7.5rem;
+/* =========================================
+   LAYOUT TOKENS
+   ========================================= */
+:root {
+  /* Container Max Widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1440px;
+  --container-max: 1280px; /* Legacy alias */
+
+  /* Breakpoints */
+  --bp-sm: 576px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+  --bp-xxl: 1440px;
+
+  /* Header */
+  --header-height: 5rem;   /* 80px */
+  --control-h: 4rem;       /* 64px - Legacy alias */
+}
+
+/* =========================================
+   COMPONENT TOKENS
+   ========================================= */
+:root {
+  /* Border Radius */
+  --radius-none: 0;
+  --radius-xs: 0.25rem;    /* 4px */
+  --radius-sm: 0.3125rem;  /* 5px */
+  --radius-md: 0.625rem;   /* 10px */
+  --radius-lg: 1.25rem;    /* 20px */
+  --radius-xl: 3.125rem;   /* 50px */
+  --radius-2xl: 7.5rem;    /* 120px */
   --radius-pill: 13.125rem;
   --radius-round: 15rem;
-  --radius-full: 23.625rem;
+  --radius-full: 9999px;
 
   /* Borders */
   --border-default: 1px solid #000000;
   --border-accent: 2px solid #1342F3 inset;
   --border-dark: 1.5px solid #222222;
   --border-light: 1px solid #FFFFFF inset;
+  --border-width: 1px;
 
-  /* Opacity */
-  --opacity-10: 0.1;
-  --opacity-50: 0.5;
-  --opacity-60: 0.6;
-  --opacity-70: 0.7;
-
-  /* Shadows */
+  /* Box Shadows */
+  --shadow-none: none;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
   --shadow-popover: 0 1.25rem 3.125rem rgba(34, 34, 34, 0.12);
 
   /* Transitions */
-  --transition-fast: 0.2s;
-  --transition-base: 0.3s;
-  --transition-slow: 0.35s;
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.35s ease;
+
+  /* Opacity */
+  --opacity-0: 0;
+  --opacity-10: 0.1;
+  --opacity-25: 0.25;
+  --opacity-50: 0.5;
+  --opacity-60: 0.6;
+  --opacity-70: 0.7;
+  --opacity-100: 1;
 
   /* Z-index */
+  --z-base: 0;
   --z-header: 2;
   --z-popover: 20;
+  --z-modal: 100;
+  --z-tooltip: 1000;
 }
+
+/* Additional spacing tokens for rem values */
+--sp-0-5: 0.125rem;   /* 2px */
+--sp-1-5: 0.375rem;   /* 6px */
+--sp-2-5: 0.625rem;   /* 10px */
+--sp-3-5: 0.875rem;   /* 14px */
+--sp-4-5: 1.125rem;   /* 18px */
+--sp-5-5: 1.375rem;   /* 22px */
+--sp-6-5: 1.625rem;   /* 26px */
+--sp-7-5: 1.875rem;   /* 30px */
+--sp-8-5: 2.125rem;   /* 34px */
+--sp-9-5: 2.375rem;   /* 38px */
+--sp-10-5: 2.625rem;  /* 42px */
+--sp-11-5: 2.875rem;  /* 46px */
+--sp-12-5: 3.125rem;  /* 50px */
+--sp-13-5: 3.375rem;  /* 54px */
+--sp-14-5: 3.625rem;  /* 58px */
+--sp-15-5: 3.875rem;  /* 62px */
+
+/* Large spacing tokens */
+--sp-35: 8.75rem;     /* 140px */
+--sp-40: 10rem;       /* 160px */
+--sp-45: 11.25rem;    /* 180px */
+--sp-50: 12.5rem;     /* 200px */
+--sp-55: 13.75rem;    /* 220px */
+--sp-60: 15rem;       /* 240px */
+--sp-70: 17.5rem;     /* 280px */
+--sp-80: 20rem;       /* 320px */
+--sp-90: 22.5rem;     /* 360px */
+--sp-100: 25rem;      /* 400px */
+--sp-110: 27.5rem;    /* 440px */
+--sp-112: 28.125rem;  /* 450px */
+--sp-115: 28.75rem;   /* 460px */
+--sp-120: 30rem;      /* 480px */
+--sp-125: 31.25rem;   /* 500px */
+--sp-130: 32.5rem;    /* 520px */
+--sp-140: 35rem;      /* 560px */
+--sp-150: 37.5rem;    /* 600px */
+--sp-160: 40rem;      /* 640px */
+--sp-170: 42.5rem;    /* 680px */
+--sp-180: 45rem;      /* 720px */
+--sp-200: 50rem;      /* 800px */
+--sp-220: 55rem;      /* 880px */
+--sp-240: 60rem;      /* 960px */
+--sp-260: 65rem;      /* 1040px */
+--sp-280: 70rem;      /* 1120px */
+
+/* Additional fractional spacing tokens */
+--sp-3-75: 0.9375rem;  /* 15px */
+--sp-5-25: 1.3125rem;  /* 21px */
+--sp-6-25: 1.5625rem;  /* 25px */
+--sp-7-25: 1.8125rem;  /* 29px */
+--sp-8-25: 2.0625rem;  /* 33px */
+--sp-8-5: 2.125rem;    /* 34px */
+--sp-8-75: 2.1875rem;  /* 35px */
+--sp-10-25: 2.5625rem; /* 41px */
+--sp-10-5: 2.625rem;   /* 42px */
+--sp-10-75: 2.6875rem; /* 43px */
+--sp-11-25: 2.8125rem; /* 45px */
+--sp-12-25: 3.0625rem; /* 49px */
+--sp-12-75: 3.1875rem; /* 51px */
+--sp-13-25: 3.3125rem; /* 53px */
+--sp-14-25: 3.5625rem; /* 57px */
+--sp-14-75: 3.6875rem; /* 59px */
+--sp-15-25: 3.8125rem; /* 61px */
+--sp-16-25: 4.0625rem; /* 65px */
+--sp-17-25: 4.3125rem; /* 69px */
+--sp-18-25: 4.5625rem; /* 73px */
+--sp-19-25: 4.8125rem; /* 77px */
+--sp-20-25: 5.0625rem; /* 81px */
+--sp-21-25: 5.3125rem; /* 85px */
+--sp-22-25: 5.5625rem; /* 89px */
+--sp-23-25: 5.8125rem; /* 93px */
+--sp-24-25: 6.0625rem; /* 97px */
+--sp-25-25: 6.3125rem; /* 101px */
+--sp-26-25: 6.5625rem; /* 105px */
+--sp-27-25: 6.8125rem; /* 109px */
+--sp-28-25: 7.0625rem; /* 113px */
+--sp-29-25: 7.3125rem; /* 117px */
+--sp-30-25: 7.5625rem; /* 121px */
+--sp-31-25: 7.8125rem; /* 125px */
+--sp-32-25: 8.0625rem; /* 129px */
+--sp-33-25: 8.3125rem; /* 133px */
+--sp-34-25: 8.5625rem; /* 137px */
+--sp-35-25: 8.8125rem; /* 141px */
+--sp-40-25: 10.0625rem;/* 161px */
+--sp-42-25: 10.5625rem;/* 169px */
+--sp-44-25: 11.0625rem;/* 177px */
+--sp-46-25: 11.5625rem;/* 185px */
+--sp-48-25: 12.0625rem;/* 193px */
+--sp-50-25: 12.5625rem;/* 201px */
+--sp-52-25: 13.0625rem;/* 209px */
+--sp-54-25: 13.5625rem;/* 217px */
+--sp-56-25: 14.0625rem;/* 225px */
+--sp-58-25: 14.5625rem;/* 233px */
+--sp-60-25: 15.0625rem;/* 241px */
+--sp-62-25: 15.5625rem;/* 249px */
+--sp-64-25: 16.0625rem;/* 257px */
+--sp-66-25: 16.5625rem;/* 265px */
+--sp-68-25: 17.0625rem;/* 273px */
+--sp-70-25: 17.5625rem;/* 281px */
+--sp-72-25: 18.0625rem;/* 289px */
+--sp-74-25: 18.5625rem;/* 297px */
+--sp-76-25: 19.0625rem;/* 305px */
+--sp-78-25: 19.5625rem;/* 313px */
+--sp-80-25: 20.0625rem;/* 321px */
+--sp-85-25: 21.3125rem;/* 341px */
+--sp-90-25: 22.5625rem;/* 361px */
+--sp-95-25: 23.8125rem;/* 381px */
+--sp-100-25: 25.0625rem;/* 401px */
+--sp-105-25: 26.3125rem;/* 421px */
+--sp-110-25: 27.5625rem;/* 441px */
+--sp-115-25: 28.8125rem;/* 461px */
+--sp-120-25: 30.0625rem;/* 481px */
+--sp-125-25: 31.3125rem;/* 501px */
+--sp-130-25: 32.5625rem;/* 521px */
+--sp-135-25: 33.8125rem;/* 541px */
+--sp-140-25: 35.0625rem;/* 561px */
+--sp-145-25: 36.3125rem;/* 581px */
+--sp-150-25: 37.5625rem;/* 601px */
+--sp-155-25: 38.8125rem;/* 621px */
+--sp-160-25: 40.0625rem;/* 641px */
+--sp-165-25: 41.3125rem;/* 661px */
+--sp-170-25: 42.5625rem;/* 681px */
+--sp-175-25: 43.8125rem;/* 701px */
+--sp-180-25: 45.0625rem;/* 721px */
+--sp-185-25: 46.3125rem;/* 741px */
+--sp-190-25: 47.5625rem;/* 761px */
+--sp-195-25: 48.8125rem;/* 781px */
+--sp-200-25: 50.0625rem;/* 801px */
+--sp-210-25: 52.5625rem;/* 841px */
+--sp-220-25: 55.0625rem;/* 881px */
+--sp-230-25: 57.5625rem;/* 921px */
+--sp-240-25: 60.0625rem;/* 961px */
+--sp-250-25: 62.5625rem;/* 1001px */
+--sp-260-25: 65.0625rem;/* 1041px */
+--sp-270-25: 67.5625rem;/* 1081px */
+--sp-280-25: 70.0625rem;/* 1121px */
