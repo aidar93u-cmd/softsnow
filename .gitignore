@@ -1,0 +1,35 @@
+```
+# Graphify related files
+.graphify_*.json
+.graphify_*.py
+.graphify_*.txt
+.graphify-out/
+.graphify-cache/
+
+# VSCode settings
+.vscode/sftp.json
+
+# Temporary and cache files
+*.tmp
+*.cache
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Local environment files
+.env.local
+.env
+
+# Coverage reports
+coverage/
+htmlcov/
+.coverage
+
+# Build artifacts
+dist/
+build/
+target/
+```
