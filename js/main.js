@@ -1,4 +1,4 @@
-// ponytail: duplicate track until >= 2x viewport (even count keeps the -50% loop seamless)
+// Дублирование слайдов клиентов пока ширина не заполнит 2x viewport (чётное число для бесшовного цикла -50%)
 function initClientsMarquee() {
   const marquee = document.querySelector('.clients__marquee');
   const track = marquee && marquee.querySelector('.clients__track');
@@ -12,7 +12,12 @@ function initClientsMarquee() {
 function initSwiper(selector, options) {
   const el = document.querySelector(selector);
   if (!el) return null;
-  return new Swiper(el, options);
+  try {
+    return new Swiper(el, options);
+  } catch (err) {
+    console.error(`Ошибка инициализации Swiper для ${selector}:`, err);
+    return null;
+  }
 }
 
 function bindNav(selector, swiper) {
@@ -48,7 +53,7 @@ function initAccordion(listSelector, openClass, buttonSelector) {
   });
 }
 
-// ponytail: placeholder client data — replace with CSV/fetch from real source (url = partner website)
+// Данные клиентов-заглушек — заменить на CSV/fetch из реального источника (url = сайт партнёра)
 function initClientsPage() {
   const grid = document.getElementById('clientsGrid');
   if (!grid) return;
@@ -91,6 +96,22 @@ function initClientsPage() {
   apply();
 }
 
+// Синхронизация бейджей, чипсов и состояния кнопки сброса
+function syncDropdowns(dropdowns, allChecks, chips, reset, renderChips, applyFilter) {
+  let total = 0;
+  dropdowns.forEach((dd) => {
+    const checks = dd.querySelectorAll('.dropdown__check');
+    const n = Array.from(checks).filter((c) => c.checked).length;
+    const badge = dd.querySelector('.dropdown__count');
+    badge.textContent = n;
+    badge.classList.toggle('is-hidden', n === 0);
+    total += n;
+  });
+  renderChips(allChecks, chips);
+  applyFilter(dropdowns, chips, reset);
+  reset.classList.toggle('is-hidden', total === 0);
+}
+
 function initDropdown() {
   const bar = document.querySelector('.projects__filters');
   if (!bar) return;
@@ -109,9 +130,9 @@ function initDropdown() {
   let visible = 4;
   let lastMatched = 0;
 
-  const renderChips = () => {
-    chips.innerHTML = '';
-    allChecks.forEach((c) => {
+  const renderChips = (checksList, chipsContainer) => {
+    chipsContainer.innerHTML = '';
+    checksList.forEach((c) => {
       if (!c.checked) return;
       const text = c.closest('.dropdown__option').textContent.trim();
       const btn = document.createElement('button');
@@ -121,15 +142,15 @@ function initDropdown() {
       btn.innerHTML = `<span>${text}</span>${chipX}`;
       btn.addEventListener('click', () => {
         c.checked = false;
-        sync();
+        syncDropdowns(dropdowns, allChecks, chips, reset, renderChips, applyFilter);
       });
-      chips.appendChild(btn);
+      chipsContainer.appendChild(btn);
     });
   };
 
-  const applyFilter = () => {
+  const applyFilter = (dropdownList, chipsContainer, resetBtn) => {
     const active = {};
-    dropdowns.forEach((dd) => {
+    dropdownList.forEach((dd) => {
       const checked = Array.from(dd.querySelectorAll('.dropdown__check:checked')).map((c) => c.value);
       if (checked.length) active[dd.dataset.filter] = new Set(checked);
     });
@@ -173,49 +194,46 @@ function initDropdown() {
     moreBtn.addEventListener('click', () => {
       const hidden = cards.filter((c) => c.classList.contains('is-matched') && c.hidden);
       visible += STEP;
-      applyFilter();
+      applyFilter(dropdowns, chips, reset);
       reveal(hidden);
     });
   }
 
-  const sync = () => {
-    let total = 0;
-    dropdowns.forEach((dd) => {
-      const checks = dd.querySelectorAll('.dropdown__check');
-      const n = Array.from(checks).filter((c) => c.checked).length;
-      const badge = dd.querySelector('.dropdown__count');
-      badge.textContent = n;
-      badge.classList.toggle('is-hidden', n === 0);
-      total += n;
-    });
-    renderChips();
-    applyFilter();
-    reset.classList.toggle('is-hidden', total === 0);
-  };
-
-  allChecks.forEach((c) => c.addEventListener('change', sync));
+  allChecks.forEach((c) => c.addEventListener('change', () => {
+    syncDropdowns(dropdowns, allChecks, chips, reset, renderChips, applyFilter);
+  }));
+  
   reset.addEventListener('click', () => {
     allChecks.forEach((c) => (c.checked = false));
-    sync();
+    syncDropdowns(dropdowns, allChecks, chips, reset, renderChips, applyFilter);
   });
+  
   document.addEventListener('click', (e) => {
     dropdowns.forEach((dd) => {
       if (dd.open && !dd.contains(e.target)) dd.open = false;
     });
   });
+  
   dropdowns.forEach((dd) =>
     dd.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') dd.open = false;
     })
   );
-  sync();
+  
+  syncDropdowns(dropdowns, allChecks, chips, reset, renderChips, applyFilter);
 }
 
-// ponytail: one popup template, cloned per click; src filled from the tab's screenshot
+// Один шаблон попапа, клонируется при клике; src заполняется из скриншота таба
 function initDemoPopup() {
   const tpl = document.getElementById('features-popup');
   const btns = document.querySelectorAll('.features__demo');
   if (!tpl || !btns.length) return;
+  
+  if (typeof Fancybox === 'undefined') {
+    console.warn('Fancybox не подключён, initDemoPopup пропущен');
+    return;
+  }
+  
   btns.forEach((btn) => {
     btn.addEventListener('click', () => {
       const panel = btn.closest('.features__panel');
@@ -237,7 +255,7 @@ function initDemoPopup() {
   });
 }
 
-// ponytail: hover/click on a program block shows its matching content panel
+// При наведении/клике на блок программы показывается соответствующая панель контента
 function initProgramTabs() {
   const list = document.querySelector('.program__list');
   const panels = document.querySelectorAll('.program__panel');
@@ -260,10 +278,16 @@ function initProgramTabs() {
   });
 }
 
-// ponytail: open the section video in a Fancybox popup
+// Открытие видео секции в попапе Fancybox
 function initVideoPopup() {
   const plays = document.querySelectorAll('.video__player .video__play');
-  if (!plays.length || typeof Fancybox === 'undefined') return;
+  if (!plays.length) return;
+  
+  if (typeof Fancybox === 'undefined') {
+    console.warn('Fancybox не подключён, initVideoPopup пропущен');
+    return;
+  }
+  
   plays.forEach((play) => {
     play.addEventListener('click', () => {
       const src = play.dataset.videoSrc;
@@ -345,7 +369,13 @@ function initMobileMenu() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initClientsMarquee();
-  window.addEventListener('resize', initClientsMarquee);
+  
+  // Debounced resize для marquee
+  let marqueeResizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(marqueeResizeTimer);
+    marqueeResizeTimer = setTimeout(initClientsMarquee, 150);
+  });
 
   const clientsSwiper = initSwiper('.clients__swiper', {
     slidesPerView: 7.8,
@@ -463,4 +493,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// ponytail: CSS `position: sticky` on .stages__head-col handles the floating left block natively
+// CSS `position: sticky` на .stages__head-col обрабатывает плавающий левый блок нативно
