@@ -162,7 +162,7 @@
 
 .btn--search {
 	color: var(--color-grey);
-	background: var(--color-white);
+	background: #fff;
 	padding: 0.75rem 0.75rem;
 	width: 2.5rem;
 	height: 2.5rem;

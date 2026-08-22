@@ -1,0 +1,4454 @@
+{
+  "nodes": [
+    {
+      "id": "css-tokens",
+      "type": "Concept",
+      "name": "CSS Custom Properties",
+      "content": "Design tokens in tokens.css: colors (--color-sea #1342F3, --color-black #222222, --color-white, --bg-light, --bg-light-alt, --bg-border, --color-grey), spacing (--gap-xs to --gap-xl, --section-px 40px), radii (--radius-md 16px, --radius-lg 20px, --radius-xl 30px, --radius-full), type scale (--fs-h1 100px, --fs-h2 70px, --fs-h3 40px, --fs-h4 24px, --fs-body-14/16/18, --fs-numbers 75px), shadows (--shadow-card, --shadow-hover), breakpoints (--bp-mobile 375px, --bp-tablet 768px, --bp-desktop 1920px)",
+      "source_file": "css/tokens.css",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "css-components",
+      "type": "Concept",
+      "name": "Shared CSS Components",
+      "content": "Reusable UI components in components.css: .container (1790px), .card/.card--company/.card--partner/.card--project/.card--webinar (668/930/460px), .btn/.btn--primary/.btn--outline/.btn--outline-white/.btn--outline-dark/.btn--ghost/.btn--white/.btn--black/.btn--search (50px radius), .carousel-nav/__btn, .tabs/.tabs__btn (data-tab), .section-title/.section-label/.body-text",
+      "source_file": "css/components.css",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "css-utilities",
+      "type": "Concept",
+      "name": "CSS Utilities",
+      "content": "Reset styles (*box-sizing, margin, padding), typography (h1-h6, p, a, img, ul), .truncate (text-overflow ellipsis), .is-hidden/.is-visible (display none/flex)",
+      "source_file": "css/utilities.css",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "css-sections",
+      "type": "Concept",
+      "name": "CSS Sections",
+      "content": "Page-specific layout in sections.css: .header, .hero, .industries, .stats, .tasks, .clients, .partners, .projects, .events, .cta, .footer. Megafile with 500+ lines. Contains prefers-reduced-motion media query. TODO: split into per-section files",
+      "source_file": "css/sections.css",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-index",
+      "type": "Module",
+      "name": "index.html",
+      "content": "Homepage: hero, industries (4 cards -> solutions.html), stats (5 columns), tasks (6 links hover-bg), clients (10 logos JS-rendered), partners (5 cards carousel), projects (3 cards -> projects.html), events (4 cards carousel), CTA. Inline SVG logo, icon sprite, Swiper, Google Fonts Inter",
+      "source_file": "index.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website",
+        "contributor": "taif.tw1.ru"
+      }
+    },
+    {
+      "id": "page-solutions",
+      "type": "Module",
+      "name": "solutions.html",
+      "content": "Solutions catalog: .page-hero (breadcrumbs + h1), .catalog (6 solution cards, grid layout, --single modifier), .cta. Cards link to solution-detail.html",
+      "source_file": "solutions.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-solution-detail",
+      "type": "Module",
+      "name": "solution-detail.html",
+      "content": "Detailed solution: hero, registry, tasks (accordion), audience (4 cards), features (tabs data-tab 0-4, panel switching), cta--dark, testimonials (swiper), events--readalso, faq. Only page importing fancybox.css + jQuery",
+      "source_file": "solution-detail.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-clients",
+      "type": "Module",
+      "name": "clients.html",
+      "content": "Clients listing: page-hero--media, .clients (JS-rendered), .projects .c-projects, .cta",
+      "source_file": "clients.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-client-detail",
+      "type": "Module",
+      "name": "client-detail.html",
+      "content": "Client detail: page-hero--detail, client-intro, stats--client (3 columns), client-quote, stages (timeline), cta--blue, events--readalso",
+      "source_file": "client-detail.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-projects",
+      "type": "Module",
+      "name": "projects.html",
+      "content": "Projects catalog: page-hero, .projects__filters (3 dropdowns: Otresli/Resheniya/Produkty), .projects__grid (6 cards 930x460), .projects__more, .cta",
+      "source_file": "projects.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-project-detail",
+      "type": "Module",
+      "name": "project-detail.html",
+      "content": "Project detail: page-hero, .project-intro (back link, stats--project 4 cols, video), .project-about (quote, content, sidebar images), .project-gallery (--mosaic 3-col), .project-partners (collapsible table), .cta",
+      "source_file": "project-detail.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-events",
+      "type": "Module",
+      "name": "events.html",
+      "content": "Media center: page-hero--media, .events-featured, .events-list, .cta",
+      "source_file": "events.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-event-detail",
+      "type": "Module",
+      "name": "event-detail.html",
+      "content": "Event detail: event-hero, event-about, audience, program, cta--blue, seminar-topics, event-partners, trust, clients, faq",
+      "source_file": "event-detail.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-directum",
+      "type": "Module",
+      "name": "directum.html",
+      "content": "Directum digital ecosystem page",
+      "source_file": "directum.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-univer",
+      "type": "Module",
+      "name": "univer-online.html",
+      "content": "Univer Online ecosystem: hero, univer-registry, audience, reasons--univer, cta--blue--univer, services, projects--univer, vnedrenie--univer, team, cta, footer",
+      "source_file": "univer-online.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "page-vuz",
+      "type": "Module",
+      "name": "vuz.html",
+      "content": "University digital transformation page",
+      "source_file": "vuz.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "js-main",
+      "type": "Module",
+      "name": "js/main.js",
+      "content": "Single JS file: initSwiper (hero/partners/events/galleries 617/618/460px), bindNav (hamburger), initAccordion (tasks), initClientsPage (filter/render/detail/quote from JSON), initProjectsPage (filter/render), initNewsPage (events from JSON), initTabs (data-tab switching)",
+      "source_file": "js/main.js",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "dep-swiper",
+      "type": "Dependency",
+      "name": "Swiper.js",
+      "content": "Local copy: assets/vendor/swiper/ (swiper-bundle.min.js + min.css). Instances: hero (617px), partners (460px), events (617px), galleries on project-detail (617/618/460px). Nav via .carousel-nav buttons",
+      "source_file": "assets/vendor/swiper/",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "dep-gfonts",
+      "type": "Dependency",
+      "name": "Google Fonts (Inter)",
+      "content": "External: preconnect fonts.googleapis.com + fonts.gstatic.com, css2?family=Inter:wght@400;500;600;700. Loaded in every page via <link>",
+      "source_file": "index.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "dep-fancybox",
+      "type": "Dependency",
+      "name": "Fancybox",
+      "content": "Lightbox library. Imported in solution-detail.html and project-detail.html",
+      "source_file": "solution-detail.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "dep-jquery",
+      "type": "Dependency",
+      "name": "jQuery",
+      "content": "jQuery loaded in solution-detail.html and project-detail.html (for fancybox)",
+      "source_file": "solution-detail.html",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-4files",
+      "type": "Concept",
+      "name": "4-File CSS Architecture",
+      "content": "tokens.css (variables) -> utilities.css (reset/typo) -> components.css (shared UI) -> sections.css (page layout). Dedicated CSS per detail page (solution.css, project.css, event.css, univer.css)",
+      "source_file": "AGENTS.md",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-routing",
+      "type": "Concept",
+      "name": "Static Page Routing",
+      "content": "Multi-page static site: all HTML in root. Links: solutions->solution-detail, clients->client-detail, projects->project-detail, events->event-detail. No JS router",
+      "source_file": "AGENTS.md",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-figma",
+      "type": "Concept",
+      "name": "Figma Dual Source of Truth",
+      "content": "Figma=visual design truth, Code=implementation structure truth. Workflow: FIGMA_AUDIT -> FIGMA_IMPLEMENT -> FIGMA_QA. Section-as-task with subagents. Registry in FIGMA.md",
+      "source_file": "docs/FIGMA_WORKFLOW.md",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-bem",
+      "type": "Concept",
+      "name": "BEM Naming Convention",
+      "content": "Block__Element--Modifier: .carousel-nav__btn, .card--partner, .btn--primary, .tabs__btn.is-active. Section classes: .hero, .industries, .stats, .tasks, .clients, .partners, .projects, .events, .cta, .footer",
+      "source_file": "AGENTS.md",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-component-reuse",
+      "type": "Concept",
+      "name": "Component Reuse Rules",
+      "content": "Before new component: 1) search codebase, 2) check equivalent, 3) check Figma variant. Figma naming != code. Blue Button -> .btn--primary. Component Registry in AGENTS.md",
+      "source_file": "AGENTS.md",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-icons",
+      "type": "Concept",
+      "name": "Inline SVG Icon System",
+      "content": "Inline SVG per page (Figma vectorPaths). Arrow sprite: #icon-arrow (17x14, fill=currentColor), #icon-arrow-right (15x14). Use <use href>, not text arrow",
+      "source_file": "AGENTS.md",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-fonts",
+      "type": "Concept",
+      "name": "Google Fonts Inter",
+      "content": "Inter 400/500/600/700 via Google Fonts <link> in every page. No local woff2. --font-heading/inter, --font-body/Inter",
+      "source_file": "AGENTS.md",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-data-flow",
+      "type": "Concept",
+      "name": "JSON Data Flow",
+      "content": "Clients/projects/news rendered from JSON via fetch+render, not static HTML. Projects page: clients.json filtered by project_ids. Architectural detail, not changed during Figma verification",
+      "source_file": "AGENTS.md",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-reduced-motion",
+      "type": "Concept",
+      "name": "Reduced Motion",
+      "content": "prefers-reduced-motion: reduce disables transitions. Some elements override with !important. CSS media query in sections.css and page stylesheets",
+      "source_file": "css/sections.css",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-status",
+      "type": "Concept",
+      "name": "Section Implementation Status",
+      "content": "FIGMA.md tracks per-section status (done/in-progress/pending). All main page sections done. Detail pages done. Parallel pages (univer, vuz, directum) done",
+      "source_file": "FIGMA.md",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "arch-todo",
+      "type": "Concept",
+      "name": "Outstanding TODOs",
+      "content": "1) Split sections.css (500+ lines) into per-section files. 2) Fix missing favicon.ico (404 on homepage)",
+      "source_file": "AGENTS.md",
+      "metadata": {
+        "captured_at": "2026-08-17T14:47:53Z",
+        "author": "softsnow-website"
+      }
+    },
+    {
+      "id": "file-accordion_1_bg",
+      "label": "Accordion 1 Background Image",
+      "file_type": "image",
+      "source_file": "assets/img/accordion-1-bg.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file-accordion_2_bg",
+      "label": "Accordion 2 Background Image",
+      "file_type": "image",
+      "source_file": "assets/img/accordion-2-bg.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file-accordion_3_bg",
+      "label": "Accordion 3 Background Image",
+      "file_type": "image",
+      "source_file": "assets/img/accordion-3-bg.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file-accordion_4_bg",
+      "label": "Accordion 4 Background Image",
+      "file_type": "image",
+      "source_file": "assets/img/accordion-4-bg.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file-accordion_5_bg",
+      "label": "Accordion 5 Background Image",
+      "file_type": "image",
+      "source_file": "assets/img/accordion-5-bg.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file-accordion_6_bg",
+      "label": "Accordion 6 Background Image",
+      "file_type": "image",
+      "source_file": "assets/img/accordion-6-bg.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file-card_biz_bg",
+      "label": "Business Industry Card Background",
+      "file_type": "image",
+      "source_file": "assets/img/card-biz-bg.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file-card_gos_bg",
+      "label": "Government Industry Card Background",
+      "file_type": "image",
+      "source_file": "assets/img/card-gos-bg.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file-card_vuz_bg_jpg",
+      "label": "University Card Background (JPG)",
+      "file_type": "image",
+      "source_file": "assets/img/card-vuz-bg.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file-card_vuz_bg_png",
+      "label": "University Card Background (PNG)",
+      "file_type": "image",
+      "source_file": "assets/img/card-vuz-bg.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file-client_1",
+      "label": "Client Logo 1",
+      "file_type": "image",
+      "source_file": "assets/img/client-1.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file-client_2",
+      "label": "Client Logo 2",
+      "file_type": "image",
+      "source_file": "assets/img/client-2.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file-client_3",
+      "label": "Client Logo 3",
+      "file_type": "image",
+      "source_file": "assets/img/client-3.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file-client_4",
+      "label": "Client Logo 4",
+      "file_type": "image",
+      "source_file": "assets/img/client-4.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file-client_5",
+      "label": "Client Logo 5",
+      "file_type": "image",
+      "source_file": "assets/img/client-5.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file-client_6",
+      "label": "Client Logo 6",
+      "file_type": "image",
+      "source_file": "assets/img/client-6.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file-client_7",
+      "label": "Client Logo 7",
+      "file_type": "image",
+      "source_file": "assets/img/client-7.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file-client_8",
+      "label": "Client Logo 8",
+      "file_type": "image",
+      "source_file": "assets/img/client-8.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file-client_9",
+      "label": "Client Logo 9",
+      "file_type": "image",
+      "source_file": "assets/img/client-9.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file-client_10",
+      "label": "Client Logo 10",
+      "file_type": "image",
+      "source_file": "assets/img/client-10.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "section-index_tasks",
+      "label": "Index Tasks Section (Accordion/Solutions)",
+      "file_type": "section",
+      "source_file": "index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "section-index_industries",
+      "label": "Index Industries Section",
+      "file_type": "section",
+      "source_file": "index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "section-index_clients",
+      "label": "Index Clients Section",
+      "file_type": "section",
+      "source_file": "index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "section-event_detail_clients",
+      "label": "Event Detail Clients/Trust Section",
+      "file_type": "section",
+      "source_file": "event-detail.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "industry-business",
+      "label": "Business (\u0420\u2018\u0420\u0451\u0420\u00b7\u0420\u0405\u0420\u00b5\u0421\u0403) Industry",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "industry-government",
+      "label": "Government (\u0420\u201c\u0420\u0455\u0421\u0403\u0421\u0453\u0420\u0491\u0420\u00b0\u0421\u0402\u0421\u0403\u0421\u201a\u0420\u0406\u0420\u00b5\u0420\u0405\u0420\u0405\u0421\u2039\u0420\u2116) Industry",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "industry-university",
+      "label": "University (\u0420\u2019\u0420\u0408\u0420\u2014) Industry",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "company-softsnow",
+      "label": "SoftSnow",
+      "file_type": "company",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file_client-quote",
+      "label": "Client Quote Image",
+      "file_type": "image",
+      "source_file": "assets/img/client-quote.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file_cta-bg",
+      "label": "CTA Background Image",
+      "file_type": "image",
+      "source_file": "assets/img/cta-bg.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file_d-targets_logo-horizontal",
+      "label": "DTGTS Logo Horizontal",
+      "file_type": "image",
+      "source_file": "assets/img/d-targets_logo-horizontal.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file_directum-bg",
+      "label": "Directum Background Image",
+      "file_type": "image",
+      "source_file": "assets/img/directum-bg.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file_gallery1",
+      "label": "Gallery Photo",
+      "file_type": "image",
+      "source_file": "assets/img/gallery1.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file_goals__inner",
+      "label": "Goals Inner Image",
+      "file_type": "image",
+      "source_file": "assets/img/goals__inner.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file_hero-bg",
+      "label": "Hero Background Image",
+      "file_type": "image",
+      "source_file": "assets/img/hero-bg.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file_hr-pro_logo_black-text",
+      "label": "HR Pro Logo Black Text",
+      "file_type": "image",
+      "source_file": "assets/img/hr-pro_logo_black-text.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file_icon-reason-1",
+      "label": "Reason Icon 1",
+      "file_type": "image",
+      "source_file": "assets/img/icon-reason-1.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file_icon-reason-2",
+      "label": "Reason Icon 2",
+      "file_type": "image",
+      "source_file": "assets/img/icon-reason-2.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file_icon-reason-3",
+      "label": "Reason Icon 3",
+      "file_type": "image",
+      "source_file": "assets/img/icon-reason-3.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file_icon-reason-4",
+      "label": "Reason Icon 4",
+      "file_type": "image",
+      "source_file": "assets/img/icon-reason-4.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file_logo-bitrix",
+      "label": "Bitrix Logo",
+      "file_type": "image",
+      "source_file": "assets/img/logo-bitrix.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file_logo-moodle",
+      "label": "Moodle Logo",
+      "file_type": "image",
+      "source_file": "assets/img/logo-moodle.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file_logo-moodle-2",
+      "label": "Moodle Logo Variant 2",
+      "file_type": "image",
+      "source_file": "assets/img/logo-moodle-2.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file_logo-moodle-3",
+      "label": "Moodle Logo Variant 3",
+      "file_type": "image",
+      "source_file": "assets/img/logo-moodle-3.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file_logo-polymetal",
+      "label": "Polymetal Logo",
+      "file_type": "image",
+      "source_file": "assets/img/logo-polymetal.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file_logo-ranepa",
+      "label": "RANEPA Logo",
+      "file_type": "image",
+      "source_file": "assets/img/logo-ranepa.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file_logo-ranepa-univer",
+      "label": "RANEPA Univer Logo",
+      "file_type": "image",
+      "source_file": "assets/img/logo-ranepa-univer.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "file_logo-ranepa-svg",
+      "label": "RANEPA Logo SVG",
+      "file_type": "image",
+      "source_file": "assets/img/logo-ranepa.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "company_dtargets",
+      "label": "DTGTS",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "company_hrpro",
+      "label": "HR Pro",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "company_ranepa",
+      "label": "RANEPA (Russian Academy of National Economy and Public Administration)",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "company_bitrix",
+      "label": "Bitrix",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "company_moodle",
+      "label": "Moodle",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "company_polymetal",
+      "label": "Polymetal",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "company_directum",
+      "label": "Directum",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "project_softsnow",
+      "label": "SoftSnow Project",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "logo-softsnow_svg",
+      "label": "SoftSnow Logo",
+      "file_type": "image",
+      "source_file": "assets/img/logo-softsnow.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "logo-univer_png",
+      "label": "Univer Online Logo",
+      "file_type": "image",
+      "source_file": "assets/img/logo-univer.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "logo-voek-univer_png",
+      "label": "VOEK Univer Logo",
+      "file_type": "image",
+      "source_file": "assets/img/logo-voek-univer.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "meteor-icons_code_svg",
+      "label": "Meteor Icons - Code",
+      "file_type": "image",
+      "source_file": "assets/img/meteor-icons_code.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mobiles_jpg",
+      "label": "Mobile Devices Photo",
+      "file_type": "image",
+      "source_file": "assets/img/mobiles.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "o-kliente_jpg",
+      "label": "About Client Photo - Presidential Academy",
+      "file_type": "image",
+      "source_file": "assets/img/o-kliente.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "phone-1_png",
+      "label": "Phone Screenshot 1",
+      "file_type": "image",
+      "source_file": "assets/img/phone-1.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "phone-2_png",
+      "label": "Phone Screenshot 2",
+      "file_type": "image",
+      "source_file": "assets/img/phone-2.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "phone-3_png",
+      "label": "Phone Screenshot 3",
+      "file_type": "image",
+      "source_file": "assets/img/phone-3.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "phone-4_png",
+      "label": "Phone Screenshot 4",
+      "file_type": "image",
+      "source_file": "assets/img/phone-4.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "phones_png",
+      "label": "Phones Service Screenshot - Univer Online",
+      "file_type": "image",
+      "source_file": "assets/img/phones.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "project-1_png",
+      "label": "Project Logo - Presidential Academy (RANEPA)",
+      "file_type": "image",
+      "source_file": "assets/img/project-1.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "project-2-small_png",
+      "label": "Project Logo - Vologda Energy Company Small",
+      "file_type": "image",
+      "source_file": "assets/img/project-2-small.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "project-2_png",
+      "label": "Project Logo - Vologda Energy Company",
+      "file_type": "image",
+      "source_file": "assets/img/project-2.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "projects_logo_horisontal-black_svg",
+      "label": "ProProekty Logo",
+      "file_type": "image",
+      "source_file": "assets/img/projects_logo_horisontal-black.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "registry-banner_jpg",
+      "label": "Registry Banner Image",
+      "file_type": "image",
+      "source_file": "assets/img/registry-banner.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "features-demo_svg",
+      "label": "Solution Features Demo Icon",
+      "file_type": "image",
+      "source_file": "assets/img/features-demo.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "sed-plus-logo-horizontal-short_svg",
+      "label": "SED+ Logo (Directum)",
+      "file_type": "image",
+      "source_file": "assets/img/sed-plus-logo-horizontal-short.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "solution-cta_png",
+      "label": "Solution CTA Background Image",
+      "file_type": "image",
+      "source_file": "assets/img/solution-cta.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "solution-features_png",
+      "label": "Solution Features Screenshot",
+      "file_type": "image",
+      "source_file": "assets/img/solution-features.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "solution-hero-bg",
+      "label": "Solution Detail Hero Background",
+      "file_type": "image",
+      "source_file": "assets/img/solution-hero-bg.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "solution-reestr",
+      "label": "Solution Registry Certificate",
+      "file_type": "image",
+      "source_file": "assets/img/solution-reestr.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "solution-stats",
+      "label": "Solution Detail Statistics Graphic",
+      "file_type": "image",
+      "source_file": "assets/img/solution-stats.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "solution-t-logo",
+      "label": "Solution Detail Testimonial Client Logo",
+      "file_type": "image",
+      "source_file": "assets/img/solution-t-logo.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "svc-1",
+      "label": "Univer Online Personal Cabinets Service Icon",
+      "file_type": "image",
+      "source_file": "assets/img/svc-1.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "svc-2",
+      "label": "Univer Online Mobile Application Service Icon",
+      "file_type": "image",
+      "source_file": "assets/img/svc-2.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "svc-3",
+      "label": "Univer Online Digital Services Icon",
+      "file_type": "image",
+      "source_file": "assets/img/svc-3.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "svc-4",
+      "label": "Univer Online Election Service Icon",
+      "file_type": "image",
+      "source_file": "assets/img/svc-4.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "svc-5",
+      "label": "Univer Online Survey Service Icon",
+      "file_type": "image",
+      "source_file": "assets/img/svc-5.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "svc-6",
+      "label": "Univer Online LMS for Continuing Education Icon",
+      "file_type": "image",
+      "source_file": "assets/img/svc-6.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "svc-7",
+      "label": "Univer Online CRM for Continuing Education Icon",
+      "file_type": "image",
+      "source_file": "assets/img/svc-7.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "univer-cta-bg",
+      "label": "Univer Online CTA Section Background",
+      "file_type": "image",
+      "source_file": "assets/img/univer-cta-bg.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "univer-hero-bg",
+      "label": "Univer Online Hero Background",
+      "file_type": "image",
+      "source_file": "assets/img/univer-hero-bg.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "univer-registry",
+      "label": "Univer Online Ministry of Digital Development Registry Certificate",
+      "file_type": "image",
+      "source_file": "assets/img/univer-registry.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "video-placeholder",
+      "label": "Video Placeholder Thumbnail",
+      "file_type": "image",
+      "source_file": "assets/img/video-placeholder.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "vuz-event-1",
+      "label": "University Event Photo 1",
+      "file_type": "image",
+      "source_file": "assets/img/vuz-event-1.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "vuz-event-2",
+      "label": "University Event Photo 2",
+      "file_type": "image",
+      "source_file": "assets/img/vuz-event-2.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "vuz-event-3",
+      "label": "University Event Photo 3",
+      "file_type": "image",
+      "source_file": "assets/img/vuz-event-3.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "vuz-event-4",
+      "label": "University Event Photo 4",
+      "file_type": "image",
+      "source_file": "assets/img/vuz-event-4.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "vuz-hero-bg",
+      "label": "University Ecosystem Hero Background",
+      "file_type": "image",
+      "source_file": "assets/img/vuz-hero-bg.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "image-webinar-1",
+      "type": "file",
+      "label": "Webinar 1 - Strategic Push for University Future",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/webinar-1.png",
+        "format": "PNG",
+        "use": "Webinar event thumbnail and featured event illustration",
+        "display_location": "events.html - featured swiper slide + events list grid",
+        "related_events": [
+          "\u0421\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0440\u044b\u0432\u043e\u043a: \u043a\u0430\u043a \u043d\u0430\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u0441\u0438\u0441\u0442\u0435\u043c\u043d\u0443\u044e \u0440\u0430\u0431\u043e\u0442\u0443 \u043d\u0430\u0434 \u0431\u0443\u0434\u0443\u0449\u0438\u043c \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442\u0430",
+          "\u0421\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u0430\u044f \u043a\u043e\u043d\u0444\u0435\u0440\u0435\u043d\u0446\u0438\u044f \u041f\u043e\u043b\u0438\u0442\u0435\u0445\u0430 \u0438 \u0421\u043e\u0444\u0442\u0421\u043d\u043e\u0443"
+        ]
+      },
+      "confidence": 0.9,
+      "metadata": {
+        "evidence": "Alt text on events.html lines 215, 265",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "image-webinar-2",
+      "type": "file",
+      "label": "Webinar 2 - Digital University Environment",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/webinar-2.png",
+        "format": "PNG",
+        "use": "Webinar event thumbnail and featured event illustration",
+        "display_location": "events.html - featured swiper slide + events list grid",
+        "related_events": [
+          "\u0426\u0438\u0444\u0440\u043e\u0432\u0430\u044f \u0441\u0440\u0435\u0434\u0430 \u0432\u0443\u0437\u0430: \u043a\u0430\u043a \u0441\u0432\u044f\u0437\u0430\u0442\u044c \u0441\u0435\u0440\u0432\u0438\u0441\u044b, \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u044b \u0438 \u0434\u0430\u043d\u043d\u044b\u0435",
+          "\u0417\u0430\u043a\u0430\u0437\u0447\u0438\u043a\u0438 \u0421\u043e\u0444\u0442\u0421\u043d\u043e\u0443 \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u0438\u043b\u0438 \u043f\u0440\u043e\u0435\u043a\u0442\u044b \u043d\u0430 Directum Awards 2026"
+        ]
+      },
+      "confidence": 0.9,
+      "metadata": {
+        "evidence": "Alt text on events.html lines 244, 275",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "image-webinar-3",
+      "type": "file",
+      "label": "Webinar 3 - KEDO and Digital Transformation",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/webinar-3.png",
+        "format": "PNG",
+        "use": "Webinar article thumbnail",
+        "display_location": "events.html - events list grid cards",
+        "related_events": [
+          "\u041a\u042d\u0414\u041e \u0432 \u0432\u0443\u0437\u0435: \u043e\u043f\u044b\u0442 \u0432\u043d\u0435\u0434\u0440\u0435\u043d\u0438\u044f \u0438 \u043f\u0435\u0440\u0432\u044b\u0435 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b",
+          "\u0426\u0438\u0444\u0440\u043e\u0432\u043e\u0439 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u043e\u043e\u0431\u043e\u0440\u043e\u0442 \u0434\u043b\u044f \u0432\u0443\u0437\u043e\u0432: \u0447\u0435\u043a-\u043b\u0438\u0441\u0442 \u0437\u0430\u043f\u0443\u0441\u043a\u0430"
+        ]
+      },
+      "confidence": 0.85,
+      "metadata": {
+        "evidence": "HTML src references on events.html lines 285, 325",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "image-webinar-4",
+      "type": "file",
+      "label": "Webinar 4 - Digitize University HR Processes",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/webinar-4.png",
+        "format": "PNG",
+        "use": "Webinar article thumbnail",
+        "display_location": "events.html - events list grid cards",
+        "related_events": [
+          "\u041a\u0430\u043a \u043e\u0446\u0438\u0444\u0440\u043e\u0432\u0430\u0442\u044c \u043a\u0430\u0434\u0440\u043e\u0432\u044b\u0435 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u044b \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442\u0430"
+        ]
+      },
+      "confidence": 0.85,
+      "metadata": {
+        "evidence": "HTML src reference on events.html line 295",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-mgimo",
+      "type": "file",
+      "label": "MGIMO Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-1.png",
+        "format": "PNG",
+        "client_full_name": "\u041c\u043e\u0441\u043a\u043e\u0432\u0441\u043a\u0438\u0439 \u0433\u043e\u0441\u0443\u0434\u0430\u0440\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442 \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0445 \u043e\u0442\u043d\u043e\u0448\u0435\u043d\u0438\u0439",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text '\u041c\u0413\u0418\u041c\u041e' on clients.html line 182",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-polymetal",
+      "type": "file",
+      "label": "Polymetal Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-2.png",
+        "format": "PNG",
+        "client_full_name": "\u041f\u043e\u043b\u0438\u043c\u0435\u0442\u0430\u043b\u043b",
+        "sector": "\u0413\u043e\u0440\u043d\u043e\u0434\u043e\u0431\u044b\u0432\u0430\u044e\u0449\u0430\u044f \u043f\u0440\u043e\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u043e\u0441\u0442\u044c",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 197",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-voek",
+      "type": "file",
+      "label": "VOEK Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-3.png",
+        "format": "PNG",
+        "client_full_name": "\u0412\u043e\u043b\u043e\u0433\u043e\u0434\u0441\u043a\u0430\u044f \u041e\u0431\u043b\u0430\u0441\u0442\u043d\u0430\u044f \u042d\u043d\u0435\u0440\u0433\u0435\u0442\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u041a\u043e\u043c\u043f\u0430\u043d\u0438\u044f",
+        "sector": "\u042d\u043d\u0435\u0440\u0433\u0435\u0442\u0438\u043a\u0430",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text '\u0412\u041e\u042d\u041a' on clients.html line 211",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-solidcore",
+      "type": "file",
+      "label": "Solidcore Resources Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-4.png",
+        "format": "PNG",
+        "client_full_name": "Solidcore Resources",
+        "sector": "\u0413\u043e\u0440\u043d\u043e\u0434\u043e\u0431\u044b\u0432\u0430\u044e\u0449\u0430\u044f \u043f\u0440\u043e\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u043e\u0441\u0442\u044c",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 225",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-mguya",
+      "type": "file",
+      "label": "MGYuA Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-5.png",
+        "format": "PNG",
+        "client_full_name": "\u041c\u043e\u0441\u043a\u043e\u0432\u0441\u043a\u0438\u0439 \u0433\u043e\u0441\u0443\u0434\u0430\u0440\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439 \u044e\u0440\u0438\u0434\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text '\u041c\u0413\u042e\u0410' on clients.html line 239",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-spbpu",
+      "type": "file",
+      "label": "SPbPU Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-6.png",
+        "format": "PNG",
+        "client_full_name": "\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433\u0441\u043a\u0438\u0439 \u043f\u043e\u043b\u0438\u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442 \u041f\u0435\u0442\u0440\u0430 \u0412\u0435\u043b\u0438\u043a\u043e\u0433\u043e",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text '\u0421\u041f\u0431\u041f\u0423' on clients.html line 253",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-russian-justice-academy",
+      "type": "file",
+      "label": "Russian Academy of Justice Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-7.png",
+        "format": "PNG",
+        "client_full_name": "\u0420\u043e\u0441\u0441\u0438\u0439\u0441\u043a\u0430\u044f \u0430\u043a\u0430\u0434\u0435\u043c\u0438\u044f \u043f\u0440\u0430\u0432\u043e\u0441\u0443\u0434\u0438\u044f",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 267",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-finance-university",
+      "type": "file",
+      "label": "Finance University Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-8.png",
+        "format": "PNG",
+        "client_full_name": "\u0424\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u044b\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442 \u043f\u0440\u0438 \u041f\u0440\u0430\u0432\u0438\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u0435 \u0420\u0424",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 281",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-mfua",
+      "type": "file",
+      "label": "MFYuA Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-9.png",
+        "format": "PNG",
+        "client_full_name": "\u041c\u043e\u0441\u043a\u043e\u0432\u0441\u043a\u0438\u0439 \u0444\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u043e-\u044e\u0440\u0438\u0434\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text '\u041c\u0424\u042e\u0410' on clients.html line 295",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-apb",
+      "type": "file",
+      "label": "Asia-Pacific Bank Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-10.png",
+        "format": "PNG",
+        "client_full_name": "\u0410\u0437\u0438\u0430\u0442\u0441\u043a\u043e-\u0422\u0438\u0445\u043e\u043e\u043a\u0435\u0430\u043d\u0441\u043a\u0438\u0439 \u0431\u0430\u043d\u043a",
+        "sector": "\u0411\u0430\u043d\u043a\u043e\u0432\u0441\u043a\u0438\u0439 \u0441\u0435\u043a\u0442\u043e\u0440",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 309",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-spbgu",
+      "type": "file",
+      "label": "SPbSU Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-11.png",
+        "format": "PNG",
+        "client_full_name": "\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433\u0441\u043a\u0438\u0439 \u0433\u043e\u0441\u0443\u0434\u0430\u0440\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text '\u0421\u041f\u0431\u0413\u0423' on clients.html line 323",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-unikon",
+      "type": "file",
+      "label": "UNIKON-Inform Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-12.png",
+        "format": "PNG",
+        "client_full_name": "\u042e\u041d\u0418\u041a\u041e\u041d-\u0418\u043d\u0444\u043e\u0440\u043c",
+        "sector": "\u0418\u0422 \u0438 \u043a\u043e\u043d\u0441\u0430\u043b\u0442\u0438\u043d\u0433",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 337",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-synergy",
+      "type": "file",
+      "label": "Synergy Corporation Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-13.png",
+        "format": "PNG",
+        "client_full_name": "\u041a\u043e\u0440\u043f\u043e\u0440\u0430\u0446\u0438\u044f \u0421\u0438\u043d\u0435\u0440\u0433\u0438\u044f",
+        "sector": "\u041e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 351",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-pavlov-university",
+      "type": "file",
+      "label": "Pavlov Medical University Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-14.png",
+        "format": "PNG",
+        "client_full_name": "\u041f\u0421\u041f\u0431\u0413\u041c\u0423 \u0438\u043c. \u041f\u0430\u0432\u043b\u043e\u0432\u0430",
+        "sector": "\u041c\u0435\u0434\u0438\u0446\u0438\u043d\u0441\u043a\u043e\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 366",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-nngu",
+      "type": "file",
+      "label": "Nizhny Novgorod Lobachevsky University Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-15.png",
+        "format": "PNG",
+        "client_full_name": "\u041d\u041d\u0413\u0423 \u0438\u043c. \u041b\u043e\u0431\u0430\u0447\u0435\u0432\u0441\u043a\u043e\u0433\u043e",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 380",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-onf",
+      "type": "file",
+      "label": "ONF Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-16.png",
+        "format": "PNG",
+        "client_full_name": "\u041e\u0431\u0449\u0435\u0440\u043e\u0441\u0441\u0438\u0439\u0441\u043a\u0438\u0439 \u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0439 \u0444\u0440\u043e\u043d\u0442",
+        "sector": "\u041e\u0431\u0449\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0430\u044f \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u044f",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text '\u041e\u041d\u0424' on clients.html line 394",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-stau",
+      "type": "file",
+      "label": "Stavropol Agrarian University Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-17.png",
+        "format": "PNG",
+        "client_full_name": "\u0421\u0442\u0430\u0432\u0440\u043e\u043f\u043e\u043b\u044c\u0441\u043a\u0438\u0439 \u0433\u043e\u0441\u0443\u0434\u0430\u0440\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439 \u0430\u0433\u0440\u0430\u0440\u043d\u044b\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442",
+        "sector": "\u0410\u0433\u0440\u0430\u0440\u043d\u043e\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text '\u0421\u0442\u0413\u0410\u0423' on clients.html line 408",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-svfu",
+      "type": "file",
+      "label": "NEFU Ammosov Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-18.png",
+        "format": "PNG",
+        "client_full_name": "\u0421\u0412\u0424\u0423 \u0438\u043c. \u0410\u043c\u043c\u043e\u0441\u043e\u0432\u0430",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 419",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-leti",
+      "type": "file",
+      "label": "SPbGETU LETI Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-19.png",
+        "format": "PNG",
+        "client_full_name": "\u0421\u041f\u0431\u0413\u042d\u0422\u0423 \u041b\u042d\u0422\u0418",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 435",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-mmuni",
+      "type": "file",
+      "label": "Moscow International University Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-20.png",
+        "format": "PNG",
+        "client_full_name": "\u041c\u043e\u0441\u043a\u043e\u0432\u0441\u043a\u0438\u0439 \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 451",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-ugrasu",
+      "type": "file",
+      "label": "Ugra State University Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-21.png",
+        "format": "PNG",
+        "client_full_name": "\u042e\u0433\u043e\u0440\u0441\u043a\u0438\u0439 \u0433\u043e\u0441\u0443\u0434\u0430\u0440\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 464",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-kom-dpo",
+      "type": "file",
+      "label": "Kommersant DPO Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-22.png",
+        "format": "PNG",
+        "client_full_name": "\u041a\u043e\u043c\u043c\u0435\u0440\u0441\u0430\u043d\u0442\u044a DPO",
+        "sector": "\u041e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text on clients.html line 480",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-omgtu",
+      "type": "file",
+      "label": "Omsk State Technical University Logo",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "path": "assets/img/clients/client-23.png",
+        "format": "PNG",
+        "client_full_name": "\u041e\u043c\u0441\u043a\u0438\u0439 \u0433\u043e\u0441\u0443\u0434\u0430\u0440\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442",
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+        "display_location": "clients.html"
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "Alt text '\u041e\u043c\u0413\u0422\u0423' on clients.html line 494",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "concept-strategic-planning",
+      "type": "topic",
+      "label": "Strategic Planning in Higher Education",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "context": "Webinar-1 title: systemic work on university future",
+        "related_to": "image-webinar-1"
+      },
+      "confidence": 0.9,
+      "metadata": {
+        "evidence": "Alt text: \u0421\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0440\u044b\u0432\u043e\u043a",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "concept-digital-university",
+      "type": "topic",
+      "label": "Digital University Environment",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "context": "Webinar-2 title: connecting services, processes and data",
+        "related_to": "image-webinar-2"
+      },
+      "confidence": 0.9,
+      "metadata": {
+        "evidence": "Alt text: \u0426\u0438\u0444\u0440\u043e\u0432\u0430\u044f \u0441\u0440\u0435\u0434\u0430 \u0432\u0443\u0437\u0430",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "concept-kedo",
+      "type": "topic",
+      "label": "KEDO (Electronic Document Workflow in Education)",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "context": "Webinar-3: KEDO implementation experience in universities",
+        "related_to": "image-webinar-3"
+      },
+      "confidence": 0.85,
+      "metadata": {
+        "evidence": "Article title: \u041a\u042d\u0414\u041e \u0432 \u0432\u0443\u0437\u0435",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "concept-hr-digital",
+      "type": "topic",
+      "label": "HR Process Digitization in Universities",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "context": "Webinar-4: how to digitize university HR processes",
+        "related_to": "image-webinar-4"
+      },
+      "confidence": 0.85,
+      "metadata": {
+        "evidence": "Article title: \u041a\u0430\u043a \u043e\u0446\u0438\u0444\u0440\u043e\u0432\u0430\u0442\u044c \u043a\u0430\u0434\u0440\u043e\u0432\u044b\u0435 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u044b",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "concept-directum-awards",
+      "type": "topic",
+      "label": "Directum Awards 2026",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "context": "SoftSnow customers presented projects at Directum Awards",
+        "related_images": [
+          "image-webinar-2",
+          "image-webinar-1"
+        ]
+      },
+      "confidence": 0.9,
+      "metadata": {
+        "evidence": "Events list text on events.html",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "concept-digital-doc-workflow",
+      "type": "topic",
+      "label": "Digital Document Workflow for Universities",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "context": "Checklist article for launching digital document flow",
+        "related_images": [
+          "image-webinar-3"
+        ]
+      },
+      "confidence": 0.85,
+      "metadata": {
+        "evidence": "Article: \u0426\u0438\u0444\u0440\u043e\u0432\u043e\u0439 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u043e\u043e\u0431\u043e\u0440\u043e\u0442 \u0434\u043b\u044f \u0432\u0443\u0437\u043e\u0432",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "concept-softsnow",
+      "type": "organization",
+      "label": "SoftSnow",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "website": "https://softsnow.ru",
+        "sectors_served": [
+          "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+          "\u0413\u043e\u0440\u043d\u043e\u0434\u043e\u0431\u044b\u0432\u0430\u044e\u0449\u0430\u044f \u043f\u0440\u043e\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u043e\u0441\u0442\u044c",
+          "\u042d\u043d\u0435\u0440\u0433\u0435\u0442\u0438\u043a\u0430",
+          "\u0411\u0430\u043d\u043a\u043e\u0432\u0441\u043a\u0438\u0439 \u0441\u0435\u043a\u0442\u043e\u0440",
+          "\u0418\u0422 \u0438 \u043a\u043e\u043d\u0441\u0430\u043b\u0442\u0438\u043d\u0433",
+          "\u041c\u0435\u0434\u0438\u0446\u0438\u043d\u0441\u043a\u043e\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+          "\u0410\u0433\u0440\u0430\u0440\u043d\u043e\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+          "\u041e\u0431\u0449\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0430\u044f \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u044f"
+        ]
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "All 23 clients are SoftSnow customers",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "concept-higher-education",
+      "type": "industry",
+      "label": "Higher Education Sector (Russia)",
+      "chunk_source": "chunk_06",
+      "properties": {
+        "client_count": 15
+      },
+      "confidence": 1.0,
+      "metadata": {
+        "evidence": "15 of 23 client logos are from higher education institutions",
+        "reliability": "high"
+      }
+    },
+    {
+      "id": "client-3_\u0420\u2019\u0420\u045b\u0420\u00ad\u0420\u0459",
+      "label": "\u0420\u2019\u0420\u045b\u0420\u00ad\u0420\u0459",
+      "file_type": "image",
+      "source_file": "assets/img/clients/client-3.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "client-4_Solidcore_Resources",
+      "label": "Solidcore Resources",
+      "file_type": "image",
+      "source_file": "assets/img/clients/client-4.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "client-5_\u0420\u045a\u0420\u201c\u0420\u00ae\u0420\u0452",
+      "label": "\u0420\u045a\u0420\u201c\u0420\u00ae\u0420\u0452",
+      "file_type": "image",
+      "source_file": "assets/img/clients/client-5.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "client-6_\u0420\u040e\u0420\u045f\u0420\u00b1\u0420\u045f\u0420\u0408",
+      "label": "\u0420\u040e\u0420\u045f\u0420\u00b1\u0420\u045f\u0420\u0408",
+      "file_type": "image",
+      "source_file": "assets/img/clients/client-6.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "client-7_\u0420\u00a0\u0420\u0455\u0421\u0403\u0421\u0403\u0420\u0451\u0420\u2116\u0421\u0403\u0420\u0454\u0420\u00b0\u0421\u040f_\u0420\u00b0\u0420\u0454\u0420\u00b0\u0420\u0491\u0420\u00b5\u0420\u0458\u0420\u0451\u0421\u040f_\u0420\u0457\u0421\u0402\u0420\u00b0\u0420\u0406\u0420\u0455\u0421\u0403\u0421\u0453\u0420\u0491\u0420\u0451\u0421\u040f",
+      "label": "\u0420\u00a0\u0420\u0455\u0421\u0403\u0421\u0403\u0420\u0451\u0420\u2116\u0421\u0403\u0420\u0454\u0420\u00b0\u0421\u040f \u0420\u00b0\u0420\u0454\u0420\u00b0\u0420\u0491\u0420\u00b5\u0420\u0458\u0420\u0451\u0421\u040f \u0420\u0457\u0421\u0402\u0420\u00b0\u0420\u0406\u0420\u0455\u0421\u0403\u0421\u0453\u0420\u0491\u0420\u0451\u0421\u040f",
+      "file_type": "image",
+      "source_file": "assets/img/clients/client-7.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "client-8_\u0420\u00a4\u0420\u0451\u0420\u0405\u0420\u00b0\u0420\u0405\u0421\u0403\u0420\u0455\u0420\u0406\u0421\u2039\u0420\u2116_\u0421\u0453\u0420\u0405\u0420\u0451\u0420\u0406\u0420\u00b5\u0421\u0402\u0421\u0403\u0420\u0451\u0421\u201a\u0420\u00b5\u0421\u201a",
+      "label": "\u0420\u00a4\u0420\u0451\u0420\u0405\u0420\u00b0\u0420\u0405\u0421\u0403\u0420\u0455\u0420\u0406\u0421\u2039\u0420\u2116 \u0421\u0453\u0420\u0405\u0420\u0451\u0420\u0406\u0420\u00b5\u0421\u0402\u0421\u0403\u0420\u0451\u0421\u201a\u0420\u00b5\u0421\u201a",
+      "file_type": "image",
+      "source_file": "assets/img/clients/client-8.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "client-9_\u0420\u045a\u0420\u00a4\u0420\u00ae\u0420\u0452",
+      "label": "\u0420\u045a\u0420\u00a4\u0420\u00ae\u0420\u0452",
+      "file_type": "image",
+      "source_file": "assets/img/clients/client-9.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "client-24_\u0420\u045c\u0420\u00a7\u0420\u201c\u0420\u045f\u0420\u0408",
+      "label": "\u0420\u045c\u0420\u00a7\u0420\u201c\u0420\u045f\u0420\u0408",
+      "file_type": "image",
+      "source_file": "assets/img/clients/client-24.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "client-25_\u0420\u2019\u0420\u00bb\u0420\u201c\u0420\u0408_\u0420\u0451\u0420\u0458_\u0420\u040e\u0421\u201a\u0420\u0455\u0420\u00bb\u0420\u00b5\u0421\u201a\u0420\u0455\u0420\u0406\u0421\u2039\u0421\u2026",
+      "label": "\u0420\u2019\u0420\u00bb\u0420\u201c\u0420\u0408 \u0420\u0451\u0420\u0458. \u0420\u040e\u0421\u201a\u0420\u0455\u0420\u00bb\u0420\u00b5\u0421\u201a\u0420\u0455\u0420\u0406\u0421\u2039\u0421\u2026",
+      "file_type": "image",
+      "source_file": "assets/img/clients/client-25.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "screenshot-full_SoftSnow_website",
+      "label": "SoftSnow Website Screenshot (Full Page)",
+      "file_type": "image",
+      "source_file": "docs/screenshot-full.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "page-index",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "imports tokens.css"
+    },
+    {
+      "source": "page-index",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "imports components.css"
+    },
+    {
+      "source": "page-index",
+      "target": "css-utilities",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "imports utilities.css"
+    },
+    {
+      "source": "page-index",
+      "target": "css-sections",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "imports sections.css"
+    },
+    {
+      "source": "page-index",
+      "target": "dep-swiper",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "Swiper for carousels"
+    },
+    {
+      "source": "page-index",
+      "target": "dep-gfonts",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "Google Fonts link"
+    },
+    {
+      "source": "page-index",
+      "target": "js-main",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "initSwiper, bindNav"
+    },
+    {
+      "source": "page-solutions",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-solutions",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-solutions",
+      "target": "js-main",
+      "type": "DEPENDS_ON",
+      "confidence": 0.9
+    },
+    {
+      "source": "page-solution-detail",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-solution-detail",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-solution-detail",
+      "target": "dep-fancybox",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "only page with fancybox"
+    },
+    {
+      "source": "page-solution-detail",
+      "target": "dep-jquery",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-solution-detail",
+      "target": "js-main",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "initTabs, initAccordion"
+    },
+    {
+      "source": "page-clients",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-clients",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-clients",
+      "target": "js-main",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "initClientsPage"
+    },
+    {
+      "source": "page-client-detail",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-client-detail",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-projects",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-projects",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-projects",
+      "target": "js-main",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "initProjectsPage"
+    },
+    {
+      "source": "page-project-detail",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-project-detail",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-project-detail",
+      "target": "dep-fancybox",
+      "type": "DEPENDS_ON",
+      "confidence": 0.9
+    },
+    {
+      "source": "page-project-detail",
+      "target": "dep-jquery",
+      "type": "DEPENDS_ON",
+      "confidence": 0.9
+    },
+    {
+      "source": "page-events",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-events",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-events",
+      "target": "js-main",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "initNewsPage"
+    },
+    {
+      "source": "page-event-detail",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-event-detail",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0
+    },
+    {
+      "source": "page-directum",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 0.9
+    },
+    {
+      "source": "page-directum",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 0.9
+    },
+    {
+      "source": "page-univer",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 0.9
+    },
+    {
+      "source": "page-univer",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 0.9
+    },
+    {
+      "source": "page-vuz",
+      "target": "css-tokens",
+      "type": "DEPENDS_ON",
+      "confidence": 0.9
+    },
+    {
+      "source": "page-vuz",
+      "target": "css-components",
+      "type": "DEPENDS_ON",
+      "confidence": 0.9
+    },
+    {
+      "source": "js-main",
+      "target": "dep-swiper",
+      "type": "DEPENDS_ON",
+      "confidence": 1.0,
+      "content": "new Swiper(...) calls"
+    },
+    {
+      "source": "arch-4files",
+      "target": "css-tokens",
+      "type": "IMPLEMENTED_BY",
+      "confidence": 1.0
+    },
+    {
+      "source": "arch-4files",
+      "target": "css-components",
+      "type": "IMPLEMENTED_BY",
+      "confidence": 1.0
+    },
+    {
+      "source": "arch-4files",
+      "target": "css-utilities",
+      "type": "IMPLEMENTED_BY",
+      "confidence": 1.0
+    },
+    {
+      "source": "arch-4files",
+      "target": "css-sections",
+      "type": "IMPLEMENTED_BY",
+      "confidence": 1.0
+    },
+    {
+      "source": "arch-bem",
+      "target": "css-components",
+      "type": "IMPLEMENTED_BY",
+      "confidence": 1.0
+    },
+    {
+      "source": "arch-icons",
+      "target": "page-index",
+      "type": "IMPLEMENTED_IN",
+      "confidence": 1.0,
+      "content": "SVG sprite in index.html"
+    },
+    {
+      "source": "arch-fonts",
+      "target": "dep-gfonts",
+      "type": "IMPLEMENTED_BY",
+      "confidence": 1.0
+    },
+    {
+      "source": "arch-routing",
+      "target": "page-index",
+      "type": "RELATES_TO",
+      "confidence": 0.8,
+      "content": "homepage links to catalog pages"
+    },
+    {
+      "source": "arch-routing",
+      "target": "page-solutions",
+      "type": "RELATES_TO",
+      "confidence": 0.8
+    },
+    {
+      "source": "arch-routing",
+      "target": "page-solution-detail",
+      "type": "RELATES_TO",
+      "confidence": 0.8
+    },
+    {
+      "source": "arch-routing",
+      "target": "page-clients",
+      "type": "RELATES_TO",
+      "confidence": 0.8
+    },
+    {
+      "source": "arch-routing",
+      "target": "page-projects",
+      "type": "RELATES_TO",
+      "confidence": 0.8
+    },
+    {
+      "source": "arch-routing",
+      "target": "page-events",
+      "type": "RELATES_TO",
+      "confidence": 0.8
+    },
+    {
+      "source": "arch-data-flow",
+      "target": "page-clients",
+      "type": "RELATES_TO",
+      "confidence": 0.8,
+      "content": "renders clients from JSON"
+    },
+    {
+      "source": "arch-data-flow",
+      "target": "page-projects",
+      "type": "RELATES_TO",
+      "confidence": 0.8,
+      "content": "renders projects from JSON"
+    },
+    {
+      "source": "arch-data-flow",
+      "target": "page-events",
+      "type": "RELATES_TO",
+      "confidence": 0.8,
+      "content": "renders events from JSON"
+    },
+    {
+      "source": "arch-data-flow",
+      "target": "js-main",
+      "type": "RELATES_TO",
+      "confidence": 1.0,
+      "content": "fetch+render logic in main.js"
+    },
+    {
+      "source": "arch-figma",
+      "target": "arch-status",
+      "type": "RELATES_TO",
+      "confidence": 1.0,
+      "content": "status tracked in FIGMA.md"
+    },
+    {
+      "source": "arch-todo",
+      "target": "css-sections",
+      "type": "RELATES_TO",
+      "confidence": 1.0,
+      "content": "TODO: split sections.css"
+    },
+    {
+      "source": "arch-reduced-motion",
+      "target": "css-sections",
+      "type": "IMPLEMENTED_IN",
+      "confidence": 1.0
+    },
+    {
+      "source": "arch-component-reuse",
+      "target": "arch-bem",
+      "type": "RELATES_TO",
+      "confidence": 0.8
+    },
+    {
+      "source": "arch-component-reuse",
+      "target": "css-components",
+      "type": "RELATES_TO",
+      "confidence": 1.0
+    },
+    {
+      "source": "file-accordion_1_bg",
+      "target": "section-index_tasks",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "index.html:234",
+      "weight": 1.0
+    },
+    {
+      "source": "file-accordion_2_bg",
+      "target": "section-index_tasks",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "index.html:241",
+      "weight": 1.0
+    },
+    {
+      "source": "file-accordion_3_bg",
+      "target": "section-index_tasks",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "index.html:248",
+      "weight": 1.0
+    },
+    {
+      "source": "file-accordion_4_bg",
+      "target": "section-index_tasks",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "index.html:255",
+      "weight": 1.0
+    },
+    {
+      "source": "file-accordion_5_bg",
+      "target": "section-index_tasks",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "index.html:262",
+      "weight": 1.0
+    },
+    {
+      "source": "file-accordion_6_bg",
+      "target": "section-index_tasks",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "index.html:269",
+      "weight": 1.0
+    },
+    {
+      "source": "file-card_vuz_bg_jpg",
+      "target": "section-index_industries",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "index.html:164",
+      "weight": 1.0
+    },
+    {
+      "source": "file-card_vuz_bg_jpg",
+      "target": "industry-university",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": null,
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "file-card_biz_bg",
+      "target": "industry-business",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": null,
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "file-card_gos_bg",
+      "target": "industry-government",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": null,
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "file-card_vuz_bg_jpg",
+      "target": "file-card_vuz_bg_png",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": null,
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file-client_1",
+      "target": "section-index_clients",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "index.html:290",
+      "weight": 1.0
+    },
+    {
+      "source": "file-client_1",
+      "target": "section-event_detail_clients",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "event-detail.html",
+      "source_location": "event-detail.html:366",
+      "weight": 1.0
+    },
+    {
+      "source": "file-client_2",
+      "target": "section-index_clients",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "index.html:294",
+      "weight": 1.0
+    },
+    {
+      "source": "file-client_2",
+      "target": "section-event_detail_clients",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "event-detail.html",
+      "source_location": "event-detail.html:370",
+      "weight": 1.0
+    },
+    {
+      "source": "file-client_3",
+      "target": "section-index_clients",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "index.html:298",
+      "weight": 1.0
+    },
+    {
+      "source": "file-client_3",
+      "target": "section-event_detail_clients",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "event-detail.html",
+      "source_location": "event-detail.html:374",
+      "weight": 1.0
+    },
+    {
+      "source": "file-client_4",
+      "target": "section-index_clients",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "index.html:302",
+      "weight": 1.0
+    },
+    {
+      "source": "file-client_4",
+      "target": "section-event_detail_clients",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "event-detail.html",
+      "source_location": "event-detail.html:378",
+      "weight": 1.0
+    },
+    {
+      "source": "file-client_5",
+      "target": "section-index_clients",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": "index.html:306",
+      "weight": 1.0
+    },
+    {
+      "source": "file-client_5",
+      "target": "section-event_detail_clients",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "event-detail.html",
+      "source_location": "event-detail.html:382",
+      "weight": 1.0
+    },
+    {
+      "source": "file-client_6",
+      "target": "section-index_clients",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": null,
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file-client_7",
+      "target": "section-index_clients",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": null,
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file-client_8",
+      "target": "section-index_clients",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": null,
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file-client_9",
+      "target": "section-index_clients",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": null,
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file-client_10",
+      "target": "section-index_clients",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": null,
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "section-index_clients",
+      "target": "company-softsnow",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": null,
+      "source_location": null,
+      "weight": 0.7
+    },
+    {
+      "source": "section-event_detail_clients",
+      "target": "company-softsnow",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": null,
+      "source_location": null,
+      "weight": 0.7
+    },
+    {
+      "source": "section-index_industries",
+      "target": "company-softsnow",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": null,
+      "source_location": null,
+      "weight": 0.7
+    },
+    {
+      "source": "section-index_tasks",
+      "target": "company-softsnow",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": null,
+      "source_location": null,
+      "weight": 0.7
+    },
+    {
+      "source": "file_d-targets_logo-horizontal",
+      "target": "company_dtargets",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/d-targets_logo-horizontal.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_hr-pro_logo_black-text",
+      "target": "company_hrpro",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/hr-pro_logo_black-text.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_logo-ranepa",
+      "target": "company_ranepa",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/logo-ranepa.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_logo-ranepa-svg",
+      "target": "company_ranepa",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/logo-ranepa.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_logo-ranepa-univer",
+      "target": "company_ranepa",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "assets/img/logo-ranepa-univer.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_logo-bitrix",
+      "target": "company_bitrix",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/logo-bitrix.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_logo-moodle",
+      "target": "company_moodle",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/logo-moodle.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_logo-moodle-2",
+      "target": "company_moodle",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/logo-moodle-2.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_logo-moodle-3",
+      "target": "company_moodle",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/logo-moodle-3.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_logo-polymetal",
+      "target": "company_polymetal",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/logo-polymetal.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_directum-bg",
+      "target": "company_directum",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "assets/img/directum-bg.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_hero-bg",
+      "target": "project_softsnow",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "assets/img/hero-bg.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_cta-bg",
+      "target": "project_softsnow",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "assets/img/cta-bg.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_client-quote",
+      "target": "project_softsnow",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "assets/img/client-quote.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_goals__inner",
+      "target": "project_softsnow",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "assets/img/goals__inner.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_gallery1",
+      "target": "project_softsnow",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "assets/img/gallery1.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_icon-reason-1",
+      "target": "project_softsnow",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "assets/img/icon-reason-1.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_icon-reason-2",
+      "target": "project_softsnow",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "assets/img/icon-reason-2.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_icon-reason-3",
+      "target": "project_softsnow",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "assets/img/icon-reason-3.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_icon-reason-4",
+      "target": "project_softsnow",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "assets/img/icon-reason-4.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_directum-bg",
+      "target": "project_softsnow",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "assets/img/directum-bg.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_d-targets_logo-horizontal",
+      "target": "project_softsnow",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "assets/img/d-targets_logo-horizontal.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "file_hr-pro_logo_black-text",
+      "target": "project_softsnow",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "assets/img/hr-pro_logo_black-text.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "company_dtargets",
+      "target": "project_softsnow",
+      "relation": "references",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.3,
+      "source_file": null,
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "company_hrpro",
+      "target": "project_softsnow",
+      "relation": "references",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.3,
+      "source_file": null,
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "company_directum",
+      "target": "project_softsnow",
+      "relation": "references",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.3,
+      "source_file": null,
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "logo-softsnow_svg",
+      "target": "phones_png",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/logo-softsnow.svg",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "logo-softsnow_svg",
+      "target": "logo-univer_png",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "assets/img/logo-softsnow.svg",
+      "source_location": null,
+      "weight": 0.6
+    },
+    {
+      "source": "logo-univer_png",
+      "target": "logo-voek-univer_png",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/logo-univer.png",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "logo-univer_png",
+      "target": "phones_png",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/logo-univer.png",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "logo-voek-univer_png",
+      "target": "project-2_png",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "assets/img/logo-voek-univer.png",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "logo-voek-univer_png",
+      "target": "project-2-small_png",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "assets/img/logo-voek-univer.png",
+      "source_location": null,
+      "weight": 0.7
+    },
+    {
+      "source": "project-2_png",
+      "target": "project-2-small_png",
+      "relation": "semantically_similar_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/project-2.png",
+      "source_location": null,
+      "weight": 0.95
+    },
+    {
+      "source": "o-kliente_jpg",
+      "target": "project-1_png",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "assets/img/o-kliente.jpg",
+      "source_location": null,
+      "weight": 0.7
+    },
+    {
+      "source": "phone-1_png",
+      "target": "phone-2_png",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "assets/img/phone-1.png",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "phone-1_png",
+      "target": "phone-3_png",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "assets/img/phone-1.png",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "phone-1_png",
+      "target": "phone-4_png",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "assets/img/phone-1.png",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "phone-1_png",
+      "target": "phones_png",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "assets/img/phone-1.png",
+      "source_location": null,
+      "weight": 0.7
+    },
+    {
+      "source": "phone-2_png",
+      "target": "phone-3_png",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "assets/img/phone-2.png",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "phone-2_png",
+      "target": "phone-4_png",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "assets/img/phone-2.png",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "phone-3_png",
+      "target": "phone-4_png",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "assets/img/phone-3.png",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "sed-plus-logo-horizontal-short_svg",
+      "target": "projects_logo_horisontal-black_svg",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "assets/img/sed-plus-logo-horizontal-short.svg",
+      "source_location": null,
+      "weight": 0.6
+    },
+    {
+      "source": "sed-plus-logo-horizontal-short_svg",
+      "target": "logo-softsnow_svg",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "assets/img/sed-plus-logo-horizontal-short.svg",
+      "source_location": null,
+      "weight": 0.6
+    },
+    {
+      "source": "projects_logo_horisontal-black_svg",
+      "target": "logo-softsnow_svg",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "assets/img/projects_logo_horisontal-black.svg",
+      "source_location": null,
+      "weight": 0.6
+    },
+    {
+      "source": "registry-banner_jpg",
+      "target": "solution-features_png",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "assets/img/registry-banner.jpg",
+      "source_location": null,
+      "weight": 0.6
+    },
+    {
+      "source": "features-demo_svg",
+      "target": "solution-features_png",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/features-demo.svg",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "features-demo_svg",
+      "target": "meteor-icons_code_svg",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "assets/img/features-demo.svg",
+      "source_location": null,
+      "weight": 0.5
+    },
+    {
+      "source": "solution-cta_png",
+      "target": "solution-features_png",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "assets/img/solution-cta.png",
+      "source_location": null,
+      "weight": 0.5
+    },
+    {
+      "source": "mobiles_jpg",
+      "target": "phones_png",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "assets/img/mobiles.jpg",
+      "source_location": null,
+      "weight": 0.7
+    },
+    {
+      "source": "mobiles_jpg",
+      "target": "phone-1_png",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "assets/img/mobiles.jpg",
+      "source_location": null,
+      "weight": 0.6
+    },
+    {
+      "source": "logo-softsnow_svg",
+      "target": "project-1_png",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "assets/img/logo-softsnow.svg",
+      "source_location": null,
+      "weight": 0.5
+    },
+    {
+      "source": "project-1_png",
+      "target": "project-2_png",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "assets/img/project-1.png",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "solution-hero-bg",
+      "target": "solution-detail-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/solution-hero-bg.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "solution-stats",
+      "target": "solution-detail-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/solution-stats.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "solution-t-logo",
+      "target": "solution-detail-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/solution-t-logo.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-1",
+      "target": "univer-online-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/svc-1.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-2",
+      "target": "univer-online-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/svc-2.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-3",
+      "target": "univer-online-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/svc-3.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-4",
+      "target": "univer-online-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/svc-4.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-5",
+      "target": "univer-online-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/svc-5.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-6",
+      "target": "univer-online-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/svc-6.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-7",
+      "target": "univer-online-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/svc-7.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "univer-hero-bg",
+      "target": "univer-online-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/univer-hero-bg.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "univer-registry",
+      "target": "univer-online-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/univer-registry.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "video-placeholder",
+      "target": "project-detail-page",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/img/video-placeholder.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "univer-online-page",
+      "target": "softsnow-website",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "univer-online.html",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "solution-detail-page",
+      "target": "softsnow-website",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "solution-detail.html",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "solution-reestr",
+      "target": "solution-reestr-mintsifry",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "assets/img/solution-reestr.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "univer-registry",
+      "target": "solution-reestr-mintsifry",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "assets/img/univer-registry.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "vuz-event-1",
+      "target": "univer-online-page",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "assets/img/vuz-event-1.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "vuz-event-2",
+      "target": "univer-online-page",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "assets/img/vuz-event-2.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "vuz-event-3",
+      "target": "univer-online-page",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "assets/img/vuz-event-3.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "vuz-event-4",
+      "target": "univer-online-page",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "assets/img/vuz-event-4.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "vuz-hero-bg",
+      "target": "univer-online-page",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "assets/img/vuz-hero-bg.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "univer-cta-bg",
+      "target": "univer-online-page",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "assets/img/univer-cta-bg.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-1",
+      "target": "svc-2",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "assets/img/svc-1.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-2",
+      "target": "svc-3",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "assets/img/svc-2.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-3",
+      "target": "svc-4",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "assets/img/svc-3.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-4",
+      "target": "svc-5",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "assets/img/svc-4.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-5",
+      "target": "svc-6",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "assets/img/svc-5.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "svc-6",
+      "target": "svc-7",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "assets/img/svc-6.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "vuz-event-1",
+      "target": "vuz-event-2",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "assets/img/vuz-event-1.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "vuz-event-2",
+      "target": "vuz-event-3",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "assets/img/vuz-event-2.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "vuz-event-3",
+      "target": "vuz-event-4",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "assets/img/vuz-event-3.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "solution-reestr",
+      "target": "univer-registry",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "assets/img/solution-reestr.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "solution-hero-bg",
+      "target": "univer-hero-bg",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "assets/img/solution-hero-bg.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "client-mgimo",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-polymetal",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-voek",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-solidcore",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-mguya",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-spbpu",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-russian-justice-academy",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-finance-university",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-mfua",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-apb",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-spbgu",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-unikon",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-synergy",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-pavlov-university",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-nngu",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-onf",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-stau",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-svfu",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-leti",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-mmuni",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-ugrasu",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-kom-dpo",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-omgtu",
+      "target": "concept-softsnow",
+      "relation": "client_of",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "image-webinar-1",
+      "target": "concept-strategic-planning",
+      "relation": "depicts",
+      "weight": 1.0,
+      "confidence": 0.9
+    },
+    {
+      "source": "image-webinar-2",
+      "target": "concept-digital-university",
+      "relation": "depicts",
+      "weight": 1.0,
+      "confidence": 0.9
+    },
+    {
+      "source": "image-webinar-3",
+      "target": "concept-kedo",
+      "relation": "depicts",
+      "weight": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "image-webinar-3",
+      "target": "concept-digital-doc-workflow",
+      "relation": "depicts",
+      "weight": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "image-webinar-4",
+      "target": "concept-hr-digital",
+      "relation": "depicts",
+      "weight": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "image-webinar-1",
+      "target": "concept-directum-awards",
+      "relation": "depicts",
+      "weight": 0.6,
+      "confidence": 0.7
+    },
+    {
+      "source": "image-webinar-2",
+      "target": "concept-directum-awards",
+      "relation": "depicts",
+      "weight": 0.6,
+      "confidence": 0.7
+    },
+    {
+      "source": "client-mgimo",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-mguya",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-spbpu",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-russian-justice-academy",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-finance-university",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-mfua",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-spbgu",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-nngu",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-svfu",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-leti",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-mmuni",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-ugrasu",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-omgtu",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 1.0,
+      "confidence": 1.0
+    },
+    {
+      "source": "client-pavlov-university",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 0.8,
+      "confidence": 0.9
+    },
+    {
+      "source": "client-stau",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 0.8,
+      "confidence": 0.9
+    },
+    {
+      "source": "client-synergy",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 0.7,
+      "confidence": 0.8
+    },
+    {
+      "source": "client-kom-dpo",
+      "target": "concept-higher-education",
+      "relation": "belongs_to_sector",
+      "weight": 0.7,
+      "confidence": 0.8
+    },
+    {
+      "source": "client-polymetal",
+      "target": "client-solidcore",
+      "relation": "semantically_similar_to",
+      "weight": 0.75,
+      "confidence": 0.75
+    },
+    {
+      "source": "client-apb",
+      "target": "client-unikon",
+      "relation": "semantically_similar_to",
+      "weight": 0.7,
+      "confidence": 0.7
+    },
+    {
+      "source": "client-voek",
+      "target": "client-onf",
+      "relation": "semantically_similar_to",
+      "weight": 0.7,
+      "confidence": 0.7
+    },
+    {
+      "source": "concept-strategic-planning",
+      "target": "concept-digital-university",
+      "relation": "semantically_similar_to",
+      "weight": 0.8,
+      "confidence": 0.8
+    },
+    {
+      "source": "concept-kedo",
+      "target": "concept-digital-doc-workflow",
+      "relation": "semantically_similar_to",
+      "weight": 0.9,
+      "confidence": 0.9
+    },
+    {
+      "source": "concept-kedo",
+      "target": "concept-hr-digital",
+      "relation": "semantically_similar_to",
+      "weight": 0.7,
+      "confidence": 0.7
+    },
+    {
+      "source": "concept-digital-doc-workflow",
+      "target": "concept-hr-digital",
+      "relation": "semantically_similar_to",
+      "weight": 0.7,
+      "confidence": 0.7
+    },
+    {
+      "source": "concept-strategic-planning",
+      "target": "concept-kedo",
+      "relation": "semantically_similar_to",
+      "weight": 0.6,
+      "confidence": 0.6
+    },
+    {
+      "source": "concept-digital-university",
+      "target": "concept-kedo",
+      "relation": "semantically_similar_to",
+      "weight": 0.75,
+      "confidence": 0.75
+    },
+    {
+      "source": "concept-directum-awards",
+      "target": "concept-softsnow",
+      "relation": "related_to",
+      "weight": 1.0,
+      "confidence": 0.9
+    },
+    {
+      "source": "screenshot-full_SoftSnow_website",
+      "target": "client-3_\u0420\u2019\u0420\u045b\u0420\u00ad\u0420\u0459",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "docs/screenshot-full.png",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "screenshot-full_SoftSnow_website",
+      "target": "client-4_Solidcore_Resources",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "docs/screenshot-full.png",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "screenshot-full_SoftSnow_website",
+      "target": "client-5_\u0420\u045a\u0420\u201c\u0420\u00ae\u0420\u0452",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "docs/screenshot-full.png",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "screenshot-full_SoftSnow_website",
+      "target": "client-6_\u0420\u040e\u0420\u045f\u0420\u00b1\u0420\u045f\u0420\u0408",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "docs/screenshot-full.png",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "screenshot-full_SoftSnow_website",
+      "target": "client-7_\u0420\u00a0\u0420\u0455\u0421\u0403\u0421\u0403\u0420\u0451\u0420\u2116\u0421\u0403\u0420\u0454\u0420\u00b0\u0421\u040f_\u0420\u00b0\u0420\u0454\u0420\u00b0\u0420\u0491\u0420\u00b5\u0420\u0458\u0420\u0451\u0421\u040f_\u0420\u0457\u0421\u0402\u0420\u00b0\u0420\u0406\u0420\u0455\u0421\u0403\u0421\u0453\u0420\u0491\u0420\u0451\u0421\u040f",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "docs/screenshot-full.png",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "screenshot-full_SoftSnow_website",
+      "target": "client-8_\u0420\u00a4\u0420\u0451\u0420\u0405\u0420\u00b0\u0420\u0405\u0421\u0403\u0420\u0455\u0420\u0406\u0421\u2039\u0420\u2116_\u0421\u0453\u0420\u0405\u0420\u0451\u0420\u0406\u0420\u00b5\u0421\u0402\u0421\u0403\u0420\u0451\u0421\u201a\u0420\u00b5\u0421\u201a",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "docs/screenshot-full.png",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "screenshot-full_SoftSnow_website",
+      "target": "client-9_\u0420\u045a\u0420\u00a4\u0420\u00ae\u0420\u0452",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "docs/screenshot-full.png",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "screenshot-full_SoftSnow_website",
+      "target": "client-24_\u0420\u045c\u0420\u00a7\u0420\u201c\u0420\u045f\u0420\u0408",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "docs/screenshot-full.png",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "screenshot-full_SoftSnow_website",
+      "target": "client-25_\u0420\u2019\u0420\u00bb\u0420\u201c\u0420\u0408_\u0420\u0451\u0420\u0458_\u0420\u040e\u0421\u201a\u0420\u0455\u0420\u00bb\u0420\u00b5\u0421\u201a\u0420\u0455\u0420\u0406\u0421\u2039\u0421\u2026",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "docs/screenshot-full.png",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "client-3_\u0420\u2019\u0420\u045b\u0420\u00ad\u0420\u0459",
+      "target": "client-4_Solidcore_Resources",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "assets/img/clients/client-3.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "client-3_\u0420\u2019\u0420\u045b\u0420\u00ad\u0420\u0459",
+      "target": "client-9_\u0420\u045a\u0420\u00a4\u0420\u00ae\u0420\u0452",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "assets/img/clients/client-3.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "client-5_\u0420\u045a\u0420\u201c\u0420\u00ae\u0420\u0452",
+      "target": "client-9_\u0420\u045a\u0420\u00a4\u0420\u00ae\u0420\u0452",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "assets/img/clients/client-5.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "client-5_\u0420\u045a\u0420\u201c\u0420\u00ae\u0420\u0452",
+      "target": "client-7_\u0420\u00a0\u0420\u0455\u0421\u0403\u0421\u0403\u0420\u0451\u0420\u2116\u0421\u0403\u0420\u0454\u0420\u00b0\u0421\u040f_\u0420\u00b0\u0420\u0454\u0420\u00b0\u0420\u0491\u0420\u00b5\u0420\u0458\u0420\u0451\u0421\u040f_\u0420\u0457\u0421\u0402\u0420\u00b0\u0420\u0406\u0420\u0455\u0421\u0403\u0421\u0453\u0420\u0491\u0420\u0451\u0421\u040f",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "assets/img/clients/client-5.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "client-6_\u0420\u040e\u0420\u045f\u0420\u00b1\u0420\u045f\u0420\u0408",
+      "target": "client-8_\u0420\u00a4\u0420\u0451\u0420\u0405\u0420\u00b0\u0420\u0405\u0421\u0403\u0420\u0455\u0420\u0406\u0421\u2039\u0420\u2116_\u0421\u0453\u0420\u0405\u0420\u0451\u0420\u0406\u0420\u00b5\u0421\u0402\u0421\u0403\u0420\u0451\u0421\u201a\u0420\u00b5\u0421\u201a",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "assets/img/clients/client-6.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "client-6_\u0420\u040e\u0420\u045f\u0420\u00b1\u0420\u045f\u0420\u0408",
+      "target": "client-25_\u0420\u2019\u0420\u00bb\u0420\u201c\u0420\u0408_\u0420\u0451\u0420\u0458_\u0420\u040e\u0421\u201a\u0420\u0455\u0420\u00bb\u0420\u00b5\u0421\u201a\u0420\u0455\u0420\u0406\u0421\u2039\u0421\u2026",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "assets/img/clients/client-6.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "client-8_\u0420\u00a4\u0420\u0451\u0420\u0405\u0420\u00b0\u0420\u0405\u0421\u0403\u0420\u0455\u0420\u0406\u0421\u2039\u0420\u2116_\u0421\u0453\u0420\u0405\u0420\u0451\u0420\u0406\u0420\u00b5\u0421\u0402\u0421\u0403\u0420\u0451\u0421\u201a\u0420\u00b5\u0421\u201a",
+      "target": "client-24_\u0420\u045c\u0420\u00a7\u0420\u201c\u0420\u045f\u0420\u0408",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "assets/img/clients/client-8.png",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "hyper-css-arch",
+      "type": "ArchitectureLayer",
+      "name": "CSS Architecture Stack",
+      "members": [
+        "arch-4files",
+        "css-tokens",
+        "css-utilities",
+        "css-components",
+        "css-sections"
+      ],
+      "content": "Complete CSS architecture: tokens define variables, utilities reset and set base typography, components provide shared UI, sections handle page layout. Loading order matters for cascade"
+    },
+    {
+      "id": "hyper-page-deps",
+      "type": "DependencyGroup",
+      "name": "Page Dependency Graph",
+      "members": [
+        "page-index",
+        "page-solutions",
+        "page-solution-detail",
+        "page-clients",
+        "page-client-detail",
+        "page-projects",
+        "page-project-detail",
+        "page-events",
+        "page-event-detail",
+        "js-main",
+        "dep-swiper",
+        "dep-gfonts",
+        "dep-fancybox",
+        "dep-jquery"
+      ],
+      "content": "All pages depend on CSS tokens/components and js-main. index.html and detail pages also depend on Swiper and Google Fonts. solution-detail and project-detail uniquely depend on Fancybox+jQuery"
+    },
+    {
+      "id": "hyper-arch-concepts",
+      "type": "DesignPrinciples",
+      "name": "Core Architecture Concepts",
+      "members": [
+        "arch-4files",
+        "arch-routing",
+        "arch-figma",
+        "arch-bem",
+        "arch-component-reuse",
+        "arch-icons",
+        "arch-fonts",
+        "arch-data-flow",
+        "arch-reduced-motion",
+        "arch-status",
+        "arch-todo"
+      ],
+      "content": "Fundamental architecture decisions governing the codebase: CSS layering, static routing, Figma integration, BEM naming, component reuse, inline SVG icons, Inter font, JSON data rendering, accessibility motion preferences, implementation tracking, and remaining technical debt"
+    },
+    {
+      "id": "he-higher-ed-clients",
+      "type": "client_cohort",
+      "members": [
+        "client-mgimo",
+        "client-mguya",
+        "client-spbpu",
+        "client-russian-justice-academy",
+        "client-finance-university",
+        "client-mfua",
+        "client-spbgu",
+        "client-nngu",
+        "client-svfu",
+        "client-leti",
+        "client-mmuni",
+        "client-ugrasu",
+        "client-omgtu"
+      ],
+      "label": "Russian Higher Education Institutions",
+      "properties": {
+        "count": 13,
+        "sector": "\u0412\u044b\u0441\u0448\u0435\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435"
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "he-adjacent-education",
+      "type": "client_cohort",
+      "members": [
+        "client-pavlov-university",
+        "client-stau",
+        "client-synergy",
+        "client-kom-dpo"
+      ],
+      "label": "Adjacent Education Sector Clients",
+      "properties": {
+        "count": 4,
+        "sectors": [
+          "\u041c\u0435\u0434\u0438\u0446\u0438\u043d\u0441\u043a\u043e\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+          "\u0410\u0433\u0440\u0430\u0440\u043d\u043e\u0435 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435",
+          "\u041e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435"
+        ]
+      },
+      "confidence": 0.9
+    },
+    {
+      "id": "he-non-education",
+      "type": "client_cohort",
+      "members": [
+        "client-polymetal",
+        "client-solidcore",
+        "client-voek",
+        "client-apb",
+        "client-unikon",
+        "client-onf"
+      ],
+      "label": "Non-Education Industry Clients",
+      "properties": {
+        "count": 6,
+        "sectors": [
+          "\u0413\u043e\u0440\u043d\u043e\u0434\u043e\u0431\u044b\u0432\u0430\u044e\u0449\u0430\u044f \u043f\u0440\u043e\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u043e\u0441\u0442\u044c",
+          "\u042d\u043d\u0435\u0440\u0433\u0435\u0442\u0438\u043a\u0430",
+          "\u0411\u0430\u043d\u043a\u043e\u0432\u0441\u043a\u0438\u0439 \u0441\u0435\u043a\u0442\u043e\u0440",
+          "\u0418\u0422 \u0438 \u043a\u043e\u043d\u0441\u0430\u043b\u0442\u0438\u043d\u0433",
+          "\u041e\u0431\u0449\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0430\u044f \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u044f"
+        ]
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "he-all-clients",
+      "type": "client_cohort",
+      "members": [
+        "client-mgimo",
+        "client-polymetal",
+        "client-voek",
+        "client-solidcore",
+        "client-mguya",
+        "client-spbpu",
+        "client-russian-justice-academy",
+        "client-finance-university",
+        "client-mfua",
+        "client-apb",
+        "client-spbgu",
+        "client-unikon",
+        "client-synergy",
+        "client-pavlov-university",
+        "client-nngu",
+        "client-onf",
+        "client-stau",
+        "client-svfu",
+        "client-leti",
+        "client-mmuni",
+        "client-ugrasu",
+        "client-kom-dpo",
+        "client-omgtu"
+      ],
+      "label": "All SoftSnow Clients (logo page)",
+      "properties": {
+        "count": 23
+      },
+      "confidence": 1.0
+    },
+    {
+      "id": "he-webinar-assets",
+      "type": "event_cluster",
+      "members": [
+        "image-webinar-1",
+        "image-webinar-2",
+        "image-webinar-3",
+        "image-webinar-4"
+      ],
+      "label": "SoftSnow Webinar & Article Media Assets",
+      "properties": {
+        "count": 4,
+        "platform": "events.html"
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "he-university-digital-topics",
+      "type": "topic_cluster",
+      "members": [
+        "concept-strategic-planning",
+        "concept-digital-university",
+        "concept-kedo",
+        "concept-hr-digital",
+        "concept-digital-doc-workflow"
+      ],
+      "label": "University Digital Transformation Topics",
+      "properties": {
+        "count": 5
+      },
+      "confidence": 0.85
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

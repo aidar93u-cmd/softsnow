@@ -1,4 +1,4 @@
-// ╨Ф╤Г╨▒╨╗╨╕╤А╨╛╨▓╨░╨╜╨╕╨╡ ╤Б╨╗╨░╨╣╨┤╨╛╨▓ ╨║╨╗╨╕╨╡╨╜╤В╨╛╨▓ ╨┐╨╛╨║╨░ ╤И╨╕╤А╨╕╨╜╨░ ╨╜╨╡ ╨╖╨░╨┐╨╛╨╗╨╜╨╕╤В 2x viewport (╤З╤С╤В╨╜╨╛╨╡ ╤З╨╕╤Б╨╗╨╛ ╨┤╨╗╤П ╨▒╨╡╤Б╤И╨╛╨▓╨╜╨╛╨│╨╛ ╤Ж╨╕╨║╨╗╨░ -50%)
+// ponytail: duplicate track until >= 2x viewport (even count keeps the -50% loop seamless)
 function initClientsMarquee() {
   const marquee = document.querySelector('.clients__marquee');
   const track = marquee && marquee.querySelector('.clients__track');
@@ -12,12 +12,7 @@ function initClientsMarquee() {
 function initSwiper(selector, options) {
   const el = document.querySelector(selector);
   if (!el) return null;
-  try {
-    return new Swiper(el, options);
-  } catch (err) {
-    console.error(`╨Ю╤И╨╕╨▒╨║╨░ ╨╕╨╜╨╕╤Ж╨╕╨░╨╗╨╕╨╖╨░╤Ж╨╕╨╕ Swiper ╨┤╨╗╤П ${selector}:`, err);
-    return null;
-  }
+  return new Swiper(el, options);
 }
 
 function bindNav(selector, swiper) {
@@ -89,7 +84,7 @@ function initAccordion(listSelector, openClass, buttonSelector) {
   });
 }
 
-// ╨Ф╨░╨╜╨╜╤Л╨╡ ╨║╨╗╨╕╨╡╨╜╤В╨╛╨▓-╨╖╨░╨│╨╗╤Г╤И╨╡╨║ тАФ ╨╖╨░╨╝╨╡╨╜╨╕╤В╤М ╨╜╨░ CSV/fetch ╨╕╨╖ ╤А╨╡╨░╨╗╤М╨╜╨╛╨│╨╛ ╨╕╤Б╤В╨╛╤З╨╜╨╕╨║╨░ (url = ╤Б╨░╨╣╤В ╨┐╨░╤А╤В╨╜╤С╤А╨░)
+// ponytail: placeholder client data — replace with CSV/fetch from real source (url = partner website)
 function initClientsPage() {
   const grid = document.getElementById('clientsGrid');
   if (!grid) return;
@@ -132,22 +127,6 @@ function initClientsPage() {
   apply();
 }
 
-// ╨б╨╕╨╜╤Е╤А╨╛╨╜╨╕╨╖╨░╤Ж╨╕╤П ╨▒╨╡╨╣╨┤╨╢╨╡╨╣, ╤З╨╕╨┐╤Б╨╛╨▓ ╨╕ ╤Б╨╛╤Б╤В╨╛╤П╨╜╨╕╤П ╨║╨╜╨╛╨┐╨║╨╕ ╤Б╨▒╤А╨╛╤Б╨░
-function syncDropdowns(dropdowns, allChecks, chips, reset, renderChips, applyFilter) {
-  let total = 0;
-  dropdowns.forEach((dd) => {
-    const checks = dd.querySelectorAll('.dropdown__check');
-    const n = Array.from(checks).filter((c) => c.checked).length;
-    const badge = dd.querySelector('.dropdown__count');
-    badge.textContent = n;
-    badge.classList.toggle('is-hidden', n === 0);
-    total += n;
-  });
-  renderChips(allChecks, chips);
-  applyFilter(dropdowns, chips, reset);
-  reset.classList.toggle('is-hidden', total === 0);
-}
-
 function initDropdown() {
   const bar = document.querySelector('.projects__filters');
   if (!bar) return;
@@ -166,27 +145,27 @@ function initDropdown() {
   let visible = 4;
   let lastMatched = 0;
 
-  const renderChips = (checksList, chipsContainer) => {
-    chipsContainer.innerHTML = '';
-    checksList.forEach((c) => {
+  const renderChips = () => {
+    chips.innerHTML = '';
+    allChecks.forEach((c) => {
       if (!c.checked) return;
       const text = c.closest('.dropdown__option').textContent.trim();
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'projects__chip';
-      btn.setAttribute('aria-label', `╨г╨▒╤А╨░╤В╤М ╤Д╨╕╨╗╤М╤В╤А: ${text}`);
+      btn.setAttribute('aria-label', `Убрать фильтр: ${text}`);
       btn.innerHTML = `<span>${text}</span>${chipX}`;
       btn.addEventListener('click', () => {
         c.checked = false;
-        syncDropdowns(dropdowns, allChecks, chips, reset, renderChips, applyFilter);
+        sync();
       });
-      chipsContainer.appendChild(btn);
+      chips.appendChild(btn);
     });
   };
 
-  const applyFilter = (dropdownList, chipsContainer, resetBtn) => {
+  const applyFilter = () => {
     const active = {};
-    dropdownList.forEach((dd) => {
+    dropdowns.forEach((dd) => {
       const checked = Array.from(dd.querySelectorAll('.dropdown__check:checked')).map((c) => c.value);
       if (checked.length) active[dd.dataset.filter] = new Set(checked);
     });
@@ -230,46 +209,49 @@ function initDropdown() {
     moreBtn.addEventListener('click', () => {
       const hidden = cards.filter((c) => c.classList.contains('is-matched') && c.hidden);
       visible += STEP;
-      applyFilter(dropdowns, chips, reset);
+      applyFilter();
       reveal(hidden);
     });
   }
 
-  allChecks.forEach((c) => c.addEventListener('change', () => {
-    syncDropdowns(dropdowns, allChecks, chips, reset, renderChips, applyFilter);
-  }));
-  
+  const sync = () => {
+    let total = 0;
+    dropdowns.forEach((dd) => {
+      const checks = dd.querySelectorAll('.dropdown__check');
+      const n = Array.from(checks).filter((c) => c.checked).length;
+      const badge = dd.querySelector('.dropdown__count');
+      badge.textContent = n;
+      badge.classList.toggle('is-hidden', n === 0);
+      total += n;
+    });
+    renderChips();
+    applyFilter();
+    reset.classList.toggle('is-hidden', total === 0);
+  };
+
+  allChecks.forEach((c) => c.addEventListener('change', sync));
   reset.addEventListener('click', () => {
     allChecks.forEach((c) => (c.checked = false));
-    syncDropdowns(dropdowns, allChecks, chips, reset, renderChips, applyFilter);
+    sync();
   });
-  
   document.addEventListener('click', (e) => {
     dropdowns.forEach((dd) => {
       if (dd.open && !dd.contains(e.target)) dd.open = false;
     });
   });
-  
   dropdowns.forEach((dd) =>
     dd.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') dd.open = false;
     })
   );
-  
-  syncDropdowns(dropdowns, allChecks, chips, reset, renderChips, applyFilter);
+  sync();
 }
 
-// ╨Ю╨┤╨╕╨╜ ╤И╨░╨▒╨╗╨╛╨╜ ╨┐╨╛╨┐╨░╨┐╨░, ╨║╨╗╨╛╨╜╨╕╤А╤Г╨╡╤В╤Б╤П ╨┐╤А╨╕ ╨║╨╗╨╕╨║╨╡; src ╨╖╨░╨┐╨╛╨╗╨╜╤П╨╡╤В╤Б╤П ╨╕╨╖ ╤Б╨║╤А╨╕╨╜╤И╨╛╤В╨░ ╤В╨░╨▒╨░
+// ponytail: one popup template, cloned per click; src filled from the tab's screenshot
 function initDemoPopup() {
   const tpl = document.getElementById('features-popup');
   const btns = document.querySelectorAll('.features__demo');
   if (!tpl || !btns.length) return;
-  
-  if (typeof Fancybox === 'undefined') {
-    console.warn('Fancybox ╨╜╨╡ ╨┐╨╛╨┤╨║╨╗╤О╤З╤С╨╜, initDemoPopup ╨┐╤А╨╛╨┐╤Г╤Й╨╡╨╜');
-    return;
-  }
-  
   btns.forEach((btn) => {
     btn.addEventListener('click', () => {
       const panel = btn.closest('.features__panel');
@@ -291,7 +273,7 @@ function initDemoPopup() {
   });
 }
 
-// ╨Я╤А╨╕ ╨╜╨░╨▓╨╡╨┤╨╡╨╜╨╕╨╕/╨║╨╗╨╕╨║╨╡ ╨╜╨░ ╨▒╨╗╨╛╨║ ╨┐╤А╨╛╨│╤А╨░╨╝╨╝╤Л ╨┐╨╛╨║╨░╨╖╤Л╨▓╨░╨╡╤В╤Б╤П ╤Б╨╛╨╛╤В╨▓╨╡╤В╤Б╤В╨▓╤Г╤О╤Й╨░╤П ╨┐╨░╨╜╨╡╨╗╤М ╨║╨╛╨╜╤В╨╡╨╜╤В╨░
+// ponytail: hover/click on a program block shows its matching content panel
 function initProgramTabs() {
   const list = document.querySelector('.program__list');
   const panels = document.querySelectorAll('.program__panel');
@@ -314,16 +296,10 @@ function initProgramTabs() {
   });
 }
 
-// ╨Ю╤В╨║╤А╤Л╤В╨╕╨╡ ╨▓╨╕╨┤╨╡╨╛ ╤Б╨╡╨║╤Ж╨╕╨╕ ╨▓ ╨┐╨╛╨┐╨░╨┐╨╡ Fancybox
+// ponytail: open the section video in a Fancybox popup
 function initVideoPopup() {
   const plays = document.querySelectorAll('.video__player .video__play');
-  if (!plays.length) return;
-  
-  if (typeof Fancybox === 'undefined') {
-    console.warn('Fancybox ╨╜╨╡ ╨┐╨╛╨┤╨║╨╗╤О╤З╤С╨╜, initVideoPopup ╨┐╤А╨╛╨┐╤Г╤Й╨╡╨╜');
-    return;
-  }
-  
+  if (!plays.length || typeof Fancybox === 'undefined') return;
   plays.forEach((play) => {
     play.addEventListener('click', () => {
       const src = play.dataset.videoSrc;
@@ -343,7 +319,7 @@ function closeMobileMenu(menu, burger) {
   menu.classList.remove('is-open');
   burger.classList.remove('is-open');
   burger.setAttribute('aria-expanded', 'false');
-  burger.setAttribute('aria-label', '╨Ю╤В╨║╤А╤Л╤В╤М ╨╝╨╡╨╜╤О');
+  burger.setAttribute('aria-label', 'Открыть меню');
   document.body.classList.remove('menu-open');
   document.body.style.overflow = '';
 }
@@ -355,7 +331,7 @@ function initMobileMenu() {
 
   const menu = document.createElement('nav');
   menu.className = 'mobile-menu';
-  menu.setAttribute('aria-label', '╨Ь╨╛╨▒╨╕╨╗╤М╨╜╨╛╨╡ ╨╝╨╡╨╜╤О');
+  menu.setAttribute('aria-label', 'Мобильное меню');
 
   const inner = document.createElement('div');
   inner.className = 'container mobile-menu__inner';
@@ -389,7 +365,7 @@ function initMobileMenu() {
     menu.classList.toggle('is-open', open);
     burger.classList.toggle('is-open', open);
     burger.setAttribute('aria-expanded', String(open));
-    burger.setAttribute('aria-label', open ? '╨Ч╨░╨║╤А╤Л╤В╤М ╨╝╨╡╨╜╤О' : '╨Ю╤В╨║╤А╤Л╤В╤М ╨╝╨╡╨╜╤О');
+    burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
     document.body.classList.toggle('menu-open', open);
     document.body.style.overflow = open ? 'hidden' : '';
   });
@@ -427,14 +403,6 @@ function initContactsMap() {
 document.addEventListener('DOMContentLoaded', () => {
   initClientsMarquee();
   initContactsMap();
-
-  
-  // Debounced resize ╨┤╨╗╤П marquee
-  let marqueeResizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(marqueeResizeTimer);
-    marqueeResizeTimer = setTimeout(initClientsMarquee, 150);
-  });
   window.addEventListener('resize', initClientsMarquee);
 
   const clientsSwiper = initSwiper('.clients__swiper', {
@@ -626,4 +594,4 @@ function initRequestForm() {
   });
 });
 
-// CSS `position: sticky` ╨╜╨░ .stages__head-col ╨╛╨▒╤А╨░╨▒╨░╤В╤Л╨▓╨░╨╡╤В ╨┐╨╗╨░╨▓╨░╤О╤Й╨╕╨╣ ╨╗╨╡╨▓╤Л╨╣ ╨▒╨╗╨╛╨║ ╨╜╨░╤В╨╕╨▓╨╜╨╛
+// ponytail: CSS `position: sticky` on .stages__head-col handles the floating left block natively
