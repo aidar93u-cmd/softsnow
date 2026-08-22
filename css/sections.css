@@ -58,7 +58,7 @@
 .header__caret {
   flex-shrink: 0;
   color: var(--color-black);
-  /* Плавный поворот стрелки (игнорирует prefers-reduced-motion по требованию) */
+  /* ╨Я╨╗╨░╨▓╨╜╤Л╨╣ ╨┐╨╛╨▓╨╛╤А╨╛╤В ╤Б╤В╤А╨╡╨╗╨║╨╕ (╨╕╨│╨╜╨╛╤А╨╕╤А╤Г╨╡╤В prefers-reduced-motion ╨┐╨╛ ╤В╤А╨╡╨▒╨╛╨▓╨░╨╜╨╕╤О) */
   transition: var(--transition-base);
 }
 
@@ -498,7 +498,7 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
   grid-template-columns: repeat(4, 1fr);
 }
 
-/* Client-page stats variant (Figma 896:12329): 4×440, no heading, centered */
+/* Client-page stats variant (Figma 896:12329): 4╨УтАФ440, no heading, centered */
 .stats--client .stats__item {
   align-items: center;
   text-align: center;
@@ -545,6 +545,8 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
   background: var(--color-white);
   border-radius: var(--sp-6-25);
   padding-bottom: var(--sp-20);
+  border-radius: 1.5625rem;
+  padding-bottom: 5rem;
 }
 
 .tasks-lists-section .tasks {
@@ -641,7 +643,7 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
 }
 
 
-/* ============ Tasks (для каких задач) ============ */
+/* ============ Tasks (╨а╥С╨а┬╗╨б╨П ╨а╤Ф╨а┬░╨а╤Ф╨а╤С╨бтАж ╨а┬╖╨а┬░╨а╥С╨а┬░╨бтАб) ============ */
 
 .tasks__inner {
     display: grid;
@@ -673,10 +675,6 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
 .tasks__list {
     width: 100%;
     overflow: hidden;
-}
-
-.tasks__item {
-
 }
 
 .tasks__item + .tasks__item {
@@ -884,9 +882,6 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
     margin: auto;
 }
 
-.partners__name {
-}
-
 .partners__tag {
   margin-top: var(--sp-5);
   font-size: var(--fs-body-14);
@@ -1054,6 +1049,167 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
 .projects__logo--sm {
   width: var(--sp-25);
   height: var(--sp-25);
+}
+
+/* ============ About: ╨бтАЮ╨а┬░╨а╤Ф╨бтАЪ╨бтА╣ ╨а╤Ф╨а╤Х╨а╤Ш╨а╤Ч╨а┬░╨а╨Е╨а╤С╨а╤С (projects--about) ============ */
+.projects--about .projects__actions {
+    margin-top: 0;
+    margin-left: auto;
+}
+
+.facts__swiper {
+  overflow: visible;
+}
+
+.facts__screen {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 20.3125rem);
+    gap: var(--gap-sm);
+}
+
+.facts__screen .swiper-slide {
+    height: auto;
+}
+
+.facts__card {
+    position: relative;
+    height: 100%;
+    padding: 2.125rem var(--gap-2xl);
+    overflow: hidden;
+}
+
+.facts__screen .facts__slide--big {
+    grid-column: span 2;
+    grid-row: 1 / 3;
+}
+
+.facts__screen .facts__slide--wide {
+    grid-column: span 2;
+}
+
+.facts__name {
+    font-size: var(--fs-h3);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.facts__text {
+    margin-top: var(--gap-lg);
+    font-size: var(--fs-body-14);
+    max-width: 21.875rem;
+}
+
+.facts__img {
+    position: absolute;
+    right: var(--gap-xl);
+    bottom: var(--gap-xl);
+    width: 7.5rem;
+    height: 7.5rem;
+    object-fit: cover;
+}
+
+.facts__img--big {
+    width: 17.5rem;
+    height: 17.5rem;
+    border-radius: 7.5rem;
+}
+
+.facts__card--partner .facts__img {
+    border-radius: 50%;
+}
+
+/* ============ About: ╨╜╨░╤И ╨┐╨╛╨┤╤Е╨╛╨┤ ============ */
+.approach {
+    margin-bottom: 5rem;
+    padding: 2.5rem 0;
+}
+
+.approach__label {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--color-grey);
+}
+
+.approach__text {
+    margin: 0 auto;
+    text-align: center;
+    font-size: var(--fs-h2);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+}
+
+.approach__text span {
+    color: var(--color-sea);
+}
+
+/* ============ About: ╨║╨╛╨╝╨░╨╜╨┤╨░ ============ */
+.team {
+    margin-bottom: 5rem;
+}
+
+.team__head {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 22.5rem;
+    padding: 1.875rem var(--gap-2xl);
+    margin-bottom: var(--gap-sm);
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+}
+
+.team__heading {
+    font-size: var(--fs-h2);
+    letter-spacing: -0.07em;
+}
+
+.team__sub {
+    font-size: var(--fs-body-16);
+    max-width: 40.9375rem;
+}
+
+.team__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-sm);
+}
+
+.team__card {
+    position: relative;
+    min-height: 35rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.team__photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team__plate {
+    position: absolute;
+    left: var(--gap-sm);
+    bottom: var(--gap-sm);
+    width: 26.875rem;
+    max-width: calc(100% - var(--gap-md));
+    padding: 1.25rem var(--gap-lg);
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+}
+
+.team__name {
+    font-size: var(--fs-body-20);
+    font-weight: 500;
+    line-height: 1;
+}
+
+.team__role {
+    margin-top: 0.4375rem;
+    font-size: var(--fs-body-14);
 }
 
 /* ============ Page hero (listing pages: projects, solutions) ============ */
@@ -1356,6 +1512,7 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
     display: flex;
     width: 100%;
     justify-content: space-between;
+    align-items: flex-end;
 }
 .events__heading {
   font-size: var(--fs-h2);
@@ -1523,6 +1680,8 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
   font-size: var(--fs-body-14);
   line-height: var(--leading-normal);
   max-width: var(--sp-94_75);
+  line-height: 1.4;
+  max-width: 23.6875rem;
 }
 
 .cta__btn {
@@ -1680,7 +1839,7 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
   color: var(--color-sea);
 }
 
-/* ============ Media page (Медиацентр) ============ */
+/* ============ Media page (╨а╤Ъ╨а┬╡╨а╥С╨а╤С╨а┬░╨бтАа╨а┬╡╨а╨Е╨бтАЪ╨б╨В) ============ */
 
 .events-featured {
   margin-bottom: var(--sp-20);
@@ -1927,7 +2086,7 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
 
 /* ============ Solution detail page ============ */
 
-/* ============ Registry (реестр Минцифры, внутри hero-фрейма) ============ */
+/* ============ Registry (╨б╨В╨а┬╡╨а┬╡╨б╨Г╨бтАЪ╨б╨В ╨а╤Ъ╨а╤С╨а╨Е╨бтАа╨а╤С╨бтАЮ╨б╨В╨бтА╣, ╨а╨Ж╨а╨Е╨б╤У╨бтАЪ╨б╨В╨а╤С hero-╨бтАЮ╨б╨В╨а┬╡╨атДЦ╨а╤Ш╨а┬░) ============ */
 .registry {
   margin-bottom: 4.375rem;
 }
@@ -1987,7 +2146,7 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
     max-width: var(--sp-112);
 }
 
-/* ============ Audience (для кого предназначен) ============ */
+/* ============ Audience (╨а╥С╨а┬╗╨б╨П ╨а╤Ф╨а╤Х╨а╤Ц╨а╤Х ╨а╤Ч╨б╨В╨а┬╡╨а╥С╨а╨Е╨а┬░╨а┬╖╨а╨Е╨а┬░╨бтАб╨а┬╡╨а╨Е) ============ */
 .audience {
   margin-bottom: var(--sp-20);
 }
@@ -2009,6 +2168,7 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
   padding: var(--sp-8_5) var(--sp-10) var(--sp-10);
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .audience__name {
@@ -2023,7 +2183,7 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
     opacity: 0.7;
 }
 
-/* ============ Features (функциональные возможности) ============ */
+/* ============ Features (╨бтАЮ╨б╤У╨а╨Е╨а╤Ф╨бтАа╨а╤С╨а╤Х╨а╨Е╨а┬░╨а┬╗╨б╨К╨а╨Е╨бтА╣╨а┬╡ ╨а╨Ж╨а╤Х╨а┬╖╨а╤Ш╨а╤Х╨а┬╢╨а╨Е╨а╤Х╨б╨Г╨бтАЪ╨а╤С) ============ */
 .features {
     margin-bottom: var(--sp-20);
 }
@@ -2341,7 +2501,7 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
   object-fit: contain;
 }
 
-/* ============ CTA center (обсудим внедрение) ============ */
+/* ============ CTA center (╨а╤Х╨а┬▒╨б╨Г╨б╤У╨а╥С╨а╤С╨а╤Ш ╨а╨Ж╨а╨Е╨а┬╡╨а╥С╨б╨В╨а┬╡╨а╨Е╨а╤С╨а┬╡) ============ */
 .cta--center {
   height: var(--sp-140);
   margin-top: 5rem;
@@ -2382,7 +2542,7 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
   font-weight: var(--font-weight-medium);
 }
 
-/* ============ CTA blue (У вас похожая задача?) ============ */
+/* ============ CTA blue (╨а╨И ╨а╨Ж╨а┬░╨б╨Г ╨а╤Ч╨а╤Х╨бтАж╨а╤Х╨а┬╢╨а┬░╨б╨П ╨а┬╖╨а┬░╨а╥С╨а┬░╨бтАб╨а┬░?) ============ */
 .cta--blue {
   color: var(--color-white);
 }
@@ -2493,7 +2653,7 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
   padding-bottom: var(--sp-10);
 }
 
-/* ============ Catalog (страница «Решения») ============ */
+/* ============ Catalog (╨б╨Г╨бтАЪ╨б╨В╨а┬░╨а╨Е╨а╤С╨бтАа╨а┬░ ╨Т┬л╨а┬а╨а┬╡╨бтВм╨а┬╡╨а╨Е╨а╤С╨б╨П╨Т┬╗) ============ */
 .catalog {
   margin-bottom: var(--sp-20);
 }
@@ -2687,10 +2847,6 @@ h3.client-title {
     padding-top: var(--sp-15);
 }
 
-.stages__head {
-
-}
-
 .stages__title {
   font-size: var(--fs-h3);
   font-weight: var(--font-weight-medium);
@@ -2856,9 +3012,6 @@ h3.client-title {
   align-items: flex-end;
   justify-content: space-between;
   gap: var(--gap-2xl);
-}
-.audience__card{
-  position: relative;
 }
 .event-about__text {
   max-width: var(--sp-185-5);
@@ -3882,7 +4035,7 @@ transition: var(--transition-base);
 
 /* ============ Univer Online (univer-online.html) ============ */
 
-/* Univer-registry (Решение включено в реестр Минцифры) */
+/* Univer-registry (╨а┬а╨а┬╡╨бтВм╨а┬╡╨а╨Е╨а╤С╨а┬╡ ╨а╨Ж╨а╤Ф╨а┬╗╨б╨Л╨бтАб╨а┬╡╨а╨Е╨а╤Х ╨а╨Ж ╨б╨В╨а┬╡╨а┬╡╨б╨Г╨бтАЪ╨б╨В ╨а╤Ъ╨а╤С╨а╨Е╨бтАа╨а╤С╨бтАЮ╨б╨В╨бтА╣) */
 .univer-registry {
   height: var(--sp-115);
   
@@ -3930,15 +4083,13 @@ transition: var(--transition-base);
   font-size: var(--fs-body-16);
   max-width: var(--sp-150);
 }
-.univer-registry__desc_bottom {
-}
 .univer-registry__img {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
 
-/* Reasons (Почему выбирают Univer Online) */
+/* Reasons (╨а╤Я╨а╤Х╨бтАб╨а┬╡╨а╤Ш╨б╤У ╨а╨Ж╨бтА╣╨а┬▒╨а╤С╨б╨В╨а┬░╨б╨Л╨бтАЪ Univer Online) */
 .reasons--univer .reasons__icon {
     background: var(--color-sea);
     padding: var(--sp-3);
@@ -3948,12 +4099,12 @@ transition: var(--transition-base);
     justify-content: center;
 }
 
-/* CTA синий (Расскажите нам о задачах вашего университета) */
+/* CTA ╨б╨Г╨а╤С╨а╨Е╨а╤С╨атДЦ (╨а┬а╨а┬░╨б╨Г╨б╨Г╨а╤Ф╨а┬░╨а┬╢╨а╤С╨бтАЪ╨а┬╡ ╨а╨Е╨а┬░╨а╤Ш ╨а╤Х ╨а┬╖╨а┬░╨а╥С╨а┬░╨бтАб╨а┬░╨бтАж ╨а╨Ж╨а┬░╨бтВм╨а┬╡╨а╤Ц╨а╤Х ╨б╤У╨а╨Е╨а╤С╨а╨Ж╨а┬╡╨б╨В╨б╨Г╨а╤С╨бтАЪ╨а┬╡╨бтАЪ╨а┬░) */
 .cta--blue--univer .cta--blue__title {
   max-width: 58.75rem;
 }
 
-/* services (Ключевые решения внутри Univer Online) */
+/* services (╨а╤Щ╨а┬╗╨б╨Л╨бтАб╨а┬╡╨а╨Ж╨бтА╣╨а┬╡ ╨б╨В╨а┬╡╨бтВм╨а┬╡╨а╨Е╨а╤С╨б╨П ╨а╨Ж╨а╨Е╨б╤У╨бтАЪ╨б╨В╨а╤С Univer Online) */
 .services {
   margin-bottom: var(--sp-20);
 }
@@ -3994,7 +4145,7 @@ transition: var(--transition-base);
     max-width: var(--sp-75);
 
 }
-/* Vnedrenie (Варианты внедрения) */
+/* Vnedrenie (╨атАЩ╨а┬░╨б╨В╨а╤С╨а┬░╨а╨Е╨бтАЪ╨бтА╣ ╨а╨Ж╨а╨Е╨а┬╡╨а╥С╨б╨В╨а┬╡╨а╨Е╨а╤С╨б╨П) */
 .vnedrenie--univer .vnedrenie__sub {
   font-size: var(--fs-body-14);
 }
@@ -4007,7 +4158,7 @@ transition: var(--transition-base);
 }
 
 
-/* team (SoftSnow — команда) */
+/* team (SoftSnow ╨▓╨ВтАЭ ╨а╤Ф╨а╤Х╨а╤Ш╨а┬░╨а╨Е╨а╥С╨а┬░) */
 .team {
   margin-top: 5rem;
   margin-bottom: var(--sp-20);
@@ -4021,11 +4172,6 @@ transition: var(--transition-base);
     display: flex;
     gap: var(--sp-2_5);
     flex-direction: column;
-}
-.team__photos{
-  background: var(--color-white);
-  border-radius: var(--radius-lg);
-
 }
 .team__head {
   padding: var(--sp-10);
@@ -4049,6 +4195,8 @@ transition: var(--transition-base);
   line-height: var(--leading-normal);
 }
 .team__photos {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
     flex: 1;
     display: flex;
     align-items: flex-end;
@@ -4070,7 +4218,7 @@ transition: var(--transition-base);
   margin-bottom: var(--sp-20);
 }
 
-/* ============ Ecosystem (vuz.html: цифровая среда вуза) ============ */
+/* ============ Ecosystem (vuz.html: ╨бтАа╨а╤С╨бтАЮ╨б╨В╨а╤Х╨а╨Ж╨а┬░╨б╨П ╨б╨Г╨б╨В╨а┬╡╨а╥С╨а┬░ ╨а╨Ж╨б╤У╨а┬╖╨а┬░) ============ */
 .ecosystem {
   margin-top: 5rem;
   margin-bottom: var(--sp-20);
@@ -4135,7 +4283,7 @@ transition: var(--transition-base);
   border-radius: var(--radius-lg);
 }
 
-/* Левая колонка: текст слева, выравнивание вправо, иконка справа */
+/* ╨атА║╨а┬╡╨а╨Ж╨а┬░╨б╨П ╨а╤Ф╨а╤Х╨а┬╗╨а╤Х╨а╨Е╨а╤Ф╨а┬░: ╨бтАЪ╨а┬╡╨а╤Ф╨б╨Г╨бтАЪ ╨б╨Г╨а┬╗╨а┬╡╨а╨Ж╨а┬░, ╨а╨Ж╨бтА╣╨б╨В╨а┬░╨а╨Ж╨а╨Е╨а╤С╨а╨Ж╨а┬░╨а╨Е╨а╤С╨а┬╡ ╨а╨Ж╨а╤Ч╨б╨В╨а┬░╨а╨Ж╨а╤Х, ╨а╤С╨а╤Ф╨а╤Х╨а╨Е╨а╤Ф╨а┬░ ╨б╨Г╨а╤Ч╨б╨В╨а┬░╨а╨Ж╨а┬░ */
 .eco-card--flip .eco-card__body {
   text-align: right;
 }
@@ -4180,4 +4328,101 @@ transition: var(--transition-base);
 .eco-card__icon svg {
   width: var(--sp-10);
   height: var(--sp-10);
+}
+  width: 2.5rem;
+  height: 2.5rem;
+}
+  height: 2.5rem;
+}
+/* ==================== contacts-map ==================== */
+.contacts-map__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 35rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.contacts-map__frame {
+  position: absolute;
+  inset: 0;
+}
+
+.contacts-map__frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.contacts-map__frame [class*="ground-pane"] {
+  filter: grayscale(1);
+}
+
+.contacts-map__card {
+  position: relative;
+  margin: 2.5rem 2.5rem 2.5rem auto;
+  width: 47.6%;
+  background: var(--color-white);
+  padding: var(--gap-4xl) var(--gap-3xl);
+  box-sizing: border-box;
+}
+
+.contacts-map__title {
+  max-width: 31.25rem;
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: var(--gap-xl);
+}
+
+.contacts-map__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-md);
+  margin-top: var(--gap-4xl);
+}
+
+.contacts-map__item {
+  margin-bottom: var(--gap-lg);
+}
+
+.contacts-map__label {
+  color: var(--color-grey);
+  font-size: var(--fs-body-14);
+  margin-bottom: var(--gap-sm);
+}
+
+.contacts-map__value {
+  display: inline-block;
+  font-size: var(--fs-body-20);
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+a.contacts-map__value:hover {
+  text-decoration: underline;
+}
+
+.contacts-map__social {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-md);
+}
+
+.contacts-map__social-link {
+  display: inline-flex;
+}
+
+.contacts-map__social-link--hh {
+  height: 40px;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+  background: #D6001C;
+  border-radius: var(--radius-sm);
+  color: var(--color-white);
+  font-size: var(--fs-body-16);
+  font-weight: 700;
 }

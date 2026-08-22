@@ -81,8 +81,13 @@
 		padding-right: 1.5rem;
 	}
 
-	/* Гриды: 4 -> 2, 5 -> 3, 3 -> 2 */
-	.industries__grid,
+	/* Хедер: при фиксированном 16px root контакты не помещаются
+	   в диапазоне 1025–1280 — прячем, остаются лого + навигация + заявка */
+	.header__contacts {
+		display: none;
+	}
+
+	/* Гриды: 4 -> 2 (industries/stats настраивает ниже секционный блок) */
 	.events-list__grid,
 	.clients__grid,
 	.audience__grid,
@@ -91,11 +96,6 @@
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	.stats__grid {
-		grid-template-columns: repeat(3, 1fr);
-	}
-
-	.stats__grid--4,
 	.seminar-topics__grid,
 	.vnedrenie__grid,
 	.goals__stats {
@@ -286,9 +286,8 @@
 		padding-right: 1.25rem;
 	}
 
-	/* Гриды в одну-две колонки */
-	.industries__grid,
-	.projects__grid,
+	/* Гриды в одну-две колонки (industries/projects настраивает
+	   секционный блок ниже; stats — тоже) */
 	.events-list__grid,
 	.audience__grid,
 	.seminar-topics__grid,
@@ -299,7 +298,6 @@
 		grid-template-columns: 1fr;
 	}
 
-	.stats__grid,
 	.goals__stats {
 		grid-template-columns: repeat(2, 1fr);
 	}
@@ -309,10 +307,14 @@
 	}
 
 	/* Точечные правки */
-	/* Хедер: лого + бургер (кнопка заявки живёт в меню) */
-	.header__contacts {
-		display: none;
+	/* Хедер: внутренние поля 2.5rem захардкожены в sections.css —
+	   на мобильных привязываем к токену, иначе лого+бургер не помещаются */
+	.header__inner {
+		padding-left: var(--section-px);
+		padding-right: var(--section-px);
 	}
+
+	/* Хедер: контакты уже скрыты с ≤1280 */
 
 	.projects__actions {
 		flex-wrap: wrap;
@@ -322,10 +324,9 @@
 		grid-template-columns: 1fr;
 	}
 
-	/* Футер: в одну колонку */
+	/* Футер: колонки/высоту в 1fr даёт секционный блок ниже,
+	   здесь только уникальное */
 	.footer__inner {
-		grid-template-columns: 1fr;
-		height: auto;
 		gap: 0.625rem;
 	}
 
@@ -1166,4 +1167,88 @@
   .footer__logo { gap: 0.625rem; }
   .footer__logo-text { font-size: var(--fs-body-14); }
   .footer__tagline { font-size: var(--fs-body-16); }
+}
+/* 768px — request popup */
+@media (max-width: 768px) {
+  .modal-form { padding: 1.5rem; }
+  .modal-form__title { font-size: var(--fs-body-30); }
+}
+
+/* 576px — request popup */
+@media (max-width: 576px) {
+  .modal-form { width: calc(100vw - 2rem); }
+  .modal-form__row { flex-direction: column; gap: 0.625rem; }
+  .modal-form__submit { width: 100%; min-width: 0; }
+}
+
+/* ---- About: ����� (.projects--about / .facts__) ---- */
+@media (max-width: 1440px) {
+  .facts__screen { grid-template-rows: repeat(2, 18rem); }
+  .facts__text { max-width: 19rem; }
+}
+
+@media (max-width: 1280px) {
+  .facts__screen { grid-template-rows: repeat(2, 15.625rem); }
+  .facts__card { padding: 1.5rem 1.75rem; }
+  .facts__img { right: 1.75rem; bottom: 1.75rem; width: 6rem; height: 6rem; }
+  .facts__img--big { width: 13rem; height: 13rem; border-radius: 6.5rem; }
+  .facts__text { max-width: 17rem; }
+}
+
+@media (max-width: 1024px) {
+  .facts__screen { grid-template-rows: repeat(2, 14rem); }
+  .facts__card { padding: 1.25rem 1.5rem; }
+  .facts__img { right: 1.5rem; bottom: 1.5rem; width: 5rem; height: 5rem; }
+  .facts__img--big { width: 11rem; height: 11rem; border-radius: 5.5rem; }
+  .facts__text { max-width: 14rem; }
+}
+
+@media (max-width: 767px) {
+  .facts__card { min-height: 16rem; padding: 1.25rem 1.5rem; }
+  .facts__name { max-width: calc(100% - 4rem); }
+  .facts__text { max-width: calc(100% - 4rem); margin-top: var(--gap-sm); font-size: var(--fs-body-14); }
+  .facts__img { right: 1.25rem; bottom: 1.25rem; width: 5rem; height: 5rem; }
+
+  .approach { margin-bottom: 2rem; }
+  .approach__label { margin-bottom: 0.75rem; font-size: var(--fs-body-14); }
+
+  .team { margin-bottom: 2rem; }
+  .team__head { height: auto; min-height: 10rem; padding: 1rem 1.25rem; gap: 1.5rem; }
+  .team__heading { font-size: var(--fs-h3); }
+  .team__sub { max-width: 100%; font-size: var(--fs-body-14); }
+  .team__grid { grid-template-columns: 1fr; }
+  .team__card { min-height: 22rem; }
+}
+
+/* ---- About: команда (планшет) ---- */
+@media (min-width: 768px) and (max-width: 1280px) {
+  .team__grid { grid-template-columns: repeat(2, 1fr); }
+  .team__card { min-height: 28rem; }
+}
+
+/* ==================== contacts-map ==================== */
+@media (max-width: 1024px) {
+  .contacts-map__card {
+    width: 100%;
+    min-height: 0;
+  }
+  .contacts-map__inner {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .contacts-map__frame {
+    position: relative;
+    inset: auto;
+    height: 20rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contacts-map__cols {
+    grid-template-columns: 1fr;
+  }
+  .contacts-map__title {
+    font-size: var(--fs-h4);
+  }
 }

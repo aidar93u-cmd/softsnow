@@ -1,4 +1,4 @@
-// Дублирование слайдов клиентов пока ширина не заполнит 2x viewport (чётное число для бесшовного цикла -50%)
+// ╨Ф╤Г╨▒╨╗╨╕╤А╨╛╨▓╨░╨╜╨╕╨╡ ╤Б╨╗╨░╨╣╨┤╨╛╨▓ ╨║╨╗╨╕╨╡╨╜╤В╨╛╨▓ ╨┐╨╛╨║╨░ ╤И╨╕╤А╨╕╨╜╨░ ╨╜╨╡ ╨╖╨░╨┐╨╛╨╗╨╜╨╕╤В 2x viewport (╤З╤С╤В╨╜╨╛╨╡ ╤З╨╕╤Б╨╗╨╛ ╨┤╨╗╤П ╨▒╨╡╤Б╤И╨╛╨▓╨╜╨╛╨│╨╛ ╤Ж╨╕╨║╨╗╨░ -50%)
 function initClientsMarquee() {
   const marquee = document.querySelector('.clients__marquee');
   const track = marquee && marquee.querySelector('.clients__track');
@@ -15,7 +15,7 @@ function initSwiper(selector, options) {
   try {
     return new Swiper(el, options);
   } catch (err) {
-    console.error(`Ошибка инициализации Swiper для ${selector}:`, err);
+    console.error(`╨Ю╤И╨╕╨▒╨║╨░ ╨╕╨╜╨╕╤Ж╨╕╨░╨╗╨╕╨╖╨░╤Ж╨╕╨╕ Swiper ╨┤╨╗╤П ${selector}:`, err);
     return null;
   }
 }
@@ -29,6 +29,42 @@ function bindNav(selector, swiper) {
     if (prev) prev.addEventListener('click', () => swiper.slidePrev());
     if (next) next.addEventListener('click', () => swiper.slideNext());
   });
+}
+
+// ponytail: desktop = one screen-slide per 4 cards (grid), mobile = flat card slides
+function initFactsSlider() {
+  const root = document.querySelector('.projects--about');
+  if (!root || root.dataset.factsInit) return;
+  root.dataset.factsInit = '1';
+  const swiperEl = root.querySelector('.facts__swiper');
+  const wrapper = swiperEl.querySelector('.swiper-wrapper');
+  const slides = Array.from(wrapper.children);
+  const mq = window.matchMedia('(min-width: 768px)');
+  let swiper = null;
+
+  root.querySelectorAll('[data-scroll-prev]').forEach((b) =>
+    b.addEventListener('click', () => swiper && swiper.slidePrev()));
+  root.querySelectorAll('[data-scroll-next]').forEach((b) =>
+    b.addEventListener('click', () => swiper && swiper.slideNext()));
+
+  function build() {
+    wrapper.innerHTML = '';
+    if (mq.matches) {
+      for (let i = 0; i < slides.length; i += 4) {
+        const group = document.createElement('div');
+        group.className = 'swiper-slide facts__screen';
+        slides.slice(i, i + 4).forEach((s) => group.appendChild(s));
+        wrapper.appendChild(group);
+      }
+    } else {
+      slides.forEach((s) => wrapper.appendChild(s));
+    }
+    if (swiper) swiper.destroy(true, true);
+    swiper = new Swiper(swiperEl, { slidesPerView: 1, spaceBetween: 10, speed: 600, rewind: true });
+  }
+
+  build();
+  mq.addEventListener('change', build);
 }
 
 function initAccordion(listSelector, openClass, buttonSelector) {
@@ -53,7 +89,7 @@ function initAccordion(listSelector, openClass, buttonSelector) {
   });
 }
 
-// Данные клиентов-заглушек — заменить на CSV/fetch из реального источника (url = сайт партнёра)
+// ╨Ф╨░╨╜╨╜╤Л╨╡ ╨║╨╗╨╕╨╡╨╜╤В╨╛╨▓-╨╖╨░╨│╨╗╤Г╤И╨╡╨║ тАФ ╨╖╨░╨╝╨╡╨╜╨╕╤В╤М ╨╜╨░ CSV/fetch ╨╕╨╖ ╤А╨╡╨░╨╗╤М╨╜╨╛╨│╨╛ ╨╕╤Б╤В╨╛╤З╨╜╨╕╨║╨░ (url = ╤Б╨░╨╣╤В ╨┐╨░╤А╤В╨╜╤С╤А╨░)
 function initClientsPage() {
   const grid = document.getElementById('clientsGrid');
   if (!grid) return;
@@ -96,7 +132,7 @@ function initClientsPage() {
   apply();
 }
 
-// Синхронизация бейджей, чипсов и состояния кнопки сброса
+// ╨б╨╕╨╜╤Е╤А╨╛╨╜╨╕╨╖╨░╤Ж╨╕╤П ╨▒╨╡╨╣╨┤╨╢╨╡╨╣, ╤З╨╕╨┐╤Б╨╛╨▓ ╨╕ ╤Б╨╛╤Б╤В╨╛╤П╨╜╨╕╤П ╨║╨╜╨╛╨┐╨║╨╕ ╤Б╨▒╤А╨╛╤Б╨░
 function syncDropdowns(dropdowns, allChecks, chips, reset, renderChips, applyFilter) {
   let total = 0;
   dropdowns.forEach((dd) => {
@@ -138,7 +174,7 @@ function initDropdown() {
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'projects__chip';
-      btn.setAttribute('aria-label', `Убрать фильтр: ${text}`);
+      btn.setAttribute('aria-label', `╨г╨▒╤А╨░╤В╤М ╤Д╨╕╨╗╤М╤В╤А: ${text}`);
       btn.innerHTML = `<span>${text}</span>${chipX}`;
       btn.addEventListener('click', () => {
         c.checked = false;
@@ -223,14 +259,14 @@ function initDropdown() {
   syncDropdowns(dropdowns, allChecks, chips, reset, renderChips, applyFilter);
 }
 
-// Один шаблон попапа, клонируется при клике; src заполняется из скриншота таба
+// ╨Ю╨┤╨╕╨╜ ╤И╨░╨▒╨╗╨╛╨╜ ╨┐╨╛╨┐╨░╨┐╨░, ╨║╨╗╨╛╨╜╨╕╤А╤Г╨╡╤В╤Б╤П ╨┐╤А╨╕ ╨║╨╗╨╕╨║╨╡; src ╨╖╨░╨┐╨╛╨╗╨╜╤П╨╡╤В╤Б╤П ╨╕╨╖ ╤Б╨║╤А╨╕╨╜╤И╨╛╤В╨░ ╤В╨░╨▒╨░
 function initDemoPopup() {
   const tpl = document.getElementById('features-popup');
   const btns = document.querySelectorAll('.features__demo');
   if (!tpl || !btns.length) return;
   
   if (typeof Fancybox === 'undefined') {
-    console.warn('Fancybox не подключён, initDemoPopup пропущен');
+    console.warn('Fancybox ╨╜╨╡ ╨┐╨╛╨┤╨║╨╗╤О╤З╤С╨╜, initDemoPopup ╨┐╤А╨╛╨┐╤Г╤Й╨╡╨╜');
     return;
   }
   
@@ -255,7 +291,7 @@ function initDemoPopup() {
   });
 }
 
-// При наведении/клике на блок программы показывается соответствующая панель контента
+// ╨Я╤А╨╕ ╨╜╨░╨▓╨╡╨┤╨╡╨╜╨╕╨╕/╨║╨╗╨╕╨║╨╡ ╨╜╨░ ╨▒╨╗╨╛╨║ ╨┐╤А╨╛╨│╤А╨░╨╝╨╝╤Л ╨┐╨╛╨║╨░╨╖╤Л╨▓╨░╨╡╤В╤Б╤П ╤Б╨╛╨╛╤В╨▓╨╡╤В╤Б╤В╨▓╤Г╤О╤Й╨░╤П ╨┐╨░╨╜╨╡╨╗╤М ╨║╨╛╨╜╤В╨╡╨╜╤В╨░
 function initProgramTabs() {
   const list = document.querySelector('.program__list');
   const panels = document.querySelectorAll('.program__panel');
@@ -278,13 +314,13 @@ function initProgramTabs() {
   });
 }
 
-// Открытие видео секции в попапе Fancybox
+// ╨Ю╤В╨║╤А╤Л╤В╨╕╨╡ ╨▓╨╕╨┤╨╡╨╛ ╤Б╨╡╨║╤Ж╨╕╨╕ ╨▓ ╨┐╨╛╨┐╨░╨┐╨╡ Fancybox
 function initVideoPopup() {
   const plays = document.querySelectorAll('.video__player .video__play');
   if (!plays.length) return;
   
   if (typeof Fancybox === 'undefined') {
-    console.warn('Fancybox не подключён, initVideoPopup пропущен');
+    console.warn('Fancybox ╨╜╨╡ ╨┐╨╛╨┤╨║╨╗╤О╤З╤С╨╜, initVideoPopup ╨┐╤А╨╛╨┐╤Г╤Й╨╡╨╜');
     return;
   }
   
@@ -307,7 +343,7 @@ function closeMobileMenu(menu, burger) {
   menu.classList.remove('is-open');
   burger.classList.remove('is-open');
   burger.setAttribute('aria-expanded', 'false');
-  burger.setAttribute('aria-label', 'Открыть меню');
+  burger.setAttribute('aria-label', '╨Ю╤В╨║╤А╤Л╤В╤М ╨╝╨╡╨╜╤О');
   document.body.classList.remove('menu-open');
   document.body.style.overflow = '';
 }
@@ -319,7 +355,7 @@ function initMobileMenu() {
 
   const menu = document.createElement('nav');
   menu.className = 'mobile-menu';
-  menu.setAttribute('aria-label', 'Мобильное меню');
+  menu.setAttribute('aria-label', '╨Ь╨╛╨▒╨╕╨╗╤М╨╜╨╛╨╡ ╨╝╨╡╨╜╤О');
 
   const inner = document.createElement('div');
   inner.className = 'container mobile-menu__inner';
@@ -353,7 +389,7 @@ function initMobileMenu() {
     menu.classList.toggle('is-open', open);
     burger.classList.toggle('is-open', open);
     burger.setAttribute('aria-expanded', String(open));
-    burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+    burger.setAttribute('aria-label', open ? '╨Ч╨░╨║╤А╤Л╤В╤М ╨╝╨╡╨╜╤О' : '╨Ю╤В╨║╤А╤Л╤В╤М ╨╝╨╡╨╜╤О');
     document.body.classList.toggle('menu-open', open);
     document.body.style.overflow = open ? 'hidden' : '';
   });
@@ -363,19 +399,43 @@ function initMobileMenu() {
   });
 
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 1199 && menu.classList.contains('is-open')) closeMobileMenu(menu, burger);
+    if (window.innerWidth > 1024 && menu.classList.contains('is-open')) closeMobileMenu(menu, burger);
+  });
+}
+
+function initContactsMap() {
+  const el = document.getElementById('contacts-map');
+  if (!el || typeof ymaps === 'undefined') return;
+  ymaps.ready(() => {
+    const center = [59.9320, 30.3416];
+    const map = new ymaps.Map(el, { center, zoom: 16, controls: [] });
+    const placemark = new ymaps.Placemark(center, {}, {
+      iconLayout: ymaps.templateLayoutFactory.createClass(
+        '<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+          '<path d="M25.5 0.288675C25.8094 0.110042 26.1906 0.110042 26.5 0.288675L48.0167 12.7113C48.3261 12.89 48.5167 13.2201 48.5167 13.5774V38.4226C48.5167 38.7799 48.3261 39.11 48.0167 39.2887L26.5 51.7113C26.1906 51.89 25.8094 51.89 25.5 51.7113L3.98334 39.2887C3.67394 39.11 3.48334 38.7799 3.48334 38.4226V13.5773C3.48334 13.2201 3.67394 12.89 3.98334 12.7113L25.5 0.288675Z" fill="#1342F3"/>' +
+          '<circle cx="26" cy="26" r="4" fill="white"/>' +
+        '</svg>'
+      ),
+      iconShape: { type: 'Rectangle', coordinates: [[0, 0], [52, 52]] },
+      iconOffset: [-26, -52]
+    });
+    map.geoObjects.add(placemark);
+    map.behaviors.disable('scrollZoom');
   });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   initClientsMarquee();
+  initContactsMap();
+
   
-  // Debounced resize для marquee
+  // Debounced resize ╨┤╨╗╤П marquee
   let marqueeResizeTimer;
   window.addEventListener('resize', () => {
     clearTimeout(marqueeResizeTimer);
     marqueeResizeTimer = setTimeout(initClientsMarquee, 150);
   });
+  window.addEventListener('resize', initClientsMarquee);
 
   const clientsSwiper = initSwiper('.clients__swiper', {
     slidesPerView: 7.8,
@@ -431,6 +491,8 @@ document.addEventListener('DOMContentLoaded', () => {
     speed: 600,
   });
 
+  initFactsSlider();
+
   const galleryDots = Array.from(document.querySelectorAll('.gallery__dot'));
   if (gallerySwiper && galleryDots.length) {
     const syncDots = () => {
@@ -476,6 +538,76 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+// Request popup: phone mask + Just-validate (validates on input)
+function initRequestForm() {
+  const form = document.getElementById('request-form');
+  if (!form || typeof JustValidate === 'undefined') return;
+
+  if (typeof Fancybox !== 'undefined') {
+    Fancybox.bind('[data-fancybox]', { Toolbar: false, closeButton: false });
+  }
+
+  const phone = form.querySelector('.js-phone');
+  const success = document.querySelector('#request-popup .modal-form__success');
+  const head = document.querySelector('#request-popup .modal-form__head');
+
+  if (phone) {
+    phone.addEventListener('input', () => {
+      let d = phone.value.replace(/\D/g, '');
+      if (d.startsWith('8')) d = '7' + d.slice(1);
+      if (d.startsWith('7')) d = d.slice(1);
+      d = d.slice(0, 10);
+      let out = '';
+      if (d.length) out = '+7 (' + d.slice(0, 3);
+      if (d.length > 3) out += ') ' + d.slice(3, 6);
+      if (d.length > 6) out += '-' + d.slice(6, 8);
+      if (d.length > 8) out += '-' + d.slice(8, 10);
+      phone.value = out;
+    });
+  }
+
+  const validator = new JustValidate(form, {
+    validateOnBlur: true,
+    validateOnChange: true,
+    validateOnInput: true,
+    errorFieldStyle: {},
+    errorLabelStyle: { display: 'none' },
+    errorFieldCssClass: 'form-field--invalid',
+  });
+
+  validator
+    .addField('.js-fio', [
+      { rule: 'required' },
+      { rule: 'minLength', value: 3 },
+    ])
+    .addField('.js-email', [
+      { rule: 'required' },
+      { rule: 'email' },
+    ])
+    .addField('.js-phone', [
+      { rule: 'required' },
+      {
+        validator: () => phone && phone.value.replace(/\D/g, '').length === 11,
+      },
+    ])
+    .addField('.js-consent', [{ rule: 'required' }]);
+
+  validator.onSuccess(() => {
+    if (head) head.classList.add('is-hidden');
+    form.classList.add('is-hidden');
+    if (success) success.classList.remove('is-hidden');
+  });
+
+  // reset form state when the popup closes
+  document.addEventListener('fancybox:afterClose', () => {
+    form.reset();
+    form.classList.remove('is-hidden');
+    if (head) head.classList.remove('is-hidden');
+    if (success) success.classList.add('is-hidden');
+    form.querySelectorAll('.form-field--invalid').forEach((el) => el.classList.remove('form-field--invalid'));
+  });
+}
+
   initAccordion('.tasks__list', 'is-open', '.tasks__q');
   initAccordion('.faq__list', 'is-open', '.faq__q');
 
@@ -485,6 +617,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initVideoPopup();
   initProgramTabs();
   initMobileMenu();
+  initRequestForm();
 
   document.querySelectorAll('.tasks__item:first-child, .faq__item:first-child').forEach((el) => {
     el.classList.add('is-open');
@@ -493,4 +626,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// CSS `position: sticky` на .stages__head-col обрабатывает плавающий левый блок нативно
+// CSS `position: sticky` ╨╜╨░ .stages__head-col ╨╛╨▒╤А╨░╨▒╨░╤В╤Л╨▓╨░╨╡╤В ╨┐╨╗╨░╨▓╨░╤О╤Й╨╕╨╣ ╨╗╨╡╨▓╤Л╨╣ ╨▒╨╗╨╛╨║ ╨╜╨░╤В╨╕╨▓╨╜╨╛
