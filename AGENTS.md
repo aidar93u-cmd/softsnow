@@ -164,6 +164,19 @@ softsnow/
 | 9 | Клиенты | `.clients` |  |
 | 10 | FAQ | `.faq` |  |
 
+### article-detail.html — детальная страница статьи
+
+| # | Секция | Класс | Примечание |
+|---|--------|-------|------------|
+| 1 | Hero статьи (breadcrumb + h1 70px + теги + дата) | `.page-hero--detail` + `.article-hero__meta` |  |
+| 2 | О статье | `.article-about` |  |
+| 3 | CTA «Скачайте материал» (синий) | `.cta--blue` |  |
+| 4 | Текст статьи ×2 | `.article-block` (+`.article-block--points`) | цитата, автор, список |
+| 5 | Галерея проекта | `.gallery` |  |
+| 6 | Разбор проекта (видео) | `.video` |  |
+| 7 | На практике | `.article-block` + `.stages__card--dark` | карточка-ссылка → project-detail |
+| 8 | Читайте также | `.events` | карточки `href="#"` |
+
 Правила связей между страницами (проверены 2026-08-16): главная — точки входа в каталоги; решения → деталь решения; клиенты → деталь клиента (только РАНХиГС, в `js/main.js`); проекты → без детальной страницы; мероприятия → детальная страница мероприятия (`events.html` → `event-detail.html`). Все ссылки — имена файлов без `../`.
 
 ## Главный принцип (Architecture Rules)
@@ -301,9 +314,22 @@ New statistics         NEW: .stats
 | `client-detail.html` | детальная страница клиента (РАНХиГС) |
 | `events.html` | медиацентр / мероприятия |
 | `event-detail.html` | детальная страница мероприятия |
+| `article-detail.html` | детальная страница статьи |
 | `about.html` | о компании |
 | `vuz.html` | цифровая трансформация вуза |
 | `directum.html` | Directum — экосистема для управления организацией |
 | `univer-online.html` | Univer Online |
 
 Продакшен: https://taif.tw1.ru/<имя страницы>.html (index, solutions, solution-detail, clients, client-detail, projects, events, event-detail).
+## Mobile adaptation (проверено на index.html, 2026-08-23)
+
+Источник мобильного макета: Figma «SoftSnow Work (Copy)» node `1742:17748` (375×4504). Правила применимы ко всем страницам.
+
+1. **Брейкпоинты мобилки — ≤768 и ≤576.** Планшет (≤1024) не трогать. Мобильные правила живут в ХВОСТЕ `media.css` (блок «MOBILE — Figma 1742:17748») — он авторитетен при конфликтах. Токен-лестница ≤768/≤576 в шапке media.css уже приведена к макету: `--section-px: 0.75rem` (12px), `--fs-h1: 1.875rem` (30), `--fs-h2: 1.5rem` (24), `--fs-h3: 1.1875rem` (19, карточные заголовки), `--fs-numbers: 2.625rem` (42), `--control-h: 2.875rem` (кнопки 46px). Ниже 768 типографика не меняется.
+2. **Модель макета:** фон страницы `#E8E8E8` (`body { background: var(--bg-border) }`), секции — карточки r10–12 (`border-radius: 0.625rem/0.75rem`) с внутренним паддингом `[24,16]` → `padding: 1.5rem 1rem`, зазор между секциями 48px (`margin-bottom: 3rem`). Обложка (header+hero+industries) — один светлый блок `--bg-light`: header r12-top, industries r12-bottom, фон непрерывный.
+3. **Кнопки:** на мобильном все CTA на всю ширину (`width: 100%`), высота `--control-h` (46px). Outline-кнопки — чёрная обводка и текст (`border-color/color: var(--color-black)`), не синие.
+4. **Шапка ≤768:** высота 64px, паддинг 12px, лого `width: 7.5rem`, справа круглая кнопка поиска 40×40 + бургер 40×40 (белые круги), сепаратор-линия снизу. Поиск — существующая `.btn--search` из `.header__contacts`: контакты получают `order: 1; margin-left: auto`, бургер `order: 2`, телефон и primary-кнопка скрываются.
+5. **Дубли разметки — только для мелких элементов, меняющих позицию** (кнопка секции, переезжающая под карусель). Паттерн: элемент с классом `*-__cta`-вида в HTML, в `sections.css` — `display: none` (блок «Mobile-only duplicates»), в mobile-блоке media.css — `display: flex`. Примеры: `.industries__cta`, `.projects__cta`, `.events__cta`. Всё, что решается перестройкой CSS (футер-колонка, гриды), — без дублей.
+6. **Карусели:** Swiper везде (`slidesPerView: 'auto'`), ширина слайда задаётся CSS: десктоп — в `sections.css` (блок «Swiper slides»: партнёры `calc((100% - 1.875rem)/4)`, проекты `calc((100% - 0.625rem)/2)`), мобилка — 300px (`width: 18.75rem`) в media.css. Стрелки `carousel-nav` на мобильном скрываются — свайп.
+7. **Скрытие ПК-декора на мобильном:** фоновые картинки карточек (`.industries__bg`, `.tasks__bg`), overlay-псевдоэлементы, `carousel-nav`, вторые примечания hero — `display: none`. Контент, отсутствующий в мобильном макете (5-я цифра «200 000+ часов»), скрывается точечно: `.stats#about .stats__item:nth-child(4)`.
+8. **Верификация:** chrome-devtools эмуляция 375×812 (и 768) → `document.scrollWidth <= clientWidth` (нет горизонтального скролла), замеры `getBoundingClientRect` против дампа `C:\Temp\opencode\figma-mobile-index.json` (±1px), полный скриншот страницы. Внимание: браузер кэширует CSS — reload с `ignoreCache`.

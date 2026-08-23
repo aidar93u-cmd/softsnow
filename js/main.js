@@ -338,8 +338,6 @@ function initMobileMenu() {
 
   nav.querySelectorAll('.header__link').forEach((a) => {
     const clone = a.cloneNode(true);
-    const caret = clone.querySelector('.header__caret');
-    if (caret) caret.remove();
     inner.appendChild(clone);
   });
 
@@ -371,7 +369,7 @@ function initMobileMenu() {
   });
 
   menu.addEventListener('click', (e) => {
-    if (e.target.closest('a')) closeMobileMenu(menu, burger);
+    if (e.target === menu || e.target.closest('a')) closeMobileMenu(menu, burger);
   });
 
   window.addEventListener('resize', () => {
@@ -383,9 +381,9 @@ function initContactsMap() {
   const el = document.getElementById('contacts-map');
   if (!el || typeof ymaps === 'undefined') return;
   ymaps.ready(() => {
-    const center = [59.9320, 30.3416];
+    const center = [59.9320, 30.3515];
     const map = new ymaps.Map(el, { center, zoom: 16, controls: [] });
-    const placemark = new ymaps.Placemark(center, {}, {
+    const placemark = new ymaps.Placemark([59.9320, 30.3416], {}, {
       iconLayout: ymaps.templateLayoutFactory.createClass(
         '<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">' +
           '<path d="M25.5 0.288675C25.8094 0.110042 26.1906 0.110042 26.5 0.288675L48.0167 12.7113C48.3261 12.89 48.5167 13.2201 48.5167 13.5774V38.4226C48.5167 38.7799 48.3261 39.11 48.0167 39.2887L26.5 51.7113C26.1906 51.89 25.8094 51.89 25.5 51.7113L3.98334 39.2887C3.67394 39.11 3.48334 38.7799 3.48334 38.4226V13.5773C3.48334 13.2201 3.67394 12.89 3.98334 12.7113L25.5 0.288675Z" fill="#1342F3"/>' +
@@ -414,7 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const partnersSwiper = initSwiper('.partners__swiper', {
-    slidesPerView: 1.5,
+    slidesPerView: 'auto',
     spaceBetween: 10,
     rewind: true,
     speed: 600,
@@ -422,7 +420,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const projectsSwiper = initSwiper('.projects__swiper', {
-    slidesPerView: 1,
+    slidesPerView: 'auto',
     spaceBetween: 10,
     rewind: true,
     speed: 600,

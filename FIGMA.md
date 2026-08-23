@@ -231,6 +231,26 @@ Detail проекта, фрейм `1128:8159` (COMPONENT, fileKey `tK0WpkPKL3pQG
 
 Особенности: диаграмма — absolute-позиционирование в `.ecosystem__diagram` (1790×640, координаты из Figma: кольцо x575 y0; карточки (170/112/170, 94/265/436) и (1120/1178/1120, …)); ≤1200px — grid 2 кол. (кольцо сверху по центру), ≤767px — 1 кол. Иконки — оригинальные SVG из библиотек Figma через Iconify API (ion:school-outline, material-symbols-light:task-alt-rounded/work-outline, ion:folder-open-outline, ci:file-document, reicon:chart-trend), круг 64 bg `#1342F31A`, svg 40 `currentColor`. QA 2026-08-21: все координаты ±1px при 1920px.
 
+### Детальная статьи (article-detail.html)
+
+Страница статьи, фрейм `1453:10113` «Детальная статьи» (1920×8041). Стили в `css/sections.css` (блок «Article detail page»).
+
+| # | Figma Section | Code | Status |
+|---|---|---|---|
+| 1 | Header | `.header` | done (reused) |
+| 2 | Hero (breadcrumb + h1 70/500 ls-3 + 4 тега-пилюли r50 h40 + дата) | `.page-hero--detail` + `.article-hero__meta/__tags/__date` (NEW) | done |
+| 3 | «О статье» (текст 20/140% слева + img 890×560 r20 справа, white r20 pad40) | `.article-about` (NEW) | done |
+| 4 | CTA «Скачайте полезный материал» (bg sea r20, btn outline-white + иконка download) | `.cta--blue` (reused) | done |
+| 5 | «Сначала процесс, потом продукт» (h2 слева; справа img + текст 20 + цитата с иконкой + автор справа-снизу) | `.article-block` (NEW) + `__quote/__author` | done |
+| 6 | Галерея (h2+sub+carousel-nav, swiper 1790×742 r20, точки ×4) | `.gallery` (reused; nav уже привязан в main.js) | done |
+| 7 | «Цифровизация как „слой сверху“» (текст + лид + список из 3 буллетов: точка 6px sea) | `.article-block--points` + `__lead/__points` (NEW) | done |
+| 8 | «Разбор проекта» видео (плеер 1790×700 r20, play 80×80) | `.video` (reused) | done |
+| 9 | «На практике» (текст + карточка-ссылка border #222 2px r20: name 30/500 + desc 15 + стрелка) | `.article-block` + `.stages__card--dark` (reused из client-detail) → project-detail.html | done |
+| 10 | «Читайте также» (btn ghost + carousel-nav + 1 wide + 3 карточки) | `.events` (reused как в project-detail) | done |
+| 11 | Footer | `.footer` | done (reused) |
+
+Плейсхолдеры `ponytail:` — картинки статьи (`client-quote.jpg`, `popup1.jpg`, галерея `gallery1.jpg`, видео `video-placeholder.jpg`, аватар автора `logo-ranepa.png`) — под замену реальными ассетами. Имя/должность автора в макете — плейсхолдеры. Багфикс каскада: `.page-hero__title.page-hero__title--detail` поднят по специфичности (перебивался `.page-hero__title` 100px; по макетам детальных страниц заголовок 70px ls-3) — затронуло также project-detail/client-detail.
+
 ### Попап «Связаться с нами» (index.html)
 
 FRAME `1470:10500` («Форма», 720×924, white r20, padding 40). Открывается по кнопке шапки «Оставить заявку» (`data-fancybox data-src="#request-popup"`), Fancybox v5 inline. reCAPTCHA из макета не переносится (по требованию).
@@ -262,3 +282,23 @@ FIGMA → Figma MCP Audit → Design System + Components + Tokens
 ```
 
 Цель: section-specific layout + shared components + shared tokens + shared behavior. НЕ один гигантский глобальный CSS и НЕ изолированный CSS на каждый фрейм. Наличие section-классов (`hero`, `tasks`, `projects`) — норма; плохо только дублирование компонентов внутри них.
+
+## Mobile (index.html)
+
+Источник: Figma node `1742:17748` (375×4504), дамп `C:\Temp\opencode\figma-mobile-index.json`. CSS: хвост `css/media.css` (блок «MOBILE — Figma 1742:17748») + токен-тиры ≤768/≤576. Правила — в AGENTS.md «Mobile adaptation».
+
+| # | Figma Section | Code (mobile) | Status |
+|---|---|---|---|
+| 1 | Navbar (64px, поиск+бургер) | `.header__inner` + `.btn--search` (order) | done |
+| 2 | Hero (фото+градиент, h1 30, кнопка full) | `.hero`, `.hero-block-inner::before` | done |
+| 3 | Industries (стопка r12 + `.industries__cta`) | `.industries__grid` 1fr | done |
+| 4 | Stats (стек, 42px, без «часов») | `.stats__grid` 1fr | done |
+| 5 | Tasks (карточка r10, строки, кнопка) | `.tasks-lists-section .tasks__inner` | done |
+| 6 | Companies (кружки 130, marquee) | `.client-image` 8.125rem | done |
+| 7 | Eco-system (текст-карточка + карусель 300) | `.partners__head`, `.partners__swiper` | done |
+| 8 | Projects (титул-карточка + карусель + `.projects__cta`) | `.projects__head`, `.projects__swiper` | done |
+| 9 | Media (заголовок + карусель 300×240 + `.events__cta`) | `.events__head`, `.events__swiper` | done |
+| 10 | CTA (светлая карточка, слева) | `.cta__body` | done |
+| 11 | Footer (2 тёмные карточки в колонку) | `.footer__inner` 1fr | done |
+
+Известные отличия от макета: 4-я карточка мероприятий не переведена в синий вариант (`Type=Blue` в макете); стрелка в строках задач — `#icon-arrow` (в макете шеврон).
