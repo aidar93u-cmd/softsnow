@@ -285,7 +285,7 @@
   gap: var(--gap-sm);
 }
 
-/* Client-page stats variant (Figma 896:12329): 4Г—440, no heading, centered */
+/* Client-page stats variant (Figma 896:12329): 4×440, no heading, centered */
 .stats--client .stats__item {
   align-items: center;
   text-align: center;
@@ -427,7 +427,7 @@
   padding: 0 var(--section-px) 0;
 }
 
-/* ============ Tasks (РґР»СЏ РєР°РєРёС… Р·Р°РґР°С‡) ============ */
+/* ============ Tasks (для каких задач) ============ */
 
 /* Дубль намеренный: вариант «страниц решений» (квирки AGENTS.md) */
 /* stylelint-disable-next-line no-duplicate-selectors */
@@ -747,7 +747,7 @@
   height: 6.25rem;
 }
 
-/* ============ About: С„Р°РєС‚С‹ РєРѕРјРїР°РЅРёРё (projects--about) ============ */
+/* ============ About: факты компании (projects--about) ============ */
 .projects--about .projects__actions {
     margin-top: 0;
     margin-left: auto;
@@ -1376,7 +1376,7 @@
   color: var(--color-sea);
 }
 
-/* ============ Media page (РњРµРґРёР°С†РµРЅС‚СЂ) ============ */
+/* ============ Media page (Медиацентр) ============ */
 
 .page-hero--media.page-hero{  
   margin-bottom: 5rem;
@@ -1391,9 +1391,9 @@
 
 /* ============ Solution detail page ============ */
 
-/* ============ Registry (СЂРµРµСЃС‚СЂ РњРёРЅС†РёС„СЂС‹, РІРЅСѓС‚СЂРё hero-С„СЂРµР№РјР°) ============ */
+/* ============ Registry (реестр Минцифры, внутри hero-фрейма) ============ */
 
-/* ============ Audience (РґР»СЏ РєРѕРіРѕ РїСЂРµРґРЅР°Р·РЅР°С‡РµРЅ) ============ */
+/* ============ Audience (для кого предназначен) ============ */
 .audience {
   margin-bottom: 5rem;
 }
@@ -1430,7 +1430,7 @@
     opacity: 0.7;
 }
 
-/* ============ Features (С„СѓРЅРєС†РёРѕРЅР°Р»СЊРЅС‹Рµ РІРѕР·РјРѕР¶РЅРѕСЃС‚Рё) ============ */
+/* ============ Features (функциональные возможности) ============ */
 
 .features__panel.is-active {
   display: grid;
@@ -1516,7 +1516,7 @@
   object-fit: contain;
 }
 
-/* ============ CTA blue (РЈ РІР°СЃ РїРѕС…РѕР¶Р°СЏ Р·Р°РґР°С‡Р°?) ============ */
+/* ============ CTA blue (У вас похожая задача?) ============ */
 .cta--blue {
   color: var(--color-white);
 }
@@ -1625,7 +1625,7 @@
   padding-bottom: 2.5rem;
 }
 
-/* ============ Catalog (СЃС‚СЂР°РЅРёС†Р° В«Р РµС€РµРЅРёСЏВ») ============ */
+/* ============ Catalog (страница «Решения») ============ */
 .page-hero{
   margin-bottom: 2.5rem;
 }
@@ -2205,9 +2205,9 @@ transition: all 0.4s;
 
 /* ============ Univer Online (univer-online.html) ============ */
 
-/* Univer-registry (Р РµС€РµРЅРёРµ РІРєР»СЋС‡РµРЅРѕ РІ СЂРµРµСЃС‚СЂ РњРёРЅС†РёС„СЂС‹) */
+/* Univer-registry (Решение включено в реестр Минцифры) */
 
-/* Reasons (РџРѕС‡РµРјСѓ РІС‹Р±РёСЂР°СЋС‚ Univer Online) */
+/* Reasons (Почему выбирают Univer Online) */
 .reasons--univer .reasons__icon {
     padding: 0.75rem;
     background: #1342F31A;
@@ -2216,12 +2216,12 @@ transition: all 0.4s;
     justify-content: center;
 }
 
-/* CTA СЃРёРЅРёР№ (Р Р°СЃСЃРєР°Р¶РёС‚Рµ РЅР°Рј Рѕ Р·Р°РґР°С‡Р°С… РІР°С€РµРіРѕ СѓРЅРёРІРµСЂСЃРёС‚РµС‚Р°) */
+/* CTA синий (Расскажите нам о задачах вашего университета) */
 .cta--blue--univer .cta--blue__title {
   max-width: 58.75rem;
 }
 
-/* services (РљР»СЋС‡РµРІС‹Рµ СЂРµС€РµРЅРёСЏ РІРЅСѓС‚СЂРё Univer Online) */
+/* services (Ключевые решения внутри Univer Online) */
 .services__card .partners__tag {
     margin-top: 1.0625rem;
 }
@@ -2233,7 +2233,7 @@ transition: all 0.4s;
     max-width: 18.75rem;
 
 }
-/* Vnedrenie (Р’Р°СЂРёР°РЅС‚С‹ РІРЅРµРґСЂРµРЅРёСЏ) */
+/* Vnedrenie (Варианты внедрения) */
 .vnedrenie--univer .vnedrenie__sub {
   font-size: var(--fs-body-14);
 }
@@ -2245,7 +2245,7 @@ transition: all 0.4s;
   gap: 1.25rem;
 }
 
-/* team (SoftSnow вЂ” РєРѕРјР°РЅРґР°) */
+/* team (SoftSnow — команда) */
 .team {
   margin-top: 5rem;
   margin-bottom: 5rem;
@@ -2300,9 +2300,9 @@ transition: all 0.4s;
   margin-bottom: 5rem;
 }
 
-/* ============ Ecosystem (vuz.html: С†РёС„СЂРѕРІР°СЏ СЃСЂРµРґР° РІСѓР·Р°) ============ */
+/* ============ Ecosystem (vuz.html: цифровая среда вуза) ============ */
 
-/* Р›РµРІР°СЏ РєРѕР»РѕРЅРєР°: С‚РµРєСЃС‚ СЃР»РµРІР°, РІС‹СЂР°РІРЅРёРІР°РЅРёРµ РІРїСЂР°РІРѕ, РёРєРѕРЅРєР° СЃРїСЂР°РІР° */
+/* Левая колонка: текст слева, выравнивание вправо, иконка справа */
 
 
 /* Хвостовые блоки, ошибочно уехавшие при разносе — возвращены (fix Task 6) */
