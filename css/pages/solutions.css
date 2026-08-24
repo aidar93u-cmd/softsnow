@@ -63,6 +63,7 @@
   top: 2.5rem;
   right: 2.5rem;
   color: var(--color-black);
+  opacity: 0.5;
   transition: all 0.4s;
   transform: scale(1);
 }
@@ -78,16 +79,11 @@
 .catalog__card:hover .catalog__arrow {
   color: var(--color-white);
 }
-.catalog__arrow path {
-  fill: currentColor;
-}
 .catalog__card:hover .catalog__arrow {
+  opacity: 1;
   transform: scale(2);
 }
 .catalog__card:hover .catalog__plus {
   color: var(--color-white);
   border-color: rgba(255, 255, 255, 0.2);
-}
-.catalog__card:hover .catalog__arrow path{
-    opacity: 1;
 }
