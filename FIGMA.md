@@ -17,7 +17,7 @@
 | Card titles | `--fs-h3` | 40px |
 | Captions | `--fs-body-14` / `--fs-body-16` | 14–16px |
 | Font | `--font-heading` / `--font-body` | Inter, 400/500/600/700 (Google Fonts) |
-| Button radius 50px | в `components.css`/`sections.css` | НЕ глобальный токен (см. Token Rules) |
+| Button radius 50px | в `base.css`/`sections.css` | НЕ глобальный токен (см. Token Rules) |
 | Card radius 20px | `--radius-lg` | |
 | Dark @70% | `--color-dark-a70` | `#222222b2` (добавлено 2026-08-25, задача 9) |
 | Dark @10% | `--color-dark-a10` | `#2222221a` (добавлено 2026-08-25, задача 9) |
@@ -43,7 +43,7 @@
 | Slider button | `.slider__button` | — | done |
 | Carousel nav | `.carousel-nav` | `__btn` | done |
 
-Реализация: `css/components.css`.
+Реализация: `css/base.css` (зона компонентов).
 
 ## Pages
 
@@ -92,7 +92,7 @@
 
 ### Детальная решений (solution-detail.html)
 
-Страница решения, фрейм `922:19917` (1920×9989). Секции: hero (bg, breadcrumbs, title, stats), registry, tasks (аккордеон «+»), audience (4 карточки), features (tabs 890/460, 5 панелей, переключение по `data-tab`), cta--dark, testimonials (swiper 617), events--readalso, cta--center, faq, footer. Стили в `css/solution.css`.
+Страница решения, фрейм `922:19917` (1920×9989). Секции: hero (bg, breadcrumbs, title, stats), registry, tasks (аккордеон «+»), audience (4 карточки), features (tabs 890/460, 5 панелей, переключение по `data-tab`), cta--dark, testimonials (swiper 617), events--readalso, cta--center, faq, footer. Стили в `css/sections.css` (блок «from pages/solution-detail.css»).
 
 `features` табы: кнопки `.tabs__btn` с `data-tab` (0–4), панели `.features__panel` со стеком `.features__panels` (absolute, 1790×560). Каждая панель = `.features__content` (890×560, белая карточка: название/описание/пункты/demo) + `.features__img` (890×560) — при переключении меняется и контент, и картинка. Активная панель `.is-active` — opacity 1, остальные 0 + `translateY(16px)`, transition 0.4s (`!important`, обход reduced-motion). Переключение в `js/main.js` (`.tabs` handler) — `classList.toggle('is-active')` + `aria-hidden`.
 
@@ -119,11 +119,11 @@ features — чипы-скролл + панель в колонку; testimonial
 | 6 | CTA | `844:7335` | `.cta` | done (reused) |
 | 7 | Footer | `844:7342` | `.footer` | done (reused) |
 
-Новый page-specific CSS только в `css/sections.css` (блок «Projects page»): `.projects-page`, `.projects__filters`, `.projects__filter`(+`.is-active`), `.projects__filter-caret`, `.projects__grid`, `.projects__more`. Карточки переиспользуют `.projects__card` из секции главной (title 40px, text absolute `top:157px`, logo 180×180 bottom-right). SVG-спрайт `#icon-arrow` обязателен на странице. Nav «Проекты» на всех страницах ведёт сюда.
+Новый page-specific CSS только в `css/sections.css` (блок «Projects page»): `.projects-page`, `.projects__filters`, `.projects__filter`(+`.is-active`), `.projects__filter-caret`, `.projects__grid`, `.projects__more`. Карточки переиспользуют `.projects__card` из секции главной (title 40px, text absolute `top:157px`, logo 180×180 bottom-right). Иконка-стрелка — из внешнего спрайта (`assets/img/sprite.svg#icon-arrow`). Nav «Проекты» на всех страницах ведёт сюда.
 
 ## Страница «Клиенты» (listing) и «Карточка клиента» (detail)
 
-Listing `clients.html` (frame `826:1472`), detail `client-detail.html` (frame `896:11276`). Обе используют общий `.page-hero`; detail — с модификатором `.page-hero--detail` (big title 70px `--fs-h2` + логотип клиента `.page-hero__media`/`.page-hero__logo` 185×185 bottom-right). `.breadcrumb` — общий компонент в `css/components.css`. Дубликаты `.c-hero*` удалены из `css/sections.css`.
+Listing `clients.html` (frame `826:1472`), detail `client-detail.html` (frame `896:11276`). Обе используют общий `.page-hero`; detail — с модификатором `.page-hero--detail` (big title 70px `--fs-h2` + логотип клиента `.page-hero__media`/`.page-hero__logo` 185×185 bottom-right). `.breadcrumb` — общий компонент в `css/base.css`. Дубликаты `.c-hero*` удалены из `css/sections.css`.
 
 | # | Figma Section | Figma node | Code | Status |
 |---|---|---|---|---|
@@ -135,7 +135,7 @@ Listing `clients.html` (frame `826:1472`), detail `client-detail.html` (frame `8
 | 6 | «Что говорит о нас клиент» (white r20, h2 70/500, цитата: иконка 40×40 #1342F3 + текст 16/400 rgba(34,34,34,.7) 655px + автор: аватар 64×64 + имя 20/500 + роль 16/400; фото 890×560 r20) | `1075:32386` | `.client-quote` | done |
 | 7 | Footer | — | `.footer` | done (reused) |
 
-`client-detail.html`: секция `.client-quote` добавлена после `.stats--client` (по макету). Page-specific CSS в `css/sections.css` (блок «Client detail page»): `.client-quote` (+`__inner/__title/__grid/__quote/__icon/__text/__author/__avatar/__name/__role/__photo`). Цитата — inline-SVG иконка (тот же path, что в `.testimonials__quote`), аватар — `assets/img/logo-ranepa.png`, фото — `assets/img/client-quote.jpg` (экспорт из Figma `Frame 2211`).
+`client-detail.html`: секция `.client-quote` добавлена после `.stats--client` (по макету). Page-specific CSS в `css/sections.css` (блок «Client detail page»): `.client-quote` (+`__inner/__title/__grid/__quote/__icon/__text/__author/__avatar/__name/__role/__photo`). Цитата — иконка из внешнего спрайта (`assets/img/sprite.svg#icon-quote`, тот же символ, что в `.testimonials__quote`), аватар — `assets/img/logo-ranepa.png`, фото — `assets/img/client-quote.jpg` (экспорт из Figma `Frame 2211`).
 
 ### Медиацентр (events.html)
 
@@ -229,7 +229,7 @@ Detail проекта, фрейм `1128:8159` (COMPONENT, fileKey `tK0WpkPKL3pQG
 | 11 | CTA светлый «Подберём решение под задачи вашего университета» | `.cta` (reused) | done |
 | 12 | Footer | `.footer` | done (reused) |
 
-Особенности: межсекционные отступы 10px. Иконки «Почему выбирают» — PNG `icon-reason-1..4.png` (40×40) на круге 64×64 bg `--color-sea`. Иконки «Ключевые решения» — PNG `svc-1..7.png` (130×130) через `.partners__card img` (margin auto). Галочки «Вариантов внедрения» — inline-SVG (круг white + path `currentColor`). Коллаж телефонов — `phone-1..4.png` (main 330px, остальные 300px, `object-fit: cover`). Свайперы `.projects__swiper` — существующие инициализации в `js/main.js`. Ссылка: partners-карточка Univer Online на главной → `univer-online.html`. Отклонения — см. план `2026-08-17-univer-ecosystem.md`.
+Особенности: межсекционные отступы 10px. Иконки «Почему выбирают» — PNG `icon-reason-1..4.png` (40×40) на круге 64×64 bg `--color-sea`. Иконки «Ключевые решения» — PNG `svc-1..7.png` (130×130) через `.partners__card img` (margin auto). Галочки «Вариантов внедрения» — спрайт `assets/img/sprite.svg#icon-check` (круг white + `currentColor`). Коллаж телефонов — `phone-1..4.png` (main 330px, остальные 300px, `object-fit: cover`). Свайперы `.projects__swiper` — существующие инициализации в `js/main.js`. Ссылка: partners-карточка Univer Online на главной → `univer-online.html`. Отклонения — см. план `2026-08-17-univer-ecosystem.md`.
 
 ### Цифровая трансформация вуза (vuz.html)
 
@@ -270,8 +270,8 @@ FRAME `1470:10500` («Форма», 720×924, white r20, padding 40). Откры
 | # | Figma Section | Code | Status |
 |---|---|---|---|
 | 1 | Заголовок + подзаголовок + крестик | `.modal-form__head` / `__title` / `__sub` / `__close` | done |
-| 2 | Поля ФИО*, E-mail*, Телефон* (+7 маска), Название организации, Комментарий | `.form-field` + `.form-field__input/__label` (shared, components.css) | done |
-| 3 | Чекбоксы согласие/рассылка | `.form-check` + `.form-check__input/__box/__text` (shared) | done |
+| 2 | Поля ФИО*, E-mail*, Телефон* (+7 маска), Название организации, Комментарий | `.form-field` + `.form-field__input/__label` (shared, base.css) | done |
+| 3 | Чекбоксы согласие/рассылка | `.form-check` + `.form-check__input/__box/__text` (shared, base.css) | done |
 | 4 | Кнопка «Отправить» | `.btn--primary` + `.modal-form__submit` | done |
 | 5 | Экран успеха (после валидного сабмита) | `.modal-form__success` | done |
 
