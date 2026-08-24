@@ -1,4 +1,4 @@
-/* ============ Header ============ */
+﻿/* ============ Header ============ */
 .header {
   position: relative;
   z-index: 2;
@@ -1098,7 +1098,7 @@
   content: "";
   position: absolute;
   inset: 0;
- /* background: var(--color-overlay);*/
+  background: var(--color-overlay);
   z-index: 1;
 }
 
@@ -1140,6 +1140,7 @@
   font-weight: 500;
   line-height: 1.2;
   max-width: 23.75rem;
+  transition: 0.4s all;
 }
 
 .events__meta {
@@ -1148,6 +1149,7 @@
   gap: var(--gap-sm);
   margin-top: auto;
   font-size: var(--fs-body-12);
+  transition: 0.4s all;
 }
 
 .events__tag {
@@ -1161,6 +1163,7 @@
 .events__date {
   color: var(--color-black);
   opacity: 0.7;
+  transition: 0.4s all;
 }
 
 .events__arrow {
@@ -1168,6 +1171,7 @@
   top: 1.25rem;
   right: 1.25rem;
   fill: var(--color-black);
+  transition: 0.4s all;
 }
 .events__card:hover .events__date {
     color: var(--color-white);
