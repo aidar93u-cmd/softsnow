@@ -161,7 +161,7 @@
   font-size: var(--fs-body-14);
   font-weight: 500;
   line-height: 1.21;
-  color: var(--color-grey);
+  color: var(--color-dark-a70);
 }
 
 /* ============ Hero ============ */
@@ -185,7 +185,7 @@
 .hero__note_1{  
     max-width: 18.75rem;
     display: block;
-    color: var(--color-grey);
+    color: var(--color-dark-a70);
 }
 .hero-block-page-inner{
     padding: 2.5rem;
@@ -235,7 +235,7 @@
 .hero__note_2 {
     max-width: 18.125rem;
     display: block;
-    color: var(--color-grey);
+    color: var(--color-dark-a70);
 }
 
 .hero__footer::after {
@@ -1591,7 +1591,7 @@ h3.client-title,
   min-height: 0;
   margin: 0;
   transition: padding-bottom 0.4s;
-    color: var(--color-grey);
+    color: var(--color-dark-a70);
 }
 
 .faq__item.is-open .faq__a > p {
