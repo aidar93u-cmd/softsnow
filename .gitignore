@@ -7,3 +7,9 @@ graphify-out/
 # ai/session docs
 *.md
 docs/
+
+# ai junk: scripts/dumps
+*.py
+*.json
+!.stylelintrc.json
+.kilo/
