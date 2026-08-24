@@ -283,7 +283,7 @@ section {
 	letter-spacing: -0.02em;
 	border-radius: var(--radius-xl);
 	color: var(--color-black);
-	transition: all 0.4s;
+	transition: background-color 0.4s, border-color 0.4s, color 0.4s;
 }
 [hidden]{
 	display: none!important;
@@ -304,13 +304,13 @@ section {
 	color: var(--color-white);
 }
 .btn svg{
-	transition: all 0.4s;
+	transition: stroke 0.4s;
 
 }
 
 .btn--outline-white svg{
 	stroke: var(--color-white);
-	transition: all 0.4s;
+	transition: stroke 0.4s;
 }
 
 .btn--outline-white:hover svg{
@@ -415,7 +415,7 @@ section {
 	border: 2px solid var(--color-sea);
 	border-radius: var(--radius-full);
 	color: var(--color-black);
-	transition: all 0.4s;
+	transition: background-color 0.4s, color 0.4s;
 }
 .carousel-nav__btn:hover {
 	background: var(--color-sea);
@@ -439,7 +439,7 @@ section {
 	letter-spacing: -0.02em;
 	color: var(--color-grey);
 	border-radius: var(--radius-xl);
-	transition: all 0.4s;
+	transition: background-color 0.4s, color 0.4s;
 	border: 2px solid #2222221a;
 }
 .tabs__btn:hover {
