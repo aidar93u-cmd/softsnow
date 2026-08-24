@@ -19,8 +19,11 @@
 | Font | `--font-heading` / `--font-body` | Inter, 400/500/600/700 (Google Fonts) |
 | Button radius 50px | в `components.css`/`sections.css` | НЕ глобальный токен (см. Token Rules) |
 | Card radius 20px | `--radius-lg` | |
+| Dark @70% | `--color-dark-a70` | `#222222b2` (добавлено 2026-08-25, задача 9) |
+| Dark @10% | `--color-dark-a10` | `#2222221a` (добавлено 2026-08-25, задача 9) |
+| Sea @10% | `--color-sea-a10` | `#1342f31a` (добавлено 2026-08-25, задача 9) |
 
-Реализация: `css/tokens.css`.
+Реализация: блок tokens в `css/base.css`. Удалены неиспользуемые токены `--transition-slow`, `--z-header`, `--z-popover` (2026-08-25, задача 9).
 
 ## Components
 
@@ -34,8 +37,8 @@
 | Section Label | `.section-label` | — | done |
 | Body Text | `.body-text` | — | done |
 | Card | `.card` | — | done |
-| Project Card | `.card--project` | — | done |
-| Company Card | `.card--company` | — | done |
+| Project Card | `.card--project` | — | удалено 2026-08-25, задача 9 (класс нигде не использовался) |
+| Company Card | `.card--company` | — | удалено 2026-08-25, задача 9 (класс нигде не использовался) |
 | Slider | `.slider` | — | done |
 | Slider button | `.slider__button` | — | done |
 | Carousel nav | `.carousel-nav` | `__btn` | done |
@@ -168,7 +171,7 @@ Detail события, фрейм `896:9497` (1920×7991). Стили в `css/se
 | 11 | FAQ (4 вопроса, первый открыт) | `896:9693` | `.faq` | done (reused) |
 | 12 | Footer | `896:9509` | `.footer` | done (reused) |
 
-Добавлен shared-вариант кнопки `.btn--outline-dark` в `css/components.css` (border `#222`, текст `#222` 600; hover: bg black, white text) — используется в detail hero. Отклонения (компромисс по токенам): title/btn/date/CTA — `--color-sea` #216CF3 и dark-outline вместо #1342f3 (см. план `2026-08-15-events-pages.md`). FAQ открывается через существующий `js/main.js` аккордеон (первый `.faq__item` авто-open).
+Shared-вариант кнопки `.btn--outline-dark` (border `#222`, текст `#222` 600; hover: bg black, white text) ранее добавлялся для detail hero — удалено 2026-08-25, задача 9 (класс нигде не использовался, как и зарезервированные `.btn--white`/`.btn--black`, в реестре не упоминавшиеся). Отклонения (компромисс по токенам): title/btn/date/CTA — `--color-sea` #216CF3 и dark-outline вместо #1342f3 (см. план `2026-08-15-events-pages.md`). FAQ открывается через существующий `js/main.js` аккордеон (первый `.faq__item` авто-open).
 
 ### Детальная проекта (project-detail.html)
 

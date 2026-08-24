@@ -161,7 +161,7 @@
   font-size: var(--fs-body-14);
   font-weight: 500;
   line-height: 1.21;
-  color: var(--grey, #222222B2)
+  color: var(--color-grey);
 }
 
 /* ============ Hero ============ */
@@ -185,7 +185,7 @@
 .hero__note_1{  
     max-width: 18.75rem;
     display: block;
-    color: var(--grey, #222222B2);
+    color: var(--color-grey);
 }
 .hero-block-page-inner{
     padding: 2.5rem;
@@ -235,7 +235,7 @@
 .hero__note_2 {
     max-width: 18.125rem;
     display: block;
-    color: var(--grey, #222222B2);
+    color: var(--color-grey);
 }
 
 .hero__footer::after {
@@ -268,7 +268,7 @@
 
 .event-hero .hero__title {
     max-width: 73.125rem;
-    color: #fff;
+    color: var(--color-white);
 }
 /* ============ Industries ============ */
 
@@ -1591,7 +1591,7 @@ h3.client-title,
   min-height: 0;
   margin: 0;
   transition: padding-bottom 0.4s;
-    color: var(--grey, #222222B2);
+    color: var(--color-grey);
 }
 
 .faq__item.is-open .faq__a > p {
@@ -1796,7 +1796,7 @@ h2.client-title {
   font-size: var(--fs-numbers);
   font-weight: 500;
   line-height: 1;
-  color: #1342f3;
+  color: var(--color-sea);
 }
 
 .goals__stat-label {
@@ -1915,7 +1915,7 @@ h2.client-title {
 /* Бренд-синий */
 .gallery__dot.is-active,
 .events__card--blue {
-  background: #1342f3;
+  background: var(--color-sea);
 }
 
 /* Read-also blue card (solid fill, no overlay) */
@@ -1994,7 +1994,7 @@ h2.client-title {
     width: 4rem;
     height: 4rem;
     padding: 0.9375rem;
-    background: #1342F31A;
+    background: var(--color-sea-a10);
     border-radius: 50%;
 }
 
@@ -2111,7 +2111,7 @@ h2.client-title {
 /* Reasons (Почему выбирают Univer Online) */
 .reasons--univer .reasons__icon {
     padding: 0.75rem;
-    background: #1342F31A;
+    background: var(--color-sea-a10);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2680,7 +2680,7 @@ a.contacts-map__value:hover {
     bottom: 3.75rem;
     height: 11.5625rem;
     width: 11.5625rem;
-    background: #fff;
+    background: var(--color-white);
     border-radius: 50%;
     padding: 1.25rem;
     display: flex;
@@ -3111,7 +3111,7 @@ transition: background-color 0.4s, color 0.4s;
   padding: 2.125rem 2.5rem 2.5rem;
   display: flex;
   flex-direction: column;
- border: 1px solid #2222221A;
+ border: 1px solid var(--color-dark-a10);
   border-radius: var(--radius-lg);
 }
 
@@ -3358,7 +3358,7 @@ transition: background-color 0.4s, color 0.4s;
   min-width: 0;
 }
 .impl__block{
-    border-bottom: 1px solid #2222221A;
+    border-bottom: 1px solid var(--color-dark-a10);
     padding-bottom: 3.125rem;
 }
 .impl__block:last-child{
@@ -3648,7 +3648,7 @@ transition: background-color 0.4s, color 0.4s;
   max-width: 37.5rem;
 }
 .registry__desc_bottom{
-    color: #222222B2;
+    color: var(--color-dark-a70);
 
 }
 .registry__img {
@@ -3726,7 +3726,7 @@ transition: background-color 0.4s, color 0.4s;
     align-items: center;
     gap: var(--gap-lg);
     margin-top: 2rem;
-    border: 2px solid #2222221A;
+    border: 2px solid var(--color-dark-a10);
     padding: 1.25rem 1.25rem;
     border-radius: 1.25rem;
     width: fit-content;
@@ -4078,7 +4078,7 @@ transition: background-color 0.4s, color 0.4s;
   width: 4rem;
   height: 4rem;
   color: var(--color-sea);
-  background: #1342f31a;
+  background: var(--color-sea-a10);
   border-radius: 50%;
 }
 .eco-card__icon svg {

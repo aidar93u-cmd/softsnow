@@ -2271,7 +2271,7 @@
 
 	.tasks__a > p {
 		font-size: var(--fs-body-14);
-		color: var(--grey, #222222B2);
+		color: var(--color-grey);
 	}
 
 

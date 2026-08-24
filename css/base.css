@@ -10,6 +10,11 @@
   --color-blue-alt: #1342F3;
   --color-red: #ED143B;
 
+  /* Alpha shades (extracted from repeated hex literals) */
+  --color-dark-a70: #222222b2;
+  --color-dark-a10: #2222221a;
+  --color-sea-a10: #1342f31a;
+
   /* Backgrounds */
   --bg-light: #F5F4F5;
   --bg-light-alt: #F5F5F5;
@@ -67,11 +72,6 @@
   /* Transitions */
   --transition-fast: 0.2s;
   --transition-base: 0.3s;
-  --transition-slow: 0.35s;
-
-  /* Z-index */
-  --z-header: 2;
-  --z-popover: 20;
 }
 /* ==== from utilities.css ==== */
 * {
@@ -221,26 +221,6 @@ section {
 	overflow: hidden;
 }
 
-.card--project {
-	height: 28.75rem;
-	border-radius: var(--radius-lg);
-}
-
-.card--company {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 12.5rem;
-	padding: 0 2.5rem;
-	background: var(--color-white);
-	border-radius: var(--radius-lg);
-}
-.card--company img {
-	max-width: 100%;
-	max-height: 6.875rem;
-	object-fit: contain;
-}
-
 /* Breadcrumb (listing/detail page heroes) */
 .breadcrumb {
 	display: flex;
@@ -334,17 +314,6 @@ section {
 	background: var(--color-white);
 	color: var(--color-sea);
 }
-/* Dark outline — transparent, black border/text (event-detail hero) */
-.btn--outline-dark {
-	border: 2px solid var(--color-black);
-	color: var(--color-black);
-	font-weight: 600;
-}
-.btn--outline-dark:hover {
-	background: var(--color-black);
-	color: var(--color-white);
-}
-
 /* Live ghost (single source of truth — was duplicated/overridden from sections.css) */
 .btn--ghost {
 	background: transparent;
@@ -359,7 +328,7 @@ section {
 
 .btn--search {
 	color: var(--color-grey);
-	background: #fff;
+	background: var(--color-white);
 	padding: 0.75rem 0.75rem;
 	width: 2.5rem;
 	height: 2.5rem;
@@ -368,29 +337,7 @@ section {
 /* Button variants:
    .btn--primary — залитая (filled, brand sea)
    .btn--outline — с рамкой прозрачная (transparent + border)
-   .btn--ghost   — с рамкой прозрачная, sea-accent border
-   .btn--white   — белая (white fill)
-   .btn--black   — чёрная (black fill) */
-
-.btn--white {
-	background: var(--color-white);
-	color: var(--color-black);
-	border: 1px solid var(--color-white);
-}
-.btn--white:hover {
-	background: var(--color-sea);
-	border-color: var(--color-sea);
-	color: var(--color-white);
-}
-
-.btn--black {
-	background: var(--color-black);
-	color: var(--color-white);
-}
-.btn--black:hover {
-	background: var(--color-sea);
-	color: var(--color-white);
-}
+   .btn--ghost   — с рамкой прозрачная, sea-accent border */
 
 /* Width modifiers for repeated 460px / 262px buttons across sections */
 .btn--md {
@@ -440,7 +387,7 @@ section {
 	color: var(--color-grey);
 	border-radius: var(--radius-xl);
 	transition: background-color 0.4s, color 0.4s;
-	border: 2px solid #2222221a;
+	border: 2px solid var(--color-dark-a10);
 }
 .tabs__btn:hover {
 	color: var(--color-black);

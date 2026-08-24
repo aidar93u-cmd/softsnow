@@ -329,7 +329,7 @@ New statistics         NEW: .stats
 
 **Typography:** `.section-title`, `.section-label`, `.body-text`
 
-**Cards:** `.card`, `.card--project`, `.card--company`
+**Cards:** `.card`
 
 **Navigation:** `.header`, `.nav`, `.nav__item`
 
@@ -380,7 +380,7 @@ New statistics         NEW: .stats
 ## Известные квирки (проверено аудитом 2026-08-22)
 
 - `.tasks__inner` в sections.css объявлен дважды: базовый блок + вариант «страниц решений» ниже по каскаду. Свойства не пересекаются; НЕ «чинить» без введения модификатора в HTML (оба блока помечены комментариями).
-- Классы `.btn--white/--black/--outline-dark`, `.card--project/--company` есть только в components.css (Registry-варианты, зарезервированы). Класс `.events__card--blue` не используется — удалять только после сверки с FIGMA.md.
+- Классы `.btn--white/--black/--outline-dark`, `.card--project/--company` удалены из base.css 2026-08-25 (задача 9: нигде не использовались — не пересоздавать). Класс `.events__card--blue` не используется — удалять только после сверки с FIGMA.md.
 - Fancybox подключается постранично (сейчас: index, solutions, solution-detail, about, contacts, project-detail, article-detail, vuz); `initDemoPopup`/`initVideoPopup` в main.js рассчитаны на глобальный `Fancybox`.
 - Страничный CSS живёт в `css/pages/<page>.css`; при добавлении новой секции класть одностраничные правила туда, мультистраничные — в sections.css (карта разноса — docs/superpowers/plans/2026-08-24-ownership-map.md).
 
