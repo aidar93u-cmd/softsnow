@@ -11,8 +11,7 @@ button,
 a,
 .btn,
 .card,
-.tabs__btn,
-.carousel-nav__btn {
+.tabs__btn {
 	transition:
 		background-color 0.4s,
 		border-color 0.4s,

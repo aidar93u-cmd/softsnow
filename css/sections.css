@@ -164,8 +164,7 @@
 }
 .hero-block-inner {
     height: 100%;
-    padding-top: 2.5rem;
-    padding: 2.5rem;
+
     position: relative;
     padding: 1.875rem 2.5rem;
     border-radius: 0;
@@ -182,7 +181,7 @@
 .hero-block-page-inner{
     padding: 2.5rem;
     position: relative;
-    padding: 2.5rem 2.5rem;
+
     border-radius: 0 0 1.25rem 1.25rem;
     background: var(--bg-light);
 
@@ -544,6 +543,7 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
   overflow: visible;
 }
 
+/* Вариант «страниц решений»: только фон; геометрия — в секции Tasks ниже. Дубль намеренный (AGENTS.md, квирки) */
 .tasks__inner {
   background: var(--color-white);
 }
@@ -566,6 +566,7 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
 .tasks-lists-section{
     padding: 0;
 }
+/* Списковый вариант «страниц решений»; кареточный — в секции Tasks ниже. Дубль намеренный */
 .tasks__list {
   display: flex;
   flex-direction: column;
@@ -652,7 +653,6 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
     grid-template-columns: 1fr 1fr;
     background: var(--color-white);
     padding: 1.875rem 2.5rem;
-    border-radius: 1.25rem;
 }
 
 .tasks__head {
@@ -807,8 +807,6 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
 }
 
 .client-image{  
-    width: 100%;
-    height: 100%;
     display: flex;
     border-radius: 50%;
     justify-content: center;
@@ -855,8 +853,6 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
     justify-content: space-between;
     align-content: flex-end;
     align-items: flex-end;
-}
-.partners .carousel-nav {
 }
 
 .partners__swiper {
@@ -1143,20 +1139,7 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
 }
 
 /* ============ About: команда ============ */
-.team {
-    margin-bottom: 5rem;
-}
 
-.team__head {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 22.5rem;
-    padding: 1.875rem var(--gap-2xl);
-    margin-bottom: var(--gap-sm);
-    background: var(--color-white);
-    border-radius: var(--radius-lg);
-}
 
 .team__heading {
     font-size: var(--fs-h2);
@@ -2086,10 +2069,6 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
   transform: scale(0.8);
 }
 
-.is-hidden {
-  display: none;
-}
-
 .clients__more {
   display: flex;
   justify-content: center;
@@ -2533,7 +2512,6 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
 }
 
 .cta--blue__title {
-    margin-bottom: 2.5rem;
     max-width: 70.1875rem;
     margin: auto;
     margin-bottom: 2.5rem;
@@ -3764,7 +3742,6 @@ transition: all 0.4s;
 .gallery__dots {
     display: flex;
     gap: var(--gap-sm);
-    margin-top: 1.25rem;
     position: relative;
     margin: auto;
     width: max-content;
@@ -4086,7 +4063,6 @@ transition: all 0.4s;
 
 /* Reasons (РџРѕС‡РµРјСѓ РІС‹Р±РёСЂР°СЋС‚ Univer Online) */
 .reasons--univer .reasons__icon {
-    background: var(--color-sea);
     padding: 0.75rem;
     background: #1342F31A;
     display: flex;
@@ -4169,10 +4145,15 @@ transition: all 0.4s;
     flex-direction: column;
 }
 .team__head {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 22.5rem;
   padding: 2.5rem;
+  margin-bottom: var(--gap-sm);
   background: var(--color-white);
   border-radius: var(--radius-lg);
-    position: relative;
+  position: relative;
 }
 .team__title {
     max-width: 33.75rem;
@@ -4198,10 +4179,6 @@ transition: all 0.4s;
   gap: 0.625rem;
   justify-content: center;
   overflow: hidden;
-}
-.team__photo {
-  object-fit: cover;
-  width: 100%;
 }
 .team__photo--main {
     width: 20.3125rem;

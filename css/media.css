@@ -913,6 +913,7 @@
 	/* ---------- База ---------- */
 	body {
 		background: var(--bg-border);
+		letter-spacing: -0.01rem;
 	}
 
 	.container {
@@ -965,9 +966,6 @@
 		gap: 0.625rem;
 	}
 
-	.header__burger {
-		order: 2;
-	}
 
 	.header__contacts .btn--primary {
 		display: none;
@@ -989,6 +987,7 @@
 
 	.header__burger {
 		background: var(--color-white);
+		order: 2;
 		border-radius: 50%;
 		width: 2.5rem;
 		height: 2.5rem;
@@ -1338,15 +1337,13 @@
 
 	.partners__tag {
 		margin-top: -0.625rem;
+		font-size: var(--fs-body-12);
 	}
 
 	.partners__name {
 		font-size: var(--fs-h3);
 	}
 
-	.partners__tag {
-		font-size: var(--fs-body-12);
-	}
 
 	.partners__logo {
 		width: 5rem;
@@ -1611,9 +1608,6 @@
 		font-size: var(--fs-h3);
 		letter-spacing: normal;
 	}
-	body {
-			letter-spacing: -0.01rem;
-	}
 	.footer__contacts a {
 		font-size: var(--fs-body-12);
 	}
@@ -1637,9 +1631,6 @@
 	.footer__legal a {
 		width: auto;
 		flex: 1;
-	}
-
-	.footer__legal a {
 		color: var(--color-white);
 	}
 
