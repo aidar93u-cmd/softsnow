@@ -147,11 +147,18 @@ function initDropdown() {
 
   const filtersToggle = document.querySelector('.projects__filters-toggle');
   const filtersCount = document.querySelector('.projects__filters-count');
+  const filtersClose = document.querySelector('.projects__filters-close');
+  const applyBtn = document.getElementById('projectsApply');
   const filterbar = document.querySelector('.projects__filterbar');
 
   const setFiltersOpen = (open) => {
     bar.classList.toggle('is-filters-open', open);
     if (filtersToggle) filtersToggle.setAttribute('aria-expanded', String(open));
+    if (window.innerWidth <= 768) {
+      // ponytail: в шторке группы фильтров раскрыты всегда — details открываются вместе с ней
+      dropdowns.forEach((dd) => { dd.open = open; });
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
   };
 
   if (filtersToggle && filterbar) {
@@ -162,6 +169,9 @@ function initDropdown() {
       if (!filterbar.contains(e.target)) setFiltersOpen(false);
     });
   }
+
+  if (filtersClose) filtersClose.addEventListener('click', () => setFiltersOpen(false));
+  if (applyBtn) applyBtn.addEventListener('click', () => setFiltersOpen(false));
 
   const renderChips = () => {
     chips.innerHTML = '';
@@ -246,6 +256,7 @@ function initDropdown() {
     applyFilter();
     reset.classList.toggle('is-hidden', total === 0);
     if (filtersCount) filtersCount.textContent = total;
+    if (applyBtn) applyBtn.textContent = 'Показать ' + total;
   };
 
   allChecks.forEach((c) => c.addEventListener('change', sync));
@@ -254,6 +265,7 @@ function initDropdown() {
     sync();
   });
   document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768 && bar.classList.contains('is-filters-open')) return;
     dropdowns.forEach((dd) => {
       if (dd.open && !dd.contains(e.target)) dd.open = false;
     });
@@ -492,7 +504,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const gallerySwiper = initSwiper('.gallery__swiper', {
-    slidesPerView: 1,
+    slidesPerView: 'auto',
     spaceBetween: 10,
     rewind: true,
     speed: 600,

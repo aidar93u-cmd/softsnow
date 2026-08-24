@@ -1293,6 +1293,16 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
   display: none;
 }
 
+/* mobile-only: шапка и футер шторки фильтров (Figma 1736:16401) */
+.projects__filters-head,
+.projects__apply {
+  display: none;
+}
+
+.projects__filters-footer {
+  display: contents;
+}
+
 .projects__reset {
   display: inline-flex;
   align-items: center;
@@ -3405,6 +3415,15 @@ transition: all 0.4s;
   padding: 2.5rem;
 }
 
+.goals__inner--photo {
+  background-image: url('../assets/img/goals__inner.jpg');
+}
+
+/* Мобильный дубль «Текущие результаты» (project-detail) — скрыт на десктопе */
+.goals__results--m {
+  display: none;
+}
+
 .goals__title {
   grid-column: 1;
   grid-row: 1;
@@ -3551,6 +3570,14 @@ transition: all 0.4s;
   align-items: flex-start;
   width: 100%;
     margin-bottom: 0.625rem;
+}
+
+.arch__img {
+  max-width: 100%;
+}
+
+.arch__img--mobile {
+  display: none;
 }
 
 

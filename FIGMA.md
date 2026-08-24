@@ -179,14 +179,14 @@ Detail проекта, фрейм `1128:8159` (COMPONENT, fileKey `tK0WpkPKL3pQG
 | 1 | Header | `.header` | done (reused) |
 | 2 | Hero (breadcrumbs Главная/Проекты/… + h1 70px + sub) | `.page-hero--detail` + `.page-hero__title--detail` | done |
 | 3 | «О клиенте» (текст + название + фото) | `.client-intro--project` | done |
-| 4 | «Цели проекта» (4 пункта) + «Текущие результаты» 700/10 000/1 000 | `.goals` | done |
-| 5 | «Реализация проекта» (01 Контекст, 02 Описание, 03 Архитектура, 04 Этапы, 05 Команда) | `.impl` | done |
+| 4 | «Цели проекта» (4 пункта) + «Текущие результаты» 700/10 000/1 000 | `.goals` | done; mobile (Figma 1736:15780/1736:15787) done — карточки раздельно, дубль `.goals__results--m` |
+| 5 | «Реализация проекта» (01 Контекст, 02 Описание, 03 Архитектура, 04 Этапы, 05 Команда) | `.impl` | done; mobile (Figma 1736:15794) done — текст 15/125, синие точки 5px, разделители, `mobile-diagram.svg` |
 | 6 | «Видео о проекте» (плеер 1790×700) | `.video` | done |
 | 7 | «Галерея проекта» (4 слайда 1790×742 + точки) | `.gallery` | done |
 | 8 | «Читайте также» (4 карточки, 4-я синяя) | `.events--readalso` (reused) + `.events__card--blue` | done |
 | 9 | Footer | `.footer` | done (reused) |
 
-Особенности: `.client-intro--project` — вариант `.client-intro` (текст 16/400 + `.client-intro__name` 16/500, фото 890×560 справа). Цели — grid 4 колонки, числа/синяя карточка `#1342f3` напрямую (не токен). `.arch` — чистый CSS-grid диаграмма архитектуры (без SVG-файлов, стопки копий через box-shadow). `.video__poster` 1790×700 с play 80×80 (плейсхолдер `project-1.png`). `.gallery__swiper` — swiper slidesPerView 1 + точки `.gallery__dot` (syncDots, `slideTo(i)`, aria-selected) в `js/main.js`. Плейсхолдеры помечены `ponytail:` (видео `project-1.png`, галерея `project-2.png`, клиент `o-kliente.jpg`) — под замену реальными ассетами.
+Особенности: `.client-intro--project` — вариант `.client-intro` (текст 16/400 + `.client-intro__name` 16/500, фото 890×560 справа). Цели — grid 4 колонки, числа/синяя карточка `#1342f3` напрямую (не токен); mobile — карточки раздельно через дубли `.goals__results--m`. `.arch` — `<img>` диаграмма: десктоп `diagram.svg`, мобилка `mobile-diagram.svg` (переключение классами `.arch__img--desktop/--mobile`). `.video__poster` 1790×700 с play 80×80 (плейсхолдер `project-1.png`). `.gallery__swiper` — swiper slidesPerView 1 + точки `.gallery__dot` (syncDots, `slideTo(i)`, aria-selected) в `js/main.js`. Плейсхолдеры помечены `ponytail:` (видео `project-1.png`, галерея `project-2.png`, клиент `o-kliente.jpg`) — под замену реальными ассетами.
 
 ### Экосистема (directum.html)
 

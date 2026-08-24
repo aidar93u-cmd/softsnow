@@ -1846,25 +1846,28 @@
 		height: 4rem;
 		margin-bottom: 1.25rem;
 		padding: 0.75rem;
-        letter-spacing: -0.1rem;
 	}
 
 	.page-hero--detail .page-hero__title--detail {
 		font-size: var(--fs-h2);
 		margin-bottom: 1.25rem;
+        letter-spacing: -0.1rem;
 	}
 
 	/* Об академии: заголовок -> фото -> текст */
 	.client-intro {
 		margin-bottom: 3rem;
 	}
-
+	.sticky-col {
+    position: relative;
+			top: 0;
+	}
 	.client-intro__inner {
 		display: flex;
 		flex-direction: column;
 		padding: 1.5rem 1rem;
 		border-radius: 0.75rem;
-		gap:0
+		gap:1rem
 	}
 
 	.client-intro__content {
@@ -2044,6 +2047,87 @@
 	.stages__arrow {
 		position: static;
 		flex: none;
+	}
+
+	/* ---------- Видео о проекте (Figma 1736:16023): карточка + превью 200px ---------- */
+	.video {
+		margin-bottom: 3rem;
+	}
+
+	.video__inner {
+		padding: 1.5rem 1rem 1rem;
+		border-radius: 0.75rem;
+	}
+
+	.video__title {
+		font-size: var(--fs-h2);
+	}
+
+	.video__sub {
+		margin-top: 1.25rem;
+		font-size: 0.9375rem;
+	}
+
+	.video__player {
+		margin-top: 1.5rem;
+		height: 12.5rem;
+		border-radius: 0.75rem;
+	}
+
+	.video__play {
+		width: 3rem;
+		height: 3rem;
+	}
+
+	.video__play svg {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+
+	/* ---------- Галерея проекта (Figma 1736:16028): свайп 300×194 ---------- */
+	.gallery {
+		margin-bottom: 3rem;
+	}
+
+	.gallery__inner {
+		padding: 1.5rem 1rem 1rem;
+		border-radius: 0.75rem;
+	}
+
+	.gallery__head {
+		margin-bottom: 1.5rem;
+	}
+
+	.gallery__title {
+		font-size: var(--fs-h2);
+	}
+
+	.gallery__sub {
+		margin-top: 1.25rem;
+		font-size: 0.9375rem;
+	}
+
+	.gallery__head .carousel-nav {
+		display: none;
+	}
+
+	.gallery__swiper {
+		margin-top: 0;
+		overflow: visible;
+	}
+
+	.gallery__swiper .swiper-slide {
+		width: 18.75rem;
+		height: 12.125rem;
+	}
+
+	.gallery__img {
+		border-radius: 0.75rem;
+	}
+
+	/* Точки пагинации в макете нет — свайп */
+	.gallery__dots {
+		display: none;
 	}
 
 
@@ -2478,47 +2562,167 @@
 		line-height: 1;
 	}
 
-	/* Панель фильтров: три группы в колонку, панели статичные */
-	.projects-page .projects__dropdowns {
-		display: none;
-		flex-direction: column;
-		align-items: stretch;
-		gap: 0.5rem;
-		margin-top: 0.75rem;
+	/* Панель фильтров: выезжающая шторка снизу (Figma 1736:16401).
+	   Класс is-filters-open вешается JS на сами .projects__filters */
+	.projects-page:has(.projects__filters.is-filters-open)::before {
+		content: '';
+		position: fixed;
+		inset: 0;
+		z-index: 999;
+		background: rgba(0, 0, 0, 0.4);
 	}
 
-	.projects-page .is-filters-open .projects__dropdowns,
-	.projects-page.is-filters-open .projects__dropdowns {
+	.projects-page .projects__filters {
+		position: fixed;
+		inset: auto 0 0 0;
+		z-index: 1000;
 		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		align-items: stretch;
+		gap: 0;
+		max-height: 90vh;
+		padding: 1.5rem;
+		overflow-y: auto;
+		background: var(--bg-light);
+		border-radius: 0.75rem 0.75rem 0 0;
+		transform: translateY(100%);
+		visibility: hidden;
+		transition: transform 0.3s ease, visibility 0.3s;
+	}
+
+	.projects-page .projects__filters.is-filters-open {
+		transform: none;
+		visibility: visible;
+	}
+
+	.projects-page .projects__filters-head {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex: none;
+		margin-bottom: 1.5rem;
+		font-size: var(--fs-body-14);
+		font-weight: 500;
+	}
+
+	.projects-page .projects__filters-close {
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		display: grid;
+		place-items: center;
+		width: 1.5rem;
+		height: 1.5rem;
+		padding: 0;
+		border: none;
+		background: none;
+		color: var(--color-black);
+		cursor: pointer;
+	}
+
+	.projects-page .projects__dropdowns {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 1.5rem;
+		margin-top: 0;
 	}
 
 	.projects-page .dropdown {
 		width: 100%;
 	}
 
+	/* Заголовок группы — простой текст, список раскрыт всегда */
 	.projects-page .dropdown__trigger {
 		width: 100%;
-		height: 3.125rem;
-		padding: 0 1.875rem;
-		border-radius: 3.125rem;
+		height: auto;
+		padding: 0;
+		background: none;
+		border-radius: 0;
+		justify-content: flex-start;
 		font-size: var(--fs-body-14);
+		font-weight: 400;
+		pointer-events: none;
+	}
+
+	.projects-page .dropdown__caret {
+		display: none;
+	}
+
+	.projects-page .dropdown__count {
+		display: none;
 	}
 
 	.projects-page .dropdown__panel {
 		position: static;
 		width: 100%;
 		max-width: none;
-		padding: 0.5rem 1.875rem;
+		padding: 1rem 0 0;
 		box-shadow: none;
+		background: none;
 	}
 
 	.projects-page .dropdown__option {
+		gap: 0.625rem;
+		font-size: var(--fs-body-14);
 		white-space: normal;
 	}
 
+	.projects-page .dropdown__check {
+		width: 1.5rem;
+		height: 1.5rem;
+		margin: 0;
+		flex: none;
+		accent-color: var(--color-sea);
+	}
+
+	/* Футер шторки: «Сбросить» + «Показать N» 50/50 */
+	.projects-page .projects__filters-footer {
+		display: flex;
+		flex: none;
+		gap: 0.625rem;
+		margin-top: 1.5rem;
+	}
+
 	.projects-page .projects__reset {
-		width: 100%;
-		margin-top: 0.75rem;
+		flex: 1;
+		width: auto;
+		height: var(--control-h);
+		justify-content: center;
+		border-radius: 1.75rem;
+		font-size: var(--fs-body-14);
+	}
+
+	.projects-page .projects__reset span,
+	.projects-page .projects__reset-x {
+		display: none;
+	}
+
+	.projects-page .projects__reset::after {
+		content: 'Сбросить';
+	}
+
+	.projects-page .projects__reset.is-hidden {
+		display: none;
+	}
+
+	.projects-page .projects__apply {
+		flex: 1;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		height: var(--control-h);
+		border: none;
+		border-radius: 1.75rem;
+		background: var(--color-sea);
+		color: var(--color-white);
+		font-family: inherit;
+		font-size: var(--fs-body-14);
+		font-weight: 500;
+		cursor: pointer;
 	}
 
 	/* Карточки: одна колонка, паддинг [24,16], лого-круг 80px справа снизу */
@@ -2555,5 +2759,213 @@
 		width: 5rem;
 		height: 5rem;
 		border-radius: 50%;
+	}
+
+
+	/* ==================== Project detail: Цели и задачи (Figma 1736:15780) ==================== */
+
+	.goals {
+		margin-bottom: 3rem;
+	}
+
+	/* Карточка «Цели»: белая, без фото, [24,16], r12 */
+	.goals__inner {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+		padding: 1.5rem 1rem;
+		border-radius: 0.75rem;
+	}
+
+	.goals__title {
+		line-height: 1.05;
+		letter-spacing: -0.03em;
+	}
+
+	.goals__list {
+		gap: 1.25rem;
+	}
+
+	.goals__item {
+		gap: 0.5rem;
+	}
+
+	.goals__num {
+		width: 2rem;
+		height: 2rem;
+		border-width: 1.5px;
+		font-size: var(--fs-body-14);
+    border: 1px solid #cdcdcd;
+	}
+
+	.goals__text {
+		max-width: none;
+		font-size: var(--fs-body-14);
+		line-height: 1.3;
+	}
+
+	/* «Текущие результаты» — отдельная карточка #F7F7F7 ниже (дубль в HTML) */
+	.goals:has(.goals__results--m) .goals__content .goals__results {
+		display: none;
+	}
+
+	.goals__results--m {
+		display: block;
+		margin-top: 3rem;
+		padding: 1.5rem 1rem;
+		background: #f7f7f7;
+		border-radius: 0.75rem;
+	}
+
+	.goals__results-title {
+		font-size: var(--fs-h3);
+		line-height: 1.2;
+	}
+
+	.goals__stats {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+		margin-top: 1.5rem;
+	}
+
+	.goals__stat-num {
+		line-height: 1.2;
+	}
+
+	.goals__stat-label {
+		margin-top: var(--gap-md);
+		font-size: var(--fs-body-14);
+		line-height: 1.3;
+	}
+
+	/* ==================== Project detail: Реализация (Figma 1736:15794) ==================== */
+	.impl {
+		margin-bottom: 3rem;
+	}
+
+	.impl__inner {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+		padding: 1.5rem 1rem;
+		border-radius: 0.75rem;
+	}
+
+	.impl__title {
+		line-height: 1.05;
+		letter-spacing: -0.03em;
+	}
+
+	.impl__body {
+		gap: 1.5rem;
+	}
+
+	.impl__block {
+		padding-bottom: 1.5rem;
+	}
+
+	.impl__block-title {
+		margin-bottom: 1.25rem;
+		max-width: none;
+		font-size: var(--fs-h3);
+	}
+
+	.impl__text {
+		max-width: none;
+		font-size: 0.9375rem;
+		line-height: 1.25;
+	}
+
+	.impl__text p {
+		margin-bottom: 1.25rem;
+		line-height: 1.25;
+	}
+
+	.impl__text ul {
+		gap: 1rem;
+	}
+
+	.impl__text ul li {
+		gap: 0.625rem;
+		font-size: 0.9375rem;
+		line-height: 1.25;
+	}
+
+	.impl__text ul li::before {
+		width: 0.3125rem;
+		height: 0.3125rem;
+		background: var(--color-sea);
+		border-radius: 50%;
+		top: 3px;
+	}
+
+	.arch {
+		margin-top: 0.25rem;
+	}
+
+	.arch__img--desktop {
+		display: none;
+	}
+
+	.arch__img--mobile {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.impl__stages {
+		gap: 1.25rem;
+	}
+
+	.impl__stages li {
+		gap: 1rem;
+	}
+
+	.impl__stage-head {
+		gap: 0.625rem;
+	}
+
+	.impl__stage-phase,
+	.impl__stage-date {
+		font-size: 0.9375rem;
+	}
+
+	.impl__stage-name {
+		margin-bottom: 0;
+		font-size: 1rem;
+	}
+
+	.impl__text .impl__stage-procs {
+		gap: 0.625rem;
+	}
+
+	.impl__team-name {
+		margin-bottom: 0.9375rem;
+	}
+
+	.impl__team-list {
+		font-size: 0.9375rem;
+	}
+
+	.impl__team-list li {
+		position: relative;
+		padding-left: 1.375rem;
+	}
+
+	.impl__team-list li::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0.4375rem;
+		width: 0.3125rem;
+		height: 0.3125rem;
+		border-radius: 50%;
+		background: var(--color-sea);
+	}
+
+	.impl__team-total {
+		margin-top: 1.25rem;
+		max-width: none;
+		font-size: 0.9375rem;
+		font-weight: 400;
+		line-height: 1.25;
 	}
 }

@@ -392,7 +392,7 @@ New statistics         NEW: .stats
 +| `solutions.html` | каталог решений |
 +| `solution-detail.html` | детальная страница решения |
 | `projects.html` | проекты (фильтры, без детальной страницы) |
-| `project-detail.html` | страница проекта |
++| `project-detail.html` | страница проекта |
 +| `clients.html` | клиенты |
 +| `client-detail.html` | детальная страница клиента (РАНХиГС) |
 | `events.html` | медиацентр / мероприятия |
@@ -403,7 +403,6 @@ New statistics         NEW: .stats
 | `vuz.html` | цифровая трансформация вуза |
 | `directum.html` | Directum — экосистема для управления организацией |
 | `univer-online.html` | Univer Online |
-| `contacts.html` | Контакты
 
 
 https://softsnow.cz07146.tw1.ru/vuz.html
