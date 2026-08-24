@@ -25,9 +25,13 @@
 3. `components.css` — переиспользуемые UI-паттерны: `.container`, `.card*`,
    `.btn` + модификаторы (`.btn--primary/outline/ghost/search/md/lg`), `.carousel-nav*`,
    `.tabs*`.
-4. `sections.css` — layout и контент конкретных секций (`.header`, `.hero`, …,
-   `.footer`), а также привязанные к разметке блоки `.dropdown`, `.breadcrumb`,
+4. `sections.css` — layout и контент ОБЩИХ секций (`.header`, `.hero`, …,
+   `.footer`) и мультистраничных блоков, а также привязанные к разметке блоки `.dropdown`, `.breadcrumb`,
    `.logo` (шапка). Компоненты, тесно связанные с разметкой страницы, остаются здесь.
+5. `css/pages/<page>.css` — секции одной страницы (по одному файлу на страницу).
+   Карта разноса: `docs/superpowers/plans/2026-08-24-ownership-map.md`. Одностраничный
+   селектор кладётся сюда, мультистраничный/общий — в `sections.css`.
+6. `media.css` — ВСЕ `@media`-переопределения (адаптив); подключается последним.
 
 ## 4. Именование классов
 - БЭМ: `block__element--modifier`. Не называй классы по визуалу (`blue-button`).
@@ -54,7 +58,8 @@ base/slow`), z-index (`--z-header`, `--z-popover`).
   (brand sea), `.btn--outline` — с рамкой прозрачная, `.btn--ghost` — с рамкой
   прозрачная с sea-акцентом, `.btn--white` — белая, `.btn--black` — чёрная;
   `.btn--md` (262px) / `.btn--lg` (460px) — модификаторы ширины.
-- **Секция** — layout конкретной части страницы; живёт в `sections.css`.
+- **Секция** — layout конкретной части страницы; одностраничная живёт в
+  `css/pages/<page>.css`, мультистраничная/общая — в `sections.css`.
 - Устаревший белый вариант `.btn--ghost` (в `components.css`) был мёртв — его
   перекрывал прозрачный вариант из `sections.css`. Единый живой `.btn--ghost`
   (прозрачный фон, 1px sea-бордер) теперь в `components.css`.

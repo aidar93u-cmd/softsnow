@@ -436,6 +436,8 @@
 
 /* ============ Tasks (РґР»СЏ РєР°РєРёС… Р·Р°РґР°С‡) ============ */
 
+/* Дубль намеренный: вариант «страниц решений» (квирки AGENTS.md) */
+/* stylelint-disable-next-line no-duplicate-selectors */
 .tasks__inner {
     display: grid;
     gap: var(--gap-sm);
@@ -446,6 +448,8 @@
     padding: 1.875rem 2.5rem;
 }
 
+/* Дубль намеренный: вариант «страниц решений» (квирки AGENTS.md) */
+/* stylelint-disable-next-line no-duplicate-selectors */
 .tasks__list {
     width: 100%;
     overflow: hidden;
