@@ -3266,7 +3266,7 @@ transition: background-color 0.4s, color 0.4s;
     padding: 2.5rem 2.75rem 2.1875rem;
   overflow: hidden;
   color: var(--color-black);
-  transition: color 0.4s;
+  transition: background-color 0.4s, color 0.4s;
 }
 .industries__bg {
   position: absolute;
@@ -3899,7 +3899,7 @@ transition: background-color 0.4s, color 0.4s;
   right: 2.5rem;
   color: var(--color-black);
   opacity: 0.5;
-  transition: opacity 0.4s, transform 0.4s;
+  transition: opacity 0.4s, transform 0.4s, color 0.4s;
   transform: scale(1);
 }
 
