@@ -145,6 +145,24 @@ function initDropdown() {
   let visible = 4;
   let lastMatched = 0;
 
+  const filtersToggle = document.querySelector('.projects__filters-toggle');
+  const filtersCount = document.querySelector('.projects__filters-count');
+  const filterbar = document.querySelector('.projects__filterbar');
+
+  const setFiltersOpen = (open) => {
+    bar.classList.toggle('is-filters-open', open);
+    if (filtersToggle) filtersToggle.setAttribute('aria-expanded', String(open));
+  };
+
+  if (filtersToggle && filterbar) {
+    filtersToggle.addEventListener('click', () => {
+      setFiltersOpen(!bar.classList.contains('is-filters-open'));
+    });
+    document.addEventListener('click', (e) => {
+      if (!filterbar.contains(e.target)) setFiltersOpen(false);
+    });
+  }
+
   const renderChips = () => {
     chips.innerHTML = '';
     allChecks.forEach((c) => {
@@ -227,6 +245,7 @@ function initDropdown() {
     renderChips();
     applyFilter();
     reset.classList.toggle('is-hidden', total === 0);
+    if (filtersCount) filtersCount.textContent = total;
   };
 
   allChecks.forEach((c) => c.addEventListener('change', sync));
@@ -336,9 +355,21 @@ function initMobileMenu() {
   const inner = document.createElement('div');
   inner.className = 'container mobile-menu__inner';
 
-  nav.querySelectorAll('.header__link').forEach((a) => {
-    const clone = a.cloneNode(true);
-    inner.appendChild(clone);
+  nav.querySelectorAll('.header__nav-item').forEach((item) => {
+    const link = item.querySelector('.header__link');
+    const panel = item.querySelector('.header__dropdown-panel');
+    if (!panel) {
+      inner.appendChild(link.cloneNode(true));
+      return;
+    }
+    const group = document.createElement('div');
+    group.className = 'mobile-menu__group';
+    group.appendChild(link.cloneNode(true));
+    const sub = document.createElement('div');
+    sub.className = 'mobile-menu__sub';
+    panel.querySelectorAll('.header__dropdown-link').forEach((l) => sub.appendChild(l.cloneNode(true)));
+    group.appendChild(sub);
+    inner.appendChild(group);
   });
 
   const phone = document.querySelector('.header .header__phone-num');
@@ -369,7 +400,17 @@ function initMobileMenu() {
   });
 
   menu.addEventListener('click', (e) => {
-    if (e.target === menu || e.target.closest('a')) closeMobileMenu(menu, burger);
+    if (e.target === menu) {
+      closeMobileMenu(menu, burger);
+      return;
+    }
+    const groupLink = e.target.closest('.mobile-menu__group > .header__link');
+    if (groupLink) {
+      e.preventDefault();
+      groupLink.parentElement.classList.toggle('is-open');
+      return;
+    }
+    if (e.target.closest('a')) closeMobileMenu(menu, burger);
   });
 
   window.addEventListener('resize', () => {
@@ -574,8 +615,24 @@ function initRequestForm() {
   });
 }
 
+// ponytail: catalog cards are links on desktop, accordion items on mobile (Figma 1742:13167)
+function initCatalogAccordion() {
+  const list = document.querySelector('.catalog__list');
+  if (!list) return;
+  const first = list.querySelector('.catalog__card');
+  if (first) first.classList.add('is-open');
+  list.addEventListener('click', (e) => {
+    if (window.innerWidth > 768) return;
+    const card = e.target.closest('.catalog__card');
+    if (!card) return;
+    e.preventDefault();
+    card.classList.toggle('is-open');
+  });
+}
+
   initAccordion('.tasks__list', 'is-open', '.tasks__q');
   initAccordion('.faq__list', 'is-open', '.faq__q');
+  initCatalogAccordion();
 
   initClientsPage();
   initDropdown();

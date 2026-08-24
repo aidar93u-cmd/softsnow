@@ -93,6 +93,15 @@
 
 `features` табы: кнопки `.tabs__btn` с `data-tab` (0–4), панели `.features__panel` со стеком `.features__panels` (absolute, 1790×560). Каждая панель = `.features__content` (890×560, белая карточка: название/описание/пункты/demo) + `.features__img` (890×560) — при переключении меняется и контент, и картинка. Активная панель `.is-active` — opacity 1, остальные 0 + `translateY(16px)`, transition 0.4s (`!important`, обход reduced-motion). Переключение в `js/main.js` (`.tabs` handler) — `classList.toggle('is-active')` + `aria-hidden`.
 
+**Мобильная версия** (Figma `1742:12742`, done 2026-08-23, отчёт
+`docs/superpowers/plans/2026-08-23-solution-detail-mobile.md`): hero без фото +
+кнопка внизу; статы из hero переехали в карточку реестра (дубль
+`.registry__stats`, скрыт на PC); tasks — аккордеон с круглой кнопкой 38px;
+features — чипы-скролл + панель в колонку; testimonials 300px свайп; projects —
+заголовок 32px (модификатор `.projects--solution`) + кнопка `.projects__cta`
+под каруселью; events — кнопка `.events__cta`. CSS — media.css ≤768 блок
+«Solution detail».
+
 ### Проекты (projects.html)
 
 Полная страница проектов, фрейм `844:7243` (1920×3421). Дубликат секции «Реализованные проекты» главной (node `648:4437`), но как самостоятельная страница.
@@ -302,3 +311,17 @@ FIGMA → Figma MCP Audit → Design System + Components + Tokens
 | 11 | Footer (2 тёмные карточки в колонку) | `.footer__inner` 1fr | done |
 
 Известные отличия от макета: 4-я карточка мероприятий не переведена в синий вариант (`Type=Blue` в макете); стрелка в строках задач — `#icon-arrow` (в макете шеврон).
+
+## Mobile (projects.html)
+
+Источник: Figma node `1736:16278` «Проекты» (375×2644). CSS: хвост `css/media.css` (блок «Projects page (Figma 1736:16278)» в MOBILE ≤768). Header/footer/CTA — общие мобильные блоки (уже сделаны).
+
+| # | Figma Section | Code (mobile) | Status |
+|---|---|---|---|
+| 1 | Cover → Page-header (r12, p[16,16,24,16], backlink «Главная», title 40/500, sub 14) | `.page-hero` / `.hero-block-page-inner` (общий блок Solutions) | done |
+| 2 | Filter: пилюля «Фильтры» h50 + бейдж-счётчик | `.projects__filters-toggle` + `.projects__filters-count` (mobile-only дубликат, JS-тоггл `is-filters-open`) | done |
+| 3 | Cards/Projects: 1 колонка, gap 16, карточка r12 p[24,16] | `.projects-page .projects__grid/card` | done |
+| 4 | Card: name 19/1.2, text 14 rgba(34,34,34,.7), лого-круг 80 справа снизу | `.projects__name/text/logo` | done |
+| 5 | Панель фильтров (3 группы в колонку, статичные панели) | `.projects__dropdowns` (переиспользованы desktop-`details`) | done |
+
+Отличия от макета: «Показать еще» оставлен (в макете 4 карточки без кнопки, в проде 6 — иначе недостижимы); текст «Date» в карточках не переносился (плейсхолдер макета, данных нет).

@@ -1289,6 +1289,10 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
   color: var(--color-sea);
 }
 
+.projects__filters-toggle {
+  display: none;
+}
+
 .projects__reset {
   display: inline-flex;
   align-items: center;
@@ -2736,6 +2740,11 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
   transform: scale(1);
 }
 
+/* plus toggle — mobile accordion only */
+.catalog__plus {
+  display: none;
+}
+
 .catalog__card:hover {
   background: var(--color-blue-alt);
   color: var(--color-white);
@@ -2754,6 +2763,11 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
 
 .catalog__card:hover .catalog__arrow {
   transform: scale(2);
+}
+
+.catalog__card:hover .catalog__plus {
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 .catalog__card:hover .catalog__arrow path{
     opacity: 1;
@@ -4745,8 +4759,15 @@ a.contacts-map__value:hover {
    Показываются только в media.css <=768. */
 .industries__cta,
 .projects__cta,
-.events__cta {
+.events__cta,
+.registry__stats {
   display: none;
+}
+
+/* Фон hero детальной страницы решения — из inline перенесён сюда,
+   чтобы media.css мог отключить его на мобильном (Figma 1742:12742) */
+.hero--solution .hero-block-inner {
+  background-image: url('../assets/img/solution-hero-bg.jpg');
 }
 
 /* ============ Swiper slides ============ */

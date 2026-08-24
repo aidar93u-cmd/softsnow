@@ -125,7 +125,7 @@ softsnow/
 |---|--------|-------|------------|
 | 1 | Заголовок страницы | `.page-hero` |  |
 | 2 | Список клиентов | `.clients` | карточки рендерятся из `js/main.js` |
-| 3 | Реализованные проекты | `.projects .c-projects` `#projects` |  |
+| 3 | Реализованные проекты | `.projects` `#projects` |  |
 | 4 | CTA «Нужна консультация» | `.cta` |  |
 
 ### client-detail.html — детальная страница клиента
@@ -138,7 +138,7 @@ softsnow/
 | 4 | Что говорит о нас клиент | `.client-quote` | цитата + фото клиента |
 | 5 | Этапы | `.stages` |  |
 | 6 | CTA (синий) | `.cta--blue` |  |
-| 7 | Ещё прочитают | `.events--readalso` |  |
+| 7 | Ещё прочитают | `.events` |  |
 
 ### events.html — мероприятия
 
@@ -160,7 +160,7 @@ softsnow/
 | 5 | CTA (синий) | `.cta--blue` |  |
 | 6 | Темы семинара | `.seminar-topics` |  |
 | 7 | Партнёры мероприятия | `.event-partners` |  |
-| 8 | Нам доверяют | `.trust` |  |
+| 8 | Нам доверяют | `.reasons .reasons--univer` |  |
 | 9 | Клиенты | `.clients` |  |
 | 10 | FAQ | `.faq` |  |
 
@@ -168,16 +168,99 @@ softsnow/
 
 | # | Секция | Класс | Примечание |
 |---|--------|-------|------------|
-| 1 | Hero статьи (breadcrumb + h1 70px + теги + дата) | `.page-hero--detail` + `.article-hero__meta` |  |
+| 1 | Hero статьи (breadcrumb + h1 + теги + дата) | `.page-hero--detail` + `.article-hero__meta` |  |
 | 2 | О статье | `.article-about` |  |
 | 3 | CTA «Скачайте материал» (синий) | `.cta--blue` |  |
-| 4 | Текст статьи ×2 | `.article-block` (+`.article-block--points`) | цитата, автор, список |
-| 5 | Галерея проекта | `.gallery` |  |
-| 6 | Разбор проекта (видео) | `.video` |  |
-| 7 | На практике | `.article-block` + `.stages__card--dark` | карточка-ссылка → project-detail |
-| 8 | Читайте также | `.events` | карточки `href="#"` |
+| 4 | Текст статьи | `.article-block` | цитата, автор |
+| 5 | Галерея проекта | `.gallery` | Fancybox |
+| 6 | Текст статьи (цифры списком) | `.article-block--points` | список |
+| 7 | Разбор проекта (видео) | `.video` | Fancybox-попап |
+| 8 | На практике | `.article-block` + `.stages__card--dark` | карточка-ссылка → `project-detail.html` |
+| 9 | Читайте также | `.events` `#events` | карточки `href="#"` |
 
-Правила связей между страницами (проверены 2026-08-16): главная — точки входа в каталоги; решения → деталь решения; клиенты → деталь клиента (только РАНХиГС, в `js/main.js`); проекты → без детальной страницы; мероприятия → детальная страница мероприятия (`events.html` → `event-detail.html`). Все ссылки — имена файлов без `../`.
+### project-detail.html — детальная страница проекта
+
+| # | Секция | Класс | Примечание |
+|---|--------|-------|------------|
+| 1 | Заголовок страницы | `.page-hero--detail` |  |
+| 2 | Вступление о клиенте | `.client-intro--project` |  |
+| 3 | Цели проекта | `.goals` |  |
+| 4 | Внедрение | `.impl` |  |
+| 5 | Разбор проекта (видео) | `.video` | Fancybox-попап |
+| 6 | Галерея проекта | `.gallery` | Fancybox |
+| 7 | Читайте также | `.events` |  |
+
+Вход: только из `article-detail.html` («На практике»). Каталог `projects.html` на неё не ссылается.
+
+### about.html — о компании
+
+| # | Секция | Класс | Примечание |
+|---|--------|-------|------------|
+| 1 | Hero | `.hero .hero-vuz` |  |
+| 2 | Цифры о нас | `.stats` |  |
+| 3 | Задачи | `.tasks tasks-lists-section` |  |
+| 4 | CTA (синий) | `.cta--blue` |  |
+| 5 | Реализованные проекты | `.projects--about` |  |
+| 6 | Разбор проекта (видео) | `.video` | Fancybox-попап |
+| 7 | Подход к работе | `.approach` |  |
+| 8 | Команда | `.team` |  |
+| 9 | Отзывы | `.testimonials` |  |
+| 10 | CTA «Нужна консультация» | `.cta` |  |
+
+### contacts.html — контакты
+
+| # | Секция | Класс | Примечание |
+|---|--------|-------|------------|
+| 1 | Заголовок страницы | `.page-hero` |  |
+| 2 | Карта офиса | `.contacts-map` |  |
+| 3 | Баннер «Решим ваши задачи» | `.contacts-banner` |  |
+
+### vuz.html — цифровая трансформация вуза
+
+| # | Секция | Класс | Примечание |
+|---|--------|-------|------------|
+| 1 | Hero | `.hero .hero-vuz` |  |
+| 2 | Аудитория | `.audience` |  |
+| 3 | Цели | `.goals` |  |
+| 4 | Экосистема | `.ecosystem` |  |
+| 5 | Технологические партнёры | `.partners` | карусель |
+| 6 | CTA (синий) | `.cta--blue` |  |
+| 7 | Реализованные проекты | `.projects` |  |
+| 8 | Клиенты | `.clients` |  |
+| 9 | Отзывы | `.testimonials` |  |
+| 10 | Мероприятия | `.events` |  |
+| 11 | CTA «Нужна консультация» | `.cta` |  |
+| 12 | FAQ | `.faq` |  |
+
+### directum.html — Directum
+
+| # | Секция | Класс | Примечание |
+|---|--------|-------|------------|
+| 1 | Hero | `.hero` |  |
+| 2 | Технологические партнёры | `.partners--eco` | логотипы экосистемы |
+| 3 | Причины | `.reasons` |  |
+| 4 | CTA (синий) | `.cta--blue cta--blue--directum` |  |
+| 5 | Проекты экосистемы | `.projects--eco` |  |
+| 6 | Внедрение | `.vnedrenie .vnedrenie--univer` | общий с univer-online |
+| 7 | Команда | `.team` |  |
+| 8 | CTA «Нужна консультация» | `.cta cta--directum` |  |
+
+### univer-online.html — Univer Online
+
+| # | Секция | Класс | Примечание |
+|---|--------|-------|------------|
+| 1 | Hero | `.hero` |  |
+| 2 | Реестр возможностей | `.univer-registry` |  |
+| 3 | Аудитория | `.audience` |  |
+| 4 | Причины | `.reasons--univer` | общий с event-detail/directum |
+| 5 | CTA (синий) | `.cta--blue cta--blue--univer` |  |
+| 6 | Сервисы | `.services` |  |
+| 7 | Проекты | `.projects--univer` |  |
+| 8 | Внедрение | `.vnedrenie--univer` | общий с directum |
+| 9 | Команда | `.team` |  |
+| 10 | CTA «Нужна консультация» | `.cta` |  |
+
+Правила связей между страницами (обновлено 2026-08-24): главная — точки входа в каталоги и `univer-online.html`; решения → деталь решения; клиенты → деталь клиента (только РАНХиГС, в `js/main.js`); каталог проектов без детальной страницы, но `project-detail.html` существует — вход из `article-detail.html` («На практике»); мероприятия → детальная страница мероприятия (`events.html` → `event-detail.html`). Header на всех страницах ведёт в `about.html` и `contacts.html`. Все ссылки — имена файлов без `../`.
 
 ## Главный принцип (Architecture Rules)
 
@@ -297,30 +380,36 @@ New statistics         NEW: .stats
 
 - `.tasks__inner` в sections.css объявлен дважды: базовый блок + вариант «страниц решений» ниже по каскаду. Свойства не пересекаются; НЕ «чинить» без введения модификатора в HTML.
 - Классы `.btn--white/--black/--outline-dark`, `.card--project/--company` есть только в components.css (Registry-варианты, зарезервированы). Классы `.cta--center*`, `.events__card--blue`, `.partners__logo--eco` и ~22 токена tokens.css не используются — удалять только после сверки с FIGMA.md.
-- Fancybox подключается постранично (сейчас: about, project-detail, solution-detail, vuz); `initDemoPopup`/`initVideoPopup` в main.js рассчитаны на глобальный `Fancybox`.
+- Fancybox подключается постранично (сейчас: index, solutions, solution-detail, about, contacts, project-detail, article-detail, vuz); `initDemoPopup`/`initVideoPopup` в main.js рассчитаны на глобальный `Fancybox`.
 
 ## Список страниц
 
-Все 13 страниц в корне проекта:
+Все 15 страниц в корне проекта:
 
 | Страница | Назначение |
 |---|---|
-| `index.html` | главная |
-| `solutions.html` | каталог решений |
-| `solution-detail.html` | детальная страница решения |
++| `index.html` | главная |
++| `solutions.html` | каталог решений |
++| `solution-detail.html` | детальная страница решения |
 | `projects.html` | проекты (фильтры, без детальной страницы) |
 | `project-detail.html` | страница проекта |
-| `clients.html` | клиенты |
-| `client-detail.html` | детальная страница клиента (РАНХиГС) |
++| `clients.html` | клиенты |
++| `client-detail.html` | детальная страница клиента (РАНХиГС) |
 | `events.html` | медиацентр / мероприятия |
 | `event-detail.html` | детальная страница мероприятия |
 | `article-detail.html` | детальная страница статьи |
 | `about.html` | о компании |
+| `contacts.html` | контакты (карта офиса, баннер CTA) |
 | `vuz.html` | цифровая трансформация вуза |
 | `directum.html` | Directum — экосистема для управления организацией |
 | `univer-online.html` | Univer Online |
+| `contacts.html` | Контакты
 
-Продакшен: https://taif.tw1.ru/<имя страницы>.html (index, solutions, solution-detail, clients, client-detail, projects, events, event-detail).
+
+https://softsnow.cz07146.tw1.ru/vuz.html
+https://softsnow.cz07146.tw1.ru/about.html
+https://softsnow.cz07146.tw1.ru/event-detail.html
+https://softsnow.cz07146.tw1.ru/contacts.html
 ## Mobile adaptation (проверено на index.html, 2026-08-23)
 
 Источник мобильного макета: Figma «SoftSnow Work (Copy)» node `1742:17748` (375×4504). Правила применимы ко всем страницам.
