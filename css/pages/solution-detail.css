@@ -252,7 +252,7 @@
     display: flex;
     align-items: center;
     gap: var(--gap-lg);
-    margin-top: auto;
+    margin-top: 2rem;
     border: 2px solid #2222221A;
     padding: 1.25rem 1.25rem;
     border-radius: 1.25rem;
