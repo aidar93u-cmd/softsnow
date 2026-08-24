@@ -1,19 +1,19 @@
-/* directum.css - страничные секции, извлечены из sections.css (Task 6) */
+/* directum.css - страничные секции, извлечены из sections.css */
 
-.partners--eco .partners__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.625rem;
-}
-.cta--directum {
-  margin-top: 0.625rem;
-}
-.projects--eco {
-  margin-top: 0.625rem;
-}
 .projects__year {
   position: absolute;
   top: 25.375rem;
   left: 2.5rem;
   font-size: var(--fs-body-16);
+}
+.partners--eco .partners__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.625rem;
+}
+.projects--eco {
+  margin-top: 0.625rem;
+}
+.cta--directum {
+  margin-top: 0.625rem;
 }
