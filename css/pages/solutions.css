@@ -1,0 +1,89 @@
+/* solutions.css - страничные секции, извлечены из sections.css (Task 6) */
+
+.catalog__card:hover .catalog__arrow path{
+    opacity: 1;
+}
+.catalog__card:hover .catalog__plus {
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.catalog__arrow path {
+  fill: currentColor;
+}
+.catalog__card:hover .catalog__arrow {
+  transform: scale(2);
+  color: var(--color-white);
+}
+.catalog__card:hover {
+  background: var(--color-blue-alt);
+  color: var(--color-white);
+}
+.catalog__plus {
+  display: none;
+}
+.catalog__arrow {
+  position: absolute;
+  top: 2.5rem;
+  right: 2.5rem;
+  color: var(--color-black);
+  transition: all 0.4s;
+  transform: scale(1);
+}
+.catalog__feat {
+  font-size: var(--fs-body-16);
+}
+.catalog__col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.catalog__feats--single {
+  grid-template-columns: 28.75rem;
+}
+.catalog__feats {
+  width: 55.625rem;
+  flex-shrink: 0;
+  display: grid;
+  grid-template-columns: 28.75rem 26.25rem;
+  gap: var(--gap-sm);
+}
+.catalog__platform {
+  font-size: var(--fs-body-16);
+  opacity: 0.5;
+}
+.catalog__name {
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  margin: 0;
+    letter-spacing: -0.045em;
+    max-width: 37.5rem;
+}
+.catalog__head {
+  width: 55.625rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+  align-items: flex-start;
+}
+.catalog__card {
+  position: relative;
+  display: flex;
+  gap: var(--gap-sm);
+  padding: 2.5rem 2.5rem 1.5625rem;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: var(--color-black);
+}
+.catalog__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+.catalog {
+  margin-bottom: 5rem;
+}

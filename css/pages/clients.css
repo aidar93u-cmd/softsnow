@@ -1,0 +1,110 @@
+/* clients.css - страничные секции, извлечены из sections.css (Task 6) */
+
+.clients__card:hover .clients__logo img {
+  transform: scale(0.8);
+}
+.projects__row{
+  text-align: center;
+  margin: 2.5rem auto 0;
+}
+.clients__more {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+.clients__card:hover .clients__logo {
+  background: var(--color-white);
+}
+.clients__card:hover .clients__desc {
+  color: var(--color-white);
+}
+.clients__card:hover .clients__icon{
+  fill: var(--color-white);
+}
+.clients__icon{
+  position: absolute;
+  fill:var(--color-black);
+  
+    right: 2.5rem;
+}
+.clients__card:hover {
+  background: var(--color-sea);
+  color: var(--color-white);
+}
+.clients__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s;
+}
+.clients__logo {
+  position: absolute;
+  right: 1.875rem;
+  bottom: 1.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8.5rem;
+  height: 8.5rem;
+  padding: 1.25rem;
+  background: var(--color-white);
+  border-radius: 50%;
+  transition: background 0.4s;
+}
+.clients__desc {
+  margin-top: 1rem;
+  font-size: var(--fs-body-14);
+  color: var(--color-grey);
+}
+.clients__name {
+  font-size: var(--fs-body-20);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.clients__body {
+  padding-right: 2.5rem;
+}
+.clients__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 22.5rem;
+  padding: 2.5rem;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  color: var(--color-black);
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 0.4s;
+}
+.clients__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  gap: var(--gap-sm);
+}
+.tab-filter:hover {
+  background: var(--color-sea);
+  color: var(--color-white);
+}
+.tab-filter {
+    display: inline-flex;
+    align-items: center;
+    height: var(--control-h);
+    padding: 0 1.875rem;
+    border-radius: var(--radius-xl);
+    background: var(--color-white);
+    color: var(--color-black);
+    font-size: var(--fs-body-16);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.4s;
+    letter-spacing: -0.04rem;
+}
+.tab-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4375rem;
+  margin-bottom: 1.25rem;
+}

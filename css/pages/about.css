@@ -1,0 +1,94 @@
+/* about.css - страничные секции, извлечены из sections.css (Task 6) */
+
+.team__role {
+    margin-top: 0.4375rem;
+    font-size: var(--fs-body-14);
+}
+.team__name {
+    font-size: var(--fs-body-20);
+    font-weight: 500;
+    line-height: 1;
+}
+.team__plate {
+    position: absolute;
+    left: var(--gap-sm);
+    bottom: var(--gap-sm);
+    width: 26.875rem;
+    max-width: calc(100% - var(--gap-md));
+    padding: 1.25rem var(--gap-lg);
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+}
+.team__card {
+    position: relative;
+    min-height: 35rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+.team__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-sm);
+}
+.team__sub {
+    font-size: var(--fs-body-16);
+    max-width: 40.9375rem;
+}
+.team__heading {
+    font-size: var(--fs-h2);
+    letter-spacing: -0.07em;
+}
+.approach__text span {
+    color: var(--color-sea);
+}
+.approach__text {
+    margin: 0 auto;
+    text-align: center;
+    font-size: var(--fs-h2);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+}
+.approach__label {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--color-grey);
+}
+.approach {
+    margin-bottom: 5rem;
+    padding: 2.5rem 0;
+}
+.facts__card--partner .facts__img {
+    border-radius: 50%;
+}
+.facts__img--big {
+    width: 17.5rem;
+    height: 17.5rem;
+    border-radius: 7.5rem;
+}
+.facts__img {
+    position: absolute;
+    right: var(--gap-xl);
+    bottom: var(--gap-xl);
+    width: 7.5rem;
+    height: 7.5rem;
+    object-fit: cover;
+}
+.facts__text {
+    margin-top: var(--gap-lg);
+    font-size: var(--fs-body-14);
+    max-width: 21.875rem;
+}
+.facts__name {
+    font-size: var(--fs-h3);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+.facts__card {
+    position: relative;
+    height: 100%;
+    padding: 2.125rem var(--gap-2xl);
+    overflow: hidden;
+}
+.facts__swiper {
+  overflow: visible;
+}
