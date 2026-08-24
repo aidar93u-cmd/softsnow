@@ -383,9 +383,6 @@ textarea.form-field__input:not(:placeholder-shown) + .form-field__label {
 	color: var(--color-black);
 }
 
-.form-check--invalid .form-check__box {
-	border-color: var(--color-red);
-}
 
 /* ===== Request popup (Fancybox inline) ===== */
 .modal-form {

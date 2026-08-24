@@ -719,7 +719,7 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* tasks__icon--plus and tasks__icon--minus are controlled by JavaScript via .tasks__icon--closed class */
+/* tasks__icon--plus / --minus cross-fade when .tasks__item gets .is-open */
 .tasks__icon--plus {
   opacity: 1;
   transform: rotate(0deg);
@@ -2518,47 +2518,6 @@ linear-gradient(93.16deg, rgba(34, 34, 34, 0.6) 21.74%, rgba(34, 34, 34, 0) 59.5
   object-fit: contain;
 }
 
-/* ============ CTA center (РѕР±СЃСѓРґРёРј РІРЅРµРґСЂРµРЅРёРµ) ============ */
-.cta--center {
-  height: 35rem;
-  margin-top: 5rem;
-  background: var(--bg-light-alt);
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta--center::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url(../assets/img/cta-bg.png) center / cover no-repeat;
-}
-
-.cta--center__inner {
-  position: relative;
-  z-index: 1;
-  margin: 0 auto;
-  width: 46.125rem;
-  text-align: center;
-}
-
-.cta--center__title {
-  font-size: var(--fs-h2);
-  margin-bottom: 1.25rem;
-}
-
-.cta--center__text {
-  font-size: var(--fs-body-14);
-  max-width: 28.75rem;
-  margin: 0 auto 2.5rem;
-}
-
-.cta--center__btn {
-  font-weight: 500;
-}
-
 /* ============ CTA blue (РЈ РІР°СЃ РїРѕС…РѕР¶Р°СЏ Р·Р°РґР°С‡Р°?) ============ */
 .cta--blue {
   color: var(--color-white);
@@ -3882,18 +3841,6 @@ transition: all 0.4s;
   max-width: 19.375rem;
 }
 
-.partners__logo--eco {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 8.125rem;
-  height: 8.125rem;
-  border-radius: var(--radius-lg);
-  background: var(--bg-light);
-  color: var(--color-sea);
-  font-size: var(--fs-body-16);
-  font-weight: 600;
-}
 
 .reasons {
   margin-bottom: 7.5rem;
