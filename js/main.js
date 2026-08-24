@@ -10,6 +10,7 @@ function initClientsMarquee() {
 }
 
 function initSwiper(selector, options) {
+  if (typeof Swiper === 'undefined') return null;
   const el = document.querySelector(selector);
   if (!el) return null;
   return new Swiper(el, options);
@@ -29,9 +30,9 @@ function bindNav(selector, swiper) {
 // ponytail: desktop = one screen-slide per 4 cards (grid), mobile = flat card slides
 function initFactsSlider() {
   const root = document.querySelector('.projects--about');
-  if (!root || root.dataset.factsInit) return;
+  const swiperEl = root && root.querySelector('.facts__swiper');
+  if (!root || !swiperEl || root.dataset.factsInit || typeof Swiper === 'undefined') return;
   root.dataset.factsInit = '1';
-  const swiperEl = root.querySelector('.facts__swiper');
   const wrapper = swiperEl.querySelector('.swiper-wrapper');
   const slides = Array.from(wrapper.children);
   const mq = window.matchMedia('(min-width: 768px)');
@@ -282,7 +283,7 @@ function initDropdown() {
 function initDemoPopup() {
   const tpl = document.getElementById('features-popup');
   const btns = document.querySelectorAll('.features__demo');
-  if (!tpl || !btns.length) return;
+  if (!tpl || !btns.length || typeof Fancybox === 'undefined') return;
   btns.forEach((btn) => {
     btn.addEventListener('click', () => {
       const panel = btn.closest('.features__panel');
