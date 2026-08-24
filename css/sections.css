@@ -801,10 +801,6 @@
     margin-top: 0.4375rem;
 }
 
-.projects__arrow path {
-  fill: currentColor;
-}
-
 .projects__text {
   position: relative;
   font-size: var(--fs-body-16);
@@ -976,14 +972,10 @@
 }
 
 /* Плавный переход 0.4s */
-.dropdown__caret path,
 /* ============ Event detail page ============ */
 .audience__card--accent .audience__name,
 .vnedrenie__name {
   transition: stroke 0.4s, color 0.4s;
-}
-.dropdown__trigger:hover svg path {
-  stroke: var(--color-white);
 }
 .dropdown__caret {
   transition: transform 0.4s;

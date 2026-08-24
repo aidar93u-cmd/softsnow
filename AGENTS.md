@@ -20,6 +20,7 @@ softsnow/
 ├── event-detail.html     # детальная страница мероприятия
 ├── about.html            # о компании
 ├── AGENTS.md
+├── FIGMA.md             # живой реестр: токены, компоненты, маппинг, статусы секций
 ├── css/
 │   ├── base.css           # зона 1: design tokens (:root) + универсальное (reset, типографика h1–h6, базовые теги) + повторяющиеся компоненты (.container, .card, .btn (+модификаторы), .carousel-nav)
 │   ├── sections.css       # зона 2: layout ОБЩИХ секций (.header, .hero, ..., .footer) + мультистраничные блоки + страничные блоки (в конце, с маркерами «from pages/*.css»)
@@ -33,7 +34,6 @@ softsnow/
 │       └── fancybox/     # fancybox (css + umd.js), локально; подключается ТОЛЬКО на страницах, где используется
 └── docs/
     ├── FIGMA_WORKFLOW.md # процесс: audit/implement/QA, измерения, допуски, bridge, дампы
-    ├── FIGMA.md          # живой реестр: токены, компоненты, маппинг, статусы секций
     └── superpowers/
         ├── templates/    # шаблоны task (figma-section.md)
         └── plans/        # планы и отчёты сверки секций
