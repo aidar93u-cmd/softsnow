@@ -2282,6 +2282,63 @@
         letter-spacing: -0.1rem;
 	}
 
+	/* ---------- Article detail hero (Figma 1736:13989) ---------- */
+	/* Топбар: ← «Медиа» слева, дата справа; заголовок 24px/1.05;
+	   теги-чипы столбиком h34, нижняя дата скрыта. */
+	.page-hero--article .breadcrumb {
+		width: 100%;
+	}
+
+	.page-hero--article .breadcrumb a:not(:first-child) {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: var(--color-black);
+	}
+
+	.page-hero--article .breadcrumb a:first-child {
+		display: none;
+	}
+
+	.page-hero--article .article-hero__back {
+		display: inline-block;
+		flex: none;
+	}
+
+	.page-hero--article .article-hero__date--top {
+		display: inline-block;
+		margin-left: auto;
+		font-size: var(--fs-body-14);
+		color: var(--color-black);
+	}
+
+	.page-hero--article .page-hero__title--detail {
+		margin-top: 0;
+		line-height: 1.05;
+		letter-spacing: -0.03em;
+		margin-bottom: 1.5rem;
+	}
+
+	.page-hero--article .article-hero__meta {
+		margin-top: 0;
+	}
+
+	.page-hero--article .article-hero__tags {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5rem;
+	}
+
+	.page-hero--article .article-hero__tags li {
+		padding: 0.5rem 0.75rem;
+		font-size: var(--fs-body-14);
+		line-height: 1.25;
+	}
+
+	.page-hero--article .article-hero__meta .article-hero__date {
+		display: none;
+	}
+
 	/* Об академии: заголовок -> фото -> текст */
 	.client-intro {
 		margin-bottom: 3rem;
