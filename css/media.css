@@ -1095,7 +1095,7 @@
 		content: '';
 		position: absolute;
 		inset: 0;
-		z-index: 0;
+		z-index: 1;
 		background: linear-gradient(to bottom, rgba(245, 244, 245, 0.55), rgba(245, 244, 245, 0) 60%);
 		pointer-events: none;
 	}

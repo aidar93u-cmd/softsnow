@@ -37,8 +37,8 @@
           <div class="header__nav-item">
             <div class="header__dropdown">
               <a href="#industries" class="header__link">
-                Отрасли
-                <svg class="header__caret" width="14" height="8" viewBox="0 0 14 8" fill="none" aria-hidden="true"><use href="assets/img/sprite.svg#icon-caret" /></svg>
+                <span>Отрасли</span>
+                <svg class="header__caret" width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true"><use href="assets/img/sprite.svg#icon-caret-header" /></svg>
               </a>
         
               <div class="header__dropdown-panel">
@@ -52,8 +52,8 @@
           <div class="header__nav-item">
             <div class="header__dropdown">
               <a href="solutions.html" class="header__link">
-                Решения
-                <svg class="header__caret" width="14" height="8" viewBox="0 0 14 8" fill="none" aria-hidden="true"><use href="assets/img/sprite.svg#icon-caret" /></svg>
+                <span>Решения</span>
+                <svg class="header__caret" width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true"><use href="assets/img/sprite.svg#icon-caret-header" /></svg>
               </a>
 
               <div class="header__dropdown-panel">
@@ -66,23 +66,23 @@
           </div>
         
           <div class="header__nav-item">
-            <a href="projects.html" class="header__link">Проекты</a>
+            <a href="projects.html" class="header__link"><span>Проекты</span></a>
           </div>
         
           <div class="header__nav-item">
-            <a href="clients.html" class="header__link">Клиенты</a>
+            <a href="clients.html" class="header__link"><span>Клиенты</span></a>
           </div>
         
           <div class="header__nav-item">
-            <a href="media.html" class="header__link">Медиа</a>
+            <a href="media.html" class="header__link"><span>Медиа</span></a>
           </div>
         
           <div class="header__nav-item">
-            <a href="about.html" class="header__link">О нас</a>
+            <a href="about.html" class="header__link"><span>О нас</span></a>
           </div>
         
           <div class="header__nav-item">
-            <a href="contacts.html" class="header__link">Контакты</a>
+            <a href="contacts.html" class="header__link"><span>Контакты</span></a>
           </div>
         </nav>
 
@@ -108,7 +108,8 @@
   <main>
     <section class="hero" aria-label="Главный экран">
       <div class="container flex">
-        <div class="hero-block-inner" style="background-image: url('assets/img/hero-bg.jpg');">
+        <div class="hero-block-inner">
+          <video class="hero__video" src="assets/hero-video.mp4" autoplay muted loop playsinline></video>
           <div class="hero__body">
             <h1 class="hero__title"><span class="hero__brand">SoftSnow —</span> надежный партнер в&nbsp;области
               цифровизации</h1>
@@ -134,7 +135,7 @@
             <img class="industries__bg" src="assets/img/card-vuz-bg.jpg" alt="" aria-hidden="true">
             <h3 class="industries__title">Госсектор</h3>
             <p class="industries__text">Решения для автоматизации процессов, согласований, документооборота
-              и&nbsp;управления.</p>
+              и&nbsp;управления</p>
             <svg class="industries__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
               <use href="assets/img/sprite.svg#icon-arrow" />
             </svg>
@@ -143,7 +144,7 @@
             <img class="industries__bg" src="assets/img/card-vuz-bg.jpg" alt="" aria-hidden="true">
             <h3 class="industries__title">Вузы</h3>
             <p class="industries__text">Цифровизации учебных, административных и&nbsp;внутренних процессов в
-              образовательной среде.</p>
+              образовательной среде</p>
             <svg class="industries__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
               <use href="assets/img/sprite.svg#icon-arrow" />
             </svg>
@@ -152,7 +153,7 @@
             <img class="industries__bg" src="assets/img/card-vuz-bg.jpg" alt="" aria-hidden="true">
             <h3 class="industries__title">Бизнес</h3>
             <p class="industries__text">Инструменты для компаний, которым важно ускорить процессы, повысить прозрачность
-              и&nbsp;снизить операционную нагрузку.</p>
+              и&nbsp;снизить операционную нагрузку</p>
             <svg class="industries__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
               <use href="assets/img/sprite.svg#icon-arrow" />
             </svg>
@@ -173,23 +174,23 @@
         <h2 class="stats__heading">Цифры о нас</h2>
         <div class="stats__grid">
           <div class="stats__item">
-            <dt class="stats__num">50+</dt>
+            <dt class="stats__num">50<span class="stats__plus">+</span></dt>
             <dd class="stats__label">Реализованных проектов</dd>
           </div>
           <div class="stats__item">
-            <dt class="stats__num">100 000+</dt>
+            <dt class="stats__num">100 000<span class="stats__plus">+</span></dt>
             <dd class="stats__label">Пользователей</dd>
           </div>
           <div class="stats__item">
-            <dt class="stats__num">150+</dt>
+            <dt class="stats__num">150<span class="stats__plus">+</span></dt>
             <dd class="stats__label">Выполненных интеграций</dd>
           </div>
           <div class="stats__item">
-            <dt class="stats__num">200 000+</dt>
+            <dt class="stats__num">200 000<span class="stats__plus">+</span></dt>
             <dd class="stats__label">Реализованных часов на&nbsp;проектах</dd>
           </div>
           <div class="stats__item">
-            <dt class="stats__num">30+</dt>
+            <dt class="stats__num">30<span class="stats__plus">+</span></dt>
             <dd class="stats__label">Сертифицированных специалистов</dd>
           </div>
         </div>
@@ -282,7 +283,9 @@
                 height="136">
             </div>
           </div>
-          <div class="client-image"><img src="assets/img/clients/client-1.png" alt="Логотип клиента" width="136" height="136">
+          <div class="clients__cell">
+            <div class="client-image"><img src="assets/img/clients/client-1.png" alt="Логотип клиента" width="136" height="136">
+            </div>
           </div>
           <div class="clients__cell">
             <div class="client-image"><img src="assets/img/clients/client-5.png" alt="Логотип клиента" width="136"
@@ -350,7 +353,7 @@
                 <span class="partners__tag">Комплекс решений для вузов</span>
                 <img class="partners__logo" src="assets/img/logo-univer.png" alt="Univer Online" width="130"
                   height="130">
-                <p class="partners__desc">Собственная цифровая платформа SoftSnow для вузов.</p>
+                <p class="partners__desc">Собственная цифровая платформа SoftSnow для вузов</p>
                 <svg class="partners__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
                   <use href="assets/img/sprite.svg#icon-arrow" />
                 </svg>
@@ -361,7 +364,7 @@
                 <h3 class="partners__name">Битрикс 24</h3>
                 <span class="partners__tag">Корпоративные порталы</span>
                 <img class="partners__logo" src="assets/img/logo-bitrix.png" alt="Битрикс 24" width="130" height="130">
-                <p class="partners__desc">Платформа для внутренних коммуникаций и&nbsp;совместной работы.</p>
+                <p class="partners__desc">Платформа для внутренних коммуникаций и&nbsp;совместной работы</p>
                 <svg class="partners__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
                   <use href="assets/img/sprite.svg#icon-arrow" />
                 </svg>
@@ -558,7 +561,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a class="events__card events__card--blue" href="#">
+              <a class="events__card" href="#">
                 <img class="events__bg" src="assets/img/webinar-4.png" alt="">
                 <div class="events__info">
                   <h3 class="events__title">Совместная конференция Политеха и&nbsp;«СофтСноу»</h3>
