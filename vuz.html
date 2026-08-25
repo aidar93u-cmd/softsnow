@@ -26,18 +26,23 @@
     <div class="container">
       <div class="header__inner">
         <a href="index.html" class="logo" aria-label="SoftSnow — на главную">
-          <svg class="logo__mark" width="222" height="67" viewBox="0 0 222 67" aria-hidden="true"><use href="assets/img/sprite.svg#logo-mark" width="64" height="67" fill="#1342F3" stroke="#1342F3"/><use href="assets/img/sprite.svg#logo-wordmark" width="222" height="67" fill="#1342F3"/></svg>
-
+          <svg class="logo__mark" width="222" height="67" viewBox="0 0 222 67" aria-hidden="true">
+            <use href="assets/img/sprite.svg#logo-mark" width="64" height="67" fill="#1342F3" stroke="#1342F3" />
+            <use href="assets/img/sprite.svg#logo-wordmark" width="222" height="67" fill="#1342F3" />
+          </svg>
+  
         </a>
-
+  
         <nav class="header__nav" aria-label="Основная навигация">
           <div class="header__nav-item">
             <div class="header__dropdown">
               <a href="#industries" class="header__link">
                 <span>Отрасли</span>
-                <svg class="header__caret" width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true"><use href="assets/img/sprite.svg#icon-caret-header" /></svg>
+                <svg class="header__caret" width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true">
+                  <use href="assets/img/sprite.svg#icon-caret-header" />
+                </svg>
               </a>
-
+  
               <div class="header__dropdown-panel">
                 <a href="#industries" class="header__dropdown-link">Госсектор</a>
                 <a href="#industries" class="header__dropdown-link">Вузы</a>
@@ -45,44 +50,46 @@
               </div>
             </div>
           </div>
-
+  
           <div class="header__nav-item">
             <div class="header__dropdown">
               <a href="solutions.html" class="header__link">
                 <span>Решения</span>
-                <svg class="header__caret" width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true"><use href="assets/img/sprite.svg#icon-caret-header" /></svg>
+                <svg class="header__caret" width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true">
+                  <use href="assets/img/sprite.svg#icon-caret-header" />
+                </svg>
               </a>
-
+  
               <div class="header__dropdown-panel">
                 <a href="#industries" class="header__dropdown-link">Госсектор</a>
                 <a href="#industries" class="header__dropdown-link">Вузы</a>
                 <a href="#industries" class="header__dropdown-link">Бизнес</a>
               </div>
             </div>
-
+  
           </div>
-
+  
           <div class="header__nav-item">
             <a href="projects.html" class="header__link"><span>Проекты</span></a>
           </div>
-
+  
           <div class="header__nav-item">
             <a href="clients.html" class="header__link"><span>Клиенты</span></a>
           </div>
-
+  
           <div class="header__nav-item">
             <a href="media.html" class="header__link"><span>Медиа</span></a>
           </div>
-
+  
           <div class="header__nav-item">
             <a href="about.html" class="header__link"><span>О нас</span></a>
           </div>
-
+  
           <div class="header__nav-item">
             <a href="contacts.html" class="header__link"><span>Контакты</span></a>
           </div>
         </nav>
-
+  
         <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false">
           <span></span>
           <span></span>
@@ -93,9 +100,12 @@
             <a href="tel:+78123201130" class="header__phone-num">+7 (812) 320-11-30</a>
           </div>
           <button class="btn btn--search" type="button" aria-label="Поиск">
-            <svg aria-hidden="true" width="15.9" height="15.9" viewBox="0 0 15.9 15.9"><use href="assets/img/sprite.svg#icon-search"/></svg>
+            <svg aria-hidden="true" width="15.9" height="15.9" viewBox="0 0 15.9 15.9">
+              <use href="assets/img/sprite.svg#icon-search" />
+            </svg>
           </button>
-          <button class="btn btn--primary" type="button">Оставить заявку</button>
+          <button class="btn btn--primary" type="button" data-fancybox data-src="#request-popup">Оставить
+            заявку</button>
         </div>
       </div>
     </div>
@@ -535,8 +545,9 @@
                 height="136">
             </div>
           </div>
-          <div class="client-image"><img src="assets/img/clients/client-1.png" alt="Логотип клиента" width="136"
-              height="136">
+          <div class="clients__cell">
+            <div class="client-image"><img src="assets/img/clients/client-1.png" alt="Логотип клиента" width="136" height="136">
+            </div>
           </div>
           <div class="clients__cell">
             <div class="client-image"><img src="assets/img/clients/client-5.png" alt="Логотип клиента" width="136"
@@ -744,6 +755,7 @@
     </section>
 
     <section class="cta" id="cta" aria-label="Обсудим задачи вашего университета?">
+      <div class="container">
       <div class="cta__body">
         <div class="cta__content">
           <h2 class="cta__title">Обсудим задачи<br> вашего университета?</h2>
@@ -752,6 +764,7 @@
           и предложить следующий шаг.</p>
           <button class="btn btn--primary btn--lg cta__btn" type="button">Получить консультацию</button>
         </div>
+      </div>
       </div>
     </section>
 

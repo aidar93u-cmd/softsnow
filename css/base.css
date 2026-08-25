@@ -272,7 +272,7 @@ section {
 .btn--primary {
 	background: var(--color-sea);
 	color: var(--color-white);
-	border: 1px solid var(--color-white);
+	border: 1px solid var(--color-sea);
 }
 .btn--primary:hover {
 	background: var(--color-white);
@@ -442,7 +442,7 @@ textarea.form-field__input + .form-field__label {
 
 textarea.form-field__input:focus + .form-field__label,
 textarea.form-field__input:not(:placeholder-shown) + .form-field__label {
-	transform: translateY(-0.625rem);
+	transform: translateY(-50%) translateY(-0.7rem);
 }
 
 .form-field__label {
@@ -451,7 +451,7 @@ textarea.form-field__input:not(:placeholder-shown) + .form-field__label {
 	left: 1.875rem;
 	transform: translateY(-50%);
 	font-size: var(--fs-body-16);
-	color: var(--color-black);
+	color: #222222B2;
 	pointer-events: none;
 	transition: transform var(--transition-base), font-size var(--transition-base), color var(--transition-base);
 }
@@ -460,7 +460,7 @@ textarea.form-field__input:not(:placeholder-shown) + .form-field__label {
 .form-field__input:not(:placeholder-shown) + .form-field__label {
 	transform: translateY(-50%) translateY(-1rem);
 	font-size: var(--fs-body-12);
-	color: var(--color-grey);
+	color: #222222B2;
 }
 
 /* Validation states (Just-validate marks the field itself) */

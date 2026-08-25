@@ -256,7 +256,10 @@ function initDropdown() {
     renderChips();
     applyFilter();
     reset.classList.toggle('is-hidden', total === 0);
-    if (filtersCount) filtersCount.textContent = total;
+    if (filtersCount) {
+      filtersCount.textContent = total;
+      filtersCount.classList.toggle('is-hidden', total === 0);
+    }
     if (applyBtn) applyBtn.textContent = 'Показать ' + total;
   };
 
@@ -466,7 +469,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const partnersSwiper = initSwiper('.partners__swiper', {
-    slidesPerView: 'auto',
+    slidesPerView: 1.1,
     spaceBetween: 10,
     rewind: true,
     speed: 600,
@@ -474,7 +477,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const projectsSwiper = initSwiper('.projects__swiper', {
-    slidesPerView: 'auto',
+    slidesPerView: 1.1,
     spaceBetween: 10,
     rewind: true,
     speed: 600,
@@ -482,22 +485,24 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const eventsSwiper = initSwiper('.events__swiper', {
-    slidesPerView: 'auto',
+    slidesPerView: 1.1,
     spaceBetween: 10,
     rewind: true,
     speed: 600,
+    breakpoints: { 768: { slidesPerView: 'auto' } },
   });
 
   const eventsFeaturedSwiper = initSwiper('.events-featured__swiper', {
-    slidesPerView: 1,
+    slidesPerView: 1.1,
     spaceBetween: 10,
     loop: true,
     speed: 800,
     effect: 'slide',
+    breakpoints: { 768: { slidesPerView: 'auto' } },
   });
 
   const testimonialsSwiper = initSwiper('.testimonials__swiper', {
-    slidesPerView: 1.5,
+    slidesPerView: 1.1,
     spaceBetween: 10,
     rewind: true,
     speed: 600,
@@ -505,10 +510,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const gallerySwiper = initSwiper('.gallery__swiper', {
-    slidesPerView: 'auto',
+    slidesPerView: 1.1,
     spaceBetween: 10,
     rewind: true,
     speed: 600,
+    breakpoints: { 768: { slidesPerView: 'auto' } },
   });
 
   initFactsSlider();
