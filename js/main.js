@@ -517,6 +517,14 @@ document.addEventListener('DOMContentLoaded', () => {
     breakpoints: { 768: { slidesPerView: 'auto' } },
   });
 
+  const eventPartnersSwiper = initSwiper('.event-partners__swiper', {
+    slidesPerView: 1.1,
+    spaceBetween: 10,
+    rewind: true,
+    speed: 600,
+    breakpoints: { 768: { slidesPerView: 3 } },
+  });
+
   initFactsSlider();
 
   const galleryDots = Array.from(document.querySelectorAll('.gallery__dot'));
