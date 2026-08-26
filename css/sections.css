@@ -21,7 +21,7 @@
     position: absolute;
     bottom: 0;
     width: calc(100% - 5rem);
-    height: 0.0625rem;
+    height: 1px;
     background: var(--color-dark-a10);
 }
 .logo {
@@ -69,7 +69,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 0.0625rem;
+    height: 1px;
     background: var(--color-black);
 }
 .header__caret {
@@ -178,7 +178,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 0.0625rem;
+    height: 1px;
     background: var(--color-black);
 }
 .header__phone-num {
@@ -276,7 +276,7 @@
   left: 50%;
   top: 0;
   bottom: 0;
-  width: 0.0625rem;
+  width: 1px;
   background: var(--bg-border);
 }
 .page-hero__title.page-hero__title--detail {
@@ -458,7 +458,6 @@
 .tasks__arrow {
   position: relative;
   z-index: 2;
-    letter-spacing: -0.11rem;
 }
 
 .tasks__arrow {
@@ -1224,6 +1223,8 @@
   line-height: 1.2;
   max-width: 23.75rem;
   transition: color 0.4s;
+    font-family: var(--second-family);
+    letter-spacing: -0.02em;
 }
 
 .events__meta {
@@ -1358,15 +1359,17 @@
 }
 
 .footer__tagline {
-  margin: 0;
-  flex: 1;
-  min-width: 0;
-  overflow-wrap: break-word;
-  font-size: var(--fs-h3);
-  font-weight: 500;
-  line-height: 1.2;
-  text-align: left;
-    letter-spacing: -0.135rem;
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: break-word;
+    font-size: var(--fs-h3);
+    text-align: left;
+    font-family: var(--second-family);
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: #fff;
 }
 
 .footer__contacts {
@@ -1526,6 +1529,7 @@ h3.client-title,
 .testimonials__text {
   font-size: var(--fs-body-16);
   max-width: 25.5625rem;
+    color: var(--color-grey);
 }
 
 .testimonials__footer {
@@ -2102,7 +2106,7 @@ h2.client-title {
 }
 
 .vnedrenie {
-  margin-top: 0.625rem;
+		margin-bottom: 5rem;
 }
 
 .vnedrenie__title {
@@ -2242,7 +2246,6 @@ h2.client-title {
 /* team (SoftSnow — команда) */
 .team,
 .ecosystem {
-  margin-top: 5rem;
   margin-bottom: 5rem;
 }
 /* Грид 2 колонки */
@@ -2557,7 +2560,7 @@ a.contacts-map__value:hover {
 
 .article-about__title {
   font-size: var(--fs-h3);
-  letter-spacing: -0.0625rem;
+  letter-spacing: -1px;
 }
 
 .article-about__text {
@@ -2760,6 +2763,7 @@ a.contacts-map__value:hover {
 .team__role {
     margin-top: 0.4375rem;
     font-size: var(--fs-body-14);
+    color: var(--color-grey);
 }
 
 /* ==== from pages/client-detail.css ==== */
@@ -3423,6 +3427,10 @@ transition: background-color 0.4s, color 0.4s;
 }
 .goals__inner--photo {
   background-image: url('../assets/img/goals__inner.jpg');
+}
+
+.goals__inner--bg {
+  background-image: url('../assets/img/goals__inner-bg.jpg');
 }
 
 .impl {

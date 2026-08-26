@@ -13,9 +13,9 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="directum.html">
   <meta property="og:image" content="assets/img/hero-bg.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  
+  
 <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
 <link rel="stylesheet" href="assets/vendor/fancybox/fancybox.css">
 <link rel="stylesheet" href="css/base.css">
@@ -113,9 +113,19 @@
   </header>
 
   <main>
+    <style>
+      .hero-block-inner{
+          background-image: url('assets/img/directum-bg.jpg');
+      }
+      @media (max-width:768px) {        
+        .hero-block-inner{
+            background-image: url('assets/img/directum-hero-mobile.jpg');
+        }
+      }
+    </style>
     <section class="hero" aria-label="Directum — цифровая экосистема">
       <div class="container flex">
-        <div class="hero-block-inner" style="background-image: url('assets/img/directum-bg.jpg');">
+        <div class="hero-block-inner">
           <div class="hero__body">
             <h1 class="hero__title"><span class="hero__brand">Directum&nbsp;—</span><br> цифровая экосистема
             для&nbsp;управления
@@ -198,7 +208,7 @@
       </div>
     </section>
 
-    <section class="reasons" aria-label="Почему выбирают Directum">
+    <section class="reasons reasons--univer" aria-label="Почему выбирают Directum">
       <div class="container">
         <div class="reasons__inner">
           <div class="reasons__head">

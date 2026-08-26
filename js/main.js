@@ -56,7 +56,7 @@ function initFactsSlider() {
       slides.forEach((s) => wrapper.appendChild(s));
     }
     if (swiper) swiper.destroy(true, true);
-    swiper = new Swiper(swiperEl, { slidesPerView: 'auto', spaceBetween: 10, speed: 600, rewind: true });
+    swiper = new Swiper(swiperEl, { slidesPerView: 'auto', spaceBetween: 10, speed: 600, loop: true });
   }
 
   build();
@@ -450,9 +450,12 @@ function initContactsMap() {
   const el = document.getElementById('contacts-map');
   if (!el || typeof ymaps === 'undefined') return;
   ymaps.ready(() => {
-    const center = [59.9320, 30.3515];
-    const map = new ymaps.Map(el, { center, zoom: 16, controls: [] });
-    const placemark = new ymaps.Placemark([59.9320, 30.3416], {}, {
+    // На мобильных карта стоит отдельным блоком — точка в центре, зум меньше
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+    const placemarkCoords = [59.9320, 30.3416];
+    const center = isMobile ? placemarkCoords : [59.9320, 30.3515];
+    const map = new ymaps.Map(el, { center, zoom: isMobile ? 15 : 16, controls: [] });
+    const placemark = new ymaps.Placemark(placemarkCoords, {}, {
       iconLayout: ymaps.templateLayoutFactory.createClass(
         '<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">' +
           '<path d="M25.5 0.288675C25.8094 0.110042 26.1906 0.110042 26.5 0.288675L48.0167 12.7113C48.3261 12.89 48.5167 13.2201 48.5167 13.5774V38.4226C48.5167 38.7799 48.3261 39.11 48.0167 39.2887L26.5 51.7113C26.1906 51.89 25.8094 51.89 25.5 51.7113L3.98334 39.2887C3.67394 39.11 3.48334 38.7799 3.48334 38.4226V13.5773C3.48334 13.2201 3.67394 12.89 3.98334 12.7113L25.5 0.288675Z" fill="#1342F3"/>' +
@@ -488,7 +491,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const clientsSwiper = initSwiper('.clients__swiper', {
     slidesPerView: 7.8,
     spaceBetween: 10,
-    rewind: true,
+    loop: true,
     speed: 600,
 
   });
@@ -496,7 +499,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const partnersSwiper = initSwiper('.partners__swiper', {
     slidesPerView: 1.1,
     spaceBetween: 10,
-    rewind: true,
+    loop: true,
     speed: 600,
     breakpoints: { 768: { slidesPerView: 4 } },
   });
@@ -504,7 +507,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectsSwiper = initSwiper('.projects__swiper', {
     slidesPerView: 1.1,
     spaceBetween: 10,
-    rewind: true,
+    loop: true,
     speed: 600,
     breakpoints: { 768: { slidesPerView: 2 } },
   });
@@ -512,7 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const eventsSwiper = initSwiper('.events__swiper', {
     slidesPerView: 1.1,
     spaceBetween: 10,
-    rewind: true,
+    loop: true,
     speed: 600,
     breakpoints: { 768: { slidesPerView: 'auto' } },
   });
@@ -529,7 +532,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const testimonialsSwiper = initSwiper('.testimonials__swiper', {
     slidesPerView: 1.1,
     spaceBetween: 10,
-    rewind: true,
+    loop: true,
     speed: 600,
     breakpoints: { 768: { slidesPerView: 3 } },
   });
@@ -537,7 +540,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const gallerySwiper = initSwiper('.gallery__swiper', {
     slidesPerView: 1.1,
     spaceBetween: 10,
-    rewind: true,
+    loop: true,
     speed: 600,
     breakpoints: { 768: { slidesPerView: 'auto' } },
   });
@@ -545,7 +548,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const eventPartnersSwiper = initSwiper('.event-partners__swiper', {
     slidesPerView: 1.1,
     spaceBetween: 10,
-    rewind: true,
+    loop: true,
     speed: 600,
     breakpoints: { 768: { slidesPerView: 3 } },
   });
