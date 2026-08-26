@@ -463,6 +463,7 @@
 
 .tasks__arrow {
   flex-shrink: 0;
+  transition: all 0.4s;
 }
 
 /* Белый текст на тёмном и hover */
@@ -489,7 +490,10 @@
 .catalog__card:hover .catalog__arrow {
   color: var(--color-white);
 }
+.tasks__item:hover .tasks__link .tasks__arrow{
+    transform: scale(1.5);
 
+}
 .tasks__footer {
   display: flex;
   justify-content: center;
@@ -4125,4 +4129,39 @@ transition: background-color 0.4s, color 0.4s;
 .eco-card__icon svg {
   width: 2.5rem;
   height: 2.5rem;
+}
+
+/* ==== from pages/index.css ==== */
+
+/* Cookie-баннер (Figma 1470:11283) — плавающий внизу главной */
+.cookie-banner {
+    position: fixed;
+    right: 1.5625rem;
+    bottom: 1.5625rem;
+    left: auto;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-lg);
+    max-width: 68rem;
+    margin: 0 auto;
+    padding: 1.9rem;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: 0px 31px 122px 0px #00000012;
+}
+
+.cookie-banner__text {
+    max-width: 40.75rem;
+    margin: 0;
+    font-size: var(--fs-body-16);
+    line-height: 1.4;
+    color: var(--color-black);
+}
+
+.cookie-banner__actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--gap-sm);
 }

@@ -455,6 +455,19 @@ function initContactsMap() {
   });
 }
 
+function initCookieBanner() {
+  const banner = document.getElementById('cookie-banner');
+  if (!banner) return;
+  if (!sessionStorage.getItem('cookieConsent')) banner.hidden = false;
+  const accept = banner.querySelector('[data-cookie-accept]');
+  if (accept) {
+    accept.addEventListener('click', () => {
+      sessionStorage.setItem('cookieConsent', '1');
+      banner.hidden = true;
+    });
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initClientsMarquee();
   initContactsMap();
@@ -668,6 +681,7 @@ function initCatalogAccordion() {
   initProgramTabs();
   initMobileMenu();
   initRequestForm();
+  initCookieBanner();
 
   document.querySelectorAll('.tasks__item:first-child, .faq__item:first-child').forEach((el) => {
     el.classList.add('is-open');

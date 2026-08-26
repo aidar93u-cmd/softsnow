@@ -2339,6 +2339,119 @@
 		display: none;
 	}
 
+	/* ---------- Article detail: О статье (Figma 1736:14000) ---------- */
+	/* Карточка в колонку: заголовок -> фото -> текст; паддинг [24,16], зазоры 24 */
+	.article-about {
+		margin-bottom: 3rem;
+	}
+
+	.article-about__inner {
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+		padding: 1.5rem 1rem;
+		border-radius: 0.75rem;
+	}
+
+	.article-about__content {
+		display: contents;
+	}
+
+	.article-about__title {
+		font-size: var(--fs-h2);
+	}
+
+	.article-about__img {
+		order: 1;
+		height: 10rem;
+		border-radius: 0.75rem;
+		margin-top: 1.5rem;
+	}
+
+	.article-about__text {
+		order: 2;
+		margin-top: 1.5rem;
+		font-size: 0.9375rem;
+	}
+
+	/* ---------- Article detail: Текст статьи (Figma 1736:14006) ---------- */
+	/* Карточка в колонку: заголовок -> фото -> текст -> цитата -> автор */
+	.article-block {
+		margin-bottom: 3rem;
+	}
+
+	.article-block__inner {
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+		padding: 1.5rem 1rem;
+		border-radius: 0.75rem;
+	}
+
+	.article-block__title {
+		margin-bottom: 1.5rem;
+		font-size: var(--fs-h2);
+		line-height: 1.05;
+		letter-spacing: -0.03em;
+	}
+
+	.article-block__body {
+		gap: 1rem;
+	}
+
+	.article-block__img {
+		height: 13.75rem;
+		border-radius: 0.75rem;
+	}
+	.article-block__text p, 
+	.article-block__quote blockquote p, 
+	.article-block__lead,
+	.article-block__text p {
+		font-size: 0.9375rem;
+	}
+	.article-block__points li {
+			padding-left: 1.5rem;
+			font-size: 0.9375rem;
+	}
+	.article-block__points {
+    gap: 1rem;
+	}
+	.article-block__text p + p {
+				margin-top: 1rem;
+	}
+	.article-block__quote svg {
+		width: 0.9375rem;
+		height: 0.75rem;
+	}
+
+	.article-block__quote blockquote {
+		margin-top: 1.25rem;
+	}
+
+	.article-block__quote blockquote p {
+		font-size: 0.875rem;
+	}
+
+	.article-block__author {
+		justify-content: flex-start;
+		gap: 0.75rem;
+		margin-top: 1.25rem;
+	}
+
+	.article-block__author img {
+		width: 3rem;
+		height: 3rem;
+		border-radius: 0;
+	}
+
+	.article-block__author-info {
+		gap: 0.25rem;
+	}
+
+	.article-block__author-role {
+		color: var(--color-black);
+	}
+
 	/* Об академии: заголовок -> фото -> текст */
 	.client-intro {
 		margin-bottom: 3rem;
@@ -3482,5 +3595,36 @@
 	}
 	.events-list__title {
 			margin-bottom: 1.5rem;
+	}
+
+	/* ---------- Cookie-баннер (Figma 1470:11283) ---------- */
+	.cookie-banner {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 1rem;
+		right: 0.75rem;
+		bottom: 0.75rem;
+		left: 0.75rem;
+		padding: 1.5rem 1rem;
+		border-radius: 0.75rem;
+	}
+
+	.cookie-banner__text {
+		font-size: 0.9375rem;
+	}
+
+	.cookie-banner__actions {
+		flex-direction: column;
+		gap: var(--gap-sm);
+	}
+
+	.cookie-banner__actions .btn {
+		width: 100%;
+		min-width: 0;
+	}
+
+	.cookie-banner__actions .btn--outline {
+		border-color: var(--color-black);
+		color: var(--color-black);
 	}
 }
