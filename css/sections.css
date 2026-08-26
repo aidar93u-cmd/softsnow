@@ -241,8 +241,36 @@
 }
 
 .hero__title {
-    max-width: 61.25rem;
-    margin-bottom: 2.8125rem;
+  max-width: 61.25rem;
+  margin-bottom: 2.8125rem;
+  line-height: 1;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.hero__brand,
+.hero__static-part,
+.hero__dynamic-word,
+.hero__cursor {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.hero__dynamic-word {
+  min-width: 1ch;
+}
+
+.hero__cursor {
+  width: 3px;
+  height: 1em;
+  background-color: currentColor;
+  margin-left: 4px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .hero__footer {
@@ -1432,7 +1460,7 @@
 }
 
 .footer__col a:hover {
-  color: var(--color-blue-alt);
+  opacity: 0.6;
 }
 
 .footer__legal {
@@ -2269,7 +2297,7 @@ h2.client-title {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 22.5rem;
+    gap: 4rem;
   padding: 2.5rem;
   margin-bottom: var(--gap-sm);
   background: var(--color-white);
@@ -2281,7 +2309,6 @@ h2.client-title {
 
 }
 .team__texts {
-  margin-top: 9.375rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -3658,19 +3685,23 @@ transition: background-color 0.4s, color 0.4s;
   padding: 0;
   text-align: left;
 }
+.tasks__q:hover .tasks__name{
+  color: var(--color-sea);
+}
 .tasks__name {
   font-size: var(--fs-body-20);
   font-weight: 500;
   line-height: 1.2;
   max-width: 43.4375rem;
-    letter-spacing: -0.04rem;
+  letter-spacing: -0.04rem;
+  transition: all 0.4s;
 }
 .tasks__btn {
   flex-shrink: 0;
   width: 4rem;
   height: var(--control-h);
   border-radius: 50%;
-  border: 1.5px solid var(--color-black);
+  border: 1px solid var(--color-dark-a10);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3678,12 +3709,19 @@ transition: background-color 0.4s, color 0.4s;
   font-size: 2.125rem;
   font-weight: 500;
   line-height: 1;
+  transition: all 0.4s;
 }
 .tasks__icon {
     position: absolute;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+.tasks__q .tasks__btn svg path{
+  transition: all 0.4s;
+}
+.tasks__q:hover .tasks__btn svg path{
+  stroke: var(--color-sea);
+}
 .tasks__icon--minus {
   opacity: 0;
   transform: rotate(-90deg);
@@ -3721,7 +3759,7 @@ transition: background-color 0.4s, color 0.4s;
     /* padding: 0; */
     overflow: hidden;
     /* min-height: 460px; */
-    border-radius: 500px;
+    border-radius: 20px;
     background: #F5F5F5;
 }
 .registry__text {
@@ -3753,7 +3791,6 @@ transition: background-color 0.4s, color 0.4s;
 .registry__img {
     width: 100%;
     height: auto;
-    max-width: 450px;
 }
 
 .features__inner{
@@ -3835,9 +3872,10 @@ transition: background-color 0.4s, color 0.4s;
     text-align: left;
     cursor: pointer;
     appearance: none;
+    transition:all 0.4s ;
 }
 .features__demo:hover {
-  border-color: #2222224D;
+  border-color: var(--color-sea);
 }
 .features__demo-text {
   display: flex;
@@ -4074,9 +4112,9 @@ transition: background-color 0.4s, color 0.4s;
 }
 
 .team__photo--main {
-    width: 20.3125rem;
+    width: 13.3125rem;
     position: absolute;
-    right: 0;
+    right: 2.875rem;
     top: 0.875rem;
 }
 

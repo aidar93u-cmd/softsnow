@@ -27,6 +27,8 @@ function bindNav(selector, swiper) {
   });
 }
 
+
+
 // ponytail: desktop = one screen-slide per 4 cards (grid), mobile = flat card slides
 function initFactsSlider() {
   const root = document.querySelector('.projects--about');
@@ -484,6 +486,7 @@ function initCookieBanner() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
   initClientsMarquee();
   initContactsMap();
   window.addEventListener('resize', initClientsMarquee);
@@ -706,3 +709,100 @@ function initCatalogAccordion() {
 });
 
 // ponytail: CSS `position: sticky` on .stages__head-col handles the floating left block natively
+document.addEventListener('DOMContentLoaded', () => {
+	const brandEl = document.querySelector('.hero__brand')
+	const staticEl = document.querySelector('.hero__static-part')
+	const dynamicEl = document.querySelector('.hero__dynamic-word')
+
+	if (!brandEl || !staticEl || !dynamicEl) return
+
+	// Сохраняем исходные тексты
+	const brandText = brandEl.textContent
+	const staticText = staticEl.textContent
+	const words = dynamicEl.dataset.words.split(',')
+
+	let phase = 'brand' // Текущая фаза печати: 'brand', 'static', 'dynamic'
+	let charIndex = 0
+	let wordIndex = 0
+	let isDeleting = false
+	let isInitialPhase = true
+
+	const typeSpeed = 70
+	const deleteSpeed = 40
+	const pauseTime = 2000
+
+	function type() {
+		// --- ФАЗА 1: Печать Бренда (SoftSnow — ) ---
+		if (phase === 'brand') {
+			brandEl.textContent = brandText.substring(0, charIndex + 1)
+			charIndex++
+
+			if (charIndex < brandText.length) {
+				setTimeout(type, typeSpeed)
+			} else {
+				// Переход к статике
+				phase = 'static'
+				charIndex = 0
+				setTimeout(type, typeSpeed)
+			}
+			return
+		}
+
+		// --- ФАЗА 2: Печать Статики (надежный партнер...) ---
+		if (phase === 'static') {
+			staticEl.textContent = staticText.substring(0, charIndex + 1)
+			charIndex++
+
+			if (charIndex < staticText.length) {
+				setTimeout(type, typeSpeed)
+			} else {
+				// Переход к первому динамическому слову
+				phase = 'dynamic'
+				charIndex = 0
+				setTimeout(type, typeSpeed)
+			}
+			return
+		}
+
+		// --- ФАЗА 3: Динамические слова ---
+		const currentWord = words[wordIndex]
+
+		if (isDeleting) {
+			dynamicEl.textContent = currentWord.substring(0, charIndex - 1)
+			charIndex--
+		} else {
+			dynamicEl.textContent = currentWord.substring(0, charIndex + 1)
+			charIndex++
+		}
+
+		let nextSpeed = isDeleting ? deleteSpeed : typeSpeed
+
+		if (!isDeleting && charIndex === currentWord.length) {
+			// Слово напечатано
+			if (isInitialPhase) {
+				// Если это самый первый запуск, делаем паузу и переходим в цикл
+				isInitialPhase = false
+				isDeleting = true
+				nextSpeed = pauseTime
+			} else {
+				// Обычный цикл: пауза перед удалением
+				isDeleting = true
+				nextSpeed = pauseTime
+			}
+		} else if (isDeleting && charIndex === 0) {
+			// Слово удалено
+			isDeleting = false
+			wordIndex = (wordIndex + 1) % words.length
+			nextSpeed = 500 // Пауза перед следующим словом
+		}
+
+		setTimeout(type, nextSpeed)
+	}
+
+	// Очистка перед стартом анимации
+	brandEl.textContent = ''
+	staticEl.textContent = ''
+	dynamicEl.textContent = ''
+
+	type()
+})

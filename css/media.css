@@ -1705,7 +1705,6 @@
 		overflow: hidden;
 	}
 
-
 	.mobile-menu__inner {
 		position: absolute;
 		top: 5rem;
@@ -1720,8 +1719,8 @@
 		border-radius: 0;
 	}
 	.header__inner::after {
-    width: calc(100% - 1.5rem);
-}
+		width: calc(100% - 1.5rem);
+	}
 	.mobile-menu__list,
 	.mobile-menu__contacts {
 		background: var(--color-white);
@@ -1790,7 +1789,7 @@
 		color: var(--color-black);
 		white-space: normal;
 		text-decoration: none;
-        font-weight: 400;
+		font-weight: 400;
 	}
 
 	.mobile-menu__contacts .header__phone-label {
@@ -2401,7 +2400,7 @@
 
 	.partners__card {
 		gap: 1.25rem;
-		padding: 1rem;
+		padding: 0.75rem;
 		height: 19rem;
 		border-radius: 0.75rem;
 	}
@@ -2502,15 +2501,15 @@
 		gap: 0.5rem;
 	}
 	.team__texts {
-    margin-top: 0;
-}
+		margin-top: 0;
+	}
 	.vnedrenie__card {
 		min-height: 0;
 		padding: 1rem;
 		gap: 2rem;
 		border-radius: 0.75rem;
 	}
-	.vnedrenie--univer .vnedrenie__card{
+	.vnedrenie--univer .vnedrenie__card {
 		gap: 0;
 	}
 	.vnedrenie__name {
@@ -2827,7 +2826,7 @@
 		width: auto;
 		flex: 1;
 		color: var(--color-white);
-        font-size: var(--fs-body-12);
+		font-size: var(--fs-body-12);
 	}
 
 	/* ---------- Попап формы (Figma 1742:13538): карточка r12, паддинг 16 ---------- */
@@ -3687,10 +3686,6 @@
 		overflow: visible;
 	}
 
-	.registry__img {
-		max-width: 11.875rem;
-	}
-
 	.registry__stats {
 		display: flex;
 		flex-direction: column;
@@ -3912,7 +3907,11 @@
 		gap: 1rem;
 		border-radius: 0.625rem;
 	}
-
+	.footer__links,
+	.footer__legal {
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
 	.features__demo-icon {
 		width: 2.9375rem;
 		height: 1.875rem;
@@ -3937,7 +3936,13 @@
 		padding: 1.5rem 1rem;
 		border-radius: 0.75rem;
 	}
-
+	.services__sub {
+		margin-top: 1rem;
+		font-size: var(--fs-body-14);
+	}
+	.services__inner {
+		padding: 1.5rem 1rem;
+	}
 	.cta--blue__title {
 		margin-bottom: 1rem;
 		font-size: var(--fs-h2);
@@ -4333,7 +4338,7 @@
 	.goals__num {
 		width: 2rem;
 		height: 2rem;
-		border-width: 1.5px;
+		border-width: 1px;
 		font-size: var(--fs-body-14);
 		border: 1px solid #cdcdcd;
 	}
@@ -4806,4 +4811,58 @@
 		width: 1.25rem;
 		height: 1.25rem;
 	}
+	.services__grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.services__card .partners__desc {
+		display: none;
+	}
+	.services__card .partners__logo {
+		margin-top: 0;
+		width: 2.5rem;
+		height: 2.5rem;
+		margin-right: 0;
+		position: absolute;
+		right: 0.75rem;
+		bottom: 0.75rem;
+	}
+	.services__card .partners__tag {
+		margin-top: 0;
+	}
+	.partners__card.services__card {
+		gap: 0.25rem;
+		padding: 0.75rem;
+		height: 12rem;
+		border-radius: 0.75rem;
+	}
+	.services__grid > *:last-child {
+		grid-column: 1 / -1; /* Растягивает элемент на все колонки */
+	}
+    .team__photo--main {
+        /* display: none; */
+        position: relative;
+
+        order: 1;
+        max-width: 200px;
+        margin-bottom: 1rem;
+    }
+	.team__texts {
+		margin-top: 0;
+		gap: 0.75rem;
+        order: 3;
+	}
+	.team__title {
+    order: 2;
+}
+.team__flex{
+	
+    border-radius: 12px;
+    background: var(--color-white);
+}
+.team__photo {
+    position: relative;
+}
+.team__inner{
+        padding: 1rem 1.25rem;
+}
 }
