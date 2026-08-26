@@ -881,6 +881,7 @@
 
 .facts__screen {
     display: grid;
+    width: 100%;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 20.3125rem);
     gap: var(--gap-sm);
@@ -888,6 +889,16 @@
 
 .facts__screen .swiper-slide {
     height: auto;
+}
+
+/* Размеры слайдов внутри грида; обёртку .facts__screen создаёт initFactsSlider (JS) */
+.facts__screen .facts__slide--big {
+    grid-column: span 2;
+    grid-row: 1 / 3;
+}
+
+.facts__screen .facts__slide--wide {
+    grid-column: span 2;
 }
 
 /* ============ About: наш подход ============ */
@@ -1553,6 +1564,41 @@ h3.client-title,
   width: 3.75rem;
   height: 3.125rem;
   object-fit: contain;
+}
+
+/* Вариант карточки с фото (Figma 1453:13671): заголовок и текст слева, фото справа */
+.testimonials__card--review {
+  flex-direction: row;
+  align-items: stretch;
+  gap: 2.5rem;
+}
+
+.testimonials__review-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.testimonials__card-title {
+  font-size: var(--fs-body-20);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.testimonials__review-text {
+  margin-top: auto;
+  font-size: var(--fs-body-14);
+  line-height: 1.4;
+}
+
+.testimonials__card-img {
+  flex-shrink: 0;
+  width: 16.6875rem;
+  height: 23.75rem;
+  object-fit: cover;
+  border-radius: 0.9375rem;
 }
 
 .cta--blue__inner {

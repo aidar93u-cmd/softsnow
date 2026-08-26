@@ -56,7 +56,7 @@ function initFactsSlider() {
       slides.forEach((s) => wrapper.appendChild(s));
     }
     if (swiper) swiper.destroy(true, true);
-    swiper = new Swiper(swiperEl, { slidesPerView: 1, spaceBetween: 10, speed: 600, rewind: true });
+    swiper = new Swiper(swiperEl, { slidesPerView: 'auto', spaceBetween: 10, speed: 600, rewind: true });
   }
 
   build();

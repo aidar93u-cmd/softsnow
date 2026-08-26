@@ -11,16 +11,17 @@
   <meta property="og:title" content="Цифровой сервис «Конкурс ППС» — SoftSnow">
   <meta property="og:description" content="Решение для вузов, которое упрощает сбор и обработку заявлений, снижает нагрузку на сотрудников и делает процесс прозрачным для всех участников.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://softsnow.cz07146.tw1.ru/solution-detail.html">
-  <meta property="og:image" content="https://softsnow.cz07146.tw1.ru/assets/img/hero-bg.jpg">
+  <meta property="og:url" content="solution-detail.html">
+  <meta property="og:image" content="assets/img/hero-bg.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
-  <link rel="stylesheet" href="assets/vendor/fancybox/fancybox.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/sections.css">
-  <link rel="stylesheet" href="css/media.css">
+<link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="assets/vendor/fancybox/fancybox.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/media.css">
 </head>
 
 <body>
@@ -46,9 +47,9 @@
               </a>
   
               <div class="header__dropdown-panel">
-                <a href="#industries" class="header__dropdown-link">Госсектор</a>
-                <a href="#industries" class="header__dropdown-link">Вузы</a>
-                <a href="#industries" class="header__dropdown-link">Бизнес</a>
+                <a href="vuz.html" class="header__dropdown-link">Высшие учебные заведения</a>
+                <a href="solutions.html" class="header__dropdown-link">Государственные учреждения</a>
+                <a href="solutions.html" class="header__dropdown-link">Бизнес</a>
               </div>
             </div>
           </div>
@@ -63,9 +64,11 @@
               </a>
   
               <div class="header__dropdown-panel">
-                <a href="#industries" class="header__dropdown-link">Госсектор</a>
-                <a href="#industries" class="header__dropdown-link">Вузы</a>
-                <a href="#industries" class="header__dropdown-link">Бизнес</a>
+                <a href="directum.html" class="header__dropdown-link">Электронный документооборот</a>
+                <a href="solution-detail.html" class="header__dropdown-link">Кадровый электронный документооборот</a>
+                <a href="univer-online.html" class="header__dropdown-link">Решения для вузов</a>
+                <a href="solution-detail.html" class="header__dropdown-link">Управление стратегией</a>
+                <a href="solution-detail.html" class="header__dropdown-link">Управление проектами</a>
               </div>
             </div>
   
@@ -87,9 +90,6 @@
             <a href="about.html" class="header__link"><span>О нас</span></a>
           </div>
   
-          <div class="header__nav-item">
-            <a href="contacts.html" class="header__link"><span>Контакты</span></a>
-          </div>
         </nav>
   
         <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false">
@@ -98,7 +98,7 @@
         </button>
         <div class="header__contacts">
           <div class="header__phone">
-            <a href="tel:+78123201130" class="header__phone-label">Контакты</a>
+            <a href="contacts.html" class="header__phone-label">Контакты</a>
             <a href="tel:+78123201130" class="header__phone-num">+7 (812) 320-11-30</a>
           </div>
           <button class="btn btn--search" type="button" aria-label="Поиск">
@@ -136,7 +136,7 @@
             <h1 class="hero__title">Цифровой сервис «Конкурс ППС»</h1>
             <p class="hero__sub">Решение для вузов, которое упрощает сбор и обработку заявлений, снижает нагрузку на
               сотрудников и делает процесс прозрачным для всех участников.</p>
-            <button class="btn btn--outline" type="button">Получить консультацию</button>
+            <button class="btn btn--outline" type="button" data-fancybox data-src="#request-popup">Получить консультацию</button>
           </div>
         </div>
         <div class="hero__footer--stats">
@@ -561,7 +561,7 @@
           <h2 class="cta--blue__title">Хотите увидеть, как это работает?</h2>
           <p class="cta--blue__text">Покажем сервис на ваших сценариях, ответим на вопросы и поможем оценить, как его
             можно встроить в текущие процессы.</p>
-          <button class="btn btn--outline-white btn--lg" type="button">Запросить демонстрацию</button>
+          <button class="btn btn--outline-white btn--lg" type="button" data-fancybox data-src="#request-popup">Запросить демонстрацию</button>
         </div>
       </div>
     </section>
@@ -676,7 +676,7 @@
                 сокращает время обработки заявлений,
                 исключает бумагу и делает конкурсные процессы прозрачнее.</p>
               <div class="projects__actions">
-                <button class="btn btn--ghost btn--md projects__btn" type="button">Все проекты</button>
+                <a class="btn btn--ghost btn--md projects__btn" href="projects.html">Все проекты</a>
                 <div class="carousel-nav">
                   <button class="carousel-nav__btn" type="button" data-scroll-prev aria-label="Назад"><svg width="15"
                       height="14" viewBox="0 0 15 14" aria-hidden="true">
@@ -772,7 +772,7 @@
             </div>
           </div>
         </div>
-        <button class="btn btn--ghost btn--lg projects__cta" type="button">Все проекты</button>
+        <a class="btn btn--ghost btn--lg projects__cta" href="projects.html">Все проекты</a>
       </div>
     </section>
 
@@ -781,7 +781,7 @@
         <div class="events__head">
           <h2 class="events__heading">Читайте также</h2>
           <div class="events__head-actions">
-            <button class="btn btn--ghost btn--md events__btn" type="button">Перейти в медиацентр</button>
+            <a class="btn btn--ghost btn--md events__btn" href="events.html">Перейти в медиацентр</a>
             <div class="carousel-nav">
               <button class="carousel-nav__btn" type="button" data-scroll-prev aria-label="Назад"><svg width="15"
                   height="14" viewBox="0 0 15 14" aria-hidden="true">
@@ -797,7 +797,7 @@
         <div class="swiper events__swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide events__slide--wide">
-              <a class="events__card events__card--wide" href="#">
+              <a class="events__card events__card--wide" href="event-detail.html">
                 <img class="events__bg" src="assets/img/webinar-1.png" alt="">
                 <div class="events__info">
                   <h3 class="events__title">Цифровая среда вуза: как связать сервисы, процессы</h3>
@@ -808,7 +808,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a class="events__card" href="#">
+              <a class="events__card" href="event-detail.html">
                 <img class="events__bg" src="assets/img/webinar-2.png" alt="">
                 <div class="events__info">
                   <h3 class="events__title">Совместная конференция Политеха и&nbsp;«СофтСноу»</h3>
@@ -819,7 +819,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a class="events__card" href="#">
+              <a class="events__card" href="event-detail.html">
                 <img class="events__bg" src="assets/img/webinar-3.png" alt="">
                 <div class="events__info">
                   <h3 class="events__title">Заказчики «СофтСноу» представили свои проекты на Directum Awards 2026</h3>
@@ -830,7 +830,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a class="events__card" href="#">
+              <a class="events__card" href="event-detail.html">
                 <img class="events__bg" src="assets/img/webinar-4.png" alt="">
                 <div class="events__info">
                   <h3 class="events__title">Совместная конференция Политеха и&nbsp;«СофтСноу»</h3>
@@ -841,7 +841,7 @@
             </div>
           </div>
         </div>
-        <button class="btn btn--ghost btn--lg events__cta" type="button">Перейти в медиацентр</button>
+        <a class="btn btn--ghost btn--lg events__cta" href="events.html">Перейти в медиацентр</a>
       </div>
     </section>
 
@@ -853,7 +853,7 @@
           <p class="cta__text">Свяжитесь с нами, чтобы обсудить ваш проект:
             ответим на вопросы, подберём подходящую конфигурацию
             и покажем сервис на ваших задачах.</p>
-          <button class="btn btn--primary btn--lg cta__btn" type="button">Оставить заявку</button>
+          <button class="btn btn--primary btn--lg cta__btn" type="button" data-fancybox data-src="#request-popup">Оставить заявку</button>
         </div>
       </div>
       </div>
@@ -1038,12 +1038,12 @@
             <li><a href="solutions.html">Решения для вузов</a></li>
           </ul>
           <ul class="footer__col">
-            <li><a href="#about">О компании</a></li>
-            <li><a href="#industries">Отрасли</a></li>
+            <li><a href="about.html">О компании</a></li>
+            <li><a href="solutions.html">Отрасли</a></li>
             <li><a href="projects.html">Кейсы</a></li>
             <li><a href="clients.html">Клиенты</a></li>
-            <li><a href="#events">Мероприятия</a></li>
-            <li><a href="#cta">Контакты</a></li>
+            <li><a href="events.html">Мероприятия</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
           </ul>
         </div>
         <div class="footer__legal">
@@ -1131,55 +1131,20 @@
       <p class="modal-form__success-text">Мы свяжемся с вами в ближайшее время</p>
     </div>
   </div>
-
-  <div class="features-popup" id="features-popup" hidden>
-    <div class="features-popup__card">
-      <button type="button" class="features-popup__close" data-fancybox-close aria-label="Закрыть">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-          <path d="M2 2l16 16M18 2L2 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-        </svg>
-      </button>
-      <h3 class="features-popup__title">Дашборд конкурсов</h3>
-      <div class="features-popup__media">
-        <div class="features-popup__main">
-          <img class="features-popup__img" src="" alt="">
-          <button type="button" class="features-popup__nav features-popup__nav--prev" aria-label="Предыдущий экран">
-            <svg width="15" height="14" viewBox="0 0 15 14" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-left" />
-            </svg>
-          </button>
-          <button type="button" class="features-popup__nav features-popup__nav--next" aria-label="Следующий экран">
-            <svg width="15" height="14" viewBox="0 0 15 14" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-right" />
-            </svg>
-          </button>
-        </div>
-        <div class="features-popup__thumbs">
-          <button type="button" class="features-popup__thumb" aria-label="Экран 1">
-            <img src="assets/img/popup1.jpg" alt="">
-          </button>
-          <button type="button" class="features-popup__thumb" aria-label="Экран 2">
-            <img src="assets/img/popup2.jpg" alt="">
-          </button>
-          <button type="button" class="features-popup__thumb" aria-label="Экран 3">
-            <img src="assets/img/popup3.jpg" alt="">
-          </button>
-          <button type="button" class="features-popup__thumb" aria-label="Экран 4">
-            <img src="assets/img/popup4.jpg" alt="">
-          </button>
-          <button type="button" class="features-popup__thumb" aria-label="Экран 5">
-            <img src="assets/img/popup5.jpg" alt="">
-          </button>
-        </div>
-      </div>
+  
+  <div class="cookie-banner" id="cookie-banner" hidden role="dialog" aria-label="Использование cookies">
+    <p class="cookie-banner__text">На сайте используются файлы cookie. Продолжая использовать сайт, Вы&nbsp;соглашаетесь
+      с&nbsp;использованием cookies.</p>
+    <div class="cookie-banner__actions">
+      <a class="btn btn--undeline" href="#">Узнать больше</a>
+      <button class="btn btn--primary btn--md" type="button" data-cookie-accept>Согласен(а)</button>
     </div>
   </div>
-
-
-<script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
-<script src="assets/vendor/fancybox/fancybox.umd.js" defer></script>
-<script src="assets/vendor/just-validate/just-validate.production.min.js" defer></script>
-<script src="js/main.js" defer></script>
-</body>
-
-</html>
+  
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+  <script src="assets/vendor/fancybox/fancybox.umd.js" defer></script>
+  <script src="assets/vendor/just-validate/just-validate.production.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  </body>
+  
+  </html>

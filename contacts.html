@@ -10,14 +10,16 @@
   <meta property="og:title" content="SoftSnow — Контакты">
   <meta property="og:description" content="Интеграция цифровых сред для образовательных организаций">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://softsnow.cz07146.tw1.ru/contacts.html">
-  <meta property="og:image" content="https://softsnow.cz07146.tw1.ru/assets/img/hero-bg.jpg">
+  <meta property="og:url" content="contacts.html">
+  <meta property="og:image" content="assets/img/hero-bg.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/sections.css">
-  <link rel="stylesheet" href="css/media.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="assets/vendor/fancybox/fancybox.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/media.css">
 </head>
 
 <body>
@@ -42,9 +44,9 @@
               </a>
   
               <div class="header__dropdown-panel">
-                <a href="#industries" class="header__dropdown-link">Госсектор</a>
-                <a href="#industries" class="header__dropdown-link">Вузы</a>
-                <a href="#industries" class="header__dropdown-link">Бизнес</a>
+                <a href="vuz.html" class="header__dropdown-link">Высшие учебные заведения</a>
+                <a href="solutions.html" class="header__dropdown-link">Государственные учреждения</a>
+                <a href="solutions.html" class="header__dropdown-link">Бизнес</a>
               </div>
             </div>
           </div>
@@ -59,9 +61,11 @@
               </a>
   
               <div class="header__dropdown-panel">
-                <a href="#industries" class="header__dropdown-link">Госсектор</a>
-                <a href="#industries" class="header__dropdown-link">Вузы</a>
-                <a href="#industries" class="header__dropdown-link">Бизнес</a>
+                <a href="directum.html" class="header__dropdown-link">Электронный документооборот</a>
+                <a href="solution-detail.html" class="header__dropdown-link">Кадровый электронный документооборот</a>
+                <a href="univer-online.html" class="header__dropdown-link">Решения для вузов</a>
+                <a href="solution-detail.html" class="header__dropdown-link">Управление стратегией</a>
+                <a href="solution-detail.html" class="header__dropdown-link">Управление проектами</a>
               </div>
             </div>
   
@@ -83,9 +87,6 @@
             <a href="about.html" class="header__link"><span>О нас</span></a>
           </div>
   
-          <div class="header__nav-item">
-            <a href="contacts.html" class="header__link"><span>Контакты</span></a>
-          </div>
         </nav>
   
         <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false">
@@ -94,7 +95,7 @@
         </button>
         <div class="header__contacts">
           <div class="header__phone">
-            <a href="tel:+78123201130" class="header__phone-label">Контакты</a>
+            <a href="contacts.html" class="header__phone-label">Контакты</a>
             <a href="tel:+78123201130" class="header__phone-num">+7 (812) 320-11-30</a>
           </div>
           <button class="btn btn--search" type="button" aria-label="Поиск">
@@ -211,7 +212,7 @@
       </div>
     </section>
 
-
+  </main>
 
     <footer class="footer">
       <div class="container footer__inner">
@@ -296,12 +297,12 @@
               <li><a href="solutions.html">Решения для вузов</a></li>
             </ul>
             <ul class="footer__col">
-              <li><a href="#about">О компании</a></li>
-              <li><a href="#industries">Отрасли</a></li>
+              <li><a href="about.html">О компании</a></li>
+              <li><a href="solutions.html">Отрасли</a></li>
               <li><a href="projects.html">Кейсы</a></li>
               <li><a href="clients.html">Клиенты</a></li>
-              <li><a href="#events">Мероприятия</a></li>
-              <li><a href="#cta">Контакты</a></li>
+              <li><a href="events.html">Мероприятия</a></li>
+              <li><a href="contacts.html">Контакты</a></li>
             </ul>
           </div>
           <div class="footer__legal">
@@ -389,12 +390,20 @@
         <p class="modal-form__success-text">Мы свяжемся с вами в ближайшее время</p>
       </div>
     </div>
-
-
-<script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
-<script src="assets/vendor/fancybox/fancybox.umd.js" defer></script>
-<script src="assets/vendor/just-validate/just-validate.production.min.js" defer></script>
-<script src="js/main.js" defer></script>
-</body>
-
-</html>
+    
+    <div class="cookie-banner" id="cookie-banner" hidden role="dialog" aria-label="Использование cookies">
+      <p class="cookie-banner__text">На сайте используются файлы cookie. Продолжая использовать сайт, Вы&nbsp;соглашаетесь
+        с&nbsp;использованием cookies.</p>
+      <div class="cookie-banner__actions">
+        <a class="btn btn--undeline" href="#">Узнать больше</a>
+        <button class="btn btn--primary btn--md" type="button" data-cookie-accept>Согласен(а)</button>
+      </div>
+    </div>
+    
+    <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+    <script src="assets/vendor/fancybox/fancybox.umd.js" defer></script>
+    <script src="assets/vendor/just-validate/just-validate.production.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+    </body>
+    
+    </html>

@@ -788,10 +788,56 @@
 }
 
 @media (max-width: 767px) {
-  .facts__card { min-height: 16rem; padding: 1.25rem 1.5rem; }
-  .facts__name { max-width: calc(100% - 4rem); }
-  .facts__text { max-width: calc(100% - 4rem); margin-top: var(--gap-sm); font-size: var(--fs-body-14); }
-  .facts__img { right: 1.25rem; bottom: 1.25rem; width: 5rem; height: 5rem; }
+  /* Заголовок без карточки, fs28; карусель карточек 300×200 (Figma 1878:14989) */
+  .projects--about .projects__head {
+    height: auto;
+    margin-bottom: 1.5rem;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+  }
+
+  .projects--about .projects__heading {
+    font-size: 1.75rem;
+  }
+
+  .projects--about .projects__actions {
+    display: none;
+  }
+
+  .facts__swiper .swiper-slide {
+    width: 18.75rem;
+  }
+
+  .facts__card {
+    min-height: 12.5rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+  }
+
+  .facts__name {
+    font-size: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .facts__text {
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .facts__img {
+    right: 1rem;
+    bottom: 1rem;
+    width: 2.375rem;
+    height: 2.375rem;
+    object-fit: contain;
+  }
+
+  .facts__img--big {
+    width: auto;
+    height: 2.375rem;
+    border-radius: 0;
+  }
 
   .approach { margin-bottom: 2rem; }
   .approach__label { margin-bottom: 0.75rem; font-size: var(--fs-body-14); }
@@ -2052,6 +2098,7 @@
 
 	.modal-form textarea.form-field__input {
 		min-height: 6.25rem;
+        padding: 1rem 1.25rem 0;
 	}
 
 	.modal-form textarea.form-field__input + .form-field__label {
@@ -3157,6 +3204,22 @@
 		font-size: var(--fs-body-14);
 	}
 
+	/* Вариант с фото: колонкой, фото на всю ширину */
+	.testimonials__card--review {
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.testimonials__card-img {
+		width: 100%;
+		height: 12rem;
+		border-radius: 0.625rem;
+	}
+
+	.testimonials__review-text {
+		margin-top: 1rem;
+	}
+
 
 	/* ---------- Проекты (detail): заголовок 32px, кнопка под каруселью ---------- */
 	.projects--solution .projects__heading {
@@ -3676,13 +3739,14 @@
 	}
 
 	.cookie-banner__actions {
-		flex-direction: column;
 		gap: var(--gap-sm);
 	}
 
 	.cookie-banner__actions .btn {
-		width: 100%;
-		min-width: 0;
+        min-width: 0;
+        margin: 0;
+        max-width: max-content;
+        margin: auto;
 	}
 
 	.cookie-banner__actions .btn--outline {

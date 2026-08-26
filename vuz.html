@@ -10,15 +10,16 @@
   <meta property="og:title" content="SoftSnow — Отраслевые решения для вузов">
   <meta property="og:description" content="Интеграция цифровых сред для образовательных организаций">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://softsnow.cz07146.tw1.ru/vuz.html">
-  <meta property="og:image" content="https://softsnow.cz07146.tw1.ru/assets/img/hero-bg.jpg">
+  <meta property="og:url" content="vuz.html">
+  <meta property="og:image" content="assets/img/hero-bg.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/sections.css">
-  <link rel="stylesheet" href="css/media.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="assets/vendor/fancybox/fancybox.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/media.css">
 </head>
 
 <body>
@@ -43,9 +44,9 @@
               </a>
   
               <div class="header__dropdown-panel">
-                <a href="#industries" class="header__dropdown-link">Госсектор</a>
-                <a href="#industries" class="header__dropdown-link">Вузы</a>
-                <a href="#industries" class="header__dropdown-link">Бизнес</a>
+                <a href="vuz.html" class="header__dropdown-link">Высшие учебные заведения</a>
+                <a href="solutions.html" class="header__dropdown-link">Государственные учреждения</a>
+                <a href="solutions.html" class="header__dropdown-link">Бизнес</a>
               </div>
             </div>
           </div>
@@ -60,9 +61,11 @@
               </a>
   
               <div class="header__dropdown-panel">
-                <a href="#industries" class="header__dropdown-link">Госсектор</a>
-                <a href="#industries" class="header__dropdown-link">Вузы</a>
-                <a href="#industries" class="header__dropdown-link">Бизнес</a>
+                <a href="directum.html" class="header__dropdown-link">Электронный документооборот</a>
+                <a href="solution-detail.html" class="header__dropdown-link">Кадровый электронный документооборот</a>
+                <a href="univer-online.html" class="header__dropdown-link">Решения для вузов</a>
+                <a href="solution-detail.html" class="header__dropdown-link">Управление стратегией</a>
+                <a href="solution-detail.html" class="header__dropdown-link">Управление проектами</a>
               </div>
             </div>
   
@@ -84,9 +87,6 @@
             <a href="about.html" class="header__link"><span>О нас</span></a>
           </div>
   
-          <div class="header__nav-item">
-            <a href="contacts.html" class="header__link"><span>Контакты</span></a>
-          </div>
         </nav>
   
         <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false">
@@ -95,7 +95,7 @@
         </button>
         <div class="header__contacts">
           <div class="header__phone">
-            <a href="tel:+78123201130" class="header__phone-label">Контакты</a>
+            <a href="contacts.html" class="header__phone-label">Контакты</a>
             <a href="tel:+78123201130" class="header__phone-num">+7 (812) 320-11-30</a>
           </div>
           <button class="btn btn--search" type="button" aria-label="Поиск">
@@ -116,7 +116,7 @@
         <div class="hero-block-inner" style="background-image: url('assets/img/vuz-bg.jpg');">
           <div class="hero__body">
             <h1 class="hero__title">Цифровая трансформация<br> вуза</h1>
-            <button class="btn btn--outline" type="button">Получить консультацию</button>
+            <button class="btn btn--outline" type="button" data-fancybox data-src="#request-popup">Получить консультацию</button>
           </div>
         </div>
 
@@ -213,98 +213,98 @@
         </div>
       </div>
     </section>
-        <section class="ecosystem" aria-label="Цифровая среда вуза">
-          <div class="container">
-            <div class="ecosystem__inner">
-              <h2 class="ecosystem__title">Помогаем связать процессы в единую цифровую среду</h2>
-              <div class="ecosystem__diagram">
-                <div class="ecosystem__ring">
-                  <div class="ecosystem__core">Цифровая среда<br>вуза</div>
-                </div>
-                <article class="eco-card eco-card--flip eco-card--1">
-                  <div class="eco-card__body">
-                    <h3 class="eco-card__title">Учебные процессы</h3>
-                    <p class="eco-card__text">Расписание, учебные планы, успеваемость, аттестация, LMS, учебные материалы</p>
-                  </div>
-                  <span class="eco-card__icon" aria-hidden="true">
-                    <svg width="40" height="40" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
-                        d="M32 192L256 64l224 128l-224 128z" />
-                      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
-                        d="M112 240v128l144 80l144-80V240m80 128V192M256 320v128" />
-                    </svg>
-                  </span>
-                </article>
-            <article class="eco-card eco-card--flip eco-card--2">
+    <section class="ecosystem" aria-label="Цифровая среда вуза">
+      <div class="container">
+        <div class="ecosystem__inner">
+          <h2 class="ecosystem__title">Помогаем связать процессы в единую цифровую среду</h2>
+          <div class="ecosystem__diagram">
+            <div class="ecosystem__ring">
+              <div class="ecosystem__core">Цифровая среда<br>вуза</div>
+            </div>
+            <article class="eco-card eco-card--flip eco-card--1">
               <div class="eco-card__body">
-                <h3 class="eco-card__title">Административные процессы</h3>
-                <p class="eco-card__text">Заявки, поручения, согласования, закупки, хозяйственные и сервисные процессы</p>
+                <h3 class="eco-card__title">Учебные процессы</h3>
+                <p class="eco-card__text">Расписание, учебные планы, успеваемость, аттестация, LMS, учебные материалы</p>
               </div>
               <span class="eco-card__icon" aria-hidden="true">
-                    <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path fill="currentColor"
-                        d="M12 21q-1.864 0-3.506-.71q-1.642-.711-2.857-1.926q-1.216-1.216-1.926-2.858Q3 13.864 3 12t.71-3.506t1.927-2.857T8.494 3.71Q10.137 3 12 3q1.296 0 2.501.362t2.293 1.04q.202.123.267.33q.064.209-.07.385q-.135.177-.355.21t-.409-.09q-.954-.606-2.028-.921T12 4Q8.675 4 6.337 6.338T4 12t2.338 5.663T12 20t5.663-2.337T20 12q0-.373-.032-.734q-.031-.36-.114-.733q-.05-.214.057-.409t.32-.243q.208-.048.375.075t.217.33q.089.408.133.835T21 12q0 1.864-.71 3.506q-.711 1.642-1.926 2.857q-1.216 1.216-2.858 1.926Q13.864 21 12 21m-1.438-6.508l9.377-9.383q.14-.14.34-.152t.367.152q.16.16.16.354t-.16.354l-9.519 9.525q-.243.242-.566.242t-.565-.242l-2.638-2.638q-.14-.14-.15-.345q-.01-.203.15-.363t.354-.16t.354.16z" />
-                    </svg>
-                  </span>
-                </article>
-                <article class="eco-card eco-card--flip eco-card--3">
-                  <div class="eco-card__body">
-                    <h3 class="eco-card__title">Управление и стратегия</h3>
-                    <p class="eco-card__text">Стратегия, проекты, программы развития, контроль исполнения, отчетность</p>
-                  </div>
-                  <span class="eco-card__icon" aria-hidden="true">
-                    <svg width="40" height="40" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
-                        d="M64 192v-72a40 40 0 0 1 40-40h75.89a40 40 0 0 1 22.19 6.72l27.84 18.56a40 40 0 0 0 22.19 6.72H408a40 40 0 0 1 40 40v40" />
-                      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
-                        d="M479.9 226.55L463.68 392a40 40 0 0 1-39.93 40H88.25a40 40 0 0 1-39.93-40L32.1 226.55A32 32 0 0 1 64 192h384.1a32 32 0 0 1 31.8 34.55" />
-                    </svg>
-                  </span>
-                </article>
-                <article class="eco-card eco-card--4">
-                  <span class="eco-card__icon" aria-hidden="true">
-                    <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path fill="currentColor"
-                        d="M4.616 20q-.691 0-1.153-.462T3 18.384V8.616q0-.691.463-1.153T4.615 7H9V5.615q0-.69.463-1.153T10.616 4h2.769q.69 0 1.153.462T15 5.615V7h4.385q.69 0 1.152.463T21 8.616v9.769q0 .69-.463 1.153T19.385 20zm0-1h14.769q.23 0 .423-.192t.192-.424V8.616q0-.231-.192-.424T19.385 8H4.615q-.23 0-.423.192T4 8.616v9.769q0 .23.192.423t.423.192M10 7h4V5.615q0-.23-.192-.423T13.385 5h-2.77q-.23 0-.423.192T10 5.615zM4 19V8z" />
-                    </svg>
-                  </span>
-                  <div class="eco-card__body">
-                    <h3 class="eco-card__title">Кадровые процессы</h3>
-                    <p class="eco-card__text">Кадровый учет, конкурсы, выборы, эффективный контракт, развитие ППС</p>
-                  </div>
-                </article>
-                <article class="eco-card eco-card--5">
-                  <span class="eco-card__icon" aria-hidden="true">
-                    <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 17h6m-6-3h6M13 3H8.2c-1.12 0-1.68 0-2.108.218a2 2 0 0 0-.874.874C5 4.52 5 5.08 5 6.2v11.6c0 1.12 0 1.68.218 2.108a2 2 0 0 0 .874.874c.427.218.987.218 2.105.218h7.606c1.118 0 1.677 0 2.104-.218c.377-.192.683-.498.875-.874c.218-.428.218-.986.218-2.104V9.326L18.999 9M13 3c.286.003.466.014.638.055c.204.05.4.13.579.24c.202.124.375.297.72.643l3.126 3.125c.346.346.518.518.642.72q.165.271.24.578c.04.173.051.354.054.639M13 3v2.8c0 1.12 0 1.68.218 2.108a2 2 0 0 0 .874.874c.427.218.987.218 2.105.218h2.802" />
-                    </svg>
-                  </span>
-                  <div class="eco-card__body">
-                    <h3 class="eco-card__title">Документооборот</h3>
-                    <p class="eco-card__text">Договоры, приказы, согласования, архив и хранение документов</p>
-                  </div>
-                </article>
-                <article class="eco-card eco-card--6">
-                  <span class="eco-card__icon" aria-hidden="true">
-                    <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <g fill="currentColor">
-                        <path
-                          d="M2 1.25a.75.75 0 0 1 .75.75v16.5a2.75 2.75 0 0 0 2.75 2.75H22a.75.75 0 0 1 0 1.5H5.5a4.25 4.25 0 0 1-4.25-4.25V2A.75.75 0 0 1 2 1.25" />
-                        <path
-                          d="M6.25 18v-1.5a.75.75 0 0 1 1.5 0V18a.75.75 0 0 1-1.5 0m4-3.35V18a.75.75 0 0 0 1.5 0v-3.35a.75.75 0 0 0-1.5 0m4.75 4.1a.75.75 0 0 1-.75-.75v-5.2a.75.75 0 0 1 1.5 0V18a.75.75 0 0 1-.75.75m3.25-.75a.75.75 0 0 0 1.5 0v-7a.75.75 0 0 0-1.5 0zM15.5 3a.75.75 0 0 1 .75-.75H20a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V4.878c-1.966 2.08-3.8 3.62-5.76 4.714c-2.234 1.249-4.59 1.897-7.422 2.155a.75.75 0 1 1-.136-1.494c2.668-.242 4.812-.844 6.827-1.97c1.813-1.013 3.554-2.469 5.493-4.533H16.25A.75.75 0 0 1 15.5 3" />
-                      </g>
-                    </svg>
-                  </span>
-                  <div class="eco-card__body">
-                    <h3 class="eco-card__title">Аналитика и отчетность</h3>
-                    <p class="eco-card__text">Дашборды, аналитика, мониторинг показателей, опросы и обратная связь</p>
-                  </div>
-                </article>
-              </div>
-            </div>
+                <svg width="40" height="40" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
+                    d="M32 192L256 64l224 128l-224 128z" />
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
+                    d="M112 240v128l144 80l144-80V240m80 128V192M256 320v128" />
+                </svg>
+              </span>
+            </article>
+        <article class="eco-card eco-card--flip eco-card--2">
+          <div class="eco-card__body">
+            <h3 class="eco-card__title">Административные процессы</h3>
+            <p class="eco-card__text">Заявки, поручения, согласования, закупки, хозяйственные и сервисные процессы</p>
           </div>
-        </section>
+          <span class="eco-card__icon" aria-hidden="true">
+                <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="currentColor"
+                    d="M12 21q-1.864 0-3.506-.71q-1.642-.711-2.857-1.926q-1.216-1.216-1.926-2.858Q3 13.864 3 12t.71-3.506t1.927-2.857T8.494 3.71Q10.137 3 12 3q1.296 0 2.501.362t2.293 1.04q.202.123.267.33q.064.209-.07.385q-.135.177-.355.21t-.409-.09q-.954-.606-2.028-.921T12 4Q8.675 4 6.337 6.338T4 12t2.338 5.663T12 20t5.663-2.337T20 12q0-.373-.032-.734q-.031-.36-.114-.733q-.05-.214.057-.409t.32-.243q.208-.048.375.075t.217.33q.089.408.133.835T21 12q0 1.864-.71 3.506q-.711 1.642-1.926 2.857q-1.216 1.216-2.858 1.926Q13.864 21 12 21m-1.438-6.508l9.377-9.383q.14-.14.34-.152t.367.152q.16.16.16.354t-.16.354l-9.519 9.525q-.243.242-.566.242t-.565-.242l-2.638-2.638q-.14-.14-.15-.345q-.01-.203.15-.363t.354-.16t.354.16z" />
+                </svg>
+              </span>
+            </article>
+            <article class="eco-card eco-card--flip eco-card--3">
+              <div class="eco-card__body">
+                <h3 class="eco-card__title">Управление и стратегия</h3>
+                <p class="eco-card__text">Стратегия, проекты, программы развития, контроль исполнения, отчетность</p>
+              </div>
+              <span class="eco-card__icon" aria-hidden="true">
+                <svg width="40" height="40" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
+                    d="M64 192v-72a40 40 0 0 1 40-40h75.89a40 40 0 0 1 22.19 6.72l27.84 18.56a40 40 0 0 0 22.19 6.72H408a40 40 0 0 1 40 40v40" />
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
+                    d="M479.9 226.55L463.68 392a40 40 0 0 1-39.93 40H88.25a40 40 0 0 1-39.93-40L32.1 226.55A32 32 0 0 1 64 192h384.1a32 32 0 0 1 31.8 34.55" />
+                </svg>
+              </span>
+            </article>
+            <article class="eco-card eco-card--4">
+              <span class="eco-card__icon" aria-hidden="true">
+                <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="currentColor"
+                    d="M4.616 20q-.691 0-1.153-.462T3 18.384V8.616q0-.691.463-1.153T4.615 7H9V5.615q0-.69.463-1.153T10.616 4h2.769q.69 0 1.153.462T15 5.615V7h4.385q.69 0 1.152.463T21 8.616v9.769q0 .69-.463 1.153T19.385 20zm0-1h14.769q.23 0 .423-.192t.192-.424V8.616q0-.231-.192-.424T19.385 8H4.615q-.23 0-.423.192T4 8.616v9.769q0 .23.192.423t.423.192M10 7h4V5.615q0-.23-.192-.423T13.385 5h-2.77q-.23 0-.423.192T10 5.615zM4 19V8z" />
+                </svg>
+              </span>
+              <div class="eco-card__body">
+                <h3 class="eco-card__title">Кадровые процессы</h3>
+                <p class="eco-card__text">Кадровый учет, конкурсы, выборы, эффективный контракт, развитие ППС</p>
+              </div>
+            </article>
+            <article class="eco-card eco-card--5">
+              <span class="eco-card__icon" aria-hidden="true">
+                <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 17h6m-6-3h6M13 3H8.2c-1.12 0-1.68 0-2.108.218a2 2 0 0 0-.874.874C5 4.52 5 5.08 5 6.2v11.6c0 1.12 0 1.68.218 2.108a2 2 0 0 0 .874.874c.427.218.987.218 2.105.218h7.606c1.118 0 1.677 0 2.104-.218c.377-.192.683-.498.875-.874c.218-.428.218-.986.218-2.104V9.326L18.999 9M13 3c.286.003.466.014.638.055c.204.05.4.13.579.24c.202.124.375.297.72.643l3.126 3.125c.346.346.518.518.642.72q.165.271.24.578c.04.173.051.354.054.639M13 3v2.8c0 1.12 0 1.68.218 2.108a2 2 0 0 0 .874.874c.427.218.987.218 2.105.218h2.802" />
+                </svg>
+              </span>
+              <div class="eco-card__body">
+                <h3 class="eco-card__title">Документооборот</h3>
+                <p class="eco-card__text">Договоры, приказы, согласования, архив и хранение документов</p>
+              </div>
+            </article>
+            <article class="eco-card eco-card--6">
+              <span class="eco-card__icon" aria-hidden="true">
+                <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <g fill="currentColor">
+                    <path
+                      d="M2 1.25a.75.75 0 0 1 .75.75v16.5a2.75 2.75 0 0 0 2.75 2.75H22a.75.75 0 0 1 0 1.5H5.5a4.25 4.25 0 0 1-4.25-4.25V2A.75.75 0 0 1 2 1.25" />
+                    <path
+                      d="M6.25 18v-1.5a.75.75 0 0 1 1.5 0V18a.75.75 0 0 1-1.5 0m4-3.35V18a.75.75 0 0 0 1.5 0v-3.35a.75.75 0 0 0-1.5 0m4.75 4.1a.75.75 0 0 1-.75-.75v-5.2a.75.75 0 0 1 1.5 0V18a.75.75 0 0 1-.75.75m3.25-.75a.75.75 0 0 0 1.5 0v-7a.75.75 0 0 0-1.5 0zM15.5 3a.75.75 0 0 1 .75-.75H20a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V4.878c-1.966 2.08-3.8 3.62-5.76 4.714c-2.234 1.249-4.59 1.897-7.422 2.155a.75.75 0 1 1-.136-1.494c2.668-.242 4.812-.844 6.827-1.97c1.813-1.013 3.554-2.469 5.493-4.533H16.25A.75.75 0 0 1 15.5 3" />
+                  </g>
+                </svg>
+              </span>
+              <div class="eco-card__body">
+                <h3 class="eco-card__title">Аналитика и отчетность</h3>
+                <p class="eco-card__text">Дашборды, аналитика, мониторинг показателей, опросы и обратная связь</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="partners" aria-label="Технологические партнёры">
       <div class="container">
         <div class="partners__head">
@@ -399,7 +399,7 @@
           <h2 class="cta--blue__title">Нужен комплексный подход<br> к цифровой трансформации вуза?</h2>
           <p class="cta--blue__text">Если задача включает несколько процессов, систем или контуров,
             поможем разобраться в приоритетах, подобрать подходящие решения и собрать их в единую рабочую систему.</p>
-          <button class="btn btn--outline-white btn--lg" type="button">Запросить демонстрацию</button>
+          <button class="btn btn--outline-white btn--lg" type="button" data-fancybox data-src="#request-popup">Запросить демонстрацию</button>
         </div>
       </div>
     </section>
@@ -414,7 +414,7 @@
                 административных и управленческих
                 процессов.</p>
               <div class="projects__actions">
-                <button class="btn btn--ghost btn--md projects__btn" type="button">Все проекты</button>
+                <a class="btn btn--ghost btn--md projects__btn" href="projects.html">Все проекты</a>
                 <div class="carousel-nav">
                   <button class="carousel-nav__btn" type="button" data-scroll-prev aria-label="Назад"><svg width="15"
                       height="14" viewBox="0 0 15 14" aria-hidden="true">
@@ -683,7 +683,7 @@
             </p>
 
             <div class="events__head-actions">
-              <button class="btn btn--ghost btn--md events__btn" type="button">Перейти в медиацентр</button>
+              <a class="btn btn--ghost btn--md events__btn" href="events.html">Перейти в медиацентр</a>
               <div class="carousel-nav">
                 <button class="carousel-nav__btn" type="button" data-scroll-prev aria-label="Назад">
                   <svg width="15" height="14" viewBox="0 0 15 14" aria-hidden="true">
@@ -702,7 +702,7 @@
         <div class="swiper events__swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide events__slide--wide">
-              <a class="events__card events__card--wide" href="#">
+              <a class="events__card events__card--wide" href="event-detail.html">
                 <img class="events__bg" src="assets/img/webinar-1.png" alt="">
                 <div class="events__info">
                   <h3 class="events__title">Как автоматизировать конкурсные процедуры в университете: пошаговое
@@ -714,7 +714,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a class="events__card" href="#">
+              <a class="events__card" href="event-detail.html">
                 <img class="events__bg" src="assets/img/webinar-2.png" alt="">
                 <div class="events__info">
                   <h3 class="events__title">Пять преимуществ цифровизации кадровых процессов в современном университете
@@ -726,7 +726,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a class="events__card" href="#">
+              <a class="events__card" href="event-detail.html">
                 <img class="events__bg" src="assets/img/webinar-3.png" alt="">
                 <div class="events__info">
                   <h3 class="events__title">Настройка сервиса “Конкурс профессорско-преподавательского состава” под
@@ -739,7 +739,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a class="events__card" href="#">
+              <a class="events__card" href="event-detail.html">
                 <img class="events__bg" src="assets/img/webinar-4.png" alt="">
                 <div class="events__info">
                   <h3 class="events__title">Совместная конференция Политеха и&nbsp;«СофтСноу»</h3>
@@ -761,112 +761,113 @@
           <p class="cta__text">Если вы ищете не отдельный продукт, а сильного партнёра по развитию цифровой
           среды вуза, свяжитесь с нами. Поможем определить приоритеты, подобрать решения
           и предложить следующий шаг.</p>
-          <button class="btn btn--primary btn--lg cta__btn" type="button">Получить консультацию</button>
+          <button class="btn btn--primary btn--lg cta__btn" type="button" data-fancybox data-src="#request-popup">Получить консультацию</button>
         </div>
       </div>
       </div>
     </section>
 
-<section class="faq" aria-label="Часто задаваемые вопросы">
-  <div class="container">
-    <div class="faq__inner">
-      <h2 class="faq__title">Часто задаваемые вопросы</h2>
-      <div class="faq__list">
-        <div class="faq__item">
-          <button class="faq__q" type="button" aria-expanded="false">
-            <span class="faq__name">Какие процессы в вузе можно автоматизировать?</span>
-            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <g opacity="0.5">
-                <path d="M20 8L12 16L4 8" stroke="#222222" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </g>
-            </svg>
-          </button>
-          <div class="faq__a">
-            <p>В вузе можно автоматизировать учебные, кадровые, административные и управленческие процессы.
-            В цифровую среду университета обычно входят личные кабинеты студентов, преподавателей и сотрудников, расписание,
-            документооборот, кадровые процедуры, внутренние согласования, анкетирование, аналитика, управление проектами и
-            стратегией. Такой подход помогает выстраивать связанную цифровую экосистему вуза, снижать ручную нагрузку и повышать
-            прозрачность процессов.</p>
-          </div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__q" type="button" aria-expanded="false">
-            <span class="faq__name">С чего начать цифровизацию вуза?</span>
-            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <g opacity="0.5">
-                <path d="M20 8L12 16L4 8" stroke="#222222" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </g>
-            </svg>
+    <section class="faq" aria-label="Часто задаваемые вопросы">
+      <div class="container">
+        <div class="faq__inner">
+          <h2 class="faq__title">Часто задаваемые вопросы</h2>
+          <div class="faq__list">
+            <div class="faq__item">
+              <button class="faq__q" type="button" aria-expanded="false">
+                <span class="faq__name">Какие процессы в вузе можно автоматизировать?</span>
+                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <g opacity="0.5">
+                    <path d="M20 8L12 16L4 8" stroke="#222222" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </g>
+                </svg>
+              </button>
+              <div class="faq__a">
+                <p>В вузе можно автоматизировать учебные, кадровые, административные и управленческие процессы.
+                В цифровую среду университета обычно входят личные кабинеты студентов, преподавателей и сотрудников, расписание,
+                документооборот, кадровые процедуры, внутренние согласования, анкетирование, аналитика, управление проектами и
+                стратегией. Такой подход помогает выстраивать связанную цифровую экосистему вуза, снижать ручную нагрузку и повышать
+                прозрачность процессов.</p>
+              </div>
+            </div>
+            <div class="faq__item">
+              <button class="faq__q" type="button" aria-expanded="false">
+                <span class="faq__name">С чего начать цифровизацию вуза?</span>
+                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <g opacity="0.5">
+                    <path d="M20 8L12 16L4 8" stroke="#222222" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </g>
+                </svg>
 
-          </button>
-          <div class="faq__a">
-            <p>Сервис поддерживает интеграцию с корпоративными системами университета по открытым API. На этапе
-              внедрения мы согласуем сценарии обмена данными с кадровыми и учётными системами, чтобы избежать
-              двойного
-              ввода и обеспечить целостность информации.</p>
-          </div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__q" type="button" aria-expanded="false">
-            <span class="faq__name">Какие решения нужны для цифровой среды университета?</span>
-            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <g opacity="0.5">
-                <path d="M20 8L12 16L4 8" stroke="#222222" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </g>
-            </svg>
-          </button>
-          <div class="faq__a">
-            <p>Обработка персональных данных ведётся в соответствии с требованиями законодательства. Данные хранятся
-              на
-              территории Российской Федерации, доступ к ним ограничен ролевой моделью, а журналы действий позволяют
-              отслеживать любые изменения.</p>
-          </div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__q" type="button" aria-expanded="false">
-            <span class="faq__name">Можно ли внедрять цифровые решения в вузе поэтапно?</span>
-            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <g opacity="0.5">
-                <path d="M20 8L12 16L4 8" stroke="#222222" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </g>
-            </svg>
-          </button>
-          <div class="faq__a">
-            <p>Да, мы предоставляем демо-доступ и проводим презентацию на данных, приближенных к вашим сценариям. На
-              нейтральных проектах вы сможете оценить интерфейс, скорость работы и удобство сервиса до принятия
-              решения.</p>
-          </div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__q" type="button" aria-expanded="false">
-            <span class="faq__name">Как внедрить LMS и сервисы дистанционного обучения в вузе?</span>
-            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <g opacity="0.5">
-                <path d="M20 8L12 16L4 8" stroke="#222222" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </g>
-            </svg>
-          </button>
-          <div class="faq__a">
-            <p>Переход проходит поэтапно: сначала мы настраиваем сервис на актуальных данных, параллельно с бумажным
-              документооборотом. Когда процессы стабилизируются и сотрудники привыкнут к работе в системе, вы
-              полностью
-              переводите процедуры в цифровой формат.</p>
+              </button>
+              <div class="faq__a">
+                <p>Сервис поддерживает интеграцию с корпоративными системами университета по открытым API. На этапе
+                  внедрения мы согласуем сценарии обмена данными с кадровыми и учётными системами, чтобы избежать
+                  двойного
+                  ввода и обеспечить целостность информации.</p>
+              </div>
+            </div>
+            <div class="faq__item">
+              <button class="faq__q" type="button" aria-expanded="false">
+                <span class="faq__name">Какие решения нужны для цифровой среды университета?</span>
+                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <g opacity="0.5">
+                    <path d="M20 8L12 16L4 8" stroke="#222222" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </g>
+                </svg>
+              </button>
+              <div class="faq__a">
+                <p>Обработка персональных данных ведётся в соответствии с требованиями законодательства. Данные хранятся
+                  на
+                  территории Российской Федерации, доступ к ним ограничен ролевой моделью, а журналы действий позволяют
+                  отслеживать любые изменения.</p>
+              </div>
+            </div>
+            <div class="faq__item">
+              <button class="faq__q" type="button" aria-expanded="false">
+                <span class="faq__name">Можно ли внедрять цифровые решения в вузе поэтапно?</span>
+                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <g opacity="0.5">
+                    <path d="M20 8L12 16L4 8" stroke="#222222" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </g>
+                </svg>
+              </button>
+              <div class="faq__a">
+                <p>Да, мы предоставляем демо-доступ и проводим презентацию на данных, приближенных к вашим сценариям. На
+                  нейтральных проектах вы сможете оценить интерфейс, скорость работы и удобство сервиса до принятия
+                  решения.</p>
+              </div>
+            </div>
+            <div class="faq__item">
+              <button class="faq__q" type="button" aria-expanded="false">
+                <span class="faq__name">Как внедрить LMS и сервисы дистанционного обучения в вузе?</span>
+                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <g opacity="0.5">
+                    <path d="M20 8L12 16L4 8" stroke="#222222" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </g>
+                </svg>
+              </button>
+              <div class="faq__a">
+                <p>Переход проходит поэтапно: сначала мы настраиваем сервис на актуальных данных, параллельно с бумажным
+                  документооборотом. Когда процессы стабилизируются и сотрудники привыкнут к работе в системе, вы
+                  полностью
+                  переводите процедуры в цифровой формат.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="container footer__inner">
@@ -951,12 +952,12 @@
             <li><a href="solutions.html">Решения для вузов</a></li>
           </ul>
           <ul class="footer__col">
-            <li><a href="#about">О компании</a></li>
-            <li><a href="#industries">Отрасли</a></li>
+            <li><a href="about.html">О компании</a></li>
+            <li><a href="solutions.html">Отрасли</a></li>
             <li><a href="projects.html">Кейсы</a></li>
             <li><a href="clients.html">Клиенты</a></li>
-            <li><a href="#events">Мероприятия</a></li>
-            <li><a href="#cta">Контакты</a></li>
+            <li><a href="events.html">Мероприятия</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
           </ul>
         </div>
         <div class="footer__legal">
@@ -1044,12 +1045,20 @@
       <p class="modal-form__success-text">Мы свяжемся с вами в ближайшее время</p>
     </div>
   </div>
-
-
-<script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
-<script src="assets/vendor/fancybox/fancybox.umd.js" defer></script>
-<script src="assets/vendor/just-validate/just-validate.production.min.js" defer></script>
-<script src="js/main.js" defer></script>
-</body>
-
-</html>
+  
+  <div class="cookie-banner" id="cookie-banner" hidden role="dialog" aria-label="Использование cookies">
+    <p class="cookie-banner__text">На сайте используются файлы cookie. Продолжая использовать сайт, Вы&nbsp;соглашаетесь
+      с&nbsp;использованием cookies.</p>
+    <div class="cookie-banner__actions">
+      <a class="btn btn--undeline" href="#">Узнать больше</a>
+      <button class="btn btn--primary btn--md" type="button" data-cookie-accept>Согласен(а)</button>
+    </div>
+  </div>
+  
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+  <script src="assets/vendor/fancybox/fancybox.umd.js" defer></script>
+  <script src="assets/vendor/just-validate/just-validate.production.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  </body>
+  
+  </html>
