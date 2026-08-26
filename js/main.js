@@ -371,11 +371,15 @@ function initMobileMenu() {
   const inner = document.createElement('div');
   inner.className = 'container mobile-menu__inner';
 
+  const list = document.createElement('div');
+  list.className = 'mobile-menu__list';
+
   nav.querySelectorAll('.header__nav-item').forEach((item) => {
     const link = item.querySelector('.header__link');
     const panel = item.querySelector('.header__dropdown-panel');
     if (!panel) {
-      inner.appendChild(link.cloneNode(true));
+      if (link.getAttribute('href') === 'contacts.html') return;
+      list.appendChild(link.cloneNode(true));
       return;
     }
     const group = document.createElement('div');
@@ -385,14 +389,22 @@ function initMobileMenu() {
     sub.className = 'mobile-menu__sub';
     panel.querySelectorAll('.header__dropdown-link').forEach((l) => sub.appendChild(l.cloneNode(true)));
     group.appendChild(sub);
-    inner.appendChild(group);
+    list.appendChild(group);
   });
 
-  const phone = document.querySelector('.header .header__phone-num');
-  if (phone) {
-    const phoneClone = phone.cloneNode(true);
-    phoneClone.className = 'mobile-menu__phone';
-    inner.appendChild(phoneClone);
+  inner.appendChild(list);
+
+  list.querySelectorAll('.mobile-menu__group').forEach((g) => g.classList.add('is-open'));
+
+  const phoneWrap = document.querySelector('.header .header__phone');
+  if (phoneWrap) {
+    const contacts = document.createElement('div');
+    contacts.className = 'mobile-menu__contacts';
+    const label = phoneWrap.querySelector('.header__phone-label');
+    const num = phoneWrap.querySelector('.header__phone-num');
+    if (label) contacts.appendChild(label.cloneNode(true));
+    if (num) contacts.appendChild(num.cloneNode(true));
+    inner.appendChild(contacts);
   }
 
   const cta = document.querySelector('.header .btn--primary');

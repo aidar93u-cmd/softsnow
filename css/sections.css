@@ -356,11 +356,11 @@
   letter-spacing: -0.01em;
   line-height: 1;
   color: var(--color-sea);
+    left: 0.8rem;
 }
 /* Плюс вне потока: центрируется только число, знак не сдвигает цифры влево */
 .stats__plus {
-  position: absolute;
-  left: 100%;
+  position: relative;
 }
 
 .stats__label {
@@ -4144,12 +4144,13 @@ transition: background-color 0.4s, color 0.4s;
     align-items: center;
     justify-content: space-between;
     gap: var(--gap-lg);
-    max-width: 68rem;
+    max-width: 42rem;
     margin: 0 auto;
     padding: 1.9rem;
     background: var(--color-white);
     border-radius: var(--radius-lg);
     box-shadow: 0px 31px 122px 0px #00000012;
+    flex-direction: column;
 }
 
 .cookie-banner__text {
