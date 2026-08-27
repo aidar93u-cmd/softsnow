@@ -9,6 +9,132 @@ function initClientsMarquee() {
   }
 }
 
+function initFloatingHeader() {
+  const header = document.querySelector('.header');
+  const placeholder = document.querySelector('.header-placeholder');
+  if (!header || !placeholder) return;
+
+  const SCROLL_THRESHOLD = 100;
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const TRANSITION_DURATION = prefersReduced ? 0 : 300;
+
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+  let initialized = false;
+
+  function updateHeader() {
+    const scrollY = window.scrollY;
+    const scrollingDown = scrollY > lastScrollY;
+    const pastThreshold = scrollY > SCROLL_THRESHOLD;
+
+    if (pastThreshold) {
+      header.classList.add('is-floating');
+      placeholder.classList.add('is-active');
+
+      if (scrollingDown) {
+        header.classList.add('is-hidden');
+        header.classList.remove('is-visible');
+      } else {
+        header.classList.add('is-visible');
+        header.classList.remove('is-hidden');
+      }
+    } else {
+      header.classList.remove('is-floating', 'is-visible', 'is-hidden');
+      placeholder.classList.remove('is-active');
+    }
+
+    lastScrollY = scrollY;
+    ticking = false;
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      if (prefersReduced) {
+        updateHeader();
+      } else {
+        requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
+    }
+  }
+
+  // Initialize state on load
+  function initState() {
+    const scrollY = window.scrollY;
+    const pastThreshold = scrollY > SCROLL_THRESHOLD;
+
+    if (pastThreshold) {
+      header.classList.add('is-floating');
+      placeholder.classList.add('is-active');
+      header.classList.add('is-visible');
+    }
+    initialized = true;
+  }
+
+  initState();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Handle resize (e.g., desktop <-> mobile)
+  window.addEventListener('resize', () => {
+    if (initialized) {
+      initState();
+    }
+  });
+}
+
+function initSearchPopup() {
+  const searchBtn = document.querySelector('.btn--search');
+  const popup = document.getElementById('search-popup');
+  const overlay = popup?.querySelector('.search-popup__overlay');
+  const form = popup?.querySelector('.search-popup__form');
+  const input = popup?.querySelector('.search-popup__input');
+  if (!searchBtn || !popup || !overlay || !form || !input) return;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const TRANSITION_DURATION = prefersReduced ? 0 : 300;
+  let lastFocused = null;
+
+  function open() {
+    lastFocused = document.activeElement;
+    popup.hidden = false;
+    requestAnimationFrame(() => {
+      popup.classList.add('is-open');
+    });
+    input.focus();
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', onKeydown);
+  }
+
+  function close() {
+    popup.classList.remove('is-open');
+    setTimeout(() => {
+      popup.hidden = true;
+      document.body.style.overflow = '';
+    }, TRANSITION_DURATION);
+    if (lastFocused) lastFocused.focus();
+    document.removeEventListener('keydown', onKeydown);
+  }
+
+  function onKeydown(e) {
+    if (e.key === 'Escape') close();
+  }
+
+  searchBtn.addEventListener('click', open);
+  overlay.addEventListener('click', close);
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const query = input.value.trim();
+    if (query) {
+      window.location.href = `/search?q=${encodeURIComponent(query)}`;
+    }
+  });
+
+  if (prefersReduced) {
+    popup.style.transition = 'none';
+    overlay.style.transition = 'none';
+  }
+}
+
 function initSwiper(selector, options) {
   if (typeof Swiper === 'undefined') return null;
   const el = document.querySelector(selector);
@@ -487,6 +613,8 @@ function initCookieBanner() {
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  initFloatingHeader();
+  initSearchPopup();
   initClientsMarquee();
   initContactsMap();
   window.addEventListener('resize', initClientsMarquee);

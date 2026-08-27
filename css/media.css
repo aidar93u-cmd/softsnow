@@ -198,6 +198,17 @@
 		visibility: visible;
 	}
 
+	/* ---------- Floating Header (tablet) ---------- */
+	.header.is-floating .header__inner {
+		height: var(--control-h);
+	}
+	.header-placeholder {
+		height: var(--control-h);
+	}
+	.search-popup {
+		top: var(--control-h);
+	}
+
 	.mobile-menu__inner {
 		display: flex;
 		flex-direction: column;
@@ -1696,6 +1707,17 @@
 		border-radius: 50%;
 		width: 2.5rem;
 		height: 2.5rem;
+	}
+
+	/* ---------- Floating Header (mobile) ---------- */
+	.header.is-floating .header__inner {
+		height: 4rem;
+	}
+	.header-placeholder {
+		height: 4rem;
+	}
+	.search-popup {
+		top: 4rem;
 	}
 
 	/* ---------- Меню (Figma 1932:22352): светлая подложка, карточки ссылок ---------- */
