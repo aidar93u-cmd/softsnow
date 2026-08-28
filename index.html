@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 
 <head>
@@ -17,6 +17,7 @@
 
   <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="assets/vendor/fancybox/fancybox.css">
+    <link rel="stylesheet" href="assets/vendor/aos/aos.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/sections.css">
   <link rel="stylesheet" href="css/media.css">
@@ -24,7 +25,7 @@
 
 <body>
 
-  <header class="header">
+  <header class="header header--sticky">
     <div class="container">
       <div class="header__inner">
         <a href="index.html" class="logo" aria-label="SoftSnow — на главную">
@@ -110,7 +111,6 @@
       </div>
     </div>
   </header>
-  <div class="header-placeholder" aria-hidden="true"></div>
   <div class="search-popup" id="search-popup" role="dialog" aria-modal="true" aria-label="Поиск по сайту" hidden>
     <div class="search-popup__overlay" data-search-close></div>
     <div class="search-popup__panel">
@@ -129,10 +129,10 @@
       <div class="container flex">
         <div class="hero-block-inner">
           <video class="hero__video" src="assets/hero-video.mp4" autoplay muted loop playsinline></video>
-          <div class="hero__body">
+          <div class="hero__body" data-aos="fade-up">
             <h1 class="hero__title">
               <span class="hero__brand">SoftSnow — </span>
-              <span class="hero__static-part">надежный партнер в области </span>
+              <span class="hero__static-part">надежный партнер в&nbsp;области </span>
               <span class="hero__dynamic-word" data-words="цифровизации,автоматизации,трансформации"></span>
               <span class="hero__cursor" aria-hidden="true"></span>
             </h1>
@@ -141,7 +141,7 @@
           </div>
         </div>
 
-        <div class="hero__footer">
+        <div class="hero__footer" data-aos="fade-up" data-aos-delay="400">
           <div class="hero__note">
             <span class="hero__note_1">Российский аккредитованный разработчик и&nbsp;интегратор</span>
           </div>
@@ -155,7 +155,7 @@
     <section class="industries" id="industries" aria-label="Отрасли">
       <div class="container">
         <div class="industries__grid">
-          <a href="solutions.html" class="card industries__card">
+          <a href="solutions.html" class="card industries__card" data-aos="fade-up" data-aos-delay="0">
             <img class="industries__bg" src="assets/img/card-gossector.jpg" alt="" aria-hidden="true">
             <h3 class="industries__title">Госсектор</h3>
             <p class="industries__text">Решения для автоматизации процессов, согласований, документооборота
@@ -164,7 +164,7 @@
               <use href="assets/img/sprite.svg#icon-arrow" />
             </svg>
           </a>
-          <a href="solutions.html" class="card industries__card">
+          <a href="solutions.html" class="card industries__card" data-aos="fade-up" data-aos-delay="200">
             <img class="industries__bg" src="assets/img/card-vuzi.jpg" alt="" aria-hidden="true">
             <h3 class="industries__title">Вузы</h3>
             <p class="industries__text">Цифровизации учебных, административных и&nbsp;внутренних процессов в
@@ -173,7 +173,7 @@
               <use href="assets/img/sprite.svg#icon-arrow" />
             </svg>
           </a>
-          <a href="solutions.html" class="card industries__card">
+          <a href="solutions.html" class="card industries__card" data-aos="fade-up" data-aos-delay="400">
             <img class="industries__bg" src="assets/img/card-bisnes.jpg" alt="" aria-hidden="true">
             <h3 class="industries__title">Бизнес</h3>
             <p class="industries__text">Инструменты для компаний, которым важно ускорить процессы, повысить прозрачность
@@ -182,38 +182,38 @@
               <use href="assets/img/sprite.svg#icon-arrow" />
             </svg>
           </a>
-          <a href="#cta" class="card industries__card industries__card--cta">
+          <a href="#cta" class="card industries__card industries__card--cta" data-aos="fade-up" data-aos-delay="600">
             <h3 class="industries__title">Получить консультацию</h3>
             <svg class="industries__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
               <use href="assets/img/sprite.svg#icon-arrow" />
             </svg>
           </a>
         </div>
-        <a href="#cta" class="btn btn--primary btn--lg industries__cta">Получить консультацию</a>
+        <a href="#cta" class="btn btn--primary btn--lg industries__cta" data-aos="fade-up" data-aos-delay="800">Получить консультацию</a>
       </div>
     </section>
 
     <section class="stats" id="about" aria-label="Цифры о нас">
       <div class="container">
-        <h3 class="stats__heading">Цифры о нас</h3>
+        <h3 class="stats__heading" data-aos="fade-up">Цифры о нас</h3>
         <div class="stats__grid">
-          <div class="stats__item">
+          <div class="stats__item" data-aos="fade-up" data-aos-delay="0">
             <dt class="stats__num">50<span class="stats__plus">+</span></dt>
             <dd class="stats__label">Реализованных проектов</dd>
           </div>
-          <div class="stats__item">
+          <div class="stats__item" data-aos="fade-up" data-aos-delay="200">
             <dt class="stats__num">100 000<span class="stats__plus">+</span></dt>
             <dd class="stats__label">Пользователей</dd>
           </div>
-          <div class="stats__item">
+          <div class="stats__item" data-aos="fade-up" data-aos-delay="400">
             <dt class="stats__num">150<span class="stats__plus">+</span></dt>
             <dd class="stats__label">Выполненных интеграций</dd>
           </div>
-          <div class="stats__item">
+          <div class="stats__item" data-aos="fade-up" data-aos-delay="600">
             <dt class="stats__num">200 000<span class="stats__plus">+</span></dt>
             <dd class="stats__label">Реализованных часов на&nbsp;проектах</dd>
           </div>
-          <div class="stats__item">
+          <div class="stats__item" data-aos="fade-up" data-aos-delay="800">
             <dt class="stats__num">30<span class="stats__plus">+</span></dt>
             <dd class="stats__label">Сертифицированных специалистов</dd>
           </div>
@@ -224,9 +224,9 @@
     <section class="tasks tasks-lists-section" id="solutions" aria-label="Задачи, которые мы помогаем решать">
       <div class="container">
         <div class="tasks__inner">
-          <h2 class="tasks__heading">Задачи, которые <br> мы помогаем решать</h2>
+          <h2 class="tasks__heading" data-aos="fade-up">Задачи, которые <br> мы помогаем решать</h2>
           <ul class="tasks__list">
-            <li class="tasks__item">
+            <li class="tasks__item" data-aos="fade-up" data-aos-delay="0">
               <a class="tasks__link" href="solution-detail.html">
                 <img class="tasks__bg" src="assets/img/accordion-1-bg.jpg" alt="" aria-hidden="true">
                 <h3 class="tasks__label">Электронный документооборот</h3>
@@ -235,35 +235,35 @@
                 </svg>
               </a>
             </li>
-            <li class="tasks__item"><a class="tasks__link" href="solution-detail.html">
+            <li class="tasks__item" data-aos="fade-up" data-aos-delay="120"><a class="tasks__link" href="solution-detail.html">
                 <img class="tasks__bg" src="assets/img/accordion-2-bg.jpg" alt="" aria-hidden="true">
                 <h3 class="tasks__label">Кадровый электронный документооборот</h3>
                 <svg class="tasks__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
                   <use href="assets/img/sprite.svg#icon-arrow" />
                 </svg>
               </a></li>
-            <li class="tasks__item"><a class="tasks__link" href="solution-detail.html">
+            <li class="tasks__item" data-aos="fade-up" data-aos-delay="240"><a class="tasks__link" href="solution-detail.html">
                 <img class="tasks__bg" src="assets/img/accordion-3-bg.jpg" alt="" aria-hidden="true">
                 <h3 class="tasks__label">Корпоративные порталы</h3>
                 <svg class="tasks__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
                   <use href="assets/img/sprite.svg#icon-arrow" />
                 </svg>
               </a></li>
-            <li class="tasks__item"><a class="tasks__link" href="solution-detail.html">
+            <li class="tasks__item" data-aos="fade-up" data-aos-delay="360"><a class="tasks__link" href="solution-detail.html">
                 <img class="tasks__bg" src="assets/img/accordion-4-bg.jpg" alt="" aria-hidden="true">
                 <h3 class="tasks__label">Управление стратегией</h3>
                 <svg class="tasks__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
                   <use href="assets/img/sprite.svg#icon-arrow" />
                 </svg>
               </a></li>
-            <li class="tasks__item"><a class="tasks__link" href="solution-detail.html">
+            <li class="tasks__item" data-aos="fade-up" data-aos-delay="480"><a class="tasks__link" href="solution-detail.html">
                 <img class="tasks__bg" src="assets/img/accordion-5-bg.jpg" alt="" aria-hidden="true">
                 <h3 class="tasks__label">Управление проектами</h3>
                 <svg class="tasks__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
                   <use href="assets/img/sprite.svg#icon-arrow" />
                 </svg>
               </a></li>
-            <li class="tasks__item"><a class="tasks__link" href="solution-detail.html">
+            <li class="tasks__item" data-aos="fade-up" data-aos-delay="600"><a class="tasks__link" href="solution-detail.html">
                 <img class="tasks__bg" src="assets/img/accordion-6-bg.jpg" alt="" aria-hidden="true">
                 <h3 class="tasks__label">Решения для вузов</h3>
                 <svg class="tasks__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
@@ -272,7 +272,7 @@
               </a></li>
           </ul>
           <div class="tasks__footer">
-            <a href="solutions.html" class="btn btn--ghost btn--lg" type="button">Все решения</a>
+            <a href="solutions.html" class="btn btn--ghost btn--lg" type="button" data-aos="fade-up" data-aos-delay="720">Все решения</a>
           </div>
         </div>
       </div>
@@ -280,7 +280,7 @@
 
     <section class="clients" id="clients" aria-label="Компании, которые нам доверяют">
       <div class="container">
-        <h3 class="clients__heading">Компании, которые нам доверяют</h3>
+        <h3 class="clients__heading" data-aos="fade-up">Компании, которые нам доверяют</h3>
       </div>
       <div class="clients__marquee">
         <div class="clients__track">
@@ -360,7 +360,7 @@
 
           </div>
         </div>
-        <div class="swiper partners__swiper">
+        <div class="swiper partners__swiper" data-aos="fade-up" data-aos-delay="200">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <a class="card partners__card" href="#">
@@ -451,7 +451,7 @@
             </div>
           </div>
         </div>
-        <div class="swiper projects__swiper">
+        <div class="swiper projects__swiper" data-aos="fade-up" data-aos-delay="200">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <a class="card projects__card" href="projects.html">
@@ -543,7 +543,7 @@
             </div>
           </div>
         </div>
-        <a class="btn btn--ghost btn--lg projects__cta" href="projects.html">Все проекты</a>
+        <a class="btn btn--ghost btn--lg projects__cta" href="projects.html" data-aos="fade-up" data-aos-delay="200">Все проекты</a>
       </div>
     </section>
 
@@ -565,7 +565,7 @@
             </div>
           </div>
         </div>
-        <div class="swiper events__swiper">
+        <div class="swiper events__swiper" data-aos="fade-up" data-aos-delay="200">
           <div class="swiper-wrapper">
             <div class="swiper-slide events__slide--wide">
               <a class="events__card events__card--wide" href="event-detail.html">
@@ -620,13 +620,13 @@
             </div>
           </div>
         </div>
-        <a class="btn btn--ghost btn--lg events__cta" href="events.html">Перейти в медиацентр</a>
+        <a class="btn btn--ghost btn--lg events__cta" href="events.html" data-aos="fade-up" data-aos-delay="200">Перейти в медиацентр</a>
       </div>
     </section>
 
     <section class="cta" id="cta" aria-label="Нужна консультация">
       <div class="container">
-        <div class="cta__body">
+        <div class="cta__body" data-aos="fade-up">
           <div class="cta__content">
             <h2 class="cta__title">Нужна консультация<br>  по&nbsp;проекту?</h2>
             <p class="cta__text">Оставьте контакты, и&nbsp;мы свяжемся с&nbsp;вами, чтобы обсудить задачу, подобрать
@@ -828,6 +828,7 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
   <script src="assets/vendor/fancybox/fancybox.umd.js" defer></script>
   <script src="assets/vendor/just-validate/just-validate.production.min.js" defer></script>
+    <script src="assets/vendor/aos/aos.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 

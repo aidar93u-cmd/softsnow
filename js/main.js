@@ -10,13 +10,19 @@ function initClientsMarquee() {
 }
 
 function initFloatingHeader() {
-  const header = document.querySelector('.header');
-  const placeholder = document.querySelector('.header-placeholder');
-  if (!header || !placeholder) return;
+  // Плавающая шапка живёт только на страницах с .header--sticky (сейчас index.html).
+  // Шапка всегда в потоке (position: sticky), поэтому отсюда убран плейсхолдер —
+  // появление/скрытие целиком на transform (см. .header.is-floating в sections.css).
+  // ВАЖНО: класс скрытия называется is-hiding, НЕ is-hidden — последний занят
+  // глобальной утилитой base.css (.is-hidden { display: none !important }).
+  const header = document.querySelector('.header--sticky');
+  if (!header) return;
 
   const SCROLL_THRESHOLD = 100;
+  // Минимальная дельта направления, чтобы избежать «мигания» шапки при
+  // микро-откатах (overscroll-clamp при достижении конца страницы, тряска).
+  const DIRECTION_DELTA = 4;
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const TRANSITION_DURATION = prefersReduced ? 0 : 300;
 
   let lastScrollY = window.scrollY;
   let ticking = false;
@@ -24,23 +30,23 @@ function initFloatingHeader() {
 
   function updateHeader() {
     const scrollY = window.scrollY;
-    const scrollingDown = scrollY > lastScrollY;
+    const deltaY = scrollY - lastScrollY;
+    const scrollingDown = Math.abs(deltaY) >= DIRECTION_DELTA && deltaY > 0;
+    const scrollingUp = Math.abs(deltaY) >= DIRECTION_DELTA && deltaY < 0;
     const pastThreshold = scrollY > SCROLL_THRESHOLD;
 
     if (pastThreshold) {
       header.classList.add('is-floating');
-      placeholder.classList.add('is-active');
 
       if (scrollingDown) {
-        header.classList.add('is-hidden');
+        header.classList.add('is-hiding');
         header.classList.remove('is-visible');
-      } else {
+      } else if (scrollingUp) {
         header.classList.add('is-visible');
-        header.classList.remove('is-hidden');
+        header.classList.remove('is-hiding');
       }
     } else {
-      header.classList.remove('is-floating', 'is-visible', 'is-hidden');
-      placeholder.classList.remove('is-active');
+      header.classList.remove('is-floating', 'is-visible', 'is-hiding');
     }
 
     lastScrollY = scrollY;
@@ -58,14 +64,11 @@ function initFloatingHeader() {
     }
   }
 
-  // Initialize state on load
+  // Initialize state on load (например, перезагрузка страницы при прокрутке)
   function initState() {
     const scrollY = window.scrollY;
-    const pastThreshold = scrollY > SCROLL_THRESHOLD;
-
-    if (pastThreshold) {
+    if (scrollY > SCROLL_THRESHOLD) {
       header.classList.add('is-floating');
-      placeholder.classList.add('is-active');
       header.classList.add('is-visible');
     }
     initialized = true;
@@ -76,9 +79,7 @@ function initFloatingHeader() {
 
   // Handle resize (e.g., desktop <-> mobile)
   window.addEventListener('resize', () => {
-    if (initialized) {
-      initState();
-    }
+    if (initialized) initState();
   });
 }
 
@@ -618,6 +619,15 @@ document.addEventListener('DOMContentLoaded', () => {
   initClientsMarquee();
   initContactsMap();
   window.addEventListener('resize', initClientsMarquee);
+
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      duration: 700,
+      once: true,
+      offset: 80,
+      easing: 'ease-out-cubic',
+    });
+  }
 
   const clientsSwiper = initSwiper('.clients__swiper', {
     slidesPerView: 7.8,

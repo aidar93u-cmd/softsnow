@@ -288,40 +288,46 @@
 }
 
 /* ============ Floating Header ============ */
-.header.is-floating {
-  position: fixed;
+/* Плавающая шапка (index.html — .header--sticky) построена на position: sticky:
+   шапка всегда остаётся в потоке, поэтому нет скачка relative → fixed на пороге
+   скролла; плавное появление/скрытие «сверху вниз» — только через transform.
+   Классы is-floating / is-visible / is-hiding вешает js/main.js#initFloatingHeader.
+   ВАЖНО: класс скрытия — is-hiding, НЕ is-hidden (глобальная утилита base.css
+   с display: none !important конфликтует с transform-анимацией). */
+.header--sticky {
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 100;
+  transition: transform 0.5s ease-out;
 }
+
+/* Переходы висят на базовом состоянии, чтобы морф в «плавающий» вид работал
+   плавно в ОБЕ стороны (и при добавлении, и при снятии .is-floating) */
+.header--sticky .header__inner {
+  transition: margin-top 0.3s ease, border-radius 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
+}
+
 .header.is-floating .header__inner {
   margin-top: 0;
   border-radius: 0;
   box-shadow: var(--shadow-popover);
-  height: 9rem;
-  transition: margin-top 0.3s ease, border-radius 0.3s ease, box-shadow 0.3s ease;
 }
 
-.header.is-floating {
-  transform: translateY(-100%);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 .header.is-floating.is-visible {
   transform: translateY(0);
 }
-.header.is-floating.is-hidden {
+
+.header.is-floating.is-hiding {
   transform: translateY(-100%);
 }
 
-.header-placeholder {
-  display: none;
-  height: 9rem;
-}
-.header-placeholder.is-active {
-  display: block;
+.header.is-floating .header__inner{
+    border-radius: 1.25rem;
 }
 
+.header.is-floating .header__inner::after{
+  display: none;
+}
 /* ============ Hero ============ */
 .hero {
   position: relative;
@@ -391,10 +397,11 @@
 }
 
 .hero__dynamic-word {
-  min-width: 1ch;
+  display: inline-block;
 }
 
 .hero__cursor {
+  display: inline-block;
   width: 3px;
   height: 1em;
   background-color: currentColor;

@@ -202,9 +202,6 @@
 	.header.is-floating .header__inner {
 		height: var(--control-h);
 	}
-	.header-placeholder {
-		height: var(--control-h);
-	}
 	.search-popup {
 		top: var(--control-h);
 	}
@@ -1711,9 +1708,6 @@
 
 	/* ---------- Floating Header (mobile) ---------- */
 	.header.is-floating .header__inner {
-		height: 4rem;
-	}
-	.header-placeholder {
 		height: 4rem;
 	}
 	.search-popup {
