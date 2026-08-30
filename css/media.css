@@ -3462,6 +3462,193 @@
 		color: var(--color-black);
 	}
 
+	/* === Мобильная вёрстка статьи (Figma 431:31115, 375×2175) === */
+	.article-block--unified .article-block__cover {        
+		aspect-ratio: auto;
+	}
+
+	.article-block--unified {
+		margin-bottom: 0;
+		padding: 0;
+	}
+	.article-block--unified .article-block__inner {
+		gap: 0;
+		padding: 0;
+	}
+	.article-block--unified .article-block__chapter {
+		gap: 1rem;
+		max-width: none;
+	}
+
+	/* Одна большая «карточка» со светлым фоном вместо обложки.
+	   Внутри — весь плоский текст статьи. */
+	.article-block--unified .article-block__text {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		background: var(--bg-light);
+		border-radius: 0.75rem;
+		padding: 1.5rem 1rem;
+		font-size: 0.9375rem;
+		line-height: 1.45;
+	}
+	.article-block--unified .article-block__text > br {
+		display: none;
+	}
+
+	/* Заголовки глав: h3 на мобиле — крупнее обычного текста, но меньше h2 */
+	.article-block--unified .article-block__text h3 {
+		font-size: 1.1875rem;
+		font-weight: 500;
+		line-height: 1.2;
+		letter-spacing: -0.02em;
+	}
+
+	/* Картинки: во всю ширину контента (319), скруглённые */
+	.article-block--unified .article-block__img {
+		aspect-ratio: 319 / 220;
+		border-radius: 0.75rem;
+	}
+
+	/* Цитата: маленькая иконка, тонкий текст */
+	.article-block--unified .article-block__quote {
+		gap: 1.25rem;
+		margin: 0;
+	}
+	.article-block--unified .article-block__quote svg {
+		width: 0.75rem;
+		height: 0.625rem;
+	}
+	.article-block--unified .article-block__quote blockquote p {
+		font-size: 0.875rem;
+		line-height: 1.45;
+	}
+
+	/* Автор: слева, аватар 48, имя 12, роль 10 — по Figma */
+	.article-block--unified .article-block__author {
+		align-self: flex-start;
+		flex-direction: row;
+		align-items: center;
+		gap: 0.75rem;
+		margin-top: 0;
+	}
+	.article-block--unified .article-block__author img {
+		width: 3rem;
+		height: 3rem;
+		border-radius: 0;
+		object-fit: contain;
+	}
+	.article-block--unified .article-block__author-info {
+		gap: 0.25rem;
+	}
+	.article-block--unified .article-block__author-name {
+		font-size: 0.75rem;
+		line-height: 1.2;
+	}
+	.article-block--unified .article-block__author-role {
+		font-size: 0.625rem;
+		line-height: 1.2;
+	}
+
+	/* Список «Чаще всего в трёх случаях»: горизонтальный (точка + текст) */
+	.article-block--unified .article-block__text > ul {
+		gap: 1.25rem;
+	}
+	.article-block--unified .article-block__text > ul li {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.625rem;
+		padding-left: 0;
+		font-size: 0.875rem;
+		line-height: 1.45;
+	}
+	.article-block--unified .article-block__text > ul li::before {
+		position: static;
+		flex-shrink: 0;
+		width: 0.5rem;
+		height: 0.5rem;
+		margin-top: 0.4375rem;
+	}
+
+	/* Расширения project-detail на мобильном */
+	.article-block--unified .article-block__caption {
+		font-size: 0.75rem;
+	}
+	.article-block--unified ul{
+		gap: 0.75rem;
+	}
+	.article-block--unified ul {
+		gap: 0.75rem;
+	}
+	.article-block--unified ul li {
+		padding-left: 2.25rem;
+		font-size: 0.875rem;
+	}
+	.article-block--unified .article-block__stats {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+	.article-block--unified .article-block__stat-num {
+		font-size: 1.75rem;
+	}
+	.article-block--unified .article-block__stat-label {
+		font-size: 0.8125rem;
+	}
+	.article-block--unified .article-block__arch-img--desktop {
+		display: none;
+	}
+	.article-block--unified .article-block__arch-img--mobile {
+		display: block;
+	}
+	.article-block--unified .article-block__stages {
+		gap: 1rem;
+	}
+	.article-block--unified .article-block__stages > li {
+		padding-left: 1.25rem;
+	}
+	.article-block--unified .article-block__stage-name {
+		font-size: 0.9375rem;
+	}
+	.article-block--unified .article-block__stages ul {
+		font-size: 0.8125rem;
+	}
+	.article-block--unified .article-block__team {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+	.article-block--unified .article-block__team-name {
+		font-size: 0.9375rem;
+	}
+	/* «Обсудить ваш проект» в конце статьи */
+	.article-consult {
+		margin-bottom: 3.5rem;
+		padding: 0;
+	}
+	.article-consult__inner {
+		padding: 1.5rem 1rem;
+		border-radius: 0.75rem;
+		gap: 1.5rem;
+	}
+	.article-consult__title {
+		font-size: var(--fs-h2);
+	}
+	.article-consult__text {
+		font-size: 0.9375rem;
+	}
+	.article-consult__list {
+		gap: 0.75rem;
+	}
+	.article-consult__list li {
+		font-size: 0.9375rem;
+	}
+	.article-consult__actions {
+		flex-direction: column;
+		width: 100%;
+	}
+	.article-consult__actions .btn {
+		width: 100%;
+	}
+
 	/* Об академии: заголовок -> фото -> текст */
 	.client-intro {
 		margin-bottom: 3.5rem;
@@ -3490,14 +3677,24 @@
 
 	.client-intro__media {
 		order: 2;
-		margin-bottom: 1.5rem;
 	}
-
+	.client-intro__inner_content {
+    padding: 1rem;
+}
+.client-intro__inner_content{
+	margin-bottom: 1rem;
+}
 	.client-intro__media img {
 		height: auto;
 		border-radius: 0.625rem;
 	}
-
+	.article-text-section {
+    margin-bottom: 0rem;
+}
+.article-block--unified ul li,
+.article-block--unified ol li {
+    font-size: 0.9375rem;
+}
 	.client-intro__text {
 		order: 3;
 	}

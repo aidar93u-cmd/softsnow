@@ -2904,13 +2904,12 @@ a.contacts-map__value:hover {
   line-height: 1.4;
 }
 
-.article-block__inner > .article-block__title {
+.article-block__title {
   max-width: 40.9375rem;
   height: fit-content;
 }
-
-.article-block__title {
-  letter-spacing: -0.1875rem;
+.article-block__img{
+  margin-bottom: 2.5rem;
 }
 
 .article-block__body {
@@ -2925,10 +2924,12 @@ a.contacts-map__value:hover {
 .article-block__lead {
   font-size: var(--fs-body-20);
   line-height: 1.4;
+  margin-bottom: 1.5rem;
 }
 
-.article-block__text p + p {
-  margin-top: 1.25rem;
+.article-block__text h3{
+  margin-bottom: 2.5rem;
+
 }
 
 .article-block__quote {
@@ -2968,24 +2969,26 @@ a.contacts-map__value:hover {
 
 .article-block__author-role {
   font-size: var(--fs-body-14);
-  color: var(--color-grey);
 }
-
-.article-block__points {
+.article-text-section{
+    margin-bottom: 5rem;
+}
+.article-block__text ul{
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.article-block__points li {
+.article-block__text ul li {
   position: relative;
   padding-left: 2rem;
   font-size: var(--fs-body-20);
   line-height: 1.4;
 }
 
-.article-block__points li::before {
+.article-block__text ul li::before {
   content: "";
   position: absolute;
   left: 0.3125rem;
@@ -2996,11 +2999,272 @@ a.contacts-map__value:hover {
   background: var(--color-sea);
 }
 
-.stages__card--dark {
-  max-width: 43.4375rem;
-  border: 2px solid var(--color-black);
-  padding: 2.5rem;
+/* ====== Единый article-block: обложка + плоский текст (Figma 4003:28345 Frame 2267) ====== */
+.article-block--unified {
+  padding-top: 0;
+  padding-bottom: 0;
 }
+
+.article-block--unified .article-block__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 6.25rem;
+  max-width: none;
+}
+
+.article-block__cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1790 / 700;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+/* Текстовая колонка статьи — шириной 930px по центру 1870 (x=470 в Figma).
+   Контент внутри идёт левым краем одной колонкой. */
+.article-block--unified .article-block__chapter {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 58.125rem; /* 930px */
+  margin: 0 auto;
+  text-align: left;
+}
+
+.article-block--unified .article-block__text {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs-body-20);
+  line-height: 1.4;
+}
+
+
+.article-block--unified .article-block__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 930 / 560;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin: 1rem 0;
+}
+
+.article-block--unified .article-block__quote {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5625rem;
+  margin: 1.5rem 0 0;
+}
+
+.article-block--unified .article-block__quote blockquote {
+  margin: 0;
+}
+
+.article-block--unified .article-block__quote blockquote p {
+  margin: 0;
+  font-size: var(--fs-body-20);
+  line-height: 1.4;
+}
+
+.article-block--unified .article-block__author {
+  justify-self: end;
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.article-block--unified .article-block__author img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.article-block--unified .article-block__author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.article-block--unified .article-block__author-name {
+  font-size: var(--fs-body-16);
+  line-height: 1.3;
+}
+
+.article-block--unified .article-block__author-role {
+  font-size: var(--fs-body-14);
+  color: var(--color-grey);
+  line-height: 1.3;
+}
+
+
+/* ===== Расширения article-block--unified для project-detail ===== */
+.article-block--unified .article-block__caption {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--color-grey);
+  font-style: italic;
+  margin-top: -0.5rem;
+}
+
+.article-block--unified ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  counter-reset: stage;
+  margin-bottom: 1rem;
+}
+
+.article-block--unified ol li {
+  position: relative;
+  padding-left: 2.75rem;
+  font-size: var(--fs-body-20);
+  line-height: 1.4;
+  counter-increment: stage;
+}
+
+.article-block--unified ol li::before {
+  content: counter(stage);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--color-dark-a10);
+  color: var(--color-black);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.article-block--unified .article-block__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.article-block--unified .article-block__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.article-block--unified .article-block__stat-num {
+
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--color-sea);
+}
+
+.article-block--unified .article-block__stat-label {
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.article-block--unified .article-block__arch {
+  margin: 1rem 0;
+}
+
+.article-block--unified .article-block__arch-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+.article-block--unified .article-block__arch-img--mobile {
+  display: none;
+}
+
+.article-block--unified .article-block__stages {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  counter-reset: project-stage;
+}
+
+.article-block--unified .article-block__stages > li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-left: 0;
+}
+
+.article-block--unified .article-block__stages > li::before {
+  display: none
+}
+
+.article-block--unified .article-block__stage-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;  font-size: var(--fs-body-20);
+  color: var(--color-grey);
+    margin-bottom: 1rem;
+}
+
+
+
+.article-block--unified .article-block__stage-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-grey);
+}
+
+.article-block--unified .article-block__stage-date {
+  color: var(--color-grey);
+}
+
+.article-block--unified .article-block__stage-name {
+  font-size: var(--fs-body-20);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--color-black);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+
+.article-block--unified .article-block__team {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.article-block--unified .article-block__team-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.article-block--unified .article-block__team-name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-black);
+}
+
+
+
 
 /* Фон hero детальной страницы решения — из inline перенесён сюда,
    чтобы media.css мог отключить его на мобильном (Figma 1742:12742) */
