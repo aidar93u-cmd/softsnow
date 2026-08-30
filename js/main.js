@@ -87,22 +87,53 @@ function initSearchPopup() {
   const searchBtn = document.querySelector('.btn--search');
   const popup = document.getElementById('search-popup');
   const overlay = popup?.querySelector('.search-popup__overlay');
+  const panel = popup?.querySelector('.search-popup__panel');
   const form = popup?.querySelector('.search-popup__form');
   const input = popup?.querySelector('.search-popup__input');
+  const header = document.querySelector('.header');
   if (!searchBtn || !popup || !overlay || !form || !input) return;
 
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const TRANSITION_DURATION = prefersReduced ? 0 : 300;
   let lastFocused = null;
 
+  // Шапка — sticky и меняет высоту (170px на верхе → 144px в «плавающем» виде
+  // на десктопе, 64px на планшете/мобиле). Приклеиваем панель к фактической
+  // нижней границе шапки, чтобы она всегда была её продолжением.
+  function alignToHeader() {
+    if (!header) return;
+    const rect = header.getBoundingClientRect();
+    // Страховка на случай, если шапка ещё в анимации (translateY) — берём максимум
+    // с fallback-высотой, чтобы панель не прыгала и не уезжала под шапку.
+    const bottom = rect.bottom <= 0 ? 64 : rect.bottom;
+    popup.style.top = `${Math.round(bottom)}px`;
+  }
+
+  // Панель позиционируется после применения классов шапки и до показа,
+  // чтобы переход был плавным и без скачка top.
+  function show() {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        alignToHeader();
+        popup.classList.add('is-open');
+      });
+    });
+  }
+
   function open() {
     lastFocused = document.activeElement;
+    // Если шапка скрыта плавающим скроллом — показываем её, иначе панель
+    // повиснет над спрятанной шапкой.
+    if (header) {
+      header.classList.remove('is-hiding');
+      header.classList.add('is-visible');
+    }
     popup.hidden = false;
-    requestAnimationFrame(() => {
-      popup.classList.add('is-open');
-    });
-    input.focus();
+    show();
+    document.body.classList.add('is-search-open');
+    input.focus({ preventScroll: true });
     document.body.style.overflow = 'hidden';
+    window.addEventListener('resize', alignToHeader);
     document.addEventListener('keydown', onKeydown);
   }
 
@@ -110,7 +141,10 @@ function initSearchPopup() {
     popup.classList.remove('is-open');
     setTimeout(() => {
       popup.hidden = true;
+      popup.style.top = '';
+      document.body.classList.remove('is-search-open');
       document.body.style.overflow = '';
+      window.removeEventListener('resize', alignToHeader);
     }, TRANSITION_DURATION);
     if (lastFocused) lastFocused.focus();
     document.removeEventListener('keydown', onKeydown);
@@ -133,6 +167,7 @@ function initSearchPopup() {
   if (prefersReduced) {
     popup.style.transition = 'none';
     overlay.style.transition = 'none';
+    if (panel) panel.style.transition = 'none';
   }
 }
 

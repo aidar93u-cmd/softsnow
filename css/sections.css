@@ -194,17 +194,21 @@
   top: 9rem;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 101;
   pointer-events: none;
   opacity: 0;
-  transform: translateY(-0.625rem);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .search-popup.is-open {
   opacity: 1;
-  transform: translateY(0);
   pointer-events: auto;
+}
+
+/* Шапка и попап должны оставаться активными поверх затемнения.
+   Оверлей — внутри .search-popup (z 101), поднимаем шапку выше него. */
+body.is-search-open .header {
+  z-index: 102;
 }
 
 .search-popup[hidden] {
@@ -225,12 +229,15 @@
 
 .search-popup__panel {
   position: relative;
-  max-width: 128rem;
-  margin: 0 auto;
-  padding: 2.5rem var(--section-px);
+  padding: 3.75rem 0;
   background: var(--bg-light);
   border-radius: 0 0 1.25rem 1.25rem;
-  box-shadow: var(--shadow-popover);
+  transform: translateY(-0.625rem);
+  transition: transform 0.3s ease;
+}
+
+.search-popup.is-open .search-popup__panel {
+  transform: translateY(0);
 }
 
 .search-popup__form {
@@ -255,36 +262,42 @@
   display: flex;
   gap: 0.625rem;
   align-items: center;
+  width: 100%;
+  max-width: 58.125rem;
+  margin: 0 auto;
 }
 
 .search-popup__input {
   flex: 1;
   min-width: 0;
   height: var(--control-h);
-  padding: 0 1.25rem;
+  padding: 0 1.875rem;
   font-size: var(--fs-body-16);
-  font-weight: 500;
+  font-weight: 400;
+  line-height: 1.4;
   color: var(--color-black);
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  background: var(--bg-light);
+  border: 2px solid var(--color-sea);
+  border-radius: var(--radius-xl);
+  transition: border-color var(--transition-fast);
 }
 
 .search-popup__input::placeholder {
-  color: var(--color-dark-a40);
+  color: var(--color-grey);
 }
 
 .search-popup__input:focus {
   outline: none;
   border-color: var(--color-sea);
-  box-shadow: 0 0 0 3px var(--color-sea-a20);
 }
 
 .search-popup__btn {
   flex-shrink: 0;
-  min-width: 10rem;
+  width: 11.375rem;
   height: var(--control-h);
+  padding: 0 1.875rem;
+  font-weight: 500;
+  justify-content: center;
 }
 
 /* ============ Floating Header ============ */
@@ -1715,7 +1728,6 @@ h3.client-title,
 .testimonials__author {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-xs);
 }
 
 /* Подзаголовок 20/500 */
@@ -1900,16 +1912,23 @@ h2.client-title {
     border-radius: var(--radius-lg);
 }
 
+.client-intro__inner_content{
+    gap: var(--gap-xl);
+    align-items: start;
+    background: var(--color-white);
+    padding: 2.5rem 2.5rem ;
+    border-radius: var(--radius-lg);
+}
 /* Текстовая колонка */
 .client-intro__text,
 .article-about__content {
     max-width: 40.9375rem;
     /* letter-spacing: 0.025rem; */
 }
+.intro__text p,
 .client-intro__text p{
     font-size: var(--fs-body-20);
     color: var(--color-black);
-    letter-spacing: -0.047rem;
     padding-bottom: 1.875rem;
 
 }
@@ -4422,5 +4441,18 @@ transition: background-color 0.4s, color 0.4s;
   border-radius: var(--radius-lg);
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
+
+}
+.show_pdf{  
+    color: #222222B2;
+    font-weight: 500;
+}
+.testimonials__footer-right{
+  display: flex;
+  gap: 1.8rem;
+}
+.intro__content {  
+    max-width: 58rem;
+    margin: 5rem auto;
 
 }

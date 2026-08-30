@@ -1713,6 +1713,13 @@
 	.search-popup {
 		top: 4rem;
 	}
+	.search-popup__panel {
+		padding: 1.5rem 0;
+	}
+	.search-popup__btn {
+		width: auto;
+		padding: 0 1.25rem;
+	}
 
 	/* ---------- Меню (Figma 1932:22352): светлая подложка, карточки ссылок ---------- */
 	.mobile-menu {

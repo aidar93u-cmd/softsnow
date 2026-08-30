@@ -113,14 +113,16 @@
   </header>
   <div class="search-popup" id="search-popup" role="dialog" aria-modal="true" aria-label="Поиск по сайту" hidden>
     <div class="search-popup__overlay" data-search-close></div>
-    <div class="search-popup__panel">
-      <form class="search-popup__form" action="/search" method="get">
-        <label class="search-popup__label" for="search-input">Поиск</label>
-        <div class="search-popup__input-group">
-          <input type="search" class="search-popup__input" id="search-input" name="q" placeholder="Что ищете?" autocomplete="off" aria-label="Поиск по сайту">
-          <button type="submit" class="btn btn--primary search-popup__btn" aria-label="Искать">Найти</button>
-        </div>
-      </form>
+    <div class="container search-popup__container">
+      <div class="search-popup__panel">
+        <form class="search-popup__form" action="/search" method="get">
+          <label class="search-popup__label" for="search-input">Поиск</label>
+          <div class="search-popup__input-group">
+            <input type="search" class="search-popup__input" id="search-input" name="q" placeholder="Поиск по сайту" autocomplete="off" aria-label="Поиск по сайту">
+            <button type="submit" class="btn btn--primary search-popup__btn" aria-label="Искать">Найти</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 
@@ -282,7 +284,7 @@
       <div class="container">
         <h3 class="clients__heading" data-aos="fade-up">Компании, которые нам доверяют</h3>
       </div>
-      <div class="clients__marquee">
+      <div class="clients__marquee"  data-aos="fade-up" data-aos-delay="200">
         <div class="clients__track">
           <div class="clients__cell">
             <div class="client-image"><img src="assets/img/clients/client-1.png" alt="Логотип клиента" width="136"
@@ -340,7 +342,7 @@
 
     <section class="partners" aria-label="Технологические партнёры">
       <div class="container">
-        <div class="partners__head">
+        <div class="partners__head"  data-aos="fade-up" data-aos-delay="200">
           <div>
             <h2 class="partners__heading">Технологические партнеры и&nbsp;используемые платформы</h2>
             <div class="partners__actions">
@@ -363,7 +365,7 @@
         <div class="swiper partners__swiper" data-aos="fade-up" data-aos-delay="200">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <a class="card partners__card" href="#">
+              <a class="card partners__card" data-aos="fade-up" data-aos-delay="0" href="#">
                 <h3 class="partners__name">Moodle</h3>
                 <span class="partners__tag">Система дистанционного обучения</span>
                 <img class="partners__logo" src="assets/img/logo-moodle.png" alt="Moodle" width="130" height="130">
@@ -375,7 +377,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a class="card partners__card" href="univer-online.html">
+              <a class="card partners__card" data-aos="fade-up" data-aos-delay="120" href="univer-online.html">
                 <h3 class="partners__name">Univer Online</h3>
                 <span class="partners__tag">Комплекс решений для вузов</span>
                 <img class="partners__logo" src="assets/img/logo-univer.png" alt="Univer Online" width="130"
@@ -387,7 +389,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a class="card partners__card" href="#">
+              <a class="card partners__card" data-aos="fade-up" data-aos-delay="240" href="#">
                 <h3 class="partners__name">Битрикс 24</h3>
                 <span class="partners__tag">Корпоративные порталы</span>
                 <img class="partners__logo" src="assets/img/logo-bitrix.png" alt="Битрикс 24" width="130" height="130">
@@ -398,7 +400,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a class="card partners__card" href="#">
+              <a class="card partners__card" data-aos="fade-up" data-aos-delay="360" href="#">
                 <h3 class="partners__name">Moodle</h3>
                 <span class="partners__tag">Система дистанционного обучения</span>
                 <img class="partners__logo" src="assets/img/logo-moodle-2.png" alt="Moodle" width="130" height="130">
@@ -410,7 +412,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a class="card partners__card" href="#">
+              <a class="card partners__card" data-aos="fade-up" data-aos-delay="480" href="#">
                 <h3 class="partners__name">Moodle</h3>
                 <span class="partners__tag">Система дистанционного обучения</span>
                 <img class="partners__logo" src="assets/img/logo-moodle-3.png" alt="Moodle" width="130" height="130">
@@ -429,7 +431,7 @@
     <section class="projects" id="projects" aria-label="Реализованные проекты">
       <div class="container">
         <div class="projects__head">
-          <div class="projects__inner">
+          <div class="projects__inner"  data-aos="fade-up" data-aos-delay="200">
             <h2 class="projects__heading">Реализованные <br> проекты</h2>
             <div class="projects__bottom">
               <p class="projects__sub">Не просто внедряем решения, а&nbsp;выстраиваем рабочую систему: с&nbsp;понятной
@@ -543,13 +545,13 @@
             </div>
           </div>
         </div>
-        <a class="btn btn--ghost btn--lg projects__cta" href="projects.html" data-aos="fade-up" data-aos-delay="200">Все проекты</a>
+        <a class="btn btn--ghost btn--lg projects__cta" href="projects.html">Все проекты</a>
       </div>
     </section>
 
     <section class="events" id="events" aria-label="Вебинары, мероприятия и материалы">
       <div class="container">
-        <div class="events__head">
+        <div class="events__head"  data-aos="fade-up" data-aos-delay="200">
           <h2 class="events__heading">Вебинары, мероприятия и&nbsp;материалы</h2>
           <div class="events__head-actions">
             <a class="btn btn--ghost btn--md events__btn" href="events.html">Перейти в медиацентр</a>
@@ -620,7 +622,7 @@
             </div>
           </div>
         </div>
-        <a class="btn btn--ghost btn--lg events__cta" href="events.html" data-aos="fade-up" data-aos-delay="200">Перейти в медиацентр</a>
+        <a class="btn btn--ghost btn--lg events__cta" href="events.html" >Перейти в медиацентр</a>
       </div>
     </section>
 
