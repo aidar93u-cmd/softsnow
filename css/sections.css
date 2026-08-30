@@ -325,7 +325,10 @@ body.is-search-open .header {
   border-radius: 0;
   box-shadow: var(--shadow-popover);
 }
-
+.header.is-floating.is-visible .header__inner {
+    border-radius: 1.25rem 1.25rem 0 0;
+    box-shadow: none;
+}
 .header.is-floating.is-visible {
   transform: translateY(0);
 }
@@ -394,7 +397,7 @@ body.is-search-open .header {
 }
 
 .hero__title {
-  max-width: 61.25rem;
+  max-width: 71.25rem;
   margin-bottom: 2.8125rem;
   line-height: 1;
   flex-wrap: wrap;
@@ -1080,6 +1083,147 @@ body.is-search-open .header {
 
 .facts__screen .facts__slide--wide {
     grid-column: span 2;
+}
+
+/* ============ About: история компании (timeline) ============ */
+.history {
+  margin-bottom: 2.5rem;
+}
+
+.history__heading {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-heading);
+  font-size: var(--fs-h2);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: var(--color-black);
+}
+
+/* Карточка-обёртка: белая, скруглённая, содержит timeline + текст + изображение */
+.history__stage {
+    min-height: 28.125rem;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.history__nav {
+  grid-column: 1;
+  margin-bottom: 1.25rem;
+}
+
+.history__years {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.history__year {
+  position: relative;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: var(--fs-body-20);
+  font-weight: 400;
+  color: var(--color-grey);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.history__year:hover {
+  color: var(--color-black);
+}
+
+.history__year.is-active {
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.history__year.is-active::after {
+  transform: scaleX(1);
+}
+
+/* Текстовые карточки: наложены друг на друга в одной grid-ячейке */
+.history__panels {
+  grid-column: 1;
+  position: relative;
+  min-height: 12rem;
+}
+
+.history__card {
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.4s, visibility 0.4s;
+}
+
+.history__card.is-active {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+}
+
+.history__title {
+  margin: 0 0 1rem;
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--color-black);
+}
+.history__group{  
+    display: grid;
+  grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+.history__desc {
+  margin: 0;
+  font-size: var(--fs-body-18);
+  line-height: 1.4;
+  max-width: 32rem;
+}
+.history__right,
+.history__left{
+    padding: 2.5rem;
+    background: var(--color-white);
+  border-radius: 1rem;
+}
+.history__right{
+  padding: 0;
+}
+/* Медиа-зона: правая колонка, изображения стэкнуты абсолютно */
+.history__media {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  position: relative;
+  height: 100%;
+}
+
+.history__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0.4s;
+}
+
+.history__img.is-active {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* ============ About: наш подход ============ */
@@ -2491,6 +2635,7 @@ h2.client-title {
   justify-content: center;
   overflow: hidden;
   position: relative;
+    min-height: 40rem;
 }
 
 /* ============ Ecosystem (vuz.html: цифровая среда вуза) ============ */
@@ -4295,38 +4440,72 @@ transition: background-color 0.4s, color 0.4s;
 }
 
 .ecosystem__inner {
-  padding: 2.5rem 2.5rem 6.25rem;
+  padding: 2.5rem 2.5rem 8.75rem;
   background: var(--color-white);
   border-radius: var(--radius-lg);
 }
 .ecosystem__title {
-  max-width: 40.9375rem;
+  margin: 0 0 7.5rem;
   letter-spacing: -0.03em;
 }
 .ecosystem__diagram {
   position: relative;
-  height: 40rem;
-  margin-top: 5.0625rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 28.3125rem;
+  margin-top: 5rem;
 }
-.ecosystem__ring {
+.ecosystem__col {
+  display: flex;
+  flex-direction: column;
+  gap: 3.75rem;
+  width: 37.8125rem;
+  z-index: 3;
+}
+.ecosystem__center {
   position: absolute;
-  top: 0;
-  left: 35.9375rem;
+  top: 50%;
+  left: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40rem;
-  height: 40rem;
-  border: 2px solid var(--color-sea);
+  width: 20rem;
+  height: 28.3125rem;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.ecosystem__glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.ecosystem__glow--1 {
+  width: 49.75rem;
+  height: 49.75rem;
+  background: radial-gradient(50% 50% at 50% 50%, #F5F4F5 0%, #F5F4F5 75%, #1342F3 100%);
+  opacity: 0.1;
+}
+.ecosystem__glow--2 {
+  width: 31.25rem;
+  height: 31.25rem;
+  background: radial-gradient(50% 50% at 50% 50%, #F5F4F5 0%, #F5F4F5 75%, #1342F3 100%);
+  opacity: 0.1;
 }
 .ecosystem__core {
+  position: relative;
+  z-index: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 25rem;
-  height: 25rem;
-  font-size: var(--fs-h3);
+  gap: 0.75rem;
+  width: 20rem;
+  height: 20rem;
+  font-size: 1.875rem;
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.01em;
@@ -4335,40 +4514,66 @@ transition: background-color 0.4s, color 0.4s;
   background: var(--color-sea);
   border-radius: 50%;
 }
+.ecosystem__core-icon {
+  color: var(--color-white);
+}
+.ecosystem__core-text {
+  line-height: 1;
+}
 .eco-card {
-  position: absolute;
   display: flex;
   align-items: flex-start;
   gap: 1.25rem;
-  width: 31.25rem;
-  height: 6.9375rem;
+  width: 100%;
+  min-height: 6.9375rem;
   padding: 1.25rem;
   background: var(--color-white);
   border: 1px solid rgba(34, 34, 34, 0.1);
   border-radius: var(--radius-lg);
+    z-index: 9;
 }
-.eco-card--flip .eco-card__body {
+.eco-card--right {
+}
+.eco-card--right .eco-card__body {
   text-align: right;
 }
-.eco-card--1 { left: 10.625rem; top: 5.875rem; }
-.eco-card--2 { left: 7rem;      top: 16.5625rem; }
-.eco-card--3 { left: 10.625rem; top: 27.25rem; }
-.eco-card--4 { left: 70rem;     top: 5.875rem; }
-.eco-card--5 { left: 73.625rem; top: 16.5625rem; }
-.eco-card--6 { left: 70rem;     top: 27.25rem; }
+.ecosystem__col--right .eco-card{
+    max-width: calc(100% - 4rem);
+    margin-right: auto;
+
+}
+.ecosystem__col--left .eco-card{
+    max-width: calc(100% - 4rem);
+    margin-left: auto;
+    background: var(--color-white);
+}
+
+.ecosystem__col--right .eco-card.eco-card--orange {
+    margin-left: 4rem;
+    max-width: calc(100% - 4rem);
+    margin-right: auto;
+}
+.ecosystem__col--left .eco-card.eco-card--blue {
+    margin-right: 4rem;
+    max-width: calc(100% - 4rem);
+    margin-right: auto;
+}
 .eco-card__body {
   flex: 1;
 }
 .eco-card__title {
   margin: 0 0 0.1875rem;
   font-size: var(--fs-body-20);
+  font-weight: 500;
   line-height: 1.2;
   letter-spacing: -0.02em;
+  color: var(--color-black);
 }
 .eco-card__text {
   margin: 0;
   font-size: var(--fs-body-16);
   line-height: 1.4;
+  color: var(--color-grey, rgba(34, 34, 34, 0.7));
 }
 .eco-card__icon {
   display: flex;
@@ -4377,13 +4582,27 @@ transition: background-color 0.4s, color 0.4s;
   flex-shrink: 0;
   width: 4rem;
   height: 4rem;
-  color: var(--color-sea);
-  background: var(--color-sea-a10);
   border-radius: 50%;
 }
 .eco-card__icon svg {
   width: 2.5rem;
   height: 2.5rem;
+}
+.eco-card--purple .eco-card__icon {
+  color: #4F2BAC;
+  background: #ECE7FA;
+}
+.eco-card--blue .eco-card__icon {
+  color: #0132F3;
+  background: #EFF3FD;
+}
+.eco-card--teal .eco-card__icon {
+  color: #017068;
+  background: #E7F5F5;
+}
+.eco-card--orange .eco-card__icon {
+  color: #E5640B;
+  background: #FEF1E5;
 }
 
 /* ==== from pages/index.css ==== */
@@ -4455,4 +4674,20 @@ transition: background-color 0.4s, color 0.4s;
     max-width: 58rem;
     margin: 5rem auto;
 
+}
+/* Документация (doc.html): 2 колонки на десктопе, Swiper-слайдер на мобиле.
+   Один и тот же .testimonials__cards — обёртка .swiper, его .swiper-wrapper —
+   сетка на ≥769, и горизонтальная лента на ≤768 (см. media.css). */
+.testimonials__cards .swiper-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.testimonials__cards .swiper-slide {
+  width: auto;
+}
+.testimonials__review-text a{
+  display: flex;
+  gap: 0.5rem;
+  color: #222222B2;
 }

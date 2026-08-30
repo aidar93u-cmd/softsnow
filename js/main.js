@@ -713,6 +713,17 @@ document.addEventListener('DOMContentLoaded', () => {
     breakpoints: { 768: { slidesPerView: 3 } },
   });
 
+  // doc.html: .testimonials__cards — сетка 2x1 на десктопе (через CSS),
+  // горизонтальный Swiper-свайпер на мобиле. На ≥768 Swiper не должен ломать
+  // CSS-grid, поэтому slidesPerView: 'auto' + spaceBetween: 0.
+  initSwiper('.testimonials__cards', {
+    slidesPerView: 1.1,
+    spaceBetween: 10,
+    loop: true,
+    speed: 600,
+    breakpoints: { 768: { slidesPerView: 'auto', spaceBetween: 0 } },
+  });
+
   const gallerySwiper = initSwiper('.gallery__swiper', {
     slidesPerView: 1.1,
     spaceBetween: 10,
@@ -846,6 +857,90 @@ function initRequestForm() {
   });
 }
 
+// History timeline (about.html): переключение текста + изображения по клику на год + плавный fade
+function initHistoryTimeline() {
+  const section = document.querySelector('.history');
+  if (!section) return;
+
+  const years = Array.from(section.querySelectorAll('.history__year'));
+  const cards = Array.from(section.querySelectorAll('.history__card'));
+  const images = Array.from(section.querySelectorAll('.history__img'));
+  if (!years.length || !cards.length || !images.length) return;
+
+  let isAnimating = false;
+
+  const activate = (year, withAnimation = true) => {
+    if (!year || isAnimating) return;
+    const targetCard = cards.find((c) => c.dataset.year === year);
+    const targetImg = images.find((i) => i.dataset.year === year);
+    if (!targetCard || !targetImg) return;
+    const currentCard = cards.find((c) => c.classList.contains('is-active'));
+    const currentImg = images.find((i) => i.classList.contains('is-active'));
+
+    if (currentCard === targetCard) {
+      years.forEach((y) => {
+        const active = y.dataset.year === year;
+        y.classList.toggle('is-active', active);
+        y.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      return;
+    }
+
+    if (!withAnimation) {
+      currentCard && currentCard.classList.remove('is-active');
+      currentImg && currentImg.classList.remove('is-active');
+      targetCard.classList.add('is-active');
+      targetImg.classList.add('is-active');
+      years.forEach((y) => {
+        const active = y.dataset.year === year;
+        y.classList.toggle('is-active', active);
+        y.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      return;
+    }
+
+    isAnimating = true;
+    currentCard && currentCard.classList.remove('is-active');
+    currentImg && currentImg.classList.remove('is-active');
+
+    requestAnimationFrame(() => {
+      targetCard.classList.add('is-active');
+      targetImg.classList.add('is-active');
+      years.forEach((y) => {
+        const active = y.dataset.year === year;
+        y.classList.toggle('is-active', active);
+        y.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      const onEnd = (e) => {
+        if (e.propertyName !== 'opacity') return;
+        targetCard.removeEventListener('transitionend', onEnd);
+        targetImg.removeEventListener('transitionend', onEnd);
+        isAnimating = false;
+      };
+      targetCard.addEventListener('transitionend', onEnd);
+      targetImg.addEventListener('transitionend', onEnd);
+      setTimeout(() => { isAnimating = false; }, 500);
+    });
+  };
+
+  years.forEach((btn) => {
+    btn.addEventListener('click', () => activate(btn.dataset.year));
+    btn.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      e.preventDefault();
+      const i = years.indexOf(btn);
+      const next = e.key === 'ArrowRight'
+        ? years[(i + 1) % years.length]
+        : years[(i - 1 + years.length) % years.length];
+      next.focus();
+      activate(next.dataset.year);
+    });
+  });
+
+  const initial = cards.find((c) => c.classList.contains('is-active')) || cards[0];
+  activate(initial.dataset.year, false);
+}
+
 // ponytail: catalog cards are links on desktop, accordion items on mobile (Figma 1742:13167)
 function initCatalogAccordion() {
   const list = document.querySelector('.catalog__list');
@@ -863,6 +958,7 @@ function initCatalogAccordion() {
 
   initAccordion('.tasks__list', 'is-open', '.tasks__q');
   initAccordion('.faq__list', 'is-open', '.faq__q');
+  initHistoryTimeline();
   initCatalogAccordion();
 
   initClientsPage();
