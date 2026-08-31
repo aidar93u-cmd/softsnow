@@ -3,10 +3,15 @@
 graphify-out/
 .graphify_*
 figma-bridge/
+.playwright-mcp/
+.roo/
+.vscode/
+plans/
+!.gitignore
 # ai/session docs
 *.md
 docs/
-
+*.bat
 # ai junk: scripts/dumps
 *.py
 *.json

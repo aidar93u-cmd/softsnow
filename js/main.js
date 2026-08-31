@@ -652,374 +652,386 @@ function initCookieBanner() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+	initFloatingHeader()
+	initSearchPopup()
+	initClientsMarquee()
+	initContactsMap()
+	window.addEventListener('resize', initClientsMarquee)
 
-  initFloatingHeader();
-  initSearchPopup();
-  initClientsMarquee();
-  initContactsMap();
-  window.addEventListener('resize', initClientsMarquee);
+	if (typeof AOS !== 'undefined') {
+		AOS.init({
+			duration: 700,
+			once: true,
+			offset: 80,
+			easing: 'ease-out-cubic',
+		})
+	}
 
-  if (typeof AOS !== 'undefined') {
-    AOS.init({
-      duration: 700,
-      once: true,
-      offset: 80,
-      easing: 'ease-out-cubic',
-    });
-  }
+	const clientsSwiper = initSwiper('.clients__swiper', {
+		slidesPerView: 7.8,
+		spaceBetween: 10,
+		loop: true,
+		speed: 600,
+	})
 
-  const clientsSwiper = initSwiper('.clients__swiper', {
-    slidesPerView: 7.8,
-    spaceBetween: 10,
-    loop: true,
-    speed: 600,
+	const partnersSwiper = initSwiper('.partners__swiper', {
+		slidesPerView: 1.1,
+		spaceBetween: 10,
+		loop: true,
+		speed: 600,
+		breakpoints: { 768: { slidesPerView: 4 } },
+	})
 
-  });
+	const projectsSwiper = initSwiper('.projects__swiper', {
+		slidesPerView: 1.1,
+		spaceBetween: 10,
+		loop: true,
+		speed: 600,
+		breakpoints: { 768: { slidesPerView: 2 } },
+	})
 
-  const partnersSwiper = initSwiper('.partners__swiper', {
-    slidesPerView: 1.1,
-    spaceBetween: 10,
-    loop: true,
-    speed: 600,
-    breakpoints: { 768: { slidesPerView: 4 } },
-  });
+	const eventsSwiper = initSwiper('.events__swiper', {
+		slidesPerView: 1.1,
+		spaceBetween: 10,
+		loop: true,
+		speed: 600,
+		breakpoints: { 768: { slidesPerView: 'auto' } },
+	})
+	// ponytail: events-featured — синхронизированная пара слайдеров через Controller
+	// Без loop, чтобы кнопки навигации получали класс disabled на краях.
+	// Листание только стрелками, свайпы отключены.
 
-  const projectsSwiper = initSwiper('.projects__swiper', {
-    slidesPerView: 1.1,
-    spaceBetween: 10,
-    loop: true,
-    speed: 600,
-    breakpoints: { 768: { slidesPerView: 2 } },
-  });
+	const eventsFeaturedMediaSwiper = initSwiper(
+		'.events-featured__media-swiper',
+		{
+			slidesPerView: 1,
+			spaceBetween: 0,
+			loop: false,
+			speed: 800,
+			effect: 'slide',
+			allowTouchMove: false,
+			watchOverflow: true, // Скрывает кнопки, если слайдов <= 1
+		},
+	)
 
-  const eventsSwiper = initSwiper('.events__swiper', {
-    slidesPerView: 1.1,
-    spaceBetween: 10,
-    loop: true,
-    speed: 600,
-    breakpoints: { 768: { slidesPerView: 'auto' } },
-  });
+	const eventsFeaturedTextSwiper = initSwiper('.events-featured__text-swiper', {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		loop: false,
+		speed: 800,
+		effect: 'slide',
+		allowTouchMove: false,
+		watchOverflow: true,
+		controller: {
+			control: eventsFeaturedMediaSwiper,
+			by: 'slide',
+			inverse: false,
+		},
+		navigation: {
+			nextEl: '.events-featured__nav [data-scroll-next]',
+			prevEl: '.events-featured__nav [data-scroll-prev]',
+			disabledClass: 'is-disabled', // Класс для кнопок на краях
+		},
+	})
 
-  // ponytail: events-featured — синхронизированная пара слайдеров:
-  // слева текст, справа картинка, стрелки листают оба сразу.
-  // bindNav управляет text-swiper; media-swiper следует за его realIndex.
-  const eventsFeaturedTextSwiper = initSwiper('.events-featured__text-swiper', {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    loop: true,
-    speed: 800,
-    effect: 'slide',
-  });
-  const eventsFeaturedMediaSwiper = initSwiper('.events-featured__media-swiper', {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    loop: true,
-    speed: 800,
-    effect: 'slide',
-  });
-  if (eventsFeaturedTextSwiper && eventsFeaturedMediaSwiper) {
-    let syncing = false;
-    eventsFeaturedTextSwiper.on('slideChange', () => {
-      if (syncing) return;
-      syncing = true;
-      eventsFeaturedMediaSwiper.slideToLoop(eventsFeaturedTextSwiper.realIndex, 800, false);
-      syncing = false;
-    });
-    eventsFeaturedMediaSwiper.on('slideChange', () => {
-      if (syncing) return;
-      syncing = true;
-      eventsFeaturedTextSwiper.slideToLoop(eventsFeaturedMediaSwiper.realIndex, 800, false);
-      syncing = false;
-    });
-  }
-  const eventsFeaturedSwiper = eventsFeaturedTextSwiper;
+	const eventsFeaturedSwiper = eventsFeaturedTextSwiper
 
-  const testimonialsSwiper = initSwiper('.testimonials__swiper', {
-    slidesPerView: 1.1,
-    spaceBetween: 10,
-    loop: true,
-    speed: 600,
-    breakpoints: { 768: { slidesPerView: 3 } },
-  });
+	const testimonialsSwiper = initSwiper('.testimonials__swiper', {
+		slidesPerView: 1.1,
+		spaceBetween: 10,
+		loop: true,
+		speed: 600,
+		breakpoints: { 768: { slidesPerView: 3 } },
+	})
 
-  // doc.html: .testimonials__cards — сетка 2x1 на десктопе (через CSS),
-  // горизонтальный Swiper-свайпер на мобиле. На ≥768 Swiper не должен ломать
-  // CSS-grid, поэтому slidesPerView: 'auto' + spaceBetween: 0.
-  initSwiper('.testimonials__cards', {
-    slidesPerView: 1.1,
-    spaceBetween: 10,
-    loop: true,
-    speed: 600,
-    breakpoints: { 768: { slidesPerView: 'auto', spaceBetween: 0 } },
-  });
+	// doc.html: .testimonials__cards — сетка 2x1 на десктопе (через CSS),
+	// горизонтальный Swiper-свайпер на мобиле. На ≥768 Swiper не должен ломать
+	// CSS-grid, поэтому slidesPerView: 'auto' + spaceBetween: 0.
+	initSwiper('.testimonials__cards', {
+		slidesPerView: 1.1,
+		spaceBetween: 10,
+		loop: true,
+		speed: 600,
+		breakpoints: { 768: { slidesPerView: 'auto', spaceBetween: 0 } },
+	})
 
-  const gallerySwiper = initSwiper('.gallery__swiper', {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    loop: true,
-    speed: 600,
-    breakpoints: { 768: { slidesPerView: 1 } },
-  });
+	const gallerySwiper = initSwiper('.gallery__swiper', {
+		slidesPerView: 1,
+		spaceBetween: 10,
+		loop: true,
+		speed: 600,
+		breakpoints: { 768: { slidesPerView: 1 } },
+	})
 
-  const eventPartnersSwiper = initSwiper('.event-partners__swiper', {
-    slidesPerView: 1.1,
-    spaceBetween: 10,
-    loop: true,
-    speed: 600,
-    breakpoints: { 768: { slidesPerView: 3 } },
-  });
+	const eventPartnersSwiper = initSwiper('.event-partners__swiper', {
+		slidesPerView: 1.1,
+		spaceBetween: 10,
+		loop: true,
+		speed: 600,
+		breakpoints: { 768: { slidesPerView: 3 } },
+	})
 
-  initFactsSlider();
+	initFactsSlider()
 
-  const galleryDots = Array.from(document.querySelectorAll('.gallery__dot'));
-  if (gallerySwiper && galleryDots.length) {
-    const syncDots = () => {
-      galleryDots.forEach((dot, i) => {
-        dot.classList.toggle('is-active', i === gallerySwiper.realIndex);
-        dot.setAttribute('aria-selected', String(i === gallerySwiper.realIndex));
-      });
-    };
-    galleryDots.forEach((dot, i) => {
-      dot.addEventListener('click', () => gallerySwiper.slideTo(i));
-    });
-    gallerySwiper.on('slideChange', syncDots);
-    syncDots();
-  }
+	const galleryDots = Array.from(document.querySelectorAll('.gallery__dot'))
+	if (gallerySwiper && galleryDots.length) {
+		const syncDots = () => {
+			galleryDots.forEach((dot, i) => {
+				dot.classList.toggle('is-active', i === gallerySwiper.realIndex)
+				dot.setAttribute('aria-selected', String(i === gallerySwiper.realIndex))
+			})
+		}
+		galleryDots.forEach((dot, i) => {
+			dot.addEventListener('click', () => gallerySwiper.slideTo(i))
+		})
+		gallerySwiper.on('slideChange', syncDots)
+		syncDots()
+	}
 
-  [
-    ['.partners .carousel-nav', partnersSwiper],
-    ['.projects .carousel-nav', projectsSwiper],
-    ['.events .carousel-nav', eventsSwiper],
-    ['.events-featured .carousel-nav', eventsFeaturedSwiper],
-    ['.testimonials .carousel-nav', testimonialsSwiper],
-    ['.gallery .carousel-nav', gallerySwiper],
-  ].forEach(([selector, swiper]) => bindNav(selector, swiper));
+	;[
+		['.partners .carousel-nav', partnersSwiper],
+		['.projects .carousel-nav', projectsSwiper],
+		['.events .carousel-nav', eventsSwiper],
+		['.events-featured .carousel-nav', eventsFeaturedSwiper],
+		['.testimonials .carousel-nav', testimonialsSwiper],
+		['.gallery .carousel-nav', gallerySwiper],
+	].forEach(([selector, swiper]) => bindNav(selector, swiper))
 
-  const tabs = document.querySelector('.tabs');
-  if (tabs) {
-    const panels = document.querySelectorAll('.features__panel');
-    tabs.addEventListener('click', (e) => {
-      const btn = e.target.closest('.tabs__btn');
-      if (!btn) return;
-      tabs.querySelectorAll('.tabs__btn').forEach((b) => {
-        b.classList.remove('is-active');
-        b.setAttribute('aria-selected', 'false');
-      });
-      btn.classList.add('is-active');
-      btn.setAttribute('aria-selected', 'true');
-      const idx = btn.dataset.tab;
-      panels.forEach((p) => {
-        const on = p.dataset.tab === idx;
-        p.classList.toggle('is-active', on);
-        p.setAttribute('aria-hidden', String(!on));
-      });
-    });
-  }
+	const tabs = document.querySelector('.tabs')
+	if (tabs) {
+		const panels = document.querySelectorAll('.features__panel')
+		tabs.addEventListener('click', e => {
+			const btn = e.target.closest('.tabs__btn')
+			if (!btn) return
+			tabs.querySelectorAll('.tabs__btn').forEach(b => {
+				b.classList.remove('is-active')
+				b.setAttribute('aria-selected', 'false')
+			})
+			btn.classList.add('is-active')
+			btn.setAttribute('aria-selected', 'true')
+			const idx = btn.dataset.tab
+			panels.forEach(p => {
+				const on = p.dataset.tab === idx
+				p.classList.toggle('is-active', on)
+				p.setAttribute('aria-hidden', String(!on))
+			})
+		})
+	}
 
-// Request popup: phone mask + Just-validate (validates on input)
-function initRequestForm() {
-  const form = document.getElementById('request-form');
-  if (!form || typeof JustValidate === 'undefined') return;
+	// Request popup: phone mask + Just-validate (validates on input)
+	function initRequestForm() {
+		const form = document.getElementById('request-form')
+		if (!form || typeof JustValidate === 'undefined') return
 
-  if (typeof Fancybox !== 'undefined') {
-    Fancybox.bind('[data-fancybox]', { Toolbar: false, closeButton: false });
-  }
+		if (typeof Fancybox !== 'undefined') {
+			Fancybox.bind('[data-fancybox]', { Toolbar: false, closeButton: false })
+		}
 
-  const phone = form.querySelector('.js-phone');
-  const success = document.querySelector('#request-popup .modal-form__success');
-  const head = document.querySelector('#request-popup .modal-form__head');
+		const phone = form.querySelector('.js-phone')
+		const success = document.querySelector(
+			'#request-popup .modal-form__success',
+		)
+		const head = document.querySelector('#request-popup .modal-form__head')
 
-  if (phone) {
-    phone.addEventListener('input', () => {
-      let d = phone.value.replace(/\D/g, '');
-      if (d.startsWith('8')) d = '7' + d.slice(1);
-      if (d.startsWith('7')) d = d.slice(1);
-      d = d.slice(0, 10);
-      let out = '';
-      if (d.length) out = '+7 (' + d.slice(0, 3);
-      if (d.length > 3) out += ') ' + d.slice(3, 6);
-      if (d.length > 6) out += '-' + d.slice(6, 8);
-      if (d.length > 8) out += '-' + d.slice(8, 10);
-      phone.value = out;
-    });
-  }
+		if (phone) {
+			phone.addEventListener('input', () => {
+				let d = phone.value.replace(/\D/g, '')
+				if (d.startsWith('8')) d = '7' + d.slice(1)
+				if (d.startsWith('7')) d = d.slice(1)
+				d = d.slice(0, 10)
+				let out = ''
+				if (d.length) out = '+7 (' + d.slice(0, 3)
+				if (d.length > 3) out += ') ' + d.slice(3, 6)
+				if (d.length > 6) out += '-' + d.slice(6, 8)
+				if (d.length > 8) out += '-' + d.slice(8, 10)
+				phone.value = out
+			})
+		}
 
-  const validator = new JustValidate(form, {
-    validateOnBlur: true,
-    validateOnChange: true,
-    validateOnInput: true,
-    errorFieldStyle: {},
-    errorLabelStyle: { display: 'none' },
-    errorFieldCssClass: 'form-field--invalid',
-  });
+		const validator = new JustValidate(form, {
+			validateOnBlur: true,
+			validateOnChange: true,
+			validateOnInput: true,
+			errorFieldStyle: {},
+			errorLabelStyle: { display: 'none' },
+			errorFieldCssClass: 'form-field--invalid',
+		})
 
-  validator
-    .addField('.js-fio', [
-      { rule: 'required' },
-      { rule: 'minLength', value: 3 },
-    ])
-    .addField('.js-email', [
-      { rule: 'required' },
-      { rule: 'email' },
-    ])
-    .addField('.js-phone', [
-      { rule: 'required' },
-      {
-        validator: () => phone && phone.value.replace(/\D/g, '').length === 11,
-      },
-    ])
-    .addField('.js-consent', [{ rule: 'required' }]);
+		validator
+			.addField('.js-fio', [
+				{ rule: 'required' },
+				{ rule: 'minLength', value: 3 },
+			])
+			.addField('.js-email', [{ rule: 'required' }, { rule: 'email' }])
+			.addField('.js-phone', [
+				{ rule: 'required' },
+				{
+					validator: () =>
+						phone && phone.value.replace(/\D/g, '').length === 11,
+				},
+			])
+			.addField('.js-consent', [{ rule: 'required' }])
 
-  validator.onSuccess(() => {
-    if (head) head.classList.add('is-hidden');
-    form.classList.add('is-hidden');
-    if (success) success.classList.remove('is-hidden');
-  });
+		validator.onSuccess(() => {
+			if (head) head.classList.add('is-hidden')
+			form.classList.add('is-hidden')
+			if (success) success.classList.remove('is-hidden')
+		})
 
-  // reset form state when the popup closes
-  document.addEventListener('fancybox:afterClose', () => {
-    form.reset();
-    form.classList.remove('is-hidden');
-    if (head) head.classList.remove('is-hidden');
-    if (success) success.classList.add('is-hidden');
-    form.querySelectorAll('.form-field--invalid').forEach((el) => el.classList.remove('form-field--invalid'));
-  });
-}
+		// reset form state when the popup closes
+		document.addEventListener('fancybox:afterClose', () => {
+			form.reset()
+			form.classList.remove('is-hidden')
+			if (head) head.classList.remove('is-hidden')
+			if (success) success.classList.add('is-hidden')
+			form
+				.querySelectorAll('.form-field--invalid')
+				.forEach(el => el.classList.remove('form-field--invalid'))
+		})
+	}
 
-// History timeline (about.html): переключение текста + изображения по клику на год + плавный fade
-function initHistoryTimeline() {
-  const section = document.querySelector('.history');
-  if (!section) return;
+	// History timeline (about.html): переключение текста + изображения по клику на год + плавный fade
+	function initHistoryTimeline() {
+		const section = document.querySelector('.history')
+		if (!section) return
 
-  const years = Array.from(section.querySelectorAll('.history__year'));
-  const cards = Array.from(section.querySelectorAll('.history__card'));
-  const images = Array.from(section.querySelectorAll('.history__img'));
-  if (!years.length || !cards.length || !images.length) return;
+		const years = Array.from(section.querySelectorAll('.history__year'))
+		const cards = Array.from(section.querySelectorAll('.history__card'))
+		const images = Array.from(section.querySelectorAll('.history__img'))
+		if (!years.length || !cards.length || !images.length) return
 
-  let isAnimating = false;
+		let isAnimating = false
 
-  const activate = (year, withAnimation = true) => {
-    if (!year || isAnimating) return;
-    const targetCard = cards.find((c) => c.dataset.year === year);
-    const targetImg = images.find((i) => i.dataset.year === year);
-    if (!targetCard || !targetImg) return;
-    const currentCard = cards.find((c) => c.classList.contains('is-active'));
-    const currentImg = images.find((i) => i.classList.contains('is-active'));
+		const activate = (year, withAnimation = true) => {
+			if (!year || isAnimating) return
+			const targetCard = cards.find(c => c.dataset.year === year)
+			const targetImg = images.find(i => i.dataset.year === year)
+			if (!targetCard || !targetImg) return
+			const currentCard = cards.find(c => c.classList.contains('is-active'))
+			const currentImg = images.find(i => i.classList.contains('is-active'))
 
-    if (currentCard === targetCard) {
-      years.forEach((y) => {
-        const active = y.dataset.year === year;
-        y.classList.toggle('is-active', active);
-        y.setAttribute('aria-selected', active ? 'true' : 'false');
-      });
-      return;
-    }
+			if (currentCard === targetCard) {
+				years.forEach(y => {
+					const active = y.dataset.year === year
+					y.classList.toggle('is-active', active)
+					y.setAttribute('aria-selected', active ? 'true' : 'false')
+				})
+				return
+			}
 
-    if (!withAnimation) {
-      currentCard && currentCard.classList.remove('is-active');
-      currentImg && currentImg.classList.remove('is-active');
-      targetCard.classList.add('is-active');
-      targetImg.classList.add('is-active');
-      years.forEach((y) => {
-        const active = y.dataset.year === year;
-        y.classList.toggle('is-active', active);
-        y.setAttribute('aria-selected', active ? 'true' : 'false');
-      });
-      return;
-    }
+			if (!withAnimation) {
+				currentCard && currentCard.classList.remove('is-active')
+				currentImg && currentImg.classList.remove('is-active')
+				targetCard.classList.add('is-active')
+				targetImg.classList.add('is-active')
+				years.forEach(y => {
+					const active = y.dataset.year === year
+					y.classList.toggle('is-active', active)
+					y.setAttribute('aria-selected', active ? 'true' : 'false')
+				})
+				return
+			}
 
-    isAnimating = true;
-    currentCard && currentCard.classList.remove('is-active');
-    currentImg && currentImg.classList.remove('is-active');
+			isAnimating = true
+			currentCard && currentCard.classList.remove('is-active')
+			currentImg && currentImg.classList.remove('is-active')
 
-    requestAnimationFrame(() => {
-      targetCard.classList.add('is-active');
-      targetImg.classList.add('is-active');
-      years.forEach((y) => {
-        const active = y.dataset.year === year;
-        y.classList.toggle('is-active', active);
-        y.setAttribute('aria-selected', active ? 'true' : 'false');
-      });
-      const onEnd = (e) => {
-        if (e.propertyName !== 'opacity') return;
-        targetCard.removeEventListener('transitionend', onEnd);
-        targetImg.removeEventListener('transitionend', onEnd);
-        isAnimating = false;
-      };
-      targetCard.addEventListener('transitionend', onEnd);
-      targetImg.addEventListener('transitionend', onEnd);
-      setTimeout(() => { isAnimating = false; }, 500);
-    });
-  };
+			requestAnimationFrame(() => {
+				targetCard.classList.add('is-active')
+				targetImg.classList.add('is-active')
+				years.forEach(y => {
+					const active = y.dataset.year === year
+					y.classList.toggle('is-active', active)
+					y.setAttribute('aria-selected', active ? 'true' : 'false')
+				})
+				const onEnd = e => {
+					if (e.propertyName !== 'opacity') return
+					targetCard.removeEventListener('transitionend', onEnd)
+					targetImg.removeEventListener('transitionend', onEnd)
+					isAnimating = false
+				}
+				targetCard.addEventListener('transitionend', onEnd)
+				targetImg.addEventListener('transitionend', onEnd)
+				setTimeout(() => {
+					isAnimating = false
+				}, 500)
+			})
+		}
 
-  years.forEach((btn) => {
-    btn.addEventListener('click', () => activate(btn.dataset.year));
-    btn.addEventListener('keydown', (e) => {
-      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
-      e.preventDefault();
-      const i = years.indexOf(btn);
-      const next = e.key === 'ArrowRight'
-        ? years[(i + 1) % years.length]
-        : years[(i - 1 + years.length) % years.length];
-      next.focus();
-      activate(next.dataset.year);
-    });
-  });
+		years.forEach(btn => {
+			btn.addEventListener('click', () => activate(btn.dataset.year))
+			btn.addEventListener('keydown', e => {
+				if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return
+				e.preventDefault()
+				const i = years.indexOf(btn)
+				const next =
+					e.key === 'ArrowRight'
+						? years[(i + 1) % years.length]
+						: years[(i - 1 + years.length) % years.length]
+				next.focus()
+				activate(next.dataset.year)
+			})
+		})
 
-  const initial = cards.find((c) => c.classList.contains('is-active')) || cards[0];
-  activate(initial.dataset.year, false);
-}
+		const initial =
+			cards.find(c => c.classList.contains('is-active')) || cards[0]
+		activate(initial.dataset.year, false)
+	}
 
-// ponytail: catalog cards are links on desktop, accordion items on mobile (Figma 1742:13167)
-function initCatalogAccordion() {
-  const list = document.querySelector('.catalog__list');
-  if (!list) return;
-  const first = list.querySelector('.catalog__card');
-  if (first) first.classList.add('is-open');
-  list.addEventListener('click', (e) => {
-    if (window.innerWidth > 768) return;
-    const card = e.target.closest('.catalog__card');
-    if (!card) return;
-    e.preventDefault();
-    card.classList.toggle('is-open');
-  });
-}
+	// ponytail: catalog cards are links on desktop, accordion items on mobile (Figma 1742:13167)
+	function initCatalogAccordion() {
+		const list = document.querySelector('.catalog__list')
+		if (!list) return
+		const first = list.querySelector('.catalog__card')
+		if (first) first.classList.add('is-open')
+		list.addEventListener('click', e => {
+			if (window.innerWidth > 768) return
+			const card = e.target.closest('.catalog__card')
+			if (!card) return
+			e.preventDefault()
+			card.classList.toggle('is-open')
+		})
+	}
 
-// ponytail: eco-cards are a diagram on desktop, stacked accordion on mobile (Figma 403:77227)
-function initEcoAccordion() {
-  const list = document.querySelector('.ecosystem__diagram');
-  if (!list) return;
-  const cards = list.querySelectorAll('.eco-card');
-  if (cards.length) cards[cards.length - 1].classList.add('is-open');
-  list.addEventListener('click', (e) => {
-    if (window.innerWidth > 768) return;
-    const card = e.target.closest('.eco-card');
-    if (!card) return;
-    const isOpen = card.classList.contains('is-open');
-    list.querySelectorAll('.eco-card.is-open').forEach((c) => c.classList.remove('is-open'));
-    if (!isOpen) card.classList.add('is-open');
-  });
-}
+	// ponytail: eco-cards are a diagram on desktop, stacked accordion on mobile (Figma 403:77227)
+	function initEcoAccordion() {
+		const list = document.querySelector('.ecosystem__diagram')
+		if (!list) return
+		const cards = list.querySelectorAll('.eco-card')
+		if (cards.length) cards[cards.length - 1].classList.add('is-open')
+		list.addEventListener('click', e => {
+			if (window.innerWidth > 768) return
+			const card = e.target.closest('.eco-card')
+			if (!card) return
+			const isOpen = card.classList.contains('is-open')
+			list
+				.querySelectorAll('.eco-card.is-open')
+				.forEach(c => c.classList.remove('is-open'))
+			if (!isOpen) card.classList.add('is-open')
+		})
+	}
 
-  initAccordion('.tasks__list', 'is-open', '.tasks__q');
-  initAccordion('.faq__list', 'is-open', '.faq__q');
-  initHistoryTimeline();
-  initCatalogAccordion();
+	initAccordion('.tasks__list', 'is-open', '.tasks__q')
+	initAccordion('.faq__list', 'is-open', '.faq__q')
+	initHistoryTimeline()
+	initCatalogAccordion()
 
-  initClientsPage();
-  initDropdown();
-  initDemoPopup();
-  initVideoPopup();
-  initProgramTabs();
-  initMobileMenu();
-  initRequestForm();
-  initCookieBanner();
+	initClientsPage()
+	initDropdown()
+	initDemoPopup()
+	initVideoPopup()
+	initProgramTabs()
+	initMobileMenu()
+	initRequestForm()
+	initCookieBanner()
 
-  document.querySelectorAll('.tasks__item:first-child, .faq__item:first-child').forEach((el) => {
-    el.classList.add('is-open');
-    const b = el.querySelector('.tasks__q, .faq__q');
-    if (b) b.setAttribute('aria-expanded', 'true');
-  });
+	document
+		.querySelectorAll('.tasks__item:first-child, .faq__item:first-child')
+		.forEach(el => {
+			el.classList.add('is-open')
+			const b = el.querySelector('.tasks__q, .faq__q')
+			if (b) b.setAttribute('aria-expanded', 'true')
+		})
 });
 
 // Анимация печатной машинки только для динамического слова в hero

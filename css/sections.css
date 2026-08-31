@@ -738,7 +738,10 @@ body.is-search-open .header {
 .faq__item.is-open .faq__a {
   grid-template-rows: 1fr;
 }
+.faq__item.is-open .faq__q{
+  padding-bottom: 1rem;
 
+}
 .faq__item.is-open .faq__a > p {
   padding-bottom: 1.5rem;
 }
@@ -2003,9 +2006,7 @@ h3.client-title,
   justify-content: space-between;
   gap: var(--gap-lg);
   width: 100%;
-  /* Высота строки = паддинг, а не min-height: 2×40.5px + 24px контент = те же 105px.
-     Зазор вокруг вопроса (и до ответа) при необходимости переопределяется паддингом. */
-  padding: 2rem 0 1rem 0;
+  padding: 2rem 0 2rem 0;
   text-align: left;
   color: var(--color-black);
   transition: color 0.4s;
@@ -2704,38 +2705,70 @@ h2.client-title {
   margin: 2.5rem 2.5rem 2.5rem auto;
   width: 47.6%;
   background: var(--color-white);
-  padding: var(--gap-4xl) var(--gap-3xl);
+  padding: 2.5rem;
   box-sizing: border-box;
-  border-radius: var(--radius-lg);
+  border-radius: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2.5rem;
+    min-height: 30rem;
 }
 
 .contacts-map__title {
-  max-width: 31.25rem;
   font-size: var(--fs-h3);
-  line-height: 1.25;
-  margin-bottom: var(--gap-xl);
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 .contacts-map__cols {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--gap-md);
-  margin-top: var(--gap-4xl);
+  display: flex;
+  gap: 0.625rem;
 }
 
-.contacts-map__item {
-  margin-bottom: var(--gap-lg);
+.contacts-map__col {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contacts-map__label-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
 }
 
 .contacts-map__label {
   color: var(--color-grey);
   font-size: var(--fs-body-14);
-  margin-bottom: var(--gap-sm);
+  margin: 0;
+}
+
+.contacts-map__download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-grey);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contacts-map__download:hover {
+  color: var(--color-black);
+}
+
+.contacts-map__download svg {
+  display: block;
+  stroke: currentColor;
+  fill: none;
 }
 
 .contacts-map__value {
-  display: inline-block;
+  display: block;
   font-size: var(--fs-body-20);
+  line-height: 1.4;
   color: var(--color-black);
   text-decoration: none;
 }
@@ -2744,26 +2777,9 @@ a.contacts-map__value:hover {
   text-decoration: underline;
 }
 
-.contacts-map__social {
-  display: flex;
-  align-items: center;
-  gap: var(--gap-md);
-}
-
-.contacts-map__social-link {
-  display: inline-flex;
-}
-
-.contacts-map__social-link--hh {
-  height: 40px;
-  width: 40px;
-  align-items: center;
-  justify-content: center;
-  background: #D6001C;
-  border-radius: var(--radius-sm);
-  color: var(--color-white);
-  font-size: var(--fs-body-16);
-  font-weight: 700;
+.contacts-map__value--lg {
+  font-size: var(--fs-body-20);
+  line-height: 1.4;
 }
 
 .contacts-banner {
@@ -2776,38 +2792,31 @@ a.contacts-map__value:hover {
   gap: var(--gap-sm);
   background: var(--color-sea);
   border-radius: var(--radius-lg);
-  padding: var(--gap-4xl);
+    padding: 2rem 2.5rem;
 }
 
 .contacts-banner__title {
+  font-size: 4.375rem;
   line-height: 1.05;
   color: var(--color-white);
-  margin-bottom: var(--gap-xl);
+  font-weight: 500;
+  max-width: 400px;
 }
 
 .contacts-banner__label {
-  display: flex;
-  align-items: center;
-  gap: var(--gap-xs);
   color: var(--color-white);
   opacity: var(--opacity-70);
   font-size: var(--fs-body-14);
   margin-bottom: var(--gap-md);
 }
 
-.contacts-banner__reqs li {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: var(--fs-body-14);
-  line-height: 2;
-}
-
 .contacts-banner__contact .contacts-banner__phone {
   display: inline-block;
   color: var(--color-white);
-  font-size: var(--fs-h3);
+  font-size: 2.5rem;
   font-weight: 500;
   text-decoration: none;
-  margin-bottom: var(--gap-xl);
+  margin-bottom: 1rem;
 }
 
 .contacts-banner__email {
@@ -2816,7 +2825,7 @@ a.contacts-map__value:hover {
   font-size: var(--fs-body-20);
   font-weight: 500;
   text-decoration: none;
-  margin-bottom: var(--gap-xl);
+  margin-bottom: 4rem;
 }
 
 .contacts-banner__btn {
@@ -2844,11 +2853,17 @@ a.contacts-map__value:hover {
   gap: var(--gap-xl);
   background: rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-lg);
-  padding: var(--gap-lg) var(--gap-md);
+  padding: 2.5rem;
 }
 
 /* Аватар */
-.contacts-banner__avatar,
+.contacts-banner__avatar {
+  width: 8.125rem;
+  height: 8.125rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .program__avatar {
   width: 8.125rem;
   height: 8.125rem;
@@ -3951,7 +3966,6 @@ transition: background-color 0.4s, color 0.4s;
 .events-featured__col {
   position: relative;
   overflow: hidden;
-  border-radius: var(--radius-lg);
 }
 .events-featured__text-swiper,
 .events-featured__media-swiper {
@@ -3998,13 +4012,24 @@ transition: background-color 0.4s, color 0.4s;
   align-items: center;
   padding-right: 9rem;
 }
-/* Стрелки вынесены из слайдов, абсолютно в нижнем правом углу левой колонки —
-   совпадает с прежней позицией (внутри карточки, рядом с CTA). */
 .events-featured__nav {
-  position: absolute;
-  right: 2.5rem;
-  bottom: 2.5rem;
-  z-index: 2;
+    position: absolute;
+    padding-right: 2.5rem;
+    bottom: 0;
+    z-index: 2;
+    background: #fff;
+    right: 0;
+}
+.events-featured__nav .carousel-nav__btn.is-disabled {
+  opacity: 0.3;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Если watchOverflow скрыл кнопки — у слайдера нет навигации */
+.events-featured__nav:empty,
+.events-featured__nav .carousel-nav__btn[style*="display: none"] {
+  display: none;
 }
 .events-featured__media-slide {
   display: block;
