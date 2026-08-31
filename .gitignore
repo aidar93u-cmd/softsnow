@@ -7,7 +7,7 @@ figma-bridge/
 .roo/
 .vscode/
 plans/
-!.gitignore
+.gitignore
 # ai/session docs
 *.md
 docs/
@@ -15,5 +15,5 @@ docs/
 # ai junk: scripts/dumps
 *.py
 *.json
-!.stylelintrc.json
+.stylelintrc.json
 .kilo/
