@@ -151,72 +151,70 @@
       <div class="container">
         <div class="events-featured__panel">
           <h2 class="events-featured__title" data-aos="fade-up">Не&nbsp;пропустите ближайшие мероприятия</h2>
-          <div class="swiper events-featured__swiper" data-aos="fade-up" data-aos-delay="200">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide events-featured__slide" data-aos="fade-up" data-aos-delay="0">
-                <article class="events-featured__card">
-                  <div class="events-featured__content">
-                    <div class="events-featured__meta">
-                      <span class="events-featured__tag">Вебинар</span>
-                      <span class="events-featured__date">25 сентября 2025</span>
-                    </div>
-                    <h3 class="events-featured__name">Стратегический рывок: как настроить системную работу
-                      над&nbsp;будущим университета</h3>
+          <div class="events-featured__slider" data-aos="fade-up" data-aos-delay="200">
+            <div class="events-featured__col events-featured__col--text">
+              <div class="swiper events-featured__text-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide events-featured__text-slide">
+                    <article class="events-featured__card">
+                      <div class="events-featured__content">
+                        <div class="events-featured__meta">
+                          <span class="events-featured__tag">Вебинар</span>
+                          <span class="events-featured__date">25 сентября 2025</span>
+                        </div>
+                        <h3 class="events-featured__name">Стратегический рывок: как настроить системную работу
+                          над&nbsp;будущим университета</h3>
+                      </div>
+                      <div class="events-featured__actions">
+                        <a class="btn btn--outline btn--md" href="event-detail.html">Подробнее о&nbsp;мероприятии</a>
+                      </div>
+                    </article>
                   </div>
-                  <div class="events-featured__actions">
-                    <a class="btn btn--outline btn--md" href="event-detail.html">Подробнее о&nbsp;мероприятии</a>
-                    <div class="carousel-nav">
-                      <button class="carousel-nav__btn" type="button" data-scroll-prev
-                        aria-label="Предыдущее мероприятие">
-                        <svg width="15" height="14" viewBox="0 0 15 14" aria-hidden="true">
-                          <use href="assets/img/sprite.svg#icon-arrow-left" />
-                        </svg>
-                      </button>
-                      <button class="carousel-nav__btn" type="button" data-scroll-next
-                        aria-label="Следующее мероприятие">
-                        <svg width="15" height="14" viewBox="0 0 15 14" aria-hidden="true">
-                          <use href="assets/img/sprite.svg#icon-arrow-right" />
-                        </svg>
-                      </button>
-                    </div>
+                  <div class="swiper-slide events-featured__text-slide">
+                    <article class="events-featured__card">
+                      <div class="events-featured__content">
+                        <div class="events-featured__meta">
+                          <span class="events-featured__tag">Вебинар</span>
+                          <span class="events-featured__date">29 апреля 2026</span>
+                        </div>
+                        <h3 class="events-featured__name">Цифровая среда вуза: как связать сервисы, процессы и&nbsp;данные
+                        </h3>
+                      </div>
+                      <div class="events-featured__actions">
+                        <a class="btn btn--outline btn--md" href="event-detail.html">Подробнее о&nbsp;мероприятии</a>
+                      </div>
+                    </article>
                   </div>
-                </article>
-                <a class="events-featured__media" href="event-detail.html">
-                  <img src="assets/img/event1.jpg"
-                    alt="Стратегический рывок: как настроить системную работу над будущим университета">
-                </a>
+                </div>
               </div>
-              <div class="swiper-slide events-featured__slide" data-aos="fade-up" data-aos-delay="120">
-                <article class="events-featured__card">
-                  <div class="events-featured__content">
-                    <div class="events-featured__meta">
-                      <span class="events-featured__tag">Вебинар</span>
-                      <span class="events-featured__date">29 апреля 2026</span>
-                    </div>
-                    <h3 class="events-featured__name">Цифровая среда вуза: как связать сервисы, процессы и&nbsp;данные
-                    </h3>
-                  </div>
-                  <div class="events-featured__actions">
-                    <a class="btn btn--outline btn--md" href="event-detail.html">Подробнее о&nbsp;мероприятии</a>
-                    <div class="carousel-nav">
-                      <button class="carousel-nav__btn" type="button" data-scroll-prev
-                        aria-label="Предыдущее мероприятие">
-                        <svg width="15" height="14" viewBox="0 0 15 14" aria-hidden="true">
-                          <use href="assets/img/sprite.svg#icon-arrow-left" />
-                        </svg>
-                      </button>
-                      <button class="carousel-nav__btn" type="button" data-scroll-next
-                        aria-label="Следующее мероприятие">
-                        <svg width="15" height="14" viewBox="0 0 15 14" aria-hidden="true">
-                          <use href="assets/img/sprite.svg#icon-arrow-right" />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </article>
-                <a class="events-featured__media" href="event-detail.html">
-                  <img src="assets/img/webinar-2.png" alt="Цифровая среда вуза: как связать сервисы, процессы и данные">
-                </a>
+              <!-- Стрелки вынесены из слайдов: один экземпляр, привязан к text-swiper,
+                   media-swiper следует за realIndex через slideToLoop. -->
+              <div class="carousel-nav events-featured__nav">
+                <button class="carousel-nav__btn" type="button" data-scroll-prev
+                  aria-label="Предыдущее мероприятие">
+                  <svg width="15" height="14" viewBox="0 0 15 14" aria-hidden="true">
+                    <use href="assets/img/sprite.svg#icon-arrow-left" />
+                  </svg>
+                </button>
+                <button class="carousel-nav__btn" type="button" data-scroll-next
+                  aria-label="Следующее мероприятие">
+                  <svg width="15" height="14" viewBox="0 0 15 14" aria-hidden="true">
+                    <use href="assets/img/sprite.svg#icon-arrow-right" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="events-featured__col events-featured__col--media">
+              <div class="swiper events-featured__media-swiper">
+                <div class="swiper-wrapper">
+                  <a class="swiper-slide events-featured__media-slide" href="event-detail.html">
+                    <img src="assets/img/event1.jpg"
+                      alt="Стратегический рывок: как настроить системную работу над будущим университета">
+                  </a>
+                  <a class="swiper-slide events-featured__media-slide" href="event-detail.html">
+                    <img src="assets/img/webinar-2.png" alt="Цифровая среда вуза: как связать сервисы, процессы и данные">
+                  </a>
+                </div>
               </div>
             </div>
           </div>

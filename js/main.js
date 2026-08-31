@@ -182,6 +182,9 @@ function bindNav(selector, swiper) {
   const navs = document.querySelectorAll(selector);
   if (!navs.length || !swiper) return;
   navs.forEach((nav) => {
+    // ponytail: пропускаем клоны nav внутри .swiper-slide-duplicate (loop-слайды Swiper),
+    // чтобы обработчики не дублировались на скрытых копиях
+    if (nav.closest('.swiper-slide-duplicate')) return;
     const prev = nav.querySelector('[data-scroll-prev]');
     const next = nav.querySelector('[data-scroll-next]');
     if (prev) prev.addEventListener('click', () => swiper.slidePrev());
@@ -306,7 +309,8 @@ function initDropdown() {
   const empty = document.getElementById('projectsEmpty');
   const more = document.getElementById('projectsMore');
   const moreBtn = document.getElementById('projectsShowMore');
-  const STEP = 2;
+  // ponytail: шаг подгрузки равен числу карточек в строке — projects.html (3 в ряд) → 2, events.html (4 в ряд) → 4
+  const STEP = grid && grid.id === 'eventsGrid' ? 4 : 2;
   let visible = 4;
   let lastMatched = 0;
 
@@ -696,14 +700,39 @@ document.addEventListener('DOMContentLoaded', () => {
     breakpoints: { 768: { slidesPerView: 'auto' } },
   });
 
-  const eventsFeaturedSwiper = initSwiper('.events-featured__swiper', {
-    slidesPerView: 1.1,
-    spaceBetween: 10,
+  // ponytail: events-featured — синхронизированная пара слайдеров:
+  // слева текст, справа картинка, стрелки листают оба сразу.
+  // bindNav управляет text-swiper; media-swiper следует за его realIndex.
+  const eventsFeaturedTextSwiper = initSwiper('.events-featured__text-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 0,
     loop: true,
     speed: 800,
     effect: 'slide',
-    breakpoints: { 768: { slidesPerView: 'auto' } },
   });
+  const eventsFeaturedMediaSwiper = initSwiper('.events-featured__media-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    speed: 800,
+    effect: 'slide',
+  });
+  if (eventsFeaturedTextSwiper && eventsFeaturedMediaSwiper) {
+    let syncing = false;
+    eventsFeaturedTextSwiper.on('slideChange', () => {
+      if (syncing) return;
+      syncing = true;
+      eventsFeaturedMediaSwiper.slideToLoop(eventsFeaturedTextSwiper.realIndex, 800, false);
+      syncing = false;
+    });
+    eventsFeaturedMediaSwiper.on('slideChange', () => {
+      if (syncing) return;
+      syncing = true;
+      eventsFeaturedTextSwiper.slideToLoop(eventsFeaturedMediaSwiper.realIndex, 800, false);
+      syncing = false;
+    });
+  }
+  const eventsFeaturedSwiper = eventsFeaturedTextSwiper;
 
   const testimonialsSwiper = initSwiper('.testimonials__swiper', {
     slidesPerView: 1.1,
@@ -725,11 +754,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const gallerySwiper = initSwiper('.gallery__swiper', {
-    slidesPerView: 1.1,
+    slidesPerView: 1,
     spaceBetween: 10,
     loop: true,
     speed: 600,
-    breakpoints: { 768: { slidesPerView: 'auto' } },
+    breakpoints: { 768: { slidesPerView: 1 } },
   });
 
   const eventPartnersSwiper = initSwiper('.event-partners__swiper', {
@@ -953,6 +982,22 @@ function initCatalogAccordion() {
     if (!card) return;
     e.preventDefault();
     card.classList.toggle('is-open');
+  });
+}
+
+// ponytail: eco-cards are a diagram on desktop, stacked accordion on mobile (Figma 403:77227)
+function initEcoAccordion() {
+  const list = document.querySelector('.ecosystem__diagram');
+  if (!list) return;
+  const cards = list.querySelectorAll('.eco-card');
+  if (cards.length) cards[cards.length - 1].classList.add('is-open');
+  list.addEventListener('click', (e) => {
+    if (window.innerWidth > 768) return;
+    const card = e.target.closest('.eco-card');
+    if (!card) return;
+    const isOpen = card.classList.contains('is-open');
+    list.querySelectorAll('.eco-card.is-open').forEach((c) => c.classList.remove('is-open'));
+    if (!isOpen) card.classList.add('is-open');
   });
 }
 

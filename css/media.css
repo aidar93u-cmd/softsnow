@@ -299,14 +299,14 @@
 	}
 
 	/* Гриды в одну-две колонки (industries/projects настраивает
-	   секционный блок ниже; stats — тоже) */
+	   секционный блок ниже; stats — тоже).
+	   .events-featured__slider — отдельное правило ниже в блоке ≤768 */
 	.events-list__grid,
 	.audience__grid,
 	.seminar-topics__grid,
 	.vnedrenie__grid,
 	.services__grid,
-	.team__flex,
-	.events-featured__slide {
+	.team__flex {
 		grid-template-columns: 1fr;
 	}
 
@@ -3144,19 +3144,30 @@
 		margin-bottom: 1.5rem;
 	}
 
-	.events-featured__slide {
-		display: flex;
-		flex-direction: column;
-		gap: 1.5rem;
+	/* ponytail: на мобильном колонки стекаются (текст сверху, медиа снизу),
+	   стрелки скрыты, высота текста и медиа — естественная/ограниченная. */
+	.events-featured__slider {
+		grid-template-columns: 1fr;
+		gap: 0.75rem;
+	}
+
+	.events-featured__col {
+		border-radius: 0.625rem;
+	}
+
+	.events-featured__text-swiper,
+	.events-featured__media-swiper {
 		height: auto;
+	}
+
+	.events-featured__card {
 		padding: 1rem;
 		background: var(--color-white);
 		border-radius: 0.75rem;
 	}
 
-	.events-featured__card,
 	.events-featured__content {
-		display: contents;
+		gap: 1rem;
 	}
 
 	.events-featured__meta {
@@ -3175,16 +3186,10 @@
 		line-height: 1.2;
 	}
 
-	.events-featured__media {
-		order: 3;
-		height: 10rem;
-		margin: 0;
-		border-radius: 0.625rem;
-	}
-
 	.events-featured__actions {
-		order: 4;
+		order: 3;
 		padding-right: 0;
+		margin-top: 0.5rem;
 	}
 
 	.events-featured__actions .btn {
@@ -3193,7 +3198,12 @@
 		border-radius: 1.75rem;
 	}
 
-	.events-featured .carousel-nav {
+	.events-featured__media-slide {
+		height: 10rem;
+		border-radius: 0.625rem;
+	}
+
+	.events-featured__nav {
 		display: none;
 	}
 
@@ -3473,7 +3483,6 @@
 	}
 
 	.article-block--unified {
-		margin-bottom: 0;
 		padding: 0;
 	}
 	.article-block--unified .article-block__inner {
@@ -3586,7 +3595,7 @@
 		gap: 0.75rem;
 	}
 	.article-block--unified ul li {
-		padding-left: 2.25rem;
+		padding-left: 1.25rem;
 		font-size: 0.875rem;
 	}
 	.article-block--unified .article-block__stats {
@@ -5086,7 +5095,7 @@
 		border-radius: 1.75rem;
 	}
 
-	/* ---------- Vuz: ecosystem списком (≤768) ---------- */
+	/* ---------- Vuz: ecosystem — стопка-аккордеон (≤768, Figma 403:77227) ---------- */
 	.ecosystem {
 		margin-bottom: 3rem;
 	}
@@ -5097,72 +5106,80 @@
 	}
 
 	.ecosystem__title {
-		margin-bottom: 1.5rem;
-		font-size: 1.5rem;
-		letter-spacing: -0.04em;
+		margin-bottom: 2rem;
+		font-size: 1.75rem;
+		line-height: 1.05;
+		letter-spacing: -0.03em;
 	}
 
+	/* Карточки сложены вплотную: шаг 51px = высота свёрнутой карточки */
 	.ecosystem__diagram {
-		gap: 0.625rem;
-		margin-top: 1.5rem;
+		gap: 0;
+		margin-top: 0;
 	}
 
 	.ecosystem__col {
-		gap: 0.625rem;
+		gap: 0;
 	}
 
+	/* Ядро «Цифровая среда вуза» в мобильном макете отсутствует */
 	.ecosystem__center {
-		height: 14rem;
-		margin-bottom: 0.625rem;
+		display: none;
 	}
 
-	.ecosystem__glow--1 {
-		width: 22rem;
-		height: 22rem;
-	}
-
-	.ecosystem__glow--2 {
-		width: 16rem;
-		height: 16rem;
-	}
-
-	.ecosystem__core {
-		width: 9rem;
-		height: 9rem;
-		font-size: 0.9375rem;
-		gap: 0.25rem;
-	}
-
-	.ecosystem__core-icon {
-		width: 2.5rem;
-		height: 2.5rem;
-	}
-
+	/* Аккордеон-карточка: свёрнута — только заголовок (≈51px) */
 	.eco-card {
-		gap: 0.7rem;
+		display: block;
 		width: 100%;
 		min-height: 0;
-		padding: 0.75rem;
+		padding: 1.25rem 1rem 0.75rem;
+		background: var(--color-white);
 		border-radius: 0.75rem;
+		box-shadow: 0 2px 24px -4px rgba(19, 66, 243, 0.2);
+		cursor: pointer;
+	}
+
+	/* нейтрализуем десктопные сдвиги/сужение карточек в колонках */
+	.ecosystem__col--left .eco-card,
+	.ecosystem__col--right .eco-card,
+	.ecosystem__col--left .eco-card.eco-card--blue,
+	.ecosystem__col--right .eco-card.eco-card--orange {
+		max-width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	/* линии-потоки и иконки в мобильном макете отсутствуют */
+	.eco-card__line,
+	.eco-card__icon {
+		display: none;
+	}
+
+	/* плавное раскрытие: строка описания анимируется auto 0fr→auto 1fr
+	   (канон FAQ/tasks — sections.css .faq__a) */
+	.eco-card__body {
+		display: grid;
+		grid-template-rows: auto 0fr;
+		transition: grid-template-rows 0.4s;
+	}
+
+	.eco-card.is-open .eco-card__body {
+		grid-template-rows: auto 1fr;
 	}
 
 	.eco-card__title {
-		margin-bottom: 0.3125rem;
+		margin-bottom: 0;
 		font-size: 1rem;
 	}
 
+	/* зазоры — паддингами внутри сворачиваемой строки (маргины вне бокса
+	   не схлопываются вместе со строкой), как у .faq__a > p */
 	.eco-card__text {
+		min-height: 0;
+		overflow: hidden;
+		padding-top: 0.8125rem;
+		padding-bottom: 0.1875rem; /* нижний воздух развёрнутой карточки ≈106px */
 		font-size: 0.875rem;
-	}
-
-	.eco-card__icon {
-		width: 2rem;
-		height: 2rem;
-	}
-
-	.eco-card__icon svg {
-		width: 1.25rem;
-		height: 1.25rem;
 	}
 	.services__grid {
 		grid-template-columns: repeat(2, 1fr);
@@ -5228,4 +5245,16 @@
 	.history__stage {
 		min-height: auto;
 	}
+	
+.article-block--unified ol li::before {
+    min-width: 2rem;
+    height: 2rem;
+}
+.article-block--unified ol li {
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.article-block__text ul li::before {
+    top: 0.5rem;
+}
 }

@@ -2,7 +2,7 @@
 .superpowers/
 graphify-out/
 .graphify_*
-
+figma-bridge/
 # ai/session docs
 *.md
 docs/
