@@ -128,10 +128,10 @@
 
   <main>
     <section class="hero hero-main" aria-label="Главный экран">
-      <div class="container flex">
+      <div class="container flex" data-aos="fade-up">
         <div class="hero-block-inner">
           <video class="hero__video" src="assets/hero-video.mp4" autoplay muted loop playsinline></video>
-          <div class="hero__body" data-aos="fade-up">
+          <div class="hero__body" >
             <h1 class="hero__title">
               <span class="hero__brand">SoftSnow — </span>
               <span class="hero__static-part">надежный партнер в&nbsp;области </span>
@@ -143,7 +143,7 @@
           </div>
         </div>
 
-        <div class="hero__footer" data-aos="fade-up" data-aos-delay="400">
+        <div class="hero__footer">
           <div class="hero__note">
             <span class="hero__note_1">Российский аккредитованный разработчик и&nbsp;интегратор</span>
           </div>
@@ -414,12 +414,22 @@
               </a>
             </div>
             <div class="swiper-slide">
+              <a class="card partners__card" href="univer-online.html">
+                <h3 class="partners__name">Univer Online</h3>
+                <span class="partners__tag">Комплекс решений для вузов</span>
+                <img class="partners__logo" src="assets/img/logo-univer.png" alt="Univer Online" width="130" height="130">
+                <p class="partners__desc">Собственная цифровая платформа SoftSnow для вузов</p>
+                <svg class="partners__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
+                  <use href="assets/img/sprite.svg#icon-arrow" />
+                </svg>
+              </a>
+            </div>
+            <div class="swiper-slide">
               <a class="card partners__card" href="#">
-                <h3 class="partners__name">Moodle</h3>
-                <span class="partners__tag">Система дистанционного обучения</span>
-                <img class="partners__logo" src="assets/img/logo-moodle-3.png" alt="Moodle" width="130" height="130">
-                <p class="partners__desc">Платформа для организации онлайн-обучения, тестирования и&nbsp;учебных курсов
-                </p>
+                <h3 class="partners__name">Битрикс 24</h3>
+                <span class="partners__tag">Корпоративные порталы</span>
+                <img class="partners__logo" src="assets/img/logo-bitrix.png" alt="Битрикс 24" width="130" height="130">
+                <p class="partners__desc">Платформа для внутренних коммуникаций и&nbsp;совместной работы</p>
                 <svg class="partners__arrow" width="17" height="14" viewBox="0 0 17 14" aria-hidden="true">
                   <use href="assets/img/sprite.svg#icon-arrow" />
                 </svg>
@@ -647,7 +657,7 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <div class="footer__brand-top">
-          <div class="footer__logo">
+          <a href="index.html" v class="footer__logo">
             <svg class="logo__icon" width="222" height="67" viewBox="0 0 222 67" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path
@@ -684,7 +694,7 @@
               <path d="M144.11 26.1489V29.48H139.763V42.6577H136.271V29.48H131.924V26.1489H144.11Z" fill="white" />
               <path d="M108.189 23.1138V32.9497H105.302V23.1138H108.189Z" fill="white" />
             </svg>
-          </div>
+          </a>
           <p class="footer__tagline">Российский аккредитованный разработчик и&nbsp;интегратор</p>
         </div>
         <div class="footer__brand-bottom">

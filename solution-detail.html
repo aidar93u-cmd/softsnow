@@ -144,7 +144,7 @@
               консультацию</button>
           </div>
         </div>
-        <div class="hero__footer--stats" data-aos="fade-up" data-aos-delay="400">
+        <div class="hero__footer--stats">
           <div class="hero__stat">
             <span class="hero__num">-70%</span>
             <span class="hero__label">Времени на обработку заявлений</span>
@@ -162,10 +162,10 @@
       </div>
     </section>
 
-    <section class="registry" aria-label="Решение включено в реестр Минцифры">
+    <section class="registry" aria-label="Решение включено в реестр Минцифры" data-aos="fade-up" >
       <div class="container">
         <div class="registry__inner" data-aos="fade-up">
-          <div class="registry__inner-block registry__text" data-aos="fade-up" data-aos-delay="0">
+          <div class="registry__inner-block registry__text" >
             <h2 class="registry__title">Решение включено в реестр Минцифры</h2>
             <div class="registry__bottom">
               <p class="registry__desc">Сервис официально зарегистрирован в Едином реестре российских программ
@@ -173,11 +173,11 @@
               <a href="#" class="registry__desc_bottom">Реестровая запись №19240 от 23 сентября 2023 года.</a>
             </div>
           </div>
-          <div class="registry__inner-block  registry__img-wrap" data-aos="fade-up" data-aos-delay="200">
+          <div class="registry__inner-block  registry__img-wrap" >
             <img class="registry__img" src="assets/img/solution-image.jpg"
               alt="Свидетельство о регистрации в реестре Минцифры">
           </div>
-          <div class="registry__stats" data-aos="fade-up" data-aos-delay="400">
+          <div class="registry__stats">
             <div class="hero__stat">
               <span class="hero__num">-70%</span>
               <span class="hero__label">Времени на обработку заявлений</span>
@@ -416,23 +416,25 @@
             <div class="features__panels" data-aos="fade-up" data-aos-delay="400">
               <div class="features__panel is-active" data-tab="0" role="tabpanel">
                 <div class="features__content">
-                  <h3 class="features__name">Быстрый запуск конкурсных процедур в цифровом формате</h3>
-                  <p class="features__desc">Система позволяет размещать официальные объявления о начале конкурса или
-                    выборов, а претендентам — видеть актуальные позиции и подавать заявки через личный кабинет.</p>
-                  <ul class="features__points">
-                    <li class="features__point">
-                      <svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                      </svg>
-                      <span>Администрация быстрее запускает процедуру</span>
-                    </li>
-                    <li class="features__point">
-                      <svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                      </svg>
-                      <span>Кадровые службы сокращают ручную работу с документами</span>
-                    </li>
-                  </ul>
+                  <div class="features__content-inner">
+                    <h3 class="features__name">Быстрый запуск конкурсных процедур в цифровом формате</h3>
+                    <p class="features__desc">Система позволяет размещать официальные объявления о начале конкурса или
+                      выборов, а претендентам — видеть актуальные позиции и подавать заявки через личный кабинет.</p>
+                    <ul class="features__points">
+                      <li class="features__point">
+                        <svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
+                          <circle cx="3" cy="3" r="3" fill="#1342F3" />
+                        </svg>
+                        <span>Администрация быстрее запускает процедуру</span>
+                      </li>
+                      <li class="features__point">
+                        <svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
+                          <circle cx="3" cy="3" r="3" fill="#1342F3" />
+                        </svg>
+                        <span>Кадровые службы сокращают ручную работу с документами</span>
+                      </li>
+                    </ul>
+                  </div>
                   <button type="button" class="features__demo">
                     <img class="features__demo-icon" src="assets/img/features-demo.svg" width="69" height="45" alt="">
 
@@ -446,6 +448,7 @@
               </div>
               <div class="features__panel" data-tab="1" role="tabpanel" aria-hidden="true">
                 <div class="features__content">
+                  <div class="features__content-inner">
                   <h3 class="features__name">Приём и регистрация заявок в личном кабинете</h3>
                   <p class="features__desc">Претенденты заполняют электронные заявки, прикладывают документы и
                     отслеживают
@@ -470,6 +473,7 @@
                       <span>Документы хранятся в привязке к заявке</span>
                     </li>
                   </ul>
+                  </div>
                   <button type="button" class="features__demo">
                     <img class="features__demo-icon" src="assets/img/features-demo.svg" width="69" height="45" alt="">
                     <span class="features__demo-text">
@@ -482,6 +486,7 @@
               </div>
               <div class="features__panel" data-tab="2" role="tabpanel" aria-hidden="true">
                 <div class="features__content">
+                  <div class="features__content-inner">
                   <h3 class="features__name">Проверка документов и допуск к участию</h3>
                   <p class="features__desc">Комиссия проверяет комплектность документов и соответствие требованиям, а
                     сервис фиксирует решения по каждому претенденту и автоматически сообщает ему итог.</p>
@@ -505,6 +510,7 @@
                       <span>Уведомления о допуске или отказе — автоматически</span>
                     </li>
                   </ul>
+                  </div>
                   <button type="button" class="features__demo">
                     <img class="features__demo-icon" src="assets/img/features-demo.svg" width="69" height="45" alt="">
                     <span class="features__demo-text">
@@ -518,6 +524,7 @@
               </div>
               <div class="features__panel" data-tab="3" role="tabpanel" aria-hidden="true">
                 <div class="features__content">
+                  <div class="features__content-inner">
                   <h3 class="features__name">Мониторинг процедуры в реальном времени</h3>
                   <p class="features__desc">Руководство и комиссия видят актуальный статус конкурса: кто подал, кто
                     допущен,
@@ -542,6 +549,7 @@
                       <span>Отчётность по ходу процедуры без ручной сводки</span>
                     </li>
                   </ul>
+                  </div>
                   <button type="button" class="features__demo">
                     <img class="features__demo-icon" src="assets/img/features-demo.svg" width="69" height="45" alt="">
                     <span class="features__demo-text">
@@ -554,6 +562,7 @@
               </div>
               <div class="features__panel" data-tab="4" role="tabpanel" aria-hidden="true">
                 <div class="features__content">
+                  <div class="features__content-inner">
                   <h3 class="features__name">Архив процедур и аналитическая отчётность</h3>
                   <p class="features__desc">Завершённые конкурсы сохраняются в архиве, а сервис формирует отчёты для
                     кадровой службы и руководства — по соискателям, этапам и итоговым решениям.</p>
@@ -577,6 +586,7 @@
                       <span>Быстрый поиск по истории конкурсов</span>
                     </li>
                   </ul>
+                  </div>
                   <button type="button" class="features__demo">
                     <img class="features__demo-icon" src="assets/img/features-demo.svg" width="69" height="45" alt="">
                     <span class="features__demo-text">
@@ -596,8 +606,8 @@
     <section class="cta cta--blue" aria-label="Хотите увидеть, как это работает">
       <div class="container">
         <div class="cta--blue__inner" data-aos="fade-up">
-          <h2 class="cta--blue__title" data-aos="fade-up" data-aos-delay="0">Хотите увидеть, как это работает?</h2>
-          <p class="cta--blue__text" data-aos="fade-up" data-aos-delay="200">Покажем сервис на ваших сценариях, ответим на вопросы и поможем оценить, как его
+          <h2 class="cta--blue__title" >Хотите увидеть, как это работает?</h2>
+          <p  class="cta--blue__text" >Покажем сервис на ваших сценариях, ответим на вопросы и поможем оценить, как его
             можно встроить в текущие процессы.</p>
           <button class="btn btn--outline-white btn--lg" type="button" data-fancybox data-src="#request-popup">Запросить
             демонстрацию</button>
@@ -933,11 +943,11 @@
       <div class="container">
         <div class="cta__body" data-aos="fade-up">
           <div class="cta__content">
-            <h2 class="cta__title" data-aos="fade-up" data-aos-delay="0">Обсудим внедрение<br> в вашем университете?</h2>
-            <p class="cta__text" data-aos="fade-up" data-aos-delay="200">Свяжитесь с нами, чтобы обсудить ваш проект:
+            <h2 class="cta__title">Обсудим внедрение<br> в вашем университете?</h2>
+            <p class="cta__text">Свяжитесь с нами, чтобы обсудить ваш проект:
               ответим на вопросы, подберём подходящую конфигурацию
               и покажем сервис на ваших задачах.</p>
-            <button class="btn btn--primary btn--lg cta__btn" data-aos="fade-up" data-aos-delay="400" type="button" data-fancybox
+            <button class="btn btn--primary btn--lg cta__btn" type="button" data-fancybox
               data-src="#request-popup">Оставить заявку</button>
           </div>
         </div>
@@ -1052,7 +1062,7 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <div class="footer__brand-top">
-          <div class="footer__logo">
+          <a href="index.html" v class="footer__logo">
             <svg class="logo__icon" width="222" height="67" viewBox="0 0 222 67" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path
@@ -1089,7 +1099,7 @@
               <path d="M144.11 26.1489V29.48H139.763V42.6577H136.271V29.48H131.924V26.1489H144.11Z" fill="white" />
               <path d="M108.189 23.1138V32.9497H105.302V23.1138H108.189Z" fill="white" />
             </svg>
-          </div>
+          </a>
           <p class="footer__tagline">Российский аккредитованный разработчик и&nbsp;интегратор</p>
         </div>
         <div class="footer__brand-bottom">

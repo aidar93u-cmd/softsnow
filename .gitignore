@@ -1,0 +1,14 @@
+# scratch / local tooling
+.superpowers/
+graphify-out/
+.graphify_*
+
+# ai/session docs
+*.md
+docs/
+
+# ai junk: scripts/dumps
+*.py
+*.json
+!.stylelintrc.json
+.kilo/

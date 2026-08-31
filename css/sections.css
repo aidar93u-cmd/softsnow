@@ -230,7 +230,7 @@ body.is-search-open .header {
 .search-popup__panel {
   position: relative;
   padding: 3.75rem 0;
-  background: var(--bg-light);
+  background: var(--color-white);
   border-radius: 0 0 1.25rem 1.25rem;
   transform: translateY(-0.625rem);
   transition: transform 0.3s ease;
@@ -327,7 +327,12 @@ body.is-search-open .header {
 }
 .header.is-floating.is-visible .header__inner {
     border-radius: 1.25rem 1.25rem 0 0;
-    box-shadow: none;
+    border-radius: 1.25rem;
+    background:var(--color-white)
+}
+.is-search-open .header.is-floating.is-visible .header__inner {
+    border-radius: 1.25rem 1.25rem 0 0;
+  box-shadow: none
 }
 .header.is-floating.is-visible {
   transform: translateY(0);
@@ -347,7 +352,9 @@ body.is-search-open .header {
 /* ============ Hero ============ */
 .hero {
   position: relative;
-  height: 95dvh;
+    min-height: 80dvh;
+    max-height: 47rem;
+    height: 47rem;
   overflow: hidden;  
   margin-bottom: 0.625rem;
 }
@@ -439,7 +446,7 @@ body.is-search-open .header {
     font-weight: 500;
     line-height: 1.4;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     background-color: #f1eff0;
     border-radius: 0 0 1.25rem 1.25rem;
     justify-content: space-between;
@@ -834,7 +841,7 @@ body.is-search-open .header {
     margin-bottom: 0.625rem;
     background: var(--color-white);
     border-radius: var(--radius-lg);
-    padding: 1.875rem 2.5rem 0.9375rem;
+    padding: 2.5rem;
 }
 .partners__heading {
   max-width: 68.75rem;
@@ -1977,8 +1984,9 @@ h3.client-title,
   justify-content: space-between;
   gap: var(--gap-lg);
   width: 100%;
-  min-height: 6.5625rem;
-  padding: 0;
+  /* Высота строки = паддинг, а не min-height: 2×40.5px + 24px контент = те же 105px.
+     Зазор вокруг вопроса (и до ответа) при необходимости переопределяется паддингом. */
+  padding: 2.53125rem 0;
   text-align: left;
   color: var(--color-black);
   transition: color 0.4s;
@@ -2011,12 +2019,17 @@ h3.client-title,
   overflow: hidden;
   min-height: 0;
   margin: 0;
-  transition: padding-bottom 0.4s;
-    color: var(--color-dark-a70);
+  color: var(--color-dark-a70);
 }
 
-.faq__item.is-open .faq__a > p {
+/* FAQ: отступ после ответа статичный, внутри сворачиваемой строки —
+   анимируется только высота строки (grid-template-rows), плавно и без скачков */
+.faq__a > p {
   padding-bottom: 2.5rem;
+}
+
+.tasks__a > p {
+  transition: padding-bottom 0.4s;
 }
 
 /* ============ Catalog (страница «Решения») ============ */
@@ -2186,7 +2199,7 @@ h2.client-title {
   flex-shrink: 0;
   width: 4rem;
   height: 4rem;
-  border: 2px solid var(--color-black);
+  border: 2px solid var(--color-dark-a10);
   border-radius: var(--radius-full);
   font-size: var(--fs-body-20);
   font-weight: 500;
@@ -2675,12 +2688,12 @@ h2.client-title {
   background: var(--color-white);
   padding: var(--gap-4xl) var(--gap-3xl);
   box-sizing: border-box;
+  border-radius: var(--radius-lg);
 }
 
 .contacts-map__title {
   max-width: 31.25rem;
   font-size: var(--fs-h3);
-  font-weight: 600;
   line-height: 1.25;
   margin-bottom: var(--gap-xl);
 }
@@ -3321,7 +3334,6 @@ a.contacts-map__value:hover {
 .approach__label {
     margin-bottom: 1.5rem;
     text-align: center;
-    color: var(--color-grey);
 }
 .approach__text {
     margin: 0 auto;
@@ -4403,6 +4415,7 @@ transition: background-color 0.4s, color 0.4s;
     padding: 1.25rem 0;
   display: flex;
   flex-direction: column;
+    justify-content: space-between;
 }
 .features__name {
   margin-bottom: 1.875rem;
@@ -4559,7 +4572,7 @@ transition: background-color 0.4s, color 0.4s;
   position: relative;
   display: flex;
   gap: var(--gap-sm);
-  padding: 2.5rem 2.5rem 1.5625rem;
+  padding: 2.5rem 2.5rem;
   background: var(--color-white);
   border-radius: var(--radius-lg);
   text-decoration: none;
@@ -4724,7 +4737,7 @@ transition: background-color 0.4s, color 0.4s;
   display: flex;
   flex-direction: column;
   gap: 3.75rem;
-  width: 37.8125rem;
+  width: 35%;
   z-index: 3;
 }
 .ecosystem__center {
@@ -4738,6 +4751,7 @@ transition: background-color 0.4s, color 0.4s;
   height: 28.3125rem;
   transform: translate(-50%, -50%);
   pointer-events: none;
+  z-index: 4;
 }
 .ecosystem__glow {
   position: absolute;
@@ -4750,13 +4764,13 @@ transition: background-color 0.4s, color 0.4s;
 .ecosystem__glow--1 {
   width: 49.75rem;
   height: 49.75rem;
-  background: radial-gradient(50% 50% at 50% 50%, #F5F4F5 0%, #F5F4F5 75%, #1342F3 100%);
+  background: radial-gradient(50.03% 50.03% at 50% 50.03%, rgba(245, 244, 245, 0.2) 75%, rgba(19, 66, 243, 0.2) 100%);
   opacity: 0.1;
 }
 .ecosystem__glow--2 {
   width: 31.25rem;
-  height: 31.25rem;
-  background: radial-gradient(50% 50% at 50% 50%, #F5F4F5 0%, #F5F4F5 75%, #1342F3 100%);
+  height: 31.25rem;background: radial-gradient(50.03% 50.03% at 50% 50.03%, rgba(245, 244, 245, 0.5) 75%, rgba(19, 66, 243, 0.5) 100%);
+
   opacity: 0.1;
 }
 .ecosystem__core {
@@ -4785,15 +4799,13 @@ transition: background-color 0.4s, color 0.4s;
   line-height: 1;
 }
 .eco-card {
+  position: relative;
   display: flex;
   align-items: flex-start;
   gap: 1.25rem;
   width: 100%;
   min-height: 6.9375rem;
   padding: 1.25rem;
-  background: var(--color-white);
-  border: 1px solid rgba(34, 34, 34, 0.1);
-  border-radius: var(--radius-lg);
     z-index: 9;
 }
 .eco-card--right {
@@ -4809,7 +4821,6 @@ transition: background-color 0.4s, color 0.4s;
 .ecosystem__col--left .eco-card{
     max-width: calc(100% - 4rem);
     margin-left: auto;
-    background: var(--color-white);
 }
 
 .ecosystem__col--right .eco-card.eco-card--orange {
@@ -4867,6 +4878,48 @@ transition: background-color 0.4s, color 0.4s;
 .eco-card--orange .eco-card__icon {
   color: #E5640B;
   background: #FEF1E5;
+}
+
+/* Линии-«потоки» от карточек к центральному ядру (frame 4001:32461 «flow»):
+   1/6 — line-1.svg, 3/4 — line-2.svg (4/6 зеркальные), 2/5 — прямые CSS-линии */
+.eco-card__line {
+    position: absolute;
+    top: 50%;
+    z-index: -2;
+    width: 17.9375rem;
+    height: auto;
+    /* transform: translateY(-50%); */
+    pointer-events: none;
+}
+.ecosystem__col--left .eco-card__line {
+  right: auto;
+  left: 92%;
+}
+
+.ecosystem__col--left .eco-card--teal .eco-card__line{
+    top: -70%;
+}
+.ecosystem__col--right .eco-card--purple .eco-card__line{
+    top: -70%;
+}
+.ecosystem__col--right .eco-card__line {
+  left: auto;
+  right: 92%;
+}
+
+.eco-card__line--plain {
+  display: block;
+  height: 0.125rem;
+  background: var(--color-dark-a70);
+  opacity: 0.4; /* ритм совпадает с opacity кривых в line-*.svg */
+}
+.ecosystem__col--left .eco-card--blue .eco-card__line--plain {
+  background: #0132F3;
+  width: 14.46875rem; /* 119.5px — карточка 2 центрирована, надо до края ядра */
+}
+.ecosystem__col--right .eco-card--orange .eco-card__line--plain {
+  background: #E5640B;
+  width: 14.46875rem; /* 151.5px — карточка 5 смещена вправо, надо до края ядра */
 }
 
 /* ==== from pages/index.css ==== */

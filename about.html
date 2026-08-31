@@ -113,16 +113,16 @@
 
   <main>
     <section class="hero hero-vuz" aria-label="Помогаем организациям выстраивать и развивать цифровые процессы">
-      <div class="container flex">
+      <div class="container flex" data-aos="fade-up">
         <div class="hero-block-inner" style="background-image: url('assets/img/about-bg.jpg');">
-          <div class="hero__body" data-aos="fade-up">
+          <div class="hero__body">
             <h1 class="hero__title">Помогаем организациям выстраивать и развивать цифровые процессы</h1>
             <button class="btn btn--outline" type="button" data-fancybox data-src="#request-popup">Оставить
               заявку</button>
           </div>
         </div>
 
-        <div class="hero__footer" data-aos="fade-up" data-aos-delay="200">
+        <div class="hero__footer">
           <div class="hero__note">
             <span class="hero__note_1">Работаем на стыке технологий, интеграции и задач бизнеса, образования и
               госсектора</span>
@@ -223,22 +223,8 @@
     </section>
 
 
-    <section class="cta cta--blue" aria-label="Расскажите о вашей задаче">
-      <div class="container">
-        <div class="cta--blue__inner">
-          <h2 class="cta--blue__title">Скачайте&nbsp;подборку реализованных&nbsp;проектов</h2>
-          <p class="cta--blue__text">В одном материале — примеры реализованных решений, подходы к&nbsp;внедрению
-            и&nbsp;проекты из разных отраслей и сегментов.</p>
-          <a href="assets/img/about-award.png" download="" class="btn btn--outline-white btn--lg" type="button">
-            <span>Скачать презентацию</span>
-            <svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-download" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </section>
--->
+ 
+
     <section class="projects projects--about" aria-label="SoftSnow — аккредитованная IT-компания">
       <div class="container">
         <div class="projects__head" data-aos="fade-up">
@@ -284,11 +270,13 @@
           </div>
         </div>
     </section>
+-->
     <section class="approach" aria-label="Наш подход">
-      <div class="container">
-        <h3 class="approach__label" data-aos="fade-up">Наш подход</h3>
-        <h2 class="approach__text" data-aos="fade-up" data-aos-delay="200">SoftSnow&nbsp;— это не&nbsp;просто поставщик решения,<br>
-          <span>а&nbsp;команда, которая помогает пройти путь от&nbsp;задачи до&nbsp;работающей системы.</span>
+      <div class="container" data-aos="fade-up">
+        <h3 class="approach__label" >Наш подход</h3>
+        <h2 class="approach__text" >SoftSnow&nbsp;— это не&nbsp;просто поставщик
+          решения,<br>
+          <span>а&nbsp;команда, которая помогает пройти путь от&nbsp;задачи <br>до&nbsp;работающей системы</span>
         </h2>
       </div>
     </section>
@@ -322,54 +310,57 @@
             <div class="history__stage">
               <nav class="history__nav" aria-label="Годы истории">
                 <ul class="history__years" role="tablist">
-                  <li role="presentation"><button class="history__year is-active" type="button" role="tab" data-year="2026"
-                      aria-selected="true">2026</button></li>
-                  <li role="presentation"><button class="history__year" type="button" role="tab" data-year="2025"
-                      aria-selected="false">2025</button></li>
-                  <li role="presentation"><button class="history__year" type="button" role="tab" data-year="2024"
-                      aria-selected="false">2024</button></li>
-                  <li role="presentation"><button class="history__year" type="button" role="tab" data-year="2023"
-                      aria-selected="false">2023</button></li>
-                  <li role="presentation"><button class="history__year" type="button" role="tab" data-year="2022"
-                      aria-selected="false">2022</button></li>
                   <li role="presentation"><button class="history__year" type="button" role="tab" data-year="2021"
                       aria-selected="false">2021</button></li>
+                  <li role="presentation"><button class="history__year" type="button" role="tab" data-year="2022"
+                      aria-selected="false">2022</button></li>
+                  <li role="presentation"><button class="history__year" type="button" role="tab" data-year="2023"
+                      aria-selected="false">2023</button></li>
+                  <li role="presentation"><button class="history__year" type="button" role="tab" data-year="2024"
+                      aria-selected="false">2024</button></li>
+                  <li role="presentation"><button class="history__year" type="button" role="tab" data-year="2025"
+                      aria-selected="false">2025</button></li>
+                  <li role="presentation"><button class="history__year is-active" type="button" role="tab"
+                      data-year="2026" aria-selected="true">2026</button></li>
                 </ul>
               </nav>
 
-              <div class="history__panels" data-aos="fade-up" data-aos-delay="400">
-                <article class="history__card is-active" data-year="2026" data-aos="fade-up" data-aos-delay="0">
+              <div class="history__panels">
+                <article class="history__card is-active" data-year="2026">
                   <h3 class="history__title">Новые горизонты</h3>
-                  <p class="history__desc">Запуск федеральной программы цифровой трансформации вузов, расширение партнёрской
-                    экосистемы и&nbsp;выход в&nbsp;новые отраслевые сегменты. Команда выросла до&nbsp;150&nbsp;специалистов.
+                  <p class="history__desc">Запуск федеральной программы цифровой трансформации вузов, расширение
+                    партнёрской
+                    экосистемы и&nbsp;выход в&nbsp;новые отраслевые сегменты. Команда выросла
+                    до&nbsp;150&nbsp;специалистов.
                   </p>
                 </article>
 
-                <article class="history__card" data-year="2025" data-aos="fade-up" data-aos-delay="120">
+                <article class="history__card" data-year="2025">
                   <h3 class="history__title">Экосистема решений</h3>
                   <p class="history__desc">Объединили продукты Directum и&nbsp;Univer Online в&nbsp;единую экосистему,
                     открыли центр компетенций по&nbsp;ИИ и&nbsp;машинному обучению. Реализовали 80+ проектов.</p>
                 </article>
 
-                <article class="history__card" data-year="2024" data-aos="fade-up" data-aos-delay="240">
+                <article class="history__card" data-year="2024">
                   <h3 class="history__title">Лидерство в&nbsp;образовании</h3>
                   <p class="history__desc">SoftSnow вошёл в&nbsp;топ-3 интеграторов в&nbsp;сфере высшего образования.
                     Запустили собственный продукт Univer Online для автоматизации учебных процессов.</p>
                 </article>
 
-                <article class="history__card" data-year="2023" data-aos="fade-up" data-aos-delay="360">
+                <article class="history__card" data-year="2023">
                   <h3 class="history__title">Новый офис</h3>
                   <p class="history__desc">Переезд в&nbsp;собственный офис, открытие R&D-лаборатории и&nbsp;запуск
                     направления корпоративного обучения. Внедрение собственной LMS.</p>
                 </article>
 
-                <article class="history__card" data-year="2022" data-aos="fade-up" data-aos-delay="480">
+                <article class="history__card" data-year="2022">
                   <h3 class="history__title">Партнёрство с&nbsp;Directum</h3>
                   <p class="history__desc">Получение статуса Directum Gold Partner, реализация первых проектов
-                    по&nbsp;цифровизации документооборота в&nbsp;крупных холдингах и&nbsp;государственных структурах.</p>
+                    по&nbsp;цифровизации документооборота в&nbsp;крупных холдингах и&nbsp;государственных структурах.
+                  </p>
                 </article>
 
-                <article class="history__card" data-year="2021" data-aos="fade-up" data-aos-delay="600">
+                <article class="history__card" data-year="2021">
                   <h3 class="history__title">Основание компании</h3>
                   <p class="history__desc">SoftSnow начал путь как команда из&nbsp;5&nbsp;инженеров, увлечённых идеей
                     цифровой трансформации российских предприятий. Первый проект&nbsp;— система автоматизации для
@@ -380,24 +371,40 @@
           </div>
           <div class="history__right">
             <div class="history__media">
-                <img class="history__img is-active" src="assets/img/history.jpg" alt="Команда SoftSnow в&nbsp;2026 году"
-                  data-year="2026" loading="lazy">
-                <img class="history__img" src="assets/img/history.jpg" alt="Экосистема решений SoftSnow 2025"
-                  data-year="2025" loading="lazy">
-                <img class="history__img" src="assets/img/history.jpg" alt="SoftSnow в&nbsp;образовании 2024"
-                  data-year="2024" loading="lazy">
-                <img class="history__img" src="assets/img/history.jpg" alt="Новый офис SoftSnow 2023" data-year="2023"
-                  loading="lazy">
-                <img class="history__img" src="assets/img/history.jpg" alt="SoftSnow&nbsp;— Directum Gold Partner 2022"
-                  data-year="2022" loading="lazy">
-                <img class="history__img" src="assets/img/history.jpg" alt="Основание SoftSnow в&nbsp;2021 году"
-                  data-year="2021" loading="lazy">
+              <img class="history__img is-active" src="assets/img/history.jpg" alt="Команда SoftSnow в&nbsp;2026 году"
+                data-year="2026" loading="lazy">
+              <img class="history__img" src="assets/img/history.jpg" alt="Экосистема решений SoftSnow 2025"
+                data-year="2025" loading="lazy">
+              <img class="history__img" src="assets/img/history.jpg" alt="SoftSnow в&nbsp;образовании 2024"
+                data-year="2024" loading="lazy">
+              <img class="history__img" src="assets/img/history.jpg" alt="Новый офис SoftSnow 2023" data-year="2023"
+                loading="lazy">
+              <img class="history__img" src="assets/img/history.jpg" alt="SoftSnow&nbsp;— Directum Gold Partner 2022"
+                data-year="2022" loading="lazy">
+              <img class="history__img" src="assets/img/history.jpg" alt="Основание SoftSnow в&nbsp;2021 году"
+                data-year="2021" loading="lazy">
             </div>
-          </div>        
+          </div>
         </div>
-        
+
       </div>
     </section>
+
+  <section class="cta cta--blue" aria-label="Расскажите о вашей задаче">
+    <div class="container">
+      <div class="cta--blue__inner" data-aos="fade-up">
+        <h2 class="cta--blue__title">Скачайте&nbsp;подборку реализованных&nbsp;проектов</h2>
+        <p class="cta--blue__text">В одном материале — примеры реализованных решений, подходы к&nbsp;внедрению
+          и&nbsp;проекты из разных отраслей и сегментов.</p>
+        <a href="assets/img/about-award.png" download="" class="btn btn--outline-white btn--lg" type="button">
+          <span>Скачать презентацию</span>
+          <svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true">
+            <use href="assets/img/sprite.svg#icon-download" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
 
 
     <section class="team" aria-label="Наша команда">
@@ -553,7 +560,7 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <div class="footer__brand-top">
-          <div class="footer__logo">
+          <a href="index.html" v class="footer__logo">
             <svg class="logo__icon" width="222" height="67" viewBox="0 0 222 67" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path
@@ -590,7 +597,7 @@
               <path d="M144.11 26.1489V29.48H139.763V42.6577H136.271V29.48H131.924V26.1489H144.11Z" fill="white" />
               <path d="M108.189 23.1138V32.9497H105.302V23.1138H108.189Z" fill="white" />
             </svg>
-          </div>
+          </a>
           <p class="footer__tagline">Российский аккредитованный разработчик и&nbsp;интегратор</p>
         </div>
         <div class="footer__brand-bottom">
