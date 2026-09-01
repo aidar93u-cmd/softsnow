@@ -1,745 +1,691 @@
 ﻿<!DOCTYPE html>
 <html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+		<title>Цифровой сервис «Конкурс ППС» — SoftSnow</title>
+		<meta name="description" content="Решение для вузов, которое упрощает сбор и обработку заявлений, снижает нагрузку на сотрудников и делает процесс прозрачным для всех участников." />
+		<meta property="og:title" content="Цифровой сервис «Конкурс ППС» — SoftSnow" />
+		<meta property="og:description" content="Решение для вузов, которое упрощает сбор и обработку заявлений, снижает нагрузку на сотрудников и делает процесс прозрачным для всех участников." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="solution-detail.html" />
+		<meta property="og:image" content="assets/img/hero-bg.jpg" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-  <title>Цифровой сервис «Конкурс ППС» — SoftSnow</title>
-  <meta name="description"
-    content="Решение для вузов, которое упрощает сбор и обработку заявлений, снижает нагрузку на сотрудников и делает процесс прозрачным для всех участников.">
-  <meta property="og:title" content="Цифровой сервис «Конкурс ППС» — SoftSnow">
-  <meta property="og:description"
-    content="Решение для вузов, которое упрощает сбор и обработку заявлений, снижает нагрузку на сотрудников и делает процесс прозрачным для всех участников.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="solution-detail.html">
-  <meta property="og:image" content="assets/img/hero-bg.jpg">
+		<link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="assets/vendor/fancybox/fancybox.css" />
+		<link rel="stylesheet" href="assets/vendor/aos/aos.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/sections.css" />
+		<link rel="stylesheet" href="css/media.css" />
+	</head>
 
+	<body>
+		<header class="header header--sticky">
+			<div class="container">
+				<div class="header__inner">
+					<a href="index.html" class="logo" aria-label="SoftSnow — на главную">
+						<svg class="logo__mark" width="222" height="67" viewBox="0 0 222 67" aria-hidden="true">
+							<use href="assets/img/sprite.svg#logo-mark" width="64" height="67" fill="#1342F3" stroke="#1342F3" />
+							<use href="assets/img/sprite.svg#logo-wordmark" width="222" height="67" fill="#1342F3" />
+						</svg>
+					</a>
 
+					<nav class="header__nav" aria-label="Основная навигация">
+						<div class="header__nav-item">
+							<div class="header__dropdown">
+								<a href="#industries" class="header__link">
+									<span>Отрасли</span>
+									<svg class="header__caret" width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true">
+										<use href="assets/img/sprite.svg#icon-caret-header" />
+									</svg>
+								</a>
 
-  <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
-  <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
-  <link rel="stylesheet" href="assets/vendor/fancybox/fancybox.css">
-  <link rel="stylesheet" href="assets/vendor/aos/aos.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/sections.css">
-  <link rel="stylesheet" href="css/media.css">
-</head>
+								<div class="header__dropdown-panel">
+									<a href="vuz.html" class="header__dropdown-link">Высшие учебные заведения</a>
+									<a href="solutions.html" class="header__dropdown-link">Государственные учреждения</a>
+									<a href="solutions.html" class="header__dropdown-link">Бизнес</a>
+								</div>
+							</div>
+						</div>
 
-<body>
+						<div class="header__nav-item">
+							<div class="header__dropdown">
+								<a href="solutions.html" class="header__link">
+									<span>Решения</span>
+									<svg class="header__caret" width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true">
+										<use href="assets/img/sprite.svg#icon-caret-header" />
+									</svg>
+								</a>
 
-  <header class="header header--sticky">
-    <div class="container">
-      <div class="header__inner">
-        <a href="index.html" class="logo" aria-label="SoftSnow — на главную">
-          <svg class="logo__mark" width="222" height="67" viewBox="0 0 222 67" aria-hidden="true">
-            <use href="assets/img/sprite.svg#logo-mark" width="64" height="67" fill="#1342F3" stroke="#1342F3" />
-            <use href="assets/img/sprite.svg#logo-wordmark" width="222" height="67" fill="#1342F3" />
-          </svg>
-        </a>
+								<div class="header__dropdown-panel">
+									<a href="directum.html" class="header__dropdown-link">Электронный документооборот</a>
+									<a href="solution-detail.html" class="header__dropdown-link">Кадровый электронный документооборот</a>
+									<a href="univer-online.html" class="header__dropdown-link">Решения для вузов</a>
+									<a href="solution-detail.html" class="header__dropdown-link">Управление стратегией</a>
+									<a href="solution-detail.html" class="header__dropdown-link">Управление проектами</a>
+								</div>
+							</div>
+						</div>
 
-        <nav class="header__nav" aria-label="Основная навигация">
-          <div class="header__nav-item">
-            <div class="header__dropdown">
-              <a href="#industries" class="header__link">
-                <span>Отрасли</span>
-                <svg class="header__caret" width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true">
-                  <use href="assets/img/sprite.svg#icon-caret-header" />
-                </svg>
-              </a>
+						<div class="header__nav-item">
+							<a href="projects.html" class="header__link"><span>Проекты</span></a>
+						</div>
 
-              <div class="header__dropdown-panel">
-                <a href="vuz.html" class="header__dropdown-link">Высшие учебные заведения</a>
-                <a href="solutions.html" class="header__dropdown-link">Государственные учреждения</a>
-                <a href="solutions.html" class="header__dropdown-link">Бизнес</a>
-              </div>
-            </div>
-          </div>
+						<div class="header__nav-item">
+							<a href="clients.html" class="header__link"><span>Клиенты</span></a>
+						</div>
 
-          <div class="header__nav-item">
-            <div class="header__dropdown">
-              <a href="solutions.html" class="header__link">
-                <span>Решения</span>
-                <svg class="header__caret" width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true">
-                  <use href="assets/img/sprite.svg#icon-caret-header" />
-                </svg>
-              </a>
+						<div class="header__nav-item">
+							<a href="events.html" class="header__link"><span>Медиа</span></a>
+						</div>
 
-              <div class="header__dropdown-panel">
-                <a href="directum.html" class="header__dropdown-link">Электронный документооборот</a>
-                <a href="solution-detail.html" class="header__dropdown-link">Кадровый электронный документооборот</a>
-                <a href="univer-online.html" class="header__dropdown-link">Решения для вузов</a>
-                <a href="solution-detail.html" class="header__dropdown-link">Управление стратегией</a>
-                <a href="solution-detail.html" class="header__dropdown-link">Управление проектами</a>
-              </div>
-            </div>
+						<div class="header__nav-item">
+							<a href="about.html" class="header__link"><span>О нас</span></a>
+						</div>
+					</nav>
 
-          </div>
+					<button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+						<span></span>
+						<span></span>
+					</button>
+					<div class="header__contacts">
+						<div class="header__phone">
+							<a href="contacts.html" class="header__phone-label">Контакты</a>
+							<a href="tel:+78123201130" class="header__phone-num">+7 (812) 320-11-30</a>
+						</div>
+						<button class="btn btn--search" type="button" aria-label="Поиск">
+							<svg aria-hidden="true" width="15.9" height="15.9" viewBox="0 0 15.9 15.9">
+								<use href="assets/img/sprite.svg#icon-search" />
+							</svg>
+						</button>
+						<button class="btn btn--primary" type="button" data-fancybox data-src="#request-popup">Оставить заявку</button>
+					</div>
+				</div>
+			</div>
+		</header>
 
-          <div class="header__nav-item">
-            <a href="projects.html" class="header__link"><span>Проекты</span></a>
-          </div>
+		<main>
+			<section class="hero hero--solution" aria-label="Цифровой сервис «Конкурс ППС»">
+				<div class="container flex">
+					<div class="hero-block-inner" data-aos="fade-up" data-aos-delay="200">
+						<div class="hero__body">
+							<nav class="breadcrumb" aria-label="Хлебные крошки">
+								<a href="index.html">Главная</a>
+								<span class="breadcrumb__sep" aria-hidden="true">
+									<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M6 4L10 8L6 12" stroke="#222222" />
+									</svg>
+								</span>
+								<a href="solutions.html">Решения</a>
+								<span class="breadcrumb__sep" aria-hidden="true">
+									<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M6 4L10 8L6 12" stroke="#222222" />
+									</svg>
+								</span>
+								<span class="breadcrumb__current">Цифровой сервис «Конкурс ППС»</span>
+							</nav>
+							<h1 class="hero__title">Цифровой сервис «Конкурс ППС»</h1>
+							<p class="hero__sub">Решение для вузов, которое упрощает сбор и обработку заявлений, снижает нагрузку на сотрудников и делает процесс прозрачным для всех участников.</p>
+							<button class="btn btn--outline" type="button" data-fancybox data-src="#request-popup">Получить консультацию</button>
+						</div>
+					</div>
+					<div class="hero__footer--stats">
+						<div class="hero__stat">
+							<span class="hero__num">-70%</span>
+							<span class="hero__label">Времени на обработку заявлений</span>
+						</div>
+						<div class="hero__stat">
+							<span class="hero__num">100%</span>
+							<span class="hero__label">Этапов фиксируются в системе</span>
+						</div>
+						<div class="hero__stat">
+							<span class="hero__num">100%</span>
+							<span class="hero__label">Кадровых процедур — без бумаги</span>
+						</div>
+						<img class="hero__stats-img" src="assets/img/solution-stats.png" alt="" aria-hidden="true" />
+					</div>
+				</div>
+			</section>
 
-          <div class="header__nav-item">
-            <a href="clients.html" class="header__link"><span>Клиенты</span></a>
-          </div>
+			<section class="registry" aria-label="Решение включено в реестр Минцифры" data-aos="fade-up">
+				<div class="container">
+					<div class="registry__inner" data-aos="fade-up">
+						<div class="registry__inner-block registry__text">
+							<h2 class="registry__title">Решение включено в реестр Минцифры</h2>
+							<div class="registry__bottom">
+								<p class="registry__desc">Сервис официально зарегистрирован в Едином реестре российских программ для ЭВМ и баз данных Министерства цифрового развития РФ.</p>
+								<a href="#" class="registry__desc_bottom">Реестровая запись №19240 от 23 сентября 2023 года.</a>
+							</div>
+						</div>
+						<div class="registry__inner-block registry__img-wrap">
+							<img class="registry__img" src="assets/img/solution-image.jpg" alt="Свидетельство о регистрации в реестре Минцифры" />
+						</div>
+						<div class="registry__stats">
+							<div class="hero__stat">
+								<span class="hero__num">-70%</span>
+								<span class="hero__label">Времени на обработку заявлений</span>
+							</div>
+							<div class="hero__stat">
+								<span class="hero__num">100%</span>
+								<span class="hero__label">Этапов фиксируются в системе</span>
+							</div>
+							<div class="hero__stat">
+								<span class="hero__num">100%</span>
+								<span class="hero__label">Кадровых процедур — без бумаги</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-          <div class="header__nav-item">
-            <a href="events.html" class="header__link"><span>Медиа</span></a>
-          </div>
+			<section class="tasks" aria-label="Для каких задач подходит">
+				<div class="container">
+					<div class="tasks__inner" data-aos="fade-up">
+						<div class="tasks__head sticky-col" data-aos="fade-up" data-aos-delay="0">
+							<h2 class="tasks__title">Для каких задач подходит</h2>
+							<p class="tasks__sub">Сервис полностью автоматизирует процесс подготовки документов к проведению конкурсного отбора и выборов и помогает университету решать ключевые задачи.</p>
+						</div>
+						<ul class="tasks__list" data-aos="fade-up" data-aos-delay="200">
+							<li class="tasks__item is-open" data-aos="fade-up" data-aos-delay="0">
+								<button class="tasks__q" type="button" aria-expanded="true">
+									<span class="tasks__name">Публикация объявлений о проведении конкурса</span>
+									<span class="tasks__btn" aria-hidden="true">
+										<svg class="tasks__icon tasks__icon--plus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+											<path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+										<svg class="tasks__icon tasks__icon--minus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+											<path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+									</span>
+								</button>
+								<div class="tasks__a">
+									<p>
+										Официальные объявления о проведении конкурса или выборов публикуются<br />
+										в едином окне с указанием должностей, требований, сроков подачи и перечня необходимых документов. Претенденты сразу видят актуальные позиции и условия участия, а сотрудники вуза избавлены от ручного размещения информации
+										на разных площадках и рассылок по почте.
+									</p>
+								</div>
+							</li>
+							<li class="tasks__itemNone" data-aos="fade-up" data-aos-delay="120">
+								<button class="tasks__q" type="button" aria-expanded="false">
+									<span class="tasks__name">Подготовка и подача претендентами резюме и заявлений</span>
+									<span class="tasks__btn" aria-hidden="true">
+										<svg class="tasks__icon tasks__icon--plus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+											<path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+										<svg class="tasks__icon tasks__icon--minus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+											<path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+									</span>
+								</button>
+								<div class="tasks__a">
+									<p>
+										Претенденты готовят резюме и заявления в&nbsp;личном кабинете по&nbsp;единому шаблону. Система проверяет комплектность документов и&nbsp;сразу подсказывает, чего не&nbsp;хватает, чтобы заявка была принята
+										к&nbsp;рассмотрению без&nbsp;дополнительных уточнений и&nbsp;звонков.
+									</p>
+								</div>
+							</li>
+							<li class="tasks__itemNone" data-aos="fade-up" data-aos-delay="240">
+								<button class="tasks__q" type="button" aria-expanded="false">
+									<span class="tasks__name">Учёт всех поданных заявлений в единой системе</span>
+									<span class="tasks__btn" aria-hidden="true">
+										<svg class="tasks__icon tasks__icon--plus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+											<path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+										<svg class="tasks__icon tasks__icon--minus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+											<path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+									</span>
+								</button>
+								<div class="tasks__a">
+									<p>
+										Все поступившие заявления собираются в&nbsp;едином реестре: статусы, документы и&nbsp;сроки обновляются автоматически. Сотрудник видит полную картину конкурса в&nbsp;реальном времени и&nbsp;не&nbsp;тратит время
+										на&nbsp;сводку данных из&nbsp;писем и&nbsp;таблиц.
+									</p>
+								</div>
+							</li>
+							<li class="tasks__itemNone" data-aos="fade-up" data-aos-delay="360">
+								<button class="tasks__q" type="button" aria-expanded="false">
+									<span class="tasks__name">Предварительное рассмотрение кандидатур</span>
+									<span class="tasks__btn" aria-hidden="true">
+										<svg class="tasks__icon tasks__icon--plus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+											<path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+										<svg class="tasks__icon tasks__icon--minus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+											<path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+									</span>
+								</button>
+								<div class="tasks__a">
+									<p>
+										На&nbsp;этапе предварительного отбора система помогает проверять кандидатуры на&nbsp;соответствие формальным требованиям, фиксирует комментарии и&nbsp;решения по&nbsp;каждому претенденту. Весь процесс рассмотрения
+										прозрачен и&nbsp;воспроизводим для&nbsp;конкурсной комиссии.
+									</p>
+								</div>
+							</li>
+							<li class="tasks__itemNone" data-aos="fade-up" data-aos-delay="480">
+								<button class="tasks__q" type="button" aria-expanded="false">
+									<span class="tasks__name">Фиксация результатов конкурсного отбора и выборов</span>
+									<span class="tasks__btn" aria-hidden="true">
+										<svg class="tasks__icon tasks__icon--plus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+											<path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+										<svg class="tasks__icon tasks__icon--minus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+											<path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+									</span>
+								</button>
+								<div class="tasks__a">
+									<p>
+										Итоги конкурса фиксируются в&nbsp;системе автоматически: формируются протоколы, сохраняются решения комиссии и&nbsp;обоснования. Документы готовы к&nbsp;архивиции и&nbsp;предоставлению контролирующим органам
+										в&nbsp;установленном порядке.
+									</p>
+								</div>
+							</li>
+							<li class="tasks__itemNone" data-aos="fade-up" data-aos-delay="600">
+								<button class="tasks__q" type="button" aria-expanded="false">
+									<span class="tasks__name">Cвоевременное информирование всех участников</span>
+									<span class="tasks__btn" aria-hidden="true">
+										<svg class="tasks__icon tasks__icon--plus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+											<path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+										<svg class="tasks__icon tasks__icon--minus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+											<path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+									</span>
+								</button>
+								<div class="tasks__a">
+									<p>
+										Претенденты и&nbsp;комиссия получают уведомления о&nbsp;ключевых этапах: изменения статусов, новых объявлениях и&nbsp;результатах. Информация доставляется вовремя и&nbsp;не&nbsp;теряется, а&nbsp;все стороны всегда
+										в&nbsp;курсе хода процедуры.
+									</p>
+								</div>
+							</li>
+							<li class="tasks__itemNone" data-aos="fade-up" data-aos-delay="600">
+								<button class="tasks__q" type="button" aria-expanded="false">
+									<span class="tasks__name">Мониторинг и контроль на всех этапах процедуры</span>
+									<span class="tasks__btn" aria-hidden="true">
+										<svg class="tasks__icon tasks__icon--plus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+											<path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+										<svg class="tasks__icon tasks__icon--minus" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+											<path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+									</span>
+								</button>
+								<div class="tasks__a">
+									<p>
+										Руководство видит динамику конкурса на&nbsp;дашборде: сроки, загрузку, этапы и&nbsp;отклонения от&nbsp;графика. Отчёты формируются автоматически, что&nbsp;позволяет контролировать процедуру без&nbsp;ручного сбора
+										информации с&nbsp;разных площадок.
+									</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
 
-          <div class="header__nav-item">
-            <a href="about.html" class="header__link"><span>О нас</span></a>
-          </div>
+			<section class="audience" aria-label="Для кого предназначен">
+				<div class="container">
+					<h2 class="audience__title" data-aos="fade-up">
+						Для кого<br />
+						предназначен
+					</h2>
+					<div class="audience__grid" data-aos="fade-up" data-aos-delay="200">
+						<article class="card audience__card" data-aos="fade-up" data-aos-delay="0">
+							<h3 class="audience__name">Руководству университетов</h3>
+							<p class="audience__desc">Для централизованного контроля за соблюдением процедур и получения отчетности.</p>
+						</article>
+						<article class="card audience__card" data-aos="fade-up" data-aos-delay="120">
+							<h3 class="audience__name">Сотрудникам кадровых служб</h3>
+							<p class="audience__desc">Для автоматизации документооборота, сокращения бумажной работы и снижения числа ошибок при подготовке документов.</p>
+						</article>
+						<article class="card audience__card" data-aos="fade-up" data-aos-delay="240">
+							<h3 class="audience__name">Претендентам на должности</h3>
+							<p class="audience__desc">Для удобной подачи документов онлайн, отслеживания статуса заявки и получения обратной связи по каждому этапу.</p>
+						</article>
+						<article class="card audience__card" data-aos="fade-up" data-aos-delay="360">
+							<h3 class="audience__name">Участникам выборов</h3>
+							<p class="audience__desc">Для дистанционного участия в выборах руководителей подразделений без личного присутствия и бумажных бюллетеней.</p>
+						</article>
+					</div>
+				</div>
+			</section>
 
-        </nav>
+			<section class="features" aria-label="Функциональные возможности сервиса">
+				<div class="container">
+					<div class="features__inner" data-aos="fade-up">
+						<div class="features__head" data-aos="fade-up" data-aos-delay="0">
+							<h2 class="features__title">Функциональные возможности сервиса</h2>
+							<p class="features__sub">Мы продумали сервис так, чтобы он закрывал весь цикл конкурсных и выборных процедур — от подачи заявлений до контроля этапов и хранения данных.</p>
+						</div>
+						<div class="tabs" role="tablist" aria-label="Этапы работы с сервисом">
+							<button class="tabs__btn is-active" type="button" role="tab" data-tab="0" aria-selected="true">Запуск конкурса</button>
+							<button class="tabs__btn" type="button" role="tab" data-tab="1" aria-selected="false">Подача заявок</button>
+							<button class="tabs__btn" type="button" role="tab" data-tab="2" aria-selected="false">Проверка и допуск</button>
+							<button class="tabs__btn" type="button" role="tab" data-tab="3" aria-selected="false">Мониторинг и контроль</button>
+							<button class="tabs__btn" type="button" role="tab" data-tab="4" aria-selected="false">Архив и отчётность</button>
+						</div>
+						<div class="features__body" data-aos="fade-up" data-aos-delay="200">
+							<div class="features__panels" data-aos="fade-up" data-aos-delay="400">
+								<div class="features__panel is-active" data-tab="0" role="tabpanel">
+									<div class="features__content">
+										<div class="features__content-inner">
+											<h3 class="features__name">Быстрый запуск конкурсных процедур в цифровом формате</h3>
+											<p class="features__desc">Система позволяет размещать официальные объявления о начале конкурса или выборов, а претендентам — видеть актуальные позиции и подавать заявки через личный кабинет.</p>
+											<ul class="features__points">
+												<li class="features__point">
+													<svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
+														<circle cx="3" cy="3" r="3" fill="#1342F3" />
+													</svg>
+													<span>Администрация быстрее запускает процедуру</span>
+												</li>
+												<li class="features__point">
+													<svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
+														<circle cx="3" cy="3" r="3" fill="#1342F3" />
+													</svg>
+													<span>Кадровые службы сокращают ручную работу с документами</span>
+												</li>
+											</ul>
+										</div>
+										<button type="button" class="features__demo">
+											<img class="features__demo-icon" src="assets/img/features-demo.svg" width="69" height="45" alt="" />
 
-        <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false">
-          <span></span>
-          <span></span>
-        </button>
-        <div class="header__contacts">
-          <div class="header__phone">
-            <a href="contacts.html" class="header__phone-label">Контакты</a>
-            <a href="tel:+78123201130" class="header__phone-num">+7 (812) 320-11-30</a>
-          </div>
-          <button class="btn btn--search" type="button" aria-label="Поиск">
-            <svg aria-hidden="true" width="15.9" height="15.9" viewBox="0 0 15.9 15.9">
-              <use href="assets/img/sprite.svg#icon-search" />
-            </svg>
-          </button>
-          <button class="btn btn--primary" type="button" data-fancybox data-src="#request-popup">Оставить
-            заявку</button>
-        </div>
-      </div>
-    </div>
-  </header>
+											<span class="features__demo-text">
+												<span class="features__demo-title">Посмотреть интерфейс</span>
+												<span class="features__demo-sub">Экраны из реальной работы сервиса</span>
+											</span>
+										</button>
+									</div>
+									<img class="features__img" src="assets/img/popup1.jpg" alt="Экран интерфейса сервиса — запуск конкурса" />
+								</div>
+								<div class="features__panel" data-tab="1" role="tabpanel" aria-hidden="true">
+									<div class="features__content">
+										<div class="features__content-inner">
+											<h3 class="features__name">Приём и регистрация заявок в личном кабинете</h3>
+											<p class="features__desc">Претенденты заполняют электронные заявки, прикладывают документы и отслеживают статус. Кадровая служба видит все заявления в едином реестре без ручной переписки.</p>
+											<ul class="features__points">
+												<li class="features__point">
+													<svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
+														<circle cx="3" cy="3" r="3" fill="#1342F3" />
+													</svg>
+													<span>Заявки поступают сразу в единый реестр</span>
+												</li>
+												<li class="features__point">
+													<svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
+														<circle cx="3" cy="3" r="3" fill="#1342F3" />
+													</svg>
+													<span>Автоматические напоминания о сроках подачи</span>
+												</li>
+												<li class="features__point">
+													<svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
+														<circle cx="3" cy="3" r="3" fill="#1342F3" />
+													</svg>
+													<span>Документы хранятся в привязке к заявке</span>
+												</li>
+											</ul>
+										</div>
+										<button type="button" class="features__demo">
+											<img class="features__demo-icon" src="assets/img/features-demo.svg" width="69" height="45" alt="" />
+											<span class="features__demo-text">
+												<span class="features__demo-title">Посмотреть интерфейс</span>
+												<span class="features__demo-sub">Экраны из реальной работы сервиса</span>
+											</span>
+										</button>
+									</div>
+									<img class="features__img" src="assets/img/popup2.jpg" alt="Экран интерфейса сервиса — подача заявок" />
+								</div>
+								<div class="features__panel" data-tab="2" role="tabpanel" aria-hidden="true">
+									<div class="features__content">
+										<div class="features__content-inner">
+											<h3 class="features__name">Проверка документов и допуск к участию</h3>
+											<p class="features__desc">Комиссия проверяет комплектность документов и соответствие требованиям, а сервис фиксирует решения по каждому претенденту и автоматически сообщает ему итог.</p>
+											<ul class="features__points">
+												<li class="features__point">
+													<svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
+														<circle cx="3" cy="3" r="3" fill="#1342F3" />
+													</svg>
+													<span>Прозрачные чек-листы проверки документов</span>
+												</li>
+												<li class="features__point">
+													<svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
+														<circle cx="3" cy="3" r="3" fill="#1342F3" />
+													</svg>
+													<span>Решения комиссии фиксируются в системе</span>
+												</li>
+												<li class="features__point">
+													<svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
+														<circle cx="3" cy="3" r="3" fill="#1342F3" />
+													</svg>
+													<span>Уведомления о допуске или отказе — автоматически</span>
+												</li>
+											</ul>
+										</div>
+										<button type="button" class="features__demo">
+											<img class="features__demo-icon" src="assets/img/features-demo.svg" width="69" height="45" alt="" />
+											<span class="features__demo-text">
+												<span class="features__demo-title">Посмотреть интерфейс</span>
+												<span class="features__demo-sub">Экраны из реальной работы сервиса</span>
+											</span>
+										</button>
+									</div>
+									<img class="features__img" src="assets/img/popup3.jpg" alt="Экран интерфейса сервиса — проверка документов" />
+								</div>
+								<div class="features__panel" data-tab="3" role="tabpanel" aria-hidden="true">
+									<div class="features__content">
+										<div class="features__content-inner">
+											<h3 class="features__name">Мониторинг процедуры в реальном времени</h3>
+											<p class="features__desc">Руководство и комиссия видят актуальный статус конкурса: кто подал, кто допущен, какие сроки истекают. Это упрощает контроль и снижает риск ошибок по срокам.</p>
+											<ul class="features__points">
+												<li class="features__point">
+													<svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
+														<circle cx="3" cy="3" r="3" fill="#1342F3" />
+													</svg>
+													<span>Единая картина по всем активным процедурам</span>
+												</li>
+												<li class="features__point">
+													<svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
+														<circle cx="3" cy="3" r="3" fill="#1342F3" />
+													</svg>
+													<span>Контроль сроков и автоматические напоминания</span>
+												</li>
+												<li class="features__point">
+													<svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
+														<circle cx="3" cy="3" r="3" fill="#1342F3" />
+													</svg>
+													<span>Отчётность по ходу процедуры без ручной сводки</span>
+												</li>
+											</ul>
+										</div>
+										<button type="button" class="features__demo">
+											<img class="features__demo-icon" src="assets/img/features-demo.svg" width="69" height="45" alt="" />
+											<span class="features__demo-text">
+												<span class="features__demo-title">Посмотреть интерфейс</span>
+												<span class="features__demo-sub">Экраны из реальной работы сервиса</span>
+											</span>
+										</button>
+									</div>
+									<img class="features__img" src="assets/img/popup4.jpg" alt="Экран интерфейса сервиса — мониторинг" />
+								</div>
+								<div class="features__panel" data-tab="4" role="tabpanel" aria-hidden="true">
+									<div class="features__content">
+										<div class="features__content-inner">
+											<h3 class="features__name">Архив процедур и аналитическая отчётность</h3>
+											<p class="features__desc">Завершённые конкурсы сохраняются в архиве, а сервис формирует отчёты для кадровой службы и руководства — по соискателям, этапам и итоговым решениям.</p>
+											<ul class="features__points">
+												<li class="features__point">
+													<svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
+														<circle cx="3" cy="3" r="3" fill="#1342F3" />
+													</svg>
+													<span>Хранение всех документов в едином архиве</span>
+												</li>
+												<li class="features__point">
+													<svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
+														<circle cx="3" cy="3" r="3" fill="#1342F3" />
+													</svg>
+													<span>Готовые отчёты по итогам каждой процедуры</span>
+												</li>
+												<li class="features__point">
+													<svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
+														<circle cx="3" cy="3" r="3" fill="#1342F3" />
+													</svg>
+													<span>Быстрый поиск по истории конкурсов</span>
+												</li>
+											</ul>
+										</div>
+										<button type="button" class="features__demo">
+											<img class="features__demo-icon" src="assets/img/features-demo.svg" width="69" height="45" alt="" />
+											<span class="features__demo-text">
+												<span class="features__demo-title">Посмотреть интерфейс</span>
+												<span class="features__demo-sub">Экраны из реальной работы сервиса</span>
+											</span>
+										</button>
+									</div>
+									<img class="features__img" src="assets/img/popup5.jpg" alt="Экран интерфейса сервиса — архив" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-  <main>
-    <section class="hero hero--solution" aria-label="Цифровой сервис «Конкурс ППС»">
-      <div class="container flex">
-        <div class="hero-block-inner" data-aos="fade-up" data-aos-delay="200">
-          <div class="hero__body">
-            <nav class="breadcrumb" aria-label="Хлебные крошки">
-              <a href="index.html">Главная</a>
-              <span class="breadcrumb__sep" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 16 16"
-                  fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 4L10 8L6 12" stroke="#222222" />
-                </svg>
-              </span>
-              <a href="solutions.html">Решения</a>
-              <span class="breadcrumb__sep" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 16 16"
-                  fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 4L10 8L6 12" stroke="#222222" />
-                </svg>
-              </span>
-              <span class="breadcrumb__current">Цифровой сервис «Конкурс ППС»</span>
-            </nav>
-            <h1 class="hero__title">Цифровой сервис «Конкурс ППС»</h1>
-            <p class="hero__sub" >Решение для вузов, которое упрощает сбор и обработку заявлений, снижает нагрузку на
-              сотрудников и делает процесс прозрачным для всех участников.</p>
-            <button class="btn btn--outline" type="button" data-fancybox data-src="#request-popup">Получить
-              консультацию</button>
-          </div>
-        </div>
-        <div class="hero__footer--stats">
-          <div class="hero__stat">
-            <span class="hero__num">-70%</span>
-            <span class="hero__label">Времени на обработку заявлений</span>
-          </div>
-          <div class="hero__stat">
-            <span class="hero__num">100%</span>
-            <span class="hero__label">Этапов фиксируются в системе</span>
-          </div>
-          <div class="hero__stat">
-            <span class="hero__num">100%</span>
-            <span class="hero__label">Кадровых процедур — без бумаги</span>
-          </div>
-          <img class="hero__stats-img" src="assets/img/solution-stats.png" alt="" aria-hidden="true">
-        </div>
-      </div>
-    </section>
+			<section class="cta cta--blue" aria-label="Хотите увидеть, как это работает">
+				<div class="container">
+					<div class="cta--blue__inner" data-aos="fade-up">
+						<h2 class="cta--blue__title">Хотите увидеть, как это работает?</h2>
+						<p class="cta--blue__text">Покажем сервис на ваших сценариях, ответим на вопросы и поможем оценить, как его можно встроить в текущие процессы.</p>
+						<button class="btn btn--outline-white btn--lg" type="button" data-fancybox data-src="#request-popup">Запросить демонстрацию</button>
+					</div>
+				</div>
+			</section>
 
-    <section class="registry" aria-label="Решение включено в реестр Минцифры" data-aos="fade-up" >
-      <div class="container">
-        <div class="registry__inner" data-aos="fade-up">
-          <div class="registry__inner-block registry__text" >
-            <h2 class="registry__title">Решение включено в реестр Минцифры</h2>
-            <div class="registry__bottom">
-              <p class="registry__desc">Сервис официально зарегистрирован в Едином реестре российских программ
-                для ЭВМ и баз данных Министерства цифрового развития РФ.</p>
-              <a href="#" class="registry__desc_bottom">Реестровая запись №19240 от 23 сентября 2023 года.</a>
-            </div>
-          </div>
-          <div class="registry__inner-block  registry__img-wrap" >
-            <img class="registry__img" src="assets/img/solution-image.jpg"
-              alt="Свидетельство о регистрации в реестре Минцифры">
-          </div>
-          <div class="registry__stats">
-            <div class="hero__stat">
-              <span class="hero__num">-70%</span>
-              <span class="hero__label">Времени на обработку заявлений</span>
-            </div>
-            <div class="hero__stat">
-              <span class="hero__num">100%</span>
-              <span class="hero__label">Этапов фиксируются в системе</span>
-            </div>
-            <div class="hero__stat">
-              <span class="hero__num">100%</span>
-              <span class="hero__label">Кадровых процедур — без бумаги</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+			<section class="testimonials" aria-label="Что говорят клиенты">
+				<div class="container">
+					<div class="testimonials__head" data-aos="fade-up">
+						<h2 class="testimonials__title">Что говорят клиенты</h2>
+						<div class="carousel-nav">
+							<button class="carousel-nav__btn" type="button" data-scroll-prev aria-label="Назад">
+								<svg width="15" height="14" viewBox="0 0 15 14" aria-hidden="true">
+									<use href="assets/img/sprite.svg#icon-arrow-left" />
+								</svg>
+							</button>
+							<button class="carousel-nav__btn" type="button" data-scroll-next aria-label="Вперёд">
+								<svg width="15" height="14" viewBox="0 0 15 14" aria-hidden="true">
+									<use href="assets/img/sprite.svg#icon-arrow-right" />
+								</svg>
+							</button>
+						</div>
+					</div>
+					<div class="swiper testimonials__swiper" data-aos="fade-up" data-aos-delay="200">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<article class="card testimonials__card" data-aos="fade-up" data-aos-delay="0">
+									<svg aria-hidden="true" class="testimonials__quote" width="29" height="24" viewBox="0 0 29 24">
+										<use href="assets/img/sprite.svg#icon-quote" />
+									</svg>
+									<p class="testimonials__text">
+										Для нас было важно не просто внедрить отдельный сервис, а выстроить связанную цифровую среду. Команда SoftSnow глубоко погрузилась в задачу и предложила решение, которое органично встроилось в наш ИТ‑контур.
+									</p>
+									<div class="testimonials__footer">
+										<div class="testimonials__footer-right">
+											<img class="testimonials__logo" src="assets/img/logo-polymetal.png" alt="Полиметалл" width="60" height="50" />
+											<div class="testimonials__author">
+												<span class="testimonials__name">Имя Фамилия</span>
+												<span class="testimonials__role">Должность, компания</span>
+											</div>
+										</div>
+										<a href="#" download class="show_pdf">Смотреть PDF</a>
+									</div>
+								</article>
+							</div>
+							<div class="swiper-slide">
+								<article class="card testimonials__card" data-aos="fade-up" data-aos-delay="120">
+									<svg aria-hidden="true" class="testimonials__quote" width="29" height="24" viewBox="0 0 29 24">
+										<use href="assets/img/sprite.svg#icon-quote" />
+									</svg>
+									<p class="testimonials__text">
+										Команде был важен не только технический результат, но и способность понимать специфику вуза: сложную структуру и множество ролей. SoftSnow — сильный партнёр, который умеет работать и с процессами, и с интеграциями.
+									</p>
 
-    <section class="tasks" aria-label="Для каких задач подходит">
-      <div class="container">
-        <div class=" tasks__inner" data-aos="fade-up">
-          <div class="tasks__head sticky-col" data-aos="fade-up" data-aos-delay="0">
-            <h2 class="tasks__title">Для каких задач подходит</h2>
-            <p class="tasks__sub">Сервис полностью автоматизирует процесс подготовки документов к проведению
-              конкурсного отбора и выборов и помогает университету решать ключевые задачи.</p>
-          </div>
-          <ul class="tasks__list" data-aos="fade-up" data-aos-delay="200">
-            <li class="tasks__item is-open" data-aos="fade-up" data-aos-delay="0">
-              <button class="tasks__q" type="button" aria-expanded="true">
-                <span class="tasks__name">Публикация объявлений о проведении конкурса</span>
-                <span class="tasks__btn" aria-hidden="true">
-                  <svg class="tasks__icon tasks__icon--plus" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    aria-hidden="true">
-                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                  <svg class="tasks__icon tasks__icon--minus" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    aria-hidden="true">
-                    <path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </span>
-              </button>
-              <div class="tasks__a">
-                <p>Официальные объявления о проведении конкурса или выборов публикуются<br> в едином окне с указанием
-                  должностей, требований, сроков подачи и перечня необходимых документов. Претенденты сразу видят
-                  актуальные позиции и условия участия, а сотрудники вуза избавлены от ручного размещения информации на
-                  разных площадках и рассылок по почте.</p>
-              </div>
-            </li>
-            <li class="tasks__itemNone" data-aos="fade-up" data-aos-delay="120">
-              <button class="tasks__q" type="button" aria-expanded="false">
-                <span class="tasks__name">Подготовка и подача претендентами резюме и заявлений</span>
-                <span class="tasks__btn" aria-hidden="true">
-                  <svg class="tasks__icon tasks__icon--plus" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    aria-hidden="true">
-                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                  <svg class="tasks__icon tasks__icon--minus" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    aria-hidden="true">
-                    <path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </span>
-              </button>
-              <div class="tasks__a">
-                <p>Претенденты готовят резюме и заявления в&nbsp;личном кабинете по&nbsp;единому шаблону. Система
-                  проверяет комплектность документов и&nbsp;сразу подсказывает, чего не&nbsp;хватает, чтобы заявка
-                  была принята к&nbsp;рассмотрению без&nbsp;дополнительных уточнений и&nbsp;звонков.</p>
-              </div>
-            </li>
-            <li class="tasks__itemNone" data-aos="fade-up" data-aos-delay="240">
-              <button class="tasks__q" type="button" aria-expanded="false">
-                <span class="tasks__name">Учёт всех поданных заявлений в единой системе</span>
-                <span class="tasks__btn" aria-hidden="true">
-                  <svg class="tasks__icon tasks__icon--plus" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    aria-hidden="true">
-                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                  <svg class="tasks__icon tasks__icon--minus" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    aria-hidden="true">
-                    <path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </span>
-              </button>
-              <div class="tasks__a">
-                <p>Все поступившие заявления собираются в&nbsp;едином реестре: статусы, документы и&nbsp;сроки
-                  обновляются автоматически. Сотрудник видит полную картину конкурса в&nbsp;реальном времени
-                  и&nbsp;не&nbsp;тратит время на&nbsp;сводку данных из&nbsp;писем и&nbsp;таблиц.</p>
-              </div>
-            </li>
-            <li class="tasks__itemNone" data-aos="fade-up" data-aos-delay="360">
-              <button class="tasks__q" type="button" aria-expanded="false">
-                <span class="tasks__name">Предварительное рассмотрение кандидатур</span>
-                <span class="tasks__btn" aria-hidden="true">
-                  <svg class="tasks__icon tasks__icon--plus" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    aria-hidden="true">
-                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                  <svg class="tasks__icon tasks__icon--minus" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    aria-hidden="true">
-                    <path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </span>
-              </button>
-              <div class="tasks__a">
-                <p>На&nbsp;этапе предварительного отбора система помогает проверять кандидатуры на&nbsp;соответствие
-                  формальным требованиям, фиксирует комментарии и&nbsp;решения по&nbsp;каждому претенденту.
-                  Весь процесс рассмотрения прозрачен и&nbsp;воспроизводим для&nbsp;конкурсной комиссии.</p>
-              </div>
-            </li>
-            <li class="tasks__itemNone" data-aos="fade-up" data-aos-delay="480">
-              <button class="tasks__q" type="button" aria-expanded="false">
-                <span class="tasks__name">Фиксация результатов конкурсного отбора и выборов</span>
-                <span class="tasks__btn" aria-hidden="true">
-                  <svg class="tasks__icon tasks__icon--plus" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    aria-hidden="true">
-                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                  <svg class="tasks__icon tasks__icon--minus" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    aria-hidden="true">
-                    <path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </span>
-              </button>
-              <div class="tasks__a">
-                <p>Итоги конкурса фиксируются в&nbsp;системе автоматически: формируются протоколы, сохраняются
-                  решения комиссии и&nbsp;обоснования. Документы готовы к&nbsp;архивиции и&nbsp;предоставлению
-                  контролирующим органам в&nbsp;установленном порядке.</p>
-              </div>
-            </li>
-            <li class="tasks__itemNone" data-aos="fade-up" data-aos-delay="600">
-              <button class="tasks__q" type="button" aria-expanded="false">
-                <span class="tasks__name">Cвоевременное информирование всех участников</span>
-                <span class="tasks__btn" aria-hidden="true">
-                  <svg class="tasks__icon tasks__icon--plus" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    aria-hidden="true">
-                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                  <svg class="tasks__icon tasks__icon--minus" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    aria-hidden="true">
-                    <path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </span>
-              </button>
-              <div class="tasks__a">
-                <p>Претенденты и&nbsp;комиссия получают уведомления о&nbsp;ключевых этапах: изменения статусов,
-                  новых объявлениях и&nbsp;результатах. Информация доставляется вовремя и&nbsp;не&nbsp;теряется,
-                  а&nbsp;все стороны всегда в&nbsp;курсе хода процедуры.</p>
-              </div>
-            </li>
-            <li class="tasks__itemNone" data-aos="fade-up" data-aos-delay="600">
-              <button class="tasks__q" type="button" aria-expanded="false">
-                <span class="tasks__name">Мониторинг и контроль на всех этапах процедуры</span>
-                <span class="tasks__btn" aria-hidden="true">
-                  <svg class="tasks__icon tasks__icon--plus" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    aria-hidden="true">
-                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                  <svg class="tasks__icon tasks__icon--minus" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    aria-hidden="true">
-                    <path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </span>
-              </button>
-              <div class="tasks__a">
-                <p>Руководство видит динамику конкурса на&nbsp;дашборде: сроки, загрузку, этапы и&nbsp;отклонения
-                  от&nbsp;графика. Отчёты формируются автоматически, что&nbsp;позволяет контролировать процедуру
-                  без&nbsp;ручного сбора информации с&nbsp;разных площадок.</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
+									<div class="testimonials__footer">
+										<div class="testimonials__footer-right">
+											<img class="testimonials__logo" src="assets/img/solution-t-logo.png" alt="Логотип клиента" width="60" height="50" />
+											<div class="testimonials__author">
+												<span class="testimonials__name">Имя Фамилия</span>
+												<span class="testimonials__role">Должность, компания</span>
+											</div>
+										</div>
+										<a href="#" download class="show_pdf">Смотреть PDF</a>
+									</div>
+								</article>
+							</div>
+							<div class="swiper-slide">
+								<article class="card testimonials__card" data-aos="fade-up" data-aos-delay="240">
+									<svg aria-hidden="true" class="testimonials__quote" width="29" height="24" viewBox="0 0 29 24">
+										<use href="assets/img/sprite.svg#icon-quote" />
+									</svg>
+									<p class="testimonials__text">
+										Мы искали партнёра, который сможет посмотреть на цифровизацию вуза целиком, а не предложить очередное точечное решение. В работе с SoftSnow ценно сочетание отраслевой экспертизы, гибкости и понятной коммуникации.
+									</p>
+									<div class="testimonials__footer">
+										<div class="testimonials__footer-right">
+											<img class="testimonials__logo" src="assets/img/logo-ranepa.png" alt="РАНХиГС" width="60" height="50" />
+											<div class="testimonials__author">
+												<span class="testimonials__name">Имя Фамилия</span>
+												<span class="testimonials__role">Должность, компания</span>
+											</div>
+										</div>
+										<a href="#" download class="show_pdf">Смотреть PDF</a>
+									</div>
+								</article>
+							</div>
+							<div class="swiper-slide">
+								<article class="card testimonials__card" data-aos="fade-up" data-aos-delay="360">
+									<svg aria-hidden="true" class="testimonials__quote" width="29" height="24" viewBox="0 0 29 24">
+										<use href="assets/img/sprite.svg#icon-quote" />
+									</svg>
+									<p class="testimonials__text">
+										SoftSnow помогли нам перевести внутренние конкурсные процедуры в цифровой контур. Теперь вся история заявок, документы и решения хранятся в одном месте, а процесс стал прозрачным для всех участников.
+									</p>
+									<div class="testimonials__footer">
+										<div class="testimonials__footer-right">
+											<img class="testimonials__logo" src="assets/img/logo-polymetal.png" alt="Полиметалл" width="60" height="50" />
+											<div class="testimonials__author">
+												<span class="testimonials__name">Имя Фамилия</span>
+												<span class="testimonials__role">Должность, компания</span>
+											</div>
+										</div>
 
-    <section class="audience" aria-label="Для кого предназначен">
-      <div class="container">
-        <h2 class="audience__title" data-aos="fade-up">Для кого<br> предназначен</h2>
-        <div class="audience__grid" data-aos="fade-up" data-aos-delay="200">
-          <article class="card audience__card" data-aos="fade-up" data-aos-delay="0">
-            <h3 class="audience__name">Руководству университетов</h3>
-            <p class="audience__desc">Для централизованного контроля за соблюдением процедур и получения отчетности.
-            </p>
-          </article>
-          <article class="card audience__card" data-aos="fade-up" data-aos-delay="120">
-            <h3 class="audience__name">Сотрудникам кадровых служб</h3>
-            <p class="audience__desc">Для автоматизации документооборота, сокращения бумажной работы и снижения числа
-              ошибок при подготовке документов.</p>
-          </article>
-          <article class="card audience__card" data-aos="fade-up" data-aos-delay="240">
-            <h3 class="audience__name">Претендентам на должности</h3>
-            <p class="audience__desc">Для удобной подачи документов онлайн, отслеживания статуса заявки и получения
-              обратной связи по каждому этапу.</p>
-          </article>
-          <article class="card audience__card" data-aos="fade-up" data-aos-delay="360">
-            <h3 class="audience__name">Участникам выборов</h3>
-            <p class="audience__desc">Для дистанционного участия в выборах руководителей подразделений без личного
-              присутствия и бумажных бюллетеней.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+										<a href="#" download class="show_pdf">Смотреть PDF</a>
+									</div>
+								</article>
+							</div>
+							<div class="swiper-slide">
+								<article class="card testimonials__card" data-aos="fade-up" data-aos-delay="480">
+									<svg aria-hidden="true" class="testimonials__quote" width="29" height="24" viewBox="0 0 29 24">
+										<use href="assets/img/sprite.svg#icon-quote" />
+									</svg>
+									<p class="testimonials__text">Отдельно отмечу скорость внедрения и то, как команда учитывает специфику университетских процессов. Решение быстро стало частью повседневной работы кадровой службы.</p>
+									<div class="testimonials__footer">
+										<div class="testimonials__footer-right">
+											<img class="testimonials__logo" src="assets/img/solution-t-logo.png" alt="Логотип клиента" width="60" height="50" />
+											<div class="testimonials__author">
+												<span class="testimonials__name">Имя Фамилия</span>
+												<span class="testimonials__role">Должность, компания</span>
+											</div>
+										</div>
 
-    <section class="features" aria-label="Функциональные возможности сервиса">
-      <div class="container">
-        <div class="features__inner" data-aos="fade-up">
-          <div class="features__head" data-aos="fade-up" data-aos-delay="0">
-            <h2 class="features__title">Функциональные возможности сервиса</h2>
-            <p class="features__sub">Мы продумали сервис так, чтобы он закрывал весь цикл конкурсных и выборных
-              процедур
-              — от подачи заявлений до контроля этапов и хранения данных.</p>
-          </div>
-          <div class="tabs" role="tablist" aria-label="Этапы работы с сервисом">
-            <button class="tabs__btn is-active" type="button" role="tab" data-tab="0" aria-selected="true">Запуск
-              конкурса</button>
-            <button class="tabs__btn" type="button" role="tab" data-tab="1" aria-selected="false">Подача заявок</button>
-            <button class="tabs__btn" type="button" role="tab" data-tab="2" aria-selected="false">Проверка и
-              допуск</button>
-            <button class="tabs__btn" type="button" role="tab" data-tab="3" aria-selected="false">Мониторинг и
-              контроль</button>
-            <button class="tabs__btn" type="button" role="tab" data-tab="4" aria-selected="false">Архив и
-              отчётность</button>
-          </div>
-          <div class="features__body" data-aos="fade-up" data-aos-delay="200">
-            <div class="features__panels" data-aos="fade-up" data-aos-delay="400">
-              <div class="features__panel is-active" data-tab="0" role="tabpanel">
-                <div class="features__content">
-                  <div class="features__content-inner">
-                    <h3 class="features__name">Быстрый запуск конкурсных процедур в цифровом формате</h3>
-                    <p class="features__desc">Система позволяет размещать официальные объявления о начале конкурса или
-                      выборов, а претендентам — видеть актуальные позиции и подавать заявки через личный кабинет.</p>
-                    <ul class="features__points">
-                      <li class="features__point">
-                        <svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                          <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                        </svg>
-                        <span>Администрация быстрее запускает процедуру</span>
-                      </li>
-                      <li class="features__point">
-                        <svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                          <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                        </svg>
-                        <span>Кадровые службы сокращают ручную работу с документами</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <button type="button" class="features__demo">
-                    <img class="features__demo-icon" src="assets/img/features-demo.svg" width="69" height="45" alt="">
-
-                    <span class="features__demo-text">
-                      <span class="features__demo-title">Посмотреть интерфейс</span>
-                      <span class="features__demo-sub">Экраны из реальной работы сервиса</span>
-                    </span>
-                  </button>
-                </div>
-                <img class="features__img" src="assets/img/popup1.jpg" alt="Экран интерфейса сервиса — запуск конкурса">
-              </div>
-              <div class="features__panel" data-tab="1" role="tabpanel" aria-hidden="true">
-                <div class="features__content">
-                  <div class="features__content-inner">
-                  <h3 class="features__name">Приём и регистрация заявок в личном кабинете</h3>
-                  <p class="features__desc">Претенденты заполняют электронные заявки, прикладывают документы и
-                    отслеживают
-                    статус. Кадровая служба видит все заявления в едином реестре без ручной переписки.</p>
-                  <ul class="features__points">
-                    <li class="features__point">
-                      <svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                      </svg>
-                      <span>Заявки поступают сразу в единый реестр</span>
-                    </li>
-                    <li class="features__point">
-                      <svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                      </svg>
-                      <span>Автоматические напоминания о сроках подачи</span>
-                    </li>
-                    <li class="features__point">
-                      <svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                      </svg>
-                      <span>Документы хранятся в привязке к заявке</span>
-                    </li>
-                  </ul>
-                  </div>
-                  <button type="button" class="features__demo">
-                    <img class="features__demo-icon" src="assets/img/features-demo.svg" width="69" height="45" alt="">
-                    <span class="features__demo-text">
-                      <span class="features__demo-title">Посмотреть интерфейс</span>
-                      <span class="features__demo-sub">Экраны из реальной работы сервиса</span>
-                    </span>
-                  </button>
-                </div>
-                <img class="features__img" src="assets/img/popup2.jpg" alt="Экран интерфейса сервиса — подача заявок">
-              </div>
-              <div class="features__panel" data-tab="2" role="tabpanel" aria-hidden="true">
-                <div class="features__content">
-                  <div class="features__content-inner">
-                  <h3 class="features__name">Проверка документов и допуск к участию</h3>
-                  <p class="features__desc">Комиссия проверяет комплектность документов и соответствие требованиям, а
-                    сервис фиксирует решения по каждому претенденту и автоматически сообщает ему итог.</p>
-                  <ul class="features__points">
-                    <li class="features__point">
-                      <svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                      </svg>
-                      <span>Прозрачные чек-листы проверки документов</span>
-                    </li>
-                    <li class="features__point">
-                      <svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                      </svg>
-                      <span>Решения комиссии фиксируются в системе</span>
-                    </li>
-                    <li class="features__point">
-                      <svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                      </svg>
-                      <span>Уведомления о допуске или отказе — автоматически</span>
-                    </li>
-                  </ul>
-                  </div>
-                  <button type="button" class="features__demo">
-                    <img class="features__demo-icon" src="assets/img/features-demo.svg" width="69" height="45" alt="">
-                    <span class="features__demo-text">
-                      <span class="features__demo-title">Посмотреть интерфейс</span>
-                      <span class="features__demo-sub">Экраны из реальной работы сервиса</span>
-                    </span>
-                  </button>
-                </div>
-                <img class="features__img" src="assets/img/popup3.jpg"
-                  alt="Экран интерфейса сервиса — проверка документов">
-              </div>
-              <div class="features__panel" data-tab="3" role="tabpanel" aria-hidden="true">
-                <div class="features__content">
-                  <div class="features__content-inner">
-                  <h3 class="features__name">Мониторинг процедуры в реальном времени</h3>
-                  <p class="features__desc">Руководство и комиссия видят актуальный статус конкурса: кто подал, кто
-                    допущен,
-                    какие сроки истекают. Это упрощает контроль и снижает риск ошибок по срокам.</p>
-                  <ul class="features__points">
-                    <li class="features__point">
-                      <svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                      </svg>
-                      <span>Единая картина по всем активным процедурам</span>
-                    </li>
-                    <li class="features__point">
-                      <svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                      </svg>
-                      <span>Контроль сроков и автоматические напоминания</span>
-                    </li>
-                    <li class="features__point">
-                      <svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                      </svg>
-                      <span>Отчётность по ходу процедуры без ручной сводки</span>
-                    </li>
-                  </ul>
-                  </div>
-                  <button type="button" class="features__demo">
-                    <img class="features__demo-icon" src="assets/img/features-demo.svg" width="69" height="45" alt="">
-                    <span class="features__demo-text">
-                      <span class="features__demo-title">Посмотреть интерфейс</span>
-                      <span class="features__demo-sub">Экраны из реальной работы сервиса</span>
-                    </span>
-                  </button>
-                </div>
-                <img class="features__img" src="assets/img/popup4.jpg" alt="Экран интерфейса сервиса — мониторинг">
-              </div>
-              <div class="features__panel" data-tab="4" role="tabpanel" aria-hidden="true">
-                <div class="features__content">
-                  <div class="features__content-inner">
-                  <h3 class="features__name">Архив процедур и аналитическая отчётность</h3>
-                  <p class="features__desc">Завершённые конкурсы сохраняются в архиве, а сервис формирует отчёты для
-                    кадровой службы и руководства — по соискателям, этапам и итоговым решениям.</p>
-                  <ul class="features__points">
-                    <li class="features__point">
-                      <svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                      </svg>
-                      <span>Хранение всех документов в едином архиве</span>
-                    </li>
-                    <li class="features__point">
-                      <svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                      </svg>
-                      <span>Готовые отчёты по итогам каждой процедуры</span>
-                    </li>
-                    <li class="features__point">
-                      <svg class="features__dot" width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true">
-                        <circle cx="3" cy="3" r="3" fill="#1342F3" />
-                      </svg>
-                      <span>Быстрый поиск по истории конкурсов</span>
-                    </li>
-                  </ul>
-                  </div>
-                  <button type="button" class="features__demo">
-                    <img class="features__demo-icon" src="assets/img/features-demo.svg" width="69" height="45" alt="">
-                    <span class="features__demo-text">
-                      <span class="features__demo-title">Посмотреть интерфейс</span>
-                      <span class="features__demo-sub">Экраны из реальной работы сервиса</span>
-                    </span>
-                  </button>
-                </div>
-                <img class="features__img" src="assets/img/popup5.jpg" alt="Экран интерфейса сервиса — архив">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta cta--blue" aria-label="Хотите увидеть, как это работает">
-      <div class="container">
-        <div class="cta--blue__inner" data-aos="fade-up">
-          <h2 class="cta--blue__title" >Хотите увидеть, как это работает?</h2>
-          <p  class="cta--blue__text" >Покажем сервис на ваших сценариях, ответим на вопросы и поможем оценить, как его
-            можно встроить в текущие процессы.</p>
-          <button class="btn btn--outline-white btn--lg" type="button" data-fancybox data-src="#request-popup">Запросить
-            демонстрацию</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="testimonials" aria-label="Что говорят клиенты">
-      <div class="container">
-        <div class="testimonials__head" data-aos="fade-up">
-          <h2 class="testimonials__title">Что говорят клиенты</h2>
-          <div class="carousel-nav">
-            <button class="carousel-nav__btn" type="button" data-scroll-prev aria-label="Назад"><svg width="15"
-                height="14" viewBox="0 0 15 14" aria-hidden="true">
-                <use href="assets/img/sprite.svg#icon-arrow-left" />
-              </svg></button>
-            <button class="carousel-nav__btn" type="button" data-scroll-next aria-label="Вперёд"><svg width="15"
-                height="14" viewBox="0 0 15 14" aria-hidden="true">
-                <use href="assets/img/sprite.svg#icon-arrow-right" />
-              </svg></button>
-          </div>
-        </div>
-        <div class="swiper testimonials__swiper" data-aos="fade-up" data-aos-delay="200">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <article class="card testimonials__card" data-aos="fade-up" data-aos-delay="0">
-                <svg aria-hidden="true" class="testimonials__quote" width="29" height="24" viewBox="0 0 29 24">
-                  <use href="assets/img/sprite.svg#icon-quote" />
-                </svg>
-                <p class="testimonials__text">Для нас было важно не просто внедрить отдельный сервис, а выстроить
-                  связанную цифровую среду. Команда SoftSnow глубоко погрузилась в задачу и предложила решение, которое
-                  органично встроилось в наш ИТ‑контур.</p>
-                <div class="testimonials__footer">
-                  <div class="testimonials__footer-right">
-                    <img class="testimonials__logo" src="assets/img/logo-polymetal.png" alt="Полиметалл" width="60" height="50">
-                    <div class="testimonials__author">
-                      <span class="testimonials__name">Имя Фамилия</span>
-                      <span class="testimonials__role">Должность, компания</span>
-                    </div>
-                  </div>
-                  <a href="#" download class="show_pdf">Смотреть PDF</a>
-                </div>
-              </article>
-            </div>
-            <div class="swiper-slide">
-              <article class="card testimonials__card" data-aos="fade-up" data-aos-delay="120">
-                <svg aria-hidden="true" class="testimonials__quote" width="29" height="24" viewBox="0 0 29 24">
-                  <use href="assets/img/sprite.svg#icon-quote" />
-                </svg>
-                <p class="testimonials__text">Команде был важен не только технический результат, но и способность
-                  понимать специфику вуза: сложную структуру и множество ролей. SoftSnow — сильный партнёр, который
-                  умеет работать и с процессами, и с интеграциями.</p>
-                  
-                <div class="testimonials__footer">
-                  <div class="testimonials__footer-right">
-                    <img class="testimonials__logo" src="assets/img/solution-t-logo.png" alt="Логотип клиента" width="60" height="50">
-                    <div class="testimonials__author">
-                      <span class="testimonials__name">Имя Фамилия</span>
-                      <span class="testimonials__role">Должность, компания</span>
-                    </div>
-                  </div>
-                  <a href="#" download class="show_pdf">Смотреть PDF</a>
-                 
-                </div>
-              </article>
-            </div>
-            <div class="swiper-slide">
-              <article class="card testimonials__card" data-aos="fade-up" data-aos-delay="240">
-                <svg aria-hidden="true" class="testimonials__quote" width="29" height="24" viewBox="0 0 29 24">
-                  <use href="assets/img/sprite.svg#icon-quote" />
-                </svg>
-                <p class="testimonials__text">Мы искали партнёра, который сможет посмотреть на цифровизацию вуза
-                  целиком, а не предложить очередное точечное решение. В работе с SoftSnow ценно сочетание отраслевой
-                  экспертизы, гибкости и понятной коммуникации.</p>
-                <div class="testimonials__footer">
-                  <div class="testimonials__footer-right">
-                    <img class="testimonials__logo" src="assets/img/logo-ranepa.png" alt="РАНХиГС" width="60" height="50">
-                    <div class="testimonials__author">
-                      <span class="testimonials__name">Имя Фамилия</span>
-                      <span class="testimonials__role">Должность, компания</span>
-                    </div>
-                  </div>
-                  <a href="#" download class="show_pdf">Смотреть PDF</a>
-                </div>
-              </article>
-            </div>
-            <div class="swiper-slide">
-              <article class="card testimonials__card" data-aos="fade-up" data-aos-delay="360">
-                <svg aria-hidden="true" class="testimonials__quote" width="29" height="24" viewBox="0 0 29 24">
-                  <use href="assets/img/sprite.svg#icon-quote" />
-                </svg>
-                <p class="testimonials__text">SoftSnow помогли нам перевести внутренние конкурсные процедуры в цифровой
-                  контур. Теперь вся история заявок, документы и решения хранятся в одном месте, а процесс стал
-                  прозрачным для всех участников.</p>
-                <div class="testimonials__footer">
-                  <div class="testimonials__footer-right">
-                    <img class="testimonials__logo" src="assets/img/logo-polymetal.png" alt="Полиметалл" width="60" height="50">
-                    <div class="testimonials__author">
-                      <span class="testimonials__name">Имя Фамилия</span>
-                      <span class="testimonials__role">Должность, компания</span>
-                    </div>
-                  </div>
-
-                  <a href="#" download class="show_pdf">Смотреть PDF</a>
-                </div>
-              </article>
-            </div>
-            <div class="swiper-slide">
-              <article class="card testimonials__card" data-aos="fade-up" data-aos-delay="480">
-                <svg aria-hidden="true" class="testimonials__quote" width="29" height="24" viewBox="0 0 29 24">
-                  <use href="assets/img/sprite.svg#icon-quote" />
-                </svg>
-                <p class="testimonials__text">Отдельно отмечу скорость внедрения и то, как команда учитывает специфику
-                  университетских процессов. Решение быстро стало частью повседневной работы кадровой службы.</p>
-                <div class="testimonials__footer">
-                  <div class="testimonials__footer-right">
-                    <img class="testimonials__logo" src="assets/img/solution-t-logo.png" alt="Логотип клиента" width="60" height="50">
-                    <div class="testimonials__author">
-                      <span class="testimonials__name">Имя Фамилия</span>
-                      <span class="testimonials__role">Должность, компания</span>
-                    </div>
-                  </div>
-
-                  <a href="#" download class="show_pdf">Смотреть PDF</a>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-<!---
+										<a href="#" download class="show_pdf">Смотреть PDF</a>
+									</div>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!---
     <section class="projects projects--solution" id="projects" aria-label="Реализованные проекты">
       <div class="container">
         <div class="projects__head" data-aos="fade-up">
@@ -862,394 +808,380 @@
       </div>
     </section>
 -->
-    <section class="events" id="events" aria-label="Вебинары, мероприятия и материалы">
-      <div class="container">
-        <div class="events__head" data-aos="fade-up">
-          <h2 class="events__heading">Читайте также</h2>
-          <div class="events__head-actions">
-            <a class="btn btn--ghost btn--md events__btn" href="events.html">Перейти в медиацентр</a>
-            <div class="carousel-nav">
-              <button class="carousel-nav__btn" type="button" data-scroll-prev aria-label="Назад"><svg width="15"
-                  height="14" viewBox="0 0 15 14" aria-hidden="true">
-                  <use href="assets/img/sprite.svg#icon-arrow-left" />
-                </svg></button>
-              <button class="carousel-nav__btn" type="button" data-scroll-next aria-label="Вперёд"><svg width="15"
-                  height="14" viewBox="0 0 15 14" aria-hidden="true">
-                  <use href="assets/img/sprite.svg#icon-arrow-right" />
-                </svg></button>
-            </div>
-          </div>
-        </div>
-        <div class="swiper events__swiper" data-aos="fade-up" data-aos-delay="200">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide events__slide--wide">
-              <a class="events__card events__card--wide" href="event-detail.html">
-                <img class="events__bg" src="assets/img/webinar-1.png" alt="">
-                <div class="events__info">
-                  <h3 class="events__title">Цифровая среда вуза: как связать сервисы, процессы</h3>
-                  <div class="events__meta"><span class="events__tag">Вебинар</span><span class="events__date">25
-                      сентября 2025</span></div>
-                  <svg class="events__arrow" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-                    <use href="assets/img/sprite.svg#icon-arrow-card" />
-                  </svg>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a class="events__card" href="event-detail.html">
-                <img class="events__bg" src="assets/img/webinar-2.png" alt="">
-                <div class="events__info">
-                  <h3 class="events__title">Совместная конференция Политеха и&nbsp;«СофтСноу»</h3>
-                  <div class="events__meta"><span class="events__tag">Вебинар</span><span class="events__date">25
-                      сентября 2025</span></div>
-                  <svg class="events__arrow" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-                    <use href="assets/img/sprite.svg#icon-arrow-card" />
-                  </svg>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a class="events__card" href="event-detail.html">
-                <img class="events__bg" src="assets/img/webinar-3.png" alt="">
-                <div class="events__info">
-                  <h3 class="events__title">Заказчики «СофтСноу» представили свои проекты на Directum Awards 2026</h3>
-                  <div class="events__meta"><span class="events__tag">Конференция</span><span class="events__date">25
-                      сентября 2025</span></div>
-                  <svg class="events__arrow" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-                    <use href="assets/img/sprite.svg#icon-arrow-card" />
-                  </svg>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a class="events__card" href="event-detail.html">
-                <img class="events__bg" src="assets/img/webinar-4.png" alt="">
-                <div class="events__info">
-                  <h3 class="events__title">Совместная конференция Политеха и&nbsp;«СофтСноу»</h3>
-                  <div class="events__meta"><span class="events__date">25 сентября 2025</span></div>
-                  <svg class="events__arrow" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-                    <use href="assets/img/sprite.svg#icon-arrow-card" />
-                  </svg>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <a class="btn btn--ghost btn--lg events__cta" href="events.html">Перейти в медиацентр</a>
-      </div>
-    </section>
+			<section class="events" id="events" aria-label="Вебинары, мероприятия и материалы">
+				<div class="container">
+					<div class="events__head" data-aos="fade-up">
+						<h2 class="events__heading">Читайте также</h2>
+						<div class="events__head-actions">
+							<a class="btn btn--ghost btn--md events__btn" href="events.html">Перейти в медиацентр</a>
+							<div class="carousel-nav">
+								<button class="carousel-nav__btn" type="button" data-scroll-prev aria-label="Назад">
+									<svg width="15" height="14" viewBox="0 0 15 14" aria-hidden="true">
+										<use href="assets/img/sprite.svg#icon-arrow-left" />
+									</svg>
+								</button>
+								<button class="carousel-nav__btn" type="button" data-scroll-next aria-label="Вперёд">
+									<svg width="15" height="14" viewBox="0 0 15 14" aria-hidden="true">
+										<use href="assets/img/sprite.svg#icon-arrow-right" />
+									</svg>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="swiper events__swiper" data-aos="fade-up" data-aos-delay="200">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide events__slide--wide">
+								<a class="events__card events__card--wide" href="event-detail.html">
+									<img class="events__bg" src="assets/img/webinar-1.png" alt="" />
+									<div class="events__info">
+										<h3 class="events__title">Цифровая среда вуза: как связать сервисы, процессы</h3>
+										<div class="events__meta"><span class="events__tag">Вебинар</span><span class="events__date">25 сентября 2025</span></div>
+										<svg class="events__arrow" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+											<use href="assets/img/sprite.svg#icon-arrow-card" />
+										</svg>
+									</div>
+								</a>
+							</div>
+							<div class="swiper-slide">
+								<a class="events__card" href="event-detail.html">
+									<img class="events__bg" src="assets/img/webinar-2.png" alt="" />
+									<div class="events__info">
+										<h3 class="events__title">Совместная конференция Политеха и&nbsp;«СофтСноу»</h3>
+										<div class="events__meta"><span class="events__tag">Вебинар</span><span class="events__date">25 сентября 2025</span></div>
+										<svg class="events__arrow" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+											<use href="assets/img/sprite.svg#icon-arrow-card" />
+										</svg>
+									</div>
+								</a>
+							</div>
+							<div class="swiper-slide">
+								<a class="events__card" href="event-detail.html">
+									<img class="events__bg" src="assets/img/webinar-3.png" alt="" />
+									<div class="events__info">
+										<h3 class="events__title">Заказчики «СофтСноу» представили свои проекты на Directum Awards 2026</h3>
+										<div class="events__meta"><span class="events__tag">Конференция</span><span class="events__date">25 сентября 2025</span></div>
+										<svg class="events__arrow" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+											<use href="assets/img/sprite.svg#icon-arrow-card" />
+										</svg>
+									</div>
+								</a>
+							</div>
+							<div class="swiper-slide">
+								<a class="events__card" href="event-detail.html">
+									<img class="events__bg" src="assets/img/webinar-4.png" alt="" />
+									<div class="events__info">
+										<h3 class="events__title">Совместная конференция Политеха и&nbsp;«СофтСноу»</h3>
+										<div class="events__meta"><span class="events__date">25 сентября 2025</span></div>
+										<svg class="events__arrow" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+											<use href="assets/img/sprite.svg#icon-arrow-card" />
+										</svg>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<a class="btn btn--ghost btn--lg events__cta" href="events.html">Перейти в медиацентр</a>
+				</div>
+			</section>
 
-    <section class="cta" aria-label="Нужна консультация">
-      <div class="container">
-        <div class="cta__body" data-aos="fade-up">
-          <div class="cta__content">
-            <h2 class="cta__title">Обсудим внедрение<br> в вашем университете?</h2>
-            <p class="cta__text">Свяжитесь с нами, чтобы обсудить ваш проект:
-              ответим на вопросы, подберём подходящую конфигурацию
-              и покажем сервис на ваших задачах.</p>
-            <button class="btn btn--primary btn--lg cta__btn" type="button" data-fancybox
-              data-src="#request-popup">Оставить заявку</button>
-          </div>
-        </div>
-      </div>
-    </section>
+			<section class="cta" aria-label="Нужна консультация">
+				<div class="container">
+					<div class="cta__body" data-aos="fade-up">
+						<div class="cta__content">
+							<h2 class="cta__title">
+								Обсудим внедрение<br />
+								в вашем университете?
+							</h2>
+							<p class="cta__text">Свяжитесь с нами, чтобы обсудить ваш проект: ответим на вопросы, подберём подходящую конфигурацию и покажем сервис на ваших задачах.</p>
+							<button class="btn btn--primary btn--lg cta__btn" type="button" data-fancybox data-src="#request-popup">Оставить заявку</button>
+						</div>
+					</div>
+				</div>
+			</section>
 
-    <section class="faq" aria-label="Часто задаваемые вопросы">
-      <div class="container">
-        <div class="faq__inner" data-aos="fade-up">
-          <h2 class="faq__title" data-aos="fade-up" data-aos-delay="0">Часто задаваемые вопросы</h2>
-          <div class="faq__list" data-aos="fade-up" data-aos-delay="200">
-            <div class="faq__item" data-aos="fade-up" data-aos-delay="0">
-              <button class="faq__q" type="button" aria-expanded="false">
-                <span class="faq__name">Нужно ли иметь технических специалистов в штате, чтобы внедрить и использовать
-                  сервис?</span>
-                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <g opacity="0.5">
-                    <path d="M20 8L12 16L4 8" stroke="#222222" stroke-width="1.5" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </g>
-                </svg>
-              </button>
-              <div class="faq__a">
-                <p>Нет, сервис является готовым решением. Наша команда производит установку и первоначальную настройку.
-                  Для повседневной работы достаточно сотрудника, ответственного за кадровое делопроизводство. Он сможет
-                  управлять
-                  процедурами через понятный веб-интерфейс.</p>
-              </div>
-            </div>
-            <div class="faq__item" data-aos="fade-up" data-aos-delay="120">
-              <button class="faq__q" type="button" aria-expanded="false">
-                <span class="faq__name">Как происходит интеграция сервиса с существующими информационными системами
-                  университета?</span>
-                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <g opacity="0.5">
-                    <path d="M20 8L12 16L4 8" stroke="#222222" stroke-width="1.5" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </g>
-                </svg>
+			<section class="faq" aria-label="Часто задаваемые вопросы">
+				<div class="container">
+					<div class="faq__inner" data-aos="fade-up">
+						<h2 class="faq__title" data-aos="fade-up" data-aos-delay="0">Часто задаваемые вопросы</h2>
+						<div class="faq__list" data-aos="fade-up" data-aos-delay="200">
+							<div class="faq__item" data-aos="fade-up" data-aos-delay="0">
+								<button class="faq__q" type="button" aria-expanded="false">
+									<span class="faq__name">Нужно ли иметь технических специалистов в штате, чтобы внедрить и использовать сервис?</span>
+									<svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g opacity="0.5">
+											<path d="M20 8L12 16L4 8" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+										</g>
+									</svg>
+								</button>
+								<div class="faq__a">
+									<p>
+										Нет, сервис является готовым решением. Наша команда производит установку и первоначальную настройку. Для повседневной работы достаточно сотрудника, ответственного за кадровое делопроизводство. Он сможет управлять
+										процедурами через понятный веб-интерфейс.
+									</p>
+								</div>
+							</div>
+							<div class="faq__item" data-aos="fade-up" data-aos-delay="120">
+								<button class="faq__q" type="button" aria-expanded="false">
+									<span class="faq__name">Как происходит интеграция сервиса с существующими информационными системами университета?</span>
+									<svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g opacity="0.5">
+											<path d="M20 8L12 16L4 8" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+										</g>
+									</svg>
+								</button>
+								<div class="faq__a">
+									<p>
+										Сервис поддерживает интеграцию с корпоративными системами университета по открытым API. На этапе внедрения мы согласуем сценарии обмена данными с кадровыми и учётными системами, чтобы избежать двойного ввода и обеспечить
+										целостность информации.
+									</p>
+								</div>
+							</div>
+							<div class="faq__item" data-aos="fade-up" data-aos-delay="240">
+								<button class="faq__q" type="button" aria-expanded="false">
+									<span class="faq__name">Соответствует ли сервис требованиям законодательства о персональных данных?</span>
+									<svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g opacity="0.5">
+											<path d="M20 8L12 16L4 8" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+										</g>
+									</svg>
+								</button>
+								<div class="faq__a">
+									<p>
+										Обработка персональных данных ведётся в соответствии с требованиями законодательства. Данные хранятся на территории Российской Федерации, доступ к ним ограничен ролевой моделью, а журналы действий позволяют отслеживать
+										любые изменения.
+									</p>
+								</div>
+							</div>
+							<div class="faq__item" data-aos="fade-up" data-aos-delay="360">
+								<button class="faq__q" type="button" aria-expanded="false">
+									<span class="faq__name">Можно ли попробовать сервис перед покупкой?</span>
+									<svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g opacity="0.5">
+											<path d="M20 8L12 16L4 8" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+										</g>
+									</svg>
+								</button>
+								<div class="faq__a">
+									<p>Да, мы предоставляем демо-доступ и проводим презентацию на данных, приближенных к вашим сценариям. На нейтральных проектах вы сможете оценить интерфейс, скорость работы и удобство сервиса до принятия решения.</p>
+								</div>
+							</div>
+							<div class="faq__item" data-aos="fade-up" data-aos-delay="480">
+								<button class="faq__q" type="button" aria-expanded="false">
+									<span class="faq__name">Как происходит переход с бумажного документооборота?</span>
+									<svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g opacity="0.5">
+											<path d="M20 8L12 16L4 8" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+										</g>
+									</svg>
+								</button>
+								<div class="faq__a">
+									<p>
+										Переход проходит поэтапно: сначала мы настраиваем сервис на актуальных данных, параллельно с бумажным документооборотом. Когда процессы стабилизируются и сотрудники привыкнут к работе в системе, вы полностью переводите
+										процедуры в цифровой формат.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
 
-              </button>
-              <div class="faq__a">
-                <p>Сервис поддерживает интеграцию с корпоративными системами университета по открытым API. На этапе
-                  внедрения мы согласуем сценарии обмена данными с кадровыми и учётными системами, чтобы избежать
-                  двойного
-                  ввода и обеспечить целостность информации.</p>
-              </div>
-            </div>
-            <div class="faq__item" data-aos="fade-up" data-aos-delay="240">
-              <button class="faq__q" type="button" aria-expanded="false">
-                <span class="faq__name">Соответствует ли сервис требованиям законодательства о персональных
-                  данных?</span>
-                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <g opacity="0.5">
-                    <path d="M20 8L12 16L4 8" stroke="#222222" stroke-width="1.5" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </g>
-                </svg>
-              </button>
-              <div class="faq__a">
-                <p>Обработка персональных данных ведётся в соответствии с требованиями законодательства. Данные хранятся
-                  на
-                  территории Российской Федерации, доступ к ним ограничен ролевой моделью, а журналы действий позволяют
-                  отслеживать любые изменения.</p>
-              </div>
-            </div>
-            <div class="faq__item" data-aos="fade-up" data-aos-delay="360">
-              <button class="faq__q" type="button" aria-expanded="false">
-                <span class="faq__name">Можно ли попробовать сервис перед покупкой?</span>
-                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <g opacity="0.5">
-                    <path d="M20 8L12 16L4 8" stroke="#222222" stroke-width="1.5" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </g>
-                </svg>
-              </button>
-              <div class="faq__a">
-                <p>Да, мы предоставляем демо-доступ и проводим презентацию на данных, приближенных к вашим сценариям. На
-                  нейтральных проектах вы сможете оценить интерфейс, скорость работы и удобство сервиса до принятия
-                  решения.</p>
-              </div>
-            </div>
-            <div class="faq__item" data-aos="fade-up" data-aos-delay="480">
-              <button class="faq__q" type="button" aria-expanded="false">
-                <span class="faq__name">Как происходит переход с бумажного документооборота?</span>
-                <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <g opacity="0.5">
-                    <path d="M20 8L12 16L4 8" stroke="#222222" stroke-width="1.5" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </g>
-                </svg>
-              </button>
-              <div class="faq__a">
-                <p>Переход проходит поэтапно: сначала мы настраиваем сервис на актуальных данных, параллельно с бумажным
-                  документооборотом. Когда процессы стабилизируются и сотрудники привыкнут к работе в системе, вы
-                  полностью
-                  переводите процедуры в цифровой формат.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+		<footer class="footer">
+			<div class="container footer__inner">
+				<div class="footer__brand">
+					<div class="footer__brand-top">
+						<a href="index.html" v class="footer__logo">
+							<svg class="logo__icon" width="222" height="67" viewBox="0 0 222 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M29.041 0.783203C29.6425 0.406715 30.4008 0.405932 31.0029 0.78125L55.5439 16.0771C56.7194 16.81 56.7463 18.5401 55.5967 19.3115L48.4385 24.1143C47.8282 24.5236 47.0403 24.5354 46.4189 24.1436L30.0166 13.7979L23.6416 17.7432L39.3027 28.5459L39.7041 28.8223L39.4365 29.2305L38.6689 30.4062L38.3877 30.835L37.9658 30.5439L21.4111 19.125L14.9453 23.127L47.1504 42.7773L57.8564 36.6328L58.2998 36.3779L58.5439 36.8271L59.2168 38.0635L59.4502 38.4922L59.0264 38.7354L49.4932 44.208L54.9707 47.5508C56.1798 48.2886 56.1909 50.0712 54.9922 50.8252L30.9932 65.9209C30.4106 66.2872 29.6789 66.3011 29.083 65.957L4.01953 51.4844C2.83114 50.798 2.73744 49.0915 3.83496 48.2715L10.1885 43.5244C10.7817 43.0812 11.5751 43.0314 12.2178 43.3994L29.1602 53.1064L35.4443 49.499L19.2324 39.2402L18.8193 38.9795L19.0703 38.5605L19.793 37.3555L20.0566 36.916L20.4893 37.1895L37.8027 48.1455L44.7705 44.1445L12.6533 24.5459L2.91211 30.5762L2.47656 30.8457L2.21777 30.4043L1.50586 29.1914L1.25879 28.7705L1.6748 28.5137L10.3525 23.1416L4.3877 19.502C3.17728 18.7631 3.16834 16.9778 4.37012 16.2256L29.041 0.783203ZM30.082 55.3525C29.5108 55.6805 28.8129 55.681 28.2412 55.3535L11.334 45.667L5.85156 49.7627L29.9961 63.7061L53.0566 49.2012L47.1133 45.5742L30.082 55.3525ZM6.30273 17.8525L12.6445 21.7227L29.0449 11.5723C29.6483 11.1988 30.4063 11.2014 31.0068 11.5801L47.3975 21.917L53.6436 17.7256L30.0244 3.00488L6.30273 17.8525Z"
+									fill="white"
+									stroke="white"
+								/>
+								<rect x="57.3281" y="32.9355" width="6.167" height="6.30839" rx="3.0835" fill="white" stroke="white" />
+								<rect x="15.0469" y="33.5562" width="6.167" height="6.30839" rx="3.0835" fill="white" stroke="white" />
+								<rect x="0.5" y="25.8657" width="6.167" height="6.30839" rx="3.0835" fill="white" stroke="white" />
+								<rect x="34.3438" y="25.8657" width="6.167" height="6.30839" rx="3.0835" fill="white" stroke="white" />
+								<path
+									d="M63.75 6.82031L61.9922 2.74219V6.82031H60.7617V0.539062H62.25L64.0781 5.01562L65.9062 0.539062H67.4062V6.82031H66.1641V2.76562L64.418 6.82031H63.75ZM56.5195 6.82031V1.60547H54.6211V0.539062H59.6602V1.60547H57.7617V6.82031H56.5195Z"
+									fill="white"
+								/>
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M196.203 29.3823V39.4487L191.785 42.0083L187.461 44.4888L183.138 42.0083L178.72 39.4478V29.3843L181.175 27.9907H181.13L183.123 26.8384L183.122 26.8374L187.462 24.3413L196.203 29.3823ZM184.884 29.5669L184.878 29.5698L182.214 31.1001L181.963 31.2437V37.5708L182.214 37.7153L184.878 39.2446L187.196 40.5806L187.444 40.7241L187.694 40.5815L190.028 39.2446L190.03 39.2437L192.929 37.5698V31.2466L192.681 31.1021L187.532 28.0923L184.884 29.5669Z"
+									fill="white"
+								/>
+								<path
+									d="M103.142 29.811L101.517 30.7456L101.267 30.8901V37.2319L101.517 37.3765L103.947 38.7769L106.475 40.2417L106.725 40.3862L106.975 40.2427L111.95 37.3765L112.2 37.2319V30.8911L110.341 29.812V26.0737L111.051 26.4771L115.467 29.02V39.0854L106.709 44.1421L97.9678 39.0854V29.0259L98.8037 28.5659L98.8125 28.561L102.414 26.479L103.142 26.0688V29.811Z"
+									fill="white"
+								/>
+								<path
+									d="M88.1299 25.7378L88.1436 25.7388L88.1572 25.7378C89.438 25.7079 90.6968 26.0451 91.79 26.7114C92.7253 27.2805 93.4889 28.0927 94.0098 29.0513L91.1377 30.73C90.8978 30.2897 90.56 29.9028 90.1475 29.6118C89.6415 29.2482 89.0435 29.0364 88.4277 28.9956L88.1631 28.9888C87.6473 28.9664 87.1387 29.0949 86.6973 29.3696L86.6855 29.3774L86.6738 29.3862C86.4631 29.535 86.3058 29.7298 86.2002 29.9409C86.0947 30.1519 86.0324 30.4051 86.0439 30.6597C86.0559 30.9573 86.1511 31.2356 86.3066 31.48L86.3125 31.4888C86.4609 31.7114 86.6624 31.9184 86.9238 32.061L86.9287 32.064C87.7147 32.482 88.5508 32.8001 89.4199 33.0112C90.0887 33.2198 90.6573 33.3967 91.0645 33.5464L91.417 33.688C91.9594 33.9484 92.4797 34.2546 92.9697 34.5991L92.9775 34.604C93.4535 34.9254 93.8446 35.357 94.126 35.856L94.2393 36.0737C94.5229 36.6704 94.6433 37.3209 94.5869 37.9702L94.584 38.0024L94.585 38.0347C94.6139 38.7224 94.4832 39.4083 94.1953 40.0347L94.1934 40.0396C93.9147 40.661 93.4845 41.2077 92.9502 41.6431C91.6282 42.6002 89.9936 43.1598 88.3594 43.0698C86.8771 43.1049 85.4194 42.729 84.1348 41.98C83.1365 41.3562 82.3579 40.4426 81.8984 39.3667L84.8867 37.6304C85.1908 38.2059 85.6314 38.7046 86.1826 39.0728C86.892 39.5518 87.7464 39.789 88.6006 39.7524C89.3081 39.7505 89.9194 39.6506 90.3711 39.3931C90.8677 39.1099 91.1406 38.6525 91.1406 38.0786C91.1406 37.254 90.4875 36.7115 89.6602 36.3618L89.6406 36.354C89.3622 36.2496 88.5982 36.0181 87.4033 35.6597L87.3887 35.6548L87.374 35.6519L87.1201 35.5874C85.8616 35.2504 84.6957 34.6247 83.7148 33.7534C83.3709 33.4068 83.0935 32.993 82.8896 32.5435L82.8057 32.3472C82.5984 31.8174 82.5056 31.2526 82.5342 30.689L82.5352 30.6685V30.6479C82.5135 29.9829 82.6433 29.3166 82.9111 28.7085C83.1449 28.1778 83.485 27.6942 83.9082 27.2837L84.0947 27.1128C85.2221 26.1822 86.6605 25.6933 88.1299 25.7378Z"
+									fill="white"
+								/>
+								<path
+									d="M152.363 25.7134L152.374 25.7144H152.385C153.592 25.7003 154.782 25.9902 155.834 26.5698L156.042 26.6899C156.969 27.2663 157.725 28.0718 158.243 29.0269L155.372 30.7046C155.135 30.268 154.803 29.8857 154.394 29.5903C153.815 29.1735 153.123 28.9549 152.412 28.9644C151.891 28.9421 151.386 29.0819 150.954 29.3413L150.938 29.3511L150.923 29.3618C150.779 29.4635 150.643 29.592 150.535 29.7534L150.438 29.9263C150.334 30.1369 150.273 30.3873 150.285 30.6401C150.297 30.9209 150.377 31.198 150.536 31.4507C150.686 31.6927 150.901 31.8951 151.141 32.0317L151.147 32.0366L151.155 32.0405C151.949 32.4585 152.789 32.7858 153.654 33.0054C154.165 33.1463 154.668 33.3094 155.165 33.4946L155.661 33.688C156.199 33.9204 156.71 34.2213 157.188 34.5698L157.195 34.5747L157.202 34.5806C157.746 34.9478 158.18 35.458 158.465 36.0493C158.749 36.6461 158.868 37.2973 158.812 37.9468L158.809 37.979L158.811 38.0112C158.839 38.699 158.709 39.3849 158.421 40.0112L158.419 40.0151C158.14 40.6374 157.709 41.185 157.174 41.6206C155.862 42.5915 154.23 43.1345 152.598 43.0298C151.125 43.0733 149.667 42.6989 148.39 41.9585C147.389 41.3347 146.609 40.42 146.148 39.3423L149.134 37.6089C149.437 38.1862 149.882 38.6831 150.421 39.0542C151.128 39.5409 151.976 39.7697 152.829 39.73C153.545 39.73 154.165 39.6287 154.621 39.3687C155.118 39.0854 155.391 38.628 155.391 38.0542C155.391 37.2235 154.727 36.6991 153.898 36.3394L153.887 36.3345L153.874 36.3306L153.575 36.2271C153.187 36.0998 152.533 35.9023 151.628 35.6489L151.619 35.646L151.609 35.644C150.254 35.3183 148.996 34.6596 147.948 33.729C147.555 33.3328 147.25 32.8509 147.05 32.3306C146.848 31.797 146.756 31.2299 146.784 30.6655L146.785 30.6421L146.784 30.6187C146.755 29.9577 146.884 29.2922 147.153 28.6743C147.419 28.0631 147.823 27.5286 148.338 27.0933L148.337 27.0923C149.466 26.1577 150.892 25.6689 152.363 25.7134Z"
+									fill="white"
+								/>
+								<path d="M164.896 26.1567L171.909 36.0591V26.1733H175.321V42.6899H172.618L165.652 32.8149V42.6899H162.177V26.1567H164.896Z" fill="white" />
+								<path d="M202.123 26.1567L205.177 38.6616L208.723 26.1567H211.508L215.051 38.6519L218.139 26.1567H221.99L217.368 42.6743H213.372L210.101 31.4927L206.92 42.6743H202.895L198.272 26.1567H202.123Z" fill="white" />
+								<path d="M128.581 29.48H122.277V33.3296H128.452V36.645H122.277V42.6577H118.817V26.1714L128.581 26.1421V29.48Z" fill="white" />
+								<path d="M144.11 26.1489V29.48H139.763V42.6577H136.271V29.48H131.924V26.1489H144.11Z" fill="white" />
+								<path d="M108.189 23.1138V32.9497H105.302V23.1138H108.189Z" fill="white" />
+							</svg>
+						</a>
+						<p class="footer__tagline">Российский аккредитованный разработчик и&nbsp;интегратор</p>
+					</div>
+					<div class="footer__brand-bottom">
+						<div class="footer__social">
+							<a href="#" class="footer__social-link" aria-label="Rutube">
+								<svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+									<use href="assets/img/sprite.svg#icon-rutube" />
+								</svg>
+							</a>
+							<a href="#" class="footer__social-link" aria-label="ВКонтакте">
+								<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<g clip-path="url(#clip0_633_379)">
+										<rect x="6" y="10" width="30" height="20" fill="white" />
+										<use href="assets/img/sprite.svg#icon-vk" />
+									</g>
+									<defs>
+										<clipPath id="clip0_633_379">
+											<rect width="40" height="40" fill="white" />
+										</clipPath>
+									</defs>
+								</svg>
+							</a>
+						</div>
+						<div class="footer__contacts">
+							<a href="tel:+78123201130">+7 (812) 320-11-30</a>
+							<a href="mailto:info@softsnow.ru">info@softsnow.ru</a>
+						</div>
+					</div>
+				</div>
+				<div class="footer__right">
+					<div class="footer__links">
+						<ul class="footer__col">
+							<li><a href="solutions.html">ЭДО</a></li>
+							<li><a href="solutions.html">КЭДО</a></li>
+							<li><a href="solutions.html">Корпоративные порталы</a></li>
+							<li><a href="solutions.html">Управление стратегией</a></li>
+							<li><a href="solutions.html">Управление проектами</a></li>
+							<li><a href="solutions.html">Решения для вузов</a></li>
+						</ul>
+						<ul class="footer__col">
+							<li><a href="about.html">О компании</a></li>
+							<li><a href="solutions.html">Отрасли</a></li>
+							<li><a href="projects.html">Кейсы</a></li>
+							<li><a href="clients.html">Клиенты</a></li>
+							<li><a href="events.html">Мероприятия</a></li>
+							<li><a href="contacts.html">Контакты</a></li>
+						</ul>
+					</div>
+					<div class="footer__legal">
+						<a href="#">Политика конфиденциальности</a>
+						<a href="#">Политика обработки персональных данных</a>
+					</div>
+				</div>
+			</div>
+		</footer>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <div class="footer__brand-top">
-          <a href="index.html" v class="footer__logo">
-            <svg class="logo__icon" width="222" height="67" viewBox="0 0 222 67" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M29.041 0.783203C29.6425 0.406715 30.4008 0.405932 31.0029 0.78125L55.5439 16.0771C56.7194 16.81 56.7463 18.5401 55.5967 19.3115L48.4385 24.1143C47.8282 24.5236 47.0403 24.5354 46.4189 24.1436L30.0166 13.7979L23.6416 17.7432L39.3027 28.5459L39.7041 28.8223L39.4365 29.2305L38.6689 30.4062L38.3877 30.835L37.9658 30.5439L21.4111 19.125L14.9453 23.127L47.1504 42.7773L57.8564 36.6328L58.2998 36.3779L58.5439 36.8271L59.2168 38.0635L59.4502 38.4922L59.0264 38.7354L49.4932 44.208L54.9707 47.5508C56.1798 48.2886 56.1909 50.0712 54.9922 50.8252L30.9932 65.9209C30.4106 66.2872 29.6789 66.3011 29.083 65.957L4.01953 51.4844C2.83114 50.798 2.73744 49.0915 3.83496 48.2715L10.1885 43.5244C10.7817 43.0812 11.5751 43.0314 12.2178 43.3994L29.1602 53.1064L35.4443 49.499L19.2324 39.2402L18.8193 38.9795L19.0703 38.5605L19.793 37.3555L20.0566 36.916L20.4893 37.1895L37.8027 48.1455L44.7705 44.1445L12.6533 24.5459L2.91211 30.5762L2.47656 30.8457L2.21777 30.4043L1.50586 29.1914L1.25879 28.7705L1.6748 28.5137L10.3525 23.1416L4.3877 19.502C3.17728 18.7631 3.16834 16.9778 4.37012 16.2256L29.041 0.783203ZM30.082 55.3525C29.5108 55.6805 28.8129 55.681 28.2412 55.3535L11.334 45.667L5.85156 49.7627L29.9961 63.7061L53.0566 49.2012L47.1133 45.5742L30.082 55.3525ZM6.30273 17.8525L12.6445 21.7227L29.0449 11.5723C29.6483 11.1988 30.4063 11.2014 31.0068 11.5801L47.3975 21.917L53.6436 17.7256L30.0244 3.00488L6.30273 17.8525Z"
-                fill="white" stroke="white" />
-              <rect x="57.3281" y="32.9355" width="6.167" height="6.30839" rx="3.0835" fill="white" stroke="white" />
-              <rect x="15.0469" y="33.5562" width="6.167" height="6.30839" rx="3.0835" fill="white" stroke="white" />
-              <rect x="0.5" y="25.8657" width="6.167" height="6.30839" rx="3.0835" fill="white" stroke="white" />
-              <rect x="34.3438" y="25.8657" width="6.167" height="6.30839" rx="3.0835" fill="white" stroke="white" />
-              <path
-                d="M63.75 6.82031L61.9922 2.74219V6.82031H60.7617V0.539062H62.25L64.0781 5.01562L65.9062 0.539062H67.4062V6.82031H66.1641V2.76562L64.418 6.82031H63.75ZM56.5195 6.82031V1.60547H54.6211V0.539062H59.6602V1.60547H57.7617V6.82031H56.5195Z"
-                fill="white" />
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M196.203 29.3823V39.4487L191.785 42.0083L187.461 44.4888L183.138 42.0083L178.72 39.4478V29.3843L181.175 27.9907H181.13L183.123 26.8384L183.122 26.8374L187.462 24.3413L196.203 29.3823ZM184.884 29.5669L184.878 29.5698L182.214 31.1001L181.963 31.2437V37.5708L182.214 37.7153L184.878 39.2446L187.196 40.5806L187.444 40.7241L187.694 40.5815L190.028 39.2446L190.03 39.2437L192.929 37.5698V31.2466L192.681 31.1021L187.532 28.0923L184.884 29.5669Z"
-                fill="white" />
-              <path
-                d="M103.142 29.811L101.517 30.7456L101.267 30.8901V37.2319L101.517 37.3765L103.947 38.7769L106.475 40.2417L106.725 40.3862L106.975 40.2427L111.95 37.3765L112.2 37.2319V30.8911L110.341 29.812V26.0737L111.051 26.4771L115.467 29.02V39.0854L106.709 44.1421L97.9678 39.0854V29.0259L98.8037 28.5659L98.8125 28.561L102.414 26.479L103.142 26.0688V29.811Z"
-                fill="white" />
-              <path
-                d="M88.1299 25.7378L88.1436 25.7388L88.1572 25.7378C89.438 25.7079 90.6968 26.0451 91.79 26.7114C92.7253 27.2805 93.4889 28.0927 94.0098 29.0513L91.1377 30.73C90.8978 30.2897 90.56 29.9028 90.1475 29.6118C89.6415 29.2482 89.0435 29.0364 88.4277 28.9956L88.1631 28.9888C87.6473 28.9664 87.1387 29.0949 86.6973 29.3696L86.6855 29.3774L86.6738 29.3862C86.4631 29.535 86.3058 29.7298 86.2002 29.9409C86.0947 30.1519 86.0324 30.4051 86.0439 30.6597C86.0559 30.9573 86.1511 31.2356 86.3066 31.48L86.3125 31.4888C86.4609 31.7114 86.6624 31.9184 86.9238 32.061L86.9287 32.064C87.7147 32.482 88.5508 32.8001 89.4199 33.0112C90.0887 33.2198 90.6573 33.3967 91.0645 33.5464L91.417 33.688C91.9594 33.9484 92.4797 34.2546 92.9697 34.5991L92.9775 34.604C93.4535 34.9254 93.8446 35.357 94.126 35.856L94.2393 36.0737C94.5229 36.6704 94.6433 37.3209 94.5869 37.9702L94.584 38.0024L94.585 38.0347C94.6139 38.7224 94.4832 39.4083 94.1953 40.0347L94.1934 40.0396C93.9147 40.661 93.4845 41.2077 92.9502 41.6431C91.6282 42.6002 89.9936 43.1598 88.3594 43.0698C86.8771 43.1049 85.4194 42.729 84.1348 41.98C83.1365 41.3562 82.3579 40.4426 81.8984 39.3667L84.8867 37.6304C85.1908 38.2059 85.6314 38.7046 86.1826 39.0728C86.892 39.5518 87.7464 39.789 88.6006 39.7524C89.3081 39.7505 89.9194 39.6506 90.3711 39.3931C90.8677 39.1099 91.1406 38.6525 91.1406 38.0786C91.1406 37.254 90.4875 36.7115 89.6602 36.3618L89.6406 36.354C89.3622 36.2496 88.5982 36.0181 87.4033 35.6597L87.3887 35.6548L87.374 35.6519L87.1201 35.5874C85.8616 35.2504 84.6957 34.6247 83.7148 33.7534C83.3709 33.4068 83.0935 32.993 82.8896 32.5435L82.8057 32.3472C82.5984 31.8174 82.5056 31.2526 82.5342 30.689L82.5352 30.6685V30.6479C82.5135 29.9829 82.6433 29.3166 82.9111 28.7085C83.1449 28.1778 83.485 27.6942 83.9082 27.2837L84.0947 27.1128C85.2221 26.1822 86.6605 25.6933 88.1299 25.7378Z"
-                fill="white" />
-              <path
-                d="M152.363 25.7134L152.374 25.7144H152.385C153.592 25.7003 154.782 25.9902 155.834 26.5698L156.042 26.6899C156.969 27.2663 157.725 28.0718 158.243 29.0269L155.372 30.7046C155.135 30.268 154.803 29.8857 154.394 29.5903C153.815 29.1735 153.123 28.9549 152.412 28.9644C151.891 28.9421 151.386 29.0819 150.954 29.3413L150.938 29.3511L150.923 29.3618C150.779 29.4635 150.643 29.592 150.535 29.7534L150.438 29.9263C150.334 30.1369 150.273 30.3873 150.285 30.6401C150.297 30.9209 150.377 31.198 150.536 31.4507C150.686 31.6927 150.901 31.8951 151.141 32.0317L151.147 32.0366L151.155 32.0405C151.949 32.4585 152.789 32.7858 153.654 33.0054C154.165 33.1463 154.668 33.3094 155.165 33.4946L155.661 33.688C156.199 33.9204 156.71 34.2213 157.188 34.5698L157.195 34.5747L157.202 34.5806C157.746 34.9478 158.18 35.458 158.465 36.0493C158.749 36.6461 158.868 37.2973 158.812 37.9468L158.809 37.979L158.811 38.0112C158.839 38.699 158.709 39.3849 158.421 40.0112L158.419 40.0151C158.14 40.6374 157.709 41.185 157.174 41.6206C155.862 42.5915 154.23 43.1345 152.598 43.0298C151.125 43.0733 149.667 42.6989 148.39 41.9585C147.389 41.3347 146.609 40.42 146.148 39.3423L149.134 37.6089C149.437 38.1862 149.882 38.6831 150.421 39.0542C151.128 39.5409 151.976 39.7697 152.829 39.73C153.545 39.73 154.165 39.6287 154.621 39.3687C155.118 39.0854 155.391 38.628 155.391 38.0542C155.391 37.2235 154.727 36.6991 153.898 36.3394L153.887 36.3345L153.874 36.3306L153.575 36.2271C153.187 36.0998 152.533 35.9023 151.628 35.6489L151.619 35.646L151.609 35.644C150.254 35.3183 148.996 34.6596 147.948 33.729C147.555 33.3328 147.25 32.8509 147.05 32.3306C146.848 31.797 146.756 31.2299 146.784 30.6655L146.785 30.6421L146.784 30.6187C146.755 29.9577 146.884 29.2922 147.153 28.6743C147.419 28.0631 147.823 27.5286 148.338 27.0933L148.337 27.0923C149.466 26.1577 150.892 25.6689 152.363 25.7134Z"
-                fill="white" />
-              <path
-                d="M164.896 26.1567L171.909 36.0591V26.1733H175.321V42.6899H172.618L165.652 32.8149V42.6899H162.177V26.1567H164.896Z"
-                fill="white" />
-              <path
-                d="M202.123 26.1567L205.177 38.6616L208.723 26.1567H211.508L215.051 38.6519L218.139 26.1567H221.99L217.368 42.6743H213.372L210.101 31.4927L206.92 42.6743H202.895L198.272 26.1567H202.123Z"
-                fill="white" />
-              <path
-                d="M128.581 29.48H122.277V33.3296H128.452V36.645H122.277V42.6577H118.817V26.1714L128.581 26.1421V29.48Z"
-                fill="white" />
-              <path d="M144.11 26.1489V29.48H139.763V42.6577H136.271V29.48H131.924V26.1489H144.11Z" fill="white" />
-              <path d="M108.189 23.1138V32.9497H105.302V23.1138H108.189Z" fill="white" />
-            </svg>
-          </a>
-          <p class="footer__tagline">Российский аккредитованный разработчик и&nbsp;интегратор</p>
-        </div>
-        <div class="footer__brand-bottom">
-          <div class="footer__social">
-            <a href="#" class="footer__social-link" aria-label="Rutube">
-              <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
-                <use href="assets/img/sprite.svg#icon-rutube" />
-              </svg>
-            </a>
-            <a href="#" class="footer__social-link" aria-label="ВКонтакте">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_633_379)">
-                  <rect x="6" y="10" width="30" height="20" fill="white" />
-                  <use href="assets/img/sprite.svg#icon-vk" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_633_379">
-                    <rect width="40" height="40" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
+		<div class="modal-form" id="request-popup">
+			<button type="button" class="modal-form__close" data-fancybox-close aria-label="Закрыть">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+					<path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+				</svg>
+			</button>
+			<div class="modal-form__body">
+				<div class="modal-form__head">
+					<div>
+						<h3 class="modal-form__title">Связаться с нами</h3>
+						<p class="modal-form__sub">Оставьте свои контакты и мы свяжемся с вами в ближайшее время</p>
+					</div>
+				</div>
 
-            </a>
-          </div>
-          <div class="footer__contacts">
-            <a href="tel:+78123201130">+7 (812) 320-11-30</a>
-            <a href="mailto:info@softsnow.ru">info@softsnow.ru</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer__right">
-        <div class="footer__links">
-          <ul class="footer__col">
-            <li><a href="solutions.html">ЭДО</a></li>
-            <li><a href="solutions.html">КЭДО</a></li>
-            <li><a href="solutions.html">Корпоративные порталы</a></li>
-            <li><a href="solutions.html">Управление стратегией</a></li>
-            <li><a href="solutions.html">Управление проектами</a></li>
-            <li><a href="solutions.html">Решения для вузов</a></li>
-          </ul>
-          <ul class="footer__col">
-            <li><a href="about.html">О компании</a></li>
-            <li><a href="solutions.html">Отрасли</a></li>
-            <li><a href="projects.html">Кейсы</a></li>
-            <li><a href="clients.html">Клиенты</a></li>
-            <li><a href="events.html">Мероприятия</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
-          </ul>
-        </div>
-        <div class="footer__legal">
-          <a href="#">Политика конфиденциальности</a>
-          <a href="#">Политика обработки персональных данных</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+				<form id="request-form" novalidate>
+					<div class="modal-form__fields">
+						<div class="modal-form__row">
+							<div class="form-field">
+								<input class="form-field__input js-fio" type="text" name="fio" id="req-fio" placeholder=" " autocomplete="name" />
+								<label class="form-field__label" for="req-fio">ФИО*</label>
+							</div>
+							<div class="form-field">
+								<input class="form-field__input js-position" type="text" name="position" id="req-position" placeholder=" " autocomplete="organization-title" />
+								<label class="form-field__label" for="req-position">Должность*</label>
+							</div>
+						</div>
 
+						<div class="modal-form__row">
+							<div class="form-field">
+								<input class="form-field__input js-phone" type="tel" name="phone" id="req-phone" placeholder=" " autocomplete="tel" />
+								<label class="form-field__label" for="req-phone">Телефон*</label>
+							</div>
+							<div class="form-field">
+								<input class="form-field__input js-email" type="email" name="email" id="req-email" placeholder=" " autocomplete="email" />
+								<label class="form-field__label" for="req-email">E-mail*</label>
+							</div>
+						</div>
 
-  <div class="modal-form" id="request-popup">
-    <div class="modal-form__head">
-      <div>
-        <h3 class="modal-form__title">Связаться с нами</h3>
-        <p class="modal-form__sub">Оставьте свои контакты и мы свяжемся с вами в ближайшее время</p>
-      </div>
-      <button type="button" class="modal-form__close" data-fancybox-close aria-label="Закрыть">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-        </svg>
-      </button>
-    </div>
+						<div class="form-field">
+							<input class="form-field__input js-org" type="text" name="org" id="req-org" placeholder=" " />
+							<label class="form-field__label" for="req-org">Название организации</label>
+						</div>
 
-    <form id="request-form" novalidate>
-      <div class="modal-form__fields">
-        <div class="form-field">
-          <input class="form-field__input js-fio" type="text" name="fio" id="req-fio" placeholder=" "
-            autocomplete="name">
-          <label class="form-field__label" for="req-fio">ФИО*</label>
-        </div>
+						<div class="form-field">
+							<textarea class="form-field__input js-comment" name="comment" id="req-comment" placeholder=" "></textarea>
+							<label class="form-field__label" for="req-comment">Комментарий</label>
+						</div>
+					</div>
 
-        <div class="modal-form__row">
-          <div class="form-field">
-            <input class="form-field__input js-email" type="email" name="email" id="req-email" placeholder=" "
-              autocomplete="email">
-            <label class="form-field__label" for="req-email">E-mail*</label>
-          </div>
-          <div class="form-field">
-            <input class="form-field__input js-phone" type="tel" name="phone" id="req-phone" placeholder=" "
-              autocomplete="tel">
-            <label class="form-field__label" for="req-phone">Телефон*</label>
-          </div>
-        </div>
+					<div class="modal-form__checks">
+						<label class="form-check">
+							<input class="form-check__input js-consent" type="checkbox" name="consent" />
+							<span class="form-check__box">
+								<svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+									<path d="M2 7.5L5.5 11L12 3.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</span>
+							<span class="form-check__text">Соглашаюсь с обработкой своих персональных данных</span>
+						</label>
 
-        <div class="form-field">
-          <input class="form-field__input js-org" type="text" name="org" id="req-org" placeholder=" ">
-          <label class="form-field__label" for="req-org">Название организации</label>
-        </div>
+						<label class="form-check">
+							<input class="form-check__input" type="checkbox" name="newsletter" />
+							<span class="form-check__box">
+								<svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+									<path d="M2 7.5L5.5 11L12 3.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</span>
+							<span class="form-check__text">Хочу получать письма с новостями цифровизации</span>
+						</label>
+					</div>
 
-        <div class="form-field">
-          <textarea class="form-field__input js-comment" name="comment" id="req-comment" placeholder=" "></textarea>
-          <label class="form-field__label" for="req-comment">Комментарий</label>
-        </div>
-      </div>
+					<button class="btn btn--primary modal-form__submit" type="submit">Отправить</button>
+				</form>
+			</div>
 
-      <div class="modal-form__checks">
-        <label class="form-check">
-          <input class="form-check__input js-consent" type="checkbox" name="consent">
-          <span class="form-check__box">
-            <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
-              <path d="M2 7.5L5.5 11L12 3.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </span>
-          <span class="form-check__text">Соглашаюсь с обработкой своих персональных данных</span>
-        </label>
+			<div class="modal-form__success is-hidden">
+				<img class="modal-form__success-icon" src="assets/img/success-icon.jpg" width="100" height="100" alt="" />
+				<h4 class="modal-form__success-title">Заявка успешно&nbsp;отправлена!</h4>
+				<p class="modal-form__success-text">Мы свяжемся с вами в&nbsp;ближайшее время</p>
+				<a class="btn btn--primary btn--md modal-form__success-btn" href="#" data-fancybox-close>Хорошо</a>
+			</div>
+		</div>
 
-        <label class="form-check">
-          <input class="form-check__input" type="checkbox" name="newsletter">
-          <span class="form-check__box">
-            <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
-              <path d="M2 7.5L5.5 11L12 3.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </span>
-          <span class="form-check__text">Хочу получать письма с новостями цифровизации</span>
-        </label>
-      </div>
+		<div class="cookie-banner" id="cookie-banner" hidden role="dialog" aria-label="Использование cookies">
+			<p class="cookie-banner__text">На сайте используются файлы cookie. Продолжая использовать сайт, Вы&nbsp;соглашаетесь с&nbsp;использованием cookies.</p>
+			<div class="cookie-banner__actions">
+				<a class="btn btn--undeline" href="#">Узнать больше</a>
+				<button class="btn btn--primary btn--md" type="button" data-cookie-accept>Согласен(а)</button>
+			</div>
+		</div>
 
-      <button class="btn btn--primary modal-form__submit" type="submit">Отправить</button>
-    </form>
-
-    <div class="modal-form__success is-hidden">
-      <h4 class="modal-form__success-title">Заявка отправлена</h4>
-      <p class="modal-form__success-text">Мы свяжемся с вами в ближайшее время</p>
-    </div>
-  </div>
-
-  <div class="cookie-banner" id="cookie-banner" hidden role="dialog" aria-label="Использование cookies">
-    <p class="cookie-banner__text">На сайте используются файлы cookie. Продолжая использовать сайт, Вы&nbsp;соглашаетесь
-      с&nbsp;использованием cookies.</p>
-    <div class="cookie-banner__actions">
-      <a class="btn btn--undeline" href="#">Узнать больше</a>
-      <button class="btn btn--primary btn--md" type="button" data-cookie-accept>Согласен(а)</button>
-    </div>
-  </div>
-
-  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
-  <script src="assets/vendor/fancybox/fancybox.umd.js" defer></script>
-  <script src="assets/vendor/just-validate/just-validate.production.min.js" defer></script>
-  <script src="assets/vendor/aos/aos.js" defer></script>
-  <script src="js/main.js" defer></script>
-</body>
-
+		<script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+		<script src="assets/vendor/fancybox/fancybox.umd.js" defer></script>
+		<script src="assets/vendor/just-validate/just-validate.production.min.js" defer></script>
+		<script src="assets/vendor/aos/aos.js" defer></script>
+		<script src="js/main.js" defer></script>
+	</body>
 </html>

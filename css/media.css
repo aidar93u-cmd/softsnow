@@ -12,10 +12,10 @@
 		--section-py: 6.25rem;
 		--section-py-md: 4.5rem;
 	}
-	html{
+	html {
 		font-size: 14px;
 	}
-} 
+}
 
 /* ==================== Desktop ≤1440px ==================== */
 /* Типографика + спейсинг, боковые поля уже */
@@ -1975,11 +1975,7 @@
 		position: absolute;
 		inset: 0;
 		z-index: 1;
-		background: linear-gradient(
-			to bottom,
-			rgba(245, 244, 245, 0.55),
-			rgba(245, 244, 245, 0) 60%
-		);
+		background: linear-gradient(to bottom, rgba(245, 244, 245, 0.55), rgba(245, 244, 245, 0) 60%);
 		pointer-events: none;
 	}
 
@@ -3149,8 +3145,6 @@
 		gap: 0.75rem;
 	}
 
-	
-
 	.events-featured__text-swiper,
 	.events-featured__media-swiper {
 		height: auto;
@@ -3218,7 +3212,10 @@
 		padding: 1.5rem 1rem;
 		border-radius: 0.75rem;
 	}
-
+	.catalog__list .catalog__card {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
 	.catalog__head {
 		width: auto;
 		gap: 0.75rem;
@@ -3474,7 +3471,7 @@
 	}
 
 	/* === Мобильная вёрстка статьи (Figma 431:31115, 375×2175) === */
-	.article-block--unified .article-block__cover {        
+	.article-block--unified .article-block__cover {
 		aspect-ratio: auto;
 	}
 
@@ -3584,7 +3581,7 @@
 	.article-block--unified .article-block__caption {
 		font-size: 0.75rem;
 	}
-	.article-block--unified ul{
+	.article-block--unified ul {
 		gap: 0.75rem;
 	}
 	.article-block--unified ul {
@@ -3689,22 +3686,22 @@
 		order: 2;
 	}
 	.client-intro__inner_content {
-    padding: 1rem;
-}
-.client-intro__inner_content{
-	margin-bottom: 1rem;
-}
+		padding: 1rem;
+	}
+	.client-intro__inner_content {
+		margin-bottom: 1rem;
+	}
 	.client-intro__media img {
 		height: auto;
 		border-radius: 0.625rem;
 	}
 	.article-text-section {
-    margin-bottom: 0rem;
-}
-.article-block--unified ul li,
-.article-block--unified ol li {
-    font-size: 0.9375rem;
-}
+		margin-bottom: 0rem;
+	}
+	.article-block--unified ul li,
+	.article-block--unified ol li {
+		font-size: 0.9375rem;
+	}
 	.client-intro__text {
 		order: 3;
 	}
@@ -4449,8 +4446,8 @@
 		line-height: 1;
 	}
 	.modal-form__close {
-			right: 1rem;
-			top: 1rem;
+		right: 1rem;
+		top: 1rem;
 	}
 	/* Панель фильтров: выезжающая шторка снизу (Figma 1736:16401).
 	   Класс is-filters-open вешается JS на сами .projects__filters */
@@ -4917,7 +4914,7 @@
 		width: 100%;
 		margin: 0;
 		padding: 0;
-		gap:0.5rem
+		gap: 0.5rem;
 	}
 
 	.contacts-map__frame {
@@ -5234,16 +5231,16 @@
 	.history__stage {
 		min-height: auto;
 	}
-	
-.article-block--unified ol li::before {
-    min-width: 2rem;
-    height: 2rem;
-}
-.article-block--unified ol li {
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-.article-block__text ul li::before {
-    top: 0.5rem;
-}
+
+	.article-block--unified ol li::before {
+		min-width: 2rem;
+		height: 2rem;
+	}
+	.article-block--unified ol li {
+		align-items: flex-start;
+		justify-content: flex-start;
+	}
+	.article-block__text ul li::before {
+		top: 0.5rem;
+	}
 }

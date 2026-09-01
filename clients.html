@@ -1,458 +1,424 @@
 ﻿<!DOCTYPE html>
 <html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+		<title>Клиенты — SoftSnow</title>
+		<meta name="description" content="С 2021 года SoftSnow помогает вузам, госкорпорациям и бизнесу внедрять цифровые решения." />
+		<meta property="og:title" content="Клиенты — SoftSnow" />
+		<meta property="og:description" content="С 2021 года SoftSnow помогает вузам, госкорпорациям и бизнесу внедрять цифровые решения." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="clients.html" />
+		<meta property="og:image" content="assets/img/hero-bg.jpg" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-  <title>Клиенты — SoftSnow</title>
-  <meta name="description"
-    content="С 2021 года SoftSnow помогает вузам, госкорпорациям и бизнесу внедрять цифровые решения.">
-  <meta property="og:title" content="Клиенты — SoftSnow">
-  <meta property="og:description"
-    content="С 2021 года SoftSnow помогает вузам, госкорпорациям и бизнесу внедрять цифровые решения.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="clients.html">
-  <meta property="og:image" content="assets/img/hero-bg.jpg">
+		<link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="assets/vendor/fancybox/fancybox.css" />
+		<link rel="stylesheet" href="assets/vendor/aos/aos.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/sections.css" />
+		<link rel="stylesheet" href="css/media.css" />
+	</head>
 
+	<body>
+		<header class="header header--sticky">
+			<div class="container">
+				<div class="header__inner">
+					<a href="index.html" class="logo" aria-label="SoftSnow — на главную">
+						<svg class="logo__mark" width="222" height="67" viewBox="0 0 222 67" aria-hidden="true">
+							<use href="assets/img/sprite.svg#logo-mark" width="64" height="67" fill="#1342F3" stroke="#1342F3" />
+							<use href="assets/img/sprite.svg#logo-wordmark" width="222" height="67" fill="#1342F3" />
+						</svg>
+					</a>
 
+					<nav class="header__nav" aria-label="Основная навигация">
+						<div class="header__nav-item">
+							<div class="header__dropdown">
+								<a href="#industries" class="header__link">
+									<span>Отрасли</span>
+									<svg class="header__caret" width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true">
+										<use href="assets/img/sprite.svg#icon-caret-header" />
+									</svg>
+								</a>
 
-  <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
-  <link rel="stylesheet" href="assets/vendor/fancybox/fancybox.css">
-  <link rel="stylesheet" href="assets/vendor/aos/aos.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/sections.css">
-  <link rel="stylesheet" href="css/media.css">
-</head>
+								<div class="header__dropdown-panel">
+									<a href="vuz.html" class="header__dropdown-link">Высшие учебные заведения</a>
+									<a href="solutions.html" class="header__dropdown-link">Государственные учреждения</a>
+									<a href="solutions.html" class="header__dropdown-link">Бизнес</a>
+								</div>
+							</div>
+						</div>
 
-<body>
+						<div class="header__nav-item">
+							<div class="header__dropdown">
+								<a href="solutions.html" class="header__link">
+									<span>Решения</span>
+									<svg class="header__caret" width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true">
+										<use href="assets/img/sprite.svg#icon-caret-header" />
+									</svg>
+								</a>
 
-  <header class="header header--sticky">
-    <div class="container">
-      <div class="header__inner">
-        <a href="index.html" class="logo" aria-label="SoftSnow — на главную">
-          <svg class="logo__mark" width="222" height="67" viewBox="0 0 222 67" aria-hidden="true">
-            <use href="assets/img/sprite.svg#logo-mark" width="64" height="67" fill="#1342F3" stroke="#1342F3" />
-            <use href="assets/img/sprite.svg#logo-wordmark" width="222" height="67" fill="#1342F3" />
-          </svg>
-        </a>
+								<div class="header__dropdown-panel">
+									<a href="directum.html" class="header__dropdown-link">Электронный документооборот</a>
+									<a href="solution-detail.html" class="header__dropdown-link">Кадровый электронный документооборот</a>
+									<a href="univer-online.html" class="header__dropdown-link">Решения для вузов</a>
+									<a href="solution-detail.html" class="header__dropdown-link">Управление стратегией</a>
+									<a href="solution-detail.html" class="header__dropdown-link">Управление проектами</a>
+								</div>
+							</div>
+						</div>
 
-        <nav class="header__nav" aria-label="Основная навигация">
-          <div class="header__nav-item">
-            <div class="header__dropdown">
-              <a href="#industries" class="header__link">
-                <span>Отрасли</span>
-                <svg class="header__caret" width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true">
-                  <use href="assets/img/sprite.svg#icon-caret-header" />
-                </svg>
-              </a>
+						<div class="header__nav-item">
+							<a href="projects.html" class="header__link"><span>Проекты</span></a>
+						</div>
 
-              <div class="header__dropdown-panel">
-                <a href="vuz.html" class="header__dropdown-link">Высшие учебные заведения</a>
-                <a href="solutions.html" class="header__dropdown-link">Государственные учреждения</a>
-                <a href="solutions.html" class="header__dropdown-link">Бизнес</a>
-              </div>
-            </div>
-          </div>
+						<div class="header__nav-item">
+							<a href="clients.html" class="header__link"><span>Клиенты</span></a>
+						</div>
 
-          <div class="header__nav-item">
-            <div class="header__dropdown">
-              <a href="solutions.html" class="header__link">
-                <span>Решения</span>
-                <svg class="header__caret" width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true">
-                  <use href="assets/img/sprite.svg#icon-caret-header" />
-                </svg>
-              </a>
+						<div class="header__nav-item">
+							<a href="events.html" class="header__link"><span>Медиа</span></a>
+						</div>
 
-              <div class="header__dropdown-panel">
-                <a href="directum.html" class="header__dropdown-link">Электронный документооборот</a>
-                <a href="solution-detail.html" class="header__dropdown-link">Кадровый электронный документооборот</a>
-                <a href="univer-online.html" class="header__dropdown-link">Решения для вузов</a>
-                <a href="solution-detail.html" class="header__dropdown-link">Управление стратегией</a>
-                <a href="solution-detail.html" class="header__dropdown-link">Управление проектами</a>
-              </div>
-            </div>
+						<div class="header__nav-item">
+							<a href="about.html" class="header__link"><span>О нас</span></a>
+						</div>
+					</nav>
 
-          </div>
+					<button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+						<span></span>
+						<span></span>
+					</button>
+					<div class="header__contacts">
+						<div class="header__phone">
+							<a href="contacts.html" class="header__phone-label">Контакты</a>
+							<a href="tel:+78123201130" class="header__phone-num">+7 (812) 320-11-30</a>
+						</div>
+						<button class="btn btn--search" type="button" aria-label="Поиск">
+							<svg aria-hidden="true" width="15.9" height="15.9" viewBox="0 0 15.9 15.9">
+								<use href="assets/img/sprite.svg#icon-search" />
+							</svg>
+						</button>
+						<button class="btn btn--primary" type="button" data-fancybox data-src="#request-popup">Оставить заявку</button>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main>
+			<section class="page-hero" aria-label="Клиенты">
+				<div class="container">
+					<div class="hero-block-page-inner" data-aos="fade-up" data-aos-delay="200">
+						<nav class="breadcrumb" aria-label="Хлебные крошки">
+							<a href="index.html">Главная</a>
+							<span class="breadcrumb__sep" aria-hidden="true">
+								<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M6 4L10 8L6 12" stroke="#222222" />
+								</svg>
+							</span>
+							<span class="breadcrumb__current" aria-current="page">Клиенты</span>
+						</nav>
+						<h1 class="page-hero__title">Клиенты</h1>
+						<p class="page-hero__sub">С 2021 года SoftSnow помогает вузам, госкорпорациям и бизнесу внедрять цифровые решения, выстраивать процессы и измерять результат.</p>
+					</div>
+				</div>
+			</section>
 
-          <div class="header__nav-item">
-            <a href="projects.html" class="header__link"><span>Проекты</span></a>
-          </div>
+			<section class="clients" aria-label="Наши клиенты">
+				<div class="container">
+					<div class="tab-filters" role="tablist" aria-label="Фильтр по отраслям" data-aos="fade-up">
+						<button class="tab-filter is-active" type="button" data-filter="all">Все отрасли</button>
+						<button class="tab-filter" type="button" data-filter="vuz">Высшие учебные заведения</button>
+						<button class="tab-filter" type="button" data-filter="gov">Государственные учреждения</button>
+						<button class="tab-filter" type="button" data-filter="biz">Бизнес</button>
+					</div>
+					<div class="clients__grid" id="clientsGrid" data-aos="fade-up" data-aos-delay="200">
+						<a class="clients__card" href="client-detail.html" data-category="vuz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Московский государственный институт международных отношений (МГИМО)</h4>
+								<p class="clients__desc">Образование</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-1.png" alt="МГИМО" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="biz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
 
-          <div class="header__nav-item">
-            <a href="clients.html" class="header__link"><span>Клиенты</span></a>
-          </div>
+							<div class="clients__body">
+								<h4 class="clients__name">Российский производитель золота и&nbsp;серебра Полиметалл</h4>
+								<p class="clients__desc">Горнодобывающая промышленность</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-2.png" alt="Полиметалл" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="gov">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Вологодская Областная Энергетическая Компания (ВОЭК)</h4>
+								<p class="clients__desc">Энергетика</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-3.png" alt="ВОЭК" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="biz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Solidcore Resources</h4>
+								<p class="clients__desc">Горнодобывающая промышленность</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-4.png" alt="Solidcore Resources" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="vuz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Московский государственный юридический университет имени&nbsp;О.&nbsp;Е.&nbsp;Кутафина</h4>
+								<p class="clients__desc">Образование</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-5.png" alt="МГЮА" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="vuz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Санкт-Петербургский политехнический университет Петра&nbsp;Великого</h4>
+								<p class="clients__desc">Образование</p>
+							</div>
+							<div class="clients__logo">
+								<img src="assets/img/clients/client-6.png" alt="СПбПУ" width="136" height="136" />
+							</div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="vuz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Российская академия народного хозяйства и&nbsp;государственной службы при&nbsp;Президенте&nbsp;РФ</h4>
+								<p class="clients__desc">Образование</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-001.svg" alt="Российская академия правосудия" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="vuz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Финансовый университет при&nbsp;Правительстве Российской Федерации</h4>
+								<p class="clients__desc">Образование</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-8.png" alt="Финансовый университет" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="vuz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Московский финансово-юридический университет</h4>
+								<p class="clients__desc">Образование</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-9.png" alt="МФЮА" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="biz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Азиатско-Тихоокеанский банк</h4>
+								<p class="clients__desc">Банковский сектор</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-10.png" alt="Азиатско-Тихоокеанский банк" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="vuz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Санкт-Петербургский государственный университет</h4>
+								<p class="clients__desc">Образование</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-11.png" alt="СПбГУ" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="biz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Концерн «Моринформсистема – Агат»</h4>
+								<p class="clients__desc">Судостроение и морские технологии</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-002.png" alt="Концерн «Моринформсистема – Агат»" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="vuz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Корпорация «Синергия»</h4>
+								<p class="clients__desc">Образование</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-13.png" alt="Корпорация «Синергия»" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="vuz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Первый Санкт-Петербургский государственный медицинский университет им.&nbsp;акад. И.П.&nbsp;Павлова</h4>
+								<p class="clients__desc">Медицинское образование</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-14.png" alt="ПСПбГМУ им. Павлова" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="vuz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Нижегородский государственный университет им.&nbsp;Н.И.&nbsp;Лобачевского</h4>
+								<p class="clients__desc">Образование</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-15.png" alt="ННГУ им. Лобачевского" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="gov">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Национальный исследовательский Томский политехнический университет</h4>
+								<p class="clients__desc">Общественная организация</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-003.png" alt="Национальный исследовательский Томский политехнический университет" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="vuz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Ставропольский государственный аграрный университет</h4>
+								<p class="clients__desc">Образование</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-17.png" alt="СтГАУ" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="vuz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Северо-Восточный федеральный университет имени М.&nbsp;К.&nbsp;Аммосова</h4>
+								<p class="clients__desc">Образование</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-18.png" alt="СВФУ им. Аммосова" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="vuz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">СПбГЭТУ «ЛЭТИ»</h4>
+								<p class="clients__desc">Образование</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-19.png" alt="СПбГЭТУ «ЛЭТИ»" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="vuz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Московский международный университет</h4>
+								<p class="clients__desc">Образование</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-004.png" alt="Московский международный университет" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="vuz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Югорский государственный университет</h4>
+								<p class="clients__desc">Образование</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-005.png" alt="Югорский ГУ" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="biz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Коммерсантъ DPO «Корпоративный университет»</h4>
+								<p class="clients__desc">Корпоративное обучение</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-007.png" alt="Коммерсантъ DPO" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="vuz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Омский государственный технический университет</h4>
+								<p class="clients__desc">Образование</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-23.png" alt="ОмГТУ" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="vuz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Набережночелнинский государственный педагогический университет</h4>
+								<p class="clients__desc">Педагогическое образование</p>
+							</div>
+							<div class="clients__logo"><img src="assets/img/clients/client-24.png" alt="НЧГПУ" width="136" height="136" /></div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="vuz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Владимирский государственный университет им.&nbsp;А.Г. и&nbsp;Н.Г.&nbsp;Столетовых</h4>
+								<p class="clients__desc">Образование</p>
+							</div>
+							<div class="clients__logo">
+								<img src="assets/img/clients/client-008.png" alt="ВлГУ им. Столетовых" width="136" height="136" />
+							</div>
+						</a>
 
-          <div class="header__nav-item">
-            <a href="events.html" class="header__link"><span>Медиа</span></a>
-          </div>
-
-          <div class="header__nav-item">
-            <a href="about.html" class="header__link"><span>О нас</span></a>
-          </div>
-
-        </nav>
-
-        <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false">
-          <span></span>
-          <span></span>
-        </button>
-        <div class="header__contacts">
-          <div class="header__phone">
-            <a href="contacts.html" class="header__phone-label">Контакты</a>
-            <a href="tel:+78123201130" class="header__phone-num">+7 (812) 320-11-30</a>
-          </div>
-          <button class="btn btn--search" type="button" aria-label="Поиск">
-            <svg aria-hidden="true" width="15.9" height="15.9" viewBox="0 0 15.9 15.9">
-              <use href="assets/img/sprite.svg#icon-search" />
-            </svg>
-          </button>
-          <button class="btn btn--primary" type="button" data-fancybox data-src="#request-popup">Оставить
-            заявку</button>
-        </div>
-      </div>
-    </div>
-  </header>
-  <main>
-    <section class="page-hero" aria-label="Клиенты">
-      <div class="container">
-        <div class="hero-block-page-inner" data-aos="fade-up" data-aos-delay="200">
-          <nav class="breadcrumb" aria-label="Хлебные крошки">
-            <a href="index.html">Главная</a>
-            <span class="breadcrumb__sep" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 4L10 8L6 12" stroke="#222222" />
-              </svg>
-            </span>
-            <span class="breadcrumb__current" aria-current="page">Клиенты</span>
-          </nav>
-          <h1 class="page-hero__title">Клиенты</h1>
-          <p class="page-hero__sub">С 2021 года SoftSnow помогает вузам,
-            госкорпорациям и бизнесу внедрять цифровые
-            решения, выстраивать процессы и измерять результат.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="clients" aria-label="Наши клиенты">
-      <div class="container">
-        <div class="tab-filters" role="tablist" aria-label="Фильтр по отраслям" data-aos="fade-up">
-          <button class="tab-filter is-active" type="button" data-filter="all">Все отрасли</button>
-          <button class="tab-filter" type="button" data-filter="vuz">Высшие учебные заведения</button>
-          <button class="tab-filter" type="button" data-filter="gov">Государственные учреждения</button>
-          <button class="tab-filter" type="button" data-filter="biz">Бизнес</button>
-        </div>
-        <div class="clients__grid" id="clientsGrid" data-aos="fade-up" data-aos-delay="200">
-          <a class="clients__card" href="client-detail.html" data-category="vuz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Московский государственный институт международных отношений (МГИМО)</h4>
-              <p class="clients__desc">Образование</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-1.png" alt="МГИМО" width="136" height="136">
-            </div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="biz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-
-            <div class="clients__body">
-              <h4 class="clients__name">Российский производитель золота и&nbsp;серебра Полиметалл</h4>
-              <p class="clients__desc">Горнодобывающая промышленность</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-2.png" alt="Полиметалл" width="136" height="136"></div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="gov">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Вологодская Областная Энергетическая Компания (ВОЭК)</h4>
-              <p class="clients__desc">Энергетика</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-3.png" alt="ВОЭК" width="136" height="136">
-            </div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="biz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Solidcore Resources</h4>
-              <p class="clients__desc">Горнодобывающая промышленность</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-4.png" alt="Solidcore Resources" width="136" height="136"></div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="vuz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Московский государственный юридический университет имени&nbsp;О.&nbsp;Е.&nbsp;Кутафина</h4>
-              <p class="clients__desc">Образование</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-5.png" alt="МГЮА" width="136" height="136">
-            </div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="vuz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Санкт-Петербургский политехнический университет Петра&nbsp;Великого</h4>
-              <p class="clients__desc">Образование</p>
-            </div>
-            <div class="clients__logo">
-              <img src="assets/img/clients/client-6.png" alt="СПбПУ" width="136" height="136">
-            </div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="vuz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Российская академия народного хозяйства и&nbsp;государственной службы при&nbsp;Президенте&nbsp;РФ</h4>
-              <p class="clients__desc">Образование</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-001.svg" alt="Российская академия правосудия" width="136" height="136"></div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="vuz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Финансовый университет при&nbsp;Правительстве Российской Федерации</h4>
-              <p class="clients__desc">Образование</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-8.png" alt="Финансовый университет" width="136" height="136"></div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="vuz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Московский финансово-юридический университет</h4>
-              <p class="clients__desc">Образование</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-9.png" alt="МФЮА" width="136" height="136">
-            </div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="biz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Азиатско-Тихоокеанский банк</h4>
-              <p class="clients__desc">Банковский сектор</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-10.png" alt="Азиатско-Тихоокеанский банк"
-                width="136" height="136"></div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="vuz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Санкт-Петербургский государственный университет</h4>
-              <p class="clients__desc">Образование</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-11.png" alt="СПбГУ" width="136" height="136">
-            </div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="biz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Концерн «Моринформсистема – Агат»</h4>
-              <p class="clients__desc">Судостроение и морские
-              технологии</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-002.png" alt="Концерн «Моринформсистема – Агат»" width="136"
-                height="136"></div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="vuz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Корпорация «Синергия»</h4>
-              <p class="clients__desc">Образование</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-13.png" alt="Корпорация «Синергия»"
-                width="136" height="136"></div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="vuz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Первый Санкт-Петербургский государственный медицинский университет им.&nbsp;акад.
-                И.П.&nbsp;Павлова</h4>
-              <p class="clients__desc">Медицинское образование</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-14.png" alt="ПСПбГМУ им. Павлова" width="136"
-                height="136"></div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="vuz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Нижегородский государственный университет им.&nbsp;Н.И.&nbsp;Лобачевского</h4>
-              <p class="clients__desc">Образование</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-15.png" alt="ННГУ им. Лобачевского"
-                width="136" height="136"></div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="gov">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Национальный исследовательский Томский политехнический университет</h4>
-              <p class="clients__desc">Общественная организация</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-003.png" alt="Национальный исследовательский Томский политехнический университет" width="136" height="136">
-            </div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="vuz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Ставропольский государственный аграрный университет</h4>
-              <p class="clients__desc">Образование</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-17.png" alt="СтГАУ" width="136" height="136">
-            </div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="vuz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Северо-Восточный федеральный университет имени М.&nbsp;К.&nbsp;Аммосова</h4>
-              <p class="clients__desc">Образование</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-18.png" alt="СВФУ им. Аммосова" width="136"
-                height="136"></div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="vuz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">СПбГЭТУ «ЛЭТИ»</h4>
-              <p class="clients__desc">Образование</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-19.png" alt="СПбГЭТУ «ЛЭТИ»" width="136"
-                height="136"></div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="vuz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Московский международный университет</h4>
-              <p class="clients__desc">Образование</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-004.png"
-                alt="Московский международный университет" width="136" height="136"></div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="vuz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Югорский государственный университет</h4>
-              <p class="clients__desc">Образование</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-005.png" alt="Югорский ГУ" width="136"
-                height="136"></div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="biz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Коммерсантъ DPO «Корпоративный университет»</h4>
-              <p class="clients__desc">Корпоративное обучение</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-007.png" alt="Коммерсантъ DPO" width="136"
-                height="136"></div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="vuz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Омский государственный технический университет</h4>
-              <p class="clients__desc">Образование</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-23.png" alt="ОмГТУ" width="136" height="136">
-            </div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="vuz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Набережночелнинский государственный педагогический университет</h4>
-              <p class="clients__desc">Педагогическое образование</p>
-            </div>
-            <div class="clients__logo"><img src="assets/img/clients/client-24.png" alt="НЧГПУ" width="136" height="136">
-            </div>
-          </a>
-          <a class="clients__card" href="client-detail.html" data-category="vuz">
-            <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-              <use href="assets/img/sprite.svg#icon-arrow-card" />
-            </svg>
-            <div class="clients__body">
-              <h4 class="clients__name">Владимирский государственный университет им.&nbsp;А.Г. и&nbsp;Н.Г.&nbsp;Столетовых</h4>
-              <p class="clients__desc">Образование</p>
-            </div>
-            <div class="clients__logo">
-              <img src="assets/img/clients/client-008.png" alt="ВлГУ им. Столетовых" width="136"
-                height="136">
-              </div>
-            </a>
-
-            <a class="clients__card" href="client-detail.html" data-category="vuz">
-              <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-                <use href="assets/img/sprite.svg#icon-arrow-card" />
-              </svg>
-              <div class="clients__body">
-                <h4 class="clients__name">Боровичский комбинат огнеупоров</h4>
-                <p class="clients__desc">Промышленность</p>
-              </div>
-              <div class="clients__logo">
-                <img src="assets/img/clients/client-009.png" alt="Боровичский комбинат огнеупоров" width="136" height="136">
-              </div>
-            </a>
-            <a class="clients__card" href="client-detail.html" data-category="vuz">
-              <svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-                <use href="assets/img/sprite.svg#icon-arrow-card" />
-              </svg>
-              <div class="clients__body">
-                <h4 class="clients__name">Холдинг Гефест</h4>
-                <p class="clients__desc">Промышленность</p>
-              </div>
-              <div class="clients__logo">
-                <img src="assets/img/clients/client-0010.png" alt="Холдинг Гефест" width="136" height="136">
-              </div>
-            </a>
-            
-        </div>
-        <div class="clients__more" id="clientsMore" hidden>
-          <button class="btn btn--outline btn--lg" type="button" id="clientsShowMore">Показать ещё</button>
-        </div>
-      </div>
-    </section>
-    <!--
+						<a class="clients__card" href="client-detail.html" data-category="vuz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Боровичский комбинат огнеупоров</h4>
+								<p class="clients__desc">Промышленность</p>
+							</div>
+							<div class="clients__logo">
+								<img src="assets/img/clients/client-009.png" alt="Боровичский комбинат огнеупоров" width="136" height="136" />
+							</div>
+						</a>
+						<a class="clients__card" href="client-detail.html" data-category="vuz">
+							<svg class="clients__icon" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
+								<use href="assets/img/sprite.svg#icon-arrow-card" />
+							</svg>
+							<div class="clients__body">
+								<h4 class="clients__name">Холдинг Гефест</h4>
+								<p class="clients__desc">Промышленность</p>
+							</div>
+							<div class="clients__logo">
+								<img src="assets/img/clients/client-0010.png" alt="Холдинг Гефест" width="136" height="136" />
+							</div>
+						</a>
+					</div>
+					<div class="clients__more" id="clientsMore" hidden>
+						<button class="btn btn--outline btn--lg" type="button" id="clientsShowMore">Показать ещё</button>
+					</div>
+				</div>
+			</section>
+			<!--
     <section class="projects" id="projects" aria-label="Реализованные проекты">
       <div class="container">
         <div class="projects__head">
@@ -563,213 +529,217 @@
       </div>
     </section>
 -->
-    <section class="cta" id="cta" aria-label="Нужна консультация">
-      <div class="container">
-        <div class="cta__body">
-          <div class="cta__content">
-            <h2 class="cta__title">Нужна консультация<br> по&nbsp;проекту?</h2>
-            <p class="cta__text">Оставьте контакты, и&nbsp;мы свяжемся с&nbsp;вами, чтобы обсудить задачу, подобрать
-              подходящее направление и&nbsp;предложить следующий шаг</p>
-            <button class="btn btn--primary btn--lg cta__btn" type="button" data-fancybox
-              data-src="#request-popup">Оставить заявку</button>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+			<section class="cta" id="cta" aria-label="Нужна консультация">
+				<div class="container">
+					<div class="cta__body">
+						<div class="cta__content">
+							<h2 class="cta__title">
+								Нужна консультация<br />
+								по&nbsp;проекту?
+							</h2>
+							<p class="cta__text">Оставьте контакты, и&nbsp;мы свяжемся с&nbsp;вами, чтобы обсудить задачу, подобрать подходящее направление и&nbsp;предложить следующий шаг</p>
+							<button class="btn btn--primary btn--lg cta__btn" type="button" data-fancybox data-src="#request-popup">Оставить заявку</button>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <div class="footer__brand-top">
-          <a href="index.html" v class="footer__logo">
-            <svg class="logo__icon" width="222" height="67" viewBox="0 0 222 67" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M29.041 0.783203C29.6425 0.406715 30.4008 0.405932 31.0029 0.78125L55.5439 16.0771C56.7194 16.81 56.7463 18.5401 55.5967 19.3115L48.4385 24.1143C47.8282 24.5236 47.0403 24.5354 46.4189 24.1436L30.0166 13.7979L23.6416 17.7432L39.3027 28.5459L39.7041 28.8223L39.4365 29.2305L38.6689 30.4062L38.3877 30.835L37.9658 30.5439L21.4111 19.125L14.9453 23.127L47.1504 42.7773L57.8564 36.6328L58.2998 36.3779L58.5439 36.8271L59.2168 38.0635L59.4502 38.4922L59.0264 38.7354L49.4932 44.208L54.9707 47.5508C56.1798 48.2886 56.1909 50.0712 54.9922 50.8252L30.9932 65.9209C30.4106 66.2872 29.6789 66.3011 29.083 65.957L4.01953 51.4844C2.83114 50.798 2.73744 49.0915 3.83496 48.2715L10.1885 43.5244C10.7817 43.0812 11.5751 43.0314 12.2178 43.3994L29.1602 53.1064L35.4443 49.499L19.2324 39.2402L18.8193 38.9795L19.0703 38.5605L19.793 37.3555L20.0566 36.916L20.4893 37.1895L37.8027 48.1455L44.7705 44.1445L12.6533 24.5459L2.91211 30.5762L2.47656 30.8457L2.21777 30.4043L1.50586 29.1914L1.25879 28.7705L1.6748 28.5137L10.3525 23.1416L4.3877 19.502C3.17728 18.7631 3.16834 16.9778 4.37012 16.2256L29.041 0.783203ZM30.082 55.3525C29.5108 55.6805 28.8129 55.681 28.2412 55.3535L11.334 45.667L5.85156 49.7627L29.9961 63.7061L53.0566 49.2012L47.1133 45.5742L30.082 55.3525ZM6.30273 17.8525L12.6445 21.7227L29.0449 11.5723C29.6483 11.1988 30.4063 11.2014 31.0068 11.5801L47.3975 21.917L53.6436 17.7256L30.0244 3.00488L6.30273 17.8525Z"
-                fill="white" stroke="white" />
-              <rect x="57.3281" y="32.9355" width="6.167" height="6.30839" rx="3.0835" fill="white" stroke="white" />
-              <rect x="15.0469" y="33.5562" width="6.167" height="6.30839" rx="3.0835" fill="white" stroke="white" />
-              <rect x="0.5" y="25.8657" width="6.167" height="6.30839" rx="3.0835" fill="white" stroke="white" />
-              <rect x="34.3438" y="25.8657" width="6.167" height="6.30839" rx="3.0835" fill="white" stroke="white" />
-              <path
-                d="M63.75 6.82031L61.9922 2.74219V6.82031H60.7617V0.539062H62.25L64.0781 5.01562L65.9062 0.539062H67.4062V6.82031H66.1641V2.76562L64.418 6.82031H63.75ZM56.5195 6.82031V1.60547H54.6211V0.539062H59.6602V1.60547H57.7617V6.82031H56.5195Z"
-                fill="white" />
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M196.203 29.3823V39.4487L191.785 42.0083L187.461 44.4888L183.138 42.0083L178.72 39.4478V29.3843L181.175 27.9907H181.13L183.123 26.8384L183.122 26.8374L187.462 24.3413L196.203 29.3823ZM184.884 29.5669L184.878 29.5698L182.214 31.1001L181.963 31.2437V37.5708L182.214 37.7153L184.878 39.2446L187.196 40.5806L187.444 40.7241L187.694 40.5815L190.028 39.2446L190.03 39.2437L192.929 37.5698V31.2466L192.681 31.1021L187.532 28.0923L184.884 29.5669Z"
-                fill="white" />
-              <path
-                d="M103.142 29.811L101.517 30.7456L101.267 30.8901V37.2319L101.517 37.3765L103.947 38.7769L106.475 40.2417L106.725 40.3862L106.975 40.2427L111.95 37.3765L112.2 37.2319V30.8911L110.341 29.812V26.0737L111.051 26.4771L115.467 29.02V39.0854L106.709 44.1421L97.9678 39.0854V29.0259L98.8037 28.5659L98.8125 28.561L102.414 26.479L103.142 26.0688V29.811Z"
-                fill="white" />
-              <path
-                d="M88.1299 25.7378L88.1436 25.7388L88.1572 25.7378C89.438 25.7079 90.6968 26.0451 91.79 26.7114C92.7253 27.2805 93.4889 28.0927 94.0098 29.0513L91.1377 30.73C90.8978 30.2897 90.56 29.9028 90.1475 29.6118C89.6415 29.2482 89.0435 29.0364 88.4277 28.9956L88.1631 28.9888C87.6473 28.9664 87.1387 29.0949 86.6973 29.3696L86.6855 29.3774L86.6738 29.3862C86.4631 29.535 86.3058 29.7298 86.2002 29.9409C86.0947 30.1519 86.0324 30.4051 86.0439 30.6597C86.0559 30.9573 86.1511 31.2356 86.3066 31.48L86.3125 31.4888C86.4609 31.7114 86.6624 31.9184 86.9238 32.061L86.9287 32.064C87.7147 32.482 88.5508 32.8001 89.4199 33.0112C90.0887 33.2198 90.6573 33.3967 91.0645 33.5464L91.417 33.688C91.9594 33.9484 92.4797 34.2546 92.9697 34.5991L92.9775 34.604C93.4535 34.9254 93.8446 35.357 94.126 35.856L94.2393 36.0737C94.5229 36.6704 94.6433 37.3209 94.5869 37.9702L94.584 38.0024L94.585 38.0347C94.6139 38.7224 94.4832 39.4083 94.1953 40.0347L94.1934 40.0396C93.9147 40.661 93.4845 41.2077 92.9502 41.6431C91.6282 42.6002 89.9936 43.1598 88.3594 43.0698C86.8771 43.1049 85.4194 42.729 84.1348 41.98C83.1365 41.3562 82.3579 40.4426 81.8984 39.3667L84.8867 37.6304C85.1908 38.2059 85.6314 38.7046 86.1826 39.0728C86.892 39.5518 87.7464 39.789 88.6006 39.7524C89.3081 39.7505 89.9194 39.6506 90.3711 39.3931C90.8677 39.1099 91.1406 38.6525 91.1406 38.0786C91.1406 37.254 90.4875 36.7115 89.6602 36.3618L89.6406 36.354C89.3622 36.2496 88.5982 36.0181 87.4033 35.6597L87.3887 35.6548L87.374 35.6519L87.1201 35.5874C85.8616 35.2504 84.6957 34.6247 83.7148 33.7534C83.3709 33.4068 83.0935 32.993 82.8896 32.5435L82.8057 32.3472C82.5984 31.8174 82.5056 31.2526 82.5342 30.689L82.5352 30.6685V30.6479C82.5135 29.9829 82.6433 29.3166 82.9111 28.7085C83.1449 28.1778 83.485 27.6942 83.9082 27.2837L84.0947 27.1128C85.2221 26.1822 86.6605 25.6933 88.1299 25.7378Z"
-                fill="white" />
-              <path
-                d="M152.363 25.7134L152.374 25.7144H152.385C153.592 25.7003 154.782 25.9902 155.834 26.5698L156.042 26.6899C156.969 27.2663 157.725 28.0718 158.243 29.0269L155.372 30.7046C155.135 30.268 154.803 29.8857 154.394 29.5903C153.815 29.1735 153.123 28.9549 152.412 28.9644C151.891 28.9421 151.386 29.0819 150.954 29.3413L150.938 29.3511L150.923 29.3618C150.779 29.4635 150.643 29.592 150.535 29.7534L150.438 29.9263C150.334 30.1369 150.273 30.3873 150.285 30.6401C150.297 30.9209 150.377 31.198 150.536 31.4507C150.686 31.6927 150.901 31.8951 151.141 32.0317L151.147 32.0366L151.155 32.0405C151.949 32.4585 152.789 32.7858 153.654 33.0054C154.165 33.1463 154.668 33.3094 155.165 33.4946L155.661 33.688C156.199 33.9204 156.71 34.2213 157.188 34.5698L157.195 34.5747L157.202 34.5806C157.746 34.9478 158.18 35.458 158.465 36.0493C158.749 36.6461 158.868 37.2973 158.812 37.9468L158.809 37.979L158.811 38.0112C158.839 38.699 158.709 39.3849 158.421 40.0112L158.419 40.0151C158.14 40.6374 157.709 41.185 157.174 41.6206C155.862 42.5915 154.23 43.1345 152.598 43.0298C151.125 43.0733 149.667 42.6989 148.39 41.9585C147.389 41.3347 146.609 40.42 146.148 39.3423L149.134 37.6089C149.437 38.1862 149.882 38.6831 150.421 39.0542C151.128 39.5409 151.976 39.7697 152.829 39.73C153.545 39.73 154.165 39.6287 154.621 39.3687C155.118 39.0854 155.391 38.628 155.391 38.0542C155.391 37.2235 154.727 36.6991 153.898 36.3394L153.887 36.3345L153.874 36.3306L153.575 36.2271C153.187 36.0998 152.533 35.9023 151.628 35.6489L151.619 35.646L151.609 35.644C150.254 35.3183 148.996 34.6596 147.948 33.729C147.555 33.3328 147.25 32.8509 147.05 32.3306C146.848 31.797 146.756 31.2299 146.784 30.6655L146.785 30.6421L146.784 30.6187C146.755 29.9577 146.884 29.2922 147.153 28.6743C147.419 28.0631 147.823 27.5286 148.338 27.0933L148.337 27.0923C149.466 26.1577 150.892 25.6689 152.363 25.7134Z"
-                fill="white" />
-              <path
-                d="M164.896 26.1567L171.909 36.0591V26.1733H175.321V42.6899H172.618L165.652 32.8149V42.6899H162.177V26.1567H164.896Z"
-                fill="white" />
-              <path
-                d="M202.123 26.1567L205.177 38.6616L208.723 26.1567H211.508L215.051 38.6519L218.139 26.1567H221.99L217.368 42.6743H213.372L210.101 31.4927L206.92 42.6743H202.895L198.272 26.1567H202.123Z"
-                fill="white" />
-              <path
-                d="M128.581 29.48H122.277V33.3296H128.452V36.645H122.277V42.6577H118.817V26.1714L128.581 26.1421V29.48Z"
-                fill="white" />
-              <path d="M144.11 26.1489V29.48H139.763V42.6577H136.271V29.48H131.924V26.1489H144.11Z" fill="white" />
-              <path d="M108.189 23.1138V32.9497H105.302V23.1138H108.189Z" fill="white" />
-            </svg>
-          </a>
-          <p class="footer__tagline">Российский аккредитованный разработчик и&nbsp;интегратор</p>
-        </div>
-        <div class="footer__brand-bottom">
-          <div class="footer__social">
-            <a href="#" class="footer__social-link" aria-label="Rutube">
-              <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
-                <use href="assets/img/sprite.svg#icon-rutube" />
-              </svg>
-            </a>
-            <a href="#" class="footer__social-link" aria-label="ВКонтакте">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_633_379)">
-                  <rect x="6" y="10" width="30" height="20" fill="white" />
-                  <use href="assets/img/sprite.svg#icon-vk" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_633_379">
-                    <rect width="40" height="40" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
+		<footer class="footer">
+			<div class="container footer__inner">
+				<div class="footer__brand">
+					<div class="footer__brand-top">
+						<a href="index.html" v class="footer__logo">
+							<svg class="logo__icon" width="222" height="67" viewBox="0 0 222 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M29.041 0.783203C29.6425 0.406715 30.4008 0.405932 31.0029 0.78125L55.5439 16.0771C56.7194 16.81 56.7463 18.5401 55.5967 19.3115L48.4385 24.1143C47.8282 24.5236 47.0403 24.5354 46.4189 24.1436L30.0166 13.7979L23.6416 17.7432L39.3027 28.5459L39.7041 28.8223L39.4365 29.2305L38.6689 30.4062L38.3877 30.835L37.9658 30.5439L21.4111 19.125L14.9453 23.127L47.1504 42.7773L57.8564 36.6328L58.2998 36.3779L58.5439 36.8271L59.2168 38.0635L59.4502 38.4922L59.0264 38.7354L49.4932 44.208L54.9707 47.5508C56.1798 48.2886 56.1909 50.0712 54.9922 50.8252L30.9932 65.9209C30.4106 66.2872 29.6789 66.3011 29.083 65.957L4.01953 51.4844C2.83114 50.798 2.73744 49.0915 3.83496 48.2715L10.1885 43.5244C10.7817 43.0812 11.5751 43.0314 12.2178 43.3994L29.1602 53.1064L35.4443 49.499L19.2324 39.2402L18.8193 38.9795L19.0703 38.5605L19.793 37.3555L20.0566 36.916L20.4893 37.1895L37.8027 48.1455L44.7705 44.1445L12.6533 24.5459L2.91211 30.5762L2.47656 30.8457L2.21777 30.4043L1.50586 29.1914L1.25879 28.7705L1.6748 28.5137L10.3525 23.1416L4.3877 19.502C3.17728 18.7631 3.16834 16.9778 4.37012 16.2256L29.041 0.783203ZM30.082 55.3525C29.5108 55.6805 28.8129 55.681 28.2412 55.3535L11.334 45.667L5.85156 49.7627L29.9961 63.7061L53.0566 49.2012L47.1133 45.5742L30.082 55.3525ZM6.30273 17.8525L12.6445 21.7227L29.0449 11.5723C29.6483 11.1988 30.4063 11.2014 31.0068 11.5801L47.3975 21.917L53.6436 17.7256L30.0244 3.00488L6.30273 17.8525Z"
+									fill="white"
+									stroke="white"
+								/>
+								<rect x="57.3281" y="32.9355" width="6.167" height="6.30839" rx="3.0835" fill="white" stroke="white" />
+								<rect x="15.0469" y="33.5562" width="6.167" height="6.30839" rx="3.0835" fill="white" stroke="white" />
+								<rect x="0.5" y="25.8657" width="6.167" height="6.30839" rx="3.0835" fill="white" stroke="white" />
+								<rect x="34.3438" y="25.8657" width="6.167" height="6.30839" rx="3.0835" fill="white" stroke="white" />
+								<path
+									d="M63.75 6.82031L61.9922 2.74219V6.82031H60.7617V0.539062H62.25L64.0781 5.01562L65.9062 0.539062H67.4062V6.82031H66.1641V2.76562L64.418 6.82031H63.75ZM56.5195 6.82031V1.60547H54.6211V0.539062H59.6602V1.60547H57.7617V6.82031H56.5195Z"
+									fill="white"
+								/>
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M196.203 29.3823V39.4487L191.785 42.0083L187.461 44.4888L183.138 42.0083L178.72 39.4478V29.3843L181.175 27.9907H181.13L183.123 26.8384L183.122 26.8374L187.462 24.3413L196.203 29.3823ZM184.884 29.5669L184.878 29.5698L182.214 31.1001L181.963 31.2437V37.5708L182.214 37.7153L184.878 39.2446L187.196 40.5806L187.444 40.7241L187.694 40.5815L190.028 39.2446L190.03 39.2437L192.929 37.5698V31.2466L192.681 31.1021L187.532 28.0923L184.884 29.5669Z"
+									fill="white"
+								/>
+								<path
+									d="M103.142 29.811L101.517 30.7456L101.267 30.8901V37.2319L101.517 37.3765L103.947 38.7769L106.475 40.2417L106.725 40.3862L106.975 40.2427L111.95 37.3765L112.2 37.2319V30.8911L110.341 29.812V26.0737L111.051 26.4771L115.467 29.02V39.0854L106.709 44.1421L97.9678 39.0854V29.0259L98.8037 28.5659L98.8125 28.561L102.414 26.479L103.142 26.0688V29.811Z"
+									fill="white"
+								/>
+								<path
+									d="M88.1299 25.7378L88.1436 25.7388L88.1572 25.7378C89.438 25.7079 90.6968 26.0451 91.79 26.7114C92.7253 27.2805 93.4889 28.0927 94.0098 29.0513L91.1377 30.73C90.8978 30.2897 90.56 29.9028 90.1475 29.6118C89.6415 29.2482 89.0435 29.0364 88.4277 28.9956L88.1631 28.9888C87.6473 28.9664 87.1387 29.0949 86.6973 29.3696L86.6855 29.3774L86.6738 29.3862C86.4631 29.535 86.3058 29.7298 86.2002 29.9409C86.0947 30.1519 86.0324 30.4051 86.0439 30.6597C86.0559 30.9573 86.1511 31.2356 86.3066 31.48L86.3125 31.4888C86.4609 31.7114 86.6624 31.9184 86.9238 32.061L86.9287 32.064C87.7147 32.482 88.5508 32.8001 89.4199 33.0112C90.0887 33.2198 90.6573 33.3967 91.0645 33.5464L91.417 33.688C91.9594 33.9484 92.4797 34.2546 92.9697 34.5991L92.9775 34.604C93.4535 34.9254 93.8446 35.357 94.126 35.856L94.2393 36.0737C94.5229 36.6704 94.6433 37.3209 94.5869 37.9702L94.584 38.0024L94.585 38.0347C94.6139 38.7224 94.4832 39.4083 94.1953 40.0347L94.1934 40.0396C93.9147 40.661 93.4845 41.2077 92.9502 41.6431C91.6282 42.6002 89.9936 43.1598 88.3594 43.0698C86.8771 43.1049 85.4194 42.729 84.1348 41.98C83.1365 41.3562 82.3579 40.4426 81.8984 39.3667L84.8867 37.6304C85.1908 38.2059 85.6314 38.7046 86.1826 39.0728C86.892 39.5518 87.7464 39.789 88.6006 39.7524C89.3081 39.7505 89.9194 39.6506 90.3711 39.3931C90.8677 39.1099 91.1406 38.6525 91.1406 38.0786C91.1406 37.254 90.4875 36.7115 89.6602 36.3618L89.6406 36.354C89.3622 36.2496 88.5982 36.0181 87.4033 35.6597L87.3887 35.6548L87.374 35.6519L87.1201 35.5874C85.8616 35.2504 84.6957 34.6247 83.7148 33.7534C83.3709 33.4068 83.0935 32.993 82.8896 32.5435L82.8057 32.3472C82.5984 31.8174 82.5056 31.2526 82.5342 30.689L82.5352 30.6685V30.6479C82.5135 29.9829 82.6433 29.3166 82.9111 28.7085C83.1449 28.1778 83.485 27.6942 83.9082 27.2837L84.0947 27.1128C85.2221 26.1822 86.6605 25.6933 88.1299 25.7378Z"
+									fill="white"
+								/>
+								<path
+									d="M152.363 25.7134L152.374 25.7144H152.385C153.592 25.7003 154.782 25.9902 155.834 26.5698L156.042 26.6899C156.969 27.2663 157.725 28.0718 158.243 29.0269L155.372 30.7046C155.135 30.268 154.803 29.8857 154.394 29.5903C153.815 29.1735 153.123 28.9549 152.412 28.9644C151.891 28.9421 151.386 29.0819 150.954 29.3413L150.938 29.3511L150.923 29.3618C150.779 29.4635 150.643 29.592 150.535 29.7534L150.438 29.9263C150.334 30.1369 150.273 30.3873 150.285 30.6401C150.297 30.9209 150.377 31.198 150.536 31.4507C150.686 31.6927 150.901 31.8951 151.141 32.0317L151.147 32.0366L151.155 32.0405C151.949 32.4585 152.789 32.7858 153.654 33.0054C154.165 33.1463 154.668 33.3094 155.165 33.4946L155.661 33.688C156.199 33.9204 156.71 34.2213 157.188 34.5698L157.195 34.5747L157.202 34.5806C157.746 34.9478 158.18 35.458 158.465 36.0493C158.749 36.6461 158.868 37.2973 158.812 37.9468L158.809 37.979L158.811 38.0112C158.839 38.699 158.709 39.3849 158.421 40.0112L158.419 40.0151C158.14 40.6374 157.709 41.185 157.174 41.6206C155.862 42.5915 154.23 43.1345 152.598 43.0298C151.125 43.0733 149.667 42.6989 148.39 41.9585C147.389 41.3347 146.609 40.42 146.148 39.3423L149.134 37.6089C149.437 38.1862 149.882 38.6831 150.421 39.0542C151.128 39.5409 151.976 39.7697 152.829 39.73C153.545 39.73 154.165 39.6287 154.621 39.3687C155.118 39.0854 155.391 38.628 155.391 38.0542C155.391 37.2235 154.727 36.6991 153.898 36.3394L153.887 36.3345L153.874 36.3306L153.575 36.2271C153.187 36.0998 152.533 35.9023 151.628 35.6489L151.619 35.646L151.609 35.644C150.254 35.3183 148.996 34.6596 147.948 33.729C147.555 33.3328 147.25 32.8509 147.05 32.3306C146.848 31.797 146.756 31.2299 146.784 30.6655L146.785 30.6421L146.784 30.6187C146.755 29.9577 146.884 29.2922 147.153 28.6743C147.419 28.0631 147.823 27.5286 148.338 27.0933L148.337 27.0923C149.466 26.1577 150.892 25.6689 152.363 25.7134Z"
+									fill="white"
+								/>
+								<path d="M164.896 26.1567L171.909 36.0591V26.1733H175.321V42.6899H172.618L165.652 32.8149V42.6899H162.177V26.1567H164.896Z" fill="white" />
+								<path d="M202.123 26.1567L205.177 38.6616L208.723 26.1567H211.508L215.051 38.6519L218.139 26.1567H221.99L217.368 42.6743H213.372L210.101 31.4927L206.92 42.6743H202.895L198.272 26.1567H202.123Z" fill="white" />
+								<path d="M128.581 29.48H122.277V33.3296H128.452V36.645H122.277V42.6577H118.817V26.1714L128.581 26.1421V29.48Z" fill="white" />
+								<path d="M144.11 26.1489V29.48H139.763V42.6577H136.271V29.48H131.924V26.1489H144.11Z" fill="white" />
+								<path d="M108.189 23.1138V32.9497H105.302V23.1138H108.189Z" fill="white" />
+							</svg>
+						</a>
+						<p class="footer__tagline">Российский аккредитованный разработчик и&nbsp;интегратор</p>
+					</div>
+					<div class="footer__brand-bottom">
+						<div class="footer__social">
+							<a href="#" class="footer__social-link" aria-label="Rutube">
+								<svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+									<use href="assets/img/sprite.svg#icon-rutube" />
+								</svg>
+							</a>
+							<a href="#" class="footer__social-link" aria-label="ВКонтакте">
+								<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<g clip-path="url(#clip0_633_379)">
+										<rect x="6" y="10" width="30" height="20" fill="white" />
+										<use href="assets/img/sprite.svg#icon-vk" />
+									</g>
+									<defs>
+										<clipPath id="clip0_633_379">
+											<rect width="40" height="40" fill="white" />
+										</clipPath>
+									</defs>
+								</svg>
+							</a>
+						</div>
+						<div class="footer__contacts">
+							<a href="tel:+78123201130">+7 (812) 320-11-30</a>
+							<a href="mailto:info@softsnow.ru">info@softsnow.ru</a>
+						</div>
+					</div>
+				</div>
+				<div class="footer__right">
+					<div class="footer__links">
+						<ul class="footer__col">
+							<li><a href="solutions.html">ЭДО</a></li>
+							<li><a href="solutions.html">КЭДО</a></li>
+							<li><a href="solutions.html">Корпоративные порталы</a></li>
+							<li><a href="solutions.html">Управление стратегией</a></li>
+							<li><a href="solutions.html">Управление проектами</a></li>
+							<li><a href="solutions.html">Решения для вузов</a></li>
+						</ul>
+						<ul class="footer__col">
+							<li><a href="about.html">О компании</a></li>
+							<li><a href="solutions.html">Отрасли</a></li>
+							<li><a href="projects.html">Кейсы</a></li>
+							<li><a href="clients.html">Клиенты</a></li>
+							<li><a href="events.html">Мероприятия</a></li>
+							<li><a href="contacts.html">Контакты</a></li>
+						</ul>
+					</div>
+					<div class="footer__legal">
+						<a href="#">Политика конфиденциальности</a>
+						<a href="#">Политика обработки персональных данных</a>
+					</div>
+				</div>
+			</div>
+		</footer>
 
-            </a>
-          </div>
-          <div class="footer__contacts">
-            <a href="tel:+78123201130">+7 (812) 320-11-30</a>
-            <a href="mailto:info@softsnow.ru">info@softsnow.ru</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer__right">
-        <div class="footer__links">
-          <ul class="footer__col">
-            <li><a href="solutions.html">ЭДО</a></li>
-            <li><a href="solutions.html">КЭДО</a></li>
-            <li><a href="solutions.html">Корпоративные порталы</a></li>
-            <li><a href="solutions.html">Управление стратегией</a></li>
-            <li><a href="solutions.html">Управление проектами</a></li>
-            <li><a href="solutions.html">Решения для вузов</a></li>
-          </ul>
-          <ul class="footer__col">
-            <li><a href="about.html">О компании</a></li>
-            <li><a href="solutions.html">Отрасли</a></li>
-            <li><a href="projects.html">Кейсы</a></li>
-            <li><a href="clients.html">Клиенты</a></li>
-            <li><a href="events.html">Мероприятия</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
-          </ul>
-        </div>
-        <div class="footer__legal">
-          <a href="#">Политика конфиденциальности</a>
-          <a href="#">Политика обработки персональных данных</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+		<div class="modal-form" id="request-popup">
+			<button type="button" class="modal-form__close" data-fancybox-close aria-label="Закрыть">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+					<path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+				</svg>
+			</button>
+			<div class="modal-form__body">
+				<div class="modal-form__head">
+					<div>
+						<h3 class="modal-form__title">Связаться с нами</h3>
+						<p class="modal-form__sub">Оставьте свои контакты и мы свяжемся с вами в ближайшее время</p>
+					</div>
+				</div>
 
+				<form id="request-form" novalidate>
+					<div class="modal-form__fields">
+						<div class="modal-form__row">
+							<div class="form-field">
+								<input class="form-field__input js-fio" type="text" name="fio" id="req-fio" placeholder=" " autocomplete="name" />
+								<label class="form-field__label" for="req-fio">ФИО*</label>
+							</div>
+							<div class="form-field">
+								<input class="form-field__input js-position" type="text" name="position" id="req-position" placeholder=" " autocomplete="organization-title" />
+								<label class="form-field__label" for="req-position">Должность*</label>
+							</div>
+						</div>
 
-  <div class="modal-form" id="request-popup">
-    <div class="modal-form__head">
-      <div>
-        <h3 class="modal-form__title">Связаться с нами</h3>
-        <p class="modal-form__sub">Оставьте свои контакты и мы свяжемся с вами в ближайшее время</p>
-      </div>
-      <button type="button" class="modal-form__close" data-fancybox-close aria-label="Закрыть">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-        </svg>
-      </button>
-    </div>
+						<div class="modal-form__row">
+							<div class="form-field">
+								<input class="form-field__input js-phone" type="tel" name="phone" id="req-phone" placeholder=" " autocomplete="tel" />
+								<label class="form-field__label" for="req-phone">Телефон*</label>
+							</div>
+							<div class="form-field">
+								<input class="form-field__input js-email" type="email" name="email" id="req-email" placeholder=" " autocomplete="email" />
+								<label class="form-field__label" for="req-email">E-mail*</label>
+							</div>
+						</div>
 
-    <form id="request-form" novalidate>
-      <div class="modal-form__fields">
-        <div class="form-field">
-          <input class="form-field__input js-fio" type="text" name="fio" id="req-fio" placeholder=" "
-            autocomplete="name">
-          <label class="form-field__label" for="req-fio">ФИО*</label>
-        </div>
+						<div class="form-field">
+							<input class="form-field__input js-org" type="text" name="org" id="req-org" placeholder=" " />
+							<label class="form-field__label" for="req-org">Название организации</label>
+						</div>
 
-        <div class="modal-form__row">
-          <div class="form-field">
-            <input class="form-field__input js-email" type="email" name="email" id="req-email" placeholder=" "
-              autocomplete="email">
-            <label class="form-field__label" for="req-email">E-mail*</label>
-          </div>
-          <div class="form-field">
-            <input class="form-field__input js-phone" type="tel" name="phone" id="req-phone" placeholder=" "
-              autocomplete="tel">
-            <label class="form-field__label" for="req-phone">Телефон*</label>
-          </div>
-        </div>
+						<div class="form-field">
+							<textarea class="form-field__input js-comment" name="comment" id="req-comment" placeholder=" "></textarea>
+							<label class="form-field__label" for="req-comment">Комментарий</label>
+						</div>
+					</div>
 
-        <div class="form-field">
-          <input class="form-field__input js-org" type="text" name="org" id="req-org" placeholder=" ">
-          <label class="form-field__label" for="req-org">Название организации</label>
-        </div>
+					<div class="modal-form__checks">
+						<label class="form-check">
+							<input class="form-check__input js-consent" type="checkbox" name="consent" />
+							<span class="form-check__box">
+								<svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+									<path d="M2 7.5L5.5 11L12 3.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</span>
+							<span class="form-check__text">Соглашаюсь с обработкой своих персональных данных</span>
+						</label>
 
-        <div class="form-field">
-          <textarea class="form-field__input js-comment" name="comment" id="req-comment" placeholder=" "></textarea>
-          <label class="form-field__label" for="req-comment">Комментарий</label>
-        </div>
-      </div>
+						<label class="form-check">
+							<input class="form-check__input" type="checkbox" name="newsletter" />
+							<span class="form-check__box">
+								<svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+									<path d="M2 7.5L5.5 11L12 3.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</span>
+							<span class="form-check__text">Хочу получать письма с новостями цифровизации</span>
+						</label>
+					</div>
 
-      <div class="modal-form__checks">
-        <label class="form-check">
-          <input class="form-check__input js-consent" type="checkbox" name="consent">
-          <span class="form-check__box">
-            <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
-              <path d="M2 7.5L5.5 11L12 3.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </span>
-          <span class="form-check__text">Соглашаюсь с обработкой своих персональных данных</span>
-        </label>
+					<button class="btn btn--primary modal-form__submit" type="submit">Отправить</button>
+				</form>
+			</div>
 
-        <label class="form-check">
-          <input class="form-check__input" type="checkbox" name="newsletter">
-          <span class="form-check__box">
-            <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
-              <path d="M2 7.5L5.5 11L12 3.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </span>
-          <span class="form-check__text">Хочу получать письма с новостями цифровизации</span>
-        </label>
-      </div>
+			<div class="modal-form__success is-hidden">
+				<img class="modal-form__success-icon" src="assets/img/success-icon.jpg" width="100" height="100" alt="" />
+				<h4 class="modal-form__success-title">Заявка успешно&nbsp;отправлена!</h4>
+				<p class="modal-form__success-text">Мы свяжемся с вами в&nbsp;ближайшее время</p>
+				<a class="btn btn--primary btn--md modal-form__success-btn" href="#" data-fancybox-close>Хорошо</a>
+			</div>
+		</div>
 
-      <button class="btn btn--primary modal-form__submit" type="submit">Отправить</button>
-    </form>
+		<div class="cookie-banner" id="cookie-banner" hidden role="dialog" aria-label="Использование cookies">
+			<p class="cookie-banner__text">На сайте используются файлы cookie. Продолжая использовать сайт, Вы&nbsp;соглашаетесь с&nbsp;использованием cookies.</p>
+			<div class="cookie-banner__actions">
+				<a class="btn btn--undeline" href="#">Узнать больше</a>
+				<button class="btn btn--primary btn--md" type="button" data-cookie-accept>Согласен(а)</button>
+			</div>
+		</div>
 
-    <div class="modal-form__success is-hidden">
-      <h4 class="modal-form__success-title">Заявка отправлена</h4>
-      <p class="modal-form__success-text">Мы свяжемся с вами в ближайшее время</p>
-    </div>
-  </div>
-
-  <div class="cookie-banner" id="cookie-banner" hidden role="dialog" aria-label="Использование cookies">
-    <p class="cookie-banner__text">На сайте используются файлы cookie. Продолжая использовать сайт, Вы&nbsp;соглашаетесь
-      с&nbsp;использованием cookies.</p>
-    <div class="cookie-banner__actions">
-      <a class="btn btn--undeline" href="#">Узнать больше</a>
-      <button class="btn btn--primary btn--md" type="button" data-cookie-accept>Согласен(а)</button>
-    </div>
-  </div>
-
-  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
-  <script src="assets/vendor/fancybox/fancybox.umd.js" defer></script>
-  <script src="assets/vendor/just-validate/just-validate.production.min.js" defer></script>
-  <script src="assets/vendor/aos/aos.js" defer></script>
-  <script src="js/main.js" defer></script>
-</body>
-
+		<script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+		<script src="assets/vendor/fancybox/fancybox.umd.js" defer></script>
+		<script src="assets/vendor/just-validate/just-validate.production.min.js" defer></script>
+		<script src="assets/vendor/aos/aos.js" defer></script>
+		<script src="js/main.js" defer></script>
+	</body>
 </html>
