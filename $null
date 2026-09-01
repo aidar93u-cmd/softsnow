@@ -1,3 +1,0 @@
-npm error code EINVALIDTAGNAME
-npm error Invalid tag name ";" of package ";": Tags may not have any characters that encodeURIComponent encodes.
-npm error A complete log of this run can be found in: C:\Users\aidar\AppData\Local\npm-cache\_logs\2026-09-01T08_08_47_102Z-debug-0.log

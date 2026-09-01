@@ -511,10 +511,10 @@ body.is-search-open .header {
   text-align: center;
 }
 .stats__grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  justify-content: center;
-  gap: var(--gap-sm);
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    justify-content: space-between;
+    gap: var(--gap-lg);
 }
 
 /* Client-page stats variant (Figma 896:12329): 4×440, no heading, centered */
@@ -1108,13 +1108,7 @@ body.is-search-open .header {
 }
 
 .history__heading {
-  margin: 0 0 1.25rem;
-  font-family: var(--font-heading);
-  font-size: var(--fs-h2);
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  line-height: 0.95;
-  color: var(--color-black);
+  margin: 0 0 3.25rem;
 }
 
 /* Карточка-обёртка: белая, скруглённая, содержит timeline + текст + изображение */
@@ -1124,12 +1118,12 @@ body.is-search-open .header {
     align-content: center;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .history__nav {
   grid-column: 1;
-  margin-bottom: 1.25rem;
+  margin-bottom: 3.25rem;
 }
 
 .history__years {
@@ -1189,13 +1183,7 @@ body.is-search-open .header {
 }
 
 .history__title {
-  margin: 0 0 1rem;
-  font-family: var(--font-heading);
-  font-size: var(--fs-h3);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  color: var(--color-black);
+  margin: 0 0 2rem;
 }
 .history__group{  
     display: grid;
@@ -1210,9 +1198,10 @@ body.is-search-open .header {
 }
 .history__right,
 .history__left{
-    padding: 2.5rem;
-    background: var(--color-white);
+  padding: 2rem 2.5rem;
+  background: var(--color-white);
   border-radius: 1rem;
+    background-size: cover;
 }
 .history__right{
   padding: 0;
@@ -3594,9 +3583,7 @@ a.contacts-map__value:hover {
   padding-right: 2.5rem;
 }
 .clients__name {
-  font-size: var(--fs-body-20);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  
 }
 .clients__desc {
   margin-top: 1rem;

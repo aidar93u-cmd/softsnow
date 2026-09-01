@@ -12,7 +12,10 @@
 		--section-py: 6.25rem;
 		--section-py-md: 4.5rem;
 	}
-}
+	html{
+		font-size: 14px;
+	}
+} 
 
 /* ==================== Desktop ≤1440px ==================== */
 /* Типографика + спейсинг, боковые поля уже */
@@ -2401,11 +2404,6 @@
 		margin-bottom: 1.5rem;
 	}
 
-	.stats#about .stats__item:nth-child(4) {
-		/* В мобильном макете нет «200 000+ часов» */
-		display: none;
-	}
-
 	.stats__grid {
 		grid-template-columns: 1fr;
 		gap: 1.5rem;
@@ -4450,7 +4448,10 @@
 		font-weight: 500;
 		line-height: 1;
 	}
-
+	.modal-form__close {
+			right: 1rem;
+			top: 1rem;
+	}
 	/* Панель фильтров: выезжающая шторка снизу (Figma 1736:16401).
 	   Класс is-filters-open вешается JS на сами .projects__filters */
 	/*body:has(.projects__filters.is-filters-open)::before {
