@@ -818,68 +818,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
-	// Request popup: phone mask + Just-validate (validates on input)
-	function initRequestForm() {
-		const form = document.getElementById('request-form')
-		if (!form || typeof JustValidate === 'undefined') return
+	// Form popups (#request-popup, #subscribe-popup): phone mask + Just-validate +
+	// body→success swap + per-popup reset on Fancybox close.
+	function bindFormPopup(popupId, formId, configure) {
+		const popup = document.getElementById(popupId)
+		const form = document.getElementById(formId)
+		if (!popup || !form || typeof JustValidate === 'undefined') return
 
-		if (typeof Fancybox !== 'undefined') {
-			Fancybox.bind('[data-fancybox]', { Toolbar: false, closeButton: false })
-		}
+		const success = popup.querySelector('.modal-form__success')
+		const head = popup.querySelector('.modal-form__head')
 
-		const phone = form.querySelector('.js-phone')
-		const success = document.querySelector(
-			'#request-popup .modal-form__success',
-		)
-		const head = document.querySelector('#request-popup .modal-form__head')
-
-		if (phone) {
-			phone.addEventListener('input', () => {
-				let d = phone.value.replace(/\D/g, '')
-				if (d.startsWith('8')) d = '7' + d.slice(1)
-				if (d.startsWith('7')) d = d.slice(1)
-				d = d.slice(0, 10)
-				let out = ''
-				if (d.length) out = '+7 (' + d.slice(0, 3)
-				if (d.length > 3) out += ') ' + d.slice(3, 6)
-				if (d.length > 6) out += '-' + d.slice(6, 8)
-				if (d.length > 8) out += '-' + d.slice(8, 10)
-				phone.value = out
-			})
-		}
-
-		const validator = new JustValidate(form, {
-			validateOnBlur: true,
-			validateOnChange: true,
-			validateOnInput: true,
-			errorFieldStyle: {},
-			errorLabelStyle: { display: 'none' },
-			errorFieldCssClass: 'form-field--invalid',
-		})
-
-		validator
-			.addField('.js-fio', [
-				{ rule: 'required' },
-				{ rule: 'minLength', value: 3 },
-			])
-			.addField('.js-email', [{ rule: 'required' }, { rule: 'email' }])
-			.addField('.js-phone', [
-				{ rule: 'required' },
-				{
-					validator: () =>
-						phone && phone.value.replace(/\D/g, '').length === 11,
-				},
-			])
-			.addField('.js-consent', [{ rule: 'required' }])
-
-		validator.onSuccess(() => {
-			if (head) head.classList.add('is-hidden')
-			form.classList.add('is-hidden')
-			if (success) success.classList.remove('is-hidden')
-		})
-
-		// reset form state when the popup closes
-		document.addEventListener('fancybox:afterClose', () => {
+		const resetState = () => {
 			form.reset()
 			form.classList.remove('is-hidden')
 			if (head) head.classList.remove('is-hidden')
@@ -887,7 +836,128 @@ document.addEventListener('DOMContentLoaded', () => {
 			form
 				.querySelectorAll('.form-field--invalid')
 				.forEach(el => el.classList.remove('form-field--invalid'))
+		}
+
+		const showSuccess = () => {
+			if (head) head.classList.add('is-hidden')
+			form.classList.add('is-hidden')
+			if (success) success.classList.remove('is-hidden')
+		}
+
+		configure({ form, showSuccess, resetState })
+
+		// Reset state once the popup closes. Fancybox 5 doesn't expose a global
+		// event bus and `data-fancybox-close` lives inside the cloned container
+		// (not the source). We delegate two paths that always fire on close:
+		//   1) ESC keydown on the document while the popup is open
+		//   2) click on any `[data-fancybox-close]` (X-button, "Хорошо") — these
+		//      are global, Fancybox recognises them via its own delegated handler.
+		// The reset runs once the Fancybox container is fully torn down, which we
+		// observe via MutationObserver. After firing we re-arm the observer so
+		// the popup can be reopened cleanly.
+		const armObserver = () => {
+			if (typeof MutationObserver === 'undefined') return
+			const observer = new MutationObserver(() => {
+				const container = document.querySelector('.fancybox__container')
+				const closed =
+					!container ||
+					!document.body.contains(container) ||
+					container.classList.contains('fancybox__container--hidden')
+				if (closed) {
+					resetState()
+					observer.disconnect()
+				}
+			})
+			observer.observe(document.body, { childList: true, subtree: true })
+		}
+		armObserver()
+		document.addEventListener('keydown', e => {
+			if (e.key !== 'Escape') return
+			const container = document.querySelector('.fancybox__container')
+			if (container) resetState()
 		})
+		// Re-arm observer after every successful submit so the next open/close
+		// cycle also resets correctly.
+		form.addEventListener('submit', armObserver, true)
+	}
+
+	// Request popup: phone mask + Just-validate (validates on input)
+	function initRequestForm() {
+		if (typeof Fancybox !== 'undefined') {
+			Fancybox.bind('[data-fancybox]', { Toolbar: false, closeButton: false })
+		}
+
+		bindFormPopup('request-popup', 'request-form', ({ form, showSuccess }) => {
+			const phone = form.querySelector('.js-phone')
+
+			if (phone) {
+				phone.addEventListener('input', () => {
+					let d = phone.value.replace(/\D/g, '')
+					if (d.startsWith('8')) d = '7' + d.slice(1)
+					if (d.startsWith('7')) d = d.slice(1)
+					d = d.slice(0, 10)
+					let out = ''
+					if (d.length) out = '+7 (' + d.slice(0, 3)
+					if (d.length > 3) out += ') ' + d.slice(3, 6)
+					if (d.length > 6) out += '-' + d.slice(6, 8)
+					if (d.length > 8) out += '-' + d.slice(8, 10)
+					phone.value = out
+				})
+			}
+
+			const validator = new JustValidate(form, {
+				validateOnBlur: true,
+				validateOnChange: true,
+				validateOnInput: true,
+				errorFieldStyle: {},
+				errorLabelStyle: { display: 'none' },
+				errorFieldCssClass: 'form-field--invalid',
+			})
+
+			validator
+				.addField('.js-fio', [
+					{ rule: 'required' },
+					{ rule: 'minLength', value: 3 },
+				])
+				.addField('.js-email', [{ rule: 'required' }, { rule: 'email' }])
+				.addField('.js-phone', [
+					{ rule: 'required' },
+					{
+						validator: () =>
+							phone && phone.value.replace(/\D/g, '').length === 11,
+					},
+				])
+				.addField('.js-consent', [{ rule: 'required' }])
+
+			validator.onSuccess(() => showSuccess())
+		})
+	}
+
+	// Subscribe popup: email + consent, success swap
+	function initSubscribeForm() {
+		bindFormPopup(
+			'subscribe-popup',
+			'subscribe-form',
+			({ form, showSuccess }) => {
+				const validator = new JustValidate(form, {
+					validateOnBlur: true,
+					validateOnChange: true,
+					validateOnInput: true,
+					errorFieldStyle: {},
+					errorLabelStyle: { display: 'none' },
+					errorFieldCssClass: 'form-field--invalid',
+				})
+
+				validator
+					.addField('.js-email', [
+						{ rule: 'required' },
+						{ rule: 'email' },
+					])
+					.addField('.js-consent', [{ rule: 'required' }])
+
+				validator.onSuccess(() => showSuccess())
+			},
+		)
 	}
 
 	// History timeline (about.html): переключение текста + изображения по клику на год + плавный fade
@@ -1023,6 +1093,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initProgramTabs()
 	initMobileMenu()
 	initRequestForm()
+	initSubscribeForm()
 	initCookieBanner()
 
 	document

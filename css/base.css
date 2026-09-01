@@ -686,7 +686,7 @@ section {
 	padding: 0 1.75rem;
 	font-size: var(--fs-body-16);
 	line-height: 1.2;
-	font-weight: 600;
+	font-weight: 500;
 	letter-spacing: -0.02em;
 	border-radius: var(--radius-xl);
 	color: var(--color-black);
@@ -793,7 +793,9 @@ section {
 	display: flex;
 	gap: var(--gap-sm);
 }
-
+.modal-form__success-btn{
+	margin-top: 2rem;
+}
 .carousel-nav__btn {
 	display: flex;
 	align-items: center;
@@ -935,7 +937,7 @@ textarea.form-field__input:not(:placeholder-shown) + .form-field__label {
 	place-items: center;
 	width: 1.5rem;
 	height: 1.5rem;
-	border: 1px solid var(--color-black);
+	border: 1px solid var(--color-dark-a10);
 	border-radius: var(--radius-xs);
 	background: var(--color-white);
 	transition: background-color var(--transition-fast), border-color var(--transition-fast);
@@ -975,10 +977,12 @@ textarea.form-field__input:not(:placeholder-shown) + .form-field__label {
 	display: none;
 	width: 45rem;
 	max-width: 100%;
-	padding: 2.5rem;
+    padding: 2.5rem;
 	background: var(--color-white);
 	border-radius: var(--radius-lg);
 	box-shadow: var(--shadow-popover);
+    min-height: 48rem;
+    justify-content: center;
 }
 
 .modal-form.is-open {
@@ -997,7 +1001,15 @@ textarea.form-field__input:not(:placeholder-shown) + .form-field__label {
 	gap: var(--gap-lg);
 	margin-bottom: var(--gap-2xl);
 }
-
+.modal-form__icon-wrapper{	
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    max-width: 400px;
+    margin: auto;
+}
 .modal-form__title {
 	margin: 0 0 var(--gap-xs);
 	font-size: var(--fs-h3);
@@ -1024,6 +1036,9 @@ textarea.form-field__input:not(:placeholder-shown) + .form-field__label {
 	color: var(--color-black);
 	cursor: pointer;
 	transition: color var(--transition-fast), transform var(--transition-fast);
+    position: absolute;
+    right: 2.5rem;
+    top: 2.5rem;
 }
 
 .modal-form__close:hover {
