@@ -1110,6 +1110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const dash = '5 7' // dashed rhythm — set on the SVG stroke, not CSS dotted
 		const dotGap = 9 // gap before the icon so the line does not touch it
 		const iconRadius = 32 // .eco-card__icon is 4rem wide
+		const lineTrim = 40 // lines are shorter: pulled back from the icon end by this extra gap
 
 		function draw() {
 			const diaRect = diagram.getBoundingClientRect()
@@ -1136,8 +1137,8 @@ document.addEventListener('DOMContentLoaded', () => {
 				if (len < 1) return
 				const ux = dx / len
 				const uy = dy / len
-				const ex = ix - ux * (iconRadius + dotGap)
-				const ey = iy - uy * (iconRadius + dotGap)
+				const ex = ix - ux * (iconRadius + dotGap + lineTrim)
+				const ey = iy - uy * (iconRadius + dotGap + lineTrim)
 				const color = getComputedStyle(icon).color
 
 				const g = document.createElementNS(NS, 'g')
