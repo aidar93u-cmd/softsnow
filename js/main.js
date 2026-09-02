@@ -1145,8 +1145,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				g.setAttribute('stroke-width', '2')
 				g.setAttribute('fill', 'none')
 				g.setAttribute('stroke-linecap', 'round')
-				g.setAttribute('opacity', '0.4')
-
 				const line = document.createElementNS(NS, 'line')
 				line.setAttribute('x1', cx)
 				line.setAttribute('y1', cy)
@@ -1159,6 +1157,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				circle.setAttribute('cx', ex)
 				circle.setAttribute('cy', ey)
 				circle.setAttribute('r', '5')
+				circle.setAttribute('fill', '#ffffff') // белая заливка внутри, обводка — цвет иконки от группы
 				g.appendChild(circle)
 
 				svg.appendChild(g)
