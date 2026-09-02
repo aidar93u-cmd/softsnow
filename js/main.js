@@ -1090,10 +1090,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
-	// Lines from the core to each eco-card icon.
-	// Desktop-only: 6 dashed lines (SVG stroke-dasharray — no CSS dotted/border).
-	// Position is computed from getBoundingClientRect so it stays correct when
-	// text wraps or the layout rescales at 1280/1024.
+	// Lines from the core toward each eco-card icon.
+	// Desktop-only: 6 dashed lines (SVG stroke-dasharray — no CSS dotted/border),
+	// all of EQUAL length — the nearest icon sets where every line ends, so no
+	// line sticks out longer than the rest. Redrawn from getBoundingClientRect
+	// so it stays correct when text wraps or the layout rescales at 1280/1024.
 	function initEcoLines() {
 		const diagram = document.querySelector('.ecosystem__diagram')
 		const core = diagram && diagram.querySelector('.ecosystem__core')
@@ -1108,9 +1109,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 		const NS = 'http://www.w3.org/2000/svg'
 		const dash = '5 7' // dashed rhythm — set on the SVG stroke, not CSS dotted
-		const dotGap = 9 // gap before the icon so the line does not touch it
+		const dotGap = 9 // air before the icon: the line does not touch it
 		const iconRadius = 32 // .eco-card__icon is 4rem wide
-		const lineTrim = 40 // lines are shorter: pulled back from the icon end by this extra gap
+		const lineTrim = 40 // extra pull-back so the ring of circles stays compact
+		// One uniform length for all lines: (distance to the nearest icon) - clearance,
+		// where clearance = iconRadius + dotGap + lineTrim
 
 		function draw() {
 			const diaRect = diagram.getBoundingClientRect()
@@ -1125,6 +1128,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			svg.setAttribute('preserveAspectRatio', 'none')
 			svg.replaceChildren()
 
+			// pass 1: direction vectors from the core to each icon
+			const targets = []
 			diagram.querySelectorAll('.eco-card').forEach(card => {
 				const icon = card.querySelector('.eco-card__icon')
 				if (!icon) return
@@ -1135,14 +1140,21 @@ document.addEventListener('DOMContentLoaded', () => {
 				const dy = iy - cy
 				const len = Math.hypot(dx, dy)
 				if (len < 1) return
-				const ux = dx / len
-				const uy = dy / len
-				const ex = ix - ux * (iconRadius + dotGap + lineTrim)
-				const ey = iy - uy * (iconRadius + dotGap + lineTrim)
-				const color = getComputedStyle(icon).color
+				targets.push({ dx, dy, len, color: getComputedStyle(icon).color })
+			})
+			if (!targets.length) return
+
+			// pass 2: draw every line at the same length L from the core —
+			// the nearest icon defines L, farther icons just get more air
+			const minD = Math.min.apply(null, targets.map(t => t.len))
+			const L = Math.max(160, minD - (iconRadius + dotGap + lineTrim))
+
+			targets.forEach(t => {
+				const ex = cx + (t.dx / t.len) * L
+				const ey = cy + (t.dy / t.len) * L
 
 				const g = document.createElementNS(NS, 'g')
-				g.setAttribute('stroke', color)
+				g.setAttribute('stroke', t.color)
 				g.setAttribute('stroke-width', '2')
 				g.setAttribute('fill', 'none')
 				g.setAttribute('stroke-linecap', 'round')
