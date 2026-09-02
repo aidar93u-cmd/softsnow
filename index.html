@@ -103,21 +103,23 @@
 					</div>
 				</div>
 			</div>
-		</header>
-		<div class="search-popup" id="search-popup" role="dialog" aria-modal="true" aria-label="Поиск по сайту" hidden>
-			<div class="search-popup__overlay" data-search-close></div>
-			<div class="container search-popup__container">
+
+			<!-- ПОПАП ТЕПЕРЬ ВНУТРИ ШАПКИ (важно: ВНЕ контейнера .container) -->
+			<div class="search-popup" id="search-popup" role="dialog" aria-modal="true" aria-label="Поиск по сайту" hidden>
 				<div class="search-popup__panel">
-					<form class="search-popup__form" action="/search" method="get">
-						<label class="search-popup__label" for="search-input">Поиск</label>
-						<div class="search-popup__input-group">
-							<input type="search" class="search-popup__input" id="search-input" name="q" placeholder="Поиск по сайту" autocomplete="off" aria-label="Поиск по сайту" />
-							<button type="submit" class="btn btn--primary search-popup__btn" aria-label="Искать">Найти</button>
-						</div>
-					</form>
+					<div class="container">
+						<form class="search-popup__form" action="/search" method="get">
+							<label class="search-popup__label" for="search-input">Поиск</label>
+							<div class="search-popup__input-group">
+								<input type="search" class="search-popup__input" id="search-input" name="q" placeholder="Поиск по сайту" autocomplete="off" aria-label="Поиск по сайту" />
+								<button type="submit" class="btn btn--primary search-popup__btn" aria-label="Искать">Найти</button>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
-		</div>
+		</header>
+		<div class="search-popup__overlay" id="search-overlay" data-search-close></div>
 
 		<main>
 			<section class="hero hero-main" aria-label="Главный экран">

@@ -8,45 +8,78 @@ function initClientsMarquee() {
 		cells.forEach(c => track.appendChild(c.cloneNode(true)))
 	}
 }
-
 function initFloatingHeader() {
-	// Плавающая шапка живёт только на страницах с .header--sticky (сейчас index.html).
-	// Шапка всегда в потоке (position: sticky), поэтому отсюда убран плейсхолдер —
-	// появление/скрытие целиком на transform (см. .header.is-floating в sections.css).
-	// ВАЖНО: класс скрытия называется is-hiding, НЕ is-hidden — последний занят
-	// глобальной утилитой base.css (.is-hidden { display: none !important }).
 	const header = document.querySelector('.header--sticky')
 	if (!header) return
 
-	const SCROLL_THRESHOLD = 100
-	// Минимальная дельта направления, чтобы избежать «мигания» шапки при
-	// микро-откатах (overscroll-clamp при достижении конца страницы, тряска).
-	const DIRECTION_DELTA = 4
-	const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+	const SHOW_THRESHOLD = 100
+	const HIDE_THRESHOLD = 50
+	const DIRECTION_DELTA = 6
 
-	let lastScrollY = window.scrollY
+	const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+	let prefersReduced = motionQuery.matches
+	motionQuery.addEventListener('change', e => {
+		prefersReduced = e.matches
+	})
+
+	let lastScrollY = Math.max(0, window.scrollY)
 	let ticking = false
-	let initialized = false
+
+	let isFloating = lastScrollY > SHOW_THRESHOLD
+	let isVisible = true
+	let accumulatedDelta = 0
 
 	function updateHeader() {
-		const scrollY = window.scrollY
+		const scrollY = Math.max(0, window.scrollY)
 		const deltaY = scrollY - lastScrollY
-		const scrollingDown = Math.abs(deltaY) >= DIRECTION_DELTA && deltaY > 0
-		const scrollingUp = Math.abs(deltaY) >= DIRECTION_DELTA && deltaY < 0
-		const pastThreshold = scrollY > SCROLL_THRESHOLD
 
-		if (pastThreshold) {
-			header.classList.add('is-floating')
+		// --- Шаг А: Управление режимом is-floating ---
+		if (!isFloating && scrollY > SHOW_THRESHOLD) {
+			isFloating = true
 
-			if (scrollingDown) {
-				header.classList.add('is-hiding')
+			// СРАЗУ определяем намерение пользователя
+			if (deltaY > 0) {
+				// Едем вниз — прячем шапку моментально, минуя фиксацию
+				header.classList.add('is-floating', 'is-hiding')
 				header.classList.remove('is-visible')
-			} else if (scrollingUp) {
-				header.classList.add('is-visible')
+				isVisible = false
+				accumulatedDelta = 0
+			} else {
+				// Появляемся (например, при программном скролле вверх)
+				header.classList.add('is-floating', 'is-visible')
 				header.classList.remove('is-hiding')
+				isVisible = true
 			}
-		} else {
+		} else if (isFloating && scrollY < HIDE_THRESHOLD) {
+			isFloating = false
 			header.classList.remove('is-floating', 'is-visible', 'is-hiding')
+			isVisible = true
+			accumulatedDelta = 0
+		}
+
+		// --- Шаг Б: Управление видимостью (только в плавающем режиме) ---
+		if (isFloating) {
+			accumulatedDelta += deltaY
+
+			if (Math.abs(accumulatedDelta) >= DIRECTION_DELTA) {
+				const movingDown = accumulatedDelta > 0
+
+				if (movingDown && isVisible) {
+					header.classList.add('is-hiding')
+					header.classList.remove('is-visible')
+					isVisible = false
+					accumulatedDelta = 0
+				} else if (!movingDown && !isVisible) {
+					header.classList.add('is-visible')
+					header.classList.remove('is-hiding')
+					isVisible = true
+					accumulatedDelta = 0
+				} else {
+					// Едем в ту же сторону, куда шапка уже направлена.
+					// Сбрасываем аккумулятор, чтобы избежать переполнения.
+					accumulatedDelta = 0
+				}
+			}
 		}
 
 		lastScrollY = scrollY
@@ -64,88 +97,80 @@ function initFloatingHeader() {
 		}
 	}
 
-	// Initialize state on load (например, перезагрузка страницы при прокрутке)
 	function initState() {
-		const scrollY = window.scrollY
-		if (scrollY > SCROLL_THRESHOLD) {
-			header.classList.add('is-floating')
-			header.classList.add('is-visible')
+		const scrollY = Math.max(0, window.scrollY)
+		isFloating = scrollY > SHOW_THRESHOLD
+		isVisible = true // При загрузке страницы шапка всегда должна быть видна
+		accumulatedDelta = 0
+
+		header.classList.remove('is-floating', 'is-visible', 'is-hiding')
+		if (isFloating) {
+			header.classList.add('is-floating', 'is-visible')
 		}
-		initialized = true
 	}
 
 	initState()
 	window.addEventListener('scroll', onScroll, { passive: true })
-
-	// Handle resize (e.g., desktop <-> mobile)
-	window.addEventListener('resize', () => {
-		if (initialized) initState()
-	})
+	window.addEventListener('resize', initState)
 }
-
 function initSearchPopup() {
 	const searchBtn = document.querySelector('.btn--search')
 	const popup = document.getElementById('search-popup')
-	const overlay = popup?.querySelector('.search-popup__overlay')
+	const overlay = document.getElementById('search-overlay') // Теперь отдельный элемент
 	const panel = popup?.querySelector('.search-popup__panel')
 	const form = popup?.querySelector('.search-popup__form')
 	const input = popup?.querySelector('.search-popup__input')
 	const header = document.querySelector('.header')
+
 	if (!searchBtn || !popup || !overlay || !form || !input) return
 
-	const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-	const TRANSITION_DURATION = prefersReduced ? 0 : 300
+	const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+	let prefersReduced = motionQuery.matches
+	motionQuery.addEventListener('change', e => {
+		prefersReduced = e.matches
+	})
+
+	const TRANSITION_DURATION = 300
 	let lastFocused = null
-
-	// Шапка — sticky и меняет высоту (170px на верхе → 144px в «плавающем» виде
-	// на десктопе, 64px на планшете/мобиле). Приклеиваем панель к фактической
-	// нижней границе шапки, чтобы она всегда была её продолжением.
-	function alignToHeader() {
-		if (!header) return
-		const rect = header.getBoundingClientRect()
-		// Страховка на случай, если шапка ещё в анимации (translateY) — берём максимум
-		// с fallback-высотой, чтобы панель не прыгала и не уезжала под шапку.
-		const bottom = rect.bottom <= 0 ? 64 : rect.bottom
-		popup.style.top = `${Math.round(bottom)}px`
-	}
-
-	// Панель позиционируется после применения классов шапки и до показа,
-	// чтобы переход был плавным и без скачка top.
-	function show() {
-		requestAnimationFrame(() => {
-			requestAnimationFrame(() => {
-				alignToHeader()
-				popup.classList.add('is-open')
-			})
-		})
-	}
 
 	function open() {
 		lastFocused = document.activeElement
-		// Если шапка скрыта плавающим скроллом — показываем её, иначе панель
-		// повиснет над спрятанной шапкой.
-		if (header) {
+
+		// Если шапка скрыта скроллом — показываем её
+		if (header && header.classList.contains('is-hiding')) {
 			header.classList.remove('is-hiding')
 			header.classList.add('is-visible')
 		}
-		popup.hidden = false
-		show()
-		document.body.classList.add('is-search-open')
-		input.focus({ preventScroll: true })
+
+		// Блокируем скролл страницы
 		document.body.style.overflow = 'hidden'
-		window.addEventListener('resize', alignToHeader)
+		document.body.classList.add('is-search-open')
+
+		popup.hidden = false
+
+		// Двойной rAF для корректной работы transition
+		requestAnimationFrame(() => {
+			requestAnimationFrame(() => {
+				popup.classList.add('is-open')
+				overlay.classList.add('is-open')
+				input.focus({ preventScroll: true })
+			})
+		})
+
 		document.addEventListener('keydown', onKeydown)
 	}
 
 	function close() {
 		popup.classList.remove('is-open')
+		overlay.classList.remove('is-open')
+
+		const duration = prefersReduced ? 0 : TRANSITION_DURATION
 		setTimeout(() => {
 			popup.hidden = true
-			popup.style.top = ''
 			document.body.classList.remove('is-search-open')
 			document.body.style.overflow = ''
-			window.removeEventListener('resize', alignToHeader)
-		}, TRANSITION_DURATION)
+		}, duration)
+
 		if (lastFocused) lastFocused.focus()
 		document.removeEventListener('keydown', onKeydown)
 	}
@@ -156,6 +181,7 @@ function initSearchPopup() {
 
 	searchBtn.addEventListener('click', open)
 	overlay.addEventListener('click', close)
+
 	form.addEventListener('submit', e => {
 		e.preventDefault()
 		const query = input.value.trim()
@@ -164,6 +190,7 @@ function initSearchPopup() {
 		}
 	})
 
+	// Отключаем анимации только если пользователь явно включил уменьшенное движение
 	if (prefersReduced) {
 		popup.style.transition = 'none'
 		overlay.style.transition = 'none'
@@ -915,6 +942,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			})
 
 			validator
+				.addField('.js-position', [{ rule: 'required' }, { rule: 'minLength', value: 3 }])
 				.addField('.js-fio', [{ rule: 'required' }, { rule: 'minLength', value: 3 }])
 				.addField('.js-email', [{ rule: 'required' }, { rule: 'email' }])
 				.addField('.js-phone', [
@@ -1062,10 +1090,106 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
+	// Lines from the core to each eco-card icon.
+	// Desktop-only: 6 dashed lines (SVG stroke-dasharray — no CSS dotted/border).
+	// Position is computed from getBoundingClientRect so it stays correct when
+	// text wraps or the layout rescales at 1280/1024.
+	function initEcoLines() {
+		const diagram = document.querySelector('.ecosystem__diagram')
+		const core = diagram && diagram.querySelector('.ecosystem__core')
+		if (!core) return
+
+		let svg = diagram.querySelector('.ecosystem__lines')
+		if (!svg) {
+			svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+			svg.setAttribute('class', 'ecosystem__lines')
+			svg.setAttribute('aria-hidden', 'true')
+			diagram.prepend(svg)
+		}
+		const NS = 'http://www.w3.org/2000/svg'
+		const dash = '5 7' // dashed rhythm — set on the SVG stroke, not CSS dotted
+		const dotGap = 9 // gap before the icon so the line does not touch it
+		const iconRadius = 32 // .eco-card__icon is 4rem wide
+
+		function draw() {
+			const diaRect = diagram.getBoundingClientRect()
+			if (diaRect.width < 2 || diaRect.height < 2) return
+			const coreRect = core.getBoundingClientRect()
+			const cx = coreRect.left - diaRect.left + coreRect.width / 2
+			const cy = coreRect.top - diaRect.top + coreRect.height / 2
+
+			svg.setAttribute('viewBox', '0 0 ' + diaRect.width + ' ' + diaRect.height)
+			svg.setAttribute('width', diaRect.width)
+			svg.setAttribute('height', diaRect.height)
+			svg.setAttribute('preserveAspectRatio', 'none')
+			svg.replaceChildren()
+
+			diagram.querySelectorAll('.eco-card').forEach(card => {
+				const icon = card.querySelector('.eco-card__icon')
+				if (!icon) return
+				const ir = icon.getBoundingClientRect()
+				const ix = ir.left - diaRect.left + ir.width / 2
+				const iy = ir.top - diaRect.top + ir.height / 2
+				const dx = ix - cx
+				const dy = iy - cy
+				const len = Math.hypot(dx, dy)
+				if (len < 1) return
+				const ux = dx / len
+				const uy = dy / len
+				const ex = ix - ux * (iconRadius + dotGap)
+				const ey = iy - uy * (iconRadius + dotGap)
+				const color = getComputedStyle(icon).color
+
+				const g = document.createElementNS(NS, 'g')
+				g.setAttribute('stroke', color)
+				g.setAttribute('stroke-width', '2')
+				g.setAttribute('fill', 'none')
+				g.setAttribute('stroke-linecap', 'round')
+				g.setAttribute('opacity', '0.4')
+
+				const line = document.createElementNS(NS, 'line')
+				line.setAttribute('x1', cx)
+				line.setAttribute('y1', cy)
+				line.setAttribute('x2', ex)
+				line.setAttribute('y2', ey)
+				line.setAttribute('stroke-dasharray', dash)
+				g.appendChild(line)
+
+				const circle = document.createElementNS(NS, 'circle')
+				circle.setAttribute('cx', ex)
+				circle.setAttribute('cy', ey)
+				circle.setAttribute('r', '5')
+				g.appendChild(circle)
+
+				svg.appendChild(g)
+			})
+		}
+
+		draw()
+
+		let raf = 0
+		const onResize = () => {
+			if (raf) return
+			raf = requestAnimationFrame(() => {
+				raf = 0
+				draw()
+			})
+		}
+		// AOS animates the whole diagram with fade-up (700ms translateY) —
+		// redraw once it has landed so the coordinates match the final position.
+		diagram.addEventListener('transitionend', onResize)
+		window.addEventListener('resize', onResize)
+		if (document.fonts && document.fonts.ready) {
+			document.fonts.ready.then(draw)
+		}
+		setTimeout(draw, 900)
+	}
+
 	initAccordion('.tasks__list', 'is-open', '.tasks__q')
 	initAccordion('.faq__list', 'is-open', '.faq__q')
 	initHistoryTimeline()
 	initCatalogAccordion()
+	initEcoLines()
 
 	initClientsPage()
 	initDropdown()
