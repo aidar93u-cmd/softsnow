@@ -5158,14 +5158,20 @@
 		font-size: 1rem;
 	}
 
-	/* зазоры — паддингами внутри сворачиваемой строки (маргины вне бокса
-	   не схлопываются вместе со строкой), как у .faq__a > p */
+	/* зазоры — паддингами на тексте, но в состоянии .is-open: постоянный
+	   паддинг внутри 0fr-строки не схлопывается (утечка высоты свёрнутой карточки) */
 	.eco-card__text {
 		min-height: 0;
 		overflow: hidden;
+		padding-top: 0;
+		padding-bottom: 0;
+		transition: padding 0.4s;
+		font-size: 0.875rem;
+	}
+
+	.eco-card.is-open .eco-card__text {
 		padding-top: 0.8125rem;
 		padding-bottom: 0.1875rem; /* нижний воздух развёрнутой карточки ≈106px */
-		font-size: 0.875rem;
 	}
 	.services__grid {
 		grid-template-columns: repeat(2, 1fr);

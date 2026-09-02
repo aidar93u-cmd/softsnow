@@ -1188,6 +1188,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initAccordion('.faq__list', 'is-open', '.faq__q')
 	initHistoryTimeline()
 	initCatalogAccordion()
+	initEcoAccordion()
 	initEcoLines()
 
 	initClientsPage()
