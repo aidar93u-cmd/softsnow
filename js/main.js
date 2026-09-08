@@ -766,8 +766,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		},
 	})
 
-	const eventsFeaturedSwiper = eventsFeaturedTextSwiper
-
 	const testimonialsSwiper = initSwiper('.testimonials__swiper', {
 		slidesPerView: 1.1,
 		spaceBetween: 10,
@@ -824,7 +822,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		['.partners .carousel-nav', partnersSwiper],
 		['.projects .carousel-nav', projectsSwiper],
 		['.events .carousel-nav', eventsSwiper],
-		['.events-featured .carousel-nav', eventsFeaturedSwiper],
 		['.testimonials .carousel-nav', testimonialsSwiper],
 		['.gallery .carousel-nav', gallerySwiper],
 	].forEach(([selector, swiper]) => bindNav(selector, swiper))
@@ -1146,7 +1143,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			// pass 2: draw every line at the same length L from the core —
 			// the nearest icon defines L, farther icons just get more air
-			const minD = Math.min.apply(null, targets.map(t => t.len))
+			const minD = Math.min.apply(
+				null,
+				targets.map(t => t.len),
+			)
 			const L = Math.max(160, minD - (iconRadius + dotGap + lineTrim))
 
 			targets.forEach(t => {
