@@ -357,10 +357,14 @@
 .hero {
 	position: relative;
 	min-height: 80dvh;
-	max-height: 47rem;
-	height: 47rem;
+	/* max-height: 47rem; */
+	height: 100%;
 	overflow: hidden;
 	margin-bottom: 0.625rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
 }
 .hero-block-inner {
 	height: 100%;
@@ -372,6 +376,11 @@
 	display: block;
 	background-size: cover;
 	background-position: center;
+	min-height: 65vh;
+	height: 100%;
+}
+.container.flex:not(:has(.hero__footer)) .hero-block-inner {
+	border-radius: 0 0 1.25rem 1.25rem;
 }
 .hero__video {
 	position: absolute;
@@ -401,6 +410,9 @@
 	display: flex;
 	flex-direction: column;
 }
+.hero .flex {
+	height: stretch;
+}
 .hero__body {
 	position: relative;
 	z-index: 1;
@@ -408,7 +420,7 @@
 
 .hero__title {
 	max-width: 71.25rem;
-	margin-bottom: 2.8125rem;
+	margin-bottom: 1.8125rem;
 	line-height: 1;
 	flex-wrap: wrap;
 	align-items: baseline;
@@ -478,6 +490,16 @@
 	bottom: 0;
 	width: 1px;
 	background: var(--bg-border);
+}
+/* Single note: hide empty wrapper + divider, uncap max-width */
+.hero__note:has(> span:empty) {
+	display: none;
+}
+.hero__footer:has(> .hero__note > span:empty)::after {
+	display: none;
+}
+.hero__footer:has(> .hero__note > span:empty) .hero__note_1 {
+	max-width: none;
 }
 .page-hero__title.page-hero__title--detail {
 	font-size: var(--fs-h2);
@@ -1517,6 +1539,7 @@
 	overflow: hidden;
 	color: var(--color-white);
 	text-decoration: none;
+	transition: 0.4s all;
 }
 
 .events__card::after {
@@ -1548,11 +1571,13 @@
 	display: flex;
 	flex-direction: column;
 	width: calc(100% - 1.25rem);
-	min-height: 8.75rem;
+	height: 11rem;
 	padding: 1.25rem;
 	background: var(--color-white);
 	border-radius: var(--radius-md);
 	color: var(--color-black);
+	transition: 0.4s all;
+	gap: 1rem;
 }
 
 .events__card--wide .events__info {
@@ -1561,6 +1586,11 @@
 }
 
 .events__title {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	font-size: var(--fs-body-20);
 	line-height: 1.2;
 	max-width: 90%;
@@ -2630,7 +2660,6 @@ h2.client-title {
 	justify-content: space-between;
 	gap: 4rem;
 	padding: 2.5rem;
-	margin-bottom: var(--gap-sm);
 	background: var(--color-white);
 	border-radius: var(--radius-lg);
 	position: relative;
@@ -4268,7 +4297,7 @@ a.contacts-map__value:hover {
 	display: flex;
 	flex-direction: column;
 	gap: var(--gap-sm);
-	width: 13.5625rem;
+	width: 17rem;
 }
 .hero__stat + .hero__stat {
 	margin-left: var(--gap-sm);
@@ -4293,7 +4322,7 @@ a.contacts-map__value:hover {
 	font-size: var(--fs-body-16);
 	font-weight: 500;
 	line-height: 1.4;
-	align-items: flex-end;
+	align-items: flex-start;
 	background-color: #f4f4f4;
 	border-radius: 0 0 1.25rem 1.25rem;
 }
@@ -4519,8 +4548,9 @@ a.contacts-map__value:hover {
 .features__img {
 	width: 100%;
 	border-radius: var(--radius-lg);
-	object-fit: cover;
+	object-fit: contain;
 	border: 5px solid;
+	height: max-content;
 }
 .features-popup__card {
 	position: relative;
@@ -4790,7 +4820,7 @@ a.contacts-map__value:hover {
 	display: flex;
 	flex-direction: column;
 	gap: 3.75rem;
-	width: 35%;
+	width: 38%;
 	z-index: 3;
 }
 .ecosystem__center {
@@ -4855,7 +4885,7 @@ a.contacts-map__value:hover {
 .eco-card {
 	position: relative;
 	display: flex;
-	align-items: flex-start;
+	align-items: center;
 	gap: 1.25rem;
 	width: 100%;
 	min-height: 6.9375rem;
@@ -4868,23 +4898,22 @@ a.contacts-map__value:hover {
 	text-align: right;
 }
 .ecosystem__col--right .eco-card {
-	max-width: calc(100% - 4rem);
+	/*max-width: calc(100% - 4rem);*/
 	margin-right: auto;
 }
 .ecosystem__col--left .eco-card {
-	max-width: calc(100% - 4rem);
+	/*max-width: calc(100% - 4rem);*/
 	margin-left: auto;
 }
 
-.ecosystem__col--right .eco-card.eco-card--orange {
+.ecosystem__col--right .eco-card:nth-child(2) {
 	margin-left: 4rem;
 	max-width: calc(100% - 4rem);
 	margin-right: auto;
 }
-.ecosystem__col--left .eco-card.eco-card--blue {
+.ecosystem__col--left .eco-card:nth-child(2) {
 	margin-right: 4rem;
 	max-width: calc(100% - 4rem);
-	margin-right: auto;
 }
 .eco-card__body {
 	flex: 1;
@@ -4902,6 +4931,7 @@ a.contacts-map__value:hover {
 	font-size: var(--fs-body-16);
 	line-height: 1.4;
 	color: var(--color-grey, rgba(34, 34, 34, 0.7));
+	max-height: 4rem;
 }
 .eco-card__icon {
 	display: flex;
@@ -4941,6 +4971,9 @@ a.contacts-map__value:hover {
 	width: 100%;
 	height: 100%;
 	pointer-events: none;
+}
+.ecosystem__lines circle {
+	fill: #fff;
 }
 
 /* ==== from pages/index.css ==== */

@@ -287,6 +287,12 @@ function initClientsPage() {
 	let revealed = false
 
 	const apply = () => {
+		const gridEl = grid
+		if (window.SoftSnow && gridEl && gridEl.dataset.ajax && typeof SoftSnow.loadList === 'function') {
+			gridEl.dataset.page = '1'
+			SoftSnow.loadList(gridEl, 1)
+			return
+		}
 		const active = document.querySelector('.tab-filter.is-active')
 		const filter = active ? active.dataset.filter : 'all'
 		let shown = 0
@@ -310,6 +316,12 @@ function initClientsPage() {
 
 	if (moreBtn) {
 		moreBtn.addEventListener('click', () => {
+			if (window.SoftSnow && grid && grid.dataset.ajax && typeof SoftSnow.loadList === 'function') {
+				const next = Number(grid.dataset.page || 1) + 1
+				grid.dataset.page = String(next)
+				SoftSnow.loadList(grid, next)
+				return
+			}
 			revealed = true
 			apply()
 		})
@@ -386,6 +398,11 @@ function initDropdown() {
 	}
 
 	const applyFilter = () => {
+		if (window.SoftSnow && grid && grid.dataset.ajax && typeof SoftSnow.loadList === 'function') {
+			grid.dataset.page = '1'
+			SoftSnow.loadList(grid, 1)
+			return
+		}
 		const active = {}
 		dropdowns.forEach(dd => {
 			const checked = Array.from(dd.querySelectorAll('.dropdown__check:checked')).map(c => c.value)
@@ -429,6 +446,12 @@ function initDropdown() {
 
 	if (moreBtn) {
 		moreBtn.addEventListener('click', () => {
+			if (window.SoftSnow && grid && grid.dataset.ajax && typeof SoftSnow.loadList === 'function') {
+				const next = Number(grid.dataset.page || 1) + 1
+				grid.dataset.page = String(next)
+				SoftSnow.loadList(grid, next)
+				return
+			}
 			const hidden = cards.filter(c => c.classList.contains('is-matched') && c.hidden)
 			visible += STEP
 			applyFilter()
@@ -766,6 +789,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		},
 	})
 
+	const eventsFeaturedSwiper = eventsFeaturedTextSwiper
+
 	const testimonialsSwiper = initSwiper('.testimonials__swiper', {
 		slidesPerView: 1.1,
 		spaceBetween: 10,
@@ -950,7 +975,16 @@ document.addEventListener('DOMContentLoaded', () => {
 				])
 				.addField('.js-consent', [{ rule: 'required' }])
 
-			validator.onSuccess(() => showSuccess())
+			validator.onSuccess(event => {
+				event?.preventDefault?.()
+				if (window.SoftSnow && SoftSnow.sendForm) {
+					SoftSnow.sendForm(form, 'request').then(ok => {
+						if (ok) showSuccess()
+					})
+					return
+				}
+				showSuccess()
+			})
 		})
 	}
 
@@ -968,7 +1002,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			validator.addField('.js-email', [{ rule: 'required' }, { rule: 'email' }]).addField('.js-consent', [{ rule: 'required' }])
 
-			validator.onSuccess(() => showSuccess())
+			validator.onSuccess(event => {
+				event?.preventDefault?.()
+				if (window.SoftSnow && SoftSnow.sendForm) {
+					SoftSnow.sendForm(form, 'subscribe').then(ok => {
+						if (ok) showSuccess()
+					})
+					return
+				}
+				showSuccess()
+			})
 		})
 	}
 
@@ -1089,9 +1132,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Lines from the core toward each eco-card icon.
 	// Desktop-only: 6 dashed lines (SVG stroke-dasharray — no CSS dotted/border),
-	// all of EQUAL length — the nearest icon sets where every line ends, so no
-	// line sticks out longer than the rest. Redrawn from getBoundingClientRect
-	// so it stays correct when text wraps or the layout rescales at 1280/1024.
+	// each ending on the .ecosystem__glow--2 circumference. Redrawn from
+	// getBoundingClientRect so it stays correct when text wraps or the layout
+	// rescales at 1280/1024.
 	function initEcoLines() {
 		const diagram = document.querySelector('.ecosystem__diagram')
 		const core = diagram && diagram.querySelector('.ecosystem__core')
@@ -1105,12 +1148,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			diagram.prepend(svg)
 		}
 		const NS = 'http://www.w3.org/2000/svg'
-		const dash = '5 7' // dashed rhythm — set on the SVG stroke, not CSS dotted
-		const dotGap = 9 // air before the icon: the line does not touch it
-		const iconRadius = 32 // .eco-card__icon is 4rem wide
-		const lineTrim = 40 // extra pull-back so the ring of circles stays compact
-		// One uniform length for all lines: (distance to the nearest icon) - clearance,
-		// where clearance = iconRadius + dotGap + lineTrim
+		const dash = '5 7' // dashed rhythm вЂ” set on the SVG stroke, not CSS dotted
 
 		function draw() {
 			const diaRect = diagram.getBoundingClientRect()
@@ -1118,6 +1156,14 @@ document.addEventListener('DOMContentLoaded', () => {
 			const coreRect = core.getBoundingClientRect()
 			const cx = coreRect.left - diaRect.left + coreRect.width / 2
 			const cy = coreRect.top - diaRect.top + coreRect.height / 2
+			// lines end exactly on the .ecosystem__glow--2 circumference:
+			// end = glow center + direction × glow radius
+			const glow = diagram.querySelector('.ecosystem__glow--2')
+			const glowRect = glow && glow.getBoundingClientRect()
+			if (!glowRect || glowRect.width < 2) return
+			const gx = glowRect.left - diaRect.left + glowRect.width / 2
+			const gy = glowRect.top - diaRect.top + glowRect.height / 2
+			const R = (glowRect.width + glowRect.height) / 4
 
 			svg.setAttribute('viewBox', '0 0 ' + diaRect.width + ' ' + diaRect.height)
 			svg.setAttribute('width', diaRect.width)
@@ -1125,39 +1171,29 @@ document.addEventListener('DOMContentLoaded', () => {
 			svg.setAttribute('preserveAspectRatio', 'none')
 			svg.replaceChildren()
 
-			// pass 1: direction vectors from the core to each icon
-			const targets = []
 			diagram.querySelectorAll('.eco-card').forEach(card => {
 				const icon = card.querySelector('.eco-card__icon')
 				if (!icon) return
 				const ir = icon.getBoundingClientRect()
 				const ix = ir.left - diaRect.left + ir.width / 2
 				const iy = ir.top - diaRect.top + ir.height / 2
-				const dx = ix - cx
-				const dy = iy - cy
+				const dx = ix - gx
+				const dy = iy - gy
 				const len = Math.hypot(dx, dy)
 				if (len < 1) return
-				targets.push({ dx, dy, len, color: getComputedStyle(icon).color })
-			})
-			if (!targets.length) return
-
-			// pass 2: draw every line at the same length L from the core —
-			// the nearest icon defines L, farther icons just get more air
-			const minD = Math.min.apply(
-				null,
-				targets.map(t => t.len),
-			)
-			const L = Math.max(160, minD - (iconRadius + dotGap + lineTrim))
-
-			targets.forEach(t => {
-				const ex = cx + (t.dx / t.len) * L
-				const ey = cy + (t.dy / t.len) * L
+				const ux = dx / len
+				const uy = dy / len
+				const ex = gx + ux * R
+				const ey = gy + uy * R
+				const color = getComputedStyle(icon).color
 
 				const g = document.createElementNS(NS, 'g')
-				g.setAttribute('stroke', t.color)
+				g.setAttribute('stroke', color)
 				g.setAttribute('stroke-width', '2')
 				g.setAttribute('fill', 'none')
 				g.setAttribute('stroke-linecap', 'round')
+				g.setAttribute('opacity', '0.4')
+
 				const line = document.createElementNS(NS, 'line')
 				line.setAttribute('x1', cx)
 				line.setAttribute('y1', cy)
@@ -1170,7 +1206,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				circle.setAttribute('cx', ex)
 				circle.setAttribute('cy', ey)
 				circle.setAttribute('r', '5')
-				circle.setAttribute('fill', '#ffffff') // белая заливка внутри, обводка — цвет иконки от группы
 				g.appendChild(circle)
 
 				svg.appendChild(g)
@@ -1187,7 +1222,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				draw()
 			})
 		}
-		// AOS animates the whole diagram with fade-up (700ms translateY) —
+		// AOS animates the whole diagram with fade-up (700ms translateY) вЂ”
 		// redraw once it has landed so the coordinates match the final position.
 		diagram.addEventListener('transitionend', onResize)
 		window.addEventListener('resize', onResize)

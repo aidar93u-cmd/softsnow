@@ -156,8 +156,8 @@
 	}
 
 	.ecosystem__glow--2 {
-		width: 22rem;
-		height: 22rem;
+		width: 20rem;
+		height: 20rem;
 	}
 
 	.ecosystem__core {
@@ -169,6 +169,24 @@
 	.eco-card {
 		width: 100%;
 		min-height: 0;
+	}
+
+	/* в сетке десктопный стаггер ломает ритм — все карточки одной ширины */
+	.ecosystem__col--left .eco-card:nth-child(2),
+	.ecosystem__col--right .eco-card:nth-child(2) {
+		margin-left: 0;
+		margin-right: 0;
+		max-width: 100%;
+	}
+
+	/* узкие колонки — текст переносится сильнее, фикс. высоту снимаем */
+	.eco-card__text {
+		height: auto;
+	}
+
+	/* дальнее гало не помещается в низкую плашку центра — гасим */
+	.ecosystem__glow--1 {
+		display: none;
 	}
 
 	/* линии-потоки не имеют смысла в сеточной раскладке — прячем SVG до десктопа */
@@ -329,6 +347,11 @@
 		order: -1;
 	}
 
+	/* одна колонка: иконка всегда ведущая слева */
+	.ecosystem__col--left .eco-card__icon {
+		order: -1;
+	}
+
 	/* Точечные правки */
 	/* Хедер: внутренние поля 2.5rem захардкожены в sections.css —
 	   на мобильных привязываем к токену, иначе лого+бургер не помещаются */
@@ -374,11 +397,30 @@
 /* 1440px */
 @media (max-width: 1440px) {
 	.hero__title {
-		margin-bottom: 2.5rem;
+		margin-bottom: 1.5rem;
 	}
 	.page-hero__media {
 		height: 10rem;
 		width: 10rem;
+	}
+}
+
+/* 1600px: ecosystem — возвращаем широкий стаггер, иначе средние иконки наезжают на точки */
+@media (max-width: 1600px) {
+	.ecosystem__col--right .eco-card:nth-child(2) {
+		margin-left: 4rem;
+		max-width: calc(100% - 4rem);
+	}
+	.ecosystem__col--left .eco-card:nth-child(2) {
+		margin-right: 4rem;
+		max-width: calc(100% - 4rem);
+	}
+}
+
+/* 1440px: ecosystem — зазор до линий уже 22–31px, колонки и стаггер как в базе 35%/4rem */
+@media (max-width: 1440px) {
+	.ecosystem__col {
+		width: 35%;
 	}
 }
 
@@ -394,7 +436,7 @@
 
 	.hero__title {
 		max-width: 50rem;
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
 	}
 	.page-hero__title.page-hero__title--detail {
 		max-width: 60rem;
@@ -1177,7 +1219,7 @@
 		height: 30rem;
 	}
 	.events__info {
-		min-height: 7.5rem;
+		height: 10.5rem;
 		padding: 1rem;
 	}
 	.events__title {
@@ -1209,7 +1251,7 @@
 		height: 26rem;
 	}
 	.events__info {
-		min-height: 6.5rem;
+		height: 10.25rem;
 		padding: 0.875rem;
 		left: 0.5rem;
 		bottom: 0.5rem;
@@ -1248,7 +1290,7 @@
 		height: 22rem;
 	}
 	.events__info {
-		min-height: 5.5rem;
+		height: 9.4rem;
 		padding: 0.75rem;
 		left: 0.5rem;
 		bottom: 0.5rem;
@@ -1305,6 +1347,12 @@
 	.footer__legal {
 		gap: 2rem;
 	}
+	.team__photo--main {
+		width: 9.3125rem;
+	}
+	.team__photos {
+		min-height: 30rem;
+	}
 }
 
 /* 1280px */
@@ -1354,6 +1402,12 @@
 	.footer__links,
 	.footer__legal {
 		gap: 1.5rem;
+	}
+	.team__photos {
+		min-height: 25rem;
+	}
+	.team__title {
+		max-width: 15.75rem;
 	}
 }
 
@@ -1967,6 +2021,7 @@
 		background-color: var(--bg-light);
 		background-size: cover;
 		background-position: center;
+		min-height: auto;
 	}
 
 	/* Градиентное затухание фото к фону обложки (Figma: gradient fade) */
@@ -2841,10 +2896,11 @@
 		left: 0.25rem;
 		bottom: 0.25rem;
 		width: calc(100% - 0.5rem);
-		min-height: 0;
+		height: 9.3rem;
 		gap: 1.5rem;
 		padding: 0.75rem;
 		border-radius: 0.5rem;
+		height: auto;
 	}
 
 	.events__title {
@@ -5135,6 +5191,14 @@
 		margin-right: 0;
 	}
 
+	.ecosystem__col--right .eco-card:nth-child(2) {
+		margin-left: 0;
+		max-width: 100%;
+	}
+	.ecosystem__col--left .eco-card:nth-child(2) {
+		margin-right: 0;
+		max-width: 100%;
+	}
 	/* линии-потоки и иконки в мобильном макете отсутствуют */
 	.ecosystem__lines,
 	.eco-card__icon {
@@ -5167,8 +5231,11 @@
 		padding-bottom: 0;
 		transition: padding 0.4s;
 		font-size: 0.875rem;
+		height: auto;
 	}
-
+	.eco-card-empty {
+		display: none;
+	}
 	.eco-card.is-open .eco-card__text {
 		padding-top: 0.8125rem;
 		padding-bottom: 0.1875rem; /* нижний воздух развёрнутой карточки ≈106px */
