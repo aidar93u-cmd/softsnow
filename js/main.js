@@ -1130,11 +1130,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
-	// Lines from the core toward each eco-card icon.
-	// Desktop-only: 6 dashed lines (SVG stroke-dasharray — no CSS dotted/border),
-	// each ending on the .ecosystem__glow--2 circumference. Redrawn from
-	// getBoundingClientRect so it stays correct when text wraps or the layout
-	// rescales at 1280/1024.
+	// Floating ring (desktop wider than 1024 only): eco-cards are absolutely
+	// positioned with their icons on a circle around the core, so every line
+	// has equal length by construction. 6 cards = circle in 8 sectors
+	// (top/bottom empty), 5 cards = circle in 6 sectors (bottom empty,
+	// first card on top). Dashed lines (SVG stroke-dasharray, no CSS dotted),
+	// white dot where each line meets its icon. Redrawn from
+	// getBoundingClientRect (fonts, resize, AOS landing).
 	function initEcoLines() {
 		const diagram = document.querySelector('.ecosystem__diagram')
 		const core = diagram && diagram.querySelector('.ecosystem__core')
@@ -1148,22 +1150,91 @@ document.addEventListener('DOMContentLoaded', () => {
 			diagram.prepend(svg)
 		}
 		const NS = 'http://www.w3.org/2000/svg'
-		const dash = '5 7' // dashed rhythm вЂ” set on the SVG stroke, not CSS dotted
+		const dash = '5 7' // dashed rhythm — set on the SVG stroke, not CSS dotted
+		const D = Math.PI / 180
+		// slot angles, 0° = east, y grows down.
+		// 6: left top->bottom 225/180/135, right top->bottom 315/0/45.
+		// 5: first card top 270, left 210/150, right 330/30.
+		const SLOTS = { 6: [225, 180, 135, 315, 0, 45], 5: [270, 210, 150, 330, 30] }
+
+		function clearFloat(cards) {
+			diagram.classList.remove('is-placed')
+			diagram.style.height = ''
+			cards.forEach(c => {
+				c.style.left = ''
+				c.style.top = ''
+				c.style.width = ''
+			})
+			svg.replaceChildren()
+			svg.removeAttribute('viewBox')
+			svg.removeAttribute('width')
+			svg.removeAttribute('height')
+		}
 
 		function draw() {
+			const cards = [...diagram.querySelectorAll('.eco-card')]
+			const slots = SLOTS[cards.length]
+			const floating = window.innerWidth > 1024 && !!slots
+			// сторону зеркала задаём всегда (кольцо + планшетная сетка);
+			// верхняя (idx0 при 5) — как правая
+			cards.forEach((card, i) => {
+				const top = floating && cards.length === 5 && i === 0
+				const left = top ? false : (floating
+					? Math.cos(slots[i] * D) < 0
+					: i < Math.ceil(cards.length / 2))
+				card.classList.toggle('is-left', left)
+			})
+			if (!floating) {
+				clearFloat(cards)
+				return
+			}
+			const diaW = diagram.getBoundingClientRect().width
+			if (diaW < 2) return
+			// ponytail: class first (static flow off), then measure + stretch
+			diagram.classList.add('is-placed')
+			const rootFont = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16
+			const padL = parseFloat(getComputedStyle(cards[0]).paddingLeft) || 0
+			const padR = parseFloat(getComputedStyle(cards[0]).paddingRight) || 0
+			// ring radius: core half (10rem) + icon (2rem) + pads + air, +20px clear of the glows
+			const R = Math.min(20 * rootFont + 20, diaW / 2 - 14 * rootFont)
+			if (R < 40) {
+				clearFloat(cards)
+				return
+			}
+			// glow--2 radius drives where dots sit (measured live, rootFont-aware)
+			const glowEl = diagram.querySelector('.ecosystem__glow--2')
+			const glowRect = glowEl ? glowEl.getBoundingClientRect() : null
+			const Rglow = glowRect ? (glowRect.width + glowRect.height) / 4 : 0
+			// cx is height-independent — measure once up front (widths need it)
+			const coreRect0 = core.getBoundingClientRect()
+			const diaRect0 = diagram.getBoundingClientRect()
+			const cx0 = coreRect0.left - diaRect0.left + coreRect0.width / 2
+
+			// pass 1: stretch each card to its block edge, icon side stays free
+			cards.forEach((card, i) => {
+				const icon = card.querySelector('.eco-card__icon')
+				if (!icon) return
+				const a = slots[i] * D
+				const toRight = !card.classList.contains('is-left');
+				const sx = cx0 + Math.cos(a) * R
+				const iconR = icon.getBoundingClientRect().width / 2
+				if (toRight) {
+					const left = sx - iconR - padL
+					card.style.left = left + 'px'
+					card.style.width = diaW - left + 'px'
+				} else {
+					card.style.left = '0px'
+					card.style.width = sx + iconR + padR + 'px'
+				}
+			})
+			// heights depend on stretched widths — measure, then fix diagram height
+			const maxCardH = Math.max(...cards.map(c => c.getBoundingClientRect().height))
+			diagram.style.height = 2 * R + maxCardH + 3 * rootFont + 'px'
+			// core recenters once the explicit height lands — re-read
 			const diaRect = diagram.getBoundingClientRect()
-			if (diaRect.width < 2 || diaRect.height < 2) return
 			const coreRect = core.getBoundingClientRect()
 			const cx = coreRect.left - diaRect.left + coreRect.width / 2
 			const cy = coreRect.top - diaRect.top + coreRect.height / 2
-			// lines end exactly on the .ecosystem__glow--2 circumference:
-			// end = glow center + direction × glow radius
-			const glow = diagram.querySelector('.ecosystem__glow--2')
-			const glowRect = glow && glow.getBoundingClientRect()
-			if (!glowRect || glowRect.width < 2) return
-			const gx = glowRect.left - diaRect.left + glowRect.width / 2
-			const gy = glowRect.top - diaRect.top + glowRect.height / 2
-			const R = (glowRect.width + glowRect.height) / 4
 
 			svg.setAttribute('viewBox', '0 0 ' + diaRect.width + ' ' + diaRect.height)
 			svg.setAttribute('width', diaRect.width)
@@ -1171,20 +1242,24 @@ document.addEventListener('DOMContentLoaded', () => {
 			svg.setAttribute('preserveAspectRatio', 'none')
 			svg.replaceChildren()
 
-			diagram.querySelectorAll('.eco-card').forEach(card => {
+			cards.forEach((card, i) => {
 				const icon = card.querySelector('.eco-card__icon')
 				if (!icon) return
+				const a = slots[i] * D
+				const ux = Math.cos(a)
+				const uy = Math.sin(a)
+				// icon sits exactly on its slot by construction (stretched width);
+				// pin the card vertically, draw line + dot
+				const cr = card.getBoundingClientRect()
 				const ir = icon.getBoundingClientRect()
-				const ix = ir.left - diaRect.left + ir.width / 2
-				const iy = ir.top - diaRect.top + ir.height / 2
-				const dx = ix - gx
-				const dy = iy - gy
-				const len = Math.hypot(dx, dy)
-				if (len < 1) return
-				const ux = dx / len
-				const uy = dy / len
-				const ex = gx + ux * R
-				const ey = gy + uy * R
+				const iy0 = ir.top - cr.top + ir.height / 2
+				card.style.top = cy + uy * R - iy0 + 'px'
+				// line from the core center; white dot sits exactly on the
+				// .ecosystem__glow--2 circle (radius measured live)
+				const iconR = ir.width / 2
+				const Rend = Rglow > 0 ? Math.min(Rglow, R - iconR - 8) : R - iconR - 10
+				const ex = cx + ux * Rend
+				const ey = cy + uy * Rend
 				const color = getComputedStyle(icon).color
 
 				const g = document.createElementNS(NS, 'g')

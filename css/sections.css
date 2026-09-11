@@ -2447,7 +2447,7 @@ h2.client-title {
 }
 
 .reasons__head {
-	width: 55.625rem;
+	width: 50%;
 	flex-shrink: 0;
 }
 
@@ -4783,7 +4783,7 @@ a.contacts-map__value:hover {
 	width: 13.3125rem;
 	position: absolute;
 	right: 2.875rem;
-	top: 0.875rem;
+	top: 2.5rem;
 }
 
 /* ==== from pages/vuz.css ==== */
@@ -4815,13 +4815,6 @@ a.contacts-map__value:hover {
 	justify-content: space-between;
 	min-height: 28.3125rem;
 	margin-top: 5rem;
-}
-.ecosystem__col {
-	display: flex;
-	flex-direction: column;
-	gap: 3.75rem;
-	width: 38%;
-	z-index: 3;
 }
 .ecosystem__center {
 	position: absolute;
@@ -4892,28 +4885,24 @@ a.contacts-map__value:hover {
 	padding: 1.25rem;
 	z-index: 9;
 }
-.eco-card--right {
+/* сторону зеркала задаёт JS классом is-left (в коде иконка всегда первая) */
+.eco-card.is-left {
+	flex-direction: row-reverse;
 }
-.eco-card--right .eco-card__body {
+.eco-card.is-left .eco-card__body {
 	text-align: right;
 }
-.ecosystem__col--right .eco-card {
-	/*max-width: calc(100% - 4rem);*/
-	margin-right: auto;
+/* Плавающее кольцо (десктоп >1024, .is-placed ставит JS после расстановки):
+   иконки на окружности. Планшет/мобила — обычный flow. */
+.ecosystem__diagram.is-placed .eco-card {
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin: 0;
+	max-width: none;
 }
-.ecosystem__col--left .eco-card {
-	/*max-width: calc(100% - 4rem);*/
-	margin-left: auto;
-}
-
-.ecosystem__col--right .eco-card:nth-child(2) {
-	margin-left: 4rem;
-	max-width: calc(100% - 4rem);
-	margin-right: auto;
-}
-.ecosystem__col--left .eco-card:nth-child(2) {
-	margin-right: 4rem;
-	max-width: calc(100% - 4rem);
+.ecosystem__diagram.is-placed .eco-card__text {
+	height: auto;
 }
 .eco-card__body {
 	flex: 1;

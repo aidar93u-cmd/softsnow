@@ -128,16 +128,28 @@
 	}
 
 	.ecosystem__diagram {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 0.625rem;
+		display: block;
 		min-height: 0;
 		margin-top: 2.5rem;
 	}
 
-	.ecosystem__col {
+	.ecosystem__cards {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
 		gap: 0.625rem;
-		width: 100%;
+	}
+	/* тот же порядок пар, что был в колонках: L1|R1, L2|R2, L3 (центр-div пропускается) */
+	.ecosystem__cards .eco-card:nth-of-type(2) {
+		order: 3;
+	}
+	.ecosystem__cards .eco-card:nth-of-type(3) {
+		order: 5;
+	}
+	.ecosystem__cards .eco-card:nth-of-type(4) {
+		order: 2;
+	}
+	.ecosystem__cards .eco-card:nth-of-type(5) {
+		order: 4;
 	}
 
 	.ecosystem__center {
@@ -171,14 +183,6 @@
 		min-height: 0;
 	}
 
-	/* в сетке десктопный стаггер ломает ритм — все карточки одной ширины */
-	.ecosystem__col--left .eco-card:nth-child(2),
-	.ecosystem__col--right .eco-card:nth-child(2) {
-		margin-left: 0;
-		margin-right: 0;
-		max-width: 100%;
-	}
-
 	/* узкие колонки — текст переносится сильнее, фикс. высоту снимаем */
 	.eco-card__text {
 		height: auto;
@@ -192,16 +196,6 @@
 	/* линии-потоки не имеют смысла в сеточной раскладке — прячем SVG до десктопа */
 	.ecosystem__lines {
 		display: none;
-	}
-
-	/* На планшете: правая колонка — порядок карточек как на десктопе,
-	   иконка слева, без --right-флипа */
-	.eco-card--right {
-		flex-direction: row;
-	}
-
-	.eco-card--right .eco-card__body {
-		text-align: left;
 	}
 
 	/* --- хедер: прячем десктопную навигацию, контакты и поиск;
@@ -335,21 +329,23 @@
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	.ecosystem__diagram {
+	.ecosystem__cards {
 		grid-template-columns: 1fr;
-	}
-
-	.ecosystem__col--right {
-		order: 0;
 	}
 
 	.ecosystem__center {
 		order: -1;
 	}
 
-	/* одна колонка: иконка всегда ведущая слева */
-	.ecosystem__col--left .eco-card__icon {
-		order: -1;
+	/* одна колонка: DOM-порядок, все иконки ведущие слева */
+	.ecosystem__cards .eco-card:nth-of-type(n) {
+		order: 0;
+	}
+	.ecosystem__cards .eco-card.is-left {
+		flex-direction: row;
+	}
+	.ecosystem__cards .eco-card.is-left .eco-card__body {
+		text-align: left;
 	}
 
 	/* Точечные правки */
@@ -402,25 +398,6 @@
 	.page-hero__media {
 		height: 10rem;
 		width: 10rem;
-	}
-}
-
-/* 1600px: ecosystem — возвращаем широкий стаггер, иначе средние иконки наезжают на точки */
-@media (max-width: 1600px) {
-	.ecosystem__col--right .eco-card:nth-child(2) {
-		margin-left: 4rem;
-		max-width: calc(100% - 4rem);
-	}
-	.ecosystem__col--left .eco-card:nth-child(2) {
-		margin-right: 4rem;
-		max-width: calc(100% - 4rem);
-	}
-}
-
-/* 1440px: ecosystem — зазор до линий уже 22–31px, колонки и стаггер как в базе 35%/4rem */
-@media (max-width: 1440px) {
-	.ecosystem__col {
-		width: 35%;
 	}
 }
 
@@ -5160,10 +5137,6 @@
 		margin-top: 0;
 	}
 
-	.ecosystem__col {
-		gap: 0;
-	}
-
 	/* Ядро «Цифровая среда вуза» в мобильном макете отсутствует */
 	.ecosystem__center {
 		display: none;
@@ -5181,28 +5154,15 @@
 		cursor: pointer;
 	}
 
-	/* нейтрализуем десктопные сдвиги/сужение карточек в колонках */
-	.ecosystem__col--left .eco-card,
-	.ecosystem__col--right .eco-card,
-	.ecosystem__col--left .eco-card.eco-card--blue,
-	.ecosystem__col--right .eco-card.eco-card--orange {
-		max-width: 100%;
-		margin-left: 0;
-		margin-right: 0;
-	}
-
-	.ecosystem__col--right .eco-card:nth-child(2) {
-		margin-left: 0;
-		max-width: 100%;
-	}
-	.ecosystem__col--left .eco-card:nth-child(2) {
-		margin-right: 0;
-		max-width: 100%;
-	}
 	/* линии-потоки и иконки в мобильном макете отсутствуют */
 	.ecosystem__lines,
 	.eco-card__icon {
 		display: none;
+	}
+
+	/* зеркало десктопа на мобиле не нужно — текст везде влево */
+	.eco-card.is-left .eco-card__body {
+		text-align: left;
 	}
 
 	/* плавное раскрытие: строка описания анимируется auto 0fr→auto 1fr
