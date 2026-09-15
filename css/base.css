@@ -1038,8 +1038,13 @@ textarea.form-field__input:not(:placeholder-shown) + .form-field__label {
 	background: var(--color-white);
 	border-radius: var(--radius-lg);
 	box-shadow: var(--shadow-popover);
-    min-height: 48rem;
     justify-content: center;
+}
+
+/* DEF-15: высокий min-height — только пока видна форма;
+   на экране успеха окно сжимается под контент */
+.modal-form:has(form:not(.is-hidden)) {
+    min-height: 48rem;
 }
 
 .modal-form.is-open {

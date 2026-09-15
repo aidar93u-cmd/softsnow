@@ -168,7 +168,7 @@ function initSearchPopup() {
 		setTimeout(() => {
 			popup.hidden = true
 			document.body.classList.remove('is-search-open')
-			document.body.style.overflow = ''
+			unlockScroll()
 		}, duration)
 
 		if (lastFocused) lastFocused.focus()
@@ -177,6 +177,8 @@ function initSearchPopup() {
 
 	function onKeydown(e) {
 		if (e.key === 'Escape') close()
+		// DEF-54: фокус не уходит из поиска на страницу под ним
+		else trapTab(popup, e)
 	}
 
 	searchBtn.addEventListener('click', open)
@@ -363,7 +365,9 @@ function initDropdown() {
 			dropdowns.forEach(dd => {
 				dd.open = open
 			})
-			document.body.style.overflow = open ? 'hidden' : ''
+			// DEF-40: лок чужого оверлея (меню/поиск/модалка) не затираем
+			if (open) document.body.style.overflow = 'hidden'
+			else unlockScroll()
 		}
 	}
 
@@ -572,7 +576,46 @@ function closeMobileMenu(menu, burger) {
 	burger.setAttribute('aria-expanded', 'false')
 	burger.setAttribute('aria-label', 'Открыть меню')
 	document.body.classList.remove('menu-open')
-	document.body.style.overflow = ''
+	unlockScroll()
+}
+
+// DEF-40: снимаем лок скролла, только если его не держит другой оверлей
+// (мобильное меню, поиск, Fancybox) — иначе клики мимо фильтров,
+// закрытие поиска и т.п. отпирают чужой лок
+function unlockScroll() {
+	if (
+		!document.body.classList.contains('menu-open') &&
+		!document.body.classList.contains('is-search-open') &&
+		!document.querySelector('.fancybox__container')
+	) {
+		document.body.style.overflow = ''
+	}
+}
+
+// DEF-54: видимые фокусируемые внутри контейнера (для трапа Tab)
+function trapItems(container) {
+	return Array.from(
+		container.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), textarea, select, [tabindex]:not([tabindex="-1"])'),
+	).filter(el => {
+		const r = el.getBoundingClientRect()
+		return r.width > 0 && r.height > 0 && getComputedStyle(el).visibility !== 'hidden'
+	})
+}
+
+// DEF-54: зацикливание Tab внутри открытого контейнера
+function trapTab(container, e) {
+	if (e.key !== 'Tab') return
+	const items = trapItems(container)
+	if (!items.length) return
+	const first = items[0]
+	const last = items[items.length - 1]
+	if (e.shiftKey && document.activeElement === first) {
+		e.preventDefault()
+		last.focus()
+	} else if (!e.shiftKey && document.activeElement === last) {
+		e.preventDefault()
+		first.focus()
+	}
 }
 
 function initMobileMenu() {
@@ -600,7 +643,10 @@ function initMobileMenu() {
 		}
 		const group = document.createElement('div')
 		group.className = 'mobile-menu__group'
-		group.appendChild(link.cloneNode(true))
+		const groupLink = link.cloneNode(true)
+		// DEF-22: состояние группы для скринридера
+		groupLink.setAttribute('aria-expanded', 'true')
+		group.appendChild(groupLink)
 		const sub = document.createElement('div')
 		sub.className = 'mobile-menu__sub'
 		panel.querySelectorAll('.header__dropdown-link').forEach(l => sub.appendChild(l.cloneNode(true)))
@@ -640,7 +686,30 @@ function initMobileMenu() {
 		burger.setAttribute('aria-expanded', String(open))
 		burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню')
 		document.body.classList.toggle('menu-open', open)
-		document.body.style.overflow = open ? 'hidden' : ''
+		if (open) {
+			document.body.style.overflow = 'hidden'
+			// DEF-54: фокус в меню при открытии. Через rAF и без фильтра
+			// visibility — меню открывается с transition (0.25s), в полёте
+			// trapItems() видит hidden и вернул бы пусто
+			requestAnimationFrame(() => {
+				if (!menu.classList.contains('is-open')) return
+				const first = menu.querySelector('.mobile-menu__list a, .mobile-menu__cta')
+				if (first) first.focus({ preventScroll: true })
+			})
+		} else {
+			unlockScroll()
+		}
+	})
+
+	menu.addEventListener('keydown', e => {
+		if (!menu.classList.contains('is-open')) return
+		if (e.key === 'Escape') {
+			closeMobileMenu(menu, burger)
+			burger.focus({ preventScroll: true })
+			return
+		}
+		// DEF-54: фокус не уходит на страницу под меню
+		trapTab(menu, e)
 	})
 
 	menu.addEventListener('click', e => {
@@ -651,7 +720,9 @@ function initMobileMenu() {
 		const groupLink = e.target.closest('.mobile-menu__group > .header__link')
 		if (groupLink) {
 			e.preventDefault()
-			groupLink.parentElement.classList.toggle('is-open')
+			const grp = groupLink.parentElement
+			grp.classList.toggle('is-open')
+			groupLink.setAttribute('aria-expanded', String(grp.classList.contains('is-open')))
 			return
 		}
 		if (e.target.closest('a')) closeMobileMenu(menu, burger)
@@ -659,6 +730,22 @@ function initMobileMenu() {
 
 	window.addEventListener('resize', () => {
 		if (window.innerWidth > 1024 && menu.classList.contains('is-open')) closeMobileMenu(menu, burger)
+	})
+}
+
+// DEF-22: состояние десктопных дропдаунов шапки (атрибуты — в разметке,
+// здесь только переключение значения при hover/focus)
+function initHeaderDropdowns() {
+	document.querySelectorAll('.header__dropdown').forEach(dd => {
+		const link = dd.querySelector(':scope > .header__link, :scope .header__link')
+		if (!link) return
+		const set = on => link.setAttribute('aria-expanded', String(on))
+		dd.addEventListener('mouseenter', () => set(true))
+		dd.addEventListener('mouseleave', () => set(false))
+		link.addEventListener('focus', () => set(true))
+		dd.addEventListener('focusout', e => {
+			if (!dd.contains(e.relatedTarget)) set(false)
+		})
 	})
 }
 
@@ -887,6 +974,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		const body = popup.querySelector('.modal-form__body')
 		const errorEl = popup.querySelector('[data-form-error]')
 		const submit = form.querySelector('[type="submit"]')
+		// DEF-59: opener для возврата фокуса; didSubmit отличает успех от черновика
+		let opener = null
+		let errSeq = 0
 
 		// DEF-02: блокировка кнопки на время отправки
 		const setSubmitting = on => {
@@ -910,7 +1000,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		const resetState = () => {
-			form.reset()
+			const wasSuccess = success && !success.classList.contains('is-hidden')
+			// DEF-59: полный сброс (включая текст) — только после успеха;
+			// неотправленный черновик сохраняем, чистим лишь ошибки
+			if (wasSuccess) form.reset()
 			form.classList.remove('is-hidden')
 			if (head) head.classList.remove('is-hidden')
 			if (body) body.classList.remove('is-hidden')
@@ -922,7 +1015,69 @@ document.addEventListener('DOMContentLoaded', () => {
 			setSubmitting(false)
 			form.querySelectorAll('.form-field--invalid').forEach(el => el.classList.remove('form-field--invalid'))
 			form.querySelectorAll('.form-field__error').forEach(el => el.remove())
+			syncAria()
+			// DEF-59: фокус — на кнопку, открывшую окно. Fancybox при закрытии
+			// сам дважды трогает фокус (restore + снос в BODY в конце teardown),
+			// поэтому: как только контейнер исчез — ставим фокус сразу и ещё
+			// ~1с удерживаем (если teardown перебьёт обратно на BODY — возвращаем).
+			// Чужой фокус (пользователь уже табнул дальше) не отбираем.
+			const backTo = opener
+			opener = null
+			const focusBack = () => {
+				if (document.querySelector('.fancybox__container')) {
+					requestAnimationFrame(focusBack)
+					return
+				}
+				const visible = el => {
+					const r = el.getBoundingClientRect()
+					return r.width > 0 && r.height > 0
+				}
+				let target =
+					backTo && document.contains(backTo) && visible(backTo) ? backTo : null
+				if (!target) {
+					// DEF-59: opener мог стать невидимым (ресайз с открытой модалкой) —
+					// тогда берём первый видимый триггер того же окна
+					target =
+						Array.from(document.querySelectorAll('[data-fancybox][data-src="#' + popupId + '"]')).find(visible) ||
+						null
+				}
+				if (!target) return
+				const t0 = performance.now()
+				const guard = () => {
+					const a = document.activeElement
+					if (a === target) return
+					if (a && a !== document.body && a !== document.documentElement) return
+					if (performance.now() - t0 > 1200) return
+					target.focus({ preventScroll: true })
+					setTimeout(guard, 120)
+				}
+				guard()
+			}
+			requestAnimationFrame(focusBack)
 		}
+
+		// DEF-22: состояние полей для скринридера — aria-invalid +
+		// привязка текста ошибки через aria-describedby
+		const syncAria = () => {
+			form.querySelectorAll('.form-field__input, .form-check__input').forEach(input => {
+				const invalid = input.classList.contains('form-field--invalid')
+				input.setAttribute('aria-invalid', String(invalid))
+				if (!invalid) {
+					input.removeAttribute('aria-describedby')
+					return
+				}
+				const wrap = input.closest('.form-field, .form-check')
+				let label = wrap ? wrap.querySelector('.form-field__error') : null
+				if (!label) label = form.querySelector('.modal-form__checks > .form-field__error')
+				if (!label) return
+				if (!label.id) label.id = popupId + '-err-' + errSeq++
+				input.setAttribute('aria-describedby', label.id)
+			})
+		}
+		;['input', 'change', 'focusout'].forEach(ev =>
+			form.addEventListener(ev, () => requestAnimationFrame(syncAria)),
+		)
+		syncAria()
 
 		const showSuccess = () => {
 			if (head) head.classList.add('is-hidden')
@@ -930,12 +1085,19 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (success) success.classList.remove('is-hidden')
 		}
 
-		configure({ form, showSuccess, showError, setSubmitting, resetState })
+		configure({ form, showSuccess, showError, setSubmitting, resetState, syncAria })
 
 		// DEF-38: сброс через штатное событие Fancybox destroy — ловит X, «Хорошо»,
 		// ESC и клик по фону разом. resetState идемпотентен, двойной вызов безопасен.
 		// Сам destroy-обработчик висит на единственном Fancybox.bind в initRequestForm.
 		formResets.push(resetState)
+
+		// DEF-59: запоминаем кнопку-триггер, чтобы вернуть на неё фокус
+		document.addEventListener('click', e => {
+			if (!e.target || typeof e.target.closest !== 'function') return
+			const trigger = e.target.closest('[data-fancybox]')
+			if (trigger && trigger.dataset.src === '#' + popupId) opener = trigger
+		})
 	}
 
 	// Request popup: phone mask + Just-validate (validates on input)
@@ -948,7 +1110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			})
 		}
 
-		bindFormPopup('request-popup', 'request-form', ({ form, showSuccess, showError, setSubmitting }) => {
+		bindFormPopup('request-popup', 'request-form', ({ form, showSuccess, showError, setSubmitting, syncAria }) => {
 			const phone = form.querySelector('.js-phone')
 
 			if (phone) {
@@ -997,6 +1159,9 @@ document.addEventListener('DOMContentLoaded', () => {
 				])
 				.addField('.js-consent', [{ rule: 'required', errorMessage: 'Подтвердите согласие' }])
 
+			// DEF-22: провал валидации — обновить aria-invalid/describedby
+			validator.onFail(() => requestAnimationFrame(syncAria))
+
 			validator.onSuccess(async event => {
 				event?.preventDefault?.()
 				if (!navigator.onLine) {
@@ -1026,7 +1191,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Subscribe popup: email + consent, success swap
 	function initSubscribeForm() {
-		bindFormPopup('subscribe-popup', 'subscribe-form', ({ form, showSuccess, showError, setSubmitting }) => {
+		bindFormPopup('subscribe-popup', 'subscribe-form', ({ form, showSuccess, showError, setSubmitting, syncAria }) => {
 			const validator = new JustValidate(form, {
 				validateOnBlur: true,
 				validateOnChange: true,
@@ -1042,6 +1207,9 @@ document.addEventListener('DOMContentLoaded', () => {
 					{ rule: 'email', errorMessage: 'Введите корректный e-mail' },
 				])
 				.addField('.js-consent', [{ rule: 'required', errorMessage: 'Подтвердите согласие' }])
+
+			// DEF-22: провал валидации — обновить aria-invalid/describedby
+			validator.onFail(() => requestAnimationFrame(syncAria))
 
 			validator.onSuccess(async event => {
 				event?.preventDefault?.()
@@ -1375,6 +1543,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initVideoPopup()
 	initProgramTabs()
 	initMobileMenu()
+	initHeaderDropdowns()
 	initRequestForm()
 	initSubscribeForm()
 	initCookieBanner()
