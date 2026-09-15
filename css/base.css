@@ -596,6 +596,10 @@ a {
 	text-decoration: none;
 }
 
+a:active {
+	color: var(--color-sea-dark);
+}
+
 ul,
 ol {
 	list-style: none;
@@ -767,6 +771,29 @@ section {
 	color: var(--color-white);
 }
 
+/* Состояния 2.3: :active — только затемнение (без translate),
+   :disabled — единый стиль для кнопок, табов и carousel-nav */
+.btn--primary:active,
+.btn--outline:active,
+.btn--ghost:active,
+.tabs__btn:active,
+.tab-filter:active,
+.carousel-nav__btn:active {
+	filter: brightness(0.85);
+}
+
+.btn:disabled,
+.btn[disabled],
+.btn.is-disabled,
+.tabs__btn:disabled,
+.tab-filter:disabled,
+.carousel-nav__btn:disabled,
+.carousel-nav__btn.is-disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
 .btn--search {
 	color: var(--color-grey);
 	background: var(--color-white);
@@ -891,7 +918,8 @@ textarea.form-field__input:not(:placeholder-shown) + .form-field__label {
 
 .form-field__label {
 	position: absolute;
-	top: 50%;
+	/* центр относительно инпута, а не контейнера: внизу 1.125rem резерва под ошибку */
+	top: calc((100% - 1.125rem) / 2);
 	left: 1.875rem;
 	transform: translateY(-50%);
 	font-size: var(--fs-body-16);
@@ -911,6 +939,35 @@ textarea.form-field__input:not(:placeholder-shown) + .form-field__label {
 .form-field__input.form-field--invalid {
 	border-color: var(--color-red);
 	background: var(--color-white);
+}
+
+/* Текст ошибки валидации: absolute снизу мелким шрифтом.
+   .form-field резервирует место паддингом — ошибка ничего не
+   перекрывает и не сдвигает лейаут при появлении. */
+.form-field {
+	padding-bottom: 1.125rem;
+}
+
+.form-field__error {
+	position: absolute;
+	left: 1.875rem;
+	bottom: 0;
+	font-size: var(--fs-body-12);
+	line-height: 1.2;
+	color: var(--color-red);
+}
+
+/* Ошибка чекбокса: JustValidate кладёт её не в label.form-check,
+   а в общий .modal-form__checks — привязываемся к нему: сразу под
+   чекбоксами, резерв паддингом чтобы не перекрывать сабмит */
+.modal-form__checks {
+	position: relative;
+	padding-bottom: 1.125rem;
+}
+
+.modal-form__checks > .form-field__error {
+	left: 0;
+	bottom: 0;
 }
 
 /* Checkbox */
@@ -1106,6 +1163,23 @@ textarea.form-field__input:not(:placeholder-shown) + .form-field__label {
 .modal-form__success-text {
 	font-size: var(--fs-body-18);
 	color: var(--color-grey);
+}
+
+/* Уведомление об ошибке отправки (DEF-01/DEF-46): красный бокс,
+   виден всегда в потоке формы — разработчик заполняет текст из fetch-catch (см. BACKEND-HOOK в main.js) */
+.modal-form__error {
+	margin: 0 0 var(--gap-md);
+	padding: 0.875rem 1.25rem;
+	border: 1px solid var(--color-red);
+	border-radius: var(--radius-xs);
+	font-size: var(--fs-body-14);
+	line-height: 1.4;
+	color: var(--color-red);
+	text-align: center;
+}
+
+.modal-form__error.is-hidden {
+	display: none;
 }
 
 /* checkbox: Just-validate marks the native input with the invalid class */

@@ -873,7 +873,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	// Form popups (#request-popup, #subscribe-popup): phone mask + Just-validate +
-	// body→success swap + per-popup reset on Fancybox close.
+	// body→success swap + reset через штатное событие Fancybox.
+	// Все resetState попапов копятся в formResets и вызываются из on.destroy
+	// единственного Fancybox.bind (см. initRequestForm).
+	const formResets = []
 	function bindFormPopup(popupId, formId, configure) {
 		const popup = document.getElementById(popupId)
 		const form = document.getElementById(formId)
@@ -881,13 +884,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		const success = popup.querySelector('.modal-form__success')
 		const head = popup.querySelector('.modal-form__head')
+		const body = popup.querySelector('.modal-form__body')
+		const errorEl = popup.querySelector('[data-form-error]')
+		const submit = form.querySelector('[type="submit"]')
+
+		// DEF-02: блокировка кнопки на время отправки
+		const setSubmitting = on => {
+			if (!submit) return
+			if (on && !submit.dataset.label) submit.dataset.label = submit.textContent
+			submit.disabled = on
+			submit.setAttribute('aria-disabled', String(on))
+			form.setAttribute('aria-busy', String(on))
+			submit.textContent = on ? 'Отправка…' : submit.dataset.label || submit.textContent
+		}
+
+		// DEF-01/DEF-46: видимая ошибка отправки (role="alert" — в разметке)
+		const showError = msg => {
+			if (errorEl) {
+				errorEl.textContent = msg
+				errorEl.classList.remove('is-hidden')
+			}
+			if (body) body.classList.remove('is-hidden')
+			if (head) head.classList.remove('is-hidden')
+			if (success) success.classList.add('is-hidden')
+		}
 
 		const resetState = () => {
 			form.reset()
 			form.classList.remove('is-hidden')
 			if (head) head.classList.remove('is-hidden')
+			if (body) body.classList.remove('is-hidden')
 			if (success) success.classList.add('is-hidden')
+			if (errorEl) {
+				errorEl.textContent = ''
+				errorEl.classList.add('is-hidden')
+			}
+			setSubmitting(false)
 			form.querySelectorAll('.form-field--invalid').forEach(el => el.classList.remove('form-field--invalid'))
+			form.querySelectorAll('.form-field__error').forEach(el => el.remove())
 		}
 
 		const showSuccess = () => {
@@ -896,47 +930,25 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (success) success.classList.remove('is-hidden')
 		}
 
-		configure({ form, showSuccess, resetState })
+		configure({ form, showSuccess, showError, setSubmitting, resetState })
 
-		// Reset state once the popup closes. Fancybox 5 doesn't expose a global
-		// event bus and `data-fancybox-close` lives inside the cloned container
-		// (not the source). We delegate two paths that always fire on close:
-		//   1) ESC keydown on the document while the popup is open
-		//   2) click on any `[data-fancybox-close]` (X-button, "Хорошо") — these
-		//      are global, Fancybox recognises them via its own delegated handler.
-		// The reset runs once the Fancybox container is fully torn down, which we
-		// observe via MutationObserver. After firing we re-arm the observer so
-		// the popup can be reopened cleanly.
-		const armObserver = () => {
-			if (typeof MutationObserver === 'undefined') return
-			const observer = new MutationObserver(() => {
-				const container = document.querySelector('.fancybox__container')
-				const closed = !container || !document.body.contains(container) || container.classList.contains('fancybox__container--hidden')
-				if (closed) {
-					resetState()
-					observer.disconnect()
-				}
-			})
-			observer.observe(document.body, { childList: true, subtree: true })
-		}
-		armObserver()
-		document.addEventListener('keydown', e => {
-			if (e.key !== 'Escape') return
-			const container = document.querySelector('.fancybox__container')
-			if (container) resetState()
-		})
-		// Re-arm observer after every successful submit so the next open/close
-		// cycle also resets correctly.
-		form.addEventListener('submit', armObserver, true)
+		// DEF-38: сброс через штатное событие Fancybox destroy — ловит X, «Хорошо»,
+		// ESC и клик по фону разом. resetState идемпотентен, двойной вызов безопасен.
+		// Сам destroy-обработчик висит на единственном Fancybox.bind в initRequestForm.
+		formResets.push(resetState)
 	}
 
 	// Request popup: phone mask + Just-validate (validates on input)
 	function initRequestForm() {
 		if (typeof Fancybox !== 'undefined') {
-			Fancybox.bind('[data-fancybox]', { Toolbar: false, closeButton: false })
+			Fancybox.bind('[data-fancybox]', {
+				Toolbar: false,
+				closeButton: false,
+				on: { destroy: () => formResets.forEach(fn => fn()) },
+			})
 		}
 
-		bindFormPopup('request-popup', 'request-form', ({ form, showSuccess }) => {
+		bindFormPopup('request-popup', 'request-form', ({ form, showSuccess, showError, setSubmitting }) => {
 			const phone = form.querySelector('.js-phone')
 
 			if (phone) {
@@ -958,59 +970,102 @@ document.addEventListener('DOMContentLoaded', () => {
 				validateOnBlur: true,
 				validateOnChange: true,
 				validateOnInput: true,
-				errorFieldStyle: {},
-				errorLabelStyle: { display: 'none' },
 				errorFieldCssClass: 'form-field--invalid',
+				errorLabelCssClass: 'form-field__error',
+				errorLabelStyle: {},
 			})
 
 			validator
-				.addField('.js-position', [{ rule: 'required' }, { rule: 'minLength', value: 3 }])
-				.addField('.js-fio', [{ rule: 'required' }, { rule: 'minLength', value: 3 }])
-				.addField('.js-email', [{ rule: 'required' }, { rule: 'email' }])
+				.addField('.js-position', [
+					{ rule: 'required', errorMessage: 'Укажите должность' },
+					{ rule: 'minLength', value: 3, errorMessage: 'Минимум 3 символа' },
+				])
+				.addField('.js-fio', [
+					{ rule: 'required', errorMessage: 'Укажите ФИО' },
+					{ rule: 'minLength', value: 3, errorMessage: 'Минимум 3 символа' },
+				])
+				.addField('.js-email', [
+					{ rule: 'required', errorMessage: 'Укажите e-mail' },
+					{ rule: 'email', errorMessage: 'Введите корректный e-mail' },
+				])
 				.addField('.js-phone', [
-					{ rule: 'required' },
+					{ rule: 'required', errorMessage: 'Укажите телефон' },
 					{
 						validator: () => phone && phone.value.replace(/\D/g, '').length === 11,
+						errorMessage: 'Введите номер полностью: +7 (___) ___-__-__',
 					},
 				])
-				.addField('.js-consent', [{ rule: 'required' }])
+				.addField('.js-consent', [{ rule: 'required', errorMessage: 'Подтвердите согласие' }])
 
-			validator.onSuccess(event => {
+			validator.onSuccess(async event => {
 				event?.preventDefault?.()
-				if (window.SoftSnow && SoftSnow.sendForm) {
-					SoftSnow.sendForm(form, 'request').then(ok => {
-						if (ok) showSuccess()
-					})
+				if (!navigator.onLine) {
+					showError('Нет соединения с интернетом. Проверьте связь и попробуйте ещё раз.')
 					return
 				}
-				showSuccess()
+				setSubmitting(true)
+				try {
+					// BACKEND-HOOK: разработчик заменяет мок ниже на реальный запрос, например:
+					// const res = await fetch('/api/lead', { method: 'POST', body: new FormData(form), signal: AbortSignal.timeout(10000) })
+					// if (!res.ok) throw new Error('Server error: ' + res.status)
+					if (window.SoftSnow && typeof SoftSnow.sendForm === 'function') {
+						const ok = await SoftSnow.sendForm(form, 'request')
+						if (!ok) throw new Error('sendForm returned false')
+					} else {
+						await new Promise(resolve => setTimeout(resolve, 600))
+					}
+					showSuccess()
+				} catch (err) {
+					showError('Не удалось отправить заявку. Попробуйте ещё раз позже.')
+				} finally {
+					setSubmitting(false)
+				}
 			})
 		})
 	}
 
 	// Subscribe popup: email + consent, success swap
 	function initSubscribeForm() {
-		bindFormPopup('subscribe-popup', 'subscribe-form', ({ form, showSuccess }) => {
+		bindFormPopup('subscribe-popup', 'subscribe-form', ({ form, showSuccess, showError, setSubmitting }) => {
 			const validator = new JustValidate(form, {
 				validateOnBlur: true,
 				validateOnChange: true,
 				validateOnInput: true,
-				errorFieldStyle: {},
-				errorLabelStyle: { display: 'none' },
 				errorFieldCssClass: 'form-field--invalid',
+				errorLabelCssClass: 'form-field__error',
+				errorLabelStyle: {},
 			})
 
-			validator.addField('.js-email', [{ rule: 'required' }, { rule: 'email' }]).addField('.js-consent', [{ rule: 'required' }])
+			validator
+				.addField('.js-email', [
+					{ rule: 'required', errorMessage: 'Укажите e-mail' },
+					{ rule: 'email', errorMessage: 'Введите корректный e-mail' },
+				])
+				.addField('.js-consent', [{ rule: 'required', errorMessage: 'Подтвердите согласие' }])
 
-			validator.onSuccess(event => {
+			validator.onSuccess(async event => {
 				event?.preventDefault?.()
-				if (window.SoftSnow && SoftSnow.sendForm) {
-					SoftSnow.sendForm(form, 'subscribe').then(ok => {
-						if (ok) showSuccess()
-					})
+				if (!navigator.onLine) {
+					showError('Нет соединения с интернетом. Проверьте связь и попробуйте ещё раз.')
 					return
 				}
-				showSuccess()
+				setSubmitting(true)
+				try {
+					// BACKEND-HOOK: разработчик заменяет мок ниже на реальный запрос, например:
+					// const res = await fetch('/api/subscribe', { method: 'POST', body: new FormData(form), signal: AbortSignal.timeout(10000) })
+					// if (!res.ok) throw new Error('Server error: ' + res.status)
+					if (window.SoftSnow && typeof SoftSnow.sendForm === 'function') {
+						const ok = await SoftSnow.sendForm(form, 'subscribe')
+						if (!ok) throw new Error('sendForm returned false')
+					} else {
+						await new Promise(resolve => setTimeout(resolve, 600))
+					}
+					showSuccess()
+				} catch (err) {
+					showError('Не удалось оформить подписку. Попробуйте ещё раз позже.')
+				} finally {
+					setSubmitting(false)
+				}
 			})
 		})
 	}

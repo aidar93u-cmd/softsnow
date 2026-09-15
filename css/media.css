@@ -3029,6 +3029,10 @@
 		font-size: var(--fs-body-14);
 	}
 
+	.modal-form .form-field__error {
+		left: 1.25rem;
+	}
+
 	.modal-form textarea.form-field__input {
 		min-height: 6.25rem;
 		padding: 1rem 1.25rem 0;
