@@ -425,7 +425,9 @@
 	flex-wrap: wrap;
 	align-items: baseline;
 }
-
+.hero__title + .btn {
+	margin-top: 1.875rem;
+}
 .hero__brand,
 .hero__static-part,
 .hero__dynamic-word,
