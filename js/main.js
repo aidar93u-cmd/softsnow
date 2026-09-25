@@ -1,12 +1,139 @@
-// ponytail: duplicate track until >= 2x viewport (even count keeps the -50% loop seamless)
 function initClientsMarquee() {
-	const marquee = document.querySelector('.clients__marquee')
-	const track = marquee && marquee.querySelector('.clients__track')
-	if (!track) return
-	const cells = Array.from(track.children)
-	while (track.scrollWidth < marquee.clientWidth * 2) {
-		cells.forEach(c => track.appendChild(c.cloneNode(true)))
+	var marquee = document.querySelector('.clients__marquee')
+	var track = marquee && marquee.querySelector('.clients__track')
+	if (!marquee || !track) return
+
+	// ponytail: duplicate until seamless loop >=2x viewport, keep even halves identical
+	var origCells = Array.from(track.children)
+	if (origCells.length) {
+		var guard = 0
+		while (track.scrollWidth < marquee.clientWidth * 2 + 200 && guard < 6) {
+			origCells.forEach(function (c) {
+				track.appendChild(c.cloneNode(true))
+			})
+			guard++
+			if (track.children.length > 80) break
+		}
 	}
+
+	var MOBILE_BREAKPOINT = 768
+	var SPEED_DESKTOP = 0.45
+	var SPEED_MOBILE = SPEED_DESKTOP * 2
+
+	var speed = window.innerWidth <= MOBILE_BREAKPOINT ? SPEED_MOBILE : SPEED_DESKTOP
+	function updateSpeed() {
+		speed = window.innerWidth <= MOBILE_BREAKPOINT ? SPEED_MOBILE : SPEED_DESKTOP
+	}
+	window.addEventListener('resize', updateSpeed)
+
+	var isPaused = false
+	var isDragging = false
+	var dragStartX = 0
+	var dragStartScrollLeft = 0
+	var dragMoved = false
+	var pointerId = null
+	var scrollPos = 0
+
+	// seamless start - keep float pos in sync
+	setTimeout(function () {
+		var half = track.scrollWidth / 2
+		if (half > 0) {
+			scrollPos = half / 2
+			marquee.scrollLeft = scrollPos
+		} else {
+			scrollPos = marquee.scrollLeft
+		}
+	}, 50)
+
+	function tick() {
+		if (!isPaused && !isDragging) {
+			scrollPos += speed
+			var halfWidth = track.scrollWidth / 2
+			if (halfWidth > 0) {
+				if (scrollPos >= halfWidth) scrollPos -= halfWidth
+				else if (scrollPos < 0) scrollPos += halfWidth
+			}
+			marquee.scrollLeft = Math.round(scrollPos)
+		} else {
+			// keep pos in sync when paused/dragging (user may have scrolled)
+			scrollPos = marquee.scrollLeft
+		}
+	}
+	setInterval(tick, 16)
+
+	marquee.addEventListener('mouseenter', function () {
+		isPaused = true
+	})
+	marquee.addEventListener('mouseleave', function () {
+		isPaused = false
+		endDrag()
+	})
+
+	marquee.addEventListener('pointerdown', function (e) {
+		// only primary button / touch
+		if (e.button !== 0 && e.pointerType === 'mouse') return
+		isDragging = true
+		dragMoved = false
+		dragStartX = e.clientX
+		scrollPos = marquee.scrollLeft
+		dragStartScrollLeft = scrollPos
+		pointerId = e.pointerId
+		marquee.classList.add('is-dragging')
+		try {
+			marquee.setPointerCapture(e.pointerId)
+		} catch (err) {}
+	})
+
+	marquee.addEventListener('pointermove', function (e) {
+		if (!isDragging) return
+		var delta = e.clientX - dragStartX
+		if (Math.abs(delta) > 3) dragMoved = true
+		scrollPos = dragStartScrollLeft - delta
+		var halfW = track.scrollWidth / 2
+		if (halfW > 0) {
+			if (scrollPos >= halfW) scrollPos -= halfW
+			else if (scrollPos < 0) scrollPos += halfW
+		}
+		marquee.scrollLeft = Math.round(scrollPos)
+		if (e.cancelable) e.preventDefault()
+	})
+
+	function endDrag() {
+		if (!isDragging) return
+		isDragging = false
+		marquee.classList.remove('is-dragging')
+		if (pointerId !== null) {
+			try {
+				marquee.releasePointerCapture(pointerId)
+			} catch (err) {}
+			pointerId = null
+		}
+	}
+
+	marquee.addEventListener('pointerup', endDrag)
+	marquee.addEventListener('pointercancel', endDrag)
+	marquee.addEventListener('pointerleave', endDrag)
+
+	marquee.addEventListener(
+		'click',
+		function (e) {
+			if (dragMoved) {
+				e.preventDefault()
+				e.stopPropagation()
+				dragMoved = false
+			}
+		},
+		true,
+	)
+
+	// prevent native image drag
+	track.querySelectorAll('img').forEach(function (img) {
+		img.setAttribute('draggable', 'false')
+	})
+}
+
+function lockScroll() {
+	document.body.style.overflow = 'hidden'
 }
 function initFloatingHeader() {
 	const header = document.querySelector('.header--sticky')
@@ -124,6 +251,11 @@ function initSearchPopup() {
 
 	if (!searchBtn || !popup || !overlay || !form || !input) return
 
+	const useEl = searchBtn.querySelector('use')
+	const baseHref = useEl ? useEl.getAttribute('href').split('#')[0] : 'assets/img/sprite.svg'
+	const searchHref = baseHref + '#icon-search'
+	const closeHref = baseHref + '#icon-close'
+
 	const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
 	let prefersReduced = motionQuery.matches
 	motionQuery.addEventListener('change', e => {
@@ -133,7 +265,23 @@ function initSearchPopup() {
 	const TRANSITION_DURATION = 300
 	let lastFocused = null
 
+	function setSearchIcon(isOpen) {
+		if (useEl) {
+			useEl.setAttribute('href', isOpen ? closeHref : searchHref)
+			const svg = useEl.closest('svg')
+			if (svg) {
+				svg.setAttribute('viewBox', isOpen ? '0 0 24 24' : '0 0 15.9 15.9')
+				svg.setAttribute('width', isOpen ? '16' : '15.9')
+				svg.setAttribute('height', isOpen ? '16' : '15.9')
+			}
+		}
+		searchBtn.classList.toggle('is-active', isOpen)
+		searchBtn.setAttribute('aria-expanded', String(isOpen))
+		searchBtn.setAttribute('aria-label', isOpen ? 'Закрыть поиск' : 'Поиск')
+	}
+
 	function open() {
+		if (popup.classList.contains('is-open')) return
 		lastFocused = document.activeElement
 
 		// Если шапка скрыта скроллом — показываем её
@@ -142,9 +290,10 @@ function initSearchPopup() {
 			header.classList.add('is-visible')
 		}
 
-		// Блокируем скролл страницы
-		document.body.style.overflow = 'hidden'
+		// Блокируем скролл страницы с компенсацией скроллбара
+		lockScroll()
 		document.body.classList.add('is-search-open')
+		setSearchIcon(true)
 
 		popup.hidden = false
 
@@ -161,8 +310,10 @@ function initSearchPopup() {
 	}
 
 	function close() {
+		if (!popup.classList.contains('is-open') && popup.hidden) return
 		popup.classList.remove('is-open')
 		overlay.classList.remove('is-open')
+		setSearchIcon(false)
 
 		const duration = prefersReduced ? 0 : TRANSITION_DURATION
 		setTimeout(() => {
@@ -171,7 +322,12 @@ function initSearchPopup() {
 			unlockScroll()
 		}, duration)
 
-		if (lastFocused) lastFocused.focus()
+		if (lastFocused && typeof lastFocused.focus === 'function') {
+			// ponytail: фокус возвращаем после анимации, чтобы не сбивать trap
+			setTimeout(() => {
+				if (document.contains(lastFocused)) lastFocused.focus({ preventScroll: true })
+			}, duration)
+		}
 		document.removeEventListener('keydown', onKeydown)
 	}
 
@@ -181,7 +337,13 @@ function initSearchPopup() {
 		else trapTab(popup, e)
 	}
 
-	searchBtn.addEventListener('click', open)
+	function toggle() {
+		if (popup.classList.contains('is-open')) close()
+		else open()
+	}
+
+	searchBtn.setAttribute('aria-expanded', 'false')
+	searchBtn.addEventListener('click', toggle)
 	overlay.addEventListener('click', close)
 
 	form.addEventListener('submit', e => {
@@ -366,7 +528,7 @@ function initDropdown() {
 				dd.open = open
 			})
 			// DEF-40: лок чужого оверлея (меню/поиск/модалка) не затираем
-			if (open) document.body.style.overflow = 'hidden'
+			if (open) lockScroll()
 			else unlockScroll()
 		}
 	}
@@ -506,24 +668,116 @@ function initDropdown() {
 function initDemoPopup() {
 	const tpl = document.getElementById('features-popup')
 	const btns = document.querySelectorAll('.features__demo')
-	if (!tpl || !btns.length || typeof Fancybox === 'undefined') return
+	if (!tpl || !btns.length || typeof Swiper === 'undefined' || typeof Fancybox === 'undefined') return
+	const panels = Array.from(document.querySelectorAll('.features__panel'))
+	const images = panels
+		.map(p => {
+			const img = p.querySelector('.features__img')
+			return img ? { src: img.src, alt: img.alt || '' } : null
+		})
+		.filter(Boolean)
+	if (!images.length) return
+
+	function openAt(index) {
+		const node = tpl.cloneNode(true)
+		node.hidden = false
+		node.removeAttribute('id')
+		const swiperEl = node.querySelector('.features-popup__swiper')
+		const wrapper = node.querySelector('.swiper-wrapper')
+		const thumbsWrap = node.querySelector('.features-popup__thumbs')
+		const prevBtn = node.querySelector('.features-popup__nav--prev')
+		const nextBtn = node.querySelector('.features-popup__nav--next')
+		if (!swiperEl || !wrapper || !thumbsWrap) return
+
+		wrapper.innerHTML = ''
+		images.forEach(data => {
+			const slide = document.createElement('div')
+			slide.className = 'swiper-slide'
+			slide.innerHTML = `<img src="${data.src}" alt="${data.alt}" draggable="false">`
+			wrapper.appendChild(slide)
+		})
+
+		thumbsWrap.innerHTML = ''
+		images.forEach((data, i) => {
+			const b = document.createElement('button')
+			b.type = 'button'
+			b.className = 'features-popup__thumb'
+			b.setAttribute('role', 'tab')
+			b.setAttribute('aria-label', `Слайд ${i + 1}`)
+			b.innerHTML = `<img src="${data.src}" alt="">`
+			thumbsWrap.appendChild(b)
+		})
+
+		let swiper = null
+		function sync() {
+			const idx = swiper ? swiper.activeIndex : index
+			Array.from(thumbsWrap.children).forEach((b, i) => {
+				b.classList.toggle('is-active', i === idx)
+				b.setAttribute('aria-selected', String(i === idx))
+			})
+			if (prevBtn) prevBtn.disabled = idx === 0
+			if (nextBtn) nextBtn.disabled = idx === images.length - 1
+			const active = thumbsWrap.querySelector('.is-active')
+			if (active) active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
+		}
+
+		Fancybox.show([{ src: node, type: 'html' }], {
+			Toolbar: false,
+			Thumbs: false,
+			closeButton: false,
+			Carousel: { infinite: false },
+			dragToClose: false,
+		})
+
+		// init swiper after fancybox has moved node into DOM
+		requestAnimationFrame(() => {
+			requestAnimationFrame(() => {
+				swiper = new Swiper(swiperEl, {
+					slidesPerView: 1,
+					spaceBetween: 0,
+					speed: 400,
+					loop: false,
+					allowTouchMove: true,
+					watchOverflow: true,
+					initialSlide: Math.max(0, Math.min(index, images.length - 1)),
+					keyboard: { enabled: true },
+				})
+				swiper.on('slideChange', sync)
+				sync()
+				if (prevBtn) prevBtn.addEventListener('click', () => swiper.slidePrev(400))
+				if (nextBtn) nextBtn.addEventListener('click', () => swiper.slideNext(400))
+				Array.from(thumbsWrap.children).forEach((b, i) => {
+					b.addEventListener('click', () => swiper.slideTo(i, 400))
+				})
+				// clean on close
+				const fancy = typeof Fancybox.getInstance === 'function' ? Fancybox.getInstance() : null
+				if (fancy && fancy.on) {
+					fancy.on('destroy', () => {
+						if (swiper) {
+							swiper.destroy(true, true)
+							swiper = null
+						}
+					})
+				} else {
+					// fallback: watch for container removal
+					const obs = new MutationObserver(() => {
+						if (!document.contains(node) && swiper) {
+							swiper.destroy(true, true)
+							swiper = null
+							obs.disconnect()
+						}
+					})
+					obs.observe(document.body, { childList: true, subtree: true })
+				}
+			})
+		})
+	}
+
 	btns.forEach(btn => {
 		btn.addEventListener('click', () => {
 			const panel = btn.closest('.features__panel')
-			const img = panel ? panel.querySelector('.features__img') : null
-			const node = tpl.cloneNode(true)
-			node.hidden = false
-			if (img) {
-				const popupImg = node.querySelector('.features-popup__img')
-				popupImg.src = img.src
-				popupImg.alt = img.alt
-			}
-			Fancybox.show([{ src: node, type: 'html' }], {
-				Toolbar: false,
-				Thumbs: false,
-				closeButton: false,
-				Carousel: { infinite: false },
-			})
+			const idx = panel ? panels.indexOf(panel) : 0
+			openAt(idx >= 0 ? idx : 0)
 		})
 	})
 }
@@ -583,20 +837,14 @@ function closeMobileMenu(menu, burger) {
 // (мобильное меню, поиск, Fancybox) — иначе клики мимо фильтров,
 // закрытие поиска и т.п. отпирают чужой лок
 function unlockScroll() {
-	if (
-		!document.body.classList.contains('menu-open') &&
-		!document.body.classList.contains('is-search-open') &&
-		!document.querySelector('.fancybox__container')
-	) {
+	if (!document.body.classList.contains('menu-open') && !document.body.classList.contains('is-search-open') && !document.querySelector('.fancybox__container')) {
 		document.body.style.overflow = ''
 	}
 }
 
 // DEF-54: видимые фокусируемые внутри контейнера (для трапа Tab)
 function trapItems(container) {
-	return Array.from(
-		container.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), textarea, select, [tabindex]:not([tabindex="-1"])'),
-	).filter(el => {
+	return Array.from(container.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), textarea, select, [tabindex]:not([tabindex="-1"])')).filter(el => {
 		const r = el.getBoundingClientRect()
 		return r.width > 0 && r.height > 0 && getComputedStyle(el).visibility !== 'hidden'
 	})
@@ -687,7 +935,7 @@ function initMobileMenu() {
 		burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню')
 		document.body.classList.toggle('menu-open', open)
 		if (open) {
-			document.body.style.overflow = 'hidden'
+			lockScroll()
 			// DEF-54: фокус в меню при открытии. Через rAF и без фильтра
 			// visibility — меню открывается с transition (0.25s), в полёте
 			// trapItems() видит hidden и вернул бы пусто
@@ -801,7 +1049,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	initSearchPopup()
 	initClientsMarquee()
 	initContactsMap()
-	window.addEventListener('resize', initClientsMarquee)
 
 	if (typeof AOS !== 'undefined') {
 		AOS.init({
@@ -938,9 +1185,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		['.gallery .carousel-nav', gallerySwiper],
 	].forEach(([selector, swiper]) => bindNav(selector, swiper))
 
-	const tabs = document.querySelector('.tabs')
-	if (tabs) {
-		const panels = document.querySelectorAll('.features__panel')
+	// ponytail: scope tabs/panels per .features section (two sections on same page)
+	document.querySelectorAll('.features').forEach(section => {
+		const tabs = section.querySelector('.tabs')
+		if (!tabs) return
+		const panels = section.querySelectorAll('.features__panel')
 		tabs.addEventListener('click', e => {
 			const btn = e.target.closest('.tabs__btn')
 			if (!btn) return
@@ -956,8 +1205,84 @@ document.addEventListener('DOMContentLoaded', () => {
 				p.classList.toggle('is-active', on)
 				p.setAttribute('aria-hidden', String(!on))
 			})
+			requestAnimationFrame(() => {
+				if (typeof window.updateFeaturesClamp === 'function') window.updateFeaturesClamp()
+			})
+		})
+	})
+
+	// ponytail: clamp long text in features panels to image height + "Показать больше"
+	window.updateFeaturesClamp = function () {
+		// only active panels are visible (display:grid), hidden have 0 height
+		document.querySelectorAll('.features__panel.is-active').forEach(panel => {
+			const inner = panel.querySelector('.features__content-inner')
+			const img = panel.querySelector('.features__img')
+			if (!inner) return
+			let more = panel.querySelector('.features__more')
+			// reset for measurement
+			inner.classList.remove('is-clamped', 'is-expanded')
+			inner.style.maxHeight = ''
+			if (more) more.remove()
+
+			if (window.innerWidth <= 768) return
+
+			const imgH = img ? Math.round(img.getBoundingClientRect().height) : 0
+			const limit = imgH > 40 ? imgH : 520
+			// natural height after reset
+			const naturalH = inner.scrollHeight
+			if (naturalH <= limit + 24) return
+
+			inner.classList.add('is-clamped')
+			inner.style.maxHeight = limit + 'px'
+
+			more = document.createElement('button')
+			more.type = 'button'
+			more.className = 'features__more'
+			more.textContent = 'Показать больше'
+			more.setAttribute('aria-expanded', 'false')
+			more.addEventListener('click', () => {
+				const expanded = inner.classList.contains('is-expanded')
+				if (expanded) {
+					inner.classList.remove('is-expanded')
+					inner.classList.add('is-clamped')
+					inner.style.maxHeight = limit + 'px'
+					more.textContent = 'Показать больше'
+					more.setAttribute('aria-expanded', 'false')
+				} else {
+					inner.classList.remove('is-clamped')
+					inner.classList.add('is-expanded')
+					inner.style.maxHeight = 'none'
+					more.textContent = 'Скрыть'
+					more.setAttribute('aria-expanded', 'true')
+				}
+			})
+			const content = panel.querySelector('.features__content')
+			if (content) {
+				const demo = content.querySelector('.features__demo')
+				if (demo) demo.before(more)
+				else content.appendChild(more)
+			} else {
+				inner.after(more)
+			}
+		})
+		// cleanup inactive panels (remove stale buttons/clamp)
+		document.querySelectorAll('.features__panel:not(.is-active)').forEach(panel => {
+			const inner = panel.querySelector('.features__content-inner')
+			if (!inner) return
+			inner.classList.remove('is-clamped', 'is-expanded')
+			inner.style.maxHeight = ''
+			const more = panel.querySelector('.features__more')
+			if (more) more.remove()
 		})
 	}
+	const scheduleClamp = () => requestAnimationFrame(() => window.updateFeaturesClamp())
+	// init after layout + after images
+	scheduleClamp()
+	window.addEventListener('load', scheduleClamp)
+	window.addEventListener('resize', () => {
+		clearTimeout(window._featuresClampTimer)
+		window._featuresClampTimer = setTimeout(scheduleClamp, 150)
+	})
 
 	// Form popups (#request-popup, #subscribe-popup): phone mask + Just-validate +
 	// body→success swap + reset через штатное событие Fancybox.
@@ -1032,14 +1357,11 @@ document.addEventListener('DOMContentLoaded', () => {
 					const r = el.getBoundingClientRect()
 					return r.width > 0 && r.height > 0
 				}
-				let target =
-					backTo && document.contains(backTo) && visible(backTo) ? backTo : null
+				let target = backTo && document.contains(backTo) && visible(backTo) ? backTo : null
 				if (!target) {
 					// DEF-59: opener мог стать невидимым (ресайз с открытой модалкой) —
 					// тогда берём первый видимый триггер того же окна
-					target =
-						Array.from(document.querySelectorAll('[data-fancybox][data-src="#' + popupId + '"]')).find(visible) ||
-						null
+					target = Array.from(document.querySelectorAll('[data-fancybox][data-src="#' + popupId + '"]')).find(visible) || null
 				}
 				if (!target) return
 				const t0 = performance.now()
@@ -1074,9 +1396,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				input.setAttribute('aria-describedby', label.id)
 			})
 		}
-		;['input', 'change', 'focusout'].forEach(ev =>
-			form.addEventListener(ev, () => requestAnimationFrame(syncAria)),
-		)
+		;['input', 'change', 'focusout'].forEach(ev => form.addEventListener(ev, () => requestAnimationFrame(syncAria)))
 		syncAria()
 
 		const showSuccess = () => {
@@ -1402,9 +1722,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			// верхняя (idx0 при 5) — как правая
 			cards.forEach((card, i) => {
 				const top = floating && cards.length === 5 && i === 0
-				const left = top ? false : (floating
-					? Math.cos(slots[i] * D) < 0
-					: i < Math.ceil(cards.length / 2))
+				const left = top ? false : floating ? Math.cos(slots[i] * D) < 0 : i < Math.ceil(cards.length / 2)
 				card.classList.toggle('is-left', left)
 			})
 			if (!floating) {
@@ -1438,7 +1756,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				const icon = card.querySelector('.eco-card__icon')
 				if (!icon) return
 				const a = slots[i] * D
-				const toRight = !card.classList.contains('is-left');
+				const toRight = !card.classList.contains('is-left')
 				const sx = cx0 + Math.cos(a) * R
 				const iconR = icon.getBoundingClientRect().width / 2
 				if (toRight) {

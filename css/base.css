@@ -3,20 +3,20 @@
 @supports (font-variation-settings: normal) {
   :root { font-family: "InterVariable", sans-serif; font-optical-sizing: auto; }
 } */
- 
+
 @font-face {
-  font-family: InterVariable;
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("../assets/web/InterVariable.woff2") format("woff2");
+	font-family: InterVariable;
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url('../assets/web/InterVariable.woff2') format('woff2');
 }
 @font-face {
-  font-family: InterVariable;
-  font-style: italic;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("../assets/web/InterVariable-Italic.woff2") format("woff2");
+	font-family: InterVariable;
+	font-style: italic;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url('../assets/web/InterVariable-Italic.woff2') format('woff2');
 }
 
 /* static fonts */
@@ -418,82 +418,81 @@
 	}
 }
 
-
 :root {
-  /* Colors */
-  --color-black: #222222;
-  --color-white: #FFFFFF;
-  --color-sea: #1342F3;
-  --color-sea-dark: #0E36CD;
+	/* Colors */
+	--color-black: #222222;
+	--color-white: #ffffff;
+	--color-sea: #1342f3;
+	--color-sea-dark: #0e36cd;
 
-  --color-grey: rgba(34, 34, 34, 0.7);
-  --color-overlay: rgba(0, 0, 0, 0.2);
-  --color-blue-alt: #1342F3;
-  --color-red: #ED143B;
+	--color-grey: rgba(34, 34, 34, 0.7);
+	--color-overlay: rgba(0, 0, 0, 0.2);
+	--color-blue-alt: #1342f3;
+	--color-red: #ed143b;
 
-  /* Alpha shades (extracted from repeated hex literals) */
-  --color-dark-a70: #222222b2;
-  --color-dark-a10: #2222221a;
-  --color-sea-a10: #1342f31a;
+	/* Alpha shades (extracted from repeated hex literals) */
+	--color-dark-a70: #222222b2;
+	--color-dark-a10: #2222221a;
+	--color-sea-a10: #1342f31a;
 
-  /* Backgrounds */
-  --bg-light: #F5F4F5;
-  --bg-light-alt: #F5F5F5;
-  --bg-border: #E8E8E8;
+	/* Backgrounds */
+	--bg-light: #f5f4f5;
+	--bg-light-alt: #f5f5f5;
+	--bg-border: #e8e8e8;
 
-  /* Gradients */
+	/* Gradients */
 
-  /* Fonts */
-  --font-heading: 'InterDisplay', sans-serif;
-	--second-family: "InterVariable", sans-serif;
-  --font-body: 'InterDisplay', sans-serif;
+	/* Fonts */
+	--font-heading: 'InterDisplay', sans-serif;
+	--second-family: 'InterVariable', sans-serif;
+	--font-body: 'InterDisplay', sans-serif;
 
-  /* Type scale */
-  --fs-h1: 6.25rem;
-  --fs-h2: 4.375rem;
-  --fs-h3: 2.5rem;
-  --fs-h4: 1.25rem;
-  --fs-numbers: 4.6875rem;
-  --fs-body-24: 1.5rem;
-  --fs-body-20: 1.25rem;
-  --fs-body-18: 1.125rem;
-  --fs-body-16: 1rem;
-  --fs-body-14: 0.875rem;
-  --fs-body-12: 0.75rem;
+	/* Type scale */
+	--fs-h1: 6.25rem;
+	--fs-h2: 4.375rem;
+	--fs-h3: 2.5rem;
+	--fs-h4: 1.25rem;
+	--fs-numbers: 4.6875rem;
+	--fs-body-24: 1.5rem;
+	--fs-body-20: 1.25rem;
+	--fs-body-18: 1.125rem;
+	--fs-body-16: 1rem;
+	--fs-body-14: 0.875rem;
+	--fs-body-12: 0.75rem;
 
-  /* Controls */
-  --control-h: 4rem;
+	/* Controls */
+	--control-h: 4rem;
 
-  /* Spacing */
-  --section-px: 2.5rem;
-  --gap-xs: 0.5rem;
-  --gap-sm: 0.625rem;
-  --gap-md: 1rem;
-  --gap-lg: 1.25rem;
-  --gap-xl: 1.875rem;
-  --gap-2xl: 2.5rem;
-  --gap-3xl: 3.125rem;
-  --gap-4xl: 3.75rem;
+	/* Spacing */
+	--section-px: 2.5rem;
+	--gap-xs: 0.5rem;
+	--gap-sm: 0.625rem;
+	--gap-md: 1rem;
+	--gap-lg: 1.25rem;
+	--gap-xl: 1.875rem;
+	--gap-2xl: 2.5rem;
+	--gap-3xl: 3.125rem;
+	--gap-4xl: 3.75rem;
 
-  /* Radius */
-  --radius-xs: 0.25rem;
-  --radius-sm: 0.3125rem;
-  --radius-md: 0.625rem;
-  --radius-lg: 1.25rem;
-  --radius-xl: 3.125rem;
-  --radius-full: 23.625rem;
+	/* Radius */
+	--radius-xs: 0.25rem;
+	--radius-sm: 0.3125rem;
+	--radius-md: 0.625rem;
+	--radius-lg: 1.25rem;
+	--radius-xl: 3.125rem;
+	--radius-full: 23.625rem;
 
-  /* Borders */
+	/* Borders */
 
-  /* Opacity */
-  --opacity-70: 0.7;
+	/* Opacity */
+	--opacity-70: 0.7;
 
-  /* Shadows */
-  --shadow-popover: 0 1.25rem 3.125rem rgba(34, 34, 34, 0.12);
+	/* Shadows */
+	--shadow-popover: 0 1.25rem 3.125rem rgba(34, 34, 34, 0.12);
 
-  /* Transitions */
-  --transition-fast: 0.2s;
-  --transition-base: 0.3s;
+	/* Transitions */
+	--transition-fast: 0.2s;
+	--transition-base: 0.3s;
 }
 /* ==== from utilities.css ==== */
 * {
@@ -510,17 +509,13 @@ a,
 .btn,
 .card,
 .tabs__btn {
-	transition:
-		background-color 0.4s,
-		border-color 0.4s,
-		color 0.4s,
-		opacity 0.4s,
-		transform 0.4s;
+	transition: background-color 0.4s, border-color 0.4s, color 0.4s, opacity 0.4s, transform 0.4s;
 }
 
 html {
 	font-size: 16px;
 	scroll-behavior: smooth;
+	scrollbar-gutter: stable;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -547,7 +542,7 @@ h6 {
 	font-family: var(--font-heading);
 	font-weight: 500;
 	line-height: 1;
-    letter-spacing: -0.01em;
+	letter-spacing: -0.01em;
 }
 
 h1 {
@@ -556,16 +551,16 @@ h1 {
 }
 h2 {
 	font-size: var(--fs-h2);
-    letter-spacing: -0.03em;
+	letter-spacing: -0.03em;
 }
 h3 {
 	font-size: var(--fs-h3);
-    letter-spacing: -0.01em;
+	letter-spacing: -0.01em;
 }
 h4 {
 	font-size: var(--fs-h4);
 	line-height: 1.2;
-    letter-spacing: -0.01em;
+	letter-spacing: -0.01em;
 }
 
 img {
@@ -696,8 +691,8 @@ section {
 	color: var(--color-black);
 	transition: background-color 0.4s, border-color 0.4s, color 0.4s;
 }
-[hidden]{
-	display: none!important;
+[hidden] {
+	display: none !important;
 }
 
 .btn--primary {
@@ -710,35 +705,34 @@ section {
 	border: 1px solid var(--color-sea-dark);
 }
 .btn--undeline {
-    border: none;
-    position: relative;
-    margin: 0 1.75rem;
-    padding: 0;
+	border: none;
+	position: relative;
+	margin: 0 1.75rem;
+	padding: 0;
 }
 .btn--undeline::after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 1rem;
-    width: 100%;
-    height: 1px;
-    background: var(--color-black);
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 1rem;
+	width: 100%;
+	height: 1px;
+	background: var(--color-black);
 }
 .btn--outline-white {
 	border: 2px solid var(--color-white);
 	color: var(--color-white);
 }
-.btn svg{
+.btn svg {
 	transition: stroke 0.4s;
-
 }
 
-.btn--outline-white svg{
+.btn--outline-white svg {
 	stroke: var(--color-white);
 	transition: stroke 0.4s;
 }
 
-.btn--outline-white:hover svg{
+.btn--outline-white:hover svg {
 	stroke: var(--color-sea);
 }
 .btn--outline {
@@ -820,7 +814,7 @@ section {
 	display: flex;
 	gap: var(--gap-sm);
 }
-.modal-form__success-btn{
+.modal-form__success-btn {
 	margin-top: 2rem;
 }
 .carousel-nav__btn {
@@ -923,7 +917,7 @@ textarea.form-field__input:not(:placeholder-shown) + .form-field__label {
 	left: 1.875rem;
 	transform: translateY(-50%);
 	font-size: var(--fs-body-16);
-	color: #222222B2;
+	color: #222222b2;
 	pointer-events: none;
 	transition: transform var(--transition-base), font-size var(--transition-base), color var(--transition-base);
 }
@@ -932,7 +926,7 @@ textarea.form-field__input:not(:placeholder-shown) + .form-field__label {
 .form-field__input:not(:placeholder-shown) + .form-field__label {
 	transform: translateY(-50%) translateY(-1rem);
 	font-size: var(--fs-body-12);
-	color: #222222B2;
+	color: #222222b2;
 }
 
 /* Validation states (Just-validate marks the field itself) */
@@ -940,12 +934,8 @@ textarea.form-field__input:not(:placeholder-shown) + .form-field__label {
 	border-color: var(--color-red);
 	background: var(--color-white);
 }
-
-/* Текст ошибки валидации: absolute снизу мелким шрифтом.
-   .form-field резервирует место паддингом — ошибка ничего не
-   перекрывает и не сдвигает лейаут при появлении. */
 .form-field {
-	padding-bottom: 1.125rem;
+	padding-bottom: 0.9rem;
 }
 
 .form-field__error {
@@ -957,9 +947,6 @@ textarea.form-field__input:not(:placeholder-shown) + .form-field__label {
 	color: var(--color-red);
 }
 
-/* Ошибка чекбокса: JustValidate кладёт её не в label.form-check,
-   а в общий .modal-form__checks — привязываемся к нему: сразу под
-   чекбоксами, резерв паддингом чтобы не перекрывать сабмит */
 .modal-form__checks {
 	position: relative;
 	padding-bottom: 1.125rem;
@@ -1028,24 +1015,23 @@ textarea.form-field__input:not(:placeholder-shown) + .form-field__label {
 	color: var(--color-black);
 }
 
-
 /* ===== Request popup (Fancybox inline) ===== */
 .modal-form {
 	display: none;
 	width: 45rem;
 	max-width: 100%;
-    padding: 2.5rem;
+	padding: 2.5rem;
 	background: var(--color-white);
 	border-radius: var(--radius-lg);
 	box-shadow: var(--shadow-popover);
-    justify-content: center;
+	justify-content: center;
 }
 
 /* DEF-15: высокий min-height — только пока видна форма;
    на экране успеха окно сжимается под контент */
-.modal-form:has(form:not(.is-hidden)) {
-    min-height: 48rem;
-}
+/*.modal-form:has(form:not(.is-hidden)) {
+	min-height: 48rem;
+}*/
 
 .modal-form.is-open {
 	display: block;
@@ -1063,14 +1049,14 @@ textarea.form-field__input:not(:placeholder-shown) + .form-field__label {
 	gap: var(--gap-lg);
 	margin-bottom: var(--gap-2xl);
 }
-.modal-form__icon-wrapper{	
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    max-width: 400px;
-    margin: auto;
+.modal-form__icon-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	max-width: 400px;
+	margin: auto;
 }
 .modal-form__title {
 	margin: 0 0 var(--gap-xs);
@@ -1098,21 +1084,22 @@ textarea.form-field__input:not(:placeholder-shown) + .form-field__label {
 	color: var(--color-black);
 	cursor: pointer;
 	transition: color var(--transition-fast), transform var(--transition-fast);
-    position: absolute;
-    right: 2.5rem;
-    top: 2.5rem;
+	position: absolute;
+	right: 2.5rem;
+	top: 2.5rem;
 }
 
 .modal-form__close:hover {
 	color: var(--color-sea);
 	transform: rotate(90deg);
 }
-
+.fancybox__content {
+	color: var(--color-black);
+}
 .modal-form__fields {
 	display: flex;
 	flex-direction: column;
 	gap: 0.625rem;
-	margin-bottom: var(--gap-2xl);
 }
 
 .modal-form__row {
@@ -1129,7 +1116,6 @@ textarea.form-field__input:not(:placeholder-shown) + .form-field__label {
 	display: flex;
 	flex-direction: column;
 	gap: 0.625rem;
-	margin-bottom: var(--gap-2xl);
 }
 
 .modal-form__submit {
