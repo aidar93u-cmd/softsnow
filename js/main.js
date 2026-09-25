@@ -1000,12 +1000,25 @@ function initHeaderDropdowns() {
 function initContactsMap() {
 	const el = document.getElementById('contacts-map')
 	if (!el || typeof ymaps === 'undefined') return
+
 	ymaps.ready(() => {
-		// На мобильных карта стоит отдельным блоком — точка в центре, зум меньше
 		const isMobile = window.matchMedia('(max-width: 767px)').matches
-		const placemarkCoords = [59.932, 30.3416]
-		const center = isMobile ? placemarkCoords : [59.932, 30.3515]
-		const map = new ymaps.Map(el, { center, zoom: isMobile ? 15 : 16, controls: [] })
+		const lat = parseFloat(el.getAttribute('lat'))
+		const long = parseFloat(el.getAttribute('long'))
+
+		const placemarkCoords = [lat, long]
+
+		// Смещение центра влево (на запад) — уменьшаем долготу.
+		// Подберите значение offset под нужный вам отступ.
+		const offsetLon = isMobile ? 0 : -0.01
+		const center = [placemarkCoords[0], placemarkCoords[1] - offsetLon]
+
+		const map = new ymaps.Map(el, {
+			center,
+			zoom: isMobile ? 15 : 16,
+			controls: [],
+		})
+
 		const placemark = new ymaps.Placemark(
 			placemarkCoords,
 			{},
@@ -1026,6 +1039,7 @@ function initContactsMap() {
 				iconOffset: [-26, -52],
 			},
 		)
+
 		map.geoObjects.add(placemark)
 		map.behaviors.disable('scrollZoom')
 	})
