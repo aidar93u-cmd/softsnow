@@ -2982,6 +2982,11 @@
 		font-size: var(--fs-h4);
 		letter-spacing: -0.01em;
 	}
+	.footer__contacts {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1rem;
+	}
 	.footer__contacts a {
 	}
 	.footer__brand-bottom {

@@ -1056,6 +1056,13 @@ function initCookieBanner() {
 			banner.hidden = true
 		})
 	}
+	const close = banner.querySelector('[data-cookie-close]')
+	if (close) {
+		close.addEventListener('click', () => {
+			sessionStorage.setItem('cookieConsent', '1')
+			banner.hidden = true
+		})
+	}
 }
 
 document.addEventListener('DOMContentLoaded', () => {

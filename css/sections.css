@@ -95,6 +95,7 @@
 .projects__chip:hover .projects__chip-x,
 /* ============ Clients page ============ */
 .header__link.is-active,
+.header__dropdown-link.is-active,
 .faq__q:hover,
 .approach__text span,
 .industries__card--cta .industries__arrow {
@@ -110,7 +111,8 @@
 	width: 100%;
 	height: 1.25rem;
 }
-.header__link:hover > span::after {
+.header__link:hover > span::after,
+.header__link.is-active > span::after {
 	background: var(--color-sea);
 }
 .header__dropdown-panel {
@@ -1798,10 +1800,37 @@
 
 .footer__contacts {
 	display: flex;
-	flex-direction: column;
-	gap: var(--gap-sm);
+	flex-direction: row;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 1.5rem;
 	font-size: var(--fs-body-14);
 	flex: 1;
+}
+
+.footer__contacts-main {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap-sm);
+}
+
+.footer__dev {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	flex-shrink: 0;
+	line-height: 1.4;
+	opacity: 0.6;
+	transition: opacity 0.4s;
+}
+
+.footer__dev:hover {
+	opacity: 1;
+}
+
+.footer__dev svg {
+	display: block;
+	flex-shrink: 0;
 }
 
 .footer__social {
@@ -1857,6 +1886,11 @@
 
 .footer__col a:hover {
 	opacity: 0.6;
+}
+
+.footer__col a.is-active {
+	color: var(--color-sea);
+	opacity: 1;
 }
 
 .footer__legal {
@@ -5217,15 +5251,47 @@ a.contacts-map__value:hover {
 }
 
 .cookie-banner__text {
-	max-width: 40.75rem;
+	max-width: 34rem;
+	align-self: flex-start;
 	margin: 0;
 	font-size: var(--fs-body-16);
 	line-height: 1.4;
 	color: var(--color-black);
 }
 
+.cookie-banner__close {
+	position: absolute;
+	top: 0.75rem;
+	right: 0.75rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2rem;
+	height: 2rem;
+	padding: 0;
+	background: transparent;
+	border: 0;
+	border-radius: 0.5rem;
+	color: var(--color-black);
+	opacity: 0.55;
+	cursor: pointer;
+	transition: opacity 0.2s ease;
+}
+
+.cookie-banner__close:hover {
+	opacity: 1;
+}
+
+.cookie-banner__close svg {
+	display: block;
+	width: 1rem;
+	height: 1rem;
+}
+
 .cookie-banner__actions {
 	display: flex;
+	align-self: flex-end;
+	justify-content: flex-end;
 	flex-shrink: 0;
 	gap: var(--gap-sm);
 }

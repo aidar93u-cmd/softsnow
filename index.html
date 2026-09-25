@@ -34,7 +34,7 @@
 					<nav class="header__nav" aria-label="Основная навигация">
 						<div class="header__nav-item">
 							<div class="header__dropdown">
-								<a href="#industries" class="header__link" aria-haspopup="true" aria-expanded="false">
+								<a href="#industries" class="header__link is-active" aria-current="page" aria-haspopup="true" aria-expanded="false">
 									<span>Отрасли</span>
 									<svg class="header__caret" width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true">
 										<use href="assets/img/sprite.svg#icon-caret-header" />
@@ -42,7 +42,7 @@
 								</a>
 
 								<div class="header__dropdown-panel">
-									<a href="vuz.html" class="header__dropdown-link">Высшие учебные заведения</a>
+									<a href="vuz.html" class="header__dropdown-link is-active" aria-current="page">Высшие учебные заведения</a>
 									<a href="government.html" class="header__dropdown-link">Государственные учреждения</a>
 									<a href="business.html" class="header__dropdown-link">Бизнес</a>
 								</div>
@@ -93,6 +93,7 @@
 						<div class="header__phone">
 							<a href="contacts.html" class="header__phone-label">Контакты</a>
 							<a href="tel:+78123201130" class="header__phone-num">+7 (812) 320-11-30</a>
+							<a href="mailto:info@softsnow.ru" class="header__phone-num">info@softsnow.ru</a>
 						</div>
 						<button class="btn btn--search" type="button" aria-label="Поиск">
 							<svg aria-hidden="true" width="15.9" height="15.9" viewBox="0 0 15.9 15.9">
@@ -729,8 +730,18 @@
 							</a>
 						</div>
 						<div class="footer__contacts">
-							<a href="tel:+78123201130">+7 (812) 320-11-30</a>
-							<a href="mailto:info@softsnow.ru">info@softsnow.ru</a>
+							<div class="footer__contacts-main">
+								<a href="tel:+78123201130">+7 (812) 320-11-30</a>
+								<a href="mailto:info@softsnow.ru">info@softsnow.ru</a>
+							</div>
+							<a class="footer__dev" href="#" target="_blank" rel="noopener">
+								<span>Разработка сайта</span>
+								<svg width="20" height="30" viewBox="0 0 20 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.2492 25.0966C17.735 22.5907 18.5 19.0383 18.5 15C18.5 10.9617 17.735 7.40932 16.2492 4.90339C14.79 2.44219 12.6544 1 9.75 1C6.84557 1 4.70996 2.44219 3.25076 4.90339C1.76503 7.40932 1 10.9617 1 15C1 19.0383 1.76503 22.5907 3.25076 25.0966C4.70996 27.5578 6.84557 29 9.75 29C12.6544 29 14.79 27.5578 16.2492 25.0966ZM9.75 30C16.3751 30 19.5 23.2843 19.5 15C19.5 6.71573 16.3751 0 9.75 0C3.12487 0 0 6.71573 0 15C0 23.2843 3.12487 30 9.75 30Z" fill="white"/>
+<path d="M5.79492 13.25V5.24707H7.11084L9.14111 10.4141C9.19124 10.5358 9.25033 10.6898 9.31836 10.876C9.38997 11.0586 9.46159 11.2484 9.5332 11.4453C9.6084 11.6387 9.67464 11.8159 9.73193 11.9771C9.78923 11.8159 9.85368 11.6387 9.92529 11.4453C10.0005 11.2484 10.0721 11.0586 10.1401 10.876C10.2118 10.6898 10.2708 10.5358 10.3174 10.4141L12.3154 5.24707H13.6367V13.25H12.686V8.60938C12.686 8.32292 12.6896 8.00423 12.6968 7.65332C12.7039 7.29883 12.7111 6.94792 12.7183 6.60059C12.5643 7.02311 12.4229 7.40983 12.2939 7.76074C12.165 8.11165 12.0576 8.39453 11.9717 8.60938L10.1133 13.25H9.31836L7.44922 8.60938C7.36686 8.40527 7.26302 8.13851 7.1377 7.80908C7.01237 7.47966 6.87272 7.11621 6.71875 6.71875C6.72949 7.04818 6.73665 7.3776 6.74023 7.70703C6.7474 8.03646 6.75098 8.33724 6.75098 8.60938V13.25H5.79492Z" fill="white"/>
+<path d="M13.1368 14.5336C12.6047 15.1867 11.59 15.7527 9.71926 15.8307C8.0073 15.902 7.29727 16.3614 7.00355 16.6938C6.8545 16.8625 6.79266 17.0196 6.76613 17.1252C6.75264 17.1789 6.75215 17.2275 6.75062 17.2514H5.79492C5.79514 17.2317 5.79589 17.2089 5.79753 17.1833C5.80231 17.1089 5.81468 17.0096 5.84386 16.8935C5.90265 16.6595 6.02892 16.3607 6.29097 16.0641C6.81946 15.4661 7.82363 14.9579 9.67967 14.8805C11.377 14.8098 12.093 14.3093 12.3996 13.933C12.5576 13.7391 12.6279 13.5537 12.6598 13.4227C12.6758 13.3568 12.6851 13.2797 12.6875 13.2478H13.6367C13.6365 13.2725 13.6355 13.3046 13.6327 13.3433C13.6269 13.4206 13.6136 13.5247 13.5838 13.6472C13.5241 13.8929 13.3982 14.2129 13.1368 14.5336Z" fill="#FFEC01"/>
+<path d="M5.79492 17.25V25.2529H7.11084L9.14111 20.0859C9.19124 19.9642 9.25033 19.8102 9.31836 19.624C9.38997 19.4414 9.46159 19.2516 9.5332 19.0547C9.6084 18.8613 9.67464 18.6841 9.73193 18.5229C9.78923 18.6841 9.85368 18.8613 9.92529 19.0547C10.0005 19.2516 10.0721 19.4414 10.1401 19.624C10.2118 19.8102 10.2708 19.9642 10.3174 20.0859L12.3154 25.2529H13.6367V17.25H12.686V21.8906C12.686 22.1771 12.6896 22.4958 12.6968 22.8467C12.7039 23.2012 12.7111 23.5521 12.7183 23.8994C12.5643 23.4769 12.4229 23.0902 12.2939 22.7393C12.165 22.3883 12.0576 22.1055 11.9717 21.8906L10.1133 17.25H9.31836L7.44922 21.8906C7.36686 22.0947 7.26302 22.3615 7.1377 22.6909C7.01237 23.0203 6.87272 23.3838 6.71875 23.7812C6.72949 23.4518 6.73665 23.1224 6.74023 22.793C6.7474 22.4635 6.75098 22.1628 6.75098 21.8906V17.25H5.79492Z" fill="white"/>
+</svg>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -746,7 +757,7 @@
 						</ul>
 						<ul class="footer__col">
 							<li><a href="about.html">О компании</a></li>
-							<li><a href="solutions.html">Отрасли</a></li>
+							<li><a href="solutions.html" aria-current="page" class="is-active">Отрасли</a></li>
 							<li><a href="projects.html">Кейсы</a></li>
 							<li><a href="clients.html">Клиенты</a></li>
 							<li><a href="events.html">Мероприятия</a></li>
@@ -844,6 +855,11 @@
 			</div>
 		</div>
 		<div class="cookie-banner" id="cookie-banner" hidden role="dialog" aria-label="Использование cookies">
+			<button class="cookie-banner__close" type="button" data-cookie-close aria-label="Закрыть">
+				<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+					<use href="assets/img/sprite.svg#icon-close" />
+				</svg>
+			</button>
 			<p class="cookie-banner__text">На сайте используются файлы cookie. Продолжая использовать сайт, Вы&nbsp;соглашаетесь с&nbsp;использованием cookies.</p>
 			<div class="cookie-banner__actions">
 				<a class="btn btn--undeline" href="#">Узнать больше</a>
