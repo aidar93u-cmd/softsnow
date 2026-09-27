@@ -5343,3 +5343,110 @@ a.contacts-map__value:hover {
 	gap: 0.5rem;
 	color: #222222b2;
 }
+
+/* ============ Search page (from pages/search) ============ */
+.search-bar {
+	margin-bottom: var(--gap-sm);
+}
+.search-results {
+	margin-bottom: var(--gap-2xl);
+}
+.search-results__panel {
+	background: var(--color-white);
+	border-radius: var(--radius-lg);
+	padding: 2.5rem;
+}
+.search-results__title {
+	max-width: 18ch;
+	margin-bottom: var(--gap-2xl);
+}
+.search-results__toolbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--gap-md);
+	margin-bottom: var(--gap-lg);
+}
+.search-results__toolbar .tabs {
+	margin-bottom: 0;
+}
+.search-results__count {
+	flex-shrink: 0;
+	font-size: var(--fs-body-14);
+	color: var(--color-grey);
+}
+.search-results__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--gap-sm);
+}
+.search-card {
+	background: var(--bg-light);
+	color: var(--color-black);
+}
+.search-card__link {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap-md);
+	height: 100%;
+	padding: 1.5rem;
+	color: inherit;
+	text-decoration: none;
+}
+.search-card__top {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: var(--gap-md);
+}
+.search-card__title {
+	font-size: var(--fs-body-20);
+	line-height: 1.2;
+}
+.search-card__arrow {
+	flex-shrink: 0;
+	fill: var(--color-black);
+	transition: fill 0.4s;
+}
+.search-card:hover .search-card__title {
+	color: var(--color-sea);
+}
+.search-card:hover .search-card__arrow {
+	fill: var(--color-sea);
+}
+.search-card__desc {
+	font-size: var(--fs-body-14);
+	color: var(--color-grey);
+}
+.search-card__meta {
+	display: flex;
+	align-items: center;
+	gap: var(--gap-sm);
+	margin-top: auto;
+	font-size: var(--fs-body-12);
+}
+.search-card__time {
+	color: var(--color-grey);
+	opacity: var(--opacity-70);
+}
+.search-results__more {
+	display: flex;
+	justify-content: center;
+	margin-top: var(--gap-2xl);
+}
+.search-empty {
+	margin-bottom: var(--gap-2xl);
+}
+.search-empty__panel {
+	background: var(--color-white);
+	border-radius: var(--radius-lg);
+	padding: 2.5rem;
+}
+.search-empty__title {
+	margin-bottom: 1.5rem;
+}
+.search-empty__text {
+	max-width: 37.5rem;
+	margin-bottom: var(--gap-2xl);
+	color: var(--color-grey);
+}

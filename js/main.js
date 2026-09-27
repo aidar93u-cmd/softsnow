@@ -350,7 +350,7 @@ function initSearchPopup() {
 		e.preventDefault()
 		const query = input.value.trim()
 		if (query) {
-			window.location.href = `/search?q=${encodeURIComponent(query)}`
+			window.location.href = `search.html?q=${encodeURIComponent(query)}`
 		}
 	})
 
@@ -1065,11 +1065,78 @@ function initCookieBanner() {
 	}
 }
 
+// ponytail: static demo — tabs filter the cards, ?q= fills inputs + title
+function initSearchPage() {
+	const grid = document.getElementById('searchGrid')
+	if (!grid) return
+	const q = (new URLSearchParams(window.location.search).get('q') || '').trim()
+	if (q) {
+		document.querySelectorAll('.search-bar__form .search-popup__input').forEach(i => (i.value = q))
+		const title = document.getElementById('searchQuery')
+		if (title) title.textContent = q
+	}
+	const tabs = document.querySelector('.search-results .tabs')
+	const cards = Array.from(grid.querySelectorAll('.search-card'))
+	const empty = document.getElementById('searchEmpty')
+	const more = document.getElementById('searchMore')
+	const moreBtn = document.getElementById('searchShowMore')
+	const count = document.getElementById('searchCount')
+	let filter = 'all'
+	// ponytail: выдача порциями по STEP — как в каталогах (initDropdown);
+	// кнопка видна, только пока есть что показать
+	const STEP = 9
+	let visible = STEP
+
+	// ponytail: 1 материал, 2 материала, 5 материалов
+	const plural = (n, one, few, many) => {
+		const m10 = n % 10
+		const m100 = n % 100
+		if (m10 === 1 && m100 !== 11) return one
+		if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return few
+		return many
+	}
+
+	const apply = () => {
+		const matched = cards.filter(c => filter === 'all' || c.dataset.type === filter)
+		cards.forEach(c => (c.hidden = true))
+		matched.forEach((c, i) => (c.hidden = i >= visible))
+		const none = matched.length === 0
+		const allShown = matched.length <= visible
+		grid.hidden = none
+		if (more) more.hidden = none || allShown
+		if (empty) empty.hidden = !none
+		if (count) count.textContent = `Найдено ${matched.length} ${plural(matched.length, 'материал', 'материала', 'материалов')}`
+	}
+
+	if (tabs)
+		tabs.addEventListener('click', e => {
+			const btn = e.target.closest('.tabs__btn')
+			if (!btn) return
+			tabs.querySelectorAll('.tabs__btn').forEach(b => {
+				const on = b === btn
+				b.classList.toggle('is-active', on)
+				b.setAttribute('aria-selected', String(on))
+			})
+			filter = btn.dataset.filter
+			visible = STEP
+			apply()
+		})
+
+	if (moreBtn && more)
+		moreBtn.addEventListener('click', () => {
+			visible += STEP
+			apply()
+		})
+
+	apply()
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	initFloatingHeader()
 	initSearchPopup()
 	initClientsMarquee()
 	initContactsMap()
+	initSearchPage()
 
 	if (typeof AOS !== 'undefined') {
 		AOS.init({
