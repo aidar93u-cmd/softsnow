@@ -5455,3 +5455,48 @@ a.contacts-map__value:hover {
 	margin-bottom: var(--gap-2xl);
 	color: var(--color-grey);
 }
+
+/* ============ 404 page (from pages/404) ============ */
+.not-found {
+	margin-bottom: var(--gap-2xl);
+}
+.not-found__panel {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 43.75rem;
+	text-align: center;
+	background: var(--color-white);
+	border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+	overflow: hidden;
+	padding: 2.5rem;
+}
+.not-found__bg {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.not-found__panel > *:not(.not-found__bg) {
+	position: relative;
+}
+.not-found__code {
+	font-size: 26rem;
+	line-height: 1;
+	color: var(--color-sea);
+}
+.not-found__title {
+	margin-top: var(--gap-2xl);
+	font-size: var(--fs-h3);
+}
+.not-found__text {
+	max-width: 37.5rem;
+	margin-top: var(--gap-md);
+	color: var(--color-black);
+}
+.not-found__actions {
+	margin-top: var(--gap-2xl);
+}
