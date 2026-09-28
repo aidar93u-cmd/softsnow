@@ -5438,15 +5438,20 @@ a.contacts-map__value:hover {
 	margin-bottom: var(--gap-2xl);
 }
 .search-empty__panel {
-	background: var(--color-white);
+	display: flex;
+	flex-direction: column;
+	min-height: 43.75rem;
+	background: var(--color-white) url('../assets/img/solution-hero-bg.jpg') no-repeat right center / cover;
 	border-radius: var(--radius-lg);
 	padding: 2.5rem;
+}
+.search-empty__content {
+	max-width: 48.5rem;
 }
 .search-empty__title {
 	margin-bottom: 1.5rem;
 }
 .search-empty__text {
-	max-width: 37.5rem;
 	margin-bottom: var(--gap-2xl);
 	color: var(--color-grey);
 }

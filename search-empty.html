@@ -4,12 +4,12 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
-		<title>Поиск — SoftSnow</title>
+		<title>Ничего не найдено — SoftSnow</title>
 		<meta name="description" content="Результаты поиска по сайту SoftSnow." />
-		<meta property="og:title" content="Поиск — SoftSnow" />
-		<meta property="og:description" content="Результаты поиска по сайту SoftSnow." />
+		<meta property="og:title" content="Ничего не найдено — SoftSnow" />
+		<meta property="og:description" content="По вашему запросу ничего не найдено." />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="search.html" />
+		<meta property="og:url" content="search-empty.html" />
 		<meta property="og:image" content="assets/img/hero-bg.jpg" />
 
 		<link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css" />
@@ -135,175 +135,7 @@
 				</div>
 			</section>
 
-			<section class="search-results" aria-label="Результаты поиска">
-				<div class="container">
-					<div class="search-results__panel">
-						<h2 class="search-results__title" data-aos="fade-up">Результаты поиска по запросу «<span id="searchQuery">Directum</span>»</h2>
-						<div class="search-results__toolbar" data-aos="fade-up" data-aos-delay="200">
-							<div class="tabs" role="tablist" aria-label="Фильтр результатов поиска">
-								<button class="tabs__btn is-active" type="button" role="tab" aria-selected="true" data-filter="all">Все</button>
-								<button class="tabs__btn" type="button" role="tab" aria-selected="false" data-filter="event">Мероприятия</button>
-								<button class="tabs__btn" type="button" role="tab" aria-selected="false" data-filter="article">Статьи</button>
-								<button class="tabs__btn" type="button" role="tab" aria-selected="false" data-filter="news">Новости</button>
-								<button class="tabs__btn" type="button" role="tab" aria-selected="false" data-filter="webinar">Вебинары</button>
-								<button class="tabs__btn" type="button" role="tab" aria-selected="false" data-filter="project">Проекты</button>
-							</div>
-							<p class="search-results__count" id="searchCount">Найдено 12 материалов</p>
-						</div>
-						<div class="search-results__grid" id="searchGrid" data-aos="fade-up" data-aos-delay="200">
-							<article class="card search-card" data-type="project" data-aos="fade-up" data-aos-delay="0">
-								<a class="search-card__link" href="project-detail.html">
-									<span class="search-card__top">
-										<h3 class="search-card__title">Внедрение Directum RX в&nbsp;Президентской академии</h3>
-										<svg class="search-card__arrow" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-											<use href="assets/img/sprite.svg#icon-arrow-card" />
-										</svg>
-									</span>
-									<p class="search-card__desc">Подключили мобильные приложения, оцифровали согласования и&nbsp;запустили архив с&nbsp;ИИ-сервисами Directum RX&nbsp;Intelligence.</p>
-									<span class="search-card__meta"><span class="events__tag">Проект</span><span class="search-card__time">12 минут чтения</span></span>
-								</a>
-							</article>
-							<article class="card search-card" data-type="article" data-aos="fade-up" data-aos-delay="120">
-								<a class="search-card__link" href="article-detail.html">
-									<span class="search-card__top">
-										<h3 class="search-card__title">Как выбрать платформу для электронного документооборота</h3>
-										<svg class="search-card__arrow" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-											<use href="assets/img/sprite.svg#icon-arrow-card" />
-										</svg>
-									</span>
-									<p class="search-card__desc">Проверка требований, сравнение Directum, ЭДО и&nbsp;КЭДО, а&nbsp;также рекомендации по&nbsp;выбору решения для госсектора и&nbsp;бизнеса.</p>
-									<span class="search-card__meta"><span class="events__tag">Статья</span><span class="search-card__time">8 минут чтения</span></span>
-								</a>
-							</article>
-							<article class="card search-card" data-type="webinar" data-aos="fade-up" data-aos-delay="240">
-								<a class="search-card__link" href="event-detail.html">
-									<span class="search-card__top">
-										<h3 class="search-card__title">Directum RX&nbsp;в&nbsp;образовании: как запустить цифровой документооборот</h3>
-										<svg class="search-card__arrow" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-											<use href="assets/img/sprite.svg#icon-arrow-card" />
-										</svg>
-									</span>
-									<p class="search-card__desc">Практический сценарий внедрения для вузов: от&nbsp;подготовки команды до&nbsp;запуска электронных согласований и&nbsp;архива.</p>
-									<span class="search-card__meta"><span class="events__tag">Вебинар</span><span class="search-card__time">45 минут</span></span>
-								</a>
-							</article>
-							<article class="card search-card" data-type="project" data-aos="fade-up" data-aos-delay="0">
-								<a class="search-card__link" href="project-detail.html">
-									<span class="search-card__top">
-										<h3 class="search-card__title">Интеграция Directum с&nbsp;корпоративным порталом на&nbsp;базе Bitrix24</h3>
-										<svg class="search-card__arrow" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-											<use href="assets/img/sprite.svg#icon-arrow-card" />
-										</svg>
-									</span>
-									<p class="search-card__desc">Объединили документооборот, внутренние коммуникации и&nbsp;процессы согласования в&nbsp;единой рабочей среде.</p>
-									<span class="search-card__meta"><span class="events__tag">Проект</span><span class="search-card__time">10 минут чтения</span></span>
-								</a>
-							</article>
-							<article class="card search-card" data-type="article" data-aos="fade-up" data-aos-delay="120">
-								<a class="search-card__link" href="article-detail.html">
-									<span class="search-card__top">
-										<h3 class="search-card__title">Directum для госсектора: как ускорить согласования и&nbsp;документооборот</h3>
-										<svg class="search-card__arrow" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-											<use href="assets/img/sprite.svg#icon-arrow-card" />
-										</svg>
-									</span>
-									<p class="search-card__desc">Практические сценарии автоматизации: от&nbsp;подготовки документов до&nbsp;контроля сроков и&nbsp;прозрачности процессов.</p>
-									<span class="search-card__meta"><span class="events__tag">Статья</span><span class="search-card__time">9 минут чтения</span></span>
-								</a>
-							</article>
-							<article class="card search-card" data-type="webinar" data-aos="fade-up" data-aos-delay="240">
-								<a class="search-card__link" href="event-detail.html">
-									<span class="search-card__top">
-										<h3 class="search-card__title">Directum и&nbsp;Univer Online: как объединить процессы вуза</h3>
-										<svg class="search-card__arrow" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-											<use href="assets/img/sprite.svg#icon-arrow-card" />
-										</svg>
-									</span>
-									<p class="search-card__desc">Как использовать Directum вместе с&nbsp;внутренними сервисами вуза, чтобы не&nbsp;дублировать данные и&nbsp;не&nbsp;терять контекст.</p>
-									<span class="search-card__meta"><span class="events__tag">Вебинар</span><span class="search-card__time">38 минут</span></span>
-								</a>
-							</article>
-							<article class="card search-card" data-type="project" data-aos="fade-up" data-aos-delay="0">
-								<a class="search-card__link" href="project-detail.html">
-									<span class="search-card__top">
-										<h3 class="search-card__title">Directum для бизнеса: как сократить операционную нагрузку</h3>
-										<svg class="search-card__arrow" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-											<use href="assets/img/sprite.svg#icon-arrow-card" />
-										</svg>
-									</span>
-									<p class="search-card__desc">Пример автоматизации внутренних процессов, согласований и&nbsp;документооборота в&nbsp;компаниях с&nbsp;разными сценариями работы.</p>
-									<span class="search-card__meta"><span class="events__tag">Проект</span><span class="search-card__time">10 минут чтения</span></span>
-								</a>
-							</article>
-							<article class="card search-card" data-type="article" data-aos="fade-up" data-aos-delay="120">
-								<a class="search-card__link" href="article-detail.html">
-									<span class="search-card__top">
-										<h3 class="search-card__title">Directum и&nbsp;Moodle: как связать обучение и&nbsp;документооборот</h3>
-										<svg class="search-card__arrow" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-											<use href="assets/img/sprite.svg#icon-arrow-card" />
-										</svg>
-									</span>
-									<p class="search-card__desc">Как использовать интеграции между платформами, чтобы не&nbsp;дублировать данные и&nbsp;сохранить единый контекст обучения.</p>
-									<span class="search-card__meta"><span class="events__tag">Статья</span><span class="search-card__time">7 минут чтения</span></span>
-								</a>
-							</article>
-							<article class="card search-card" data-type="webinar" data-aos="fade-up" data-aos-delay="240">
-								<a class="search-card__link" href="event-detail.html">
-									<span class="search-card__top">
-										<h3 class="search-card__title">Directum Awards 2026: как подготовить проект к&nbsp;конкурсу</h3>
-										<svg class="search-card__arrow" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-											<use href="assets/img/sprite.svg#icon-arrow-card" />
-										</svg>
-									</span>
-									<p class="search-card__desc">Советы по&nbsp;подготовке кейса, формулированию результата и&nbsp;презентации проекта на&nbsp;конкурс Directum Awards.</p>
-									<span class="search-card__meta"><span class="events__tag">Вебинар</span><span class="search-card__time">42 минуты</span></span>
-								</a>
-							</article>
-							<article class="card search-card" data-type="event" data-aos="fade-up" data-aos-delay="0">
-								<a class="search-card__link" href="event-detail.html">
-									<span class="search-card__top">
-										<h3 class="search-card__title">Directum Forum 2026: как построить цифровые процессы компании</h3>
-										<svg class="search-card__arrow" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-											<use href="assets/img/sprite.svg#icon-arrow-card" />
-										</svg>
-									</span>
-									<p class="search-card__desc">Ежегодный форум клиентов и&nbsp;партнёров: кейсы внедрений, новые модули Directum RX&nbsp;и общение с&nbsp;экспертами.</p>
-									<span class="search-card__meta"><span class="events__tag">Мероприятие</span><span class="search-card__time">20 мая 2026</span></span>
-								</a>
-							</article>
-							<article class="card search-card" data-type="event" data-aos="fade-up" data-aos-delay="120">
-								<a class="search-card__link" href="event-detail.html">
-									<span class="search-card__top">
-										<h3 class="search-card__title">Конференция «Цифровой кампус 2026»</h3>
-										<svg class="search-card__arrow" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-											<use href="assets/img/sprite.svg#icon-arrow-card" />
-										</svg>
-									</span>
-									<p class="search-card__desc">Обсудим цифровую среду вуза: сервисы, процессы и&nbsp;данные. SoftSnow — участник деловой программы.</p>
-									<span class="search-card__meta"><span class="events__tag">Мероприятие</span><span class="search-card__time">10 ноября 2025</span></span>
-								</a>
-							</article>
-							<article class="card search-card" data-type="news" data-aos="fade-up" data-aos-delay="240">
-								<a class="search-card__link" href="article-detail.html">
-									<span class="search-card__top">
-										<h3 class="search-card__title">SoftSnow — партнёр года Directum</h3>
-										<svg class="search-card__arrow" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true">
-											<use href="assets/img/sprite.svg#icon-arrow-card" />
-										</svg>
-									</span>
-									<p class="search-card__desc">Интегратор подтвердил высший партнёрский статус по&nbsp;итогам 2025 года.</p>
-									<span class="search-card__meta"><span class="events__tag">Новости</span><span class="search-card__time">1 ноября 2025</span></span>
-								</a>
-							</article>
-						</div>
-						<div class="search-results__more" id="searchMore" data-aos="fade-up" data-aos-delay="720">
-							<button class="btn btn--ghost btn--lg" type="button" id="searchShowMore">Показать еще</button>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="search-empty" id="searchEmpty" aria-label="Ничего не найдено" hidden>
+			<section class="search-empty" aria-label="Ничего не найдено">
 				<div class="container">
 					<div class="search-empty__panel">
 						<div class="search-empty__content">
@@ -316,7 +148,7 @@
 					</div>
 				</div>
 			</section>
-	</main>
+		</main>
 
 		<footer class="footer">
 			<div class="container footer__inner">
