@@ -893,10 +893,7 @@
 }
 
 .client-image {
-	display: flex;
 	border-radius: 50%;
-	justify-content: center;
-	align-items: center;
 	background: var(--color-white);
 	width: 100%;
 	height: 100%;
@@ -907,16 +904,17 @@
 .clients__cell:hover .client-image {
 	transform: scale(0.6);
 }
-/* ponytail: круг уменьшается, а лого — нет: компенсируем scale родителя обратным (1/0.6) */
-.clients__cell:hover .client-image img {
-	transform: scale(1.6667);
-}
-.client-image img {
+/* ponytail: лого — отдельный слой поверх круга, размер фиксирован, не анимируется */
+.client-logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	width: 8.5rem;
 	height: 8.5rem;
 	border-radius: 50%;
 	object-fit: contain;
-	transition: transform 0.35s ease;
+	z-index: 2;
 	pointer-events: none;
 }
 
