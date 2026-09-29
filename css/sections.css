@@ -902,7 +902,7 @@
 	transition: transform 0.35s ease;
 }
 .clients__cell:hover .client-image {
-	transform: scale(0.6);
+	transform: scale(0.7);
 }
 /* ponytail: лого — отдельный слой поверх круга, размер фиксирован, не анимируется */
 .client-logo {
