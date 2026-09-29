@@ -907,6 +907,10 @@
 .clients__cell:hover .client-image {
 	transform: scale(0.6);
 }
+/* ponytail: круг уменьшается, а лого — нет: компенсируем scale родителя обратным (1/0.6) */
+.clients__cell:hover .client-image img {
+	transform: scale(1.6667);
+}
 .client-image img {
 	width: 8.5rem;
 	height: 8.5rem;
