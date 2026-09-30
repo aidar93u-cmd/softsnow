@@ -429,6 +429,10 @@
 	--color-overlay: rgba(0, 0, 0, 0.2);
 	--color-blue-alt: #1342f3;
 	--color-red: #ed143b;
+	--color-hrpro: #a4305a;
+	--color-directum: #ff8700;
+	--color-projects: #71ad30;
+	--color-targets: #0043a4;
 
 	/* Alpha shades (extracted from repeated hex literals) */
 	--color-dark-a70: #222222b2;

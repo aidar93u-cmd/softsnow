@@ -101,6 +101,18 @@
 .industries__card--cta .industries__arrow {
 	color: var(--color-sea);
 }
+.hero__hrpro {
+	color: var(--color-hrpro);
+}
+.hero__directum {
+	color: var(--color-directum);
+}
+.hero__projects {
+	color: var(--color-projects);
+}
+.hero__targets {
+	color: var(--color-targets);
+}
 
 .header__dropdown::before {
 	content: '';
