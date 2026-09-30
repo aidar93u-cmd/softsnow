@@ -5198,6 +5198,15 @@ a.contacts-map__value:hover {
 	line-height: 1.4;
 	color: var(--color-grey, rgba(34, 34, 34, 0.7));
 	max-height: 4rem;
+	max-width: 30rem;
+}
+.eco-card__text {
+	margin-right: auto;
+	margin-left: 0;
+}
+.eco-card.is-left .eco-card__text {
+	margin-right: 0;
+	margin-left: auto;
 }
 .eco-card__icon {
 	display: flex;

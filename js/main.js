@@ -1765,7 +1765,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	// positioned with their icons on a circle around the core, so every line
 	// has equal length by construction. 6 cards = circle in 8 sectors
 	// (top/bottom empty), 5 cards = circle in 6 sectors (bottom empty,
-	// first card on top). Dashed lines (SVG stroke-dasharray, no CSS dotted),
+	// first card on top), 7 cards = same 6 slots + 7th card at the bottom.
+	// Dashed lines (SVG stroke-dasharray, no CSS dotted),
 	// white dot where each line meets its icon. Redrawn from
 	// getBoundingClientRect (fonts, resize, AOS landing).
 	function initEcoLines() {
@@ -1786,7 +1787,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		// slot angles, 0° = east, y grows down.
 		// 6: left top->bottom 225/180/135, right top->bottom 315/0/45.
 		// 5: first card top 270, left 210/150, right 330/30.
-		const SLOTS = { 6: [225, 180, 135, 315, 0, 45], 5: [270, 210, 150, 330, 30] }
+		// 7: first six exactly as 6, 7th card at the bottom 90.
+		const SLOTS = { 7: [225, 180, 135, 315, 0, 45, 90], 6: [225, 180, 135, 315, 0, 45], 5: [270, 210, 150, 330, 30] }
 
 		function clearFloat(cards) {
 			diagram.classList.remove('is-placed')
@@ -1807,10 +1809,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			const slots = SLOTS[cards.length]
 			const floating = window.innerWidth > 1024 && !!slots
 			// сторону зеркала задаём всегда (кольцо + планшетная сетка);
-			// верхняя (idx0 при 5) — как правая
+			// верхняя (idx0 при 5) и нижняя (idx6 при 7) — как правые
+			// (cos там ~0, явная ветка страхует от знака эпсилона)
 			cards.forEach((card, i) => {
-				const top = floating && cards.length === 5 && i === 0
-				const left = top ? false : floating ? Math.cos(slots[i] * D) < 0 : i < Math.ceil(cards.length / 2)
+				const edge = floating && ((cards.length === 5 && i === 0) || (cards.length === 7 && i === 6))
+				const left = edge ? false : floating ? Math.cos(slots[i] * D) < 0 : i < Math.ceil(cards.length / 2)
 				card.classList.toggle('is-left', left)
 			})
 			if (!floating) {
@@ -1858,7 +1861,20 @@ document.addEventListener('DOMContentLoaded', () => {
 			})
 			// heights depend on stretched widths — measure, then fix diagram height
 			const maxCardH = Math.max(...cards.map(c => c.getBoundingClientRect().height))
-			diagram.style.height = 2 * R + maxCardH + 3 * rootFont + 'px'
+			const baseH = 2 * R + maxCardH + 3 * rootFont
+			let extraH = 0
+			if (cards.length === 7) {
+				// ponytail: 7-я карточка (слот 90°, снизу) висит ниже кольца —
+				// её низ уходит за baseH. Докидываем удвоенный перелёт:
+				// половину съедает сдвиг центра ядра при росте высоты.
+				const b = cards[6]
+				const br = b.getBoundingClientRect()
+				const bir = b.querySelector('.eco-card__icon').getBoundingClientRect()
+				const iy0 = bir.top - br.top + bir.height / 2
+				const need = baseH / 2 + R - iy0 + br.height - baseH
+				if (need > 0) extraH = need * 2
+			}
+			diagram.style.height = baseH + extraH + 'px'
 			// core recenters once the explicit height lands — re-read
 			const diaRect = diagram.getBoundingClientRect()
 			const coreRect = core.getBoundingClientRect()
