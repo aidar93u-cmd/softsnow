@@ -4071,6 +4071,11 @@ a.contacts-map__value:hover {
 .events-featured__media-swiper {
 	width: 100%;
 	height: 35rem;
+	cursor: grab;
+}
+.events-featured__text-swiper:active,
+.events-featured__media-swiper:active {
+	cursor: grabbing;
 }
 .events-featured__text-slide,
 .events-featured__media-slide {

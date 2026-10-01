@@ -366,7 +366,14 @@ function initSwiper(selector, options) {
 	if (typeof Swiper === 'undefined') return null
 	const el = document.querySelector(selector)
 	if (!el) return null
-	return new Swiper(el, options)
+	// ponytail: touch defaults — iOS палец/мышь; явное значение в options побеждает
+	return new Swiper(el, {
+		simulateTouch: true,
+		allowTouchMove: true,
+		grabCursor: true,
+		mousewheel: { forceToAxis: true, thresholdDelta: 10 },
+		...options,
+	})
 }
 
 function bindNav(selector, swiper) {
@@ -410,7 +417,7 @@ function initFactsSlider() {
 			slides.forEach(s => wrapper.appendChild(s))
 		}
 		if (swiper) swiper.destroy(true, true)
-		swiper = new Swiper(swiperEl, { slidesPerView: 'auto', spaceBetween: 10, speed: 600, loop: true })
+		swiper = new Swiper(swiperEl, { slidesPerView: 'auto', spaceBetween: 10, speed: 600, loop: true, simulateTouch: true, allowTouchMove: true, grabCursor: true })
 	}
 
 	build()
@@ -737,7 +744,9 @@ function initDemoPopup() {
 					spaceBetween: 0,
 					speed: 400,
 					loop: false,
+					simulateTouch: true,
 					allowTouchMove: true,
+					grabCursor: true,
 					watchOverflow: true,
 					initialSlide: Math.max(0, Math.min(index, images.length - 1)),
 					keyboard: { enabled: true },
@@ -1152,6 +1161,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		spaceBetween: 10,
 		loop: true,
 		speed: 600,
+		simulateTouch: true,
+		allowTouchMove: true,
+		grabCursor: true,
 	})
 
 	const partnersSwiper = initSwiper('.partners__swiper', {
@@ -1159,6 +1171,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		spaceBetween: 10,
 		loop: true,
 		speed: 600,
+		simulateTouch: true,
+		allowTouchMove: true,
+		grabCursor: true,
 		breakpoints: { 768: { slidesPerView: 4 } },
 	})
 
@@ -1167,6 +1182,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		spaceBetween: 10,
 		loop: true,
 		speed: 600,
+		simulateTouch: true,
+		allowTouchMove: true,
+		grabCursor: true,
 		breakpoints: { 768: { slidesPerView: 2 } },
 	})
 
@@ -1175,11 +1193,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		spaceBetween: 10,
 		loop: true,
 		speed: 600,
+		simulateTouch: true,
+		allowTouchMove: true,
+		grabCursor: true,
 		breakpoints: { 768: { slidesPerView: 'auto' } },
 	})
 	// ponytail: events-featured — синхронизированная пара слайдеров через Controller
 	// Без loop, чтобы кнопки навигации получали класс disabled на краях.
-	// Листание только стрелками, свайпы отключены.
 
 	const eventsFeaturedMediaSwiper = initSwiper('.events-featured__media-swiper', {
 		slidesPerView: 1,
@@ -1187,7 +1207,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		loop: false,
 		speed: 800,
 		effect: 'slide',
-		allowTouchMove: false,
+		simulateTouch: true,
+		allowTouchMove: true,
+		grabCursor: true,
 		watchOverflow: true, // Скрывает кнопки, если слайдов <= 1
 	})
 
@@ -1197,7 +1219,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		loop: false,
 		speed: 800,
 		effect: 'slide',
-		allowTouchMove: false,
+		simulateTouch: true,
+		allowTouchMove: true,
+		grabCursor: true,
 		watchOverflow: true,
 		controller: {
 			control: eventsFeaturedMediaSwiper,
@@ -1218,6 +1242,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		spaceBetween: 10,
 		loop: true,
 		speed: 600,
+		simulateTouch: true,
+		allowTouchMove: true,
+		grabCursor: true,
 		breakpoints: { 768: { slidesPerView: 3 } },
 	})
 
@@ -1229,6 +1256,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		spaceBetween: 10,
 		loop: true,
 		speed: 600,
+		simulateTouch: true,
+		allowTouchMove: true,
+		grabCursor: true,
 		breakpoints: { 768: { slidesPerView: 'auto', spaceBetween: 0 } },
 	})
 
@@ -1237,6 +1267,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		spaceBetween: 10,
 		loop: true,
 		speed: 600,
+		simulateTouch: true,
+		allowTouchMove: true,
+		grabCursor: true,
 		breakpoints: { 768: { slidesPerView: 1 } },
 	})
 
@@ -1245,6 +1278,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		spaceBetween: 10,
 		loop: true,
 		speed: 600,
+		simulateTouch: true,
+		allowTouchMove: true,
+		grabCursor: true,
 		breakpoints: { 768: { slidesPerView: 3 } },
 	})
 
