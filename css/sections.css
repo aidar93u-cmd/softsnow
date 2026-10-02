@@ -1122,6 +1122,7 @@
 	padding: 2.5rem 0;
 	font-size: var(--fs-body-16);
 	color: var(--color-grey);
+	min-height: 20rem;
 }
 
 .projects__card:hover,
@@ -1494,13 +1495,13 @@
 
 .dropdown__option {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	gap: 0.625rem;
 	font-size: var(--fs-body-16);
 	color: var(--color-black);
 	cursor: pointer;
 	user-select: none;
-	white-space: nowrap;
+	/* white-space: nowrap; */
 	transition: all 0.4s;
 }
 .dropdown__option:hover {
