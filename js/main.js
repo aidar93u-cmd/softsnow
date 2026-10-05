@@ -1582,17 +1582,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			})
 
 			validator
-				.addField('.js-position', [
-					{ rule: 'required', errorMessage: 'Укажите должность' },
-					{ rule: 'minLength', value: 3, errorMessage: 'Минимум 3 символа' },
-				])
 				.addField('.js-fio', [
 					{ rule: 'required', errorMessage: 'Укажите ФИО' },
 					{ rule: 'minLength', value: 3, errorMessage: 'Минимум 3 символа' },
 				])
-				.addField('.js-email', [
-					{ rule: 'required', errorMessage: 'Укажите e-mail' },
-					{ rule: 'email', errorMessage: 'Введите корректный e-mail' },
+				.addField('.js-position', [
+					{ rule: 'required', errorMessage: 'Укажите должность' },
+					{ rule: 'minLength', value: 3, errorMessage: 'Минимум 3 символа' },
 				])
 				.addField('.js-phone', [
 					{ rule: 'required', errorMessage: 'Укажите телефон' },
@@ -1600,6 +1596,10 @@ document.addEventListener('DOMContentLoaded', () => {
 						validator: () => phone && phone.value.replace(/\D/g, '').length === 11,
 						errorMessage: 'Введите номер полностью: +7 (___) ___-__-__',
 					},
+				])
+				.addField('.js-email', [
+					{ rule: 'required', errorMessage: 'Укажите e-mail' },
+					{ rule: 'email', errorMessage: 'Введите корректный e-mail' },
 				])
 				.addField('.js-consent', [{ rule: 'required', errorMessage: 'Подтвердите согласие' }])
 
