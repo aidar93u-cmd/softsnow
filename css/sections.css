@@ -539,9 +539,6 @@
 	max-width: 73.125rem;
 	color: var(--color-white);
 }
-.event-hero .hero-block-inner {
-	background-image: url('../assets/img/event-detail.jpg');
-}
 /* ============ Industries ============ */
 
 /* ============ Stats ============ */
@@ -1108,6 +1105,7 @@
 .projects__filters-head,
 .projects__apply,
 .event-hero__date,
+.event-hero__note,
 .audience__cta,
 .program__panel-item,
 .article-hero__date--top,
@@ -2714,7 +2712,7 @@ h2.client-title {
 }
 .services .partners__name {
 	min-height: 3.125rem;
-	max-width: 18.75rem;
+	max-width: 8.75rem;
 }
 /* Типографика 14 */
 /* Vnedrenie (Варианты внедрения) */
@@ -3443,7 +3441,7 @@ a.contacts-map__value:hover {
 
 /* ============ Swiper slides ============ */
 /* Слайдеры переведены на slidesPerView:'auto' — ширину слайда задаёт CSS
-   (десктоп здесь, мобильные 300px — в media.css <=768).
+   (десктоп здесь, мобилка — в media.css <=768: партнёры 280px, остальные 300px).
    ponytail: ширины дублируют прежние числовые slidesPerView (4 и 2). */
 .partners__swiper .swiper-slide {
 	width: calc((100% - 1.875rem) / 4);
@@ -5083,12 +5081,12 @@ a.contacts-map__value:hover {
 }
 
 .ecosystem__inner {
-	padding: 2.5rem 2.5rem 8.75rem;
+	padding: 2.5rem 2.5rem 2.5rem;
 	background: var(--color-white);
 	border-radius: var(--radius-lg);
 }
 .ecosystem__title {
-	margin: 0 0 7.5rem;
+	margin: 0 0 1.5rem;
 	letter-spacing: -0.03em;
 }
 .ecosystem__diagram {
@@ -5097,7 +5095,7 @@ a.contacts-map__value:hover {
 	align-items: center;
 	justify-content: space-between;
 	min-height: 28.3125rem;
-	margin-top: 5rem;
+	/*margin-top: 5rem;*/
 }
 .ecosystem__center {
 	position: absolute;

@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/sections.css">
   <link rel="stylesheet" href="css/media.css">
+
 </head>
 
 <body>
@@ -115,6 +116,16 @@
   </header>
 
   <main>
+    <style>
+    .event-hero .hero-block-inner { 
+      background-image: url('assets/img/event-detail.jpg'); 
+    }
+    @media (max-width: 767px) {
+      .event-hero .hero-block-inner { 
+        background-image: url('assets/img/mobile-event-bg.jpg'); 
+      }
+    }
+  </style>
     <section class="hero event-hero" aria-label="Онлайн-семинар">
       <div class="container flex" data-aos="fade-up">
         <div class="hero-block-inner">
@@ -127,8 +138,10 @@
               <span class="event-hero__date-num">22 апреля 2026</span>
               <span class="event-hero__date-time">11:00–12:00 (мск), онлайн</span>
             </div>
-            <button class="btn btn--outline-white event-hero__btn" type="button" data-fancybox              data-src="#request-popup">Зарегистрироваться</button>
+            <button class="btn btn--outline-white event-hero__btn" type="button" data-fancybox   data-src="#request-popup">Зарегистрироваться</button>
+           
           </div>
+           <p class="event-hero__note">Онлайн-семинар <br>для&nbsp;руководителей</p>
         </div>
 
         <div class="hero__footer">

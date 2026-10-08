@@ -1167,14 +1167,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	})
 
 	const partnersSwiper = initSwiper('.partners__swiper', {
-		slidesPerView: 1.1,
+		slidesPerView: 'auto',
 		spaceBetween: 10,
 		loop: true,
 		speed: 600,
 		simulateTouch: true,
 		allowTouchMove: true,
 		grabCursor: true,
-		breakpoints: { 768: { slidesPerView: 4 } },
 	})
 
 	const projectsSwiper = initSwiper('.projects__swiper', {

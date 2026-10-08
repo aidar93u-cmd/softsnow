@@ -2062,22 +2062,22 @@
 		display: none;
 	}
 	/* ---------- Семинар: hero, Figma 1736:15236 ----------
-	   Светлая карточка без фото: тёмный заголовок 30px, дата 19px
-	   синим + время 16px, кнопка-аутлайн на всю ширину, разделитель. */
+	   Как ПК-версия: фото (инлайн) + оверлей, белый текст и
+	   белая кнопка-аутлайн; в мобилке только layout. */
 	.event-hero .hero-block-inner {
 		padding: 1.5rem 1rem 1rem;
-		background-image: none;
-		border-radius: 0;
+		border-radius: 0 0 0.75rem 0.75rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 
-	.event-hero .hero__overlay {
+	.event-hero .hero-block-inner::before {
 		display: none;
 	}
 
 	.event-hero .hero__title {
-		color: var(--color-black);
-		letter-spacing: -0.03em;
-		margin-bottom: 2rem;
+		letter-spacing: 0;
 	}
 
 	.event-hero__date {
@@ -2093,7 +2093,7 @@
 		font-weight: 500;
 		line-height: 1.2;
 		letter-spacing: -0.01em;
-		color: var(--color-sea);
+		color: var(--color-white);
 	}
 
 	.event-hero__date-time {
@@ -2101,23 +2101,41 @@
 		font-weight: 500;
 		line-height: 1.2;
 		letter-spacing: -0.02em;
-		color: var(--color-black);
+		color: var(--color-white);
 	}
 
 	.event-hero .hero__body .btn {
 		width: 100%;
 		height: var(--control-h);
-		background: transparent;
-		color: var(--color-black);
-		border: 2px solid var(--color-sea);
 		border-radius: 1.75rem;
 		font-size: var(--fs-body-14);
 		font-weight: 500;
 	}
 
 	.event-hero .hero__footer {
-		color: var(--color-black);
-		border-radius: 0 0 0.75rem 0.75rem;
+		display: none;
+	}
+	.hero.event-hero {
+		height: auto;
+	}
+	.event-hero__note::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -1rem;
+		width: calc(100% + 2rem);
+		border-top: 1px solid;
+		opacity: 0.2;
+	}
+	.event-hero__note {
+		display: block;
+		margin: 1rem 0 0;
+		font-size: var(--fs-body-14);
+		font-weight: 500;
+		color: var(--color-white);
+		z-index: 9;
+		padding: 1.5rem 0 0.5rem;
+		position: relative;
 	}
 
 	/* ---------- Семинар: что обсудим, Figma 1736:15249 ----------
@@ -2577,12 +2595,18 @@
 	.partners .carousel-nav {
 		display: none;
 	}
-
+	.services .partners__name {
+		max-width: 8.75rem;
+	}
 	.partners__card {
 		gap: 1.25rem;
 		padding: 0.75rem;
 		height: 19rem;
 		border-radius: 0.75rem;
+	}
+
+	.partners__swiper .swiper-slide {
+		width: 17.5rem;
 	}
 
 	.partners__tag {
@@ -2593,7 +2617,9 @@
 	.partners__name {
 		font-size: var(--fs-h4);
 	}
-
+	.services .partners__arrow {
+		display: none;
+	}
 	.partners__logo {
 		width: 5rem;
 		height: 5rem;
@@ -4249,7 +4275,9 @@
 	.features__sub {
 		font-size: var(--fs-body-14);
 	}
-
+	.page-content {
+		padding: 1rem;
+	}
 	.tabs {
 		flex-wrap: nowrap;
 		overflow-x: auto;
@@ -4263,9 +4291,10 @@
 
 	.tabs__btn {
 		flex-shrink: 0;
-		height: 2.125rem;
+		/*height: 2.125rem;*/
 		padding: 0 0.75rem;
 		font-size: var(--fs-body-14);
+		max-width: 80%;
 	}
 
 	.features__panel.is-active {

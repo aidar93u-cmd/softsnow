@@ -589,7 +589,9 @@ svg {
 	outline: 2px solid var(--color-sea);
 	outline-offset: 2px;
 }
-
+button:focus-visible {
+	outline: none;
+}
 a {
 	color: var(--color-sea);
 	text-decoration: none;
@@ -777,7 +779,7 @@ section {
 .tabs__btn:active,
 .tab-filter:active,
 .carousel-nav__btn:active {
-	filter: brightness(0.85);
+	/*filter: brightness(0.85);*/
 }
 
 .btn:disabled,
