@@ -5299,7 +5299,7 @@
 		height: 12rem;
 		border-radius: 0.75rem;
 	}
-	.services__grid > *:last-child {
+	.services__grid > *:last-child:nth-child(odd) {
 		grid-column: 1 / -1; /* Растягивает элемент на все колонки */
 	}
 	.team__photo--main {
