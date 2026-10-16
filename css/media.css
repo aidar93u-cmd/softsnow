@@ -5349,6 +5349,7 @@
 	.article-block--unified ol li {
 		align-items: flex-start;
 		justify-content: flex-start;
+		padding-left: 2.5rem;
 	}
 	.article-block__text ul li::before {
 		top: 0.5rem;

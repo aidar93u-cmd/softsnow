@@ -3291,18 +3291,16 @@ a.contacts-map__value:hover {
 
 .article-block--unified ol li {
 	position: relative;
-	gap: 1rem;
+	display: block;
+	padding-left: 4.5rem;
 	font-size: var(--fs-body-20);
 	line-height: 1.4;
 	counter-increment: stage;
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
 }
 
 .article-block--unified ol li::before {
 	content: counter(stage);
-	position: relative;
+	position: absolute;
 	left: 0;
 	top: 0;
 	min-width: 3.5rem;
